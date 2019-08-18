@@ -1,99 +1,16 @@
 
-// LAYOUT
-//
-// breakpoints
-@mediaPhone: ~' (max-width: 599px)';
-@mediaTabletPortrait: ~' (min-width: 600px)';
-@mediaTabletLandscape: ~' (min-width: 900px)';
-@mediaDesktop: ~' (min-width: 1200px)';
-@mediaDesktopLarge: ~' (min-width: 1800px)';
-//
-// mobile
-@headerHeightMobile: 40px;
-@pagePaddingMobile: 10px;
-@footerHeightMobile: 140px;
-@fontBaseSizeMobile: 14px;
-//
-// desktop
-@headerHeight: auto;
-@footerHeight: 140px;
-@menuWidth: 200px;
-@pageWidth: 90%;
-@pageWidthMax: 900px;
-@pageMargin: 20px;
-@fontBaseSize: 20px;
-@imgMargin: 10px;
-@projectHeight: 150px;
-@clientHeight: 110px;
-//
-// time
-@timePageTransition: 1300ms;
+@mediaS: ~' (min-width: 420px)';
+@mediaM: ~' (min-width: 768px)';
+@mediaL: ~' (min-width: 1200px)';
 
-
-// fonts
+@colorWhite: #FFF;
+@colorBlack: #000;
+@colorMain: #F04;
+@colorLink: #3baeff;
+@colorDark: #333;
+@colorGray: #C0C9C4;
+@colorGrayLight: #E7ECE9;
 
 @fontNameHeading: 'Source Code Pro', monospace;
 @fontNameBody: 'Istok Web', sans-serif;
 @fontNameCode: 'Source Code Pro', monospace;
-
-// colors
-
-@colorWhite:			#FFF;
-@colorBlack:			#000;
-
-@colorGrayDarkest: 		#1f2321;
-
-@colorRed:				#FF0044;
-@colorBlue:				#3baeff;
-@colorBlueGrayer:		#547979;
-@colorGrayBlue: 		#D9E4E4;
-@colorBlueGray: 		#E3EEF2;
-@colorBlueLight: 		#EDF6FF;
-@colorWhiteBlue:		#f8fffd;
-@colorYellow:			#FC2;
-
-// customize
-
-@colorText:				@colorGrayDarkest;
-@colorAnchor:			@colorRed;
-@colorBackground:		@colorGrayLighter;
-@colorDark:				@colorGrayDarkest;
-@colorLight:			@colorWhiteBlue;
-
-////////////////////////////////////////////////////
-////////////////////////////////////////////////////
-
-@colorPageBackground:	@colorGrayLight;
-
-@colorHeaderFooterBg:	@colorGray;
-
-@colorMenuAnchor:		@colorGrayDarkest;
-@colorMenuBg:			@colorGreenLighter;
-@colorMenuHoverBg:		@colorGreenLightest;
-
-// base colors
-
-@colorOrange:			#FF7855;
-@colorOrangeLight:		#FFB08B;
-@colorGreenDark:		#007873;
-@colorGreen:			#00AFA0;
-@colorGreenLight:		#34BFB3;
-@colorGreenLighter:		#66CFC6;
-@colorGreenLightest:	#8CDBD4;
-@colorGreenVeryLight:	#C6EBE8;
-@colorGrayDarkest: 		#1f2321;
-@colorGrayDarker:		#3b4340;
-@colorGrayDark: 		#57635E;
-@colorGray: 			#C0C9C4;
-@colorGrayLight:		#E7ECE9;
-@colorGrayLighter:		#F4FAFA;
-
-// mixins
-
-.ngReveal(@h:200px){
-	max-height: @h;
-	.transition(max-height 300ms ease-in-out);
-	&.ng-hide {
-		max-height: 0;
-	}
-}

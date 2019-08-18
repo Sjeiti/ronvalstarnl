@@ -8,7 +8,7 @@ import {appendChild,selectEach} from '../utils/html'
 
 component.create('[data-header]',class extends BaseComponent{
 
-  _seldo 
+  _seldo
   _experiment
   _stuck = signal()
   _lastScrollTop = 0
@@ -16,7 +16,7 @@ component.create('[data-header]',class extends BaseComponent{
 
   constructor(...args){
     super(...args)
-    
+
     this._seldo = selectEach.bind(null,this._element)
 
     scroll.add(this._onScroll.bind(this))
@@ -61,7 +61,7 @@ component.create('[data-header]',class extends BaseComponent{
     this._seldo(`a[href="/${select}"]`,elm=>elm.classList.add(current))
     this._setExperiment(name,oldName)
   }
-  
+
   _setExperiment(name){
     console.log('\txp',name,!!this._experiment)
     if (/^experiment-.+/.test(name)){

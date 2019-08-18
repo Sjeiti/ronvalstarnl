@@ -61,23 +61,23 @@ add(
           parentSlug = 'projects'
           ;(existingProjects||qs('.projects')).insertAdjacentHTML('beforebegin', expand(
             'div.project>'
-            +`(.date>time.date-from{${dateFrom.replace(/-\d\d$/,'')}}`
+            +`(.text>(.date>time.date-from{${dateFrom.replace(/-\d\d$/,'')}}`
             +`+time.date-to{${dateTo.replace(/-\d\d$/,'')}})`
             +`+h2{${title}}`
-            +`+{${content}}`
-            +`+${images.map(m=>`img[src="${m}"]`).join('+')}`
+            +`+{${content}})`
+            +`+${images.map(m=>`(div.img[style="background-image:url(${m})"]>img[src="${m}"])`).join('+')}`
           ))
           selectEach(qs('.project'),'img',img=>{
             img.addEventListener('load',e=>{
               img.naturalHeight>img.naturalWidth
-                &&img.classList.add('portrait')
+                &&img.parentNode.classList.add('portrait')
             })
           })
           const top = (existingCategories||qs('.project-category')).getBoundingClientRect().bottom
           const {body} = document
           const bodyTop = body.getBoundingClientRect().top
           scrollTo(body,1000,null,top-16-bodyTop)
-          //console.log(JSON.stringify(currentProject,null,1)) 
+          //console.log(JSON.stringify(currentProject,null,1))
         }
         // category
         const current = 'current'

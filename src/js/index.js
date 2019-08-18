@@ -1,7 +1,7 @@
-import './console'
+// import './console'
 import '../style/screen.less'
 
-import { appendChild, stringToElement } from './utils/html'
+// import { appendChild, stringToElement } from './utils/html'
 import './views'
 import './head'
 

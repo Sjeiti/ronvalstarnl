@@ -21,16 +21,22 @@
       --font-name-code: 'Source Code Pro', monospace;
     }
 
+    @media (min-width: 768px) {}
+    
+    html { font-size: 16px; }
+    
     html { box-sizing: border-box; }
     *, *:before, *:after { box-sizing: inherit; }
 
-    html, body { margin: 0; }
+    html, body { margin: 0; height: 100%; }
 
     body {
       margin: 0;
-      background-color: var(--color-main);
+      background-color: white;
       font-family: var(--font-name-body);
+      font-size: 1rem;
     }
+    @media (min-width: 768px) { body { font-size: 1.25rem; } }
 
     a { color: var(--color-link); }
 
@@ -49,6 +55,7 @@
       background-image: url("/data/header-bg-2.jpg");
       background-size: cover;
     }
+    @media (min-width: 768px) { header { font-size: 1rem; } }
     header>* {
       position: relative;
       z-index: 10;
@@ -78,24 +85,24 @@
       transform:rotate(46deg) skewx(-9deg) skewy(-9deg);
     }
 
-    header h1 { 
+    header h1 {
       position: relative;
       left: 50%;
       display: inline-block;
       margin: 0 auto;
       transform: translateX(-50%);
-      font-size: inherit; 
+      font-size: inherit;
       text-align: center;
     }
-    header h1 .logo { 
-      margin: 0 auto; 
+    header h1 .logo {
+      margin: 0 auto;
       font-size: 5px;
     }
     /*header h1 .logo:before, header h1 .logo:after {
       background-image: url("data/header-bg-1.jpg");
     }*/
     header h1 .name { font-size: 3rem; }
-    header h1 .what { 
+    header h1 .what {
       font-size: 1.25rem;
       letter-spacing: 0.325rem;
       font-weight: 600;
@@ -107,7 +114,7 @@
       transition: box-shadow 300ms ease;
     }
     header.stuck {
-      box-shadow: 0 -1rem 0 0 var(--color-main) inset;  
+      box-shadow: 0 -1rem 0 0 var(--color-main) inset;
     }
     header nav {
       position: absolute;
@@ -128,7 +135,7 @@
     header nav a.current
     ,header nav a.current-parent {
       background-color: #000;
-    } 
+    }
     header nav a span {
       font-size: 0.625rem;
       padding: 0 0.5rem;
@@ -151,6 +158,13 @@
       text-decoration: none;
       color: inherit;
     }
+    main {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+    [data-pathname^="project"] main, main.wide {
+      max-width: none;
+    }
     main, aside {
       position: relative;
       padding: 1rem 0;
@@ -161,15 +175,18 @@
       margin-right: 1rem;
     }
     main {
-      min-height: 18.5rem;
+      /*min-height: 18.5rem;*/
+      min-height: calc(100vh - 16.25rem);
     }
+    aside { display: none; }
 
     footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 100vw;
+      width: 100%;
       white-space: nowrap;
+      background-color: var(--color-main);
       color: #fff;
       text-align: center;
       vertical-align: middle;
@@ -211,8 +228,8 @@
     }
     .search>* { background: transparent; }
     .search input[type=search] { flex: 1 1 33px; }
-    .search button { 
-      flex: 0 0 1rem; 
+    .search button {
+      flex: 0 0 1rem;
       color: var(--color-main);
     }
     .search input { width: 4rem; }
@@ -295,7 +312,7 @@
     <nav class="social">
       <a href="#" class="rv-stack-overflow"><span>Stackoverflow</span></a>
       <a href="#" class="rv-linkedin"><span>LinkedIn</span></a>
-      <a href="#" class="rv-twitter"><span>Twitter</span></a>  
+      <a href="#" class="rv-twitter"><span>Twitter</span></a>
       <a href="#" class="rv-github"><span>Ello</span></a>
     </nav>
     <span>&copy; Ron Valstar</span>
