@@ -16,3 +16,5 @@ import './component/Header'
 import './component/Code'
 
 component.initialise()
+
+import './signal/scroll'

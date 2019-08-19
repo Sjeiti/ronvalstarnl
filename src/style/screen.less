@@ -4,6 +4,15 @@
 
 main { overflow-x: hidden; }
 
+header nav a {
+  transition: box-shadow 200ms linear;
+  box-shadow: 0 0 0 @colorBlack inset;
+  &:hover, &.current, &-parent.current {
+    background-color: @colorMain;
+    box-shadow: -100px 0 0 @colorBlack inset;
+  }
+}
+
 footer .social a {
   color: #fff;
   background-color: transparent;
@@ -88,9 +97,13 @@ ul.projects {
       width: 100%/4;
       height: 100vw/16*3;
     }
-    @media L {
+    @media @mediaL {
       width: 100%/5;
       height: 100vw/20*3;
+    }
+    @media @mediaXL {
+      width: 100%/6;
+      height: 100vw/24*3;
     }
     overflow: hidden;
     //background-size: 10000% 100%;
@@ -173,12 +186,14 @@ ul.project-category {
     color: #f04;
   }
   .img {
-    background-position: center;
+    //background-position: center;
+    background-position: calc(30% + 0.4 * var(--scroll-percentage)) center;
     background-size: 10000% 100%;
     background-color: @colorDark;
     border-top: 1px solid #f04;
     overflow: hidden;
-
+    transition: background-position 300ms ease;
+    //&:hover { background-position: 60% center; }
     &.portrait {
       width: 50%;
       float: left;

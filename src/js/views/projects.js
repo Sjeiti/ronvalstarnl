@@ -65,7 +65,7 @@ add(
             +`+time.date-to{${dateTo.replace(/-\d\d$/,'')}})`
             +`+h2{${title}}`
             +`+{${content}})`
-            +`+${images.map(m=>`(div.img[style="background-image:url(${m})"]>img[src="${m}"])`).join('+')}`
+            +`+${images.map(m=>`(div.img[style="background-image:linear-gradient(#000 0,rgba(0,0,0,0.2) 0),url(${m})"]>img[src="${m}"])`).join('+')}`
           ))
           selectEach(qs('.project'),'img',img=>{
             img.addEventListener('load',e=>{

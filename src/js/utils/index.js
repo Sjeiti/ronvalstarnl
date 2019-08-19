@@ -1,5 +1,10 @@
 import {TweenLite,TweenMax,Power1} from 'gsap'
 
+
+// get css rule
+// const rootCSS = [...document.styleSheets].map(sheet=>!sheet.href&&sheet.rules).filter(o=>o).map(rules=>[...rules].filter(rule=>rule.selectorText===':root').pop()).filter(o=>o).pop()
+
+
 /**
  * Returns the hash for a scoped module
  * @param {HTMLElement} elm
