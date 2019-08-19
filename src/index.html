@@ -35,6 +35,7 @@
       background-color: white;
       font-family: var(--font-name-body);
       font-size: 1rem;
+      overflow-y: scroll;
     }
     @media (min-width: 768px) { body { font-size: 1.25rem; } }
 
@@ -50,12 +51,11 @@
       overflow: hidden;
       color: white;
       text-transform: uppercase;
-      font-size: 0.75rem;
       background-color: gray;
       background-image: url("/data/header-bg-2.jpg");
       background-size: cover;
     }
-    @media (min-width: 768px) { header { font-size: 1rem; } }
+    @media (min-width: 768px) { header { top: -10.5rem; } }
     header>* {
       position: relative;
       z-index: 10;
@@ -113,9 +113,8 @@
       box-shadow: 0 0 0 0 var(--color-main) inset;
       transition: box-shadow 300ms ease;
     }
-    header.stuck {
-      box-shadow: 0 -1rem 0 0 var(--color-main) inset;
-    }
+    header.stuck { box-shadow: 0 -1rem 0 0 var(--color-main) inset; }
+    @media (min-width: 768px) { header.stuck { box-shadow: 0 -1.5rem 0 0 var(--color-main) inset; } }
     header nav {
       position: absolute;
       left: 50%;
@@ -125,6 +124,7 @@
       white-space: nowrap;
       line-height: 1rem;
     }
+    @media (min-width: 768px) { header nav { line-height: 1.5rem;} }
     header nav a {
       position: relative;
       display: block;
@@ -132,6 +132,7 @@
       margin: 0 0.125rem;
       background-color: var(--color-main);
     }
+    @media (min-width: 768px) { header nav a { height: 1.5rem;} }
     header nav a.current
     ,header nav a.current-parent {
       background-color: #000;
@@ -141,6 +142,11 @@
       padding: 0 0.5rem;
       line-height: 1.25rem;
     }
+    @media (min-width: 768px) { header nav a span {
+      font-size: 0.75rem;
+      padding: 0 0.625rem;
+      line-height: 1.5rem;
+    } }
     header nav .logo {
       position: absolute;
       left: -1.5rem;

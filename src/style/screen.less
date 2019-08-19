@@ -131,7 +131,10 @@ ul.project-category {
   color: white;
   font-size: 0.75rem;
   line-height: 0.75rem;
-  @media @mediaM { font-size: 1rem; }
+  @media @mediaM {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
   li {
     display: block;
   }
@@ -139,6 +142,8 @@ ul.project-category {
     display: block;
     margin: 0 1px 1px 0;
     padding: 3px 6px;
+    //padding: 0.1875rem 0.375rem;
+    @media @mediaM { padding: 6px 12px; }
     box-shadow: 0 0 0 1px white;
     text-decoration: none;
     color: white;

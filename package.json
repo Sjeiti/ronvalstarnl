@@ -1,7 +1,8 @@
 {
-  "name": "web-components-redux",
-  "version": "0.4.48",
-  "description": "a test",
+  "name": "ronvalstarnl",
+  "version": "0.4.49",
+  "repository": "github:sjeiti/ronvalstarnl",
+  "description": "ste",
   "scripts": {
     "start": "run-p build build:watch serve",
     "build": "run-s clean \"webpack -- --env.development\"",
