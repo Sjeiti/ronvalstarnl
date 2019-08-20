@@ -69,6 +69,7 @@ module.exports = env => {
     ,plugins: [
       new CopyWebpackPlugin([
           { from: 'src/index.html', to: './'}
+          ,{ from: 'src/_redirects', to: './'}
 
           //,{ from: 'src/style/screen.css', to: './style/'}
           ,{ from: 'src/data', to: './data' }
