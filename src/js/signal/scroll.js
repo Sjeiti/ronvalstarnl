@@ -22,6 +22,6 @@ function handleScroll(e){
 	const maxxp = x/maxx
 	const maxy = documentElement.scrollHeight - documentElement.clientHeight
 	const maxyp = y/maxy
-	documentElement.style.setProperty('--scroll-percentage', 100*maxyp.toFixed(2)+'%')
+	documentElement.style.setProperty('--scroll-part', maxyp.toFixed(4))
 	scroll.dispatch(e,x,y,maxxp,maxyp)
 }

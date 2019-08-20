@@ -34,6 +34,7 @@ component.create('[data-header]',class extends BaseComponent{
   }
 
   setImage(src){
+    console.log('setImage',src) // todo: remove log
   }
 
   _onScroll(e,w,h){

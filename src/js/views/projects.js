@@ -58,6 +58,8 @@ add(
             ,dateFrom
             ,dateTo
           } = currentProject
+          console.log('currentProject',currentProject) // todo: remove log
+          // todo; currentProject main image to header
           parentSlug = 'projects'
           ;(existingProjects||qs('.projects')).insertAdjacentHTML('beforebegin', expand(
             'div.project>'
@@ -79,6 +81,7 @@ add(
           scrollTo(body,1000,null,top-16-bodyTop)
           //console.log(JSON.stringify(currentProject,null,1))
         }
+        //
         // category
         const current = 'current'
         const seldo = selectEach.bind(null,existingCategories||qs('.project-category'))
