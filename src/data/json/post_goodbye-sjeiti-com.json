@@ -123,5 +123,6 @@
         "templated": true
       }
     ]
-  }
+  },
+  "featured_media_file": "red.jpg"
 }

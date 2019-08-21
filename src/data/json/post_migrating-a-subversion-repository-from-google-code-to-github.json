@@ -239,5 +239,6 @@
         "templated": true
       }
     ]
-  }
+  },
+  "featured_media_file": "git-icon.svg"
 }

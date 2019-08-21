@@ -35,6 +35,7 @@ component.create('[data-header]',class extends BaseComponent{
 
   setImage(src){
     console.log('setImage',src) // todo: remove log
+    this._element.style.backgroundImage = `url("${src}")`
   }
 
   _onScroll(e,w,h){

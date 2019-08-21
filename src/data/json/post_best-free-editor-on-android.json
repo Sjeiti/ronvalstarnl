@@ -275,5 +275,6 @@
         "templated": true
       }
     ]
-  }
+  },
+  "featured_media_file": "termux.png"
 }

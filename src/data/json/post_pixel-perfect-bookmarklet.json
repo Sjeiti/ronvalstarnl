@@ -230,5 +230,6 @@
         "templated": true
       }
     ]
-  }
+  },
+  "featured_media_file": "pixels.png"
 }

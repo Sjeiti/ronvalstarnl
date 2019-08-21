@@ -260,5 +260,6 @@
         "templated": true
       }
     ]
-  }
+  },
+  "featured_media_file": "pi.png"
 }

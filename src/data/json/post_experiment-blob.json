@@ -155,5 +155,6 @@
         "templated": true
       }
     ]
-  }
+  },
+  "featured_media_file": "blob.jpg"
 }

@@ -21,21 +21,21 @@ const saveEndpoints = [
 const paging = '?per_page=99&page=3'
 
 //////////////////////////////////////////////////////////////
-const perPage = 100
-const mediaUri = `http://ronvalstar.nl/api/wp/v2/media?per_page=${perPage}&page=`
-
-getMedia().then(media=>{
-  save(`./temp/media.json`,JSON.stringify(media,null,2))
-  save(`./temp/media_map.json`,JSON.stringify(media.map(o=>({id:o.id,file:o.source_url.split('/').pop()})),null,2))
-})
-
-function getMedia(nr=1,fullList=[]){
-	return fetch(mediaUri+nr)
-      .then(rs=>rs.json())
-      .then(list=>list&&list.length&&getMedia(nr+1,[...fullList,...list])||fullList)
-}
+// const perPage = 100
+// const mediaUri = `http://ronvalstar.nl/api/wp/v2/media?per_page=${perPage}&page=`
+//
+// getMedia().then(media=>{
+//   save(`./temp/media.json`,JSON.stringify(media,null,2))
+//   save(`./temp/media_map.json`,JSON.stringify(media.map(o=>({id:o.id,file:o.source_url.split('/').pop()})),null,2))
+// })
+//
+// function getMedia(nr=1,fullList=[]){
+// 	return fetch(mediaUri+nr)
+//       .then(rs=>rs.json())
+//       .then(list=>list&&list.length&&getMedia(nr+1,[...fullList,...list])||fullList)
+// }
 //////////////////////////////////////////////////////////////
-return
+// return
 
 
 false&&fetch(baseApiUri)
@@ -50,16 +50,25 @@ false&&fetch(baseApiUri)
     //for (var s in api.routes[0])console.log(s)
   })
 
-saveEndpoints.forEach(p=>{
-  fetch(baseApiUri+p+paging)
-    .then(rs=>rs.json())
-    .then(s=>{
-      s.forEach(item=>{
-        const {id,type,slug} = item
-        save(`./temp/${type}_${slug}.json`,JSON.stringify(item,null,2))
-      })
+read('src/data/json/media_map.json')
+  .then(media=>{
+    const mediaMap = Object.values(JSON.parse(media)).reduce((acc,{id,file})=>acc.set(id,file),new Map())
+    saveEndpoints.forEach(p=>{
+      fetch(baseApiUri+p+paging)
+        .then(rs=>rs.json())
+        .then(s=>{
+          // console.log('s',s) // todo: remove log
+          s.forEach(item=>{
+            const {id,type,slug} = item
+            if (type==='post'&&item.featured_media) {
+              item.featured_media_file = mediaMap.get(item.featured_media)
+            }
+            save(`./temp/${type}_${slug}.json`,JSON.stringify(item,null,2))
+          })
+        })
     })
-})
+  })
+
 
 // posts-list
 false&&fetch(baseApiUri+'/wp/v2/posts?per_page=99')
