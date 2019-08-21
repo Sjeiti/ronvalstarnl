@@ -18,7 +18,25 @@ const saveEndpoints = [
   //,'/wp/v2/posts/3366'
 ]
 
-const paging = '?per_page=99&page=3' 
+const paging = '?per_page=99&page=3'
+
+//////////////////////////////////////////////////////////////
+const perPage = 100
+const mediaUri = `http://ronvalstar.nl/api/wp/v2/media?per_page=${perPage}&page=`
+
+getMedia().then(media=>{
+  save(`./temp/media.json`,JSON.stringify(media,null,2))
+  save(`./temp/media_map.json`,JSON.stringify(media.map(o=>({id:o.id,file:o.source_url.split('/').pop()})),null,2))
+})
+
+function getMedia(nr=1,fullList=[]){
+	return fetch(mediaUri+nr)
+      .then(rs=>rs.json())
+      .then(list=>list&&list.length&&getMedia(nr+1,[...fullList,...list])||fullList)
+}
+//////////////////////////////////////////////////////////////
+return
+
 
 false&&fetch(baseApiUri)
   .then(rs=>rs.json())
