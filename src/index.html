@@ -170,12 +170,12 @@
       max-width: 768px;
       margin: 0 auto;
     }
-    [data-pathname^="project"] main, main.wide {
+    [data-pathname^="project"]:not([data-pathname^="project-"]) main, main.wide {
       max-width: none;
     }
     main, aside {
       position: relative;
-      padding: 1rem 0;
+      padding: 1rem 0 0;
       background-color: #fff;
     }
     main>*, aside>* {
@@ -264,8 +264,7 @@
     }
 
     main>pre {
-      margin-left: 0;
-      margin-right: 0;
+      margin: 0;
       max-height: 100vh;
     }
     pre {
@@ -278,16 +277,6 @@
       font-family: var(--font-name-code);
       font-size: 0.75rem;
       line-height: 180%;
-    }
-
-    p>code {
-      padding: 0 0.5rem;
-      background-color: #ddd;
-      border-radius: 1rem;
-    }
-
-    .hhh:before,.nnn:before{
-      content: attr(data-text);
     }
   </style>
   <link
