@@ -1,11 +1,11 @@
-import {expand} from '@emmetio/expand-abbreviation'
+// import {expand} from '@emmetio/expand-abbreviation'
 import {routeChange} from './router'
 
 const siteName= 'Ron Valstar - frontend developer'
-const q = document.querySelector.bind(document)
-const qh = q.bind(q('head'))
+// const q = document.querySelector.bind(document)
+// const qh = q.bind(q('head'))
 
-routeChange.add((slug,page)=>{
+routeChange.add((slug, page)=>{
   console.log('head')
   const title = page.title.rendered||page.title
   //
@@ -17,17 +17,17 @@ routeChange.add((slug,page)=>{
   */
 })
 
-function setSelector(selector,key,value){
-  const elm = selectOrCreate(document.head,selector)
-  elm.setAttribute(key,value)
-}
+// function setSelector(selector,key,value){
+//   const elm = selectOrCreate(document.head,selector)
+//   elm.setAttribute(key,value)
+// }
 
-function selectOrCreate(root,selector){
-  const selected = root.querySelector(selector)
-  const created = !selected&&expand(selector)
-  created&&root.appendChild(created)
-  return selected||created
-}
+// function selectOrCreate(root,selector){
+//   const selected = root.querySelector(selector)
+//   const created = !selected&&expand(selector)
+//   created&&root.appendChild(created)
+//   return selected||created
+// }
 
 /*
 <link rel="canonical" href="http://ronvalstar.nl/updating-a-cypress-alias" />

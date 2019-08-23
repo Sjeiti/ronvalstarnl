@@ -16,28 +16,28 @@ let eLastKeyDown
    * @name iddqd.signal.keypress
    * @type Signal
    */
-  ,press = new Signal//signal(init)
+  , press = new Signal//signal(init)
   /**
    * Signal for keyDown.<br/>
    * The callback for this signal is Function(keyCode,keys,event)
    * @name iddqd.signal.keydown
    * @type Signal
    */
-  ,down = new Signal//signal(initDown)
+  , down = new Signal//signal(initDown)
   /**
    * Signal for keyUp.<br/>
    * The callback for this signal is Function(keyCode,keys,event)
    * @name iddqd.signal.keyup
    * @type Signal
    */
-  ,up = new Signal//signal(initUp)
+  , up = new Signal//signal(initUp)
   //
-  ,key = Object.assign([],{
+  , key = Object.assign([], {
     press: press
-    ,down: down
-    ,up: up
+    , down: down
+    , up: up
   })
-;
+
 // function init(){
 //   if (!bInit) {
 //     bInit = true;
@@ -48,25 +48,29 @@ let eLastKeyDown
 // }
 // function initDown(signal){
 //   init();
-  document.addEventListener('keydown',function(e){
-    const iKeyCode = e.keyCode;
-    key[iKeyCode] = true;
-    eLastKeyDown = e;
-    down.dispatch(iKeyCode,key,e);
-    animate.add(keypress);
-  });
+  document.addEventListener('keydown', function(e){
+    const iKeyCode = e.keyCode
+    key[iKeyCode] = true
+    eLastKeyDown = e
+    down.dispatch(iKeyCode, key, e)
+    animate.add(keypress)
+  })
 // }
 // function initUp(signal){
 //   init();
-  document.addEventListener('keyup',function(e){
-    const iKeyCode = e.keyCode;
-    key[iKeyCode] = false;
-    animate.remove(keypress);
-    up.dispatch(iKeyCode,key,e);
-  });
+  document.addEventListener('keyup', function(e){
+    const iKeyCode = e.keyCode
+    key[iKeyCode] = false
+    animate.remove(keypress)
+    up.dispatch(iKeyCode, key, e)
+  })
 // }
+
+/**
+ * Dispatch press signal
+ */
 function keypress(){
-  press.dispatch(key,eLastKeyDown);
+  press.dispatch(key, eLastKeyDown)
 }
 
-export default key;
+export default key

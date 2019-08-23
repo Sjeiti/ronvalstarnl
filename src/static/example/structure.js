@@ -6,51 +6,51 @@
  * @todo Check functionality with signal equivalent
  */
 window.my.namespace.structure = (function(){
-	"use strict";
+  'use strict'
 
-	var greatMethod = someNamespace.greatMethod
-		,boringCamelCasedInteger = 1
-		,happyString = 'happy' // 'unhappy'
-		,somethingUndefined
-	;
+  let greatMethod = someNamespace.greatMethod
+    , boringCamelCasedInteger = 1
+    , happyString = 'happy' // 'unhappy'
+    , somethingUndefined
 
-	/**
-	 * Initialise all the things
-	 */
-	function init(){
-		initVariables();
-		initEvents();
-	}
 
-	function initVariables(){
-		somethingUndefined = 'defined';
-	}
+  /**
+   * Initialise all the things
+   */
+  function init(){
+    initVariables()
+    initEvents()
+  }
 
-	function initEvents(){
-		document.body.querySelector('form').addEventListener('change',handleFormChange);
-	}
+  function initVariables(){
+    somethingUndefined = 'defined'
+  }
 
-	/**
-	 * Update stuf when the form changes
-	 * @param {Event} e
-	 */
-	function handleFormChange(e){
-		happyString = e.data.state;
-	}
+  function initEvents(){
+    document.body.querySelector('form').addEventListener('change', handleFormChange)
+  }
 
-	/**
-	 * Add a camel and tell the greatMethod.
-	 * @param {number} nr
-	 * @return {number}
-	 */
-	function addCamels(nr){
-		boringCamelCasedInteger += nr;
-		greatMethod(boringCamelCasedInteger);
-		return boringCamelCasedInteger;
-	}
+  /**
+   * Update stuf when the form changes
+   * @param {Event} e
+   */
+  function handleFormChange(e){
+    happyString = e.data.state
+  }
 
-	return {
-		init: init
-		,addCamels: addCamels
-	};
-})();
+  /**
+   * Add a camel and tell the greatMethod.
+   * @param {number} nr
+   * @return {number}
+   */
+  function addCamels(nr){
+    boringCamelCasedInteger += nr
+    greatMethod(boringCamelCasedInteger)
+    return boringCamelCasedInteger
+  }
+
+  return {
+    init: init
+    , addCamels: addCamels
+  }
+})()

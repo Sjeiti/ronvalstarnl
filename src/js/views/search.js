@@ -1,8 +1,8 @@
 import {expand} from '@emmetio/expand-abbreviation'
 import {add} from '../router'
-import {clean,selectEach} from '../utils/html'
-import {addRule,removeRule} from '../utils/style'
-import {scrollTo,nextTick} from '../utils'
+import {clean, selectEach} from '../utils/html'
+import {addRule, removeRule} from '../utils/style'
+import {scrollTo, nextTick} from '../utils'
 import {component} from '../Component'
 import {search} from '../component/Search'
 import {open} from '../router'
@@ -11,26 +11,26 @@ search.add(query=>open(`/search/${encodeURIComponent(query)}`))
 
 add(
   'search/:query'
-  ,'search'
-  ,(view,route,params)=>{
-    console.log('search',view,route,params)
+  , 'search'
+  , (view, route, params)=>{
+    console.log('search', view, route, params)
     const {query} = params
     let title = 'search'
     //
     //
     const slugPosts = {}
-    const data = ['fortpolio-list','posts-list','pages-list']
+    const data = ['fortpolio-list', 'posts-list', 'pages-list']
     Promise.all(data.map(s=>fetch(`/data/json/${s}.json`).then(r=>r.json())))
-      .then(([fortpolio,posts])=>{
+      .then(([fortpolio, posts])=>{
         //[...fortpolio,...posts].forEach(o=>console.log(o.slug))
-        ;[...fortpolio,...posts].forEach(o=>slugPosts[o.slug]=o)
+        ;[...fortpolio, ...posts].forEach(o=>slugPosts[o.slug]=o)
       })
     //
     //
     const qs = view.querySelector.bind(view)
     const existingSearch = qs('[data-search]')
     const exists = !!(existingSearch)
-    console.log('\texists',exists)
+    console.log('\texists', exists)
     //
     if(!exists){
       clean(view)
@@ -53,20 +53,20 @@ add(
     })
     //
     const getSlugUri = slug=>{
-      const [type,key] = slug.split('_')
+      const [type, key] = slug.split('_')
       return `${type==='fortpolio'?'/project':''}/${key}`
     }
     //
     const baseUri = '/data/search/'
-    fetch(baseUri+`words.json`)
+    fetch(baseUri+'words.json')
       .then(rs=>rs.json())
       .then(words=>words.filter(word=>word.includes(query.toLowerCase())))
       .then(words=>Promise.all(words.map(word=>fetch(`${baseUri}s_${word}.json`).then(r=>r.json()))))
-      .then(a=>(console.log('alSlugs',a),a))
-      .then(allSlugs=>allSlugs.reduce((acc,slugs)=>(acc.push(...slugs),acc),[]))
+      .then(a=>(console.log('alSlugs', a), a))
+      .then(allSlugs=>allSlugs.reduce((acc, slugs)=>(acc.push(...slugs), acc), []))
       .then(slugs=>{
         const {length} = slugs
-        noResult.classList.toggle('hidden',!!length)
+        noResult.classList.toggle('hidden', !!length)
         clean(result).insertAdjacentHTML('beforeend', expand(
           slugs.map(slug=>{
             const uri = getSlugUri(slug)
@@ -75,7 +75,7 @@ add(
           }).join('+')
         ))
       })
-      .catch(console.warn.bind(console,'eerr'))
+      .catch(console.warn.bind(console, 'eerr'))
     //
     return Promise.resolve({title})
   }

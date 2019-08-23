@@ -1,4 +1,4 @@
-import {TweenLite,TweenMax,Power1} from 'gsap'
+import {TweenLite, TweenMax, Power1} from 'gsap'
 
 
 // get css rule
@@ -12,10 +12,10 @@ import {TweenLite,TweenMax,Power1} from 'gsap'
  */
 export function getHash(elm){
   let attrs = elm.attributes
-      ,hash = ''
-  for (let i = attrs.length - 1; i>=0; i--) {
+      , hash = ''
+  for (let i = attrs.length - 1; i>=0; i--){
     let name = attrs[i].name
-        ,isHash = /^data\-v\-\w+$/.test(name)
+        , isHash = /^data-v-\w+$/.test(name)
     if (isHash) hash = name
   }
   return hash
@@ -28,27 +28,26 @@ export function getHash(elm){
  * @param {function} [ease=Power1.easeInOut] easing
  * @param {number} [offset=0]
  * @param {boolean} [update=false]
- * @returns {string}
  */
-export function scrollTo(elm,t=1000,ease=Power1.easeInOut,offset=0,update=false){
+export function scrollTo(elm, t=1000, ease=Power1.easeInOut, offset=0, update=false){
   let currentY = getScrollY()
-      ,animObj = {y:currentY}
-      ,elmTop = elm.getBoundingClientRect().top
-      ,targetY = currentY + elmTop + offset
-      ,tweenMethod = update&&TweenMax||TweenLite
-      ,tweenInstance
+      , animObj = {y:currentY}
+      , elmTop = elm.getBoundingClientRect().top
+      , targetY = currentY + elmTop + offset
+      , tweenMethod = update&&TweenMax||TweenLite
+      , tweenInstance
 
   tweenInstance = tweenMethod.to(
       animObj
-      ,t/1000
-      ,{
+      , t/1000
+      , {
         y: targetY
-        ,ease: ease
-        ,onUpdate: function() {
+        , ease: ease
+        , onUpdate: function(){
           window.scrollTo(0, animObj.y)
-          if (update) {
+          if (update){
             let curElmTop = elm.getBoundingClientRect().top
-                ,newTargetY = animObj.y + curElmTop + offset
+                , newTargetY = animObj.y + curElmTop + offset
             if (newTargetY!==targetY) tweenInstance.updateTo({y:newTargetY})
           }
         }
@@ -60,7 +59,7 @@ export function scrollTo(elm,t=1000,ease=Power1.easeInOut,offset=0,update=false)
  * Retreive current vertical scroll position
  * @returns {Number}
  */
-export function getScrollY() {
+export function getScrollY(){
   return (window.pageYOffset!==null)?window.pageYOffset:(html.scrollTop!==null)?html.scrollTop:document.body.scrollTop
 }
 
@@ -68,7 +67,7 @@ export function getScrollY() {
  * Retreive current vertical scroll position
  * @returns {Number}
  */
-export function getScrollX() {
+export function getScrollX(){
   return (window.pageXOffset!==null)?window.pageXOffset:(html.scrollLeft!==null)?html.scrollLeft:document.body.scrollLeft
 }
 
@@ -76,30 +75,35 @@ export function getScrollX() {
 // return uri.replace('http://localhost.ronvalstar','').replace('http://'+location.host,'')
 //}
 
-export function toggleFullScreen(element) {
+/**
+ * Toggle fullschreen mode for an element
+ * @param {HTMLElement} element
+ * @returns {boolean}
+ */
+export function toggleFullScreen(element){
   let isNotFullscreen = !document.fullscreenElement
     &&!document.mozFullScreenElement
     &&!document.webkitFullscreenElement
     &&!document.msFullscreenElement
 
   if (isNotFullscreen){
-    if (element.requestFullscreen) {
+    if (element.requestFullscreen){
       element.requestFullscreen()
-    } else if (element.msRequestFullscreen) {
+    } else if (element.msRequestFullscreen){
       element.msRequestFullscreen()
-    } else if (element.mozRequestFullScreen) {
+    } else if (element.mozRequestFullScreen){
       element.mozRequestFullScreen()
-    } else if (element.webkitRequestFullscreen) {
+    } else if (element.webkitRequestFullscreen){
       element.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT)
     }
   } else {
-    if (document.exitFullscreen) {
+    if (document.exitFullscreen){
       document.exitFullscreen()
-    } else if (document.msExitFullscreen) {
+    } else if (document.msExitFullscreen){
       document.msExitFullscreen()
-    } else if (document.mozCancelFullScreen) {
+    } else if (document.mozCancelFullScreen){
       document.mozCancelFullScreen()
-    } else if (document.webkitExitFullscreen) {
+    } else if (document.webkitExitFullscreen){
       document.webkitExitFullscreen()
     }
   }
@@ -111,26 +115,31 @@ export function toggleFullScreen(element) {
  * @param {Object} o
  * @returns {Object}
  */
-export function deepFreeze (o) {
+export function deepFreeze(o){
   Object.freeze(o)
-  Object.getOwnPropertyNames(o).forEach(function (prop) {
+  Object.getOwnPropertyNames(o).forEach(function(prop){
     if (
         o.hasOwnProperty(prop)&&
         o[prop] !== null&&
-        (typeof o[prop] === "object" || typeof o[prop] === "function")&&
+        (typeof o[prop] === 'object' || typeof o[prop] === 'function')&&
         !Object.isFrozen(o[prop])
-    ) {
+    ){
       deepFreeze(o[prop])
     }
   })
   return o
 }
 
+/**
+ * Load an image by promise
+ * @param {string} src
+ * @returns {Promise<any>}
+ */
 export function loadImage(src){
-  return new Promise((resolve,reject)=>{
+  return new Promise((resolve, reject)=>{
     let img = new Image()
-    img.addEventListener('load',resolve)
-    img.addEventListener('error',reject)
+    img.addEventListener('load', resolve)
+    img.addEventListener('error', reject)
     img.src = src
   })
 }
@@ -141,26 +150,30 @@ export function loadImage(src){
  * @param {number} [max=1]
  * @returns {number}
  */
-export function clamp(n, min=0, max=1) {
+export function clamp(n, min=0, max=1){
   return Math.min(Math.max(n, min), max)
 }
 
 /**
  * Load javascript file
- * @name loadScript
- * @method
- * @returns {Promise}
+ * @param {string} src
+ * @returns {Promise<any>}
  */
-export function loadScript(src) {
-  return new Promise((resolve,reject)=>{
+export function loadScript(src){
+  return new Promise((resolve, reject)=>{
     let script = document.createElement('script')
     document.body.appendChild(script)
-    script.addEventListener('load',resolve)
-    script.addEventListener('error',reject)
-    script.setAttribute('src',src)
+    script.addEventListener('load', resolve)
+    script.addEventListener('error', reject)
+    script.setAttribute('src', src)
   })
 }
 
+/**
+ * Next tick
+ * @param {function} fn
+ * @returns {number}
+ */
 export function nextTick(fn){
   return requestAnimationFrame(fn)
 }

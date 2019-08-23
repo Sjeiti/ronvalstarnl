@@ -1,11 +1,10 @@
-import {expand} from '@emmetio/expand-abbreviation'
 import {component, BaseComponent} from '../Component'
 import {signal} from '../signal'
 
 export const change = signal()
 export const search = signal()
 
-component.create('[data-search]',class extends BaseComponent{
+component.create('[data-search]', class extends BaseComponent{
 
   _input
 
@@ -13,11 +12,11 @@ component.create('[data-search]',class extends BaseComponent{
     super(...args)
     const options = Object.assign({
       id: 'search'+Date.now()
-      ,label: 'Search'
-      ,placeholder: 'keyword'
-      ,submit: 'Search'
-      ,autoSuggest: false
-    },this._parseOptions(this._element.getAttribute('data-search')))
+      , label: 'Search'
+      , placeholder: 'keyword'
+      , submit: 'Search'
+      , autoSuggest: false
+    }, this._parseOptions(this._element.getAttribute('data-search')))
     this._element.classList.add('search')
     this._append(`
       label[for=${options.id}]{${options.label}}
@@ -26,20 +25,20 @@ component.create('[data-search]',class extends BaseComponent{
     `)
     //
     this._input = this._select('input')
-    this._input.addEventListener('keyup',this._onKeyUp.bind(this))
+    this._input.addEventListener('keyup', this._onKeyUp.bind(this))
     const button = this._select('button')
-    button.addEventListener('click',this._onSubmit.bind(this,this._input))
+    button.addEventListener('click', this._onSubmit.bind(this, this._input))
     //
-    change.add(this._onChange.bind(this,this._input))
+    change.add(this._onChange.bind(this, this._input))
     //
     if(options.autoSuggest){
       //
-      this._append(`ul.unstyled.autosuggest`)
+      this._append('ul.unstyled.autosuggest')
       //
       fetch('/data/search/words.json')
-        .then(res=>res.json(),console.warn)
+        .then(res=>res.json(), console.warn)
         .then(words=>this._words = words)
-        .catch(console.log.bind(console,'bloody'))
+        .catch(console.log.bind(console, 'bloody'))
       //
       change.add(this._suggest.bind(this))
     }
@@ -50,25 +49,25 @@ component.create('[data-search]',class extends BaseComponent{
   }
 
   _onKeyUp(e){
-    const {target:{value},keyCode} = e
+    const {target:{value}, keyCode} = e
     this._lastValue!==value&&change.dispatch(value)
     this._lastValue = value
     keyCode===13&&this._onSubmit({value})
   }
 
-  _onChange(input,value){
+  _onChange(input, value){
     input.value!==value&&(input.value = value)
   }
 
   _onSubmit(input){
     const {value} = input
-    console.log('searchDispatch',value)
+    console.log('searchDispatch', value)
     search.dispatch(value)
   }
 
   _suggest(value){
     if (this._words){
-      const suggest = this._words.filter(word=>word.includes(value))
+      this._words.filter(word=>word.includes(value))
     }
   }
 })

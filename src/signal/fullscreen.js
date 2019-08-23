@@ -1,7 +1,7 @@
 import Signal from 'signals'
 
 const fullScreen = new Signal
-    ,vendorPrefixes = ['','webkit','moz','ms']
+    , vendorPrefixes = ['', 'webkit', 'moz', 'ms']
 
 export default fullScreen
 
@@ -13,11 +13,18 @@ export default fullScreen
 
 vendorPrefixes.forEach(prefix=>document.addEventListener(prefix+'fullscreenchange', onFullscreenEvent, false))
 
-function onFullscreenEvent(e) {
+/**
+ * Handle fullscreen event
+ */
+function onFullscreenEvent(){
   let fullscreenElement = getFullscreenElement()
-  fullScreen.dispatch(!!fullscreenElement,fullscreenElement)
+  fullScreen.dispatch(!!fullscreenElement, fullscreenElement)
 }
 
+/**
+ * Return the fullscreen element
+ * @returns {Element}
+ */
 function getFullscreenElement(){
   return document.fullscreenElement
     ||document.mozFullScreenElement
@@ -25,18 +32,22 @@ function getFullscreenElement(){
     ||document.msFullscreenElement
 }
 
+/**
+ * Return the fullscreen state
+ * @returns {boolean}
+ */
 function getFullscreenState(){
   return !!getFullscreenElement()
 }
 
 Object.defineProperty(fullScreen, 'element', {
   enumerable: false
-  ,configurable: false
-  ,get: getFullscreenElement
+  , configurable: false
+  , get: getFullscreenElement
 })
 
 Object.defineProperty(fullScreen, 'state', {
   enumerable: false
-  ,configurable: false
-  ,get: getFullscreenState
+  , configurable: false
+  , get: getFullscreenState
 })

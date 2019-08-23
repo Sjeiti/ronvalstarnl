@@ -3,13 +3,13 @@ import {expand} from '@emmetio/expand-abbreviation'
 /**
  * A component factory
  */
-class Component {
+class Component{
 
   _componentClasses = {}
   _instances = new Map()
   _body = document.body
   _eventNames = 'mousedown,mouseup,click,dblclick,submit,focus,blur,keydown,keyup,keypress'.split(/,/g)
-  _eventHandlers = this._eventNames.map(name=>'on'+name.substr(0,1).toUpperCase()+name.substr(1))
+  _eventHandlers = this._eventNames.map(name=>'on'+name.substr(0, 1).toUpperCase()+name.substr(1))
   _eventInstances = this._eventNames.map(()=>[])
   _eventInitialised = this._eventNames.map(()=>false)
 
@@ -19,7 +19,7 @@ class Component {
    * @param {function} componentClass
    */
   create(componentSelector, componentClass){
-    if (this._componentClasses[componentSelector]) {
+    if (this._componentClasses[componentSelector]){
       throw new Error(`Component with selector '${componentSelector}' already initialised`)
     } else {
       this._componentClasses[componentSelector] = componentClass
@@ -52,15 +52,15 @@ class Component {
    * @todo childOfAttr should be array of all recursed attrs
    * @private
    */
-  _initialise(rootElement,childOfAttr){
-    for (const attr in this._componentClasses) {
+  _initialise(rootElement, childOfAttr){
+    for (const attr in this._componentClasses){
       const elements = Array.from(rootElement.querySelectorAll(attr))
       const isRecursive = attr===childOfAttr&&elements.length
-      if (isRecursive) {
-        console.warn('Recursive component detected',rootElement,attr)
-        throw new Error(`Recursive component detected on ${rootElement} and ${attr}`,rootElement)
+      if (isRecursive){
+        console.warn('Recursive component detected', rootElement, attr)
+        throw new Error(`Recursive component detected on ${rootElement} and ${attr}`, rootElement)
       } else {
-        elements.map(element=>this._initElement(element,attr))
+        elements.map(element=>this._initElement(element, attr))
       }
     }
   }
@@ -71,12 +71,12 @@ class Component {
    * @param {string} attr
    * @private
    */
-  _initElement(element,attr){
-    if (!this.of(element)) {
+  _initElement(element, attr){
+    if (!this.of(element)){
       const componentClass = this._componentClasses[attr]
       const instance = new componentClass(element)
-      this._initialise(instance.element,attr)
-      this._eventHandlers.forEach((handler,i)=>{
+      this._initialise(instance.element, attr)
+      this._eventHandlers.forEach((handler, i)=>{
         instance[handler]&&this._eventInstances[i].push(instance)
       })
       element.component = instance
@@ -90,11 +90,11 @@ class Component {
    * @private
    */
   _initEvents(){
-    this._eventInstances.forEach((list,i)=>{
-      const hasTargets = list.length,
-          isInitialised = this._eventInitialised[i]
-      if (hasTargets&&!isInitialised) {
-        this._body.addEventListener(this._eventNames[i],this._onEvent.bind(this,list,this._eventHandlers[i]))
+    this._eventInstances.forEach((list, i)=>{
+      const hasTargets = list.length
+          , isInitialised = this._eventInitialised[i]
+      if (hasTargets&&!isInitialised){
+        this._body.addEventListener(this._eventNames[i], this._onEvent.bind(this, list, this._eventHandlers[i]))
         this._eventInitialised[i] = true
       }
     })
@@ -105,7 +105,7 @@ class Component {
    * @private
    */
   _dispatchOnInit(){
-    for (const instance of this._instances.values()) {
+    for (const instance of this._instances.values()){
       instance.onInit&&instance.onInit()
     }
   }
@@ -117,12 +117,12 @@ class Component {
    * @param {Event} e
    * @private
    */
-  _onEvent(list,handler,e){
+  _onEvent(list, handler, e){
     let target = e.target
-    const parents = [];
-    while (target&&target!==this._body) {
-        parents.unshift(target);
-        target = target.parentNode;
+    const parents = []
+    while (target&&target!==this._body){
+        parents.unshift(target)
+        target = target.parentNode
     }
     list.forEach(comp=>{
       parents.includes(comp.element)&&comp[handler](e)
@@ -134,7 +134,7 @@ const component = new Component()
 /**
  * A base component
  */
-class BaseComponent {
+class BaseComponent{
 
   /**
    * Initialise element with options
@@ -152,20 +152,19 @@ class BaseComponent {
     return this._element
   }
 
-  _append(zen,target){
+  _append(zen, target){
     const parentNode = target||this._element
-    const abbr = zen.replace(/\r|\n|\s{2,}/g,'')
-    console.log('a',abbr)
-    const a = parentNode.insertAdjacentHTML('beforeend', expand(abbr))
+    const abbr = zen.replace(/\r|\n|\s{2,}/g, '')
+    parentNode.insertAdjacentHTML('beforeend', expand(abbr))
   }
 
   _select(selector){
     return this?._element.querySelector(selector)
   }
 
-  _selectAll(selector){
-    return this?._element.querySelectorAll(selector)
-  }
+  // _selectAll(selector){
+  //   return this?._element.querySelectorAll(selector)
+  // }
 
   /**
    * Try parsing the options to an object
@@ -173,10 +172,10 @@ class BaseComponent {
    * @returns {object}
    * @private
    */
-  _parseOptions(options) {
-    if (BaseComponent._isJSONString(options)) {
+  _parseOptions(options){
+    if (BaseComponent._isJSONString(options)){
       options = JSON.parse(options)
-    } else if (BaseComponent._isObjectString(options)) {
+    } else if (BaseComponent._isObjectString(options)){
       options = (new Function(`return ${options}`))()
     }
     return options
@@ -188,10 +187,10 @@ class BaseComponent {
    * @returns {boolean}
    * @private
    */
-  static _isJSONString(str) {
+  static _isJSONString(str){
     if ( /^\s*$/.test(str) ) return false
-    str = str.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g, '@')
-             .replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']')
+    str = str.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g, '@') // eslint-disable-line no-useless-escape
+             .replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']') // eslint-disable-line no-useless-escape
              .replace(/(?:^|:|,)(?:\s*\[)+/g, '')
     return (/^[\],:{}\s]*$/).test(str)
   }
@@ -202,8 +201,8 @@ class BaseComponent {
    * @returns {boolean}
    * @private
    */
-  static _isObjectString(str) {
-    return /^\s?[\[{]/.test(str)
+  static _isObjectString(str){
+    return /^\s?[[{]/.test(str)
   }
 }
 

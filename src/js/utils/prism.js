@@ -4,33 +4,46 @@ Prism.languages.insertBefore('javascript', 'comment', {
   'cut': /\s*\(\.\.\.\)\s*/
 })
 Prism.languages.insertBefore('javascript', 'comment', {
-  'jsdoc': /\/\*\*\s*\n([^\*]*(\*[^\/])?)*\*\//
+  'jsdoc': /\/\*\*\s*\n([^*]*(\*[^/])?)*\*\//
 })
 
 const codeSelector = 'pre>code'
 
+/**
+ * Match elements and apply Prism
+ * @param {HTMLElement} root
+ */
 export function prismToRoot(root){
   Array.from(root.querySelectorAll(codeSelector))
     .forEach(prismToElement)
 }
 
+/**
+ * Apply Prism to element
+ * @param {HTMLElement} elm
+ */
 export function prismToElement(elm){
   const contents = elm.textContent
   const lang = elm.getAttribute('data-language')
   const prismLang = Prism.languages[lang]||Prism.languages.javascript
-  const highlighted = Prism.highlight(contents,prismLang)
-  elm.innerHTML = Prism.highlight(contents,prismLang)
-  elm.parentNode.hasAttribute('line-numbers')&&addLineNumbers(elm,contents)
+  /*const highlighted = */Prism.highlight(contents, prismLang)
+  elm.innerHTML = Prism.highlight(contents, prismLang)
+  elm.parentNode.hasAttribute('line-numbers')&&addLineNumbers(elm, contents)
   elm.classList.add('highlighted')
 }
 
-function addLineNumbers(elm,code){
+/**
+ * Add line numbers to code
+ * @param {HTMLElement} elm
+ * @param {string} code
+ */
+function addLineNumbers(elm, code){
   const match = code.match(/\n(?!$)/g)
   const linesNum = match ? match.length + 1 : 1
   const lineNumbersWrapper = document.createElement('ol')
-  for (let i=0;i<linesNum;i++) {
+  for (let i=0;i<linesNum;i++){
     const line = document.createElement('li')
-    line.setAttribute('id','code-'+(i+1)) // todo: fix id for multiple code instances
+    line.setAttribute('id', 'code-'+(i+1)) // todo: fix id for multiple code instances
     lineNumbersWrapper.appendChild(line)
   }
   lineNumbersWrapper.setAttribute('aria-hidden', 'true')
