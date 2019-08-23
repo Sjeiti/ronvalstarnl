@@ -1,9 +1,9 @@
 const {promisify} = require('util')
 const glob = promisify(require('glob'))
-const fetch = require('node-fetch')
+// const fetch = require('node-fetch')
 const utils = require('./util/utils.js')
-const {read,save} = utils
-const {parse} = require('node-html-parser')
+const {read, save} = utils
+// const {parse} = require('node-html-parser')
 
 const common = [
   'you','was','the','got','for','but'
@@ -311,21 +311,29 @@ const common = [
   ,'trstenik','trickier','trickery','traverse'
   ,'trailing','tracking','tortoise','together'
   ,'tiresome','tileable','throwing','thousand'
-
-
 ]
 
 const basePath = './src/data/search/'
 
 glob('src/data/json/@(post|page|fortpolio)_*.json')
-  //.then(console.log)
+  // .then(a=>(console.log(a),a))
   //.then(files=>files.slice(0,5))
   .then(files=>Promise.all(files.map(read)))
-  .then(files=>files.map(r=>JSON.parse(r)))
+  .then(files=>files.map(parseJSON))
   .then(files=>{
     const index = createIndex(files)
     mapIndex(files,index)
   })
+
+function parseJSON(s){
+  let parsed
+  try {
+    parsed = JSON.parse(s)
+  } catch (err) {
+    console.error(err,s)
+  }
+	return parsed
+}
 
 function createIndex(files){
   const words = files
@@ -348,7 +356,7 @@ function createIndex(files){
     .filter(s=>!common.includes(s))
     .sort()
     .sort((a,b)=>a.length>b.length?1:-1)
-  console.log(text.length)  
+  console.log(text.length)
   save(basePath+'words.json',JSON.stringify(text))
   return text
 }
