@@ -8,25 +8,16 @@ import {component} from '../Component'
 setDefault((view,route)=>fetch(`/data/json/post_${route}.json`)
     .then(rs=>rs.json(),resolve404.bind(null,view,route))
     .then(post=>{
-
-
-
-      const {featured_media_file} = post
+      const {date, title:{rendered:title}, content:{rendered:content}, featured_media_file} = post
       if (featured_media_file) {
-        //http://ronvalstar.nl/wordpress/wp-content/uploads/
-        // console.log('post',post) // todo: remove log
-            // todo; post main image to header (post.fe atured_media: 3427)
         const header = component.of(document.querySelector('[data-header]'))
-        header&&header.setImage(`http://ronvalstar.nl/wordpress/wp-content/uploads/${featured_media_file}`)
+        header&&nextTick(header.setImage.bind(header,`http://ronvalstar.nl/wordpress/wp-content/uploads/${featured_media_file}`))
       }
-
-
       clean(view)
-      const time = post.date.split('T').shift()
-      const title = post.title.rendered
+      const time = date.split('T').shift()
       view.appendChild(stringToElement(
         expand(`time.blog{${time}}+h1{${title}}`)
-        +post.content.rendered
+        +content
       ))
       nextTick(()=>prismToRoot(view))
       return Object.assign(post,{parentSlug:'blog'})

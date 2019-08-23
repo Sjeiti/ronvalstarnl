@@ -2,7 +2,8 @@ import {expand} from '@emmetio/expand-abbreviation'
 import {add} from '../router'
 import {clean,selectEach} from '../utils/html'
 import {addRule,removeRule} from '../utils/style'
-import {scrollTo} from '../utils'
+import {scrollTo,nextTick} from '../utils'
+import {component} from '../Component'
 
 const data = ['fortpolio-list','taxonomies']
 
@@ -58,8 +59,11 @@ add(
             ,dateFrom
             ,dateTo
           } = currentProject
-          console.log('currentProject',currentProject) // todo: remove log
-          // todo; currentProject main image to header
+          const image = currentProject?.thumbnail
+          if (image) {
+            const header = component.of(document.querySelector('[data-header]'))
+            header&&nextTick(header.setImage.bind(header,image))
+          }
           parentSlug = 'projects'
           ;(existingProjects||qs('.projects')).insertAdjacentHTML('beforebegin', expand(
             'div.project>'

@@ -10,6 +10,7 @@ component.create('[data-header]',class extends BaseComponent{
 
   _seldo
   _experiment
+  _background
   _stuck = signal()
   _lastScrollTop = 0
   _lastHeaderTop = 0
@@ -23,6 +24,7 @@ component.create('[data-header]',class extends BaseComponent{
     routeChange.add(this._onRouteChange.bind(this))
 
     this._initExperiments()
+    this._background = this._element.querySelector('.background')
   }
 
   _initExperiments(){
@@ -35,7 +37,11 @@ component.create('[data-header]',class extends BaseComponent{
 
   setImage(src){
     console.log('setImage',src) // todo: remove log
-    this._element.style.backgroundImage = `url("${src}")`
+    if (src) {
+      this._background.style.backgroundImage = `url("${src}")`
+    } else {
+      this._background.style.removeProperty('background-image')
+    }
   }
 
   _onScroll(e,w,h){
@@ -62,6 +68,7 @@ component.create('[data-header]',class extends BaseComponent{
     this._seldo('.'+current,elm=>elm.classList.remove(current))
     this._seldo(`a[href="/${select}"]`,elm=>elm.classList.add(current))
     this._setExperiment(name,oldName)
+    this.setImage()
   }
 
   _setExperiment(name){

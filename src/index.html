@@ -53,8 +53,8 @@
       overflow: hidden;
       color: white;
       text-transform: uppercase;
-      background-color: gray;
-      background-image: url("/data/header-bg-2.jpg");
+      background-color: var(--color-main);
+      /*background-image: url("/data/header-bg-2.jpg");*/
       background-size: cover;
     }
     @media (min-width: 768px) { header { top: -10.5rem; } }
@@ -110,13 +110,8 @@
       font-weight: 600;
     }
     
-    header {
-      z-index: 256;
-      box-shadow: 0 0 0 0 var(--color-main) inset;
-      transition: box-shadow 300ms ease;
-    }
-    header.stuck { box-shadow: 0 -1rem 0 0 var(--color-main) inset; }
-    @media (min-width: 768px) { header.stuck { box-shadow: 0 -1.5rem 0 0 var(--color-main) inset; } }
+    header { z-index: 256; }
+    /*@media (min-width: 768px) { header.stuck { box-shadow: 0 -1.5rem 0 0 var(--color-main) inset; } }*/
     header nav {
       position: absolute;
       left: 50%;
@@ -302,6 +297,7 @@
       <a href="/contact"><span>contact</span></a>
       <a href="/cv"><span>cv</span></a>
     </nav>
+    <div class="background"></div>
   </header>
   <main></main>
   <aside></aside>

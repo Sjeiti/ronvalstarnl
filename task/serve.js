@@ -11,8 +11,7 @@ const port = process.argv[3]||8183
 express()
   .use(serveStatic(`./${root}/`))
   .get('*',(request,response) => {
-    response.sendfile(`./${root}/index.html`)
-    // response.sendFile(`${__dirname}/../${root}/index.html`)
+    response.sendFile('index.html',{root: `${__dirname}/../${root}/`})
   })
   .listen(port)
 

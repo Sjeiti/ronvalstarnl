@@ -60,6 +60,7 @@ glob(dir+'fortpolio_*.json',{})
     ,inCv: inCv==='on'
     ,inPortfolio: inPortfolio==='on'
     ,thumbnail: image&&image.thumbnail
+    ,image: image&&image.full
     ,images: media.map(m=>m.medium_large)
     ,tags
     ,categories
