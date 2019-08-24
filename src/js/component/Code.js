@@ -14,6 +14,12 @@ component.create('code[data-src]', class extends BaseComponent{
     fetch(src)
       .then(res=>res.text())
       .then(text=>{
+        // gist results are JSON
+        try {
+          const obj = JSON.parse(text)
+          const {content} = obj.files&&Object.values(obj.files).pop()
+          if (content) text = content
+        } catch (err) { /*silent fail*/ }
         this._element.textContent = text
         // todo: can be done without nextTick/redraw
         nextTick(()=>prismToElement(this._element))
