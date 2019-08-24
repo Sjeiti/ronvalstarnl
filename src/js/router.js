@@ -1,4 +1,5 @@
-import {parentQuerySelector} from './utils/html'
+import {expand} from '@emmetio/expand-abbreviation'
+import {parentQuerySelector,clean} from './utils/html'
 import {signal} from './signal'
 import {component} from './Component'
 
@@ -85,10 +86,11 @@ export function open(uri){
   console.log('\turl', url, 'old', oldUrl, !!routeResolve)
   if (url!==oldUrl){
     console.log('\tresolving', name)
+    Object.assign(view,{expandAppend:expandAppend.bind(null,view)})
     routeResolve(view, name||'home', routeParams)
       .then(page=>{
         //console.clear()
-        console.log('\tresolved', JSON.stringify(page))
+        console.log('\tresolved', {page:JSON.stringify(page)})
         console.log('\troute', routeKey)
         console.log('\tpathname', name)
         console.log('\tparams', JSON.stringify(routeParams))
@@ -101,6 +103,13 @@ export function open(uri){
       })
       .catch(console.error)
   }
+}
+
+function expandAppend(element,abbreviation){
+  clean(element)
+  element.insertAdjacentHTML('beforeend', expand(abbreviation))
+  component.initialise(element)
+  return element
 }
 
 /**

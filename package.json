@@ -1,11 +1,11 @@
 {
   "name": "ronvalstarnl",
-  "version": "0.4.62",
+  "version": "0.4.63",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
   "scripts": {
     "start": "run-p build build:watch serve",
-    "build": "run-s clean search \"webpack -- --env.development\"",
+    "build": "run-s clean \"webpack -- --env.development\"",
     "build:prod": "run-s clean search \"webpack -- --env.production\"",
     "build:watch": "chokidar \"src/**/*.*\" -c \"npm run build\"",
     "webpack": "npx webpack --config webpack.config.js",

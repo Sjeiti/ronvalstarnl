@@ -1,12 +1,13 @@
 import {expand} from '@emmetio/expand-abbreviation'
 import {stringToElement, clean} from '../utils/html'
-import {setDefault} from '../router.js'
+import {searchView} from './search'
+import {setDefault} from '../router'
 import {nextTick} from '../utils'
 import {prismToRoot} from '../utils/prism'
 import {component} from '../Component'
 import {MEDIA_URI_HEADER} from '../config'
 
-setDefault((view, route)=>fetch(`/data/json/post_${route}.json`)
+setDefault((view, route, params)=>fetch(`/data/json/post_${route}.json`)
     .then(rs=>rs.json(), resolve404.bind(null, view, route))
     .then(post=>{
       const {date, title:{rendered:title}, content:{rendered:content}, featured_media_file} = post
@@ -22,7 +23,7 @@ setDefault((view, route)=>fetch(`/data/json/post_${route}.json`)
       ))
       nextTick(()=>prismToRoot(view))
       return Object.assign(post, {parentSlug:'blog'})
-    }, resolve404.bind(null, view, route)))
+    }, searchView.bind(null, view, route, params)))
 
 /**
  * View method when no routes match
@@ -34,6 +35,6 @@ setDefault((view, route)=>fetch(`/data/json/post_${route}.json`)
 function resolve404(view, route, error){
   console.error(error)
   clean(view)
-  view.appendChild(stringToElement(expand('h1.page404{404}')))
+  view.appendChild(stringToElement(expand('h1.page404{404}+[data-search="{label:\'\',submit:\'\',placeholder:\'search\',autoSuggest:true}"]')))
   return {title:'404'}
 }

@@ -106,7 +106,10 @@
     /*header h1 .logo:before, header h1 .logo:after {
       background-image: url("data/header-bg-1.jpg");
     }*/
-    header h1 .name { font-size: 3rem; }
+    header h1 .name {
+      font-size: 3rem;
+      line-height: 3rem;
+    }
     header h1 .what {
       font-size: 1.25rem;
       letter-spacing: 0.325rem;
@@ -160,6 +163,10 @@
       transition: opacity 300ms linear;
     }
     header.stuck nav .logo { opacity: 1; }
+    @media (min-width: 768px) { header.stuck nav .logo {
+      font-size: 1.6px;
+      bottom: 5px;
+    } }
     header a, footer a {
       text-decoration: none;
       color: inherit;
@@ -188,6 +195,7 @@
 
     footer {
       display: flex;
+      padding: 0 0.5rem;
       justify-content: space-between;
       align-items: center;
       width: 100%;
@@ -204,7 +212,7 @@
       flex: 0 0 auto;
     }
     footer>*:last-child {
-      flex: 1 1 auto;
+      flex: 0 1 10rem;
     }
     /*footer, footer * {box-shadow:0 0 0 1px green;}*/
     footer .social {
@@ -223,26 +231,45 @@
     footer .social span {
       display: none;
     }
-
+    ::-webkit-search-cancel-button { color: #f04; }
+    
+    
     .search {
-      display: flex;
+      position: relative;
       height: 1.375rem;
-      margin: 0 0.25rem;
+      margin: 0;
       background-color: #fff;
-      box-shadow: 0.125rem 0.25rem 0.25rem rgba(0,0,0,0.3) inset;
-      vertical-align: middle;
+      box-shadow: 0.1rem 0.2rem 0.3rem rgba(0,0,0,0.2) inset, 0 0 0 1px #f04;
     }
     .search>* { background: transparent; }
-    .search input[type=search] { flex: 1 1 33px; }
+    .search input[type=search] {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 0 1.5rem 0 0.5rem;
+    }
+    .search input[type=search]:focus {
+      box-shadow: 0 0 0 2px #f04;
+      outline: none;
+    }
     .search button {
-      flex: 0 0 1rem;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
       color: var(--color-main);
     }
     .search input { width: 4rem; }
+    
+    main .search {
+      max-width: 20rem;
+      margin: 0 auto;
+    }
 
     h1,h2,h3,h4,h5,h6 {
       font-family: var(--font-name-heading);
       font-weight: 200;
+      line-height: 120%;
     }
 
     time {
