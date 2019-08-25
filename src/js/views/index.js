@@ -1,4 +1,5 @@
 import './blog'
+import './home'
 import './pages'
 import './projects'
 import './posts'

@@ -86,7 +86,10 @@ export function open(uri){
   console.log('\turl', url, 'old', oldUrl, !!routeResolve)
   if (url!==oldUrl){
     console.log('\tresolving', name)
-    Object.assign(view,{expandAppend:expandAppend.bind(null,view)})
+    Object.assign(view,{ // todo: extending view is bad, and you should feel bad
+      expandAppend: expandAppend.bind(null,view)
+      , appendString: appendString.bind(null,view)
+    })
     routeResolve(view, name||'home', routeParams)
       .then(page=>{
         //console.clear()
@@ -105,10 +108,16 @@ export function open(uri){
   }
 }
 
-function expandAppend(element,abbreviation){
-  clean(element)
-  element.insertAdjacentHTML('beforeend', expand(abbreviation))
+function appendString(element, htmlstring, doClean=true){
+  doClean&&clean(element)
+  console.log('appendString',{element, htmlstring, doClean}) // todo: remove log
+  element.insertAdjacentHTML('beforeend', htmlstring)
   component.initialise(element)
+  return element
+}
+
+function expandAppend(element, abbreviation, doClean=true){
+  appendString(element, expand(abbreviation), doClean)
   return element
 }
 
