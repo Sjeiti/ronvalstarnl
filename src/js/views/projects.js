@@ -1,9 +1,10 @@
 import {expand} from '@emmetio/expand-abbreviation'
 import {add} from '../router'
-import {clean, selectEach} from '../utils/html'
+import {selectEach} from '../utils/html'
 import {addRule, removeRule} from '../utils/style'
 import {scrollTo, nextTick} from '../utils'
 import {component} from '../Component'
+import {MEDIA_URI_PROJECT,MEDIA_URI_THUMB} from '../config'
 
 const data = ['fortpolio-list', 'taxonomies']
 
@@ -27,20 +28,15 @@ add(
         const existingProjects = qs('.projects')
         const existingProject = qs('.project')
         const exists = !!(existingCategories&&existingProjects)
+        //316 240
         console.log('\texists', exists)
         //
         if(!exists){
-          clean(view)
-          view.insertAdjacentHTML('beforeend', expand(
-            `ul.unstyled.project-category>(${categories.map(
+          view.expandAppend(`(ul.unstyled.project-category>(${categories.map(
               o=>`(li>a[href="/projects/${o.slug}"]{${o.name}})`
-            ).join('+')})`
-          ))
-          view.insertAdjacentHTML('beforeend', expand(
-            `ul.unstyled.projects>(${portfolioProjects.map(
-              project=>`(li${project.categories.map(c=>`.cat-${c}`).join('')}[style="background-image:url(${project.thumbnail})"]>a[href="/project/${project.slug}"]>(div{${project.title}}))`
-            ).join('+')})`
-          ))
+            ).join('+')}))+ul.unstyled.projects>(${portfolioProjects.map(
+              project=>`(li${project.categories.map(c=>`.cat-${c}`).join('')}[style="background-image:url(${MEDIA_URI_THUMB+project.thumbnail})"]>a[href="/project/${project.slug}"]>(div{${project.title}}))`
+            ).join('+')})`)
         }
         //
         //
@@ -71,7 +67,7 @@ add(
             +`+time.date-to{${dateTo.replace(/-\d\d$/, '')}})`
             +`+h2{${title}}`
             +`+{${content}})`
-            +`+${images.map(m=>`(div.img[style="background-image:linear-gradient(#000 0,rgba(0,0,0,0.2) 0),url(${m})"]>img[src="${m}"])`).join('+')}`
+            +`+${images.map(m=>MEDIA_URI_PROJECT+m).map(m=>`(div.img[style="background-image:linear-gradient(#000 0,rgba(0,0,0,0.2) 0),url(${m})"]>img[src="${m}"])`).join('+')}`
           ))
           selectEach(qs('.project'), 'img', img=>{
             img.addEventListener('load', ()=>{
