@@ -6,6 +6,8 @@ import {component} from './Component'
 export const routeChange = signal()
 
 const view = document.querySelector('main')
+const viewModel = viewModelFactory(view)
+console.log('viewModel',viewModel); // todo: remove log
 
 let defaultRouteResolve
 const routes = {}
@@ -86,11 +88,7 @@ export function open(uri){
   console.log('\turl', url, 'old', oldUrl, !!routeResolve)
   if (url!==oldUrl){
     console.log('\tresolving', name)
-    Object.assign(view,{ // todo: extending view is bad, and you should feel bad
-      expandAppend: expandAppend.bind(null,view)
-      , appendString: appendString.bind(null,view)
-    })
-    routeResolve(view, name||'home', routeParams)
+    routeResolve(viewModel, name||'home', routeParams)
       .then(page=>{
         //console.clear()
         console.log('\tresolved', {page:JSON.stringify(page)})
@@ -108,17 +106,46 @@ export function open(uri){
   }
 }
 
-function appendString(element, htmlstring, doClean=true){
-  doClean&&clean(element)
-  console.log('appendString',{element, htmlstring, doClean}) // todo: remove log
-  element.insertAdjacentHTML('beforeend', htmlstring)
-  component.initialise(element)
-  return element
-}
-
-function expandAppend(element, abbreviation, doClean=true){
-  appendString(element, expand(abbreviation), doClean)
-  return element
+/**
+ * A factory method for the view that is parsed with each route change
+ * @param {HTMLElement} element
+ * @returns {object}
+ */
+function viewModelFactory(element){
+  return Object.create({
+    clean(){
+      const {element} = this
+      while (element.firstChild) element.removeChild(element.firstChild)
+      return this
+    }
+    ,appendChild(...args){
+      return this.element.appendChild(...args)
+    }
+    ,insertAdjacentHTML(...args){
+      return this.element.insertAdjacentHTML(...args)
+    }
+    ,querySelector(...args){
+      return this.element.querySelector(...args)
+    }
+    ,querySelectorAll(...args){
+      return this.element.querySelectorAll(...args)
+    }
+    ,appendString(htmlstring, doClean=true){
+      doClean&&this.clean()
+      this.insertAdjacentHTML('beforeend', htmlstring)
+      component.initialise(this.element)
+      return this
+    }
+    ,expandAppend(abbreviation, doClean=true){
+      this.appendString(expand(abbreviation), doClean)
+      return this
+    }
+  },{
+    element: {
+      value: element
+      ,writable: false
+    }
+  })
 }
 
 /**

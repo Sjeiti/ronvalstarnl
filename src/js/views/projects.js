@@ -23,10 +23,10 @@ add(
         const categories = taxonomies['fortpolio_category']
         const portfolioProjects = projects.filter(p=>p.inPortfolio)
         //
-        const qs = view.querySelector.bind(view)
-        const existingCategories = qs('.project-category')
-        const existingProjects = qs('.projects')
-        const existingProject = qs('.project')
+        const querySelector = ::view.querySelector
+        const existingCategories = querySelector('.project-category')
+        const existingProjects = querySelector('.projects')
+        const existingProject = querySelector('.project')
         const exists = !!(existingCategories&&existingProjects)
         //316 240
         console.log('\texists', exists)
@@ -40,7 +40,7 @@ add(
         }
         //
         //
-        console.log('__________', existingProjects, '2', qs('.projects'))
+        console.log('__________', existingProjects, '2', querySelector('.projects'))
         //
         //
         // project selected
@@ -61,7 +61,7 @@ add(
             header&&nextTick(header.setImage.bind(header, image))
           }
           parentSlug = 'projects'
-          ;(existingProjects||qs('.projects')).insertAdjacentHTML('beforebegin', expand(
+          ;(existingProjects||querySelector('.projects')).insertAdjacentHTML('beforebegin', expand(
             'div.project>'
             +`(.text>(.date>time.date-from{${dateFrom.replace(/-\d\d$/, '')}}`
             +`+time.date-to{${dateTo.replace(/-\d\d$/, '')}})`
@@ -69,13 +69,13 @@ add(
             +`+{${content}})`
             +`+${images.map(m=>MEDIA_URI_PROJECT+m).map(m=>`(div.img[style="background-image:linear-gradient(#000 0,rgba(0,0,0,0.2) 0),url(${m})"]>img[src="${m}"])`).join('+')}`
           ))
-          selectEach(qs('.project'), 'img', img=>{
+          selectEach(querySelector('.project'), 'img', img=>{
             img.addEventListener('load', ()=>{
               img.naturalHeight>img.naturalWidth
                 &&img.parentNode.classList.add('portrait')
             })
           })
-          const top = (existingCategories||qs('.project-category')).getBoundingClientRect().bottom
+          const top = (existingCategories||querySelector('.project-category')).getBoundingClientRect().bottom
           const {body} = document
           const bodyTop = body.getBoundingClientRect().top
           scrollTo(body, 1000, null, top-16-bodyTop)
@@ -84,7 +84,7 @@ add(
         //
         // category
         const current = 'current'
-        const seldo = selectEach.bind(null, existingCategories||qs('.project-category'))
+        const seldo = selectEach.bind(null, existingCategories||querySelector('.project-category'))
         existingCategories&&seldo('.'+current, elm=>elm.classList.remove(current))
         removeRule('ul.projects > li:not(.cat-')
         console.log('\tproject category:', category)

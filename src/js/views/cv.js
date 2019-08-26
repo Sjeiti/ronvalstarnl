@@ -1,6 +1,4 @@
-import {expand} from '@emmetio/expand-abbreviation'
 import {add} from '../router'
-import {clean, stringToElement} from '../utils/html'
 
 const data = ['page_cv', 'fortpolio-list', 'taxonomies']
 
@@ -18,16 +16,12 @@ add(
             return acc
           }, {})
         //
-        //
-        clean(view)
-        view.appendChild(stringToElement(page.content.rendered))
-        // const portfolioProjects = projects.filter(p=>p.inPortfolio)
+        view.appendString(page.content.rendered)
         //
         const cvProjects = projects
           .filter(p=>p.inCv)
           .sort((a, b)=>a.dateFrom>b.dateFrom?-1:1)
-        view.insertAdjacentHTML('beforeend', expand(
-          `ul.unstyled.cv-projects>(${cvProjects.map(
+        view.expandAppend(`ul.unstyled.cv-projects>(${cvProjects.map(
             project=>`(li${project.categories.map(c=>`.cat-${c}`).join('')}`
               +`>(.date>time.date-from{${project.dateFrom.replace(/-\d\d$/, '')}}`
               +`+time.date-to{${project.dateTo.replace(/-\d\d$/, '')}})`
@@ -36,8 +30,7 @@ add(
               +`+(ul.tags>(${project.tags.map(id=>`li{${taxonomyMap[id].name}}`).join('+')}))`
               /*+`+{${project['meta-cvcopy']}}`*/
             +')'
-          ).join('+')})`
-        ))
+          ).join('+')})`, false)
         //
         return page
       })

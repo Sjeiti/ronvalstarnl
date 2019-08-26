@@ -33,8 +33,8 @@ export function searchView(view, route, params, error) {
     })
   //
   //
-  const qs = view.querySelector.bind(view)
-  const existingSearch = qs('[data-search]')
+  const querySelector = ::view.querySelector
+  const existingSearch = querySelector('[data-search]')
   const exists = !!(existingSearch)
   console.log('\texists', exists)
   //
@@ -45,9 +45,9 @@ export function searchView(view, route, params, error) {
       ,autoSuggest:true
     }"]+ul.unstyled.page-lis.page-list.result+.no-result.hidden{No results for '${query}'.}`)
   //
-  const result = qs('.result')
-  const noResult = qs('.no-result')
-  qs('h1').classList.toggle('hidden',!is404)
+  const result = querySelector('.result')
+  const noResult = querySelector('.no-result')
+  querySelector('h1').classList.toggle('hidden',!is404)
   nextTick(change.dispatch.bind(change, query))
   //
   //
