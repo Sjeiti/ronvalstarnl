@@ -43,9 +43,9 @@ export function searchView(view, route, params, error) {
       ,submit:''
       ,placeholder:'search'
       ,autoSuggest:true
-    }"]+ul.unstyled.page-lis.page-list.result+.no-result.hidden{No results for '${query}'.}`)
+    }"]+ul.unstyled.link-list+.no-result.hidden{No results for '${query}'.}`)
   //
-  const result = querySelector('.result')
+  const result = querySelector('.link-list')
   const noResult = querySelector('.no-result')
   querySelector('h1').classList.toggle('hidden',!is404)
   nextTick(change.dispatch.bind(change, query))

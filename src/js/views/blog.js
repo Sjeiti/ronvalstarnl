@@ -10,7 +10,7 @@ add('blog', (view/*, route*/)=>
         const theRest = posts.slice(9)
         const getLi = post=>`(li>a[href="/${post.slug}"]>(time{${post.date.split('T').shift()}}+{${post.title}}))`
 
-        const ul = view.expandAppend(`ul.unstyled.blog>(${firstTen.map(getLi).join('+')})`).querySelector('ul.blog')
+        const ul = view.expandAppend(`ul.unstyled.link-list>(${firstTen.map(getLi).join('+')})`).querySelector('ul.link-list')
         requestAnimationFrame(()=>{
           ul.insertAdjacentHTML('beforeend', expand(theRest.map(getLi).join('+')))
         })

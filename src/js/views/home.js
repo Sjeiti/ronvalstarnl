@@ -1,5 +1,5 @@
 import {add} from '../router'
-import {MEDIA_URI,MEDIA_URI_THUMB} from '../config'
+import {MEDIA_URI, MEDIA_URI_THUMB} from '../config'
 
 add(
   ''
@@ -10,7 +10,7 @@ add(
         view.appendString(page.content.rendered)
         //
         // projects // todo duplicate code in `view/projects.js`
-        const projectHighlight = ['strange-attractors-javascript','kees-kroot','disconnect','project-invoice'].map(slug=>projects.filter(p=>p.slug===slug).pop())
+        const projectHighlight = ['strange-attractors-javascript', 'kees-kroot', 'disconnect', 'project-invoice'].map(slug=>projects.filter(p=>p.slug===slug).pop())
         view.expandAppend(`section>(h2.section-title>small{projects}+{built})+ul.unstyled.projects>(${projectHighlight.map(
               project=>`(li${project.categories.map(c=>`.cat-${c}`).join('')}[style="background-image:url(${MEDIA_URI_THUMB+project.thumbnail})"]>a[href="/project/${project.slug}"]>(div{${project.title}}))`
             ).join('+')})`, false)
@@ -26,7 +26,7 @@ add(
         // blog
         const firstTen = posts.slice(0, 10)
         const getLi = post=>`(li>a[href="/${post.slug}"]>(time{${post.date.split('T').shift()}}+{${post.title}}))`
-        view.expandAppend(`section>(h2.section-title>small{articles}+{written})+ul.unstyled.blog>(${firstTen.map(getLi).join('+')})`, false)
+        view.expandAppend(`section>(h2.section-title>small{articles}+{written})+ul.unstyled.link-list>(${firstTen.map(getLi).join('+')})`, false)
         return page
       })
   })
