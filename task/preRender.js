@@ -22,6 +22,7 @@ async function run(currentUri) {
 
   // todo: no 404's
   // todo: no searches?
+  // TEST FOR <meta name="robots" content="noindex,follow">
 
   save(`${targetPath}${currentUri.replace(baseUri,'')}/index.html`, renderedContent)
   siteMap.set(currentUri, renderedContent)

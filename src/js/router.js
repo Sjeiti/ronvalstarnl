@@ -1,5 +1,5 @@
 import {expand} from '@emmetio/expand-abbreviation'
-import {parentQuerySelector,clean} from './utils/html'
+import {parentQuerySelector, clean} from './utils/html'
 import {signal} from './signal'
 import {component} from './Component'
 
@@ -7,7 +7,7 @@ export const routeChange = signal()
 
 const view = document.querySelector('main')
 const viewModel = viewModelFactory(view)
-console.log('viewModel',viewModel); // todo: remove log
+console.log('viewModel', viewModel) // todo: remove log
 
 let defaultRouteResolve
 const routes = {}
@@ -118,32 +118,32 @@ function viewModelFactory(element){
       while (element.firstChild) element.removeChild(element.firstChild)
       return this
     }
-    ,appendChild(...args){
+    , appendChild(...args){
       return this.element.appendChild(...args)
     }
-    ,insertAdjacentHTML(...args){
+    , insertAdjacentHTML(...args){
       return this.element.insertAdjacentHTML(...args)
     }
-    ,querySelector(...args){
+    , querySelector(...args){
       return this.element.querySelector(...args)
     }
-    ,querySelectorAll(...args){
+    , querySelectorAll(...args){
       return this.element.querySelectorAll(...args)
     }
-    ,appendString(htmlstring, doClean=true){
+    , appendString(htmlstring, doClean=true){
       doClean&&this.clean()
       this.insertAdjacentHTML('beforeend', htmlstring)
       component.initialise(this.element)
       return this
     }
-    ,expandAppend(abbreviation, doClean=true){
+    , expandAppend(abbreviation, doClean=true){
       this.appendString(expand(abbreviation), doClean)
       return this
     }
-  },{
+  }, {
     element: {
       value: element
-      ,writable: false
+      , writable: false
     }
   })
 }

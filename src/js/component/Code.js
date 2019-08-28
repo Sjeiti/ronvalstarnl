@@ -19,7 +19,7 @@ component.create('code[data-src]', class extends BaseComponent{
           const obj = JSON.parse(text)
           const {content} = obj.files&&Object.values(obj.files).pop()
           if (content) text = content
-        } catch (err) { /*silent fail*/ }
+        } catch (err){ /*silent fail*/ }
         this._element.textContent = text
         // todo: can be done without nextTick/redraw
         nextTick(()=>prismToElement(this._element))

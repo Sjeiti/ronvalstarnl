@@ -4,7 +4,7 @@ import {selectEach} from '../utils/html'
 import {addRule, removeRule} from '../utils/style'
 import {scrollTo, nextTick} from '../utils'
 import {component} from '../Component'
-import {MEDIA_URI_PROJECT,MEDIA_URI_THUMB} from '../config'
+import {MEDIA_URI_PROJECT, MEDIA_URI_THUMB} from '../config'
 
 const data = ['fortpolio-list', 'taxonomies']
 

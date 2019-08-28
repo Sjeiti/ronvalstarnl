@@ -17,7 +17,7 @@ add('search/:query', 'search', searchView)
  * @param {object} error
  * @returns {{title: string}}
  */
-export function searchView(view, route, params, error) {
+export function searchView(view, route, params, error){
   console.log('search', view, route, params, error)
   const {query} = params||{} // todo 404 ... why are params not set?
   const is404 = !!error
@@ -47,7 +47,7 @@ export function searchView(view, route, params, error) {
   //
   const result = querySelector('.link-list')
   const noResult = querySelector('.no-result')
-  querySelector('h1').classList.toggle('hidden',!is404)
+  querySelector('h1').classList.toggle('hidden', !is404)
   nextTick(change.dispatch.bind(change, query))
   //
   //
