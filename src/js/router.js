@@ -1,5 +1,5 @@
 import {expand} from '@emmetio/expand-abbreviation'
-import {parentQuerySelector, clean} from './utils/html'
+import {parentQuerySelector} from './utils/html'
 import {signal} from './signal'
 import {component} from './Component'
 

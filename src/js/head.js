@@ -5,7 +5,7 @@ import {stringToElement} from './utils/html'
 const siteName= 'Ron Valstar - frontend developer'
 
 routeChange.add((slug, page)=>{
-  console.log('head')
+  console.log('head',{slug, page})
   const title = page.title.rendered||page.title
   const {description, link, date, modified} = page
   // todo: description
@@ -46,7 +46,14 @@ routeChange.add((slug, page)=>{
   //
   // todo: add rss
   //
-  // <meta name="robots" content="noindex,follow">
+  // robots
+  const isNoIndex = /^search\//.test(slug)||page.title==='404'
+  if (isNoIndex) {
+    setSelector('meta[property="robots"]', 'content', 'noindex,follow')
+  } else {
+    const robots = document.querySelector('meta[property="robots"]')
+    robots&&robots.parentNode.removeChild(robots)
+  }
 })
 
 /**

@@ -18,7 +18,7 @@ add('search/:query', 'search', searchView)
  * @returns {{title: string}}
  */
 export function searchView(view, route, params, error){
-  console.log('search', view, route, params, error)
+  console.log('search', {view, route, params, error})
   const {query} = params||{} // todo 404 ... why are params not set?
   const is404 = !!error
   let title = is404?'404':'search'

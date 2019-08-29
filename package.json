@@ -1,6 +1,6 @@
 {
   "name": "ronvalstarnl",
-  "version": "0.4.70",
+  "version": "0.4.71",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
   "scripts": {
@@ -18,7 +18,8 @@
     "version:minor": "npm run version -- --minor",
     "version:major": "npm run version -- --major",
     "build:test": "npx webpack --config webpack.test.config.js --env.development",
-    "build:test:watch": "npm run build:test & chokidar \"src/**/*.*\" -c \"npm run build:test\""
+    "build:test:watch": "npm run build:test & chokidar \"src/**/*.*\" -c \"npm run build:test\"",
+    "prerender": "node task/preRender"
   },
   "dependencies": {
     "@emmetio/expand-abbreviation": "^0.7.3",
@@ -63,6 +64,7 @@
     "file-loader": "^2.0.0",
     "glob": "^7.1.4",
     "html-loader": "^0.5.5",
+    "html-minifier": "^4.0.0",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "mkdirp": "^0.5.1",
