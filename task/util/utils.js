@@ -195,6 +195,39 @@ function promiseRestJSON(host,port,endpoint){
   });
 }
 
+/**
+ * Run a cli task by exec
+ * @param {string} task
+ */
+async function run(task){
+  const {promisify} = require('util')
+  const {exec} = require('child_process')
+  const pexec = promisify(exec)
+  const {stdout,stderr} = await pexec(task)
+  // stdout.on('data',console.log)
+  stdout && console.log(stdout)
+  stderr && console.warn(stderr)
+}
+
+/**
+ * Spawn a task and pipe output to current process
+ * @param {string} task
+ */
+function spawnTask(task){
+const {spawn} = require('child_process')
+  const args = typeof task==='string'?task.split(/\s+/g):task
+  const proc = spawn(args.shift(),args)
+  const {stdout,stderr} = proc
+  stdout.pipe(process.stdout)
+  stderr.pipe(process.stderr)
+  proc.on('error',console.error)
+  // error.pipe(process.error)
+  // stdout.on('data',data=>console.log(data.toString()))
+  // stderr.on('data',data=>console.warn(data.toString()))
+  // stderr.on('exit',data=>console.log(data.toString()))
+  return proc
+}
+
 module.exports = {
   glomise
   ,read
@@ -209,6 +242,8 @@ module.exports = {
   }
   ,formatBytes
   ,promiseRestJSON
+  ,run
+  ,spawnTask
   ,log: console.log.bind(console)
   ,warn: console.warn.bind(console)
   ,error: console.error.bind(console)

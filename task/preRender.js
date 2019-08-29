@@ -1,25 +1,24 @@
-// const {promisify} = require('util')
 const puppeteer = require('puppeteer')
-// const minify = require('minify')
-
-// const minifyHTML = promisify(minify.html)
 const minify = require('html-minifier').minify
+const {save} = require('./util/utils.js')
+const commander = require('commander')
+        .usage('[options] <files ...>')
+        .option('--entry [entry]', 'Entry url')
+        .option('--target [target]', 'Target path')
+        .parse(process.argv)
 
-const utils = require('./util/utils.js')
-const {save} = utils
-
-const targetPath = 'temp/renders'
-const baseUri = 'http://localhost:7047'
-
-preRender(baseUri,new Map,[])
+const {entry, target} = commander
+preRender(entry||'http://localhost:7047',target||'temp/renders',new Map,[])
 
 /**
  * Instantiate puppeteer and recursively load and render all local HTML
  * @param {string} currentUri
+ * @param {string} target
+ * @param {Map} siteMap
+ * @param {string[]} todos
  * @param {object} browser
- * @return {Promise<void>}
  */
-async function preRender(currentUri, siteMap, todos, browser) {
+async function preRender(currentUri, target, siteMap, todos, browser) {
   try {
     if (!browser) {
       browser = await puppeteer.launch()
@@ -39,12 +38,12 @@ async function preRender(currentUri, siteMap, todos, browser) {
     if (!robots) {
       const collapseBooleanAttributes = removeAttributeQuotes = collapseInlineTagWhitespace = collapseWhitespace = minifyCSS = removeComments = true
       const minifiedContent = minify(renderedContent, {collapseBooleanAttributes, removeAttributeQuotes, collapseInlineTagWhitespace, collapseWhitespace, minifyCSS, removeComments})
-      save(`${targetPath}${currentUri.replace(baseUri,'')}/index.html`.replace(/\/+/g,'/'),minifiedContent)
+      save(`${target}${currentUri.replace(entry,'')}/index.html`.replace(/\/+/g,'/'),minifiedContent)
       siteMap.set(currentUri,renderedContent)
       uris.forEach(uri => {
         const isValid = /^\//.test(uri)&&!/\.\w+$|^\/search|^\/\?p=/.test(uri)
         if (isValid) {
-          const uriConcat = (baseUri + uri.replace(/\/+/g,'/'))
+          const uriConcat = (entry + uri.replace(/\/+/g,'/'))
           const isMapped = siteMap.get(uriConcat)
           if (!isMapped) {
             siteMap.set(uriConcat,true) // awaiting... to prevent concurrent fetches
@@ -54,9 +53,9 @@ async function preRender(currentUri, siteMap, todos, browser) {
       })
     }
     const todoUri = todos.pop()
-    todoUri && preRender(todoUri,siteMap,todos,browser) || browser.close()
+    todoUri && preRender(todoUri, target,siteMap,todos,browser) || browser.close()
   }catch(err){
-    console.log('err',err) // todo: remove log
+    console.error(err)
     browser&&browser.close()
   }
 }
