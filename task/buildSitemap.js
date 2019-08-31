@@ -1,16 +1,22 @@
 const utils = require('./util/utils.js')
 const {save} = utils
+const {target} = require('commander')
+        .usage('[options] <files ...>')
+        .option('--target [target]', 'Target path')
+        .parse(process.argv)
 
 const path = '../src/data/json/'
 const posts = require(path+'posts-list.json')
 const pages = require(path+'pages-list.json')
 const portfolio = require(path+'fortpolio-list.json')
+const lastmod = new Date().toISOString()
 
 const base = 'https://ronvalstar.nl'
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
       <loc>${base}</loc>
+      <lastmod>${lastmod}</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1</priority>
    </url>
@@ -36,4 +42,4 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
    </url>`).join('')}
 </urlset>`
 
-save('src/sitemap.xml',sitemap)
+save((target||'temp')+'/sitemap.xml',sitemap)
