@@ -1,5 +1,6 @@
 import {component, BaseComponent} from '../Component'
 import {signal} from '../signal'
+import {clean} from '../utils/html'
 
 export const change = signal()
 export const search = signal()
@@ -10,6 +11,7 @@ component.create('[data-search]', class extends BaseComponent{
 
   constructor(...args){
     super(...args)
+    clean(this._element)
     const options = Object.assign({
       id: 'search'+Date.now()
       , label: 'Search'

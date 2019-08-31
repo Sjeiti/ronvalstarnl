@@ -7,13 +7,14 @@
  * @returns {HTMLDivElement}
  */
 export function appendChild(parent, nodeName='div', content, attrs){
-  attrs
   const elm = document.createElement(nodeName)
+  Object.entries(attrs).forEach(([name, value])=>elm.setAttribute(name, value))
   if (typeof content === 'string'){
     elm.innerHTML = content
   } else {
     elm.appendChild(content)
   }
+
   parent && parent.appendChild(elm)
   return elm
 }

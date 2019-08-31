@@ -4,7 +4,7 @@ import {component, BaseComponent} from '../Component'
 import {scroll} from '../signal/scroll'
 import {signal} from '../signal'
 import {routeChange} from '../router'
-import {selectEach} from '../utils/html'
+import {clean, selectEach} from '../utils/html'
 
 component.create('[data-header]', class extends BaseComponent{
 
@@ -28,9 +28,8 @@ component.create('[data-header]', class extends BaseComponent{
   }
 
   _initExperiments(){
-    this._experimentWrapper = document.createElement('div')
-    this._experimentWrapper.classList.add('experiment-wrapper')
-    this._element.appendChild(this._experimentWrapper)
+    this._experimentWrapper = this._select('.experiment-wrapper')
+    clean(this._experimentWrapper)
     this._stuck.add(is=>this._experiment?.pause(is))
     //location.pathname==='/'&&for (let name in experiments)console.log(name)
   }

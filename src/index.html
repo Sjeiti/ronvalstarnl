@@ -107,6 +107,7 @@
     header h1 {
       position: relative;
       left: 50%;
+      z-index: 2;
       display: inline-block;
       margin: 0 auto;
       transform: translateX(-50%);
@@ -136,6 +137,7 @@
       position: absolute;
       left: 50%;
       bottom: 0;
+      z-index: 2;
       display: flex;
       transform: translateX(-50%);
       white-space: nowrap;
@@ -295,7 +297,7 @@
       border: 0;
       background: #fff;
       vertical-align: middle;
-      line-height: 100%;\
+      line-height: 100%;
     }
 
     main>h1 {
@@ -326,6 +328,8 @@
 </head>
 <body>
   <header data-header>
+    <div class="background"></div>
+    <div class="experiment-wrapper"></div>
     <h1>
       <a href="/">
         <div class="logo"></div>
@@ -341,7 +345,6 @@
       <a href="/contact"><span>contact</span></a>
       <a href="/cv"><span>cv</span></a>
     </nav>
-    <div class="background"></div>
   </header>
   <main></main>
   <aside></aside>

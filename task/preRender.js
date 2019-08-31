@@ -8,7 +8,7 @@ const commander = require('commander')
         .parse(process.argv)
 
 const {entry, target} = commander
-preRender(entry||'http://localhost:7047',target||'temp/renders',new Map,[])
+preRender(entry||'http://localhost:7047', target||'temp/renders', new Map, [])
 
 /**
  * Instantiate puppeteer and recursively load and render all local HTML
@@ -19,14 +19,15 @@ preRender(entry||'http://localhost:7047',target||'temp/renders',new Map,[])
  * @param {object} browser
  */
 async function preRender(currentUri, target, siteMap, todos, browser) {
+  console.log('preRender', currentUri) // todo: remove log
   try {
-    if (!browser) {
+    if (!browser){
       browser = await puppeteer.launch()
-      browser.on('disconnected', console.log.bind(console,'Browser disconnected:'))
+      browser.on('disconnected', console.warn.bind(console, 'Browser disconnected'))
     }
-    //
     const page = await browser.newPage()
-    page.on('error',console.log.bind(console, 'Page error:'))
+    page.on('error', console.error.bind(console, 'Page error:'))
+    page.on('pageerror', console.error.bind(console, 'Page error:'))
     await page.goto(currentUri, {waitUntil: 'domcontentloaded'})
     await page.waitForFunction(()=>!!document.querySelector('main>*'), {})
     // await new Promise(r=>setTimeout(r,30))
@@ -35,27 +36,27 @@ async function preRender(currentUri, target, siteMap, todos, browser) {
     const robots = await page.evaluate(() => document.querySelector('meta[property="robots"]'))
     await page.close()
     // await page.screenshot({ path: 'temp/screenshot.png' })
-    if (!robots) {
+    if (!robots){
       const collapseBooleanAttributes = removeAttributeQuotes = collapseInlineTagWhitespace = collapseWhitespace = minifyCSS = removeComments = true
       const minifiedContent = minify(renderedContent, {collapseBooleanAttributes, removeAttributeQuotes, collapseInlineTagWhitespace, collapseWhitespace, minifyCSS, removeComments})
-      save(`${target}${currentUri.replace(entry,'')}/index.html`.replace(/\/+/g,'/'),minifiedContent)
-      siteMap.set(currentUri,renderedContent)
+      save(`${target}${currentUri.replace(entry, '')}/index.html`.replace(/\/+/g, '/'), minifiedContent)
+      siteMap.set(currentUri, renderedContent)
       uris.forEach(uri => {
         const isValid = /^\//.test(uri)&&!/\.\w+$|^\/search|^\/\?p=/.test(uri)
         if (isValid) {
-          const uriConcat = (entry + uri.replace(/\/+/g,'/'))
+          const uriConcat = (entry + uri.replace(/\/+/g, '/')).replace(/\/+$/, '')
           const isMapped = siteMap.get(uriConcat)
           if (!isMapped) {
-            siteMap.set(uriConcat,true) // awaiting... to prevent concurrent fetches
+            siteMap.set(uriConcat, true) // awaiting... to prevent concurrent fetches
             todos.push(uriConcat)
           }
         }
       })
     }
     const todoUri = todos.pop()
-    todoUri && preRender(todoUri, target,siteMap,todos,browser) || browser.close()
+    todoUri && preRender(todoUri, target, siteMap, todos, browser) || browser.close()
   }catch(err){
-    console.error(err)
+    console.error('try/catch', err)
     browser&&browser.close()
   }
 }
