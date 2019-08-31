@@ -6,12 +6,12 @@ const {target} = require('commander')
         .parse(process.argv)
 
 const path = '../src/data/json/'
+const base = 'https://ronvalstar.nl'
 const posts = require(path+'posts-list.json')
 const pages = require(path+'pages-list.json')
 const portfolio = require(path+'fortpolio-list.json')
 const lastmod = new Date().toISOString()
 
-const base = 'https://ronvalstar.nl'
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>

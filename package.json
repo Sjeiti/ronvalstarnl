@@ -1,15 +1,16 @@
 {
   "name": "ronvalstarnl",
-  "version": "0.4.75",
+  "version": "0.4.76",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
   "scripts": {
     "start": "run-p build build:watch serve",
     "build": "run-s clean \"webpack -- --env.development\"",
-    "build:prod": "run-s clean search \"webpack -- --env.production\" build:sitemap",
+    "build:prod": "run-s clean search \"webpack -- --env.production\" build:sitemap build:rss",
     "build:watch": "chokidar \"src/**/*.*\" -c \"npm run build\"",
     "build:post": "node task/postBuild",
     "build:sitemap": "node task/buildSitemap --target dist",
+    "build:rss": "node task/buildRSS --target dist",
     "webpack": "npx webpack --config webpack.config.js",
     "clean": "del-cli dist -f",
     "serve": "node task/serve dist 7047",
