@@ -71,7 +71,7 @@ component.create('[data-header]', class extends BaseComponent{
   }
 
   _setExperiment(name){
-    console.log('\txp', name, !!this._experiment)
+    console.log('Header._setExperiment', name) // todo: remove log
     if (/^experiment-.+/.test(name)){
       this._experiment&&this._experiment.exit()
       this._experiment = experiments[name.replace(/^experiment-/, '')]
@@ -81,6 +81,7 @@ component.create('[data-header]', class extends BaseComponent{
       this._experiment = null
     } else if (!name&&!this._experiment){
       this._experiment = Object.values(experiments).sort(()=>Math.random()<0.5?1:-1).pop()
+      console.log('\t',this._experiment?.name,{experiment:this._experiment}) // todo: remove log
       this._experiment.init(this._experimentWrapper)
     }
   }
