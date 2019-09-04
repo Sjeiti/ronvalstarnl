@@ -1,38 +1,37 @@
 const {promisify} = require('util')
 
-
 const glob = promisify(require('glob'))
 const utils = require('./util/utils.js')
-const {read,save} = utils
+const {read, save} = utils
 
 const dir = './src/data/json/'
-const types = ['post','fortpolio']
+// const types = ['post','fortpolio']
 
 // posts
-glob(dir+'post_*.json',{})
+glob(dir+'post_*.json', {})
 .then(files=>Promise.all(files.map(read)))
 .then(files=>files.map(file=>{
-  const {date,slug,title:{rendered:title}} = JSON.parse(file)
-  return {date,slug,title}
+  const {date, slug, title:{rendered:title}} = JSON.parse(file)
+  return {date, slug, title}
 }))
-.then(files=>files.sort((a,b)=>new Date(a.date)<new Date(b.date)?1:-1))
-.then(files=>save(dir+'posts-list.json',JSON.stringify(files)))
-.catch(console.warn.bind(console,'fuuuu'))
+.then(files=>files.sort((a, b)=>new Date(a.date)<new Date(b.date)?1:-1))
+.then(files=>save(dir+'posts-list.json', JSON.stringify(files)))
+.catch(console.warn.bind(console, 'fuuuu'))
 
 // pages
-glob(dir+'page_*.json',{})
+glob(dir+'page_*.json', {})
 .then(files=>Promise.all(files.map(read)))
 .then(files=>files.map(file=>{
-  const {slug,title:{rendered:title}} = JSON.parse(file)
-  return {slug,title}
+  const {slug, title:{rendered:title}} = JSON.parse(file)
+  return {slug, title}
 }))
-.then(files=>save(dir+'pages-list.json',JSON.stringify(files)))
-.catch(console.warn.bind(console,'fuuuu'))
+.then(files=>save(dir+'pages-list.json', JSON.stringify(files)))
+.catch(console.warn.bind(console, 'fuuuu'))
 
 // portfolio
-glob(dir+'fortpolio_*.json',{})
+glob(dir+'fortpolio_*.json', {})
 .then(files=>Promise.all(files.map(read)))
-.then(files=>files.sort((a,b)=>a.order<b.order?-1:1))
+.then(files=>files.sort((a, b)=>a.order<b.order?-1:1))
 .then(files=>files.map(file=>{
   const {
     slug
@@ -66,5 +65,5 @@ glob(dir+'fortpolio_*.json',{})
     ,categories
   }
 }))
-.then(files=>save(dir+'fortpolio-list.json',JSON.stringify(files)))
-.catch(console.warn.bind(console,'fuuuu'))
+.then(files=>save(dir+'fortpolio-list.json', JSON.stringify(files)))
+.catch(console.warn.bind(console, 'fuuuu'))

@@ -1,3 +1,4 @@
+import {expand} from '@emmetio/expand-abbreviation'
 import {add} from '../router'
 
 const data = ['page_cv', 'fortpolio-list', 'taxonomies']
@@ -21,7 +22,18 @@ add(
         const cvProjects = projects
           .filter(p=>p.inCv)
           .sort((a, b)=>a.dateFrom>b.dateFrom?-1:1)
-        view.expandAppend(`ul.unstyled.cv-projects>(${cvProjects.map(
+        let projectString = expand(`ul.unstyled.cv-projects>(${cvProjects.map(
+            (project,i)=>`(li${project.categories.map(c=>`.cat-${c}`).join('')}`
+              +`>(.date>time.date-from{${project.dateFrom.replace(/-\d\d$/, '')}}`
+              +`+time.date-to{${project.dateTo.replace(/-\d\d$/, '')}})`
+              +(project.inPortfolio?`+(h3>a[href="/project/${project.slug}"]{${project.title}})`:`+h3{${project.title}}`)
+              +`+{replaceContent${i}}`
+              +`+(ul.tags>(${project.tags.map(id=>`li{${taxonomyMap[id].name}}`).join('+')}))`
+            +')'
+          ).join('+')})`)
+        cvProjects.forEach((project,i) => projectString = projectString.replace('replaceContent'+i, project.excerpt||project.content))
+        view.appendString(projectString, false)
+        /*view.expandAppend(`ul.unstyled.cv-projects>(${cvProjects.map(
             project=>`(li${project.categories.map(c=>`.cat-${c}`).join('')}`
               +`>(.date>time.date-from{${project.dateFrom.replace(/-\d\d$/, '')}}`
               +`+time.date-to{${project.dateTo.replace(/-\d\d$/, '')}})`
@@ -29,9 +41,9 @@ add(
               // +`+{${project.content}}` // todo: it should be content
               +`+{${project.excerpt}}`
               +`+(ul.tags>(${project.tags.map(id=>`li{${taxonomyMap[id].name}}`).join('+')}))`
-              /*+`+{${project['meta-cvcopy']}}`*/
+              /!*+`+{${project['meta-cvcopy']}}`*!/
             +')'
-          ).join('+')})`, false)
+          ).join('+')})`, false)*/
         //
         return page
       })
