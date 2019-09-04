@@ -26,6 +26,7 @@ add(
               +`>(.date>time.date-from{${project.dateFrom.replace(/-\d\d$/, '')}}`
               +`+time.date-to{${project.dateTo.replace(/-\d\d$/, '')}})`
               +(project.inPortfolio?`+(h3>a[href="/project/${project.slug}"]{${project.title}})`:`+h3{${project.title}}`)
+              // +`+{${project.content}}` // todo: it should be content
               +`+{${project.excerpt}}`
               +`+(ul.tags>(${project.tags.map(id=>`li{${taxonomyMap[id].name}}`).join('+')}))`
               /*+`+{${project['meta-cvcopy']}}`*/

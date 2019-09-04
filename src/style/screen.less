@@ -275,14 +275,27 @@ ul.project-category {
   }
 }
 
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #eee;
+}
+
+
 [data-pathname^=cv] {}
 .cv-projects {
   margin: 0;
-  h3 { margin-top: 0; }
+  h3 {
+    margin-top: 0;
+    font-weight: 400;
+  }
   h3, h3>a { color: #f04; }
   >li {
-    padding: 1rem;
-    box-shadow: 0 -1px 0 #f04;
+    padding: 3rem 1rem;
+    box-shadow: 0 -1px 0 #eee;
+  }
+  time {
+    line-height: 100%;
   }
   .tags {
     padding: 0;
@@ -361,6 +374,10 @@ section:after {
     > p {
       padding-left: calc((100vw - 768px)/2);
       padding-right: calc((100vw - 768px)/2);
+      text-align: center;
+      &:first-child {
+        font-size: 2rem;
+      }
     }
   }
   del {
