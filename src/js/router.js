@@ -78,6 +78,7 @@ export function open(uri){
   let routeParams
   for (let route in routes){
     const params = getParams(route, pathname)
+    console.log('\tparams',params,route, pathname) // todo: remove log
     if(params){
       routeKey = route
       routeParams = params
@@ -86,6 +87,7 @@ export function open(uri){
     }
   }
   console.log('\turl', url, 'old', oldUrl, !!routeResolve)
+  console.log('\trouteResolve===defaultRouteResolve',routeResolve===defaultRouteResolve) // todo: remove log
   if (url!==oldUrl){
     console.log('\tresolving', name)
     routeResolve(viewModel, name||'home', routeParams)
@@ -155,7 +157,7 @@ function viewModelFactory(element){
  * @returns {object}
  */
 function getParams(route, pathname){
-  const routeReg = new RegExp(`^${route.replace(/:[a-zA-Z0-9-]+/g, '([a-zA-Z0-9-]+)')}$`)
+  const routeReg = new RegExp(`^${route.replace(/:[a-zA-Z0-9-%]+/g, '([a-zA-Z0-9-%]+)')}$`)
   const routeMatch = pathname.replace(/^\//, '').match(routeReg)
   return routeMatch&&route
     .split('/')

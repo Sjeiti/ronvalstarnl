@@ -58,6 +58,7 @@ component.create('[data-search]', class extends BaseComponent{
   }
 
   _onChange(input, value){
+    // console.log('_onChange',{input, value}) // todo: remove log
     input.value!==value&&(input.value = value)
   }
 
