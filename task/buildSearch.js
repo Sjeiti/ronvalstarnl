@@ -4,6 +4,12 @@ const glob = promisify(require('glob'))
 const utils = require('./util/utils.js')
 const {read, save} = utils
 // const {parse} = require('node-html-parser')
+const taxonomies = [...Object.values(require('../src/data/json/taxonomies.json'))].reduce((acc,o)=>{
+  acc[parseInt(o.id)] = o.name
+  return acc
+},[])
+
+
 
 const common = [
   'you','was','the','got','for','but'
@@ -341,7 +347,17 @@ function createIndex(files){
       const title = file.title.rendered||file.title
       const content = file.content.rendered||file.content
       const excerpt = file.excerpt.rendered||file.excerpt
-      return [title,content,excerpt]
+      // todo
+      const txnm =['tags','categories','clients','collaboration','prizes']
+          .reduce((acc,prop)=>{
+            return acc + (file[prop]||[]).map(id=>taxonomies[id]).join(' ')
+          },'') 
+      // const tags = file.tags
+      // const file = categories
+      // clients
+      // collaboration
+      // prizes
+      return [title,content,excerpt,txnm]
         .join(' ')
         .replace(/<\/?[^>]+(>|$)/g,' ')
         .replace(/[^\w\s]/g,' ')
