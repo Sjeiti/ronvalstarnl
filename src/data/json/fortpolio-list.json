@@ -1,1 +1,1946 @@
-[{"slug":"ome-willem","title":"Ome Willem","excerpt":"<p>Interaction design, graphic design and development for the Ome Willem website.</p>\n","content":"<p>For this website Ome Willem&#8217;s famous show was the central theme. You see the decor as interface. Buttons to different pages are sheets of paper hanging on the wall behind the Ome Willem-figure. When you press a button all sorts of things happen that have to do with that page. In the shop for example you can pull on the clothesline with hats and t-shirts. The content pages have a real cut-and-paste feel because we really made them with crayons and felt-tip pen.<br />\nBesides a guestbook, there is also a birthday calendar that visitors can fill. On their birthday they get an actual SMS with congratulations from Ome Willem.</p>\n","dateFrom":"2005-05-01","dateTo":"2005-07-01","featured":false,"inCv":true,"inPortfolio":true,"thumbnail":"omewillem1.jpg","image":"omewillem1.jpg","images":["omewillem3.jpg","omewillem.jpg","omewillem0.jpg","omewillem1.jpg","omewillem2.jpg"],"tags":[43,65,123,288,281,269,283,289,317],"categories":[273,239,268,277]},{"slug":"zeker-met-je-creditcard","title":"Zeker met je creditcard","excerpt":"<p>Frontend and backend development of zekermetjecreditcard.nl, a single page Angular website that uses Wordpress as a REST API.</p>\n","content":"<p>For the renowned studio <a href=\"http://www.buildinamsterdam.com/\">Build in Amsterdam</a> I&#8217;ve developed the site zekermetjecreditcard.nl The site aims to promote creditcard use in the Netherlands by way of small facts and polls that order themselves. </p>\n<p>In the past I&#8217;ve done a lot of Angular, and I&#8217;ve done even more WordPress. But this is the first time I did a combination of the two. So it&#8217;s a single page application that uses WordPress as a REST API. The REST API used is still under heavy development but will be part of the WordPress core in the near future.</p>\n","dateFrom":"2015-04-03","dateTo":"2015-06-01","featured":false,"inCv":true,"inPortfolio":true,"thumbnail":"Screenshot_2015-06-03-19-31-03-e1433359905965.png","image":"Screenshot_2015-06-03-19-31-03-e1433359905965.png","images":["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","Screenshot_2015-06-03-20-00-12-e1433359959134.png","Screenshot_2015-06-03-19-31-03-e1433359905965.png"],"tags":[284,65,274,280,161],"categories":[273,241,30,239,238,277]},{"slug":"opleidingen-widget","title":"Education widget","excerpt":"<p>An Elasticsearch Javascript widget comprised of CDN dependencies, with source-generated documentation and examples.</p>\n","content":"<p>The total of educations that can be followed in the Netherlands amount to a reasonable pile of data. Studiekeuze123 wanted something with which to search this data. It also had to be easy to implement and customiseable. The result is a single script that connects to an <a href=\"http://www.elasticsearch.org/\">Elasticsearch</a> server.</p>\n<p><!--more--></p>\n<p>Our reason for choosing Elasticsearch was speed. Elasticsearch is extremely fast. The downside is that it takes a whole different mindset because it seems limited compared to regular databases where you can easily execute a joined query for instance.</p>\n<p>The script itself is relatively small. CSS and HTML are parsed into the script through the build process using the headless browser <a href=\"http://phantomjs.org/\">PhantomJS</a>. For other dependencies CDN&#8217;s are used.</p>\n<p>Bootstrap is used for the CSS basis but this can be disabled at will. The layout is very easy to override since the CSS the script provides is injected to <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/document.styleSheets\">document.styleSheets</a> rather than simply added to the DOM.</p>\n<p>The build process also generates documentation and examples using Markdown with <a href=\"http://usejsdoc.org/\">JSDoc</a>.</p>\n","dateFrom":"2014-12-08","dateTo":"2014-12-31","featured":true,"inCv":true,"inPortfolio":true,"thumbnail":"sk123ow.png","image":"sk123ow.png","images":["sk123ow.png","Opleidingen-Widget.png"],"tags":[46,65,274,167,258,259,266],"categories":[273,241,239,238,171,277,276]},{"slug":"3d-panoramas","title":"3D panoramas","excerpt":"<p>User interface design and front-end Flash Actionscript 3 development for an application that links 3-dimensional panoramic views for architectural photography.</p>\n","content":"<p>Iwan Baan is a photographer. Part of his work entails photographing buildings for architects using a fish-eye lens. He used to show clients the results with a Director application. But technologies shift. I ported his work to Flash. Later on I build the same viewer again in HTML5.<br />\nI improved small things to the original application: caching and load times, user interface improvements, screen transitions.</p>\n","dateFrom":"2009-03-01","dateTo":"2009-06-01","featured":false,"inCv":true,"inPortfolio":true,"thumbnail":"pano3.jpg","image":"pano3.jpg","images":["pano0.jpg","pano1.jpg","pano2.jpg","pano3.jpg","pano4.jpg"],"tags":[284,88,123,190,281],"categories":[241,30,268,171]},{"slug":"papervision3d-primitives","title":"Papervision3D primitives","excerpt":"","content":"<p>When I started with Papervision3D it had just been ported from as2 to as3. The only primitive it had then was a plane. So I contributed a number of primitives (cube, sphere, cylinder, cone) some of which still reside in there today.</p>\n","dateFrom":"2007-02-01","dateTo":"2007-02-01","featured":false,"inCv":false,"inPortfolio":true,"thumbnail":"primitives.jpg","image":"primitives.jpg","images":["primitives.jpg"],"tags":[284,281,269,219,234,317],"categories":[268,270,285]},{"slug":"api-conversion-elasticsearch-widget","title":"API conversion Elasticsearch widget","excerpt":"","content":"<p>An education search widget used in the Antilles needed updating. The source API that filled the Elasticsearch backend had had a major overhaul. Build scripts, source code and documentation had to be updated.</p>\n","dateFrom":"2016-05-25","dateTo":"2016-06-25","featured":false,"inCv":true,"inPortfolio":false,"images":[],"tags":[46,65,274,167,258,259,266],"categories":[]},{"slug":"perlin-noise-port-java-actionscript-3","title":"Perlin noise port from Java to Actionscript 3","excerpt":"","content":"<p>Since my Processing endeavors I&#8217;ve grown quit fond of Perlin noise. The Flash implementation was rather poor so I converted Ken Perlins original Java class to Actionscript and implemented octaves, falloff and random seed.</p>\n","dateFrom":"2007-10-01","dateTo":"2007-10-01","featured":false,"inCv":false,"inPortfolio":true,"thumbnail":"8145-v1.jpg","image":"8145-v1.jpg","images":["8145-v1.jpg","noise.jpg"],"tags":[281,269,218],"categories":[268,285]},{"slug":"budlight-sensation","title":"Budlight Sensation","excerpt":"","content":"<p>Implementation of Sensation event into the existing Canadian Budlight website. The event was spread into a number of phases which had to be deployed at specific dates.</p>\n","dateFrom":"2013-03-01","dateTo":"2013-05-01","featured":false,"inCv":true,"inPortfolio":true,"thumbnail":"budlight_1.jpg","image":"budlight_1.jpg","images":["budlight_1.jpg","budlight_2.jpg","budlight_3.jpg","budlight_4.jpg","budlight_5.jpg","budlight_6.jpg"],"tags":[46,65,274,89,162,163,168],"categories":[273,241,239,238,278,277,276]},{"slug":"philips-website","title":"Philips website","excerpt":"","content":"<p>For the responsive re-make of the Philips a demo was made by de Voorhoede. The demo had to be turned into workable code.<br />\nI helped setting up the the Javascript coding guidelines for structuring and documenting the components. We used JSDOC to generate source code documentation.<br />\nThe scrum team I was part of also implemented the first few (and most difficult) components. There were about 140 components, the bulk of these were later implemented by MediaMonks.</p>\n","dateFrom":"2013-05-01","dateTo":"2013-07-01","featured":true,"inCv":true,"inPortfolio":true,"thumbnail":"Philips-Consumenten-producten-e1437373928995.jpg","image":"Philips-Consumenten-producten-e1437373928995.jpg","images":["Philips-Consumenten-producten-e1437373928995.jpg","De-Philips-SHAVER-Series-9000-SensoTouch-Scheerapparaat-voor-nat-droog-scheren-RQ1275-16-Scheerapparaat-voor-nat-droog-scheren-kopen-e1437373812808.jpg","Philips-GEZICHT-Scheerapparaten-e1437373862527.jpg","DEC_Compare_Page_v1.png","01_CAT_Shavers.png","03_PDP_Shavers.png","09_PDP_Coffee.png","DEC_Grid_Latest_small_banner.png","PDP_CRP_overview_v1.png","PDP_CRP_reviews_v1.png"],"tags":[65,274,165,208,266],"categories":[273,241,278,276]},{"slug":"coffeebreak","title":"Coffeebreak","excerpt":"","content":"<p>Development of and application for use within 72andSunny. The application randomly matches colleagues to go on a coffeebreak.</p>\n","dateFrom":"2014-04-25","dateTo":"2014-05-01","featured":false,"inCv":true,"inPortfolio":false,"images":[],"tags":[34,161,165],"categories":[273,241,239,238,276]},{"slug":"philipsspotify-application","title":"Philips/Spotify application","excerpt":"","content":"<p>Development of a Spotify application where users can send their favorite music to be added to the Philips Spotify playlist.</p>\n","dateFrom":"2013-09-01","dateTo":"2013-10-01","featured":false,"inCv":true,"inPortfolio":false,"thumbnail":"PhilipsSpotify.png.jpg","image":"PhilipsSpotify.png.jpg","images":["PhilipsSpotify.png.jpg"],"tags":[65,274,165,167],"categories":[273,241,239]},{"slug":"deepred","title":"Deepred","excerpt":"","content":"<p>An HTML5 website with lots of streaming video (no Flash). I advised the client on the technology concerning different platforms and eventually developed the end product.</p>\n","dateFrom":"2010-06-01","dateTo":"2010-07-01","featured":false,"inCv":false,"inPortfolio":false,"thumbnail":"deepred3.jpg","image":"deepred3.jpg","images":["deepred1.jpg","deepred2.jpg","deepred3.jpg"],"tags":[46,65,274,289,317],"categories":[273,241,239,287]},{"slug":"pixelfabrics","title":"Pixelfabrics","excerpt":"<p>A crossplatform Air application that turns image sequences into an HTML5 3D viewer that works crossdevice, crossplatform and crossbrowser.</p>\n","content":"<p>At StillsnMotion robotic arms are sold that accurately rotate around objects to take photographs. For StillsnMotion I developed a cross-platform application that converts these images to a cross-browser and cross-device HTML5 application.<br />\nThe application is provided with a user, and license key. This encryption is also implemented in the final HTML5 application making it very difficult to steal by third parties.</p>\n","dateFrom":"2011-02-01","dateTo":"2011-05-01","featured":false,"inCv":false,"inPortfolio":true,"thumbnail":"pixelfabrics3.jpg","image":"pixelfabrics3.jpg","images":["pixelfabrics1.jpg","pixelfabrics2.jpg","pixelfabrics3.jpg"],"tags":[65,274,281,198,269,289,317],"categories":[]},{"slug":"dustin-kershaw","title":"Dustin Kershaw","excerpt":"","content":"<p>Development of a portfolio website for Dustin Kershaw.</p>\n","dateFrom":"2011-08-01","dateTo":"2011-10-01","featured":false,"inCv":false,"inPortfolio":true,"thumbnail":"dustin1.jpg","image":"dustin1.jpg","images":["dustin1.jpg","dustin2.jpg","dustin3.jpg","dustin4.jpg"],"tags":[65,274,280,279,289,317],"categories":[]},{"slug":"plus-christmas-campaign","title":"Plus christmas campaign","excerpt":"","content":"<p>Frontend development of a christmas campaign for Plus supermarkets. Users can compose their christmas dinner and download/email/print their grocery list.</p>\n","dateFrom":"2013-11-01","dateTo":"2013-12-01","featured":false,"inCv":false,"inPortfolio":false,"images":[],"tags":[46,65,274],"categories":[]},{"slug":"fc-walvisch","title":"FC Walvisch","excerpt":"<p>Re-design and creation of the site of one of the foremost Dutch sound studios.</p>\n","content":"<p>FC Walvisch is a sound studio with a soccer fan at the helm. A new site design was due: in a 70&#8217;s technicolor soccer style, serious, with a wink (or vice versa).</p>\n","dateFrom":"2008-05-01","dateTo":"2008-07-01","featured":false,"inCv":true,"inPortfolio":false,"thumbnail":"fcwalvisch.jpg","image":"fcwalvisch.jpg","images":["fcwalvisch.jpg"],"tags":[46,280,123,288,281,283,279,289,317],"categories":[273,241,239,268,282,287,171,277]},{"slug":"project-invoice","title":"Project Invoice","excerpt":"<p>This invoicing application stores all your data on your local machine. It started from a personal need but ended up a full fledged open-source project: end-to-end tests, unit tests, semver, milestones, the works.</p>\n","content":"<p>This invoicing application stores all your data on your local machine. None of the data is shared between different browsers or computers.<br />\nProject Invoice is accessible offline after the application has been loaded for the first time. You can turn it into a mobile-web-app by using the add-to-home-screen from your mobile browser.</p>\n<p>It started from a personal need but ended up a full fledged open-source project. That means end-to-end tests, unit tests, semver, milestones, the works.</p>\n<p>https://projectinvoice.nl</p>\n","dateFrom":"2015-11-12","dateTo":"2019-01-01","featured":false,"inCv":true,"inPortfolio":true,"thumbnail":"pi.png","image":"pi.png","images":["Screenshot_2018-03-25-20-58-43.png","Screenshot_2018-03-25-20-55-28.png","Screenshot_2018-03-25-20-56-46.png","Screenshot_2018-03-25-20-57-20.png"],"tags":[274,289,302,316,317],"categories":[273,241,239,238,285,171]},{"slug":"frogs-space","title":"Frogs from space","excerpt":"","content":"<p>Als ik aan schapen denk, denk ik aan ontvoeringen door buitenaardse wezens (maar misschien ben ik de enige). Dit spel heb ik gemaakt om te kijken in hoeverre het mogelijk is dynamisch levels te genereren. De levels worden nu met XML ingeladen. Naast de grafische presentatie van een level staan hier ook uiteenlopende condities in beschreven die nodig zijn om een level te halen. Toch is de XML-structuur redelijk simpel gebleven.</p>\n<p>A Flash game in which you fly a ufo and abduct sheep by way of first contact.</p>\n","dateFrom":"2005-06-01","dateTo":"2005-07-01","featured":false,"inCv":false,"inPortfolio":true,"thumbnail":"schapenII_4.jpg","image":"schapenII_4.jpg","images":["schapenII_5.jpg","schapen.jpg","schapen0.jpg","schapen1.jpg","schapen2.jpg","schapen3.jpg","schapen4.jpg","schapenII_1.jpg","schapenII_2.jpg","schapenII_3.jpg","schapenII_4.jpg"],"tags":[281,269,289,271,235,317],"categories":[268,270]},{"slug":"propros","title":"Propros","excerpt":"","content":"<p>Debugging an existing application to fix IE8 compatibility.</p>\n","dateFrom":"2014-07-03","dateTo":"2014-07-18","featured":false,"inCv":false,"inPortfolio":false,"images":[],"tags":[67,274],"categories":[273,241,239,270]},{"slug":"hans-reinerie","title":"Hans Reinerie","excerpt":"","content":"<p>Een site waarbij de foto&#8217;s centraal staan. Een mooie oplossing voor liggend en staande foto&#8217;s is dat de liggende foto&#8217;s fullscreen zijn verschaald en de staande foto&#8217;s on-the-fly worden voorzien van een geblurde achtergrond.</p>\n","dateFrom":"2012-11-01","dateTo":"2012-12-01","featured":false,"inCv":true,"inPortfolio":false,"thumbnail":"Hans-Reinerie-Photography-2.jpg","image":"Hans-Reinerie-Photography-2.jpg","images":["Hans-Reinerie-Photography-3.jpg","Hans-Reinerie-Photography-1.jpg","Hans-Reinerie-Photography-2.jpg"],"tags":[46,65,274,280,288,289,317],"categories":[273,239]},{"slug":"protest","title":"Protest","excerpt":"","content":"<p>Implementation of new features into an existing website.</p>\n","dateFrom":"2014-09-19","dateTo":"2014-09-26","featured":false,"inCv":true,"inPortfolio":false,"images":[],"tags":[46,274,280],"categories":[273,241,239,277]},{"slug":"hso-app","title":"HSO app","excerpt":"<p>Developed a single-page responsive web application that allows teachers and students to track their progress during a course. Used Angular as Javascript framework and Laravel to create a REST service.</p>\n","content":"<p>The Wageningen University normally uses Blackboard. But Blackboard is a rather cumbersome tool. So some teachers had an idea for a web application to allow teachers and students to track their progress during the course.</p>\n<p>Together with Shapers I developed a single-page responsive web application to do just that. The initial idea was to use it as an abstraction layer onto Blackboard but technical restrictions did not allow that. So all data is from a separate database. We used Laravel to create a REST service.</p>\n<p>Students can watch and update their progress throughout the course by completing tasks. Additionally, there are tasks set per week that students have to complete or upload for review.<br />\nTeachers can follow the progress of all students and make changes to the course.</p>\n","dateFrom":"2014-01-17","dateTo":"2014-03-14","featured":false,"inCv":true,"inPortfolio":false,"thumbnail":"HSO-App-students.png","image":"HSO-App-students.png","images":["HSO-App-mobile-login.png","HSO-App-mobile-menu.png","HSO-App-mobile-week-1.png","HSO-App-overview.png","HSO-App-profile.png","HSO-App-settings.png","HSO-App-student.png","HSO-App-students.png","HSO-App-week-1.png","HSO-App-mobile-group-tasks.png"],"tags":[65,161,162,163,165],"categories":[273,238,277,276]},{"slug":"randstad-planning-application","title":"Randstad planning application","excerpt":"","content":"<p>I worked on the internal application Randstad uses to plan people for their clients. This is an old application and was somewhat outdated. A previous attempt was made to renew the client side of things but it failed miserably when for instance loading and searching a few thousand records.<br />\nSo a scaffold framework was setup by Mirabeau. Next I was called in to implement all the things. The target goal was to recreate the entire web application responsively, keeping in mind that there are clients that have over a few thousand records. Due to size and complexity (and also a bit of GDPR) this took wel over two years to accomplish.</p>\n","dateFrom":"2017-04-01","dateTo":"2019-01-31","featured":true,"inCv":true,"inPortfolio":true,"images":[],"tags":[46,65,274,86,111,208,289,302,318],"categories":[273,241,239,238]},{"slug":"html5-tv-application-prototype","title":"HTML5 tv application prototype","excerpt":"","content":"<p>Development of a prototype application for interactive tv.</p>\n","dateFrom":"2013-11-01","dateTo":"2013-12-01","featured":false,"inCv":true,"inPortfolio":false,"thumbnail":"tvprototype_leftright.jpg","image":"tvprototype_leftright.jpg","images":["tvprototype_start.jpg","tvprototype_feed.jpg","tvprototype_leftright.jpg","tvprototype_loading.jpg"],"tags":[65,274,165,167,221,176],"categories":[]},{"slug":"rekentuin","title":"Rekentuin","excerpt":"","content":"<p>Development of a serious gaming environment where children grow a garden while learning. I was given a number of illustrations that I made come to life using L-systems.</p>\n","dateFrom":"2009-02-01","dateTo":"2009-03-01","featured":false,"inCv":true,"inPortfolio":false,"thumbnail":"rekentuin.jpg","image":"rekentuin.jpg","images":["rekentuin.jpg"],"tags":[281,317],"categories":[241,268,270]},{"slug":"juridaii","title":"Lea Jurida","excerpt":"","content":"<p>This redesign for <a href=\"http://www.jurida.com/\">Lea Jurida</a> never got further than a prototype with 3D cubes. Still cute though.</p>\n","dateFrom":"2010-09-04","dateTo":"2010-10-04","featured":false,"inCv":false,"inPortfolio":true,"thumbnail":"jurida1.jpg","image":"jurida1.jpg","images":["jurida5.jpg","jurida0.jpg","jurida1.jpg","jurida2.jpg","jurida3.jpg","jurida4.jpg"],"tags":[65,123,281,269,289,317],"categories":[241,30,268,282,287,171]},{"slug":"ronvalstar-nl","title":"ronvalstar.nl","excerpt":"","content":"<p>The medium is the message when you take yourself seriously as a frontend developer. So when the first version of the WordPress REST API was born I was quick to try it out with a single page Vue frontend.</p>\n<p>Which is the means by which you&#8217;re reading this now: the CV on my site is fed by a custom written projects plugin and can easily be exported to PDF. Because I don&#8217;t like to repeat myself, and I like keeping things in one place.</p>\n","dateFrom":"2016-12-24","dateTo":"2019-01-01","featured":false,"inCv":true,"inPortfolio":false,"thumbnail":"ronvalstar.nl_.jpg","image":"ronvalstar.nl_.jpg","images":["ronvalstar.nl_-768x432.jpg"],"tags":[274,302],"categories":[273,241,239,238]},{"slug":"kees-kroot","title":"Kees Kroot","excerpt":"","content":"<p>This Flash site gives you a glimpse into the head of Kees Kroot. In addition to the portfolio, you can also see what inspires Kees. If you send Kees a message it immediately pops into his head.</p>\n","dateFrom":"2009-03-01","dateTo":"2009-04-01","featured":false,"inCv":true,"inPortfolio":true,"thumbnail":"kees3.jpg","image":"kees3.jpg","images":["keesfwa.jpg","kees.jpg","kees0.jpg","kees1.jpg","kees2.jpg","kees3.jpg","kees4.jpg","kees5.jpg"],"tags":[284,43,65,123,281,235],"categories":[241,30,268,277]},{"slug":"satriun","title":"Satriun","excerpt":"<p>Fully responsive website with video and boring content.</p>\n","content":"<p><strike>I have no idea what these men really do. But they did want a fully responsive website with fullscreen video backgrounds.</strike></p>\n<p>Satriun Group designs and implements Corporate Performance Management (CPM) solutions. The Satriun Group brings together the necessary expertise for Financial Management, Regulatory Support, Information Technology and Change Management, maximizing the success and value added of their customer&#8217;s CPM projects. They wanted a fully responsive website with fullscreen video backgrounds.</p>\n","dateFrom":"2014-10-01","dateTo":"2014-10-20","featured":false,"inCv":false,"inPortfolio":false,"thumbnail":"Satriun-Corporate-Performance-Management.jpg","image":"Satriun-Corporate-Performance-Management.jpg","images":["Satriun-Corporate-Performance-Management.jpg","Satriun-Our-vision.jpg"],"tags":[274,280,165,279],"categories":[273,241,239,278,276]},{"slug":"klm-widget","title":"KLM widget","excerpt":"","content":"","dateFrom":"2007-11-01","dateTo":"2007-12-07","featured":false,"inCv":false,"inPortfolio":false,"images":[],"tags":[],"categories":[268]},{"slug":"seattle-ipad","title":"Seattle iPad","excerpt":"","content":"<p>3D panorama viewer of the Seattle public library for the iPad.</p>\n","dateFrom":"2011-11-01","dateTo":"2011-12-01","featured":false,"inCv":true,"inPortfolio":true,"thumbnail":"seattleIpad3.jpg","image":"seattleIpad3.jpg","images":["seattleIpad1.jpg","seattleIpad2.jpg","seattleIpad3.jpg","seattleIpad4.jpg"],"tags":[274,123,190,194,195,196],"categories":[273,241,30,239,276]},{"slug":"lea-jurida","title":"Lea Jurida","excerpt":"<p>Flash website for sound designer Lea Jurida.</p>\n","content":"<p>Lea Jurida is a sound designer. In her site, the emphasis should be on natural sound. An interesting technique I invented for this site, is the way of loading content. Normally search engines can not index the content of a Flash site. But in this case loads the Flash site xhtml content, which is simply the index.html.</p>\n<p>In the mean time, Apple killed Flash and <a href=\"http://www.jurida.com/\">Lea&#8217;s new website</a> is plain old HTML again.</p>\n","dateFrom":"2010-09-11","dateTo":"2010-10-11","featured":false,"inCv":true,"inPortfolio":false,"thumbnail":"jurida.jpg","image":"jurida.jpg","images":["jurida.jpg"],"tags":[65,123,288,281,269,283,279,289,317],"categories":[241,268,282,287,171,277]},{"slug":"sfbrowser","title":"SFBrowser","excerpt":"<p>With jQuery and PHP I made a very extensive file uploader that can be hooked onto any CMS. You can even port it to a different server side language through the use of connectors.</p>\n","content":"<p>Most content management systems have a fairly crummy way of uploading and managing files. With jQuery and PHP I made a very extensive file uploader that can be hooked onto any CMS. You can even port it to a different server side language through the use of connectors.</p>\n<p>I pulled the plug on this project in 2013, but I do have a half-finished Angular implementation lying around for when I am really bored.</p>\n","dateFrom":"2008-05-01","dateTo":"2014-04-01","featured":false,"inCv":true,"inPortfolio":false,"thumbnail":"sfbrowser.jpg","image":"sfbrowser.jpg","images":["sfbrowser4.jpg","sfbrowser.gif","sfbrowser.jpg","sfbrowser0.jpg","sfbrowser1.jpg","sfbrowser2.jpg","sfbrowser3.jpg"],"tags":[46,274,275,89,123],"categories":[273,241,239,268,285,171,277]},{"slug":"novartis","title":"Novartis","excerpt":"<p>A virtual 3d panorama tour, consisting of multiple panoramas through which you navigate by space or by stories.</p>\n","content":"<p><a href=\"http://www.novartis.com\">Novartis</a> is a Swiss farmacuetical company. Their headquarters in Basel consists of several buildings, some of which are architectural materpieces. Along with the Dutch architectural photographer <a href=\"http://www.iwan.com/\">Iwan Baan</a> and <a href=\"http://2x4.org/\">2&#215;4</a> from New York, I made a prototype for a virtual tour of this campus. With the three-dimensional panorama pictures you can walk through the campus and watch a variety of content.</p>\n","dateFrom":"2011-05-01","dateTo":"2011-07-01","featured":true,"inCv":true,"inPortfolio":true,"thumbnail":"novartis1.jpg","image":"novartis1.jpg","images":["novartis1.jpg","novartis2.jpg","novartis3.jpg","novartis4.jpg","novartis5.jpg"],"tags":[46,274,123,190,240],"categories":[273,30,239]},{"slug":"smorenburg","title":"Smorenburg","excerpt":"","content":"","dateFrom":"2013-02-01","dateTo":"2013-03-01","featured":false,"inCv":false,"inPortfolio":false,"thumbnail":"smorenburg1.jpg","image":"smorenburg1.jpg","images":["smorenburg3.jpg","smorenburg1.jpg","smorenburg2.jpg"],"tags":[46,65,274,280],"categories":[273,239,277]},{"slug":"blauwe-planeet","title":"Blauwe planeet","excerpt":"<p>This is an actually an older CD-Rom project I&#8217;d worked on before at Shapers for Thieme Meullenhoff. Within a week I created a Flash prototype that looked and worked better than the original Director version.</p>\n","content":"<p>For Thieme Meulenhoff, Shapers developed a series topography CD-ROM&#8217;s for group 7, 8 and 9. The CD-ROM&#8217;s provide a complete, fun and effective way to learn topography They are part of the method &#8216;Blue Planet&#8217;. Later on, part of the series was ported to Flash to make it available online. We took the opportunity ??to improve it interactive and graphically.</p>\n","dateFrom":"2009-01-01","dateTo":"2009-02-01","featured":false,"inCv":true,"inPortfolio":true,"thumbnail":"blauweplaneet3.jpg","image":"blauweplaneet3.jpg","images":["blauweplaneet1.jpg","blauweplaneet2.jpg","blauweplaneet3.jpg","blauweplaneet4.jpg","blauweplaneet.jpg","blauweplaneet0.jpg"],"tags":[123,288,281,269,283,289,271,317],"categories":[241,268,270,282,287]},{"slug":"soundcircus","title":"Soundcircus","excerpt":"<p>Flash website that won an FWASOTD, an ADCN Lamp and a Webby!</p>\n","content":"<p>The successor to the Kees Kroot website might be less spectacular from an interactive point of view but equals it in terms of atmosphere. This time the site was rewarded a FWASOTD, a silver ADCN Lamp and also a Webby!</p>\n","dateFrom":"2011-03-01","dateTo":"2011-05-01","featured":true,"inCv":true,"inPortfolio":true,"thumbnail":"soundcircus5.jpg","image":"soundcircus5.jpg","images":["soundcircus1.jpg","soundcircus2.jpg","soundcircus3.jpg","soundcircus4.jpg","soundcircus5.jpg"],"tags":[46,65,275,89,281,269],"categories":[241,30,268,278,277]},{"slug":"dashboard","title":"Dashboard","excerpt":"","content":"<p>An Angular dashboard for big data results from a REST API.</p>\n","dateFrom":"2015-02-01","dateTo":"2015-03-18","featured":false,"inCv":false,"inPortfolio":false,"images":[],"tags":[274,161],"categories":[273,241,238]},{"slug":"strange-attractors-javascript","title":"Strange attractors in Javascript","excerpt":"<p>A pure Javascript strange attractor renderer with a WebGL preview. Renders images and animated gifs from mathematical formulas with interpolated variables.</p>\n","content":"<p>Over ten years ago I made a strange attractor renderer in Java (and P55). Back then Java applets were still the only way to get raw computing power to the client-side of the web. A strange attractor is not complicated, but because it is deterministic it needs a few billion iterations for a proper result. September last year Chrome dropped support for Java applets. Since Javascript has come a long way I thought I&#8217;d try a remake in Nodejs. I compared a rough to a client-side implementation and found the speed difference negligible enough to bring the entire implementation to client-side Javascript.<br />\nContrary to the old Java applet <a href=\"http://attractors.ronvalstar.nl\" target=\"_blank\">this Javascript version</a> can burp out animated gifs and webm videos.</p>\n","dateFrom":"2016-03-04","dateTo":"2016-07-14","featured":true,"inCv":true,"inPortfolio":true,"thumbnail":"attractors01.jpg","image":"attractors01.jpg","images":["attractors00-768x432.png","attractors01-768x432.jpg","attractors02-768x432.jpg","Lorenz-84-52.gif","Lorenz-84-31.gif","Lorenz-84-57-768x432.png"],"tags":[274,289,218,235,250,297,317],"categories":[273,30,278,285]},{"slug":"fc-voetbalreizen","title":"FC Voetbalreizen","excerpt":"","content":"<p>Interaction design and development of a soccer-travel site.</p>\n","dateFrom":"2013-01-01","dateTo":"2013-09-01","featured":false,"inCv":true,"inPortfolio":false,"thumbnail":"voetbalreizen.jpg","image":"voetbalreizen.jpg","images":["voetbalreizen.jpg"],"tags":[46,65,274,280,289,317],"categories":[273,239,171,277]},{"slug":"strange-attractors","title":"Strange attractors","excerpt":"","content":"<p>This side project started of in Processing but soon grew into a Java project. Strange attractors are a set of rules that change a set of points. Only after a few million iterations their true form becomes appearant.</p>\n","dateFrom":"2006-06-01","dateTo":"2006-08-01","featured":true,"inCv":true,"inPortfolio":true,"thumbnail":"L84.jpg","image":"L84.jpg","images":["Lorenz-4600-18500-600-3-4000.jpg","L84.jpg","Latoocarfian-2304-2991-856-4738-3673-4877.jpg","Lorenz84-225-2391-2665-1218-48-11.jpg","Lorenz84-225-2391-2665-1236-48.jpg","Lorenz84-1235-655-946-484-356.jpg","Lorenz84-12700-04809-11237-03526-02731.jpg"],"tags":[95,289,272,218,235,317],"categories":[241,30,278,285,282]},{"slug":"green-today","title":"Green Today","excerpt":"","content":"<p>Green Today is een beurs over groen. Geen geitenwollen sokken groen, maar high tech groen. De site is een WordPress CMS met speciaal ontwikkelde HTML5 templates en plugins, met veel Javascript animatie en canvas.</p>\n","dateFrom":"2010-10-01","dateTo":"2010-11-01","featured":false,"inCv":true,"inPortfolio":false,"thumbnail":"greentoday0.jpg","image":"greentoday0.jpg","images":["greentoday1.jpg","greentoday2.jpg","greentoday3.jpg","greentoday0.jpg"],"tags":[43,46,65,274,280,317],"categories":[273,239,278,287,171,277]},{"slug":"studyblend-improvements","title":"Studyblend improvements","excerpt":"","content":"<p>Several teacher/student improvements were made to the Studyblend Angular application. One of which a bulk download functionality for student assignments.</p>\n","dateFrom":"2016-09-08","dateTo":"2016-08-17","featured":false,"inCv":false,"inPortfolio":false,"images":[],"tags":[161,163,167,289,266,317],"categories":[]},{"slug":"html5-client-presentation-app","title":"HTML5 client presentation app","excerpt":"","content":"<p>For 72AndSunny I developed a custom HTML5 application that they could use when presenting ideas to their clients. The application is not overly complex so I used pure Javascript (no jQuery, no framework).</p>\n","dateFrom":"2013-11-01","dateTo":"2013-12-01","featured":false,"inCv":true,"inPortfolio":false,"images":[],"tags":[46,65,274,165,167],"categories":[276]},{"slug":"studyblend","title":"Studyblend","excerpt":"<p>Developed a single-page responsive web application that allows teachers and students to track their progress during a course. Used Angular as Javascript framework and Laravel to create a REST service.</p>\n","content":"<p>The Wageningen University normally uses Blackboard. But Blackboard is a rather cumbersome tool. So some teachers had an idea for a web application to allow teachers and students to track their progress during the course.</p>\n<p>Together with Shapers I developed a single-page responsive web application to do just that. The initial idea was to use it as an abstraction layer onto Blackboard but technical restrictions did not allow that. So all data is from a separate database. We used Laravel to create a REST service.</p>\n<p>Students can watch and update their progress throughout the course by completing tasks. Additionally, there are tasks set per week that students have to complete or upload for review.<br />\nTeachers can follow the progress of all students and make changes to the course.</p>\n","dateFrom":"2015-07-13","dateTo":"2015-07-31","featured":false,"inCv":true,"inPortfolio":true,"thumbnail":"HSO-App-students.png","image":"HSO-App-students.png","images":["HSO-App-mobile-login.png","HSO-App-mobile-week-1.png","HSO-App-mobile-group-tasks.png","HSO-App-mobile-menu.png","HSO-App-profile.png","HSO-App-overview.png","HSO-App-week-1.png","HSO-App-students.png","HSO-App-student.png","HSO-App-settings.png"],"tags":[161,162,163,167,289,266,317],"categories":[273,241,239,238,277,276]},{"slug":"karijn-kakebeeke","title":"Karijn Kakebeeke","excerpt":"","content":"","dateFrom":"2012-05-01","dateTo":"2012-08-01","featured":false,"inCv":false,"inPortfolio":true,"thumbnail":"kakebeeke1.jpg","image":"kakebeeke1.jpg","images":["kakebeeke1.jpg","kakebeeke2.jpg","kakebeeke3.jpg"],"tags":[46,65,274,280,288,289,317],"categories":[]},{"slug":"style","title":"My Own Style","excerpt":"<p>My Own Style is a webshop where users can also customise their own products. I translated the graphic designs into templates and implemented the in Wordpress with Woocommerce as a webshop. Since customizeable products are rather tricky I had to code numerous implementations myself where normally you&#8217;d use existing plugins.</p>\n","content":"<p>My Own Style is a webshop where users can also customise their own products. A shoe for instance can be made up of five variable parts.<br />\nI translated the graphic designs into templates and implemented the in WordPress with Woocommerce as a webshop.<br />\nSince customizeable products are rather tricky I had to code numerous implementations myself where normally you&#8217;d use existing plugins.</p>\n","dateFrom":"2014-02-01","dateTo":"2014-04-01","featured":false,"inCv":true,"inPortfolio":true,"thumbnail":"MYOS_home.png","image":"MYOS_home.png","images":["MYOS_Karly_mobile.png","MYOS_home.png","MYOS_Karly.png"],"tags":[65,275,280,165,166,167,289],"categories":[273,241,239,277,276]},{"slug":"kosmonaut","title":"Kosmonaut","excerpt":"<p>Design and creation of a website that depicted a wooden desktop over which a camera pans, zooms and rotates.</p>\n","content":"<p>Kosmonaut makes music videos. Their site had to be simple. They provided me with photographs from their desk, some post-its, and that&#8217;s it.<br />\nNavigating is done by moving the mouse on the desktop. The bitmap of the timber is calculated when changing screen size again. In connection with its rotation, the width and height is equal to the diagonal of the screen. Because large bitmaps on some computer processors are intensive, a smaller screen will run smoother.<br />\nThe content is loaded in the form of its own XHTML page.</p>\n","dateFrom":"2007-11-01","dateTo":"2008-01-01","featured":false,"inCv":true,"inPortfolio":true,"thumbnail":"kosmonaut1.jpg","image":"kosmonaut1.jpg","images":["kosmonaut.jpg","kosmonaut0.jpg","kosmonaut1.jpg","kosmonaut2.jpg","kosmonaut3.jpg","kosmonaut4.jpg"],"tags":[57,65,288,281,269,279,289,317],"categories":[273,241,239,268,278,282,277]},{"slug":"tatarataa","title":"Tatarataa!","excerpt":"","content":"<p>Tatarataa! bedenkt, ontwikkelt en organiseert evenementen voor merken of bedrijven. Met dit redesign (de vorige was ook samen met Ibrahim Farah ontwikkeld) is ook meteen een CMS geimplementeerd.</p>\n","dateFrom":"2012-06-01","dateTo":"2012-02-01","featured":false,"inCv":false,"inPortfolio":false,"thumbnail":"tatarataaII3.jpg","image":"tatarataaII3.jpg","images":["tatarataaII1.jpg","tatarataaII2.jpg","tatarataaII3.jpg"],"tags":[46,274,280,289,317],"categories":[]},{"slug":"allerhande","title":"Allerhande","excerpt":"<p>I was front-end Actionscript developer in the Fabrique/Lukkien/freelancers SCRUM team that developed the Allerhande website.</p>\n","content":"<p>Allerhande is the free magazine of Holland&#8217;s largest supermarket chain Albert Heijn. The focus of this Flash site is recipes; especially with regard to themes and social networks. Where the latter is an implementation of the existing cookbook on ah.nl. And another nice benefit of digital is that you can also consult the articles from previous Allerhande issues.<br />\nThanks to a good team the result was very cool. </p>\n<p>Allerhande.nl won the public award Customer Medium of the year 2010.</p>\n","dateFrom":"2010-01-01","dateTo":"2010-05-01","featured":false,"inCv":true,"inPortfolio":true,"thumbnail":"allerhande01.jpg","image":"allerhande01.jpg","images":["allerhande21.jpg","allerhande31.jpg","allerhande41.jpg","allerhande51.jpg","allerhande61.jpg","allerhande71.jpg","allerhande01.jpg","allerhande11.jpg"],"tags":[274,281,269,208,248],"categories":[273,241,239,238,268]},{"slug":"tinysort","title":"TinySort","excerpt":"<p>A sorting script I wrote and maintain.</p>\n","content":"<p>I needed something to sort html nodes so I wrote it.<br />\nTinySort is a small script that sorts any nodetype by it&#8217;s text- or attribute value, or by that of one of it&#8217;s children. It started out as a jQuery plugin but was rewritten to loose the jQuery dependency (current browsers can easily do without).</p>\n","dateFrom":"2008-05-01","dateTo":"2014-04-01","featured":false,"inCv":false,"inPortfolio":true,"thumbnail":"tinysort.jpg","image":"tinysort.jpg","images":["tinysort.jpg"],"tags":[274,275,266],"categories":[273,241,285]},{"slug":"disconnect","title":"Disconnect","excerpt":"<p>Technical experimentation and eventual development of a site for an audiovisual performance. Threejs SPA with custom GLSL shaders for video and audio with subtitles.</p>\n","content":"<p>How would it feel to upload your consiousness and be forever? What would it be like to wake up one day and find that you are the last person on earth that is truly alive.</p>\n<p>This website is the online manifestation of an audiovisual performance called Disconnect. The performance and the website tell the story of the inventor of a neural network to which consiousness can be uploaded. Then the inventor wakes up from a coma and finds everybody gone.</p>\n<p>The site is a weird one, reminiscent of the glory days of internet when sites did not all look like a WordPress theme from a can.<br />\nTechnically it is one big show off:<br />\n&#8211; Threejs with a lot of custom GLSL shaders<br />\n&#8211; video playing on the texture of an object<br />\n&#8211; same for audio but with subtitles<br />\n&#8211; transformation of HTML elements into GLSL shaders<br />\n&#8211; a working (but limited) command line interface<br />\n&#8211; post-processing shaders</p>\n<p>What was really cool is the way the site came about. Robin Coops came to me with the story but not really with a clear idea on what to build. He did already have the video/renders Wilbert van Veldhuizen made. From there I started experimenting. It just grew. Suzanne from Nonstopcollective created visuals for text-content. Eric Magnée did sound design and background music. And at some point it just came alive.</p>\n","dateFrom":"2018-09-28","dateTo":"2019-06-01","featured":true,"inCv":true,"inPortfolio":true,"thumbnail":"04_video.jpg","image":"04_video.jpg","images":["01_welcome-768x432.png","02_wake-up-768x432.jpg","03_boot-sequence-768x432.jpg","04_video-768x432.jpg","05_medisch-rapport-768x432.jpg","06_glitches-768x432.jpg"],"tags":[284,274,103,249,297,303,305],"categories":[273,241,30,278]},{"slug":"helder","title":"Helder","excerpt":"","content":"<p>WordPress site for a tutor.</p>\n","dateFrom":"2014-08-01","dateTo":"2014-08-30","featured":false,"inCv":false,"inPortfolio":false,"thumbnail":"Helder.jpg","image":"Helder.jpg","images":["Helder.jpg"],"tags":[274,280,165,289,317],"categories":[273,241,239,287,276]},{"slug":"yoleo-game","title":"Yoleo game","excerpt":"","content":"<p>Development of an online game and level-editor for Yoleo.</p>\n","dateFrom":"2013-01-01","dateTo":"2013-02-01","featured":false,"inCv":true,"inPortfolio":true,"thumbnail":"yoleo_3.jpg","image":"yoleo_3.jpg","images":["yoleo_0004_Yoleo-1.jpg","yoleo_0003_Yoleo-2.jpg","yoleo_0002_Yoleo-3.jpg","yoleo_0001_Yoleo-4.jpg","yoleo_0000_Yoleo-5.jpg"],"tags":[46,274,165,289,317],"categories":[273,239,270]},{"slug":"vodafone","title":"Vodafone","excerpt":"<p>As senior-developer in the front-end team at Vodafone there were several projects I contributed to. The largest was rebuilding the entire shop into a single page application using Angular. One of my responsibilities was laying down the basic structure and workflow for the framework as well as creating new build scripts (moving from Grunt to just NodeJS).<br />\nAlong the way I also tried to push through several improvements to the build process and overall code quality.</p>\n","content":"<p>As senior-developer in the front-end team at Vodafone there were several projects I contributed to. The largest was rebuilding the entire shop into a single page application using Angular. One of my responsibilities was laying down the basic structure and workflow for the framework as well as creating new build scripts (moving from Grunt to just NodeJS).<br />\nAlong the way I also tried to push through several improvements to the build process and overall code quality.</p>\n","dateFrom":"2015-09-24","dateTo":"2016-12-30","featured":true,"inCv":true,"inPortfolio":true,"thumbnail":"vf_PDP.png","image":"vf_PDP.png","images":["vf_160712-DEVICE_Page_03a.png","vf_160712-DEVICE_Page_03b.png","vf_PDP-768x607.png","vfIDE-768x432.png"],"tags":[46,65,274,161,167,208,230],"categories":[273,241,239,238]},{"slug":"vacansoleil","title":"Vacansoleil","excerpt":"<p>Front-end Flash Actionscript 3 development for a zoomable parallax vacation website.</p>\n","content":"<p>A European leader in camping holidays obviously doesn&#8217;t just get a normal website, but one in which it seems like you&#8217;re on vacation. At Lukkien the lead developer himself went on vacation so I was asked to come and fill in for a month.</p>\n","dateFrom":"2009-07-01","dateTo":"2009-10-01","featured":false,"inCv":false,"inPortfolio":true,"thumbnail":"vacansoleil2.jpg","image":"vacansoleil2.jpg","images":["vacansoleil3.jpg","vacansoleil4.jpg","vacansoleil5.jpg","vacansoleil6.jpg","vacansoleil7.jpg","vacansoleil0.jpg","vacansoleil1.jpg","vacansoleil2.jpg"],"tags":[46,274,281,269],"categories":[241,238,268]},{"slug":"total-timeline","title":"Total Timeline","excerpt":"","content":"<p>The largest timeline ever created, showing major events in the history of time.</p>\n","dateFrom":"2014-08-01","dateTo":"2014-10-31","featured":false,"inCv":true,"inPortfolio":false,"images":[],"tags":[284,34,46,65,274,88,167,283,289,235],"categories":[273,241,30,239,285,282,287,171,277,276]},{"slug":"illustration","title":"illustration","excerpt":"","content":"<p>I used to draw a lot when I was younger. These days I code more but I still love it to make something visual without having to worry about dependencies and cross-platform functionality.<br />\nSome of it I do with an ordinary black ballpoint, some of it on a wacom and some of it by way of fingerpainting on a tablet. And then there&#8217;s the cross-over called Filter Forge.</p>\n","dateFrom":"2013-03-13","dateTo":"2013-03-11","featured":false,"inCv":false,"inPortfolio":false,"thumbnail":"ill_gtp.jpg","image":"ill_gtp.jpg","images":["ill_kapoentjes.jpg","ill_kleurenspeuren.jpg","ill_nherengrachtalt.jpg","ill_schelp.jpg","ill_cova.jpg","ill_frobfrob.jpg","ill_gtp.jpg","ill_jennifer.jpg","404.jpg","img/sketches/scdengine1.jpg","img/sketches/sclea.jpg","img/sketches/schdragontattoo.jpg","6788949859_4f4efbe244_o.jpg","5572829236_cc13d5e471_o.jpg","5411825070_3eb14f3130_o.jpg","5410177218_d28d7c8f42_o.jpg"],"tags":[57,105,283,247],"categories":[282]},{"slug":"feedme","title":"Feedme","excerpt":"","content":"<p>A top secret prototype application that does things, and Google Maps API.</p>\n","dateFrom":"2014-04-16","dateTo":"2014-04-24","featured":false,"inCv":false,"inPortfolio":false,"images":[],"tags":[34,274,161,165],"categories":[273,241,239,238,276]},{"slug":"chocolatl","title":"Chocolátl","excerpt":"","content":"<p>A new store in the Jordaan called Chocolátl. And it sells chocolate :-}<br />\nTogether with graphic designer Ibrahim Farah a website for the store was created: clean and staightforward. Both Ibrahim and I are now a bit more addicted to chocolate.<br />\nThere&#8217;s also rumor of a webshop being developed.</p>\n","dateFrom":"2013-03-01","dateTo":"2013-05-01","featured":false,"inCv":true,"inPortfolio":true,"thumbnail":"chocolatl1.jpg","image":"chocolatl1.jpg","images":["chocolatl2.jpg","chocolatl3.jpg","chocolatl1.jpg"],"tags":[46,65,280,289,317],"categories":[273,241,239,277]},{"slug":"mitsubishi-colt","title":"Mitsubishi Colt","excerpt":"<p>Lead developer for the new Colt site. A Flash site with lots of video interwoven with content. And a scrollable panoramic video with 3D sound.</p>\n","content":"<p>The Mitsubishi Colt has undergone a restyle. This minisite was part of a cross-media campaign for the vehicle. Technically, the site is quite heavy; a compromise between quality and quantity. The site contains three interactive 360 ??° panoramas with hotspots for specific parts. The panoramas flow seamlessly into each other and contain many background sounds that pan across the cars.</p>\n","dateFrom":"2008-08-01","dateTo":"2008-10-01","featured":false,"inCv":true,"inPortfolio":true,"thumbnail":"newcolt4.jpg","image":"newcolt4.jpg","images":["newcolt4.jpg","newcolt.jpg","newcolt0.jpg","newcolt1.jpg","newcolt2.jpg","newcolt3.jpg"],"tags":[284,281,279],"categories":[238,268]},{"slug":"kleuren-speuren","title":"Kleuren speuren","excerpt":"<p>Kleuren Speuren is an educational game designed for children aged 6 to 12. I was involved in the entire process from concept to development. My main job was doing all the illustrations and the programming.</p>\n","content":"<p>Kleuren Speuren is an educational game designed for children aged 6 to 12.<br />\nIt is a playable learning environment that teaches fun things about color theory.<br />\nKleuren Speuren was brought out as freeware, on CD-ROM as well as an online download.</p>\n<p>The overarching game element creates the additional challenge to go on. The aim is to catch all the chameleons by searching in six different color spaces that are accessible from the courtyard. In every room six chameleons are hidden. To find a chameleon, you must accomplish a task. If you do it well, the chameleon appears and you can catch him. When all chameleons are caught you will have the best chance of winning the bonus game. </p>\n<p>In 2004 Kleuren Speuren was nominated for the Gouden Apenstaart.</p>\n","dateFrom":"2002-01-01","dateTo":"2003-01-01","featured":false,"inCv":true,"inPortfolio":true,"thumbnail":"kleurenspeuren2.jpg","image":"kleurenspeuren2.jpg","images":["kleurenspeuren5.jpg","kleurenspeuren.jpg","kleurenspeuren0.jpg","kleurenspeuren1.jpg","kleurenspeuren2.jpg","kleurenspeuren3.jpg","kleurenspeuren4.jpg"],"tags":[288,283,289,271,267,217,317],"categories":[270,282,287,171]}]
+[
+  {
+    "slug": "ome-willem",
+    "title": "Ome Willem",
+    "excerpt": "<p>Interaction design, graphic design and development for the Ome Willem website.</p>\n",
+    "content": "<p>For this website Ome Willem&#8217;s famous show was the central theme. You see the decor as interface. Buttons to different pages are sheets of paper hanging on the wall behind the Ome Willem-figure. When you press a button all sorts of things happen that have to do with that page. In the shop for example you can pull on the clothesline with hats and t-shirts. The content pages have a real cut-and-paste feel because we really made them with crayons and felt-tip pen.<br />\nBesides a guestbook, there is also a birthday calendar that visitors can fill. On their birthday they get an actual SMS with congratulations from Ome Willem.</p>\n",
+    "dateFrom": "2005-05-01",
+    "dateTo": "2005-07-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "omewillem1.jpg",
+    "image": "omewillem1.jpg",
+    "images": [
+      "omewillem3.jpg",
+      "omewillem.jpg",
+      "omewillem0.jpg",
+      "omewillem1.jpg",
+      "omewillem2.jpg"
+    ],
+    "tags": [
+      43,
+      65,
+      123,
+      288,
+      281,
+      269,
+      283,
+      289,
+      317
+    ],
+    "categories": [
+      273,
+      239,
+      268,
+      277
+    ]
+  },
+  {
+    "slug": "zeker-met-je-creditcard",
+    "title": "Zeker met je creditcard",
+    "excerpt": "<p>Frontend and backend development of zekermetjecreditcard.nl, a single page Angular website that uses Wordpress as a REST API.</p>\n",
+    "content": "<p>For the renowned studio <a href=\"http://www.buildinamsterdam.com/\">Build in Amsterdam</a> I&#8217;ve developed the site zekermetjecreditcard.nl The site aims to promote creditcard use in the Netherlands by way of small facts and polls that order themselves. </p>\n<p>In the past I&#8217;ve done a lot of Angular, and I&#8217;ve done even more WordPress. But this is the first time I did a combination of the two. So it&#8217;s a single page application that uses WordPress as a REST API. The REST API used is still under heavy development but will be part of the WordPress core in the near future.</p>\n",
+    "dateFrom": "2015-04-03",
+    "dateTo": "2015-06-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "Screenshot_2015-06-03-19-31-03-e1433359905965.png",
+    "image": "Screenshot_2015-06-03-19-31-03-e1433359905965.png",
+    "images": [
+      "1.jpg",
+      "2.jpg",
+      "3.jpg",
+      "4.jpg",
+      "5.jpg",
+      "Screenshot_2015-06-03-20-00-12-e1433359959134.png",
+      "Screenshot_2015-06-03-19-31-03-e1433359905965.png"
+    ],
+    "tags": [
+      284,
+      65,
+      274,
+      280,
+      161
+    ],
+    "categories": [
+      273,
+      241,
+      30,
+      239,
+      238,
+      277
+    ]
+  },
+  {
+    "slug": "opleidingen-widget",
+    "title": "Education widget",
+    "excerpt": "<p>An Elasticsearch Javascript widget comprised of CDN dependencies, with source-generated documentation and examples.</p>\n",
+    "content": "<p>The total of educations that can be followed in the Netherlands amount to a reasonable pile of data. Studiekeuze123 wanted something with which to search this data. It also had to be easy to implement and customiseable. The result is a single script that connects to an <a href=\"http://www.elasticsearch.org/\">Elasticsearch</a> server.</p>\n<p><!--more--></p>\n<p>Our reason for choosing Elasticsearch was speed. Elasticsearch is extremely fast. The downside is that it takes a whole different mindset because it seems limited compared to regular databases where you can easily execute a joined query for instance.</p>\n<p>The script itself is relatively small. CSS and HTML are parsed into the script through the build process using the headless browser <a href=\"http://phantomjs.org/\">PhantomJS</a>. For other dependencies CDN&#8217;s are used.</p>\n<p>Bootstrap is used for the CSS basis but this can be disabled at will. The layout is very easy to override since the CSS the script provides is injected to <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/document.styleSheets\">document.styleSheets</a> rather than simply added to the DOM.</p>\n<p>The build process also generates documentation and examples using Markdown with <a href=\"http://usejsdoc.org/\">JSDoc</a>.</p>\n",
+    "dateFrom": "2014-12-08",
+    "dateTo": "2014-12-31",
+    "featured": true,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "sk123ow.png",
+    "image": "sk123ow.png",
+    "images": [
+      "sk123ow.png",
+      "Opleidingen-Widget.png"
+    ],
+    "tags": [
+      46,
+      65,
+      274,
+      167,
+      258,
+      259,
+      266
+    ],
+    "categories": [
+      273,
+      241,
+      239,
+      238,
+      171,
+      277,
+      276
+    ]
+  },
+  {
+    "slug": "3d-panoramas",
+    "title": "3D panoramas",
+    "excerpt": "<p>User interface design and front-end Flash Actionscript 3 development for an application that links 3-dimensional panoramic views for architectural photography.</p>\n",
+    "content": "<p>Iwan Baan is a photographer. Part of his work entails photographing buildings for architects using a fish-eye lens. He used to show clients the results with a Director application. But technologies shift. I ported his work to Flash. Later on I build the same viewer again in HTML5.<br />\nI improved small things to the original application: caching and load times, user interface improvements, screen transitions.</p>\n",
+    "dateFrom": "2009-03-01",
+    "dateTo": "2009-06-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "pano3.jpg",
+    "image": "pano3.jpg",
+    "images": [
+      "pano0.jpg",
+      "pano1.jpg",
+      "pano2.jpg",
+      "pano3.jpg",
+      "pano4.jpg"
+    ],
+    "tags": [
+      284,
+      88,
+      123,
+      190,
+      281
+    ],
+    "categories": [
+      241,
+      30,
+      268,
+      171
+    ]
+  },
+  {
+    "slug": "papervision3d-primitives",
+    "title": "Papervision3D primitives",
+    "excerpt": "",
+    "content": "<p>When I started with Papervision3D it had just been ported from as2 to as3. The only primitive it had then was a plane. So I contributed a number of primitives (cube, sphere, cylinder, cone) some of which still reside in there today.</p>\n",
+    "dateFrom": "2007-02-01",
+    "dateTo": "2007-02-01",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": true,
+    "thumbnail": "primitives.jpg",
+    "image": "primitives.jpg",
+    "images": [
+      "primitives.jpg"
+    ],
+    "tags": [
+      284,
+      281,
+      269,
+      219,
+      234,
+      317
+    ],
+    "categories": [
+      268,
+      270,
+      285
+    ]
+  },
+  {
+    "slug": "api-conversion-elasticsearch-widget",
+    "title": "API conversion Elasticsearch widget",
+    "excerpt": "",
+    "content": "<p>An education search widget used in the Antilles needed updating. The source API that filled the Elasticsearch backend had had a major overhaul. Build scripts, source code and documentation had to be updated.</p>\n",
+    "dateFrom": "2016-05-25",
+    "dateTo": "2016-06-25",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": false,
+    "images": [],
+    "tags": [
+      46,
+      65,
+      274,
+      167,
+      258,
+      259,
+      266
+    ],
+    "categories": []
+  },
+  {
+    "slug": "perlin-noise-port-java-actionscript-3",
+    "title": "Perlin noise port from Java to Actionscript 3",
+    "excerpt": "",
+    "content": "<p>Since my Processing endeavors I&#8217;ve grown quit fond of Perlin noise. The Flash implementation was rather poor so I converted Ken Perlins original Java class to Actionscript and implemented octaves, falloff and random seed.</p>\n",
+    "dateFrom": "2007-10-01",
+    "dateTo": "2007-10-01",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": true,
+    "thumbnail": "8145-v1.jpg",
+    "image": "8145-v1.jpg",
+    "images": [
+      "8145-v1.jpg",
+      "noise.jpg"
+    ],
+    "tags": [
+      281,
+      269,
+      218
+    ],
+    "categories": [
+      268,
+      285
+    ]
+  },
+  {
+    "slug": "budlight-sensation",
+    "title": "Budlight Sensation",
+    "excerpt": "",
+    "content": "<p>Implementation of Sensation event into the existing Canadian Budlight website. The event was spread into a number of phases which had to be deployed at specific dates.</p>\n",
+    "dateFrom": "2013-03-01",
+    "dateTo": "2013-05-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "budlight_1.jpg",
+    "image": "budlight_1.jpg",
+    "images": [
+      "budlight_1.jpg",
+      "budlight_2.jpg",
+      "budlight_3.jpg",
+      "budlight_4.jpg",
+      "budlight_5.jpg",
+      "budlight_6.jpg"
+    ],
+    "tags": [
+      46,
+      65,
+      274,
+      89,
+      162,
+      163,
+      168
+    ],
+    "categories": [
+      273,
+      241,
+      239,
+      238,
+      278,
+      277,
+      276
+    ]
+  },
+  {
+    "slug": "philips-website",
+    "title": "Philips website",
+    "excerpt": "",
+    "content": "<p>For the responsive re-make of the Philips a demo was made by de Voorhoede. The demo had to be turned into workable code.<br />\nI helped setting up the the Javascript coding guidelines for structuring and documenting the components. We used JSDOC to generate source code documentation.<br />\nThe scrum team I was part of also implemented the first few (and most difficult) components. There were about 140 components, the bulk of these were later implemented by MediaMonks.</p>\n",
+    "dateFrom": "2013-05-01",
+    "dateTo": "2013-07-01",
+    "featured": true,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "Philips-Consumenten-producten-e1437373928995.jpg",
+    "image": "Philips-Consumenten-producten-e1437373928995.jpg",
+    "images": [
+      "Philips-Consumenten-producten-e1437373928995.jpg",
+      "De-Philips-SHAVER-Series-9000-SensoTouch-Scheerapparaat-voor-nat-droog-scheren-RQ1275-16-Scheerapparaat-voor-nat-droog-scheren-kopen-e1437373812808.jpg",
+      "Philips-GEZICHT-Scheerapparaten-e1437373862527.jpg",
+      "DEC_Compare_Page_v1.png",
+      "01_CAT_Shavers.png",
+      "03_PDP_Shavers.png",
+      "09_PDP_Coffee.png",
+      "DEC_Grid_Latest_small_banner.png",
+      "PDP_CRP_overview_v1.png",
+      "PDP_CRP_reviews_v1.png"
+    ],
+    "tags": [
+      65,
+      274,
+      165,
+      208,
+      266
+    ],
+    "categories": [
+      273,
+      241,
+      278,
+      276
+    ]
+  },
+  {
+    "slug": "coffeebreak",
+    "title": "Coffeebreak",
+    "excerpt": "",
+    "content": "<p>Development of and application for use within 72andSunny. The application randomly matches colleagues to go on a coffeebreak.</p>\n",
+    "dateFrom": "2014-04-25",
+    "dateTo": "2014-05-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": false,
+    "images": [],
+    "tags": [
+      34,
+      161,
+      165
+    ],
+    "categories": [
+      273,
+      241,
+      239,
+      238,
+      276
+    ]
+  },
+  {
+    "slug": "philipsspotify-application",
+    "title": "Philips/Spotify application",
+    "excerpt": "",
+    "content": "<p>Development of a Spotify application where users can send their favorite music to be added to the Philips Spotify playlist.</p>\n",
+    "dateFrom": "2013-09-01",
+    "dateTo": "2013-10-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": false,
+    "thumbnail": "PhilipsSpotify.png.jpg",
+    "image": "PhilipsSpotify.png.jpg",
+    "images": [
+      "PhilipsSpotify.png.jpg"
+    ],
+    "tags": [
+      65,
+      274,
+      165,
+      167
+    ],
+    "categories": [
+      273,
+      241,
+      239
+    ]
+  },
+  {
+    "slug": "deepred",
+    "title": "Deepred",
+    "excerpt": "",
+    "content": "<p>An HTML5 website with lots of streaming video (no Flash). I advised the client on the technology concerning different platforms and eventually developed the end product.</p>\n",
+    "dateFrom": "2010-06-01",
+    "dateTo": "2010-07-01",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": false,
+    "thumbnail": "deepred3.jpg",
+    "image": "deepred3.jpg",
+    "images": [
+      "deepred1.jpg",
+      "deepred2.jpg",
+      "deepred3.jpg"
+    ],
+    "tags": [
+      46,
+      65,
+      274,
+      289,
+      317
+    ],
+    "categories": [
+      273,
+      241,
+      239,
+      287
+    ]
+  },
+  {
+    "slug": "pixelfabrics",
+    "title": "Pixelfabrics",
+    "excerpt": "<p>A crossplatform Air application that turns image sequences into an HTML5 3D viewer that works crossdevice, crossplatform and crossbrowser.</p>\n",
+    "content": "<p>At StillsnMotion robotic arms are sold that accurately rotate around objects to take photographs. For StillsnMotion I developed a cross-platform application that converts these images to a cross-browser and cross-device HTML5 application.<br />\nThe application is provided with a user, and license key. This encryption is also implemented in the final HTML5 application making it very difficult to steal by third parties.</p>\n",
+    "dateFrom": "2011-02-01",
+    "dateTo": "2011-05-01",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": true,
+    "thumbnail": "pixelfabrics3.jpg",
+    "image": "pixelfabrics3.jpg",
+    "images": [
+      "pixelfabrics1.jpg",
+      "pixelfabrics2.jpg",
+      "pixelfabrics3.jpg"
+    ],
+    "tags": [
+      65,
+      274,
+      281,
+      198,
+      269,
+      289,
+      317
+    ],
+    "categories": []
+  },
+  {
+    "slug": "dustin-kershaw",
+    "title": "Dustin Kershaw",
+    "excerpt": "",
+    "content": "<p>Development of a portfolio website for Dustin Kershaw.</p>\n",
+    "dateFrom": "2011-08-01",
+    "dateTo": "2011-10-01",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": true,
+    "thumbnail": "dustin1.jpg",
+    "image": "dustin1.jpg",
+    "images": [
+      "dustin1.jpg",
+      "dustin2.jpg",
+      "dustin3.jpg",
+      "dustin4.jpg"
+    ],
+    "tags": [
+      65,
+      274,
+      280,
+      279,
+      289,
+      317
+    ],
+    "categories": []
+  },
+  {
+    "slug": "plus-christmas-campaign",
+    "title": "Plus christmas campaign",
+    "excerpt": "",
+    "content": "<p>Frontend development of a christmas campaign for Plus supermarkets. Users can compose their christmas dinner and download/email/print their grocery list.</p>\n",
+    "dateFrom": "2013-11-01",
+    "dateTo": "2013-12-01",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": false,
+    "images": [],
+    "tags": [
+      46,
+      65,
+      274
+    ],
+    "categories": []
+  },
+  {
+    "slug": "fc-walvisch",
+    "title": "FC Walvisch",
+    "excerpt": "<p>Re-design and creation of the site of one of the foremost Dutch sound studios.</p>\n",
+    "content": "<p>FC Walvisch is a sound studio with a soccer fan at the helm. A new site design was due: in a 70&#8217;s technicolor soccer style, serious, with a wink (or vice versa).</p>\n",
+    "dateFrom": "2008-05-01",
+    "dateTo": "2008-07-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": false,
+    "thumbnail": "fcwalvisch.jpg",
+    "image": "fcwalvisch.jpg",
+    "images": [
+      "fcwalvisch.jpg"
+    ],
+    "tags": [
+      46,
+      280,
+      123,
+      288,
+      281,
+      283,
+      279,
+      289,
+      317
+    ],
+    "categories": [
+      273,
+      241,
+      239,
+      268,
+      282,
+      287,
+      171,
+      277
+    ]
+  },
+  {
+    "slug": "project-invoice",
+    "title": "Project Invoice",
+    "excerpt": "<p>This invoicing application stores all your data on your local machine. It started from a personal need but ended up a full fledged open-source project: end-to-end tests, unit tests, semver, milestones, the works.</p>\n",
+    "content": "<p>This invoicing application stores all your data on your local machine. None of the data is shared between different browsers or computers.<br />\nProject Invoice is accessible offline after the application has been loaded for the first time. You can turn it into a mobile-web-app by using the add-to-home-screen from your mobile browser.</p>\n<p>It started from a personal need but ended up a full fledged open-source project. That means end-to-end tests, unit tests, semver, milestones, the works.</p>\n<p>https://projectinvoice.nl</p>\n",
+    "dateFrom": "2015-11-12",
+    "dateTo": "2019-01-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "pi.png",
+    "image": "pi.png",
+    "images": [
+      "Screenshot_2018-03-25-20-58-43.png",
+      "Screenshot_2018-03-25-20-55-28.png",
+      "Screenshot_2018-03-25-20-56-46.png",
+      "Screenshot_2018-03-25-20-57-20.png"
+    ],
+    "tags": [
+      274,
+      289,
+      302,
+      316,
+      317
+    ],
+    "categories": [
+      273,
+      241,
+      239,
+      238,
+      285,
+      171
+    ]
+  },
+  {
+    "slug": "frogs-space",
+    "title": "Frogs from space",
+    "excerpt": "",
+    "content": "<p>Als ik aan schapen denk, denk ik aan ontvoeringen door buitenaardse wezens (maar misschien ben ik de enige). Dit spel heb ik gemaakt om te kijken in hoeverre het mogelijk is dynamisch levels te genereren. De levels worden nu met XML ingeladen. Naast de grafische presentatie van een level staan hier ook uiteenlopende condities in beschreven die nodig zijn om een level te halen. Toch is de XML-structuur redelijk simpel gebleven.</p>\n<p>A Flash game in which you fly a ufo and abduct sheep by way of first contact.</p>\n",
+    "dateFrom": "2005-06-01",
+    "dateTo": "2005-07-01",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": true,
+    "thumbnail": "schapenII_4.jpg",
+    "image": "schapenII_4.jpg",
+    "images": [
+      "schapenII_5.jpg",
+      "schapen.jpg",
+      "schapen0.jpg",
+      "schapen1.jpg",
+      "schapen2.jpg",
+      "schapen3.jpg",
+      "schapen4.jpg",
+      "schapenII_1.jpg",
+      "schapenII_2.jpg",
+      "schapenII_3.jpg",
+      "schapenII_4.jpg"
+    ],
+    "tags": [
+      281,
+      269,
+      289,
+      271,
+      235,
+      317
+    ],
+    "categories": [
+      268,
+      270
+    ]
+  },
+  {
+    "slug": "propros",
+    "title": "Propros",
+    "excerpt": "",
+    "content": "<p>Debugging an existing application to fix IE8 compatibility.</p>\n",
+    "dateFrom": "2014-07-03",
+    "dateTo": "2014-07-18",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": false,
+    "images": [],
+    "tags": [
+      67,
+      274
+    ],
+    "categories": [
+      273,
+      241,
+      239,
+      270
+    ]
+  },
+  {
+    "slug": "hans-reinerie",
+    "title": "Hans Reinerie",
+    "excerpt": "",
+    "content": "<p>Een site waarbij de foto&#8217;s centraal staan. Een mooie oplossing voor liggend en staande foto&#8217;s is dat de liggende foto&#8217;s fullscreen zijn verschaald en de staande foto&#8217;s on-the-fly worden voorzien van een geblurde achtergrond.</p>\n",
+    "dateFrom": "2012-11-01",
+    "dateTo": "2012-12-01",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": false,
+    "thumbnail": "Hans-Reinerie-Photography-2.jpg",
+    "image": "Hans-Reinerie-Photography-2.jpg",
+    "images": [
+      "Hans-Reinerie-Photography-3.jpg",
+      "Hans-Reinerie-Photography-1.jpg",
+      "Hans-Reinerie-Photography-2.jpg"
+    ],
+    "tags": [
+      46,
+      65,
+      274,
+      280,
+      288,
+      289,
+      317
+    ],
+    "categories": [
+      273,
+      239
+    ]
+  },
+  {
+    "slug": "protest",
+    "title": "Protest",
+    "excerpt": "",
+    "content": "<p>Implementation of new features into an existing website.</p>\n",
+    "dateFrom": "2014-09-19",
+    "dateTo": "2014-09-26",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": false,
+    "images": [],
+    "tags": [
+      46,
+      274,
+      280
+    ],
+    "categories": [
+      273,
+      241,
+      239,
+      277
+    ]
+  },
+  {
+    "slug": "hso-app",
+    "title": "HSO app",
+    "excerpt": "<p>Developed a single-page responsive web application that allows teachers and students to track their progress during a course. Used Angular as Javascript framework and Laravel to create a REST service.</p>\n",
+    "content": "<p>The Wageningen University normally uses Blackboard. But Blackboard is a rather cumbersome tool. So some teachers had an idea for a web application to allow teachers and students to track their progress during the course.</p>\n<p>Together with Shapers I developed a single-page responsive web application to do just that. The initial idea was to use it as an abstraction layer onto Blackboard but technical restrictions did not allow that. So all data is from a separate database. We used Laravel to create a REST service.</p>\n<p>Students can watch and update their progress throughout the course by completing tasks. Additionally, there are tasks set per week that students have to complete or upload for review.<br />\nTeachers can follow the progress of all students and make changes to the course.</p>\n",
+    "dateFrom": "2014-01-17",
+    "dateTo": "2014-03-14",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": false,
+    "thumbnail": "HSO-App-students.png",
+    "image": "HSO-App-students.png",
+    "images": [
+      "HSO-App-mobile-login.png",
+      "HSO-App-mobile-menu.png",
+      "HSO-App-mobile-week-1.png",
+      "HSO-App-overview.png",
+      "HSO-App-profile.png",
+      "HSO-App-settings.png",
+      "HSO-App-student.png",
+      "HSO-App-students.png",
+      "HSO-App-week-1.png",
+      "HSO-App-mobile-group-tasks.png"
+    ],
+    "tags": [
+      65,
+      161,
+      162,
+      163,
+      165
+    ],
+    "categories": [
+      273,
+      238,
+      277,
+      276
+    ]
+  },
+  {
+    "slug": "randstad-planning-application",
+    "title": "Randstad planning application",
+    "excerpt": "",
+    "content": "<p>I worked on the internal application Randstad uses to plan people for their clients. This is an old application and was somewhat outdated. A previous attempt was made to renew the client side of things but it failed miserably when for instance loading and searching a few thousand records.<br />\nSo a scaffold framework was setup by Mirabeau. Next I was called in to implement all the things. The target goal was to recreate the entire web application responsively, keeping in mind that there are clients that have over a few thousand records. Due to size and complexity (and also a bit of GDPR) this took wel over two years to accomplish.</p>\n",
+    "dateFrom": "2017-04-01",
+    "dateTo": "2019-01-31",
+    "featured": true,
+    "inCv": true,
+    "inPortfolio": true,
+    "images": [],
+    "tags": [
+      46,
+      65,
+      274,
+      86,
+      111,
+      208,
+      289,
+      302,
+      318
+    ],
+    "categories": [
+      273,
+      241,
+      239,
+      238
+    ]
+  },
+  {
+    "slug": "html5-tv-application-prototype",
+    "title": "HTML5 tv application prototype",
+    "excerpt": "",
+    "content": "<p>Development of a prototype application for interactive tv.</p>\n",
+    "dateFrom": "2013-11-01",
+    "dateTo": "2013-12-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": false,
+    "thumbnail": "tvprototype_leftright.jpg",
+    "image": "tvprototype_leftright.jpg",
+    "images": [
+      "tvprototype_start.jpg",
+      "tvprototype_feed.jpg",
+      "tvprototype_leftright.jpg",
+      "tvprototype_loading.jpg"
+    ],
+    "tags": [
+      65,
+      274,
+      165,
+      167,
+      221,
+      176
+    ],
+    "categories": []
+  },
+  {
+    "slug": "rekentuin",
+    "title": "Rekentuin",
+    "excerpt": "",
+    "content": "<p>Development of a serious gaming environment where children grow a garden while learning. I was given a number of illustrations that I made come to life using L-systems.</p>\n",
+    "dateFrom": "2009-02-01",
+    "dateTo": "2009-03-01",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": false,
+    "thumbnail": "rekentuin.jpg",
+    "image": "rekentuin.jpg",
+    "images": [
+      "rekentuin.jpg"
+    ],
+    "tags": [
+      281,
+      317
+    ],
+    "categories": [
+      241,
+      268,
+      270
+    ]
+  },
+  {
+    "slug": "juridaii",
+    "title": "Lea Jurida",
+    "excerpt": "",
+    "content": "<p>This redesign for <a href=\"http://www.jurida.com/\">Lea Jurida</a> never got further than a prototype with 3D cubes. Still cute though.</p>\n",
+    "dateFrom": "2010-09-04",
+    "dateTo": "2010-10-04",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": true,
+    "thumbnail": "jurida1.jpg",
+    "image": "jurida1.jpg",
+    "images": [
+      "jurida5.jpg",
+      "jurida0.jpg",
+      "jurida1.jpg",
+      "jurida2.jpg",
+      "jurida3.jpg",
+      "jurida4.jpg"
+    ],
+    "tags": [
+      65,
+      123,
+      281,
+      269,
+      289,
+      317
+    ],
+    "categories": [
+      241,
+      30,
+      268,
+      282,
+      287,
+      171
+    ]
+  },
+  {
+    "slug": "ronvalstar-nl",
+    "title": "ronvalstar.nl",
+    "excerpt": "",
+    "content": "<p>The medium is the message when you take yourself seriously as a frontend developer. So when the first version of the WordPress REST API was born I was quick to try it out with a single page Vue frontend.</p>\n<p>Which is the means by which you&#8217;re reading this now: the CV on my site is fed by a custom written projects plugin and can easily be exported to PDF. Because I don&#8217;t like to repeat myself, and I like keeping things in one place.</p>\n",
+    "dateFrom": "2016-12-24",
+    "dateTo": "2019-01-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": false,
+    "thumbnail": "ronvalstar.nl_.jpg",
+    "image": "ronvalstar.nl_.jpg",
+    "images": [
+      "ronvalstar.nl_-768x432.jpg"
+    ],
+    "tags": [
+      274,
+      302
+    ],
+    "categories": [
+      273,
+      241,
+      239,
+      238
+    ]
+  },
+  {
+    "slug": "kees-kroot",
+    "title": "Kees Kroot",
+    "excerpt": "",
+    "content": "<p>This Flash site gives you a glimpse into the head of Kees Kroot. In addition to the portfolio, you can also see what inspires Kees. If you send Kees a message it immediately pops into his head.</p>\n",
+    "dateFrom": "2009-03-01",
+    "dateTo": "2009-04-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "kees3.jpg",
+    "image": "kees3.jpg",
+    "images": [
+      "keesfwa.jpg",
+      "kees.jpg",
+      "kees0.jpg",
+      "kees1.jpg",
+      "kees2.jpg",
+      "kees3.jpg",
+      "kees4.jpg",
+      "kees5.jpg"
+    ],
+    "tags": [
+      284,
+      43,
+      65,
+      123,
+      281,
+      235
+    ],
+    "categories": [
+      241,
+      30,
+      268,
+      277
+    ]
+  },
+  {
+    "slug": "satriun",
+    "title": "Satriun",
+    "excerpt": "<p>Fully responsive website with video and boring content.</p>\n",
+    "content": "<p><strike>I have no idea what these men really do. But they did want a fully responsive website with fullscreen video backgrounds.</strike></p>\n<p>Satriun Group designs and implements Corporate Performance Management (CPM) solutions. The Satriun Group brings together the necessary expertise for Financial Management, Regulatory Support, Information Technology and Change Management, maximizing the success and value added of their customer&#8217;s CPM projects. They wanted a fully responsive website with fullscreen video backgrounds.</p>\n",
+    "dateFrom": "2014-10-01",
+    "dateTo": "2014-10-20",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": false,
+    "thumbnail": "Satriun-Corporate-Performance-Management.jpg",
+    "image": "Satriun-Corporate-Performance-Management.jpg",
+    "images": [
+      "Satriun-Corporate-Performance-Management.jpg",
+      "Satriun-Our-vision.jpg"
+    ],
+    "tags": [
+      274,
+      280,
+      165,
+      279
+    ],
+    "categories": [
+      273,
+      241,
+      239,
+      278,
+      276
+    ]
+  },
+  {
+    "slug": "klm-widget",
+    "title": "KLM widget",
+    "excerpt": "",
+    "content": "",
+    "dateFrom": "2007-11-01",
+    "dateTo": "2007-12-07",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": false,
+    "images": [],
+    "tags": [],
+    "categories": [
+      268
+    ]
+  },
+  {
+    "slug": "seattle-ipad",
+    "title": "Seattle iPad",
+    "excerpt": "",
+    "content": "<p>3D panorama viewer of the Seattle public library for the iPad.</p>\n",
+    "dateFrom": "2011-11-01",
+    "dateTo": "2011-12-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "seattleIpad3.jpg",
+    "image": "seattleIpad3.jpg",
+    "images": [
+      "seattleIpad1.jpg",
+      "seattleIpad2.jpg",
+      "seattleIpad3.jpg",
+      "seattleIpad4.jpg"
+    ],
+    "tags": [
+      274,
+      123,
+      190,
+      194,
+      195,
+      196
+    ],
+    "categories": [
+      273,
+      241,
+      30,
+      239,
+      276
+    ]
+  },
+  {
+    "slug": "lea-jurida",
+    "title": "Lea Jurida",
+    "excerpt": "<p>Flash website for sound designer Lea Jurida.</p>\n",
+    "content": "<p>Lea Jurida is a sound designer. In her site, the emphasis should be on natural sound. An interesting technique I invented for this site, is the way of loading content. Normally search engines can not index the content of a Flash site. But in this case loads the Flash site xhtml content, which is simply the index.html.</p>\n<p>In the mean time, Apple killed Flash and <a href=\"http://www.jurida.com/\">Lea&#8217;s new website</a> is plain old HTML again.</p>\n",
+    "dateFrom": "2010-09-11",
+    "dateTo": "2010-10-11",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": false,
+    "thumbnail": "jurida.jpg",
+    "image": "jurida.jpg",
+    "images": [
+      "jurida.jpg"
+    ],
+    "tags": [
+      65,
+      123,
+      288,
+      281,
+      269,
+      283,
+      279,
+      289,
+      317
+    ],
+    "categories": [
+      241,
+      268,
+      282,
+      287,
+      171,
+      277
+    ]
+  },
+  {
+    "slug": "sfbrowser",
+    "title": "SFBrowser",
+    "excerpt": "<p>With jQuery and PHP I made a very extensive file uploader that can be hooked onto any CMS. You can even port it to a different server side language through the use of connectors.</p>\n",
+    "content": "<p>Most content management systems have a fairly crummy way of uploading and managing files. With jQuery and PHP I made a very extensive file uploader that can be hooked onto any CMS. You can even port it to a different server side language through the use of connectors.</p>\n<p>I pulled the plug on this project in 2013, but I do have a half-finished Angular implementation lying around for when I am really bored.</p>\n",
+    "dateFrom": "2008-05-01",
+    "dateTo": "2014-04-01",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": false,
+    "thumbnail": "sfbrowser.jpg",
+    "image": "sfbrowser.jpg",
+    "images": [
+      "sfbrowser4.jpg",
+      "sfbrowser.gif",
+      "sfbrowser.jpg",
+      "sfbrowser0.jpg",
+      "sfbrowser1.jpg",
+      "sfbrowser2.jpg",
+      "sfbrowser3.jpg"
+    ],
+    "tags": [
+      46,
+      274,
+      275,
+      89,
+      123
+    ],
+    "categories": [
+      273,
+      241,
+      239,
+      268,
+      285,
+      171,
+      277
+    ]
+  },
+  {
+    "slug": "novartis",
+    "title": "Novartis",
+    "excerpt": "<p>A virtual 3d panorama tour, consisting of multiple panoramas through which you navigate by space or by stories.</p>\n",
+    "content": "<p><a href=\"http://www.novartis.com\">Novartis</a> is a Swiss farmacuetical company. Their headquarters in Basel consists of several buildings, some of which are architectural materpieces. Along with the Dutch architectural photographer <a href=\"http://www.iwan.com/\">Iwan Baan</a> and <a href=\"http://2x4.org/\">2&#215;4</a> from New York, I made a prototype for a virtual tour of this campus. With the three-dimensional panorama pictures you can walk through the campus and watch a variety of content.</p>\n",
+    "dateFrom": "2011-05-01",
+    "dateTo": "2011-07-01",
+    "featured": true,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "novartis1.jpg",
+    "image": "novartis1.jpg",
+    "images": [
+      "novartis1.jpg",
+      "novartis2.jpg",
+      "novartis3.jpg",
+      "novartis4.jpg",
+      "novartis5.jpg"
+    ],
+    "tags": [
+      46,
+      274,
+      123,
+      190,
+      240
+    ],
+    "categories": [
+      273,
+      30,
+      239
+    ]
+  },
+  {
+    "slug": "smorenburg",
+    "title": "Smorenburg",
+    "excerpt": "",
+    "content": "",
+    "dateFrom": "2013-02-01",
+    "dateTo": "2013-03-01",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": false,
+    "thumbnail": "smorenburg1.jpg",
+    "image": "smorenburg1.jpg",
+    "images": [
+      "smorenburg3.jpg",
+      "smorenburg1.jpg",
+      "smorenburg2.jpg"
+    ],
+    "tags": [
+      46,
+      65,
+      274,
+      280
+    ],
+    "categories": [
+      273,
+      239,
+      277
+    ]
+  },
+  {
+    "slug": "blauwe-planeet",
+    "title": "Blauwe planeet",
+    "excerpt": "<p>This is an actually an older CD-Rom project I&#8217;d worked on before at Shapers for Thieme Meullenhoff. Within a week I created a Flash prototype that looked and worked better than the original Director version.</p>\n",
+    "content": "<p>For Thieme Meulenhoff, Shapers developed a series topography CD-ROM&#8217;s for group 7, 8 and 9. The CD-ROM&#8217;s provide a complete, fun and effective way to learn topography They are part of the method &#8216;Blue Planet&#8217;. Later on, part of the series was ported to Flash to make it available online. We took the opportunity ??to improve it interactive and graphically.</p>\n",
+    "dateFrom": "2009-01-01",
+    "dateTo": "2009-02-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "blauweplaneet3.jpg",
+    "image": "blauweplaneet3.jpg",
+    "images": [
+      "blauweplaneet1.jpg",
+      "blauweplaneet2.jpg",
+      "blauweplaneet3.jpg",
+      "blauweplaneet4.jpg",
+      "blauweplaneet.jpg",
+      "blauweplaneet0.jpg"
+    ],
+    "tags": [
+      123,
+      288,
+      281,
+      269,
+      283,
+      289,
+      271,
+      317
+    ],
+    "categories": [
+      241,
+      268,
+      270,
+      282,
+      287
+    ]
+  },
+  {
+    "slug": "soundcircus",
+    "title": "Soundcircus",
+    "excerpt": "<p>Flash website that won an FWASOTD, an ADCN Lamp and a Webby!</p>\n",
+    "content": "<p>The successor to the Kees Kroot website might be less spectacular from an interactive point of view but equals it in terms of atmosphere. This time the site was rewarded a FWASOTD, a silver ADCN Lamp and also a Webby!</p>\n",
+    "dateFrom": "2011-03-01",
+    "dateTo": "2011-05-01",
+    "featured": true,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "soundcircus5.jpg",
+    "image": "soundcircus5.jpg",
+    "images": [
+      "soundcircus1.jpg",
+      "soundcircus2.jpg",
+      "soundcircus3.jpg",
+      "soundcircus4.jpg",
+      "soundcircus5.jpg"
+    ],
+    "tags": [
+      46,
+      65,
+      275,
+      89,
+      281,
+      269
+    ],
+    "categories": [
+      241,
+      30,
+      268,
+      278,
+      277
+    ]
+  },
+  {
+    "slug": "dashboard",
+    "title": "Dashboard",
+    "excerpt": "",
+    "content": "<p>An Angular dashboard for big data results from a REST API.</p>\n",
+    "dateFrom": "2015-02-01",
+    "dateTo": "2015-03-18",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": false,
+    "images": [],
+    "tags": [
+      274,
+      161
+    ],
+    "categories": [
+      273,
+      241,
+      238
+    ]
+  },
+  {
+    "slug": "strange-attractors-javascript",
+    "title": "Strange attractors in Javascript",
+    "excerpt": "<p>A pure Javascript strange attractor renderer with a WebGL preview. Renders images and animated gifs from mathematical formulas with interpolated variables.</p>\n",
+    "content": "<p>Over ten years ago I made a strange attractor renderer in Java (and P55). Back then Java applets were still the only way to get raw computing power to the client-side of the web. A strange attractor is not complicated, but because it is deterministic it needs a few billion iterations for a proper result. September last year Chrome dropped support for Java applets. Since Javascript has come a long way I thought I&#8217;d try a remake in Nodejs. I compared a rough to a client-side implementation and found the speed difference negligible enough to bring the entire implementation to client-side Javascript.<br />\nContrary to the old Java applet <a href=\"http://attractors.ronvalstar.nl\" target=\"_blank\">this Javascript version</a> can burp out animated gifs and webm videos.</p>\n",
+    "dateFrom": "2016-03-04",
+    "dateTo": "2016-07-14",
+    "featured": true,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "attractors01.jpg",
+    "image": "attractors01.jpg",
+    "images": [
+      "attractors00-768x432.png",
+      "attractors01-768x432.jpg",
+      "attractors02-768x432.jpg",
+      "Lorenz-84-52.gif",
+      "Lorenz-84-31.gif",
+      "Lorenz-84-57-768x432.png"
+    ],
+    "tags": [
+      274,
+      289,
+      218,
+      235,
+      250,
+      297,
+      317
+    ],
+    "categories": [
+      273,
+      30,
+      278,
+      285
+    ]
+  },
+  {
+    "slug": "fc-voetbalreizen",
+    "title": "FC Voetbalreizen",
+    "excerpt": "",
+    "content": "<p>Interaction design and development of a soccer-travel site.</p>\n",
+    "dateFrom": "2013-01-01",
+    "dateTo": "2013-09-01",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": false,
+    "thumbnail": "voetbalreizen.jpg",
+    "image": "voetbalreizen.jpg",
+    "images": [
+      "voetbalreizen.jpg"
+    ],
+    "tags": [
+      46,
+      65,
+      274,
+      280,
+      289,
+      317
+    ],
+    "categories": [
+      273,
+      239,
+      171,
+      277
+    ]
+  },
+  {
+    "slug": "strange-attractors",
+    "title": "Strange attractors",
+    "excerpt": "",
+    "content": "<p>This side project started of in Processing but soon grew into a Java project. Strange attractors are a set of rules that change a set of points. Only after a few million iterations their true form becomes appearant.</p>\n",
+    "dateFrom": "2006-06-01",
+    "dateTo": "2006-08-01",
+    "featured": true,
+    "inCv": false,
+    "inPortfolio": true,
+    "thumbnail": "L84.jpg",
+    "image": "L84.jpg",
+    "images": [
+      "Lorenz-4600-18500-600-3-4000.jpg",
+      "L84.jpg",
+      "Latoocarfian-2304-2991-856-4738-3673-4877.jpg",
+      "Lorenz84-225-2391-2665-1218-48-11.jpg",
+      "Lorenz84-225-2391-2665-1236-48.jpg",
+      "Lorenz84-1235-655-946-484-356.jpg",
+      "Lorenz84-12700-04809-11237-03526-02731.jpg"
+    ],
+    "tags": [
+      95,
+      289,
+      272,
+      218,
+      235,
+      317
+    ],
+    "categories": [
+      241,
+      30,
+      278,
+      285,
+      282
+    ]
+  },
+  {
+    "slug": "green-today",
+    "title": "Green Today",
+    "excerpt": "",
+    "content": "<p>Green Today is een beurs over groen. Geen geitenwollen sokken groen, maar high tech groen. De site is een WordPress CMS met speciaal ontwikkelde HTML5 templates en plugins, met veel Javascript animatie en canvas.</p>\n",
+    "dateFrom": "2010-10-01",
+    "dateTo": "2010-11-01",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": false,
+    "thumbnail": "greentoday0.jpg",
+    "image": "greentoday0.jpg",
+    "images": [
+      "greentoday1.jpg",
+      "greentoday2.jpg",
+      "greentoday3.jpg",
+      "greentoday0.jpg"
+    ],
+    "tags": [
+      43,
+      46,
+      65,
+      274,
+      280,
+      317
+    ],
+    "categories": [
+      273,
+      239,
+      278,
+      287,
+      171,
+      277
+    ]
+  },
+  {
+    "slug": "studyblend-improvements",
+    "title": "Studyblend improvements",
+    "excerpt": "",
+    "content": "<p>Several teacher/student improvements were made to the Studyblend Angular application. One of which a bulk download functionality for student assignments.</p>\n",
+    "dateFrom": "2016-09-08",
+    "dateTo": "2016-08-17",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": false,
+    "images": [],
+    "tags": [
+      161,
+      163,
+      167,
+      289,
+      266,
+      317
+    ],
+    "categories": []
+  },
+  {
+    "slug": "html5-client-presentation-app",
+    "title": "HTML5 client presentation app",
+    "excerpt": "",
+    "content": "<p>For 72AndSunny I developed a custom HTML5 application that they could use when presenting ideas to their clients. The application is not overly complex so I used pure Javascript (no jQuery, no framework).</p>\n",
+    "dateFrom": "2013-11-01",
+    "dateTo": "2013-12-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": false,
+    "images": [],
+    "tags": [
+      46,
+      65,
+      274,
+      165,
+      167
+    ],
+    "categories": [
+      276
+    ]
+  },
+  {
+    "slug": "studyblend",
+    "title": "Studyblend",
+    "excerpt": "<p>Developed a single-page responsive web application that allows teachers and students to track their progress during a course. Used Angular as Javascript framework and Laravel to create a REST service.</p>\n",
+    "content": "<p>The Wageningen University normally uses Blackboard. But Blackboard is a rather cumbersome tool. So some teachers had an idea for a web application to allow teachers and students to track their progress during the course.</p>\n<p>Together with Shapers I developed a single-page responsive web application to do just that. The initial idea was to use it as an abstraction layer onto Blackboard but technical restrictions did not allow that. So all data is from a separate database. We used Laravel to create a REST service.</p>\n<p>Students can watch and update their progress throughout the course by completing tasks. Additionally, there are tasks set per week that students have to complete or upload for review.<br />\nTeachers can follow the progress of all students and make changes to the course.</p>\n",
+    "dateFrom": "2015-07-13",
+    "dateTo": "2015-07-31",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "HSO-App-students.png",
+    "image": "HSO-App-students.png",
+    "images": [
+      "HSO-App-mobile-login.png",
+      "HSO-App-mobile-week-1.png",
+      "HSO-App-mobile-group-tasks.png",
+      "HSO-App-mobile-menu.png",
+      "HSO-App-profile.png",
+      "HSO-App-overview.png",
+      "HSO-App-week-1.png",
+      "HSO-App-students.png",
+      "HSO-App-student.png",
+      "HSO-App-settings.png"
+    ],
+    "tags": [
+      161,
+      162,
+      163,
+      167,
+      289,
+      266,
+      317
+    ],
+    "categories": [
+      273,
+      241,
+      239,
+      238,
+      277,
+      276
+    ]
+  },
+  {
+    "slug": "karijn-kakebeeke",
+    "title": "Karijn Kakebeeke",
+    "excerpt": "",
+    "content": "",
+    "dateFrom": "2012-05-01",
+    "dateTo": "2012-08-01",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": true,
+    "thumbnail": "kakebeeke1.jpg",
+    "image": "kakebeeke1.jpg",
+    "images": [
+      "kakebeeke1.jpg",
+      "kakebeeke2.jpg",
+      "kakebeeke3.jpg"
+    ],
+    "tags": [
+      46,
+      65,
+      274,
+      280,
+      288,
+      289,
+      317
+    ],
+    "categories": []
+  },
+  {
+    "slug": "style",
+    "title": "My Own Style",
+    "excerpt": "<p>My Own Style is a webshop where users can also customise their own products. I translated the graphic designs into templates and implemented the in Wordpress with Woocommerce as a webshop. Since customizeable products are rather tricky I had to code numerous implementations myself where normally you&#8217;d use existing plugins.</p>\n",
+    "content": "<p>My Own Style is a webshop where users can also customise their own products. A shoe for instance can be made up of five variable parts.<br />\nI translated the graphic designs into templates and implemented the in WordPress with Woocommerce as a webshop.<br />\nSince customizeable products are rather tricky I had to code numerous implementations myself where normally you&#8217;d use existing plugins.</p>\n",
+    "dateFrom": "2014-02-01",
+    "dateTo": "2014-04-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "MYOS_home.png",
+    "image": "MYOS_home.png",
+    "images": [
+      "MYOS_Karly_mobile.png",
+      "MYOS_home.png",
+      "MYOS_Karly.png"
+    ],
+    "tags": [
+      65,
+      275,
+      280,
+      165,
+      166,
+      167,
+      289
+    ],
+    "categories": [
+      273,
+      241,
+      239,
+      277,
+      276
+    ]
+  },
+  {
+    "slug": "kosmonaut",
+    "title": "Kosmonaut",
+    "excerpt": "<p>Design and creation of a website that depicted a wooden desktop over which a camera pans, zooms and rotates.</p>\n",
+    "content": "<p>Kosmonaut makes music videos. Their site had to be simple. They provided me with photographs from their desk, some post-its, and that&#8217;s it.<br />\nNavigating is done by moving the mouse on the desktop. The bitmap of the timber is calculated when changing screen size again. In connection with its rotation, the width and height is equal to the diagonal of the screen. Because large bitmaps on some computer processors are intensive, a smaller screen will run smoother.<br />\nThe content is loaded in the form of its own XHTML page.</p>\n",
+    "dateFrom": "2007-11-01",
+    "dateTo": "2008-01-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "kosmonaut1.jpg",
+    "image": "kosmonaut1.jpg",
+    "images": [
+      "kosmonaut.jpg",
+      "kosmonaut0.jpg",
+      "kosmonaut1.jpg",
+      "kosmonaut2.jpg",
+      "kosmonaut3.jpg",
+      "kosmonaut4.jpg"
+    ],
+    "tags": [
+      57,
+      65,
+      288,
+      281,
+      269,
+      279,
+      289,
+      317
+    ],
+    "categories": [
+      273,
+      241,
+      239,
+      268,
+      278,
+      282,
+      277
+    ]
+  },
+  {
+    "slug": "tatarataa",
+    "title": "Tatarataa!",
+    "excerpt": "",
+    "content": "<p>Tatarataa! bedenkt, ontwikkelt en organiseert evenementen voor merken of bedrijven. Met dit redesign (de vorige was ook samen met Ibrahim Farah ontwikkeld) is ook meteen een CMS geimplementeerd.</p>\n",
+    "dateFrom": "2012-06-01",
+    "dateTo": "2012-02-01",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": false,
+    "thumbnail": "tatarataaII3.jpg",
+    "image": "tatarataaII3.jpg",
+    "images": [
+      "tatarataaII1.jpg",
+      "tatarataaII2.jpg",
+      "tatarataaII3.jpg"
+    ],
+    "tags": [
+      46,
+      274,
+      280,
+      289,
+      317
+    ],
+    "categories": []
+  },
+  {
+    "slug": "allerhande",
+    "title": "Allerhande",
+    "excerpt": "<p>I was front-end Actionscript developer in the Fabrique/Lukkien/freelancers SCRUM team that developed the Allerhande website.</p>\n",
+    "content": "<p>Allerhande is the free magazine of Holland&#8217;s largest supermarket chain Albert Heijn. The focus of this Flash site is recipes; especially with regard to themes and social networks. Where the latter is an implementation of the existing cookbook on ah.nl. And another nice benefit of digital is that you can also consult the articles from previous Allerhande issues.<br />\nThanks to a good team the result was very cool. </p>\n<p>Allerhande.nl won the public award Customer Medium of the year 2010.</p>\n",
+    "dateFrom": "2010-01-01",
+    "dateTo": "2010-05-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "allerhande01.jpg",
+    "image": "allerhande01.jpg",
+    "images": [
+      "allerhande21.jpg",
+      "allerhande31.jpg",
+      "allerhande41.jpg",
+      "allerhande51.jpg",
+      "allerhande61.jpg",
+      "allerhande71.jpg",
+      "allerhande01.jpg",
+      "allerhande11.jpg"
+    ],
+    "tags": [
+      274,
+      281,
+      269,
+      208,
+      248
+    ],
+    "categories": [
+      273,
+      241,
+      239,
+      238,
+      268
+    ]
+  },
+  {
+    "slug": "tinysort",
+    "title": "TinySort",
+    "excerpt": "<p>A sorting script I wrote and maintain.</p>\n",
+    "content": "<p>I needed something to sort html nodes so I wrote it.<br />\nTinySort is a small script that sorts any nodetype by it&#8217;s text- or attribute value, or by that of one of it&#8217;s children. It started out as a jQuery plugin but was rewritten to loose the jQuery dependency (current browsers can easily do without).</p>\n",
+    "dateFrom": "2008-05-01",
+    "dateTo": "2014-04-01",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": true,
+    "thumbnail": "tinysort.jpg",
+    "image": "tinysort.jpg",
+    "images": [
+      "tinysort.jpg"
+    ],
+    "tags": [
+      274,
+      275,
+      266
+    ],
+    "categories": [
+      273,
+      241,
+      285
+    ]
+  },
+  {
+    "slug": "disconnect",
+    "title": "Disconnect",
+    "excerpt": "<p>Technical experimentation and eventual development of a site for an audiovisual performance. Threejs SPA with custom GLSL shaders for video and audio with subtitles.</p>\n",
+    "content": "<p>How would it feel to upload your consiousness and be forever? What would it be like to wake up one day and find that you are the last person on earth that is truly alive.</p>\n<p>This website is the online manifestation of an audiovisual performance called Disconnect. The performance and the website tell the story of the inventor of a neural network to which consiousness can be uploaded. Then the inventor wakes up from a coma and finds everybody gone.</p>\n<p>The site is a weird one, reminiscent of the glory days of internet when sites did not all look like a WordPress theme from a can.<br />\nTechnically it is one big show off:<br />\n&#8211; Threejs with a lot of custom GLSL shaders<br />\n&#8211; video playing on the texture of an object<br />\n&#8211; same for audio but with subtitles<br />\n&#8211; transformation of HTML elements into GLSL shaders<br />\n&#8211; a working (but limited) command line interface<br />\n&#8211; post-processing shaders</p>\n<p>What was really cool is the way the site came about. Robin Coops came to me with the story but not really with a clear idea on what to build. He did already have the video/renders Wilbert van Veldhuizen made. From there I started experimenting. It just grew. Suzanne from Nonstopcollective created visuals for text-content. Eric Magnée did sound design and background music. And at some point it just came alive.</p>\n",
+    "dateFrom": "2018-09-28",
+    "dateTo": "2019-06-01",
+    "featured": true,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "04_video.jpg",
+    "image": "04_video.jpg",
+    "images": [
+      "01_welcome-768x432.png",
+      "02_wake-up-768x432.jpg",
+      "03_boot-sequence-768x432.jpg",
+      "04_video-768x432.jpg",
+      "05_medisch-rapport-768x432.jpg",
+      "06_glitches-768x432.jpg"
+    ],
+    "tags": [
+      284,
+      274,
+      103,
+      249,
+      297,
+      303,
+      305
+    ],
+    "categories": [
+      273,
+      241,
+      30,
+      278
+    ]
+  },
+  {
+    "slug": "helder",
+    "title": "Helder",
+    "excerpt": "",
+    "content": "<p>WordPress site for a tutor.</p>\n",
+    "dateFrom": "2014-08-01",
+    "dateTo": "2014-08-30",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": false,
+    "thumbnail": "Helder.jpg",
+    "image": "Helder.jpg",
+    "images": [
+      "Helder.jpg"
+    ],
+    "tags": [
+      274,
+      280,
+      165,
+      289,
+      317
+    ],
+    "categories": [
+      273,
+      241,
+      239,
+      287,
+      276
+    ]
+  },
+  {
+    "slug": "yoleo-game",
+    "title": "Yoleo game",
+    "excerpt": "",
+    "content": "<p>Development of an online game and level-editor for Yoleo.</p>\n",
+    "dateFrom": "2013-01-01",
+    "dateTo": "2013-02-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "yoleo_3.jpg",
+    "image": "yoleo_3.jpg",
+    "images": [
+      "yoleo_0004_Yoleo-1.jpg",
+      "yoleo_0003_Yoleo-2.jpg",
+      "yoleo_0002_Yoleo-3.jpg",
+      "yoleo_0001_Yoleo-4.jpg",
+      "yoleo_0000_Yoleo-5.jpg"
+    ],
+    "tags": [
+      46,
+      274,
+      165,
+      289,
+      317
+    ],
+    "categories": [
+      273,
+      239,
+      270
+    ]
+  },
+  {
+    "slug": "vodafone",
+    "title": "Vodafone",
+    "excerpt": "<p>As senior-developer in the front-end team at Vodafone there were several projects I contributed to. The largest was rebuilding the entire shop into a single page application using Angular. One of my responsibilities was laying down the basic structure and workflow for the framework as well as creating new build scripts (moving from Grunt to just NodeJS).<br />\nAlong the way I also tried to push through several improvements to the build process and overall code quality.</p>\n",
+    "content": "<p>As senior-developer in the front-end team at Vodafone there were several projects I contributed to. The largest was rebuilding the entire shop into a single page application using Angular. One of my responsibilities was laying down the basic structure and workflow for the framework as well as creating new build scripts (moving from Grunt to just NodeJS).<br />\nAlong the way I also tried to push through several improvements to the build process and overall code quality.</p>\n",
+    "dateFrom": "2015-09-24",
+    "dateTo": "2016-12-30",
+    "featured": true,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "vf_PDP.png",
+    "image": "vf_PDP.png",
+    "images": [
+      "vf_160712-DEVICE_Page_03a.png",
+      "vf_160712-DEVICE_Page_03b.png",
+      "vf_PDP-768x607.png",
+      "vfIDE-768x432.png"
+    ],
+    "tags": [
+      46,
+      65,
+      274,
+      161,
+      167,
+      208,
+      230
+    ],
+    "categories": [
+      273,
+      241,
+      239,
+      238
+    ]
+  },
+  {
+    "slug": "vacansoleil",
+    "title": "Vacansoleil",
+    "excerpt": "<p>Front-end Flash Actionscript 3 development for a zoomable parallax vacation website.</p>\n",
+    "content": "<p>A European leader in camping holidays obviously doesn&#8217;t just get a normal website, but one in which it seems like you&#8217;re on vacation. At Lukkien the lead developer himself went on vacation so I was asked to come and fill in for a month.</p>\n",
+    "dateFrom": "2009-07-01",
+    "dateTo": "2009-10-01",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": true,
+    "thumbnail": "vacansoleil2.jpg",
+    "image": "vacansoleil2.jpg",
+    "images": [
+      "vacansoleil3.jpg",
+      "vacansoleil4.jpg",
+      "vacansoleil5.jpg",
+      "vacansoleil6.jpg",
+      "vacansoleil7.jpg",
+      "vacansoleil0.jpg",
+      "vacansoleil1.jpg",
+      "vacansoleil2.jpg"
+    ],
+    "tags": [
+      46,
+      274,
+      281,
+      269
+    ],
+    "categories": [
+      241,
+      238,
+      268
+    ]
+  },
+  {
+    "slug": "total-timeline",
+    "title": "Total Timeline",
+    "excerpt": "",
+    "content": "<p>The largest timeline ever created, showing major events in the history of time.</p>\n",
+    "dateFrom": "2014-08-01",
+    "dateTo": "2014-10-31",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": false,
+    "images": [],
+    "tags": [
+      284,
+      34,
+      46,
+      65,
+      274,
+      88,
+      167,
+      283,
+      289,
+      235
+    ],
+    "categories": [
+      273,
+      241,
+      30,
+      239,
+      285,
+      282,
+      287,
+      171,
+      277,
+      276
+    ]
+  },
+  {
+    "slug": "illustration",
+    "title": "illustration",
+    "excerpt": "",
+    "content": "<p>I used to draw a lot when I was younger. These days I code more but I still love it to make something visual without having to worry about dependencies and cross-platform functionality.<br />\nSome of it I do with an ordinary black ballpoint, some of it on a wacom and some of it by way of fingerpainting on a tablet. And then there&#8217;s the cross-over called Filter Forge.</p>\n",
+    "dateFrom": "2013-03-13",
+    "dateTo": "2013-03-11",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": false,
+    "thumbnail": "ill_gtp.jpg",
+    "image": "ill_gtp.jpg",
+    "images": [
+      "ill_kapoentjes.jpg",
+      "ill_kleurenspeuren.jpg",
+      "ill_nherengrachtalt.jpg",
+      "ill_schelp.jpg",
+      "ill_cova.jpg",
+      "ill_frobfrob.jpg",
+      "ill_gtp.jpg",
+      "ill_jennifer.jpg",
+      "404.jpg",
+      "img/sketches/scdengine1.jpg",
+      "img/sketches/sclea.jpg",
+      "img/sketches/schdragontattoo.jpg",
+      "6788949859_4f4efbe244_o.jpg",
+      "5572829236_cc13d5e471_o.jpg",
+      "5411825070_3eb14f3130_o.jpg",
+      "5410177218_d28d7c8f42_o.jpg"
+    ],
+    "tags": [
+      57,
+      105,
+      283,
+      247
+    ],
+    "categories": [
+      282
+    ]
+  },
+  {
+    "slug": "feedme",
+    "title": "Feedme",
+    "excerpt": "",
+    "content": "<p>A top secret prototype application that does things, and Google Maps API.</p>\n",
+    "dateFrom": "2014-04-16",
+    "dateTo": "2014-04-24",
+    "featured": false,
+    "inCv": false,
+    "inPortfolio": false,
+    "images": [],
+    "tags": [
+      34,
+      274,
+      161,
+      165
+    ],
+    "categories": [
+      273,
+      241,
+      239,
+      238,
+      276
+    ]
+  },
+  {
+    "slug": "chocolatl",
+    "title": "Chocolátl",
+    "excerpt": "",
+    "content": "<p>A new store in the Jordaan called Chocolátl. And it sells chocolate :-}<br />\nTogether with graphic designer Ibrahim Farah a website for the store was created: clean and staightforward. Both Ibrahim and I are now a bit more addicted to chocolate.<br />\nThere&#8217;s also rumor of a webshop being developed.</p>\n",
+    "dateFrom": "2013-03-01",
+    "dateTo": "2013-05-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "chocolatl1.jpg",
+    "image": "chocolatl1.jpg",
+    "images": [
+      "chocolatl2.jpg",
+      "chocolatl3.jpg",
+      "chocolatl1.jpg"
+    ],
+    "tags": [
+      46,
+      65,
+      280,
+      289,
+      317
+    ],
+    "categories": [
+      273,
+      241,
+      239,
+      277
+    ]
+  },
+  {
+    "slug": "mitsubishi-colt",
+    "title": "Mitsubishi Colt",
+    "excerpt": "<p>Lead developer for the new Colt site. A Flash site with lots of video interwoven with content. And a scrollable panoramic video with 3D sound.</p>\n",
+    "content": "<p>The Mitsubishi Colt has undergone a restyle. This minisite was part of a cross-media campaign for the vehicle. Technically, the site is quite heavy; a compromise between quality and quantity. The site contains three interactive 360 ??° panoramas with hotspots for specific parts. The panoramas flow seamlessly into each other and contain many background sounds that pan across the cars.</p>\n",
+    "dateFrom": "2008-08-01",
+    "dateTo": "2008-10-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "newcolt4.jpg",
+    "image": "newcolt4.jpg",
+    "images": [
+      "newcolt4.jpg",
+      "newcolt.jpg",
+      "newcolt0.jpg",
+      "newcolt1.jpg",
+      "newcolt2.jpg",
+      "newcolt3.jpg"
+    ],
+    "tags": [
+      284,
+      281,
+      279
+    ],
+    "categories": [
+      238,
+      268
+    ]
+  },
+  {
+    "slug": "kleuren-speuren",
+    "title": "Kleuren speuren",
+    "excerpt": "<p>Kleuren Speuren is an educational game designed for children aged 6 to 12. I was involved in the entire process from concept to development. My main job was doing all the illustrations and the programming.</p>\n",
+    "content": "<p>Kleuren Speuren is an educational game designed for children aged 6 to 12.<br />\nIt is a playable learning environment that teaches fun things about color theory.<br />\nKleuren Speuren was brought out as freeware, on CD-ROM as well as an online download.</p>\n<p>The overarching game element creates the additional challenge to go on. The aim is to catch all the chameleons by searching in six different color spaces that are accessible from the courtyard. In every room six chameleons are hidden. To find a chameleon, you must accomplish a task. If you do it well, the chameleon appears and you can catch him. When all chameleons are caught you will have the best chance of winning the bonus game. </p>\n<p>In 2004 Kleuren Speuren was nominated for the Gouden Apenstaart.</p>\n",
+    "dateFrom": "2002-01-01",
+    "dateTo": "2003-01-01",
+    "featured": false,
+    "inCv": true,
+    "inPortfolio": true,
+    "thumbnail": "kleurenspeuren2.jpg",
+    "image": "kleurenspeuren2.jpg",
+    "images": [
+      "kleurenspeuren5.jpg",
+      "kleurenspeuren.jpg",
+      "kleurenspeuren0.jpg",
+      "kleurenspeuren1.jpg",
+      "kleurenspeuren2.jpg",
+      "kleurenspeuren3.jpg",
+      "kleurenspeuren4.jpg"
+    ],
+    "tags": [
+      288,
+      283,
+      289,
+      271,
+      267,
+      217,
+      317
+    ],
+    "categories": [
+      270,
+      282,
+      287,
+      171
+    ]
+  }
+]
