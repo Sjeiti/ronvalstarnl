@@ -82,7 +82,7 @@ component.create('[data-header]', class extends BaseComponent{
     } else if (!name&&!this._experiment){
       this._experiment = Object.values(experiments).sort(()=>Math.random()<0.5?1:-1).pop()
       console.log('\t',this._experiment?.name,{experiment:this._experiment}) // todo: remove log
-      this._experiment.init(this._experimentWrapper)
+      this._experiment?.init(this._experimentWrapper)
     }
   }
 
