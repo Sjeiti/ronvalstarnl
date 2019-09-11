@@ -28,8 +28,8 @@ export function searchView(view, route, params, error){
   //
   const data = ['fortpolio-list', 'posts-list', 'pages-list']
   Promise.all(data.map(s=>fetch(`/data/json/${s}.json`).then(r=>r.json())))
-      .then(([fortpolio, posts])=>{
-        const slugPosts = [...fortpolio, ...posts].reduce((acc,o)=>(acc[o.slug]=o,acc),{})
+      .then(([fortpolio, posts, pages])=>{
+        const slugPosts = [...fortpolio, ...posts, ...pages].reduce((acc,o)=>(acc[o.slug]=o,acc),{})
         console.log('\tslugPosts',slugPosts) // todo: remove log
         //
         const querySelector = ::view.querySelector
@@ -65,13 +65,9 @@ export function searchView(view, route, params, error){
           .then(allSlugs=>allSlugs.reduce((acc, slugs)=>(acc.push(...slugs), acc), []))
           .then(a=>(console.log('alSlugs', a), a))
 
-            // todo order by amount of occurences and make unique
           .then(slugs=>{
             const slugAmount = slugs.reduce((acc,s)=>(acc[s]++||(acc[s]=1),acc),{})
-            // console.log('slugAmount',slugAmount) // todo: remove log
-            // const orderedSlugs = slugs.sort((a,b)=>slugAmount[a]>slugAmount[b]?-1:1).filter((s, i) => array.indexOf(s) === i)
             slugs = slugs.sort((a,b)=>slugAmount[a]>slugAmount[b]?-1:1).filter((s,i,a)=>a.indexOf(s)===i)
-            // console.log('orderedSlugs',orderedSlugs) // todo: remove log
             const {length} = slugs
             noResult.classList.toggle('hidden', !!length)
             noResult.textContent = noResult.textContent.replace(/'.*'/, `'${query}'`)
