@@ -21,7 +21,7 @@ add(
       .then(([projects, taxonomies])=>{
         console.log('\tloaded')
         const categories = taxonomies['fortpolio_category']
-        const portfolioProjects = projects.filter(p=>p.inPortfolio)
+        const portfolioProjects = projects.filter(p=>p.inPortfolio).sort((a,b)=>new Date(a.dateFrom)<new Date(b.dateFrom)?1:-1)
         //
         const querySelector = ::view.querySelector
         const existingCategories = querySelector('.project-category')
