@@ -2,6 +2,7 @@ import {expand} from '@emmetio/expand-abbreviation'
 
 /**
  * A component factory
+ * todo: no need for a class here
  */
 class Component{
 
@@ -129,12 +130,12 @@ class Component{
     })
   }
 }
-const component = new Component()
+export const component = new Component()
 
 /**
  * A base component
  */
-class BaseComponent{
+export class BaseComponent{
 
   /**
    * Initialise element with options
@@ -204,9 +205,4 @@ class BaseComponent{
   static _isObjectString(str){
     return /^\s?[[{]/.test(str)
   }
-}
-
-export {
-  BaseComponent,
-  component
 }

@@ -4,6 +4,9 @@ import {stringToElement} from './utils/html'
 
 const siteName= 'Ron Valstar - frontend developer'
 
+/**
+ * Head controller for meta properties
+ */
 routeChange.add((slug, page)=>{
   console.log('head',{slug, page})
   const title = page.title.rendered||page.title
