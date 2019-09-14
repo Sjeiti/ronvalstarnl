@@ -30,7 +30,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
    ${portfolio.map(project=>`
    <url>
       <loc>${base}/project/${project.slug}</loc>
-      <lastmod>${project.date}</lastmod>
+      <lastmod>${new Date(project.dateTo).toISOString()}</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>`).join('')}
