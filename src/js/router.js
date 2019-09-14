@@ -13,8 +13,7 @@ const routes = {}
 
 window.addEventListener('popstate', onPopstate)
 
-let url = ''//location.href
-// let currentRouteResolve
+let url = ''
 
 document.body.addEventListener('click', onClick, true)
 
@@ -66,13 +65,11 @@ export function open(uri){
   const oldName = getName(getPathname(oldUrl))
   url = getURL(pathname)
   const name = getName(pathname)
-  let routeKey = ''
   let routeResolve = defaultRouteResolve
   let routeParams
   for (let route in routes){
     const params = getParams(route, pathname)
     if(params){
-      routeKey = route
       routeParams = params
       routeResolve = routes[route]
       break

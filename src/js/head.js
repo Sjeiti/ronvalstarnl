@@ -45,8 +45,8 @@ routeChange.add((slug, page)=>{
   setSelector('meta[property="twitter:site"]', 'content', twitterUser)
   setSelector('meta[property="twitter:image"]', 'content', image)
   setSelector('meta[property="twitter:creator"]', 'content', twitterUser)
-  //
-  // todo: add rss
+  // rss
+  setSelector('link[rel="alternate"][href="https://ronvalstar.nl/feed.rss"]')
   //
   // robots
   const isNoIndex = /^search\//.test(slug)||page.title==='404'
@@ -63,10 +63,11 @@ routeChange.add((slug, page)=>{
  * @param {string} selector
  * @param {string} key
  * @param {string} value
+ * @todo: key/value could be superfluous
  */
 function setSelector(selector, key, value){
   const elm = selectOrCreate(document.head, selector)
-  elm.setAttribute(key, value)
+  key&&elm.setAttribute(key, value)
 }
 
 /**

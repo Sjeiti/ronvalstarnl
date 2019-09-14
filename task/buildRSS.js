@@ -28,7 +28,7 @@ const rss = `<?xml version="1.0" ?>
     <link>${base}</link>
     <!--link>${base}/blog</link-->
     <description>Foo, bar and a lot of baz</description>
-    <atom:link href="${base}/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="${base}/feed.rss" rel="self" type="application/rss+xml" />
     <!--image>
         <url>https://www.xul.fr/xul-icon.gif</url>
         <link>https://www.xul.fr/en/index.php</link>
