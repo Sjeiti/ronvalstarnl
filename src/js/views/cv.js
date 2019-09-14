@@ -5,8 +5,7 @@ const data = ['page_cv', 'fortpolio-list', 'taxonomies']
 
 add(
   'cv'
-  , (view, route, params)=>{
-    console.log('cv', view, route, params)
+  , (view/*, route, params*/)=>{
     return Promise.all(data.map(n=>fetch(`/data/json/${n}.json`).then(rs=>rs.json())))
       .then(([page, projects, taxonomies])=>{
         // content

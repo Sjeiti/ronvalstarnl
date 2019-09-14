@@ -10,7 +10,6 @@ component.create('code[data-src]', class extends BaseComponent{
     super(...args)
 
     const src = this._element.getAttribute('data-src')
-    console.log('code src', src)
     fetch(src)
       .then(res=>res.text())
       .then(text=>{

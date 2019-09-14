@@ -43,7 +43,7 @@ component.create('[data-search]', class extends BaseComponent{
       fetch('/data/search/words.json')
         .then(res=>res.json(), console.warn)
         .then(words=>this._words = words)
-        .catch(console.log.bind(console, 'bloody'))
+        .catch(console.error.bind(console, 'bloody'))
       //
       change.add(this._suggest.bind(this))
     }
@@ -86,7 +86,6 @@ component.create('[data-search]', class extends BaseComponent{
    */
   _onSubmit(input){
     const {value} = input
-    console.log('searchDispatch', value)
     search.dispatch(value)
   }
 

@@ -20,7 +20,6 @@ export function removeRule(selector){
       const {cssText} = rule
       cssText.includes(selector)
         &&styleSheet.deleteRule(i)
-      console.log('rule', rule.cssText)
     })
 }
 
@@ -29,5 +28,6 @@ export function removeRule(selector){
  * @param {string} selector
  */
 export function select(selector){
+  selector
   // todo implement
 }

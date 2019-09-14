@@ -7,7 +7,6 @@ export const routeChange = signal()
 
 const view = document.querySelector('main')
 const viewModel = viewModelFactory(view)
-console.log('viewModel', viewModel) // todo: remove log
 
 let defaultRouteResolve
 const routes = {}
@@ -31,11 +30,8 @@ function onPopstate(){
  * @param {MouseEvent} e
  */
 function onClick(e){
-  //e.preventDefault()
   const target = e.touches&&e.touches.length&&e.touches[0].target||e.target
-  //console.log('t',!!target,target&&parentQuerySelector(target,'a',true))
   const anchor = target&&parentQuerySelector(target, 'a[href^="/"]', true)
-  //console.log(anchor&&'####################################')
   if (anchor){
     e.preventDefault()
     // todo ?s= replace
@@ -57,7 +53,6 @@ export function setDefault(fn){
  */
 export function add(...names){//,callback
   const callback = names.pop()
-  console.log('router.add', names)
   names.forEach(name=>routes[name]=callback)
 }
 
@@ -66,19 +61,16 @@ export function add(...names){//,callback
  * @param {string} uri
  */
 export function open(uri){
-  console.log('open', uri)
   const pathname = getPathname(uri)
   const oldUrl = url
   const oldName = getName(getPathname(oldUrl))
   url = getURL(pathname)
   const name = getName(pathname)
-  console.log('\tname', name, 'empty', name==='', /^\s*$/.test(name))
   let routeKey = ''
   let routeResolve = defaultRouteResolve
   let routeParams
   for (let route in routes){
     const params = getParams(route, pathname)
-    console.log('\tparamsz', params, route, pathname) // todo: remove log
     if(params){
       routeKey = route
       routeParams = params
@@ -86,20 +78,11 @@ export function open(uri){
       break
     }
   }
-  console.log('\turl', url, 'old', oldUrl, !!routeResolve)
-  console.log('\trouteResolve===defaultRouteResolve', routeResolve===defaultRouteResolve) // todo: remove log
   if (url!==oldUrl){
-    console.log('\tresolving', name)
     routeResolve(viewModel, name||'home', routeParams)
       .then(page=>{
-        //console.clear()
-        console.log('\tresolved', {page:JSON.stringify(page)})
-        console.log('\troute', routeKey)
-        console.log('\tpathname', name)
-        console.log('\tparams', JSON.stringify(routeParams))
         const title = page.title.rendered||page.title
         history.pushState({}, title, (name[0]==='/'?'':'/')+name)
-        console.log('\tpushState', title, name)
         routeChange.dispatch(name, page, oldName)
         component.initialise(view)
         document.body.setAttribute('data-pathname', name)

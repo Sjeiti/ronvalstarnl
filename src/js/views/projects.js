@@ -13,13 +13,11 @@ add(
   , 'projects/:category'
   , 'project/:project'
   , (view, route, params)=>{
-    console.log('project', view, route, params)
     const {project:projectSlug, category} = params
     let title = 'projects'
     let parentSlug
     return Promise.all(data.map(n=>fetch(`/data/json/${n}.json`).then(rs=>rs.json())))
       .then(([projects, taxonomies])=>{
-        console.log('\tloaded')
         const categories = taxonomies['fortpolio_category']
         const portfolioProjects = projects.filter(p=>p.inPortfolio).sort((a,b)=>new Date(a.dateFrom)<new Date(b.dateFrom)?1:-1)
         //
@@ -29,7 +27,6 @@ add(
         const existingProject = querySelector('.project')
         const exists = !!(existingCategories&&existingProjects)
         //316 240
-        console.log('\texists', exists)
         //
         if(!exists){
           view.expandAppend(`(ul.unstyled.project-category>(${categories.map(
@@ -38,15 +35,9 @@ add(
               project=>`(li${project.categories.map(c=>`.cat-${c}`).join('')}[style="background-image:url(${MEDIA_URI_THUMB+project.thumbnail})"]>a[href="/project/${project.slug}"]>(div{${project.title}}))`
             ).join('+')})`)
         }
-        //
-        //
-        console.log('__________', existingProjects, '2', querySelector('.projects'))
-        //
-        //
         // project selected
         existingProject&&existingProject.parentNode.removeChild(existingProject )
         if(projectSlug){
-          console.log('\tprojectSlug', projectSlug)
           const currentProject = projects.filter(p=>p.slug===projectSlug).pop()
           title = currentProject.title
           const {
@@ -79,26 +70,19 @@ add(
           const {body} = document
           const bodyTop = body.getBoundingClientRect().top
           scrollTo(body, 1000, null, top-16-bodyTop)
-          //console.log(JSON.stringify(currentProject,null,1))
         }
-        //
         // category
         const current = 'current'
         const seldo = selectEach.bind(null, existingCategories||querySelector('.project-category'))
         existingCategories&&seldo('.'+current, elm=>elm.classList.remove(current))
         removeRule('ul.projects > li:not(.cat-')
-        console.log('\tproject category:', category)
         if(category){
           title = `${category} projects`
           parentSlug = 'projects'
           //
           const select = `projects/${category}`
           const categoryID = categories.filter(c=>c.slug===category).pop()?.id
-          // ul.projects > li:not(.cat-239) { display: none; }
           addRule(`ul.projects>li:not(.cat-${categoryID}){display:none;}`)
-          console.log('\tselect', select)
-          console.log('\tcategoryID', categoryID)
-          //console.log('\tcategories',JSON.stringify(categories,null,1))
           seldo(`a[href="/${select}"]`, elm=>elm.classList.add(current))
         }
         //

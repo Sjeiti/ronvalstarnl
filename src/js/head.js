@@ -8,7 +8,6 @@ const siteName= 'Ron Valstar - frontend developer'
  * Head controller for meta properties
  */
 routeChange.add((slug, page)=>{
-  console.log('head',{slug, page})
   const title = page.title.rendered||page.title
   const {description, link, date, modified} = page
   // todo: description

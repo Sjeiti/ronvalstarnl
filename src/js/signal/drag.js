@@ -137,7 +137,6 @@ function handleDrag(e){
       if (oTouches.length>0) drag.dispatch(oTouches, e)
       bReturn = false
     break
-    default: console.log(e.type, e)
   }
   if (bTouch&&e.touches&&e.touches.length!==oTouches.length) checkForOrphans(e.touches)
   return !drag.stopPageScroll||bReturn

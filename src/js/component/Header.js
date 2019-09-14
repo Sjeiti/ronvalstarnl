@@ -31,11 +31,9 @@ component.create('[data-header]', class extends BaseComponent{
     this._experimentWrapper = this._select('.experiment-wrapper')
     clean(this._experimentWrapper)
     this._stuck.add(is=>this._experiment?.pause(is))
-    //location.pathname==='/'&&for (let name in experiments)console.log(name)
   }
 
   setImage(src){
-    console.log('setImage', src) // todo: remove log
     if (src){
       this._background.style.backgroundImage = `url("${src}")`
     } else {
@@ -61,7 +59,6 @@ component.create('[data-header]', class extends BaseComponent{
   }
 
   _onRouteChange(name, page, oldName){
-    console.log('Header:routeChange', name)
     const current = 'current'
     const select = page.parentSlug||name
     this._seldo('.'+current, elm=>elm.classList.remove(current))
@@ -71,7 +68,6 @@ component.create('[data-header]', class extends BaseComponent{
   }
 
   _setExperiment(name){
-    console.log('Header._setExperiment', name) // todo: remove log
     if (/^experiment-.+/.test(name)){
       this._experiment&&this._experiment.exit()
       this._experiment = experiments[name.replace(/^experiment-/, '')]
@@ -81,7 +77,6 @@ component.create('[data-header]', class extends BaseComponent{
       this._experiment = null
     } else if (!name&&!this._experiment){
       this._experiment = Object.values(experiments).sort(()=>Math.random()<0.5?1:-1).pop()
-      console.log('\t',this._experiment?.name,{experiment:this._experiment}) // todo: remove log
       this._experiment?.init(this._experimentWrapper)
     }
   }

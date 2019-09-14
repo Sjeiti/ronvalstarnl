@@ -128,7 +128,6 @@ function drawPolygon(x, y, radius, sides, fill, stroke){
       this.scale(s, s)
       this.fill()
       this.scale(1/s, 1/s)
-      //console.log('fill',fill); // log
     }
 
   /*if (fill) {

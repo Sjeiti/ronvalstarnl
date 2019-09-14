@@ -18,24 +18,20 @@ add('search/:query', 'search', searchView)
  * @returns {{title: string}}
  */
 export function searchView(view, route, params, error){
-  console.log('search', {view, route, params, error})
   const query = decodeURIComponent(params.query)||'' // todo 404 ... why are params not set?
   const querySplit = query.split(/\s+/g)
   const is404 = !!error
   let title = is404?'404':'search'
   //
-  console.log('\tquery',query) // todo: remove log
   //
   const data = ['fortpolio-list', 'posts-list', 'pages-list']
   Promise.all(data.map(s=>fetch(`/data/json/${s}.json`).then(r=>r.json())))
       .then(([fortpolio, posts, pages])=>{
         const slugPosts = [...fortpolio, ...posts, ...pages].reduce((acc,o)=>(acc[o.slug]=o,acc),{})
-        console.log('\tslugPosts',slugPosts) // todo: remove log
         //
         const querySelector = ::view.querySelector
         const existingSearch = querySelector('[data-search]')
         const exists = !!(existingSearch)
-        console.log('\texists', exists)
         //
         !exists&&view.expandAppend(`h1.page404{404}+[data-search="{
             label:''
@@ -61,10 +57,7 @@ export function searchView(view, route, params, error){
           // .then(words=>words.filter(word=>word.includes(query.toLowerCase())))
           .then(words=>words.filter(word=>querySplit.reduce((acc,q)=>acc||word.includes(q.toLowerCase()),false)))
           .then(words=>Promise.all(words.map(word=>fetch(`${baseUri}s_${word}.json`).then(r=>r.json()))))
-          // .then(a=>(console.log('alSlugs', a), a))
           .then(allSlugs=>allSlugs.reduce((acc, slugs)=>(acc.push(...slugs), acc), []))
-          .then(a=>(console.log('alSlugs', a), a))
-
           .then(slugs=>{
             const slugAmount = slugs.reduce((acc,s)=>(acc[s]++||(acc[s]=1),acc),{})
             slugs = slugs.sort((a,b)=>slugAmount[a]>slugAmount[b]?-1:1).filter((s,i,a)=>a.indexOf(s)===i)

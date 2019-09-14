@@ -55,7 +55,6 @@ function addLineNumbers(elm, code){
 
 /*
 lineHighlighted.add((from,to)=>{
-  console.log('lineHighlighted',from,to); // todo: remove log
   let highlight = 'highlight'
       ,elmFrom = document.getElementById(from)
       ,elmTo = to&&document.getElementById(to)
