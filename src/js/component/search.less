@@ -1,0 +1,27 @@
+ .search {
+  position: relative;
+  height: 1.375rem;
+  margin: 0;
+  background-color: #fff;
+  box-shadow: 0.1rem 0.2rem 0.3rem rgba(0,0,0,0.2) inset, 0 0 0 1px #f04;
+  &>* { background: transparent; }
+  input[type=search] {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0 1.5rem 0 0.5rem;
+    &:focus {
+      box-shadow: 0 0 0 2px #f04;
+      outline: none;
+    }
+  }
+  button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    color: var(--color-main);
+  }
+  input { width: 4rem; }
+}
+::-webkit-search-cancel-button { color: #f04; }

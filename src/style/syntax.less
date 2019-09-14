@@ -8,9 +8,12 @@ code {
 }
 
 pre, code {
-  font-family: @fontNameCode;
-  font-size: 12px;
-  line-height: @preLineHeight;
+  //font-family: @fontNameCode;
+  //font-size: 12px;
+  //line-height: @preLineHeight;
+  font-family: var(--font-name-code);
+  font-size: 0.75rem;
+  line-height: 180%;
   @media @mediaM {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -18,6 +21,10 @@ pre, code {
 }
 
 pre {
+  padding: 1rem;
+  overflow:auto;
+  background-color: #333;
+  color: #eee;
   &::-webkit-scrollbar {
     width: 0.5rem;
     height: 0.5rem;

@@ -1,0 +1,52 @@
+[data-pathname^=cv] {}
+.cv-projects {
+  margin: 0;
+  h3 {
+    margin-top: 0;
+    font-weight: 400;
+  }
+  h3, h3>a { color: #f04; }
+  >li {
+    padding: 3rem 1rem;
+    box-shadow: 0 -1px 0 #eee;
+  }
+  time {
+    line-height: 100%;
+  }
+  .tags {
+    padding: 0;
+    list-style: none;
+    font-size: 0.75rem;
+    color: #666;
+    font-size: 0.75rem;
+    color: #666;
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+[class^='skill-'] {
+  vertical-align: top;
+  position: relative;
+  padding-left: 6*8px;
+  &:after,&:before {
+    //.lt(0,10px);
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    .rv-icon;
+    font-size: 8px;
+    display: inline-block;
+    color: @colorMain;
+  }
+  &:before {
+    content: @rv-star@rv-star@rv-star@rv-star@rv-star;
+    color: @colorGray;
+  }
+  &.skill-5:after { content: @rv-star@rv-star@rv-star@rv-star@rv-star; }
+  &.skill-4:after { content: @rv-star@rv-star@rv-star@rv-star; }
+  &.skill-3:after { content: @rv-star@rv-star@rv-star; }
+  &.skill-2:after { content: @rv-star@rv-star; }
+  &.skill-1:after { content: @rv-star; }
+}

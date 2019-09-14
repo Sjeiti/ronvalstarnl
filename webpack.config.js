@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const lessPluginGlob = require('less-plugin-glob')
 const fileName = '[name]-[hash].[ext]'
 module.exports = env => {
 
@@ -23,14 +24,14 @@ module.exports = env => {
           ,use: [
               'style-loader' // creates style nodes from JS strings
               ,'css-loader' // translates CSS into CommonJS
-              ,'less-loader' // compiles Less to CSS, using Node Sass by default
-          ]
-      },{
-          test: /\.scss$/
-          ,use: [
-              'style-loader' // creates style nodes from JS strings
-              ,'css-loader' // translates CSS into CommonJS
-              ,'sass-loader' // compiles Sass to CSS, using Node Sass by default
+              // ,'less-loader' // compiles Less to CSS, using Node Sass by default
+              ,{
+                loader: 'less-loader',
+                options: {
+                  plugins: [lessPluginGlob],
+                  paths: [path.resolve(__dirname, 'src')] // This is the important part!
+                }
+              }
           ]
       },{
         test: /\.(log|frag|vert|txt|css)/

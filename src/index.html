@@ -6,7 +6,6 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#F04">
-  
   <!--
   <link rel="manifest" href="site.webmanifest">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -19,10 +18,8 @@
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/rv256.png">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/rv256.png">
   -->
-  
   <style>
-    @import url(//fonts.googleapis.com/css?family=Six+Caps|Gloria+Hallelujah|Source+Code+Pro:200,400,600|Istok+Web:400,700,400italic,700italic|);
-
+    
     :root {
       --color-main: #f04;
       --color-link: #3baeff;
@@ -63,6 +60,7 @@
     header {
       position: sticky;
       top: -11rem;
+      z-index: 256;
       height: 12rem;
       display: block;
       margin: 0;
@@ -71,7 +69,6 @@
       color: white;
       text-transform: uppercase;
       background-color: var(--color-main);
-      /*background-image: url("/data/header-bg-2.jpg");*/
       background-size: cover;
     }
     @media (min-width: 768px) { header { top: -10.5rem; } }
@@ -103,7 +100,6 @@
       height:3.2em;
       transform:rotate(46deg) skewx(-9deg) skewy(-9deg);
     }
-
     header h1 {
       position: relative;
       left: 50%;
@@ -118,9 +114,6 @@
       margin: 0 auto;
       font-size: 5px;
     }
-    /*header h1 .logo:before, header h1 .logo:after {
-      background-image: url("data/header-bg-1.jpg");
-    }*/
     header h1 .name {
       font-size: 3rem;
       line-height: 3rem;
@@ -130,9 +123,6 @@
       letter-spacing: 0.325rem;
       font-weight: 600;
     }
-    
-    header { z-index: 256; }
-    /*@media (min-width: 768px) { header.stuck { box-shadow: 0 -1.5rem 0 0 var(--color-main) inset; } }*/
     header nav {
       position: absolute;
       left: 50%;
@@ -204,7 +194,6 @@
       margin-right: 1rem;
     }
     main {
-      /*min-height: 18.5rem;*/
       min-height: calc(100vh - 16.25rem);
     }
     aside { display: none; }
@@ -230,7 +219,6 @@
     footer>*:last-child {
       flex: 0 1 10rem;
     }
-    /*footer, footer * {box-shadow:0 0 0 1px green;}*/
     footer .social {
       display: flex;
     }
@@ -247,84 +235,12 @@
     footer .social span {
       display: none;
     }
-    ::-webkit-search-cancel-button { color: #f04; }
-    
-    
-    .search {
-      position: relative;
-      height: 1.375rem;
-      margin: 0;
-      background-color: #fff;
-      box-shadow: 0.1rem 0.2rem 0.3rem rgba(0,0,0,0.2) inset, 0 0 0 1px #f04;
-    }
-    .search>* { background: transparent; }
-    .search input[type=search] {
-      display: block;
-      width: 100%;
-      height: 100%;
-      padding: 0 1.5rem 0 0.5rem;
-    }
-    .search input[type=search]:focus {
-      box-shadow: 0 0 0 2px #f04;
-      outline: none;
-    }
-    .search button {
-      position: absolute;
-      right: 0;
-      top: 0;
-      height: 100%;
-      color: var(--color-main);
-    }
-    .search input { width: 4rem; }
-    
-    main .search {
-      max-width: 20rem;
-      margin: 0 auto;
-    }
-
     h1,h2,h3,h4,h5,h6 {
       font-family: var(--font-name-heading);
       font-weight: 200;
       line-height: 120%;
     }
-
-    time {
-      font-family: var(--font-name-heading);
-      font-weight: 200;
-    }
-
-    button, input {
-      border: 0;
-      background: #fff;
-      vertical-align: middle;
-      line-height: 100%;
-    }
-
-    main>h1 {
-      margin-top: 0;
-    }
-
-    main>pre {
-      margin: 0;
-      max-height: 100vh;
-    }
-    pre {
-      padding: 1rem;
-      overflow:auto;
-      background-color: #333;
-      color: #eee;
-    }
-    pre, code {
-      font-family: var(--font-name-code);
-      font-size: 0.75rem;
-      line-height: 180%;
-    }
   </style>
-  <link
-    href="https://fonts.googleapis.com/css?family=Overpass+Mono&display=swap"
-    rel="stylesheet"
-  />
-  <link src="/style/screen.css">
 </head>
 <body>
   <header data-header>
@@ -346,7 +262,11 @@
       <a href="/cv"><span>cv</span></a>
     </nav>
   </header>
-  <main></main>
+  <main>
+    <p>My name is Ron Valstar&nbsp;<del><a href="/search?s=cool%20shit">and I make cool shit</a></del>&nbsp;and I develop applications for digital media.</p>
+    <p>I am an Amsterdam based freelance front-end developer with a background in graphic design and interaction design.<br>
+    If you need me <a title="06 33697212" href="tel:+31633697212">give me a call</a> or <a href="mailto:hello@ronvalstar.nl">drop me a line</a>.</p>
+  </main>
   <aside></aside>
   <footer>
     <nav class="social">
