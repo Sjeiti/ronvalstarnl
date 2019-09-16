@@ -27,14 +27,16 @@ function onPopstate(){
 /**
  * Click event handler to detect anchor clicks to local
  * @param {MouseEvent} e
+ * @todo add better solution for hrefs that are not routes, ie downloads
  */
 function onClick(e){
   const target = e.touches&&e.touches.length&&e.touches[0].target||e.target
   const anchor = target&&parentQuerySelector(target, 'a[href^="/"]', true)
-  if (anchor){
+  const href = anchor?.getAttribute?.('href')
+  if (anchor&&!/\.\w+$/.test(href)){
     e.preventDefault()
     // todo ?s= replace
-    open(anchor.getAttribute('href').replace(/search\?s=/, 'search/'))
+    open(href.replace(/search\?s=/, 'search/'))
   }
 }
 
@@ -76,6 +78,7 @@ export function open(uri){
     }
   }
   if (url!==oldUrl){
+    viewModel.removeEventListeners()
     routeResolve(viewModel, name||'home', routeParams)
       .then(page=>{
         const title = page.title.rendered||page.title
@@ -92,6 +95,7 @@ export function open(uri){
  * A factory method for the view that is parsed with each route change
  * @param {HTMLElement} element
  * @returns {object}
+ * @todo check usages of methods
  */
 function viewModelFactory(element){
   return Object.create({
@@ -99,6 +103,14 @@ function viewModelFactory(element){
       const {element} = this
       while (element.firstChild) element.removeChild(element.firstChild)
       return this
+    }
+    , addEventListener(...args){
+      this._events.push(args)
+      return this.element.addEventListener(...args)
+    }
+    , removeEventListeners(){
+      let args
+      while (args = this._events.pop()) this.element.removeEventListener(...args)
     }
     , appendChild(...args){
       return this.element.appendChild(...args)
@@ -125,6 +137,10 @@ function viewModelFactory(element){
   }, {
     element: {
       value: element
+      , writable: false
+    }
+    ,_events: {
+      value: []
       , writable: false
     }
   })

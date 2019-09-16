@@ -1,4 +1,11 @@
-[data-pathname^=cv] {}
+[data-pathname^=cv] {
+ @media print {
+   header {
+     background-color: lime;
+   }
+ }
+}
+
 .cv-projects {
   margin: 0;
   h3 {
