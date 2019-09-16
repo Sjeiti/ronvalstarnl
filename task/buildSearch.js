@@ -4,12 +4,10 @@ const glob = promisify(require('glob'))
 const utils = require('./util/utils.js')
 const {read, save} = utils
 // const {parse} = require('node-html-parser')
-const taxonomies = [...Object.values(require('../src/data/json/taxonomies.json'))].reduce((acc,o)=>{
-  acc[parseInt(o.id)] = o.name
+const taxonomies = [...Object.values(require('../src/data/json/taxonomies.json'))].reduce((acc,category)=>{
+  category.forEach(item=>acc[parseInt(item.id)] = item.name||item.slug)
   return acc
 },[])
-
-
 
 const common = [
   'you','was','the','got','for','but'
@@ -351,7 +349,7 @@ function createIndex(files){
       const txnm =['tags','categories','clients','collaboration','prizes']
           .reduce((acc,prop)=>{
             return acc + (file[prop]||[]).map(id=>taxonomies[id]).join(' ')
-          },'') 
+          },'')
       // const tags = file.tags
       // const file = categories
       // clients
