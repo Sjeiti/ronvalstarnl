@@ -1,5 +1,6 @@
 import {expand} from '@emmetio/expand-abbreviation'
 import {add} from '../router'
+import {loadScript} from '../utils/html'
 
 const data = ['page_cv', 'fortpolio-list', 'taxonomies']
 
@@ -8,6 +9,13 @@ add(
   , (view/*, route, params*/)=>{
     return Promise.all(data.map(n=>fetch(`/data/json/${n}.json`).then(rs=>rs.json())))
       .then(([page, projects, taxonomies])=>{
+        // load html2pdf script only when asked
+        // todo: move script on build to somewhere loadable
+        view.element.addEventListener('click',e=>{
+          const {target} = e
+          target.matches('a[href$=".pdf"]')&&loadScript('https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.min.js')
+              .then(()=>window.html2pdf(document.body))&&e.preventDefault()
+        })
         // content
         view.appendString(page.content.rendered)
         // projects

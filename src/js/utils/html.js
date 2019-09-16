@@ -64,3 +64,19 @@ export function clean(elm){
 export function selectEach(root, selector, fn){
   Array.from(root.querySelectorAll(selector)).forEach(fn)
 }
+
+/**
+ * Load javascript file
+ * @name loadScript
+ * @method
+ * @returns {Promise}
+ */
+export function loadScript(src) {
+  return new Promise((resolve,reject)=>{
+    let script = document.createElement('script')
+    document.body.appendChild(script)
+    script.addEventListener('load',resolve)
+    script.addEventListener('error',reject)
+    script.setAttribute('src',src)
+  })
+}
