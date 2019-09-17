@@ -4,8 +4,8 @@ const glob = promisify(require('glob'))
 const utils = require('./util/utils.js')
 const {read, save} = utils
 // const {parse} = require('node-html-parser')
-const taxonomies = [...Object.values(require('../src/data/json/taxonomies.json'))].reduce((acc,o)=>{
-  o.forEach(tx=>acc[tx.id] = tx.name||tx.slug)
+const taxonomies = [...Object.values(require('../src/data/json/taxonomies.json'))].reduce((acc,category)=>{
+  category.forEach(item=>acc[parseInt(item.id)] = item.name||item.slug)
   return acc
 },[])
 

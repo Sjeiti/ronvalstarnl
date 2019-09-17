@@ -1,5 +1,6 @@
 import {expand} from '@emmetio/expand-abbreviation'
 import {add} from '../router'
+import html2pdf from 'html2pdf.js'
 
 const data = ['page_cv', 'fortpolio-list', 'taxonomies']
 
@@ -8,8 +9,8 @@ add(
   , (view/*, route, params*/)=>{
     return Promise.all(data.map(n=>fetch(`/data/json/${n}.json`).then(rs=>rs.json())))
       .then(([page, projects, taxonomies])=>{
-        // content
         view.appendString(page.content.rendered)
+        view.addEventListener('click', onClickPDF)
         // projects
         const taxonomyMap = Object.values(taxonomies)
           .reduce((acc, list)=>{
@@ -34,3 +35,19 @@ add(
       })
   }
 )
+
+/**
+ * Download pdf if correct anchor is clicked
+ * @param {MouseEvent} e
+ * @todo: add print style
+ */
+function onClickPDF(e){
+  const {target} = e
+  if (target.matches('a[href$=".pdf"]')){
+    e.preventDefault()
+    html2pdf(document.querySelector('main'), {
+      filename: target.getAttribute('href').split(/\//g).pop()
+      , image: {type: 'png', quality: 0.95}
+    })
+  }
+}

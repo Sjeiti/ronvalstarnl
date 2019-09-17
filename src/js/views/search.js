@@ -18,7 +18,7 @@ add('search/:query', 'search', searchView)
  * @returns {{title: string}}
  */
 export function searchView(view, route, params, error){
-  const query = decodeURIComponent(params.query)||'' // todo 404 ... why are params not set?
+  const query = decodeURIComponent(params?.query)||'' // todo 404 ... why are params not set?
   const querySplit = query.split(/\s+/g)
   const is404 = !!error
   let title = is404?'404':'search'
