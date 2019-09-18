@@ -3,18 +3,27 @@ const glob = promisify(require('glob'))
 const utils = require('./util/utils.js')
 const {save,read} = utils
 
+const postmeta = require('../temp/rv_postmeta')
+const metaMap = {_yoast_wpseo_title:'metaTitle',_yoast_wpseo_metadesc:'metaDescription',_yoast_wpseo_focuskw:'metaKeyword'}
+const validMetas = ['_yoast_wpseo_title','_yoast_wpseo_metadesc','_yoast_wpseo_focuskw']
+const data = postmeta[2].data.filter(({meta_key,meta_value})=>meta_value&&validMetas.includes(meta_key))
+
+const markdownKeys = ['title','content']
+const arrayKeys = ['tags','categories','collaboration','clients','prizes','images']
+
 glob('src/data/markdown/+(post|fortpolio|page)_*.md')
     .then(files=>Promise.all(files.map(read)))
     .then(files=>files.map(markdown2object))
+
+    .then(addMetaData)
+// return false;Promise.resolve()
+
     .then(saveObjectsToJSON)
     .then(saveObjectsToMarkdown)
 
 // read('src/data/markdown/post_tissue.md').then(markdown2object)
 // read('src/data/markdown/page_about.md').then(markdown2object)
 // read('src/data/markdown/fortpolio_dustin-kershaw.md').then(markdown2object)
-
-const markdownKeys = ['title','content']
-const arrayKeys = ['tags','categories','collaboration','clients','prizes','images']
 
 function markdown2object(contents){
   const lines = contents.trim().split(/\r\n|\r|\n/g)
@@ -50,6 +59,18 @@ function saveObjectsToJSON(objects){
       const fileName = `temp/json/${obj.type}_${obj.slug}.json`
       save(fileName,JSON.stringify(obj))
     }
+  })
+  return objects
+}
+
+function addMetaData(objects){
+  objects.forEach(obj=>{
+    const {id} = obj
+    const meta = data.filter(n=>n.post_id===id)
+    meta.forEach(metaObj=>{
+      obj[metaMap[metaObj.meta_key]] = metaObj.meta_value
+    })
+    // console.log('meta',meta); // todo: remove log
   })
   return objects
 }
