@@ -5,9 +5,12 @@
   slug: e-books-on-your-psp
   type: post
   excerpt: [object Object]
-  content: [object Object]
   categories: uncategorized
   tags: 
+  inCv: 
+  inPortfolio: 
+  dateFrom: 
+  dateTo: 
 -->
 
 # E-books on your PSP

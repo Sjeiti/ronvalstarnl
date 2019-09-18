@@ -81,7 +81,7 @@ export function open(uri){
     viewModel.removeEventListeners()
     routeResolve(viewModel, name||'home', routeParams)
       .then(page=>{
-        const title = page.title.rendered||page.title
+        const title = page.title
         history.pushState({}, title, (name[0]==='/'?'':'/')+name)
         routeChange.dispatch(name, page, oldName)
         component.initialise(view)

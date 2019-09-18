@@ -5,8 +5,14 @@
   date: 2012-07-06T17:45:45
   modified: 2012-07-24T21:47:23
   type: post
-  categories: CSS,graphic design
+  categories: CSS, graphic design
   tags: 
+  metaKeyword: logo
+  metaDescription: I really just wanted to update my Wordpress core. But I got a little overexcited and redesigned my site: a logo made of one HTML element and pure CSS.
+  inCv: 
+  inPortfolio: 
+  dateFrom: 
+  dateTo: 
 -->
 
 # Logo
@@ -74,4 +80,3 @@
 }</style>
 </div>
 <p>Now the only problem is: how the hell do I turn this into vector?</p>
-

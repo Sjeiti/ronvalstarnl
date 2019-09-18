@@ -5,7 +5,10 @@
   slug: blog
   type: page
   excerpt: [object Object]
-  content: [object Object]
+  inCv: 
+  inPortfolio: 
+  dateFrom: 
+  dateTo: 
 -->
 
 # blog

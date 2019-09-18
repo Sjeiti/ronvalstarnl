@@ -5,12 +5,14 @@
   slug: meten-is-weten
   type: post
   excerpt: [object Object]
-  content: <p><img src="/wordpress/wp-content//uploads/img/blog/metenIsWeten.png" /></p> 
   categories: illustration
   tags: 
+  inCv: 
+  inPortfolio: 
+  dateFrom: 
+  dateTo: 
 -->
 
 # meten is weten
 
 <p><img src="/wordpress/wp-content//uploads/img/blog/metenIsWeten.png" /></p>
-

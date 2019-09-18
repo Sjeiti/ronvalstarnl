@@ -5,7 +5,12 @@
   slug: projects
   type: page
   excerpt: [object Object]
-  content: [object Object]
+  metaKeyword: project
+  metaDescription: Project portfolio
+  inCv: 
+  inPortfolio: 
+  dateFrom: 
+  dateTo: 
 -->
 
 # projects

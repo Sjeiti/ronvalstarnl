@@ -10,16 +10,18 @@ const data = postmeta[2].data.filter(({meta_key, meta_value})=>meta_value&&valid
 
 const markdownKeys = ['title', 'content']
 const arrayKeys = ['tags', 'categories', 'collaboration', 'clients', 'prizes', 'images']
+const booleanKeys = ['inCv', 'inPortfolio']
 
 glob('src/data/markdown/+(post|fortpolio|page)_*.md')
     .then(files=>Promise.all(files.map(read)))
     .then(files=>files.map(markdown2object))
 
-    .then(addMetaData)
-    // return false;Promise.resolve()
+    // .then(addMetaData)
+    // .then(swapKeys)
+    // .then(saveObjectsToMarkdown)
 
-    // .then(saveObjectsToJSON)
-    .then(saveObjectsToMarkdown)
+    .then(saveObjectsToJSON)
+    .then(saveObjectsToLists)
 
 // read('src/data/markdown/post_tissue.md').then(markdown2object)
 // read('src/data/markdown/page_about.md').then(markdown2object)
@@ -36,13 +38,15 @@ function markdown2object(contents){
   const endComments = hasComments?firstMatchIndex(lines, /^\s*-->\s*$/):-1
   const metaLines = hasComments&&lines.slice(1, endComments)||[]
   const meta = metaLines.reduce((acc, line)=>{
-    const [key, value] = line.trim().split(/\s*:\s*/)
-    acc[key] = arrayKeys.includes(key)?value.split(/,\s*/).filter(o=>o):value
+    const [key, value] = line.trim().split(/\s*:\s*(.*)/)
+    if (arrayKeys.includes(key)) acc[key] = value.split(/,\s*/).filter(o=>o)
+    else if (booleanKeys.includes(key)) acc[key] = value==='true'
+    else acc[key] = value
     return acc
   }, {})
   const contentLines = lines.slice(endComments+1)
   const titleIndex = firstMatchIndex(contentLines, /^\s*#\s(.*)$/)
-  const title = titleIndex!==-1&&contentLines[titleIndex].match(/#(.*)/).pop()||''
+  const title = (titleIndex!==-1&&contentLines[titleIndex].match(/#(.*)/).pop()||'').trim()
   const content = contentLines.slice(titleIndex+1).join('\n').trim()
   return Object.assign(meta, {title, content})
 }
@@ -69,13 +73,28 @@ function firstMatchIndex(a, r){
  * @param {object[]} objects
  * @returns {object[]}
  */
-function saveObjectsToJSON(objects){ // eslint-disable-line no-unused-vars
+function saveObjectsToJSON(objects){
   objects.forEach(obj=>{
     if (obj.slug&&obj.type){
-      const fileName = `temp/json/${obj.type}_${obj.slug}.json`
+      const fileName = `src/data/json/${obj.type}_${obj.slug}.json`
       save(fileName, JSON.stringify(obj))
     }
   })
+  return objects
+}
+
+/**
+ * Save the page-object to json
+ * @param {object[]} objects
+ * @returns {object[]}
+ */
+function saveObjectsToLists(objects){
+  const listPages = objects.filter(o=>o.type==='page')
+  const listPosts = objects.filter(o=>o.type==='post')
+  const listProjects = objects.filter(o=>o.type==='fortpolio'&&(o.inCv||o.inPortfolio))
+  save('src/data/json/pages-list.json', JSON.stringify(listPages.map(({slug, title})=>({slug, title}))))
+  save('src/data/json/posts-list.json', JSON.stringify(listPosts.map(({date, slug, title})=>({date, slug, title})).sort((a, b)=>new Date(a.date)>new Date(b.date)?-1:1)))
+  save('src/data/json/fortpolio-list.json', JSON.stringify(listProjects))
   return objects
 }
 
@@ -90,6 +109,23 @@ function addMetaData(objects){
     const meta = data.filter(n=>n.post_id===id)
     meta.forEach(metaObj=>{
       obj[metaMap[metaObj.meta_key]] = metaObj.meta_value
+    })
+  })
+  return objects
+}
+
+const keysToSwap = {
+  'incv':'inCv'
+  ,'inportfolio':'inPortfolio'
+  ,'datefrom':'dateFrom'
+  ,'dateto':'dateTo'
+}
+
+function swapKeys(objects){
+  objects.forEach(obj=>{
+    Object.entries(keysToSwap).forEach(([keyFrom, keyTo])=>{
+      obj[keyTo] = obj[keyFrom]
+      delete obj[keyFrom]
     })
   })
   return objects
@@ -115,7 +151,7 @@ ${Object.entries(obj).filter(([key])=>!markdownKeys.includes(key)).map(n=>{
 # ${title}
 
 ${content}`
-      const fileName = `temp/markdown/${obj.type}_${obj.slug}.md`
+      const fileName = `src/data/markdown/${obj.type}_${obj.slug}.md`
       save(fileName, markdown)
     }
   })

@@ -4,13 +4,15 @@
   modified: 2003-10-08T08:18:41
   slug: 269
   type: post
-  excerpt: <p>stuff may not work</p> 
-  content: <p>stuff may not work</p> 
+  excerpt: <p>stuff may not work</p>
   categories: admin
   tags: 
+  inCv: 
+  inPortfolio: 
+  dateFrom: 
+  dateTo: 
 -->
 
 # ?
 
 <p>stuff may not work</p>
-

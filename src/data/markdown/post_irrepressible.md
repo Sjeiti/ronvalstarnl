@@ -5,12 +5,14 @@
   slug: irrepressible
   type: post
   excerpt: [object Object]
-  content: <p><script src="http://fragments.irrepressible.info/js/fragment-234.js" type="text/javascript"></script></p> 
   categories: link
   tags: 
+  inCv: 
+  inPortfolio: 
+  dateFrom: 
+  dateTo: 
 -->
 
 # irrepressible
 
 <p><script src="http://fragments.irrepressible.info/js/fragment-234.js" type="text/javascript"></script></p>
-

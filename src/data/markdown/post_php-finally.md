@@ -4,13 +4,15 @@
   modified: 2014-08-15T18:11:59
   slug: php-finally
   type: post
-  excerpt: <p>finnally some php&#8230; only thing not working yet is shockwave on mozilla</p> 
-  content: <p>finnally some php&#8230; only thing not working yet is shockwave on mozilla</p> 
+  excerpt: <p>finnally some php&#8230; only thing not working yet is shockwave on mozilla</p>
   categories: backend
   tags: 
+  inCv: 
+  inPortfolio: 
+  dateFrom: 
+  dateTo: 
 -->
 
 # php
 
 <p>finnally some php&#8230; only thing not working yet is shockwave on mozilla</p>
-

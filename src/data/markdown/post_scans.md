@@ -4,13 +4,15 @@
   modified: 2003-12-24T03:11:47
   slug: scans
   type: post
-  excerpt: <p>finally managed to scan something somewhere</p> 
-  content: <p>finally managed to scan something somewhere</p> 
+  excerpt: <p>finally managed to scan something somewhere</p>
   categories: image
   tags: 
+  inCv: 
+  inPortfolio: 
+  dateFrom: 
+  dateTo: 
 -->
 
 # scans
 
 <p>finally managed to scan something somewhere</p>
-

@@ -4,13 +4,15 @@
   modified: 2014-08-15T21:28:28
   slug: added
   type: post
-  excerpt: <p>added 3 shockwave items</p> 
-  content: <p>added 3 shockwave items</p> 
-  categories: admin,Director
+  excerpt: <p>added 3 shockwave items</p>
+  categories: admin, Director
   tags: 
+  inCv: 
+  inPortfolio: 
+  dateFrom: 
+  dateTo: 
 -->
 
 # added
 
 <p>added 3 shockwave items</p>
-

@@ -6,7 +6,14 @@
   slug: creating-tileable-noise-maps
   type: post
   categories: code
-  tags: Perlin Noise,simplex noise,tile,pattern,dimension,cool shit
+  tags: Perlin Noise, simplex noise, tile, pattern, dimension, cool shit
+  metaKeyword: tileable noise
+  metaTitle: Creating tileable noise maps
+  metaDescription: Creating proper tileable noise maps is a bit tricky to get your head around if you want to do it right. Here's how to do it step by step.
+  inCv: 
+  inPortfolio: 
+  dateFrom: 
+  dateTo: 
 -->
 
 # Creating tileable noise maps
@@ -184,4 +191,3 @@ drawNoise(function(i,x,y){
 }).img().div(2,2);</code></pre>
 <p>And here&#8217;s the result:</p>
 <div style="background: url('/wordpress/wp-content/uploads/noiseTileable.jpg'); height: 400px;"></div>
-

@@ -5,12 +5,14 @@
   slug: icon-for-new-jquery-plugin
   type: post
   excerpt: [object Object]
-  content: <p><img src="/wordpress/wp-content//uploads/img/blog/elephant.jpg" alt="" /></p> 
-  categories: work,illustration
+  categories: work, illustration
   tags: 
+  inCv: 
+  inPortfolio: 
+  dateFrom: 
+  dateTo: 
 -->
 
 # icon for new jQuery plugin
 
 <p><img src="/wordpress/wp-content//uploads/img/blog/elephant.jpg" alt="" /></p>
-

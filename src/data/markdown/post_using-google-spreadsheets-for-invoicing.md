@@ -5,8 +5,15 @@
   modified: 2016-12-11T15:26:12
   slug: using-google-spreadsheets-for-invoicing
   type: post
-  categories: admin,code,Javascript,work
-  tags: Google,Javascript,freelance
+  categories: admin, code, Javascript, work
+  tags: Google, Javascript, freelance
+  metaDescription: How I use Google spreadsheets for my freelance administration: here are two example spreadsheets to duplicate and some details on the used Javascript.
+  metaTitle: Using Google spreadsheets for your freelance quotations and invoicing
+  metaKeyword: spreadsheet
+  inCv: 
+  inPortfolio: 
+  dateFrom: 
+  dateTo: 
 -->
 
 # Using Google spreadsheets for your freelance invoicing
@@ -228,4 +235,3 @@ The main one is that this is Google spreadsheets. So any graphic design is not e
 Sometimes the spreadsheet does a to good a job of caching values, especially the scripted ones. In which case you&#8217;ll have to open the script (Tools / Script editor) and hit the save icon so the spreadsheet values are recalculated.</p>
 <p>But apart from that: it&#8217;s relatively easy to use and you have full control.</p>
 <p>&nbsp;</p>
-

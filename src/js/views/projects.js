@@ -5,8 +5,9 @@ import {addRule, removeRule} from '../utils/style'
 import {scrollTo, nextTick} from '../utils'
 import {component} from '../Component'
 import {MEDIA_URI_PROJECT, MEDIA_URI_THUMB} from '../config'
+import {slugify} from '../utils/string'
 
-const data = ['fortpolio-list', 'taxonomies']
+const data = ['fortpolio-list', 'taxonomies'] // todo fix taxonomies
 
 add(
   'projects'
@@ -32,7 +33,7 @@ add(
           view.expandAppend(`(ul.unstyled.project-category>(${categories.map(
               o=>`(li>a[href="/projects/${o.slug}"]{${o.name}})`
             ).join('+')}))+ul.unstyled.projects>(${portfolioProjects.map(
-              project=>`(li${project.categories.map(c=>`.cat-${c}`).join('')}[style="background-image:url(${MEDIA_URI_THUMB+project.thumbnail})"]>a[href="/project/${project.slug}"]>(div{${project.title}}))`
+              project=>`(li${project.categories.map(c=>`.cat-${slugify(c)}`).join('')}[style="background-image:url(${MEDIA_URI_THUMB+project.thumbnail})"]>a[href="/project/${project.slug}"]>(div{${project.title}}))`
             ).join('+')})`)
         }
         // project selected

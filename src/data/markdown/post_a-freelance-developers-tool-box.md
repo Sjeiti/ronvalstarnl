@@ -5,8 +5,15 @@
   modified: 2014-05-06T13:01:35
   slug: a-freelance-developers-tool-box
   type: post
-  categories: code,work
-  tags: frameworks,ide,libraries,software,tools
+  categories: code, work
+  tags: frameworks, ide, libraries, software, tools
+  metaKeyword: tool
+  metaTitle: A feelance developer's tool box
+  metaDescription: It's not the tools that make you a good developer, but good tools certainly help. Here's a list of software and tools I use as a freelancer.
+  inCv: 
+  inPortfolio: 
+  dateFrom: 
+  dateTo: 
 -->
 
 # A freelance developer&#8217;s tool box
@@ -62,4 +69,3 @@ Single Creative Cloud (Ps, Fw, Fl, Ai): €24.45 pm (for one year) or €36.89 p
 Photoshop CS6: €950,79</p>
 <hr/>
 <p>Well, I hope you find something useful in this list. And don&#8217;t hesitate to comment, I&#8217;m very curious what you yourself use.</p>
-

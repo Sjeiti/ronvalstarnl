@@ -2,20 +2,18 @@
   id: 3160
   slug: studyblend-improvements
   type: fortpolio
-  content: <p>Several teacher/student improvements were made to the Studyblend Angular application. One of which a bulk download functionality for student assignments.</p> 
   categories: 
-  tags: Angular,REST,Grunt,interaction design,JSDoc,concept
-  datefrom: 2016-09-08
-  dateto: 2016-08-17
-  incv: false
-  inportfolio: false
+  tags: Angular, REST, Grunt, interaction design, JSDoc, concept
   clients: 
   collaboration: 
   prizes: 
   images: 
+  inCv: false
+  inPortfolio: false
+  dateFrom: 2016-09-08
+  dateTo: 2016-08-17
 -->
 
 # Studyblend improvements
 
 <p>Several teacher/student improvements were made to the Studyblend Angular application. One of which a bulk download functionality for student assignments.</p>
-

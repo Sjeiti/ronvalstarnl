@@ -8,7 +8,7 @@ import {MEDIA_URI_HEADER} from '../config'
 setDefault((view, route, params)=>fetch(`/data/json/post_${route}.json`)
     .then(rs=>rs.json(), searchView.bind(null, view, route, params))
     .then(post=>{
-      const {date, title:{rendered:title}, content:{rendered:content}, featured_media_file} = post
+      const {date, title, content, featured_media_file} = post
       if (featured_media_file){
         const header = component.of(document.querySelector('[data-header]'))
         header&&nextTick(header.setImage.bind(header, MEDIA_URI_HEADER+featured_media_file))

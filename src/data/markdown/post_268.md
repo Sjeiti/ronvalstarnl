@@ -4,13 +4,15 @@
   modified: 2014-08-15T21:27:51
   slug: 268
   type: post
-  excerpt: <p>fixed stuff&#8230; and put in two images</p> 
-  content: <p>fixed stuff&#8230; and put in two images</p> 
+  excerpt: <p>fixed stuff&#8230; and put in two images</p>
   categories: admin
   tags: 
+  inCv: 
+  inPortfolio: 
+  dateFrom: 
+  dateTo: 
 -->
 
 # …
 
 <p>fixed stuff&#8230; and put in two images</p>
-
