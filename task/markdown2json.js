@@ -116,12 +116,17 @@ function addMetaData(objects){
 
 const keysToSwap = {
   'incv':'inCv'
-  ,'inportfolio':'inPortfolio'
-  ,'datefrom':'dateFrom'
-  ,'dateto':'dateTo'
+  , 'inportfolio':'inPortfolio'
+  , 'datefrom':'dateFrom'
+  , 'dateto':'dateTo'
 }
 
-function swapKeys(objects){
+/**
+ * Change key names
+ * @param {object[]} objects
+ * @return {object[]}
+ */
+function swapKeys(objects){ // eslint-disable-line no-unused-vars
   objects.forEach(obj=>{
     Object.entries(keysToSwap).forEach(([keyFrom, keyTo])=>{
       obj[keyTo] = obj[keyFrom]
@@ -136,7 +141,7 @@ function swapKeys(objects){
  * @param {object[]} objects
  * @returns {object[]}
  */
-function saveObjectsToMarkdown(objects){
+function saveObjectsToMarkdown(objects){ // eslint-disable-line no-unused-vars
   objects.forEach(obj=>{
     if (obj.slug&&obj.type){
       const {title, content} = obj
