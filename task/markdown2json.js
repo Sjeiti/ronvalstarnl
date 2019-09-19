@@ -3,7 +3,7 @@ const glob = promisify(require('glob'))
 const utils = require('./util/utils.js')
 const {save, read} = utils
 
-const postmeta = require('../temp/rv_postmeta')
+const postmeta = null // require('../temp/rv_postmeta')
 const metaMap = {_yoast_wpseo_title:'metaTitle', _yoast_wpseo_metadesc:'metaDescription', _yoast_wpseo_focuskw:'metaKeyword'}
 const validMetas = ['_yoast_wpseo_title', '_yoast_wpseo_metadesc', '_yoast_wpseo_focuskw']
 const data = postmeta[2].data.filter(({meta_key, meta_value})=>meta_value&&validMetas.includes(meta_key))
