@@ -177,3 +177,13 @@ export function loadScript(src){
 export function nextTick(fn){
   return requestAnimationFrame(fn)
 }
+
+/**
+ * Reduce canonical uri from page/post/project item
+ * @param {object} page
+ * @return {string}
+ * @todo define object
+ */
+export function getCanonical(page){
+  return 'https://ronvalstar.nl/'+(page.type==='fortpolio'?'project/':'')+page.slug
+}

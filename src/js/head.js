@@ -1,6 +1,7 @@
 import {expand} from '@emmetio/expand-abbreviation'
 import {routeChange} from './router'
 import {stringToElement} from './utils/html'
+import {getCanonical} from './utils'
 
 const siteName= 'Ron Valstar - frontend developer'
 
@@ -9,38 +10,37 @@ const siteName= 'Ron Valstar - frontend developer'
  */
 routeChange.add((slug, page)=>{
   const title = page.title
-  const {description, link, date, modified} = page
-  // todo: description
-  // todo: fix link by inferring from slug
-  const image = 'http://...' // todo implement
-  const imageW = 768 // todo implement
-  const imageH = 512 // todo implement
+  const {metaDescription, date, modified} = page
+  const link = getCanonical(page)
+  const image = ''//http://...' // todo implement
+  const imageW = ''//768 // todo implement
+  const imageH = ''//512 // todo implement
   const twitterUser = '@Sjeiti'
   //
   document.title = title+(title?' - ':'')+siteName
   //
   setSelector('link[rel="canonical"]', 'href', link)
-  setSelector('meta[name="description"]', 'content', description)
-  // og
+  setSelector('meta[name="description"]', 'content', metaDescription)
+  // Opengraph
   setSelector('meta[property="og:locale"]', 'content', 'en_US')
   setSelector('meta[property="og:type"]', 'content', 'article')
   setSelector('meta[property="og:title"]', 'content', title)
-  setSelector('meta[property="og:description"]', 'content', description)
+  setSelector('meta[property="og:description"]', 'content', metaDescription)
   setSelector('meta[property="og:url"]', 'content', link)
   setSelector('meta[property="og:site_name"]', 'content', siteName)
   setSelector('meta[property="og:updated_time"]', 'content', modified)
   setSelector('meta[property="og:image"]', 'content', image)
   setSelector('meta[property="og:image:width"]', 'content', imageW)
   setSelector('meta[property="og:image:height"]', 'content', imageH)
-  // article
-  // setSelector('meta[property="article:tag"]','content','foo') // todo implement
-  // setSelector('meta[property="article:tag"]','content','foo') // todo implement
-  // setSelector('meta[property="article:section"]','content','foo') // todo implement
+  // Facebook
+  // setSelector('meta[property="article:tag"]','content','foo') // todo implement setSelector multiple
+  // setSelector('meta[property="article:tag"]','content','foo') // todo implement setSelector multiple
+  // setSelector('meta[property="article:section"]','content','foo') // todo implement setSelector multiple
   setSelector('meta[property="article:published_time"]', 'content', date)
   setSelector('meta[property="article:modified_time"]', 'content', modified)
-  // twitter
+  // Twitter
   setSelector('meta[property="twitter:card"]', 'content', 'summary')
-  setSelector('meta[property="twitter:description"]', 'content', description)
+  setSelector('meta[property="twitter:description"]', 'content', metaDescription)
   setSelector('meta[property="twitter:title"]', 'content', title)
   setSelector('meta[property="twitter:site"]', 'content', twitterUser)
   setSelector('meta[property="twitter:image"]', 'content', image)
@@ -50,7 +50,7 @@ routeChange.add((slug, page)=>{
   //
   // robots
   const isNoIndex = /^search\//.test(slug)||page.title==='404'
-  if (isNoIndex) {
+  if (isNoIndex){
     setSelector('meta[property="robots"]', 'content', 'noindex,follow')
   } else {
     const robots = document.querySelector('meta[property="robots"]')
@@ -66,8 +66,13 @@ routeChange.add((slug, page)=>{
  * @todo: key/value could be superfluous
  */
 function setSelector(selector, key, value){
-  const elm = selectOrCreate(document.head, selector)
-  key&&elm.setAttribute(key, value)
+  if (value){
+    const elm = selectOrCreate(document.head, selector)
+    key&&elm.setAttribute(key, value)
+  } else {
+    const elm = document.head.querySelector(selector)
+    elm&&elm.parentNode.removeChild(elm)
+  }
 }
 
 /**
