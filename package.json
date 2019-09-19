@@ -1,15 +1,14 @@
 {
   "name": "ronvalstarnl",
-  "version": "0.4.98",
+  "version": "0.4.99",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
   "scripts": {
     "start": "run-p build build:watch serve",
     "build": "run-s clean \"webpack -- --env.development\"",
-    "build:prod": "run-s clean build:search \"webpack -- --env.production\" build:sitemap build:rss",
+    "build:prod": "run-s clean build:json build:search \"webpack -- --env.production\" build:sitemap build:rss",
     "build:watch": "chokidar \"src/**/*.*\" -c \"npm run build\"",
-    "build:post": "node task/postBuild",
-    "build:lists": "node task/buildLists",
+    "build:json": "node task/markdown2json",
     "build:search": "node task/buildSearch",
     "build:sitemap": "node task/buildSitemap --target dist",
     "build:rss": "node task/buildRSS --target dist",
@@ -24,7 +23,9 @@
     "build:test": "npx webpack --config webpack.test.config.js --env.development",
     "build:test:watch": "npm run build:test & chokidar \"src/**/*.*\" -c \"npm run build:test\"",
     "prerender:temp": "node task/preRender --entry http://localhost:7047 --target temp/renders",
-    "prerender:build": "node task/preRender --entry http://localhost:7047 --target temp/renders"
+    "prerender:build": "node task/preRender --entry http://localhost:7047 --target temp/renders",
+    "__build:post": "node task/postBuild",
+    "__build:lists": "node task/buildLists"
   },
   "dependencies": {
     "@emmetio/expand-abbreviation": "^0.7.3",

@@ -32,7 +32,7 @@ glob('src/data/markdown/+(post|fortpolio|page)_*.md')
  * @param {string} contents
  * @returns {object}
  */
-export function markdown2object(contents){
+function markdown2object(contents){
   const lines = contents.trim().split(/\r\n|\r|\n/g)
   const hasComments = /^\s*<!--\s*$/.test(lines[0])
   const endComments = hasComments?firstMatchIndex(lines, /^\s*-->\s*$/):-1
