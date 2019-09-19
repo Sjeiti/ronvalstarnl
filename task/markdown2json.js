@@ -6,7 +6,7 @@ const {save, read} = utils
 const postmeta = null // require('../temp/rv_postmeta')
 const metaMap = {_yoast_wpseo_title:'metaTitle', _yoast_wpseo_metadesc:'metaDescription', _yoast_wpseo_focuskw:'metaKeyword'}
 const validMetas = ['_yoast_wpseo_title', '_yoast_wpseo_metadesc', '_yoast_wpseo_focuskw']
-const data = postmeta[2].data.filter(({meta_key, meta_value})=>meta_value&&validMetas.includes(meta_key))
+const data = postmeta&&postmeta[2].data.filter(({meta_key, meta_value})=>meta_value&&validMetas.includes(meta_key))
 
 const markdownKeys = ['title', 'content']
 const arrayKeys = ['tags', 'categories', 'collaboration', 'clients', 'prizes', 'images']
