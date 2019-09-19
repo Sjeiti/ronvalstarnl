@@ -37,7 +37,7 @@ const rss = `<?xml version="1.0" ?>
         <title>${title||'blank'}</title>
         <link>${base}/${slug}</link>
         <guid>${base}/${slug}</guid>
-        <description>${describe(require(`${path}post_${slug}.json`).excerpt.rendered)}</description>
+        <description>${describe(require(`${path}post_${slug}.json`).description||'')}</description>
         <pubDate>${stringDate(date)}</pubDate>
     </item>`).join('')}
   <!--/channel>
@@ -53,7 +53,7 @@ const rss = `<?xml version="1.0" ?>
         <title>${title||'blank'}</title>
         <link>${base}/project/${slug}</link>
         <guid>${base}/project/${slug}</guid>
-        <description>${describe(require(`${path}fortpolio_${slug}.json`).excerpt)}</description>
+        <description>${describe(require(`${path}fortpolio_${slug}.json`).description||'')}</description>
         <pubDate>${stringDate(date)}</pubDate>
     </item>`).join('')}
   </channel>
