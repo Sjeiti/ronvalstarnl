@@ -28,10 +28,11 @@ function read(file){
  * Promise to save a file
  * @param {string} file
  * @param {string} data
+ * @param {boolean} [silent=false]
  * @returns {Promise}
  */
-function save(file,data) {
-  console.log('saving',file,formatBytes(data.length));
+function save(file,data,silent=false) {
+  !silent&&console.log('saving',file,formatBytes(data.length));
   return mkdirp(getDirName(file))
       .then(()=>new Promise(function(resolve){//,reject
         require('fs').writeFile(file, data, resolve);

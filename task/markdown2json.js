@@ -32,7 +32,7 @@ glob('src/data/markdown/+(post|fortpolio|page)_*.md')
  * @param {string} contents
  * @returns {object}
  */
-function markdown2object(contents){
+export function markdown2object(contents){
   const lines = contents.trim().split(/\r\n|\r|\n/g)
   const hasComments = /^\s*<!--\s*$/.test(lines[0])
   const endComments = hasComments?firstMatchIndex(lines, /^\s*-->\s*$/):-1
@@ -103,7 +103,7 @@ function saveObjectsToLists(objects){
  * @param {object[]} objects
  * @returns {object[]}
  */
-function addMetaData(objects){
+function addMetaData(objects){ // eslint-disable-line no-unused-vars
   objects.forEach(obj=>{
     const {id} = obj
     const meta = data.filter(n=>n.post_id===id)
