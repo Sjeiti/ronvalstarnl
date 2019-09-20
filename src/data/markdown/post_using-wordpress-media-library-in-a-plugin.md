@@ -37,7 +37,7 @@ We overwrite the $html parameter (the filter callback expects $html returned) an
 Hooking up to &#8216;media_send_to_editor&#8217; will also cause whatever you do in that function to happen in the normal text editor (after all: that&#8217;s what we&#8217;re hacking into).<br />
 So we need to try to determine were we come from. There is the $_POST[&#8216;_wp_http_referer&#8217;] but if you examine it you&#8217;ll see that it does not contain the $GET vars we added to the upload button href. It took me a while to notice: if you check the upload iframe uri you&#8217;ll see that somebody did a very sloppy job off chopping of the last $GET variables after &#8216;TB_iframe&#8217; (WTF WordPress, seriously?!). So don&#8217;t append or use add_query_arg but insert your extra variables.</p>
 <p>So since we now know  where we come from we can use this in our hook function. We don&#8217;t even have to parse an HTML string. We just want some data so we&#8217;re going to parse JSON.</p>
-<p>Here is an example custom post type: <a href="/wordpress/wp-content/uploads/foobarbaz.zip" download="foobarbaz.zip">foobarbaz.zip</a> (simply add it to your theme dir and include the php file in your functions.php).</p>
+<p>Here is an example custom post type: <a href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/foobarbaz.zip" download="foobarbaz.zip">foobarbaz.zip</a> (simply add it to your theme dir and include the php file in your functions.php).</p>
 <p>There are two important lines in the PHP (the rest is mainly for building a custom post type):</p>
 <pre><code data-language="php" data-line="67">$sUri = esc_url( str_replace('&amp;type=','&amp;target=foobarbaz&amp;input='.$sInputName.'&amp;preview='.$sPreview.'&amp;tab=library&amp;type=',get_upload_iframe_src($sSubType)) );</code></pre>
 <p>This is the code for creating the uri used in the upload button. Notice the insertion of the $GET vars.<br />
@@ -100,4 +100,4 @@ And there is the entire mediaSendToEditor function on line 81.<br />
 Then we hack into tb_remove to restore the original send_to_editor function (since we also want this to happen when you simply close the upload iframe).<br />
 You&#8217;ll also notice that the original global &#8216;send-to-editor&#8217; function is stored and restored on callback so as to maintain it&#8217;s original texteditor functionality. And that&#8217;s it.</p>
 <p>So there you have it&#8230;</p>
-<p>(once again: <a href="/wordpress/wp-content/uploads/foobarbaz.zip" download="foobarbaz.zip">foobarbaz.zip</a>)</p>
+<p>(once again: <a href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/foobarbaz.zip" download="foobarbaz.zip">foobarbaz.zip</a>)</p>

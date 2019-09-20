@@ -35,7 +35,7 @@ Professionally I began around 1996 with HTML/CSS and Javascript. Then Lingo (Dir
 When I graduated (Interaction Design) I started a company called [Shapers](https://shapers.nl). Director died, Flash became big. I started programming more Javascript and Actionscript and learned PHP along the way.
 In 2004 I started using Processing (and Java) for private projects.
 I quit Shapers in 2007 and started freelancing.
-Then Flash died in 2011 and I was back coding good old Javascript applications.
+Then Flash died in 2011 and I was back coding good old Javascript applications. And now also using [GLSL](/search/GLSL).
 
 ## education
 

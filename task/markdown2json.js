@@ -1,3 +1,4 @@
+const marked = require('marked')
 const {promisify} = require('util')
 const glob = promisify(require('glob'))
 const utils = require('./util/utils.js')
@@ -47,7 +48,7 @@ function markdown2object(contents){
   const contentLines = lines.slice(endComments+1)
   const titleIndex = firstMatchIndex(contentLines, /^\s*#\s(.*)$/)
   const title = (titleIndex!==-1&&contentLines[titleIndex].match(/#(.*)/).pop()||'').trim()
-  const content = contentLines.slice(titleIndex+1).join('\n').trim()
+  const content = marked(contentLines.slice(titleIndex+1).join('\n').trim(), {breaks: true})
   return Object.assign(meta, {title, content})
 }
 

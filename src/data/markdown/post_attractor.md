@@ -29,4 +29,4 @@ Simplicity is also one of the beautifull properties of strange attractors. For e
 yy = y + e*( ( b*x*d) &#8211; (y*d) &#8211; (z*x*d) )<br />
 zz = z + e*( (-c*z*d) + (x*y*d) )</p>
 <p>resulting in this:</p>
-<p><img alt="lorenz" class="ill" src="/wordpress/wp-content/uploads/lorenz.jpg" /></p>
+<p><img alt="lorenz" class="ill" src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/lorenz.jpg" /></p>

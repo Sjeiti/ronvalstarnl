@@ -56,7 +56,7 @@ When you duplicate them, make sure you set the &#8216;data sheet key&#8217; in t
 <h2>Calculation</h2>
 <p>Here I estimated the hours for a project. It&#8217;s divided into smaller tasks which will show up in the quotation and invoice.<br />
 The subject can be anything but if you pick it from the dropdown the quotation will have the body text for that task already filled out (more about that later).</p>
-<p><img class="alignnone" src="/wordpress/wp-content/uploads/drive_calculation.png" alt="The calculation sheet from the template spreadsheet" /></p>
+<p><img class="alignnone" src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/drive_calculation.png" alt="The calculation sheet from the template spreadsheet" /></p>
 <p>The estimated hours are multiplied by a deviation percentage and a discount percentage.<br />
 This is always a bit of fiddling. My hourly rate goes down the more hours I estimate (I normally hide rows 13 to 18). Sometimes I work for a fixed project price, and sometimes for an hourly rate.<br />
 Then there&#8217;s the type of client: big agencies are charged more than a sole entrepreneur. And the type of project: if it&#8217;s something really cool, a good cause or just work.<br />

@@ -23,37 +23,37 @@ I had been playing with the idea of merging the two for some time because I didn
 (I had these lying around, I&#8217;ll try and update this post with the latest versions)</p>
 <ul>
 <li>1996 okt: hacking away at HTML2, no idea what I&#8217;m doing<br />
-<img src="/wordpress/wp-content/uploads/1996okt.jpg" /></li>
+<img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/1996okt.jpg" /></li>
 <li>1997 jan: is that a lens-flare?!<br />
-<img src="/wordpress/wp-content/uploads/1997jan.jpg" /></li>
+<img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/1997jan.jpg" /></li>
 <li>1997 april<br />
-<img src="/wordpress/wp-content/uploads/1997april.jpg" /></li>
+<img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/1997april.jpg" /></li>
 <li>1997 jun: I liked pixeling stuff<br />
-<img src="/wordpress/wp-content/uploads/1997jun.jpg" /></li>
+<img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/1997jun.jpg" /></li>
 <p>	<!--li>1997 sept: separate site cus I started freelancing...
-<img src="/wordpress/wp-content/uploads/1997sept.jpg" /></li-->
+<img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/1997sept.jpg" /></li-->
 <li>1998 mrt: everthing in total blackness untill you hover (Flash 3)<br />
-<img src="/wordpress/wp-content/uploads/1998mrt.jpg" /></li>
+<img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/1998mrt.jpg" /></li>
 <li>1998 jun<br />
-<img src="/wordpress/wp-content/uploads/1998jun.jpg" /></li>
+<img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/1998jun.jpg" /></li>
 <li>1998 nov: a mix of HTML and Shockwave<br />
-<img src="/wordpress/wp-content/uploads/1998nov.jpg" /></li>
+<img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/1998nov.jpg" /></li>
 <li>1999 april: the first sjeiti.com<br />
-<img src="/wordpress/wp-content/uploads/1999april.jpg" /></li>
+<img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/1999april.jpg" /></li>
 <p>	<!--li>2001 jan: ?
-<img src="/wordpress/wp-content/uploads/2001jan.jpg" /></li-->
+<img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/2001jan.jpg" /></li-->
 <li>2001 sept: shockwave sketchbook with extraordinary interface<br />
-<img src="/wordpress/wp-content/uploads/2001sept.jpg" /></li>
+<img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/2001sept.jpg" /></li>
 <li>2002 mrt: 3D<br />
-<img src="/wordpress/wp-content/uploads/2002mrt.jpg" /></li>
+<img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/2002mrt.jpg" /></li>
 <li>2002 jan: a long list<br />
-<img src="/wordpress/wp-content/uploads/2002jan.jpg" /></li>
+<img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/2002jan.jpg" /></li>
 <li>2003 may: similar but green<br />
-<img src="/wordpress/wp-content/uploads/2003mei.jpg" /></li>
+<img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/2003mei.jpg" /></li>
 <li>2003 okt: still fond of long lists<br />
-<img src="/wordpress/wp-content/uploads/2003okt.jpg" /></li>
+<img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/2003okt.jpg" /></li>
 <li>2004 jan<br />
-<img src="/wordpress/wp-content/uploads/2004jan.jpg" /></li>
+<img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/2004jan.jpg" /></li>
 <li>2004 dec:<br />
-<img src="/wordpress/wp-content/uploads/2004dec.jpg" /></li>
+<img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/2004dec.jpg" /></li>
 </ul>

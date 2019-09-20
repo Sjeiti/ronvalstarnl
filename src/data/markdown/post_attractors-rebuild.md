@@ -18,7 +18,7 @@
 <p>In the beginning of this year I had some free time and thought I&#8217;d spend it on <a href="http://processing.org/">P55</a> (which had been a while).<br />
 <!--more--></p>
 <p class="notice">Update: this post is obsolete, there is now <a href="/strange-attractors-javascript">a rerebuild</a>.</p>
-<p><img src="/wordpress/wp-content/uploads/Lorenz84-1234-682-945-484-296-1024x819.jpg" alt="" /><br />
+<p><img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/Lorenz84-1234-682-945-484-296-1024x819.jpg" alt="" /><br />
 Because I&#8217;ve been doing as3 since late 2006 I&#8217;m now all used to it&#8217;s way of oo programming. The only way to do that in P55 (using packages and all that) is by doing Java and using the P55 core library.<br />
 I&#8217;m still fascinated by strange attractors and since my old P55 attractor viewer was made in P55 alpha, and there are all these useful libraries for the latest P55, I decide to rebuild it.<br />
 So I fired up Eclipse and after I while had a really cool new version in which you can create and save attractor data to cookies, render and save <a href="http://flickr.com/photos/sjeiti/sets/72157603957488195/">images</a> directly. And the standalone version even renders out <a href="/48-hours-of-rendering">complete movies</a> (thanks to <a href="http://processing.org/reference/libraries/video/index.html">this cool lib</a>).<br />

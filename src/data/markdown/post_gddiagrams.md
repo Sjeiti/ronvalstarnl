@@ -15,4 +15,4 @@
 
 # gd diagrams
 
-<p><img src="/wordpress/wp-content/uploads/hours.gif" align="left" style="position:relative;left:-10px;" />Ever since I read <a href="http://www.edwardtufte.com/tufte/books_vdqi" target="_blank">this book</a> I wanted to change the ugly line diagrams I once made with php/gd (for my site statistics). The revised diagram here shows the hourly hits.<br />If you want the source just <a href="/wordpress/wp-content/uploads/diagramcircleline.txt" target="_blank">save this</a> and rename it to a php file.<br style="clear:both;"/></p>
+<p><img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/hours.gif" align="left" style="position:relative;left:-10px;" />Ever since I read <a href="http://www.edwardtufte.com/tufte/books_vdqi" target="_blank">this book</a> I wanted to change the ugly line diagrams I once made with php/gd (for my site statistics). The revised diagram here shows the hourly hits.<br />If you want the source just <a href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/diagramcircleline.txt" target="_blank">save this</a> and rename it to a php file.<br style="clear:both;"/></p>
