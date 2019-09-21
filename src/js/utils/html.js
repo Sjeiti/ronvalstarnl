@@ -71,12 +71,12 @@ export function selectEach(root, selector, fn){
  * @method
  * @returns {Promise}
  */
-export function loadScript(src) {
-  return new Promise((resolve,reject)=>{
+export function loadScript(src){
+  return new Promise((resolve, reject)=>{
     let script = document.createElement('script')
     document.body.appendChild(script)
-    script.addEventListener('load',resolve)
-    script.addEventListener('error',reject)
-    script.setAttribute('src',src)
+    script.addEventListener('load', resolve)
+    script.addEventListener('error', reject)
+    script.setAttribute('src', src)
   })
 }

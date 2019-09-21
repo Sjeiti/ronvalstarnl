@@ -139,7 +139,7 @@ function viewModelFactory(element){
       value: element
       , writable: false
     }
-    ,_events: {
+    , _events: {
       value: []
       , writable: false
     }

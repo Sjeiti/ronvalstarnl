@@ -17,7 +17,7 @@ add(
           .filter(p=>p.inCv)
           .sort((a, b)=>a.dateFrom>b.dateFrom?-1:1)
         let projectString = expand(`ul.unstyled.cv-projects>(${cvProjects.map(
-            (project,i)=>`(li${project.categories.map(c=>`.cat-${slugify(c)}`).join('')}`
+            (project, i)=>`(li${project.categories.map(c=>`.cat-${slugify(c)}`).join('')}`
               +`>(.date>time.date-from{${project.dateFrom.replace(/-\d\d$/, '')}}`
               +`+time.date-to{${project.dateTo.replace(/-\d\d$/, '')}})`
               +(project.inPortfolio?`+(h3>a[href="/project/${project.slug}"]{${project.title}})`:`+h3{${project.title}}`)
@@ -25,7 +25,7 @@ add(
               +`+(ul.tags>(${project.tags.map(tag=>`li{${tag}}`).join('+')}))`
             +')'
           ).join('+')})`)
-        cvProjects.forEach((project,i) => projectString = projectString.replace('replaceContent'+i, project.excerpt||project.content))
+        cvProjects.forEach((project, i) => projectString = projectString.replace('replaceContent'+i, project.excerpt||project.content))
         view.appendString(projectString, false)
         return page
       })
