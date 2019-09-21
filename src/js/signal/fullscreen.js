@@ -13,11 +13,18 @@ export default fullScreen
 
 vendorPrefixes.forEach(prefix=>document.addEventListener(prefix+'fullscreenchange', onFullscreenEvent, false))
 
-function onFullscreenEvent(e){
+/**
+ * Handles the fullscreen event
+ */
+function onFullscreenEvent(){
   let fullscreenElement = getFullscreenElement()
   fullScreen.dispatch(!!fullscreenElement, fullscreenElement)
 }
 
+/**
+ * Get the element that is currently fullscreen
+ * @return {Element}
+ */
 function getFullscreenElement(){
   return document.fullscreenElement
     ||document.mozFullScreenElement
@@ -25,6 +32,10 @@ function getFullscreenElement(){
     ||document.msFullscreenElement
 }
 
+/**
+ * Test whether something is fullscreen
+ * @return {boolean}
+ */
 function getFullscreenState(){
   return !!getFullscreenElement()
 }

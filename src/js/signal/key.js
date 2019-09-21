@@ -65,6 +65,10 @@ let eLastKeyDown
     up.dispatch(iKeyCode, key, e)
   })
 // }
+
+/**
+ * Keypress event handler
+ */
 function keypress(){
   press.dispatch(key, eLastKeyDown)
 }

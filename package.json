@@ -1,6 +1,6 @@
 {
   "name": "ronvalstarnl",
-  "version": "0.4.105",
+  "version": "0.4.106",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
   "scripts": {
@@ -16,7 +16,7 @@
     "clean": "del-cli dist -f",
     "serve": "node task/serve dist 7047",
     "serve:temp": "node task/serve temp 7777",
-    "lint:fix": "eslint src/**/*.js --fix",
+    "lint:fix": "eslint src/js/**/*.js --fix",
     "version": "next-version package.json",
     "version:minor": "npm run version -- --minor",
     "version:major": "npm run version -- --major",

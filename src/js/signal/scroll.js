@@ -15,6 +15,10 @@ const listenerOptions = {capture, passive}
 window.addEventListener('touchmove', handleScroll, listenerOptions)
 window.addEventListener('scroll', handleScroll, listenerOptions)
 
+/**
+ * Handle the scroll event
+ * @param {Event} e
+ */
 function handleScroll(e){
   const x = getScrollX()
   const y = getScrollY()

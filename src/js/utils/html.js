@@ -67,8 +67,7 @@ export function selectEach(root, selector, fn){
 
 /**
  * Load javascript file
- * @name loadScript
- * @method
+ * @param {string} src
  * @returns {Promise}
  */
 export function loadScript(src){
