@@ -18,21 +18,20 @@ add('search/:query', 'search', searchView)
  * @returns {{title: string}}
  */
 export function searchView(view, route, params, error){
-  const query = decodeURIComponent(params?.query)||'' // todo 404 ... why are params not set?
-  const querySplit = query.split(/\s+/g)
   const is404 = !!error
   let title = is404?'404':'search'
-  //
   //
   const data = ['fortpolio-list', 'posts-list', 'pages-list']
   Promise.all(data.map(s=>fetch(`/data/json/${s}.json`).then(r=>r.json())))
       .then(([fortpolio, posts, pages])=>{
+        const query = !is404?decodeURIComponent(params?.query)||'':location.pathname.replace(/[^a-zA-Z]+/g,' ').trim() // todo 404 ... why are params not set?
+        const querySplit = query.split(/\s+/g)
         const slugPosts = [...fortpolio, ...posts, ...pages].reduce((acc, o)=>(acc[o.slug]=o, acc), {})
         const sortyQueryTitle = sortSlugByTitleAndQuery.bind(null, querySplit, slugPosts)
         //
         const querySelector = ::view.querySelector
         const existingSearch = querySelector('[data-search]')
-        const exists = !!(existingSearch)
+        const exists = !!existingSearch
         //
         !exists&&view.expandAppend(`h1.page404{404}+[data-search="{
             label:''
