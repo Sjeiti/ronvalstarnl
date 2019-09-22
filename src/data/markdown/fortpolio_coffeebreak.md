@@ -8,7 +8,7 @@
   collaboration: 
   prizes: 
   images: 
-  inCv: true
+  inCv: false
   inPortfolio: false
   dateFrom: 2014-04-25
   dateTo: 2014-05-01

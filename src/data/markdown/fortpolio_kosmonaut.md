@@ -11,7 +11,7 @@
   thumbnail: kosmonaut1.jpg
   image: kosmonaut1.jpg
   images: kosmonaut.jpg, kosmonaut0.jpg, kosmonaut1.jpg, kosmonaut2.jpg, kosmonaut3.jpg, kosmonaut4.jpg
-  inCv: true
+  inCv: false
   inPortfolio: true
   dateFrom: 2007-11-01
   dateTo: 2008-01-01

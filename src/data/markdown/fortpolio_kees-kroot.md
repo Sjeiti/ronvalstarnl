@@ -10,7 +10,7 @@
   thumbnail: kees3.jpg
   image: kees3.jpg
   images: keesfwa.jpg, kees.jpg, kees0.jpg, kees1.jpg, kees2.jpg, kees3.jpg, kees4.jpg, kees5.jpg
-  inCv: true
+  inCv: false
   inPortfolio: true
   dateFrom: 2009-03-01
   dateTo: 2009-04-01

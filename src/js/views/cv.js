@@ -22,6 +22,7 @@ add(
               +`+time.date-to{${project.dateTo.replace(/-\d\d$/, '')}})`
               +(project.inPortfolio?`+(h3>a[href="/project/${project.slug}"]{${project.title}})`:`+h3{${project.title}}`)
               +`+{replaceContent${i}}`
+              +(project.clients.length?`+{client: ${project.clients.join(', ')}}`:'')
               +`+(ul.tags>(${project.tags.map(tag=>`li{${tag}}`).join('+')}))`
             +')'
           ).join('+')})`)
