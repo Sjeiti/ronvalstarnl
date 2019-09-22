@@ -1,5 +1,6 @@
 import {expand} from '@emmetio/expand-abbreviation'
 import {add} from '../router'
+import {scrollToTop} from '../utils'
 
 add('blog', (view/*, route*/)=>
     fetch('/data/json/posts-list.json')
@@ -10,6 +11,7 @@ add('blog', (view/*, route*/)=>
         const getLi = post=>`(li>a[href="/${post.slug}"]>(time{${post.date.split('T').shift()}}+{${post.title}}))`
         const ul = view.expandAppend(`ul.unstyled.link-list>(${firstTen.map(getLi).join('+')})`).querySelector('ul.link-list')
         requestAnimationFrame(()=>ul.insertAdjacentHTML('beforeend', expand(theRest.map(getLi).join('+'))))
+        scrollToTop(document.querySelector('[data-header]'), 0)
         return {title:'blog'}
       })
 )

@@ -1,6 +1,6 @@
 import {searchView} from './search'
 import {setDefault} from '../router'
-import {nextTick} from '../utils'
+import {nextTick, scrollToTop} from '../utils'
 import {prismToRoot} from '../utils/prism'
 import {component} from '../Component'
 import {MEDIA_URI_HEADER} from '../config'
@@ -18,6 +18,9 @@ setDefault((view, route, params)=>fetch(`/data/json/post_${route}.json`)
           .expandAppend(`time.blog{${time}}+h1{${title}}`)
           .appendString(content, false)
 
-      nextTick(()=>prismToRoot(view))
+      nextTick(()=>{
+        prismToRoot(view)
+        scrollToTop(document.querySelector('[data-header]'), 0)
+      })
       return Object.assign(post, {parentSlug:'blog'})
     }, searchView.bind(null, view, route, params)))

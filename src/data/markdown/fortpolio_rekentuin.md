@@ -10,7 +10,7 @@
   thumbnail: rekentuin.jpg
   image: rekentuin.jpg
   images: rekentuin.jpg
-  inCv: true
+  inCv: false
   inPortfolio: false
   dateFrom: 2009-02-01
   dateTo: 2009-03-01

@@ -10,7 +10,7 @@
   thumbnail: PhilipsSpotify.png.jpg
   image: PhilipsSpotify.png.jpg
   images: PhilipsSpotify.png.jpg
-  inCv: true
+  inCv: false
   inPortfolio: false
   dateFrom: 2013-09-01
   dateTo: 2013-10-01

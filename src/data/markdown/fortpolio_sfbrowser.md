@@ -11,7 +11,7 @@
   thumbnail: sfbrowser.jpg
   image: sfbrowser.jpg
   images: sfbrowser4.jpg, sfbrowser.gif, sfbrowser.jpg, sfbrowser0.jpg, sfbrowser1.jpg, sfbrowser2.jpg, sfbrowser3.jpg
-  inCv: true
+  inCv: false
   inPortfolio: false
   dateFrom: 2008-05-01
   dateTo: 2014-04-01

@@ -10,7 +10,7 @@
   thumbnail: Hans-Reinerie-Photography-2.jpg
   image: Hans-Reinerie-Photography-2.jpg
   images: Hans-Reinerie-Photography-3.jpg, Hans-Reinerie-Photography-1.jpg, Hans-Reinerie-Photography-2.jpg
-  inCv: true
+  inCv: false
   inPortfolio: false
   dateFrom: 2012-11-01
   dateTo: 2012-12-01

@@ -1,4 +1,4 @@
-import {TweenLite, TweenMax, Power1} from 'gsap'
+import {TweenMax, Power1} from 'gsap'
 
 
 // get css rule
@@ -27,32 +27,36 @@ export function getHash(elm){
  * @param {number} [t=1000] time in milliseconds
  * @param {function} [ease=Power1.easeInOut] easing
  * @param {number} [offset=0]
- * @param {boolean} [update=false]
+ * @returns {object}
  */
-export function scrollTo(elm, t=1000, ease=Power1.easeInOut, offset=0, update=false){
-  let currentY = getScrollY()
-      , animObj = {y:currentY}
-      , elmTop = elm.getBoundingClientRect().top
-      , targetY = currentY + elmTop + offset
-      , tweenMethod = update&&TweenMax||TweenLite
-      , tweenInstance
-
-  tweenInstance = tweenMethod.to(
+export function scrollTo(elm, t=1000, ease=Power1.easeInOut, offset=0){
+  const currentY = getScrollY()
+  const animObj = {y:currentY}
+  const elmTop = elm.getBoundingClientRect().top
+  const y = currentY + elmTop + offset
+  return TweenMax.to(
       animObj
       , t/1000
       , {
-        y: targetY
-        , ease: ease
-        , onUpdate: function(){
-          window.scrollTo(0, animObj.y)
-          if (update){
-            let curElmTop = elm.getBoundingClientRect().top
-                , newTargetY = animObj.y + curElmTop + offset
-            if (newTargetY!==targetY) tweenInstance.updateTo({y:newTargetY})
-          }
-        }
+        y
+        , ease
+        , onUpdate: () => window.scrollTo(0, animObj.y)
       }
   )
+}
+
+/**
+ * Scroll to the top of the page
+ * @param {HTMLElement} [topTarget]
+ * @param {number} [t=1000] time in milliseconds
+ * @returns {object}
+ */
+export function scrollToTop(topTarget, t=1000){
+  const top = topTarget?.getBoundingClientRect().bottom||0
+  const {body} = document
+  const bodyTop = body.getBoundingClientRect().top
+  console.log('scrollToTop', top-16-bodyTop) // todo: remove log
+  return scrollTo(body, t, null, top-16-bodyTop)
 }
 
 /**

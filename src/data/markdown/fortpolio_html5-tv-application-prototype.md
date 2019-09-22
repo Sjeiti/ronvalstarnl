@@ -10,7 +10,7 @@
   thumbnail: tvprototype_leftright.jpg
   image: tvprototype_leftright.jpg
   images: tvprototype_start.jpg, tvprototype_feed.jpg, tvprototype_leftright.jpg, tvprototype_loading.jpg
-  inCv: true
+  inCv: false
   inPortfolio: false
   dateFrom: 2013-11-01
   dateTo: 2013-12-01

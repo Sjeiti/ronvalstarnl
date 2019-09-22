@@ -10,7 +10,7 @@
   thumbnail: seattleIpad3.jpg
   image: seattleIpad3.jpg
   images: seattleIpad1.jpg, seattleIpad2.jpg, seattleIpad3.jpg, seattleIpad4.jpg
-  inCv: true
+  inCv: false
   inPortfolio: true
   dateFrom: 2011-11-01
   dateTo: 2011-12-01

@@ -19,7 +19,9 @@
 
 # Project Invoice
 
-<p>This invoicing application stores all your data on your local machine. None of the data is shared between different browsers or computers.<br />
-Project Invoice is accessible offline after the application has been loaded for the first time. You can turn it into a mobile-web-app by using the add-to-home-screen from your mobile browser.</p>
-<p>It started from a personal need but ended up a full fledged open-source project. That means end-to-end tests, unit tests, semver, milestones, the works.</p>
-<p>https://projectinvoice.nl</p>
+This invoicing application stores all your data on your local machine. None of the data is shared between different browsers or computers.  
+Project Invoice is accessible offline after the application has been loaded for the first time. You can turn it into a mobile-web-app by using the add-to-home-screen from your mobile browser.
+
+It started from a personal need but ended up a full fledged open-source project. That means end-to-end tests, unit tests, semver, milestones, the works.
+
+https://projectinvoice.nl

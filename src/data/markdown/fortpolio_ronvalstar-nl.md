@@ -10,7 +10,7 @@
   thumbnail: ronvalstar.nl_.jpg
   image: ronvalstar.nl_.jpg
   images: ronvalstar.nl_.jpg
-  inCv: true
+  inCv: false
   inPortfolio: false
   dateFrom: 2016-12-24
   dateTo: 2019-01-01

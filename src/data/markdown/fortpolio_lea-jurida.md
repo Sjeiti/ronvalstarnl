@@ -11,7 +11,7 @@
   thumbnail: jurida.jpg
   image: jurida.jpg
   images: jurida.jpg
-  inCv: true
+  inCv: false
   inPortfolio: false
   dateFrom: 2010-09-11
   dateTo: 2010-10-11

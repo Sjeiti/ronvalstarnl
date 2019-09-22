@@ -2,7 +2,7 @@ import {expand} from '@emmetio/expand-abbreviation'
 import {add} from '../router'
 import {selectEach} from '../utils/html'
 import {addRule, removeRule} from '../utils/style'
-import {scrollTo, nextTick} from '../utils'
+import {nextTick,scrollToTop} from '../utils'
 import {component} from '../Component'
 import {MEDIA_URI_PROJECT, MEDIA_URI_THUMB} from '../config'
 import {slugify} from '../utils/string'
@@ -68,10 +68,7 @@ add(
                 &&img.parentNode.classList.add('portrait')
             })
           })
-          const top = existingCategories.getBoundingClientRect().bottom
-          const {body} = document
-          const bodyTop = body.getBoundingClientRect().top
-          scrollTo(body, 1000, null, top-16-bodyTop)
+          scrollToTop(existingCategories)
         }
         // projects
         const current = 'current'

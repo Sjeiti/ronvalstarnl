@@ -11,7 +11,7 @@
   thumbnail: newcolt4.jpg
   image: newcolt4.jpg
   images: newcolt4.jpg, newcolt.jpg, newcolt0.jpg, newcolt1.jpg, newcolt2.jpg, newcolt3.jpg
-  inCv: true
+  inCv: false
   inPortfolio: true
   dateFrom: 2008-08-01
   dateTo: 2008-10-01

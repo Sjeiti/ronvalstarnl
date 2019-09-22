@@ -10,7 +10,7 @@
   thumbnail: voetbalreizen.jpg
   image: voetbalreizen.jpg
   images: voetbalreizen.jpg
-  inCv: true
+  inCv: false
   inPortfolio: false
   dateFrom: 2013-01-01
   dateTo: 2013-09-01
