@@ -15,4 +15,4 @@
 
 # meten is weten
 
-<p><img src="/wordpress/wp-content//uploads/img/blog/metenIsWeten.png" /></p>
+<p><img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/metenIsWeten.png" /></p>

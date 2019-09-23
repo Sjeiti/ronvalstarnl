@@ -22,7 +22,7 @@
 <p>Last year I got a microscope for my birthday. As with most toys, you play around with them for a while but eventually they end up on a shelf somewhere.</p>
 <p><!--more--></p>
 <p>This year I wanted to get a good camera for macro photography. I didn&#8217;t get one yet (still have to pick one out). But I did find some good use for my microscope putting my simple Panasonic onto the eyepiece (I got the idea after doing something similar this vacation with some binoculars).</p>
-<p><img src="/wordpress/wp-content//uploads/img/blog/microleaf.jpg" /></p>
+<p><img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/microleaf.jpg" /></p>
 <p>And since I have a stereo microscope (and photoshop) I thought I&#8217;d try to make some stereoscopic photos. To my surprise it works out really well. It takes some trial and error since I have little control over the focus of my camera, and I have to color-correct each side when putting the two fotos together.</p>
 <p><!--img src="wp-content//uploads/img/blog/micromint.jpg" /--></p>
 <p>Too bad you can&#8217;t zoom in with stereoscopic 3D.<br />Oh wait&#8230;. of course you can&#8230; (mousewheel)</p>

@@ -16,4 +16,4 @@
 # emergence
 
 <p>It just needs some color.<br />
-<img src="/wordpress/wp-content//uploads/img/blog/blackfun.jpg" /><br /><img src="/wordpress/wp-content//uploads/img/blog/blackfun1.jpg" /></p>
+<img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/blackfun.jpg" /><br /><img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/blackfun1.jpg" /></p>
