@@ -2,18 +2,16 @@
   id: 2838
   slug: studyblend
   type: fortpolio
-  excerpt: <p>Developed a single-page responsive web application that allows teachers and students to track their progress during a course. Used Angular as Javascript framework and Laravel to create a REST service.</p>
+  excerpt: Design and developed a single-page responsive web application that allows teachers and students to track their progress during a course. Used Angular as Javascript framework and Laravel to create a REST service.
   categories: javascript, frontend, HTML/CSS, framework, backend, mobile
   tags: Angular, Laravel, REST, Grunt, interaction design, JSDoc, concept
   clients: Shapers
-  collaboration: 
-  prizes: 
   thumbnail: HSO-App-students.png
   image: HSO-App-students.png
   images: HSO-App-mobile-login.png, HSO-App-mobile-week-1.png, HSO-App-mobile-group-tasks.png, HSO-App-mobile-menu.png, HSO-App-profile.png, HSO-App-overview.png, HSO-App-week-1.png, HSO-App-students.png, HSO-App-student.png, HSO-App-settings.png
   inCv: true
   inPortfolio: true
-  dateFrom: 2015-07-13
+  dateFrom: 2014-01-17
   dateTo: 2015-07-31
 -->
 

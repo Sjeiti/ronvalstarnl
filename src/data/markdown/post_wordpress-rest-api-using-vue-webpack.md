@@ -93,10 +93,10 @@ let webpackConfig = merge(baseWebpackConfig, {
 module.exports = {
   build: {
     env: require('./prod.env'),
-    index: path.resolve(__dirname,'/dist/wordpress/wp-content/themes/sjeiti/index.php'),
-    template: path.resolve(__dirname,'/dist/wordpress/wp-content/themes/sjeiti/_index.php'),
+    index: path.resolve(__dirname,'/dist/index.php'),
+    template: path.resolve(__dirname,'/dist/_index.php'),
     assetsRoot: path.resolve(__dirname,'/dist'),
-    assetsSubDirectory: path.resolve(__dirname,'/wordpress/wp-content/themes/sjeiti/static'),
+    assetsSubDirectory: path.resolve(__dirname,'/static'),
     assetsPublicPath: '/',
     (...)
   },

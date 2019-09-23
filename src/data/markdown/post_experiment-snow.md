@@ -26,4 +26,4 @@ The technique used for particle scattering is relatively simple. The starting po
 <p>For speed optimisation you can make a lookup table for the sine and cosine calculations. The optimal size of the table is 2*Pi*r.</p>
 <p>Instead of an actual prng I used Perlin noise, which makes the movement possible (and takes multiple arguments). If you need static particle scattering it will be faster to use a regular prng. But you&#8217;ll have to turn the x and y values into a single seed without mirroring the field diagonally (for instance: x+1E6*y).</p>
 <p>Lastly we have to enlarge the gridfield a bit to accommodate for the offset radius. Normally a 100&#215;100 field with a gridsize of 10 wil hold a maximum of 121 points. But with an offset radius points that are normally outside the viewport could suddenly appear inside. So we also enlarge the grid with the offset radius.</p>
-<pre><code data-language="javascript" data-src="/wordpress/wp-content/themes/sjeiti/static/experiment/snow.js"></code></pre>
+<pre><code data-language="javascript" data-src="/static/experiment/snow.js"></code></pre>

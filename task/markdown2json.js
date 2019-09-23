@@ -78,7 +78,7 @@ function saveObjectsToJSON(objects){
   objects.forEach(obj=>{
     if (obj.slug&&obj.type){
       const fileName = `src/data/json/${obj.type}_${obj.slug}.json`
-      save(fileName, JSON.stringify(obj))
+      save(fileName, JSON.stringify(obj), true)
     }
   })
   return objects

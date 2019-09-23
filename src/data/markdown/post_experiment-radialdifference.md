@@ -28,4 +28,4 @@
 <h3>Object chaining</h3>
 <p>Another performance design pattern is object chaining. Instead of having an array with instances each instance has a reference to the next one. Nothing fancy, just a tad faster. Although I wonder with these present day engines&#8230; but jsperf is still offline.</p>
 <p>Anyway, here&#8217;s the code. You&#8217;ll notice I&#8217;ve separated the actual drawing from the math calculations. Time willing, I&#8217;m going alter it to a version that uses shaders (here&#8217;s <a href="https://www.shadertoy.com/view/4lyGzh">a rough</a>). </p>
-<pre><code data-language="javascript" data-src="/wordpress/wp-content/themes/sjeiti/static/experiment/radialdifference.js"></code></pre>
+<pre><code data-language="javascript" data-src="/static/experiment/radialdifference.js"></code></pre>

@@ -17,4 +17,4 @@
 
 <p>One of my first doodles coded entirely on an iPad: circles and stars are drawn in advance and cached. Then given a velocity and some kind of gravity with an inverse square.</p>
 <p><!--more--></p>
-<pre><code data-language="javascript" data-src="/wordpress/wp-content/themes/sjeiti/static/experiment/touches.js"></code></pre>
+<pre><code data-language="javascript" data-src="/static/experiment/touches.js"></code></pre>
