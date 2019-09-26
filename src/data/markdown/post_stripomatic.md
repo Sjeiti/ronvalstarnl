@@ -5,7 +5,7 @@
   slug: stripomatic
   type: post
   excerpt: <p>It is still a bit of a beta-test but here&#8217;s my latest creation: the strip.o.matic. You can create comics with your webcam and send them to your friends by email. Thanks to Quasimondo for the bitmap exporter.</p>
-  categories: Flash, Actionscript
+  categories: Flash, ActionScript
   tags: test
   inCv: 
   inPortfolio: 

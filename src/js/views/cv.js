@@ -11,7 +11,7 @@ add(
     return Promise.all(data.map(n=>fetch(`/data/json/${n}.json`).then(rs=>rs.json())))
       .then(([page, projects])=>{
         view.appendString(page.content)
-        view.addEventListener('click', onClickPDF)
+        // view.addEventListener('click', onClickPDF)
         // projects
         const cvProjects = projects
           .filter(p=>p.inCv)
@@ -22,29 +22,29 @@ add(
               +`+time.date-to{${project.dateTo.replace(/-\d\d$/, '')}})`
               +(project.inPortfolio?`+(h3>a[href="/project/${project.slug}"]{${project.title}})`:`+h3{${project.title}}`)
               +`+{replaceContent${i}}`
-              +(project.clients.length?`+{client: ${project.clients.join(', ')}}`:'')
+              +(project.clients.length?`+dl>(dt{client}+dd{${project.clients.join(', ')}})`:'')
               +`+(ul.tags>(${project.tags.map(tag=>`li{${tag}}`).join('+')}))`
             +')'
           ).join('+')})`)
-        cvProjects.forEach((project, i) => projectString = projectString.replace('replaceContent'+i, project.excerpt||project.content))
+        cvProjects.forEach((project, i) => projectString = projectString.replace('replaceContent'+i, project.excerpt&&`<p>${project.excerpt}</p>`||project.content))
         view.appendString(projectString, false)
         return page
       })
   }
 )
 
-/**
- * Download pdf if correct anchor is clicked
- * @param {MouseEvent} e
- * @todo: add print style
- */
-function onClickPDF(e){
-  const {target} = e
-  if (target.matches('a[href$=".pdf"]')){
-    e.preventDefault()
-    html2pdf(document.querySelector('main'), {
-      filename: target.getAttribute('href').split(/\//g).pop()
-      , image: {type: 'png', quality: 0.95}
-    })
-  }
-}
+// /**
+//  * Download pdf if correct anchor is clicked
+//  * @param {MouseEvent} e
+//  * @todo: add print style
+//  */
+// function onClickPDF(e){
+//   const {target} = e
+//   if (target.matches('a[href$=".pdf"]')){
+//     e.preventDefault()
+//     html2pdf(document.querySelector('main'), {
+//       filename: target.getAttribute('href').split(/\//g).pop()
+//       , image: {type: 'png', quality: 0.95}
+//     })
+//   }
+// }

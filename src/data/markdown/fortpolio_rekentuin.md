@@ -3,7 +3,7 @@
   slug: rekentuin
   type: fortpolio
   categories: frontend, Flash, game
-  tags: Actionscript, concept
+  tags: ActionScript, concept
   clients: UVA
   collaboration: 
   prizes: 

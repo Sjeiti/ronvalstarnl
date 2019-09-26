@@ -5,7 +5,7 @@
   slug: project-invoice
   type: post
   excerpt: <p>A few years ago Google silently disabled a spreadsheets feature that could be used to retreive data from other spreadsheets. So I could no longer create invoices automatically and was back to having to make them by hand.</p>
-  categories: code, CSS, HTML, Javascript, work, open source
+  categories: code, CSS, HTML, JavaScript, work, open source
   tags: Angular, accounting, invoicing, Vue
   metaKeyword: invoice
   metaDescription: An invoice application that keeps your data private by simply not storing it in the cloud.

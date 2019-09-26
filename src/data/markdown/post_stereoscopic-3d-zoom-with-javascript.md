@@ -1,23 +1,23 @@
 <!--
   id: 632
-  description: Too bad you can't zoom in with stereoscopic 3D. But with a little Javascript you can...
+  description: Too bad you can't zoom in with stereoscopic 3D. But with a little JavaScript you can...
   date: 2010-09-17T14:17:38
   modified: 2012-07-25T07:15:34
   slug: stereoscopic-3d-zoom-with-javascript
   type: post
   excerpt: <p>Last year I got a microscope for my birthday. As with most toys, you play around with them for a while but eventually they end up on a shelf somewhere.</p>
-  categories: code, image, Javascript, nature, graphic design
+  categories: code, image, JavaScript, nature, graphic design
   tags: stereoscopic
   metaKeyword: stereoscopic 3D
-  metaTitle: Stereoscopic 3D zoom with Javascript - Sjeiti
-  metaDescription: Too bad you can't zoom in with stereoscopic 3D. But with a little Javascript you can...
+  metaTitle: Stereoscopic 3D zoom with JavaScript - Sjeiti
+  metaDescription: Too bad you can't zoom in with stereoscopic 3D. But with a little JavaScript you can...
   inCv: 
   inPortfolio: 
   dateFrom: 
   dateTo: 
 -->
 
-# Stereoscopic 3D zoom with Javascript
+# Stereoscopic 3D zoom with JavaScript
 
 <p>Last year I got a microscope for my birthday. As with most toys, you play around with them for a while but eventually they end up on a shelf somewhere.</p>
 <p><!--more--></p>

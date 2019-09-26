@@ -5,7 +5,7 @@
   slug: papervision3d-2-alpha
   type: post
   excerpt: <p>The long awaited version 2 alpha is out. Well it has been out for about two weeks but I haven&#8217;t had time to look into it. I&#8217;ve cooked up a little something to try it out together with some Filter Forge filters: check it out. There are of course still some things that need to [&hellip;]</p>
-  categories: Flash, Actionscript
+  categories: Flash, ActionScript
   tags: Filter Forge
   inCv: 
   inPortfolio: 

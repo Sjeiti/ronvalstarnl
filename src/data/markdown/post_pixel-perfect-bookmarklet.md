@@ -5,8 +5,8 @@
   slug: pixel-perfect-bookmarklet
   type: post
   excerpt: <p>Here&#8217;s a little bookmarklet I wrote to check designs against implementation for pixel perfect development. It&#8217;s really just a quick thing I made for work. It&#8217;s also on Github if you want it.</p>
-  categories: code, CSS, HTML, Javascript, graphic design
-  tags: bookmarklet, Javascript, graphic design
+  categories: code, CSS, HTML, JavaScript, graphic design
+  tags: bookmarklet, JavaScript, graphic design
   metaKeyword: pixel perfect
   metaDescription: A bookmarklet to check designs against implementation for pixel perfect development. It's really just a quick thing I made for work. It's also on Github.
   inCv: 

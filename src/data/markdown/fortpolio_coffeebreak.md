@@ -2,7 +2,7 @@
   id: 2614
   slug: coffeebreak
   type: fortpolio
-  categories: javascript, frontend, HTML/CSS, framework, mobile
+  categories: JavaScript, frontend, HTML/CSS, framework, mobile
   tags: API, Angular, Less
   clients: 72andSunny
   collaboration: 

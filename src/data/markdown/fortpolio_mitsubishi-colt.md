@@ -4,7 +4,7 @@
   type: fortpolio
   excerpt: <p>Lead developer for the new Colt site. A Flash site with lots of video interwoven with content. And a scrollable panoramic video with 3D sound.</p>
   categories: framework, Flash
-  tags: 3D, Actionscript, video
+  tags: 3D, ActionScript, video
   clients: Lukkien
   collaboration: Olaf Gremie
   prizes: 

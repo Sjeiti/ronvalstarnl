@@ -3,7 +3,7 @@
   slug: plus-christmas-campaign
   type: fortpolio
   categories: 
-  tags: CSS, HTML, Javascript
+  tags: CSS, HTML, JavaScript
   clients: Rhinofly
   collaboration: 
   prizes: 

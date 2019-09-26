@@ -4,7 +4,7 @@
   modified: 2015-10-25T07:21:52
   slug: code
   type: page
-  excerpt: <p>Even though I consider myself a designer by nature I&#8217;ve always searched for ways to make it come to life. As for programming, I started off with javascript and Lingo. That was just about the time flash 3 came out (it didn&#8217;t have actionscript back then). By the time I got good at javascript and [&hellip;]</p>
+  excerpt: <p>Even though I consider myself a designer by nature I&#8217;ve always searched for ways to make it come to life. As for programming, I started off with JavaScript and Lingo. That was just about the time flash 3 came out (it didn&#8217;t have ActionScript back then). By the time I got good at JavaScript and [&hellip;]</p>
   inCv: 
   inPortfolio: 
   dateFrom: 
@@ -14,9 +14,9 @@
 # code
 
 <p>Even though I consider myself a designer by nature I&#8217;ve always searched for ways to make it come to life.<br />
-As for programming, I started off with javascript and Lingo. That was just about the time flash 3 came out (it didn&#8217;t have actionscript back then).<br />
-By the time I got good at javascript and lingo I started actionscripting (flash), which wasn&#8217;t that hard to learn because both javascript and actionscript use the <a href="http://www.ecma-international.org/" target="_blank">ECMAScript</a> syntax.<br />
-Today I&#8217;m doing mostly Processing (java) for personal projects, and actionscript and php for clients.</p>
+As for programming, I started off with JavaScript and Lingo. That was just about the time flash 3 came out (it didn&#8217;t have ActionScript back then).<br />
+By the time I got good at JavaScript and lingo I started ActionScripting (flash), which wasn&#8217;t that hard to learn because both JavaScript and actionscript use the <a href="http://www.ecma-international.org/" target="_blank">ECMAScript</a> syntax.<br />
+Today I&#8217;m doing mostly Processing (java) for personal projects, and ActionScript and PHP for clients.</p>
 <h3>processing</h3>
 <ul class="list-unstyled list-inline">
 <li><a href="javascript:Sjeiti.showIFrame('coderef.php?id=627',400,400,'blackcubewhitecube')" title="3D recursion"><img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/blackcubewhitecube.jpg" alt="blackcubewhitecube" /></a></li>

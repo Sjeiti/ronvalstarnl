@@ -2,8 +2,8 @@
   id: 3460
   slug: ronvalstar-nl
   type: fortpolio
-  categories: javascript, frontend, HTML/CSS, framework
-  tags: Javascript, Vue
+  categories: JavaScript, frontend, HTML/CSS, framework
+  tags: JavaScript, Vue
   clients: 
   collaboration: 
   prizes: 

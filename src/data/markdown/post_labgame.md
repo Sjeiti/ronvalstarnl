@@ -5,7 +5,7 @@
   slug: labgame
   type: post
   excerpt: <p>I coded a puzzle game for our Shapers website. See if you can beat the highscore at our labgame. The link doesn&#8217;t work anymore (and I don&#8217;t work @Shapers anymore). I do have the game somewhere, maybe oneday I&#8217;ll put it up again.</p>
-  categories: Flash, game, Actionscript
+  categories: Flash, game, ActionScript
   tags: 
   inCv: 
   inPortfolio: 

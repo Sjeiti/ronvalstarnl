@@ -5,15 +5,15 @@
   slug: about
   type: page
   metaKeyword: about
-  metaDescription: I love writing Javascript. So naturally I know a lot about: DOM, HTML , CSS, XML. Streamlining build processes is also one of my favorite pasttimes.
+  metaDescription: I love writing JavaScript. So naturally I know a lot about: DOM, HTML , CSS, XML. Streamlining build processes is also one of my favorite pasttimes.
 -->
 
 # about
 
-I love writing [Javascript](/search/javascript). So naturally I also know a lot about [DOM](/search/dom), [HTML](/search/html), [CSS](/search/css) and even [XML](/search/xml).
-My favorite work is streamlining [build](/search/build) processes, refactoring and optimizing DOM and Javascript for [speed](/search/speed).
+I love writing [JavaScript](/search/javascript). So naturally I also know a lot about [DOM](/search/dom), [HTML](/search/html), [CSS](/search/css) and even [XML](/search/xml).
+My favorite work is streamlining [build](/search/build) processes, refactoring and optimizing DOM and JavaScript for [speed](/search/speed).
 
-Among the Javascript frameworks and libraries I've used are Angular, Vue, React, Backbone, jQuery, ThreeJS etc... But I will never start projects with a specific framework by default. The choice to add abstractions should be weighed carefully.
+Among the JavaScript frameworks and libraries I've used are Angular, Vue, React, Backbone, jQuery, ThreeJS etc... But I will never start projects with a specific framework by default. The choice to add abstractions should be weighed carefully.
 
 For backend I mostly resort to [NodeJS](/search/node) or [PHP](/search/php). The latter often with [Laravel](/search/laravel) or [Wordpress](/search/wordpress).
 But I've also mandhandled Java, Python and .NET.
@@ -31,11 +31,11 @@ In the course of time I have worked with: Randstad, Vodafone, Novartis, Philips,
 ## past
 
 My programming endeavors started with a book about Basic and and MSX.
-Professionally I began around 1996 with HTML/CSS and Javascript. Then Lingo (Director) and Flash (only animation at that time).
-When I graduated (Interaction Design) I started a company called [Shapers](https://shapers.nl). Director died, Flash became big. I started programming more Javascript and Actionscript and learned PHP along the way.
+Professionally I began around 1996 with HTML/CSS and JavaScript. Then Lingo (Director) and Flash (only animation at that time).
+When I graduated (Interaction Design) I started a company called [Shapers](https://shapers.nl). Director died, Flash became big. I started programming more JavaScript and ActionScript and learned PHP along the way.
 In 2004 I started using Processing (and Java) for private projects.
 I quit Shapers in 2007 and started freelancing.
-Then Flash died in 2011 and I was back coding good old Javascript applications. And now also using [GLSL](/search/GLSL).
+Then Flash died in 2011 and I was back coding good old JavaScript applications. And now also using [GLSL](/search/GLSL).
 
 ## education
 

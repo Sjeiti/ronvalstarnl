@@ -6,7 +6,7 @@
   type: post
   excerpt: <p>A bookmarklet that creates strong passwords that can safely be used from any browser on any system without accessing the internet. The bookmarklet is generated with presets and seeds making it unique for every user.</p>
   categories: code, open source
-  tags: bookmarklet, Javascript, math
+  tags: bookmarklet, JavaScript, math
   metaKeyword: password generator
   metaDescription: A password generator bookmarklet safely to be used from any browser on any device. The bookmarklet is generated with seeds making it unique for every user.
   inCv: 

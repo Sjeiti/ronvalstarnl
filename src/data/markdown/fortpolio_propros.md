@@ -2,8 +2,8 @@
   id: 2616
   slug: propros
   type: fortpolio
-  categories: javascript, frontend, HTML/CSS, game
-  tags: IE, Javascript
+  categories: JavaScript, frontend, HTML/CSS, game
+  tags: IE, JavaScript
   clients: Athand
   collaboration: 
   prizes: 

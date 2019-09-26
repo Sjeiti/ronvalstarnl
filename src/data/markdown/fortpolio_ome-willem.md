@@ -3,8 +3,8 @@
   slug: ome-willem
   type: fortpolio
   excerpt: <p>Interaction design, graphic design and development for the Ome Willem website.</p>
-  categories: javascript, HTML/CSS, Flash, backend
-  tags: CMS, HTML, XML, graphic design, Actionscript, Flash, illustration, interaction design, concept
+  categories: JavaScript, HTML/CSS, Flash, backend
+  tags: CMS, HTML, XML, graphic design, ActionScript, Flash, illustration, interaction design, concept
   clients: Ome Willem
   collaboration: 
   prizes: 

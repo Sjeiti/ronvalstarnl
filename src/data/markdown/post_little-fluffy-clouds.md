@@ -5,7 +5,7 @@
   slug: little-fluffy-clouds
   type: post
   excerpt: <p>Oh how cute is that&#8230; while accidentally recreating my old Terraformer filter I took a little sidestep in Flash, displacing the new filter&#8217;s cloud map with it&#8217;s animated self. It looks almost real.</p>
-  categories: Flash, Actionscript
+  categories: Flash, ActionScript
   tags: 
   inCv: 
   inPortfolio: 

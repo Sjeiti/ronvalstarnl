@@ -1,23 +1,17 @@
 <!--
   id: 426
-  description: After a bit of playing I decided to make a good Perlin noise generator in javascript. First I did a quick port from my actionscript class to javascript.
   date: 2010-05-10T13:39:54
   modified: 2015-12-24T20:09:44
   slug: perlin-noise-in-javascript-comparisons
   type: post
-  excerpt: <p>What started as a simple excersize to put theory to practice has once again spun out of control. Well I&#8217;ve just come off three months of programming actionscript 3 so I needed the distraction (frankly I like js better than as). Plus I never really got into the HTML5 canvas thing and I needed to [&hellip;]</p>
-  categories: code, HTML, Javascript
+  categories: code, HTML, JavaScript
   tags: John Resig, Mario Klingemann, Stefan Gustavson, test
   metaKeyword: Perlin noise
-  metaTitle: Perlin noise in Javascript comparisons
-  metaDescription: After a bit of playing I decided to make a good Perlin noise generator in javascript. First I did a quick port from my actionscript class to javascript.
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
+  metaTitle: Perlin noise in JavaScript comparisons
+  metaDescription: After a bit of playing I decided to make a good Perlin noise generator in JavaScript. First I did a quick port from my ActionScript class to JavaScript.
 -->
 
-# Perlin noise in Javascript comparisons
+# Perlin noise in JavaScript comparisons
 
 <style type="text/css">
 	ul#noises {
@@ -41,9 +35,9 @@
 		margin: 0px 10px 0px 0px;
 	}
 </style>
-<p>What started as a simple excersize to put <a href="http://books.google.com/books?id=PXa2bby0oQ0C&#038;printsec=frontcover&#038;source=gbs_slider_thumb#v=onepage&#038;q&#038;f=false">theory</a> to practice has once again spun out of control. Well I&#8217;ve just come off three months of programming actionscript 3 so I needed the distraction (frankly I like js better than as). Plus I never really got into the HTML5 canvas thing and I needed to check that out to. And off course those idiots Apple and Adobe (turning into a bad marriage) are making me feel I should focus on HTML5/js a bit more (doesn&#8217;t anybody realize HTML5 isn&#8217;t even ready yet?).</p>
+<p>What started as a simple excersize to put <a href="http://books.google.com/books?id=PXa2bby0oQ0C&#038;printsec=frontcover&#038;source=gbs_slider_thumb#v=onepage&#038;q&#038;f=false">theory</a> to practice has once again spun out of control. Well I&#8217;ve just come off three months of programming ActionScript 3 so I needed the distraction (frankly I like js better than as). Plus I never really got into the HTML5 canvas thing and I needed to check that out to. And off course those idiots Apple and Adobe (turning into a bad marriage) are making me feel I should focus on HTML5/js a bit more (doesn&#8217;t anybody realize HTML5 isn&#8217;t even ready yet?).</p>
 <p><!--more--></p>
-<p>After a bit of playing I decided to make a good Perlin noise generator in javascript. First I did a quick port from my actionscript class to javascript. But because others had probably preceded me I roamed the web for other implementations. I had to mangle them a bit to get them to work but here they are.</p>
+<p>After a bit of playing I decided to make a good Perlin noise generator in JavaScript. First I did a quick port from my ActionScript class to JavaScript. But because others had probably preceded me I roamed the web for other implementations. I had to mangle them a bit to get them to work but here they are.</p>
 <ul id="noises">
 <li>
 		<img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/jsnoise-sjeiti.jpg" alt="Perlin sjeiti" /></p>

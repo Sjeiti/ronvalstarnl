@@ -5,7 +5,7 @@
   slug: android-phone-dom
   type: post
   excerpt: <p>Cleaning up my phone the other day I found some cool stuff. Two years ago I coded some stuff while I was on vacation. This was also on it&#8230;</p>
-  categories: code, HTML, Javascript
+  categories: code, HTML, JavaScript
   tags: 
   inCv: 
   inPortfolio: 

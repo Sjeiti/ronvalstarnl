@@ -5,7 +5,7 @@
   slug: gridfeed
   type: post
   excerpt: <p>Ever since I changed ronvalstar.nl into something more comfortable I wanted to give ronvalstar.nl a quick haulover (change it into the same style, revise structure and content, upgrade from WordPress 2.3 to 2.8&#8230; etc&#8230;). So I just did but it&#8217;s still bit of a mess, I&#8217;ll get to that someday&#8230; I made a new cool [&hellip;]</p>
-  categories: admin, Javascript, jQuery, XML
+  categories: admin, JavaScript, jQuery, XML
   tags: 
   inCv: 
   inPortfolio: 

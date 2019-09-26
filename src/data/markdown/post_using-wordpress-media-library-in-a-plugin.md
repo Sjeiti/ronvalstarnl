@@ -6,7 +6,7 @@
   slug: using-wordpress-media-library-in-a-plugin
   type: post
   excerpt: <p>I just spent a couple of hours trying to figure this one out. Here&#8217;s how to use the WordPress media library in a plugin or custom post type&#8230; the right way.</p>
-  categories: code, Javascript, backend, Wordpress
+  categories: code, JavaScript, backend, Wordpress
   tags: hack, plugin, Wordpress
   metaKeyword: media library
   metaTitle: Using Wordpress media library in a plugin
@@ -23,13 +23,13 @@
 <p><!--more--></p>
 <p>It took me a while to to get this right. So much for Google because everybody with a similar problem posted the same solution, mostly with the same cumbersome code (why bother writing a new post if you&#8217;re just gonna copy-paste the code from someone elses blog).</p>
 <p><del data-reason="let's not be all negative about this; we all love WordPress :-)">But before I proceed: carefull not to turn this post into a rant I&#8217;ll say it now just to get it over with: &#8220;Wow, what a bunch of poorly documented, badly written spaghetti code WordPress is&#8221;. That&#8217;s it.</del></p>
-<p>If you look a bit closer to the admin source you&#8217;ll find a Javascript click-implementation for all &#8216;a.thickbox&#8217; (media-upload.dev.js ln 65-71).<br />
+<p>If you look a bit closer to the admin source you&#8217;ll find a JavaScript click-implementation for all &#8216;a.thickbox&#8217; (media-upload.dev.js ln 65-71).<br />
 A bit further you&#8217;ll see that the upload uri for that &#8216;a.thickbox&#8217; can be retreived with the PHP function &#8216;get_upload_iframe_src($type)&#8217;. Now it doesn&#8217;t say anywhere what that $type is supposed to be but digging through the code (media.php) and doing some trial and error it seems a string of the possible values: image, video, audio, file or media (where the latter is any of the previous but file). If you want extra types checkout <a href="http://codex.wordpress.org/Function_Reference/add_filter">add_filter</a> with &#8216;<a href="http://codex.wordpress.org/Plugin_API/Filter_Reference/upload_mimes">upload_mimes</a>&#8216;.</p>
-<p>All we need now is to add a javascript callback function.<br />
-The javascript callback function is a global. This is bloody ridiculous but not surprising if you&#8217;ve ever inspected window or $_GLOBAL in WordPress.<br />
+<p>All we need now is to add a JavaScript callback function.<br />
+The JavaScript callback function is a global. This is bloody ridiculous but not surprising if you&#8217;ve ever inspected window or $_GLOBAL in WordPress.<br />
 The callback function returns a different HTML string depending on the type of file you&#8217;ve selected (type image has an image tag inserted).<br />
-What all these identical solutions on Google do wrong is that they set this global javascript callback function (and add placeholders) the moment you enter the page. It is neater to set it the moment you press the &#8216;a.thickbox&#8217; button, this way you can adjust your callback when you have multiple uploads (ie an image and a pdf).</p>
-<p>Once you&#8217;ve added the thickbox and setup the javascript callback you should be able to use the WordPress media library.</p>
+What all these identical solutions on Google do wrong is that they set this global JavaScript callback function (and add placeholders) the moment you enter the page. It is neater to set it the moment you press the &#8216;a.thickbox&#8217; button, this way you can adjust your callback when you have multiple uploads (ie an image and a pdf).</p>
+<p>Once you&#8217;ve added the thickbox and setup the JavaScript callback you should be able to use the WordPress media library.</p>
 <p>But what if you do not want that HTML that is returned but, say, a post_id (more experienced WordPress users will know that posts, pages, attachements, images and everything are all stored in the table [wp]_posts). With the post_id (or attachement_id) you&#8217;d be able to use more than just an image- or attachement uri, you can also use the title and/or description of a file.</p>
 <p>As said, the callback function returns a different types of HTML. The image HTML snippet contains the attachement_id but the others don&#8217;t. When you trace back where the callback function is invoked you&#8217;ll find an <a href="http://codex.wordpress.org/Function_Reference/add_filter">add_filter hook</a> called &#8216;media_send_to_editor&#8217;. It&#8217;s nowhere to be found on <a href="http://codex.wordpress.org/">codex.wordpress.org</a> but it&#8217;s easy enough to implement. The call itself is done in media.php ln 488 (apply_filters(&#8216;media_send_to_editor&#8217;, $html, $send_id, $attachment)). And if you look through the surrounding function you&#8217;ll see the $send_id is exactly what we need. Not only that; the $attachement parameter is an associative array filled with other usefull stuff (title,description etc&#8230;).<br />
 We overwrite the $html parameter (the filter callback expects $html returned) and set the priority of the filter to something really high so we know for sure it&#8217;s the last function applied&#8230; and we&#8217;re there&#8230;<br />

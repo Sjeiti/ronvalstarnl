@@ -3,7 +3,7 @@
   slug: style
   type: fortpolio
   excerpt: <p>My Own Style is a webshop where users can also customise their own products. I translated the graphic designs into templates and implemented the in Wordpress with Woocommerce as a webshop. Since customizeable products are rather tricky I had to code numerous implementations myself where normally you&#8217;d use existing plugins.</p>
-  categories: javascript, frontend, HTML/CSS, backend, mobile
+  categories: JavaScript, frontend, HTML/CSS, backend, mobile
   tags: HTML, jQuery, Wordpress, Less, Woocommerce, Grunt, interaction design
   clients: Zoutpeper
   collaboration: Ibrahim Farah

@@ -3,8 +3,8 @@
   slug: satriun
   type: fortpolio
   excerpt: <p>Fully responsive website with video and boring content.</p>
-  categories: javascript, frontend, HTML/CSS, video, mobile
-  tags: Javascript, Wordpress, Less, video
+  categories: JavaScript, frontend, HTML/CSS, video, mobile
+  tags: JavaScript, Wordpress, Less, video
   clients: Satriun
   collaboration: Shapers
   prizes: 

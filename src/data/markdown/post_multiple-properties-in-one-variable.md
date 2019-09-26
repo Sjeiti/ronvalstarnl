@@ -6,7 +6,7 @@
   slug: multiple-properties-in-one-variable
   type: post
   excerpt: <p>Objects with multiple properties with each their own variable can get a bit messy. Here&#8217;s a nice solution to store multiple properties in a single variable.</p>
-  categories: code, Java, Javascript, Actionscript
+  categories: code, Java, JavaScript, ActionScript
   tags: 
   metaKeyword: properties
   metaTitle: Storing multiple properties in a single integer using bitwise AND
@@ -81,4 +81,4 @@ Bitwise AND compares the binary equivalent of two numbers and returns a new numb
 <li>binary sequence tells you the properties are stored as a single variable</li>
 <li>binary sequence also tells you an object can have multiple properties, but only one of each</li>
 </ul>
-<p>There is however a maximum to all this. Bitwise operations in Javascript are done on 32 bit numbers. But that should be more than enough for most.</p>
+<p>There is however a maximum to all this. Bitwise operations in JavaScript are done on 32 bit numbers. But that should be more than enough for most.</p>

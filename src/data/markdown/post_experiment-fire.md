@@ -5,8 +5,8 @@
   slug: experiment-fire
   type: post
   excerpt: <p>Here&#8217;s a hot shader: fire with sparks. The fire is Simplex noise, nothing special apart from some displacement to fake realism. But the sparks might need some explanation.</p>
-  categories: code, glsl
-  tags: cool shit, noise, webgl, glsl, fire, shader
+  categories: code, GLSL
+  tags: cool shit, noise, WebGL, GLSL, fire, shader
   metaKeyword: sparks
   metaDescription: Here's a hot shader: fire with sparks. The fire is Simplex noise, nothing special. But the sparks might need some explanation.
   inCv: 
@@ -15,12 +15,12 @@
   dateTo: 
 -->
 
-# Experiment: procedural fire with sparks in glsl
+# Experiment: procedural fire with sparks in GLSL
 
 <p>Here&#8217;s a hot shader: fire with sparks. The fire is <a href="#code-36" to="#code-47"> Simplex noise</a>, nothing special apart from some displacement to fake realism. But the sparks might need some explanation.<br />
 <!--more--><br />
 The shader is entirely procedural. So the sparks flying upward are calculated for each pixel. We could calculate the sparks in advance as particles and put them into the shader by uniform. But there&#8217;s no fun in that.<br />
-The technique I wanted to implement here is similar to one I previously used in plain Javascript in <a href="/experiment-snow">an earlier experiment</a>.</p>
+The technique I wanted to implement here is similar to one I previously used in plain JavaScript in <a href="/experiment-snow">an earlier experiment</a>.</p>
 <h2>A grid, a prng and some trigonometry</h2>
 <p>The gist of it is as follows: calculate a grid, feed the grid positions into a pseudo random number generator (prng), use the random number to rotate a particle inside the grid.<br />
 Compared to <a href="/experiment-snow">the snow experiment</a> the mental approach is a bit like coding it the other way around (we don&#8217;t really displace particles, we displace the input variables). Plus we cannot exceed the grid boundaries (we&#8217;re calculating pixels, not particles). If you click without dragging you will see the displaced grid. Notice the sparks are moving in circles within each grid cell.</p>

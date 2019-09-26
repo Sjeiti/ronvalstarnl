@@ -3,8 +3,8 @@
   slug: kosmonaut
   type: fortpolio
   excerpt: <p>Design and creation of a website that depicted a wooden desktop over which a camera pans, zooms and rotates.</p>
-  categories: javascript, frontend, HTML/CSS, Flash, video, illustration, backend
-  tags: Filter Forge, HTML, graphic design, Actionscript, Flash, video, interaction design, concept
+  categories: JavaScript, frontend, HTML/CSS, Flash, video, illustration, backend
+  tags: Filter Forge, HTML, graphic design, ActionScript, Flash, video, interaction design, concept
   clients: Kosmonaut
   collaboration: 
   prizes: 

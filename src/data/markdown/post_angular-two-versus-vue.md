@@ -5,8 +5,8 @@
   slug: angular-two-versus-vue
   type: post
   excerpt: <p>My site right now is was WordPress with a REST API coupled to a Angular 1 front-end. So naturally I thought of migrating to Angular 2, just to keep my skills up. Then I found Vue&#8230;.</p>
-  categories: code, Javascript, rant
-  tags: Javascript, frameworks, Angular, Vue
+  categories: code, JavaScript, rant
+  tags: JavaScript, frameworks, Angular, Vue
   metaKeyword: Vue
   metaDescription: My site right now is Wordpress with a REST API coupled to a Angular 1 front-end. So naturally I thought of migrating to Angular 2. Then I found Vue.
   inCv: 
@@ -19,7 +19,7 @@
 
 <p>My site <del>right now is</del> was WordPress with a REST API coupled to a Angular 1 front-end. So naturally I thought of migrating to Angular 2, just to keep my skills up. Then I found Vue&#8230;.</p>
 <p><!--more--></p>
-<p><a href="https://angularjs.org/" target="_blank">Angular 2</a> was totally rewritten and using Typescript. I had never used Typescript so I was very curious. I have been using more and more ES6 over to last year plus I used to be very well versed in another typed form of Ecmascript called Actionscript. So that&#8217;s my point of reference. For <i>your</i> point of reference: I am no stranger to frameworks. Over the last 15 years I&#8217;ve used frameworks in PHP, Java, Actionscript and Javascript.</p>
+<p><a href="https://angularjs.org/" target="_blank">Angular 2</a> was totally rewritten and using Typescript. I had never used Typescript so I was very curious. I have been using more and more ES6 over to last year plus I used to be very well versed in another typed form of Ecmascript called ActionScript. So that&#8217;s my point of reference. For <i>your</i> point of reference: I am no stranger to frameworks. Over the last 15 years I&#8217;ve used frameworks in PHP, Java, ActionScript and JavaScript.</p>
 <h2>migrating to Angular 2</h2>
 <p>My site had a few quirky patterns like routes from a REST API, template injection and DOM node swapping. But I wasn&#8217;t too worried; if it worked in v1, why would it not work in v2?<br />
 At first I read numerous articles on how to migrate from Angular v1 to v2. Tried it, and decided it would be easier to simply start over. Then I tried to get started using the docs on the Angular site. While still trying to get my tutorial stuff compiled I found <a href="https://github.com/angular/angular-cli" target="_blank">angular-cli</a>, which simply creates a working scaffold (after downloading +200MB of NPM scripts).</p>
@@ -33,7 +33,7 @@ At first I read numerous articles on how to migrate from Angular v1 to v2. Tried
 <h2>Awesome</h2>
 <p>Okay, here we go again. HTML5 mode&#8230; check. Routes working&#8230; check. Alright, let&#8217;s do a REST call and inject some more routes. Eehr, wait&#8230; no http module. I&#8217;ll use this one. Injecting routes hmmm, ah wait, this works. Then a module with a frozen object for configuration. Change header data; simple DOM manipulation. No template injection, okay&#8230; (sound of keyboard tapping)&#8230; model module&#8230; bind this for scope&#8230; ah no scratch the bind, inlining is easier (but uglier). Hocus pocus Webstack&#8230; holy shit look at that speed compared to my ng1 site!</p>
 <h3>Yeah I think I&#8217;ll stick with Vue</h3>
-<p>The thing with Vue is that it has a specific purpose and it does it well. All other problems can be solved by pure Es6. Ng2 is capable of way more (and is advocated as such) but requires you to code in a rigid structured way. I&#8217;m not talking about Typescript here. Having coded Actionscript for years I love typed languages, and I loved the classical way Actionscript worked without having to resolve to this. Unfortunately I never liked classical objects in Javascript or Typescript. The former because it offered no value against prototypal, the latter because of all the this.</p>
+<p>The thing with Vue is that it has a specific purpose and it does it well. All other problems can be solved by pure Es6. Ng2 is capable of way more (and is advocated as such) but requires you to code in a rigid structured way. I&#8217;m not talking about Typescript here. Having coded ActionScript for years I love typed languages, and I loved the classical way ActionScript worked without having to resolve to this. Unfortunately I never liked classical objects in JavaScript or Typescript. The former because it offered no value against prototypal, the latter because of all the this.</p>
 <h2>So forget Angular 2?</h2>
 <p>Would I use Vue for larger projects with multiple coders? I don&#8217;t know&#8230; probably not. Rigid structures like Angular 2 dictates are very helpful when coding in teams. I&#8217;ve done enough code reviews to know that freedom mostly goes hand in hand with a big fucking mess. I&#8217;m sure Vue would work in a team of senior devs adhering to strict coding guidelines. But first we&#8217;d have to get all those senior devs to agree on the coding guidelines, so that would never work.<br />
 So I guess I should give Angular 2 one more go. Even if it&#8217;s just to satisfy my curiosity.</p>

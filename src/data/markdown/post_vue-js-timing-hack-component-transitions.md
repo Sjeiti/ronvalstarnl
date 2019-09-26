@@ -5,7 +5,7 @@
   slug: vue-js-timing-hack-component-transitions
   type: post
   excerpt: <p>Here&#8217;s a small hack for Vue transitions on child elements. Vue transitions are easy as pie: in your HTML element you set the v-transition directive to the name of your transition. And in your CSS you write selectors like .[transitionName]-[enter|leave][-active]. And that&#8217;s it. It feels like magic but it&#8217;s actually quite simple. Vue searches your [&hellip;]</p>
-  categories: code, CSS, Javascript
+  categories: code, CSS, JavaScript
   tags: CSS, Vue, transition
   metaKeyword: transition
   inCv: 

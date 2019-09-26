@@ -5,7 +5,7 @@
   slug: memory-and-speed-performance-of-different-namespace-patterns
   type: post
   excerpt: <p>Recently I had to work on a large codebase where multiple people were working on. There was a recurring namespace/module pattern that was very inefficient, either that or nobody really cared about good memory management.</p>
-  categories: code, Javascript
+  categories: code, JavaScript
   tags: performance, memory, speed
   metaKeyword: namespace
   metaTitle: Memory and performance of different namespace patterns
@@ -64,4 +64,4 @@ This singleton memory starts as low as the function namespace and after one call
 <p>This solution is a bit more complicated and thus more error prone. The beauty of a revealing module is that it&#8217;s quite simple. But we can simplify this by throwing the complexity into a helper method.<br />
 Normally I use a method that turns a string into a namespace. I refactored it a bit so it can also handle functions to be turned into a getter. </p>
 <pre><code data-language="javascript" data-src="/static/example/singletonNamespace.js"></code></pre>
-<p>In real life you will never have a namespace with 100000 methods of course. But it&#8217;s good to know how Javascript really works and I always like to think that every bit helps. Because in the end it might be those few measly microseconds that will prevent your user from leaving or cause Google to index you higher.</p>
+<p>In real life you will never have a namespace with 100000 methods of course. But it&#8217;s good to know how JavaScript really works and I always like to think that every bit helps. Because in the end it might be those few measly microseconds that will prevent your user from leaving or cause Google to index you higher.</p>

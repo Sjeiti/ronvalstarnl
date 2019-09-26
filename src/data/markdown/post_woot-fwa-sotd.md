@@ -5,7 +5,7 @@
   slug: woot-fwa-sotd
   type: post
   excerpt: <p>The Kees Kroot website I made for Pool has gone &#8221;site of the day&#8221; at theFWA. That does make me proud. But of course it&#8221;s not just me that deserves credit, also the people at Pool (Matthijs, Sip, Mayke etc&#8230;), and Krijn van Noordwijk for the very cool photography.</p>
-  categories: code, CSS, Flash, backend, Actionscript
+  categories: code, CSS, Flash, backend, ActionScript
   tags: 
   metaKeyword: FWA
   inCv: 

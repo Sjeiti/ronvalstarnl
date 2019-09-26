@@ -5,7 +5,7 @@
   slug: amfphp-and-as3
   type: post
   excerpt: <p>Keeping myself very busy rewriting cubejunky to a Flash (=papervision3d) equivalent I got a bit stuck on wanting to implement amfphp in as3. I did find some good examples here and here that got me going again. I never quite understood why amfphp generates as2 classes that can have more than one instance. A singleton [&hellip;]</p>
-  categories: code, backend, work, Actionscript
+  categories: code, backend, work, ActionScript
   tags: amfphp
   inCv: 
   inPortfolio: 

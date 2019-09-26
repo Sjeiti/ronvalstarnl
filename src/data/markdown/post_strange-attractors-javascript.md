@@ -5,24 +5,24 @@
   slug: strange-attractors-javascript
   type: post
   excerpt: <p>Strange attractors show how easily chaos can emerge within a simple system. This concept has always fascinated me because it puts terms like chance and predetermination in a different light. And it also produces pretty cool images.</p>
-  categories: code, Javascript, video, open source
+  categories: code, JavaScript, video, open source
   tags: math, strange attractors, chaos
   metaKeyword: Strange attractors
-  metaDescription: Strange attractors prove how easily chaos can emerge within a simple system. This attractor viewer is a Javascript rewrite to front-end Javascript.
+  metaDescription: Strange attractors prove how easily chaos can emerge within a simple system. This attractor viewer is a JavaScript rewrite to front-end JavaScript.
   inCv: 
   inPortfolio: 
   dateFrom: 
   dateTo: 
 -->
 
-# Strange attractors in Javascript
+# Strange attractors in JavaScript
 
 <p>Strange attractors show how easily chaos can emerge within a simple system. This concept has always fascinated me because it puts terms like chance and predetermination in a different light. And it also produces pretty cool images.</p>
 <p><!--more--></p>
 <p>Over ten years ago I got into <a href="https://processing.org/" target="_blank">Processing</a>. One of the last projects I made was a <a href="/projects/strange-attractors">strange attractor renderer</a> built in Eclipse (but still using the P55 core).<br />
-Back then Java applets were still the only way to get raw computing power to the client-side of the web. A strange attractor is not complicated, but because it is deterministic it needs a few billion iterations for a proper result. I tested Actionscript, Javascript and Java and naturally the latter was way faster (and still is).<br />
-September last year <a href="https://java.com/en/download/faq/chrome.xml" target="_blank">Chrome dropped support</a> for Java applets. Since Javascript has come a long way I thought I&#8217;d try a remake in Nodejs. I compared a rough to a client-side implementation and found the speed difference negligible enough to bring the entire implementation to client-side Javascript.<br />
-Contrary to the old Java applet this Javascript version can burp out animated gifs and webm videos (for low memory animations). The old app could only do that when running on local machine (with <a href="https://www.youtube.com/watch?v=a82FJjQPs2Q&amp;list=PLHBT3Ooxdwag6dHJOZ0mlqOgz9gAfnXDG" target="_blank">cool results</a> nonetheless).<br />
+Back then Java applets were still the only way to get raw computing power to the client-side of the web. A strange attractor is not complicated, but because it is deterministic it needs a few billion iterations for a proper result. I tested ActionScript, JavaScript and Java and naturally the latter was way faster (and still is).<br />
+September last year <a href="https://java.com/en/download/faq/chrome.xml" target="_blank">Chrome dropped support</a> for Java applets. Since JavaScript has come a long way I thought I&#8217;d try a remake in Nodejs. I compared a rough to a client-side implementation and found the speed difference negligible enough to bring the entire implementation to client-side JavaScript.<br />
+Contrary to the old Java applet this JavaScript version can burp out animated gifs and webm videos (for low memory animations). The old app could only do that when running on local machine (with <a href="https://www.youtube.com/watch?v=a82FJjQPs2Q&amp;list=PLHBT3Ooxdwag6dHJOZ0mlqOgz9gAfnXDG" target="_blank">cool results</a> nonetheless).<br />
 What really surprised me is that it even works on my old mobile phone (a Samsung S2).</p>
 <p>Here are some of the first animated gifs from the new application:</p>
 <p><img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/attractorDeJong.gif" alt="attractorDeJong" width="256" height="256" class="alignleft size-full"><img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/attractorLorenz84_1.gif" alt="attractorLorenz84_1" width="256" height="256" class="alignleft size-full wp-image-2997"><img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/attractor.gif" alt="attractor" width="256" height="256" class="alignleft size-full wp-image-2999"><img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/attractorLorenz.gif" alt="attractorLorenz" width="256" height="256" class="alignleft size-full wp-image-3000"></p>

@@ -5,7 +5,7 @@
   slug: wordpress-rest-api-using-vue-webpack
   type: post
   excerpt: <p>Two years ago I rewrote my site in Angular 1 and coupled it to WordPress using a REST API. I was going to post something on how to get this done but I never got around to it. Lately I rewrote the front-end to Vue. And since Vue is awesome I&#8217;ll write that post right [&hellip;]</p>
-  categories: code, Javascript, backend
+  categories: code, JavaScript, backend
   tags: Wordpress, Vue, Webpack
   metaKeyword: Webpack
   metaDescription: Two years ago I rewrote my site to Angular. I was going to post how but I never got around to it. Lately I rewrote it to Vue. So here's that post.
@@ -19,14 +19,14 @@
 
 <p>Two years ago I rewrote my site in Angular 1 and coupled it to WordPress using a REST API. I was going to post something on how to get this done but I never got around to it. Lately <a href="/angular-two-versus-vue">I rewrote the front-end to Vue</a>. And since Vue is awesome I&#8217;ll write that post right now.</p>
 <h2>Why WordPress and Vue?</h2>
-<p>WordPress because it&#8217;s probably the most user friendly CMS out there today. And Vue because it uses plain ES6, but you could probably swap it with any of the current Javascript frameworks. Because the difficulty here is not Vue, it&#8217;s getting Webpack and WordPress to cooperate.</p>
+<p>WordPress because it&#8217;s probably the most user friendly CMS out there today. And Vue because it uses plain ES6, but you could probably swap it with any of the current JavaScript frameworks. Because the difficulty here is not Vue, it&#8217;s getting Webpack and WordPress to cooperate.</p>
 <p>A dirty job that WordPress handles well by means of Plugins are caching and SEO. A dirty job Webpack handles well is minification, injection and hot reloading (!==live reloading).</p>
 <h2>The main problem</h2>
 <p>So there we have a problem. Webpack creates and serves a static html file. WordPress serves dynamic html, but without the stuff Webpack just minified. And we need the best of both worlds.</p>
 <p>Now I&#8217;ve used Grunt, Gulp and currently more into calling custom js build scripts through npm run. But Webpack is new to me (it came with vue-cli). So correct me if I&#8217;m doing it wrong.</p>
 <h2>Directory structure</h2>
 <p>My starting point here is <a href="https://github.com/vuejs/vue-cli">vue-cli</a>.<br />
-Previously the src directory would house my entire WordPress installation and I&#8217;d serve src locally for development. For deployment build I&#8217;d copy the changed files to dist together with concatenated/minified/autoprefixed Javascript and CSS.</p>
+Previously the src directory would house my entire WordPress installation and I&#8217;d serve src locally for development. For deployment build I&#8217;d copy the changed files to dist together with concatenated/minified/autoprefixed JavaScript and CSS.</p>
 <p>With Es6 we&#8217;re back to compiling (or <a href="https://en.wikipedia.org/wiki/Source-to-source_compiler" target="_blank">transpiling</a>). We cannot serve the source directly. Mostly due to resolvement of dependencies, not to the browser not being able to handle Es6. Webpack serves the processed files using Express. But Express does not serve PHP and SQL, and we do want that hot reload.<br />
 Luckily Webpack has an easy solution for development: you can proxy specific paths. The effect is somewhat similar to Apaches mod-rewrite: we can serve stuff from anywhere while giving the impression it&#8217;s on our own host. And this is just fine for development: since all we really need is access to the REST API and to the static uploads. For local development we have no use for SEO, so correct headers and meta tags do not really matter.</p>
 <p>The easiest location for our WordPress installation is the dist directory. This does feel a bit blasfemous but the PHP sources do not need any compilation, so why not. The Webpack build task will target dist with the transpiled but it does not clean dist in advance.<br />
@@ -135,5 +135,5 @@ app.use(staticPath, express.static('./src/static'))
 <h3>Prefetching data</h3>
 <p>A good way to speed up a site is to minimize xhttp requests. Of course a single page application is all xhttp requests through a REST API. What I did for my site is inject most common request results as JSON into the body. This does bloat the initial page load but you could bring that down with some <a href="https://github.com/pieroxy/lz-string">LZ string compression</a>. My HTML is now around 55KB and, with some server-side caching, loads like a breeze.</p>
 <h3>Inlining style and code?</h3>
-<p>You probably know a bit about the way a page loads. You can open your browsers network tab for a visualization. The plain html loads, this contains references to Javascript and stylesheets that are loaded next. In the meantime the user sees nothing (especially on slower mobile connections). To remedy this we can incline small amounts of CSS and Javascript (also per <a href="https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery">Google recommendation</a>).<br />
+<p>You probably know a bit about the way a page loads. You can open your browsers network tab for a visualization. The plain html loads, this contains references to JavaScript and stylesheets that are loaded next. In the meantime the user sees nothing (especially on slower mobile connections). To remedy this we can incline small amounts of CSS and JavaScript (also per <a href="https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery">Google recommendation</a>).<br />
 I have tried to get Webpack to inline a LESS file to the head (including a base64 encoded image), but I really have no idea. So if you know how, please let me know.</p>
