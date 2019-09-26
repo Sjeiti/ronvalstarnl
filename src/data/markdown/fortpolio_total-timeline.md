@@ -16,4 +16,4 @@
 
 # Total Timeline
 
-<p>The largest timeline ever created, showing major events in the history of time.</p>
+The [largest timeline](https://totaltimeline.org/) ever created, showing major events in the history of time.

@@ -2,6 +2,7 @@
   id: 3350
   slug: randstad-planning-application
   type: fortpolio
+  excerpt: Further responsive implementation of an existing planning application. Improved speed performance in existing lists and tables with large amounts of data. Implemented stricter code linting and added component testing with Cypress. Created prototypes for possible future implementations.
   categories: JavaScript, frontend, HTML/CSS, framework
   tags: CSS, HTML, JavaScript, performance, test, scrum, interaction design, Vue, Cypress
   clients: Randstad

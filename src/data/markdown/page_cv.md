@@ -89,6 +89,8 @@ For solo projects I used to share a workspace with other freelancers but the las
 </ul>
  
 </div>
+</div>
+<div class="print-columns">
 <div>
 
 ### soft skills
@@ -110,7 +112,7 @@ For solo projects I used to share a workspace with other freelancers but the las
  
 </div>
 </div>
-<!--<div style="page-break-after: always;"></div>-->
+<div style="page-break-after: always;"></div>
 
 ## education
 

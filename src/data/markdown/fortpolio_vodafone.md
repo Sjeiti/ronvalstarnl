@@ -2,7 +2,7 @@
   id: 2877
   slug: vodafone
   type: fortpolio
-  excerpt: <p>As senior-developer in the front-end team at Vodafone there were several projects I contributed to. The largest was rebuilding the entire shop into a single page application using Angular. One of my responsibilities was laying down the basic structure and workflow for the framework as well as creating new build scripts (moving from Grunt to just NodeJS).<br /> Along the way I also tried to push through several improvements to the build process and overall code quality.</p>
+  excerpt: Rebuilt shop flow into a single page application using Angular. Added several improvements to the buil process. Updated/refactored a lot of legacy code. Improved code quality.
   categories: JavaScript, frontend, HTML/CSS, framework
   tags: CSS, HTML, JavaScript, Angular, Grunt, scrum, nodejs
   clients: Vodafone
@@ -20,4 +20,4 @@
 # Vodafone
 
 <p>As senior-developer in the front-end team at Vodafone there were several projects I contributed to. The largest was rebuilding the entire shop into a single page application using Angular. One of my responsibilities was laying down the basic structure and workflow for the framework as well as creating new build scripts (moving from Grunt to just NodeJS).<br />
-Along the way I also tried to push through several improvements to the build process and overall code quality.</p>
+Along the way I added several improvements to the build process and overall code quality.</p>

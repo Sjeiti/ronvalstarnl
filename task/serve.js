@@ -2,7 +2,7 @@
  * node task/serve dist 8383
  */
 
-const express    = require('express')
+const express     = require('express')
 const serveStatic = require('serve-static')
 const openBrowser = require('open')
 const root = process.argv[2]||'doc'

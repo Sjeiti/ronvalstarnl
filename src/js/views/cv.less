@@ -7,6 +7,7 @@
       position: static;
     }
     font-size: 11pt;
+    line-height: 19pt;
     header nav,
     [href$=".pdf"],
     footer {
@@ -28,12 +29,22 @@
       }
     }
     .cv-projects {
-      display: flex;
-      flex-wrap: wrap;
-      li {
-        flex: 0 0 50%;
+      //display: flex; // page-break rules fail with flex
+      //flex-wrap: wrap;
+      >li {
+        width: 50%;
+        float: left;
+        //flex: 0 0 50%;
         page-break-inside: avoid;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        &:nth-child(2n-1) {
+          clear: left;
+        }
       }
+    }
+    ul.tags {
+
     }
   }
   small, dl {
