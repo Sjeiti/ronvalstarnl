@@ -5,7 +5,7 @@
   slug: jquerytinysort
   type: post
   excerpt: <p>I was doing some jquery (javascript) today and created a sorting function for html nodes. I tried to find a jquery function or plugin that could do it but I couldn&#8217;t find it. I&#8217;ve been using jquery for a year or so, and since it&#8217;s just a lazy sunday afternoon out here, I thought I&#8217;d [&hellip;]</p>
-  categories: code, Javascript, jQuery
+  categories: code, JavaScript, jQuery
   tags: 
   metaKeyword: tinysort
   metaTitle: jquery.tinysort

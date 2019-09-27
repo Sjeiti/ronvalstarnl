@@ -4,8 +4,8 @@
   modified: 2017-01-24T15:37:33
   slug: experiment-clouds
   type: post
-  excerpt: <p>At first I tried this in plain Javascript but it was way too slow. So here are some clouds in glsl.</p>
-  categories: code, glsl
+  excerpt: <p>At first I tried this in plain JavaScript but it was way too slow. So here are some clouds in GLSL.</p>
+  categories: code, GLSL
   tags: simplex noise, cool shit, experiment
   inCv: 
   inPortfolio: 
@@ -15,7 +15,7 @@
 
 # Experiment: clouds
 
-<p>At first I tried this in plain Javascript but it was way too slow. So here are some clouds in glsl.<br />
+<p>At first I tried this in plain JavaScript but it was way too slow. So here are some clouds in GLSL.<br />
 <!--more--><br />
 This is also a sort of hello world I always try when using noise in a different language. From an image I once saw <a href="https://web.archive.org/web/20090208211407/http://www.noisemachine.com/talk1/24b.html">here</a> <small>(in the waybackmachine)</small>.</p>
 <p>You can drag stuff around.</p>

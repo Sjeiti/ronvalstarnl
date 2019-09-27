@@ -5,6 +5,7 @@ import {scroll} from '../signal/scroll'
 import {signal} from '../signal'
 import {routeChange} from '../router'
 import {clean, selectEach} from '../utils/html'
+import {MEDIA_URI_HEADER} from '../config'
 
 component.create('[data-header]', class extends BaseComponent{
 
@@ -34,8 +35,9 @@ component.create('[data-header]', class extends BaseComponent{
   }
 
   setImage(src){
+    console.log('setImage src',src) // todo: remove log
     if (src){
-      this._background.style.backgroundImage = `url("${src}")`
+      this._background.style.backgroundImage = `url("${MEDIA_URI_HEADER+src}")`
     } else {
       this._background.style.removeProperty('background-image')
     }

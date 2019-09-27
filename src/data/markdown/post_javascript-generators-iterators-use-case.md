@@ -1,23 +1,19 @@
 <!--
   id: 3418
-  date: 2018-04-25T19:36:08
-  modified: 2018-04-25T19:36:08
+  date: 2018-04-25
+  modified: 2019-09-27
   slug: javascript-generators-iterators-use-case
   type: post
-  excerpt: <p>I’ve known about Javascript generators and iterators for some years but I’ve always ignored them. Partly because it was something new, something you can easily do without, and partly because I never really encountered a clear real life use case. speed optimizations A while back I was working on speed optimizations for a large, somewhat [&hellip;]</p>
-  categories: code, Javascript, skills
-  tags: 
+  header: Structure_Paris_les_Halles.jpg
+  categories: code, JavaScript, skills
+  tags: generators, iterators, speed
   metaKeyword: generators
-  metaDescription: I’ve always ignored Javascript generators and iterators partly because I never really encountered a clear real life use case.
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
+  metaDescription: I’ve always ignored JavaScript generators and iterators partly because I never really encountered a clear real life use case.
 -->
 
-# A use case for Javascript generators
+# A use case for JavaScript generators
 
-I’ve known about Javascript [generators and iterators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators) for some years but I’ve always ignored them. Partly because it was something new, something you can easily do without, and partly because I never really encountered a clear real life use case.
+I’ve known about JavaScript [generators and iterators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators) for some years but I’ve always ignored them. Partly because it was something new, something you can easily do without, and partly because I never really encountered a clear real life use case.
 
 ## speed optimizations
 

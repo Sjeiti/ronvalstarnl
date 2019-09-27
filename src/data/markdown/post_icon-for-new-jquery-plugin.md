@@ -15,4 +15,4 @@
 
 # icon for new jQuery plugin
 
-<p><img src="/wordpress/wp-content//uploads/img/blog/elephant.jpg" alt="" /></p>
+<p><img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/elephant.jpg" alt="" /></p>

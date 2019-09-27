@@ -2,11 +2,11 @@
   id: 3484
   slug: disconnect
   type: fortpolio
-  excerpt: <p>Technical experimentation and eventual development of a site for an audiovisual performance. Threejs SPA with custom GLSL shaders for video and audio with subtitles.</p>
-  categories: javascript, frontend, 3D, video
-  tags: 3D, Javascript, simplex noise, experiment, webgl, Webpack, glsl
-  clients: Robin Coops
-  collaboration: Suzanne Hoenderboom, Wilbert van Veldhuizen, Eric Magnée, Sytze Schalk
+  excerpt: Technical experimentation and development of a site for an audiovisual performance. Threejs SPA with custom GLSL shaders for video and audio with subtitles.
+  categories: JavaScript, frontend, 3D, video
+  tags: 3D, JavaScript, simplex noise, experiment, WebGL, Webpack, GLSL
+  clients: Stichting M31 Foundation
+  collaboration: Robin Coops, Suzanne Hoenderboom, Wilbert van Veldhuizen, Eric Magnée, Sytze Schalk
   prizes: 
   thumbnail: 04_video.jpg
   image: 04_video.jpg

@@ -2,10 +2,11 @@
   id: 2294
   slug: philips-website
   type: fortpolio
-  categories: javascript, frontend, video, mobile
-  tags: HTML, Javascript, Less, scrum, JSDoc
+  excerpt: Transformed demo into workable code. Helped setting up coding guidelines for future views and components. Implemented the more complex components and simpler example components. Setup a build that generated the documentation through JSDoc.
+  categories: JavaScript, frontend, video, mobile
+  tags: HTML, JavaScript, Less, scrum, JSDoc
   clients: De Voorhoede
-  collaboration: Philips
+  collaboration: Philips, MediaMonks
   prizes: 
   thumbnail: Philips-Consumenten-producten-e1437373928995.jpg
   image: Philips-Consumenten-producten-e1437373928995.jpg
@@ -18,6 +19,6 @@
 
 # Philips website
 
-<p>For the responsive re-make of the Philips a demo was made by de Voorhoede. The demo had to be turned into workable code.<br />
-I helped setting up the the Javascript coding guidelines for structuring and documenting the components. We used JSDOC to generate source code documentation.<br />
-The scrum team I was part of also implemented the first few (and most difficult) components. There were about 140 components, the bulk of these were later implemented by MediaMonks.</p>
+For the responsive re-make of the Philips a demo was made by de Voorhoede. The demo had to be turned into workable code.
+I helped setting up the the JavaScript coding guidelines for structuring and documenting the components. We used JSDoc to generate source code documentation.<br />
+The scrum team I was part of also implemented the first few (and most difficult) components. There were about 140 components, the bulk of these were later implemented by MediaMonks.

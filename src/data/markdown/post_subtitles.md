@@ -5,7 +5,7 @@
   slug: subtitles
   type: post
   excerpt: <p>With this Flash app (I made for BNN) you can put your own subtitles to news items. Very simple, but very funny.</p>
-  categories: Flash, work, Actionscript
+  categories: Flash, work, ActionScript
   tags: 
   inCv: 
   inPortfolio: 

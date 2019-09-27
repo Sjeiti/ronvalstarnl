@@ -5,7 +5,7 @@
   slug: knikkertijd
   type: post
   excerpt: <p>Knikkertijd is dutch for &#8216;marbletime&#8217;: a few times a year there would be a period of a few days/weeks that the main game played at the schoolyard was marbles. This flash 8 application used two displacement maps per marble: one for the underground, and one (mod width) for the glass swirl inside the marble. I [&hellip;]</p>
-  categories: Flash, game, Actionscript
+  categories: Flash, game, ActionScript
   tags: 
   inCv: 
   inPortfolio: 

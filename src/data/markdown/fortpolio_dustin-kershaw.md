@@ -3,7 +3,7 @@
   slug: dustin-kershaw
   type: fortpolio
   categories: 
-  tags: HTML, Javascript, Wordpress, video, interaction design, concept
+  tags: HTML, JavaScript, Wordpress, video, interaction design, concept
   clients: Dustin Kershaw
   collaboration: 
   prizes: 

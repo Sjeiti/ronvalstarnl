@@ -5,8 +5,8 @@
   slug: experiment-radialdifference
   type: post
   excerpt: <p>Another pretty simple idea with a really cool result (above). These are radial gradients drawn on top of each other with a &#8216;difference&#8217; blend mode.</p>
-  categories: code, Javascript
-  tags: Javascript, cool shit, particles
+  categories: code, JavaScript
+  tags: JavaScript, cool shit, particles
   metaKeyword: difference
   metaDescription: Another pretty simple idea with a really cool result. These are radial gradients drawn on top of each other with a 'difference' blend mode.
   inCv: 
@@ -28,4 +28,4 @@
 <h3>Object chaining</h3>
 <p>Another performance design pattern is object chaining. Instead of having an array with instances each instance has a reference to the next one. Nothing fancy, just a tad faster. Although I wonder with these present day engines&#8230; but jsperf is still offline.</p>
 <p>Anyway, here&#8217;s the code. You&#8217;ll notice I&#8217;ve separated the actual drawing from the math calculations. Time willing, I&#8217;m going alter it to a version that uses shaders (here&#8217;s <a href="https://www.shadertoy.com/view/4lyGzh">a rough</a>). </p>
-<pre><code data-language="javascript" data-src="/wordpress/wp-content/themes/sjeiti/static/experiment/radialdifference.js"></code></pre>
+<pre><code data-language="javascript" data-src="/static/experiment/radialdifference.js"></code></pre>

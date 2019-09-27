@@ -5,7 +5,7 @@
   slug: littlegame
   type: post
   excerpt: <p>I just finished a little game. It&#8217;s at the frontpage of shapers.nl</p>
-  categories: Flash, game, Actionscript
+  categories: Flash, game, ActionScript
   tags: 
   inCv: 
   inPortfolio: 

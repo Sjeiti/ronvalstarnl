@@ -1,16 +1,14 @@
 <!--
   id: 473
-  description: A port from Java Simplex noise to actionscript 3.
   date: 2010-05-13T22:49:36
   modified: 2016-12-14T19:57:50
   slug: simplex-noise-in-as3
   type: post
-  excerpt: <p>Well I ported the simplex noise to actionscript 3. The weird thing is that there is no speed increase whatsoever. I must be doing it wrong.</p>
-  categories: code, Actionscript
+  categories: code, ActionScript
   tags: simplex noise, Stefan Gustavson, test
   metaKeyword: Simplex noise
   metaTitle: Simplex noise in as3
-  metaDescription: A port from Java Simplex noise to actionscript 3.
+  metaDescription: A port from Java Simplex noise to ActionScript 3.
   inCv: 
   inPortfolio: 
   dateFrom: 
@@ -19,7 +17,7 @@
 
 # Simplex noise in as3
 
-<p>Well I ported the simplex noise to actionscript 3. The weird thing is that there is no speed increase whatsoever. I must be doing it wrong.</p>
+<p>Well I ported the simplex noise to ActionScript 3. The weird thing is that there is no speed increase whatsoever. I must be doing it wrong.</p>
 <p><!--more--></p>
 <p><a href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/simplexAs4D.rar">Download Simplex.as and test class</a>. The test class also shows the spread and speed of both Perlin (left) and Simplex noise (right).</p>
 <p><img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/classicVsSimplex.jpg" alt="classic vs simplex noise" style="border:1px solid grey;"/></p>

@@ -2,8 +2,8 @@
   id: 2623
   slug: helder
   type: fortpolio
-  categories: javascript, frontend, HTML/CSS, graphic design, mobile
-  tags: Javascript, Wordpress, Less, interaction design, concept
+  categories: JavaScript, frontend, HTML/CSS, graphic design, mobile
+  tags: JavaScript, Wordpress, Less, interaction design, concept
   clients: Helder
   collaboration: 
   prizes: 

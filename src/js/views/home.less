@@ -28,7 +28,14 @@ section:after {
       color: black;
     }
    }
-  ul.projects { box-shadow: none; }
+  ul.projects {
+    box-shadow: none;
+    @media @mediaL {
+      display: flex;
+      justify-content: center;
+      box-shadow: 0rem -4rem 8rem 1rem #555 inset;
+    }
+  }
   section {
     margin: 0;
     overflow: hidden; // to prevent margin collapse

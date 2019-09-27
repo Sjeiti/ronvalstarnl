@@ -17,4 +17,4 @@
 
 <p>Just a clever trick using canvas native shadow to create something that looks like a plasma.</p>
 <p><!--more--></p>
-<pre><code data-language="javascript" data-src="/wordpress/wp-content/themes/sjeiti/static/experiment/plasma.js"></code></pre>
+<pre><code data-language="javascript" data-src="/static/experiment/plasma.js"></code></pre>

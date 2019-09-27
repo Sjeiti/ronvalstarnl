@@ -5,18 +5,18 @@
   slug: how-to-structure-javascript-code-within-a-closure-in-a-logical-way
   type: post
   excerpt: <p>Having a good coding structure increases maintainability. This is true for the structure of files as well as the structure within a file. This post handles about the latter: structuring within a closure. A closure being a revealing-object, IIFE, module or whatever floats your boat.</p>
-  categories: code, Javascript
-  tags: Javascript
+  categories: code, JavaScript
+  tags: JavaScript
   metaKeyword: structure
   metaDescription: Having a good coding structure increases maintainability. This is true for the structure of files as well as the structure within a file.
-  metaTitle: How to logically structure Javascript code within closures
+  metaTitle: How to logically structure JavaScript code within closures
   inCv: 
   inPortfolio: 
   dateFrom: 
   dateTo: 
 -->
 
-# How to structure Javascript code within a closure in a logical way
+# How to structure JavaScript code within a closure in a logical way
 
 Having a good coding structure increases maintainability. This is true for the structure of files as well as the structure within a file. This post handles about the latter: structuring within a closure. A closure being a [revealing-object](https://www.google.com/search?q=javascript+%22revealing+object+pattern%22), [IIFE](https://www.google.com/search?q=javascript+IIFE), [module](https://www.google.com/search?q=javascript+modules) or whatever floats your boat.
 

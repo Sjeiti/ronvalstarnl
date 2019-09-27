@@ -5,7 +5,7 @@
   slug: cubejunky
   type: post
   excerpt: <p>After some time playing around with papervision3d ( helloworld3, primitives, chocolateblur, add) I started recreating my old Cubejunky game. The end is not in sight yet (all work and no play) but I still want to give you a little preview of what&#8217;s to come: Cubejunky in pv3d.</p>
-  categories: Flash, Actionscript
+  categories: Flash, ActionScript
   tags: 
   inCv: 
   inPortfolio: 

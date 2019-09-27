@@ -2,8 +2,8 @@
   id: 2612
   slug: feedme
   type: fortpolio
-  categories: javascript, frontend, HTML/CSS, framework, mobile
-  tags: API, Javascript, Angular, Less
+  categories: JavaScript, frontend, HTML/CSS, framework, mobile
+  tags: API, JavaScript, Angular, Less
   clients: 72andSunny
   collaboration: 
   prizes: 

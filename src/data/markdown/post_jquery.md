@@ -4,8 +4,8 @@
   modified: 2007-04-26T08:21:09
   slug: jquery
   type: post
-  excerpt: <p>It seems my days of javascripting are over :.( My colleague pointed me to jquery. No more browser quircks, one syntax for all (and a cool effects library too).</p>
-  categories: code, Javascript, jQuery
+  excerpt: <p>It seems my days of JavaScripting are over :.( My colleague pointed me to jquery. No more browser quircks, one syntax for all (and a cool effects library too).</p>
+  categories: code, JavaScript, jQuery
   tags: 
   inCv: 
   inPortfolio: 
@@ -15,5 +15,5 @@
 
 # jquery
 
-<p>It seems my days of javascripting are over :.(<br />
+<p>It seems my days of JavaScripting are over :.(<br />
 My colleague pointed me to <a href="http://jquery.com/">jquery</a>. No more browser quircks, one syntax for all (and a cool effects library too).</p>

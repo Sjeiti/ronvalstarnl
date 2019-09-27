@@ -25,4 +25,4 @@
 <h3>Grid system</h3>
 <p>The second technique is a particle grid system. To let the fish interact they must know their mutual distance. But it wouldn&#8217;t interact with all the fish in the sea so it would be overkill to calculate all these distances. Instead the &#8216;sea&#8217; is divided into a grid, where the grid size corresponds to the maximum distance for interaction. Before we do anything we sort all the fish into the grid-array. The only fish that we are concerned with now are those of the neighboring grid cells.</p>
 <p><!--Visual assets and seedable prng--></p>
-<pre><code data-language="javascript" data-src="/wordpress/wp-content/themes/sjeiti/static/experiment/boids.js"></code></pre>
+<pre><code data-language="javascript" data-src="/static/experiment/boids.js"></code></pre>

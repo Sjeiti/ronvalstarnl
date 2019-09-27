@@ -5,7 +5,7 @@
   slug: justsomeflvtests
   type: post
   excerpt: <p>Just trying out some Flash video. I&#8217;m making an all purpose flv player that can change size, I just have to find a way to control those z-indices. I made some extra attractor flv&#8217;s while I was at it. I used to use Quicktime but since their latest annoying itunes won&#8217;t install on my pc [&hellip;]</p>
-  categories: Flash, video, Actionscript
+  categories: Flash, video, ActionScript
   tags: 
   inCv: 
   inPortfolio: 

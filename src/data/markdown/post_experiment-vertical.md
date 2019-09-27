@@ -22,4 +22,4 @@
 <p><del datetime="2016-02-24T08:53:27+00:00">ps: see that search button/field above? When you enter something without submitting, and then click the Canvas, the Google image search will use that query. Try it with a color.</del></p>
 <p>&#8212; update &#8212;</p>
 <p>The old Google API no longer works. The new API version only allows a couple of calls per day. I completely ditched the search option and settled for a placeholder image service that has a random in their REST options: <a href="https://unsplash.it/" target="_blank">Unsplash</a>.</p>
-<pre><code data-language="javascript" data-src="/wordpress/wp-content/themes/sjeiti/static/experiment/vertical.js"></code></pre>
+<pre><code data-language="javascript" data-src="/static/experiment/vertical.js"></code></pre>

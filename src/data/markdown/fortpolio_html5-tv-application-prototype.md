@@ -3,7 +3,7 @@
   slug: html5-tv-application-prototype
   type: fortpolio
   categories: 
-  tags: HTML, Javascript, Less, Grunt, canvas, prototype
+  tags: HTML, JavaScript, Less, Grunt, canvas, prototype
   clients: 72andSunny
   collaboration: 
   prizes: 

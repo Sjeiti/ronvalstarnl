@@ -3,7 +3,7 @@
   slug: api-conversion-elasticsearch-widget
   type: fortpolio
   categories: 
-  tags: CSS, HTML, Javascript, Grunt, Elasticsearch, Bootstrap, JSDoc
+  tags: CSS, HTML, JavaScript, Grunt, Elasticsearch, Bootstrap, JSDoc
   clients: Studiekeuze123
   collaboration: 
   prizes: 

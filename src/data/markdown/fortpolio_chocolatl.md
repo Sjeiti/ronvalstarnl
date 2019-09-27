@@ -2,7 +2,7 @@
   id: 2153
   slug: chocolatl
   type: fortpolio
-  categories: javascript, frontend, HTML/CSS, backend
+  categories: JavaScript, frontend, HTML/CSS, backend
   tags: CSS, HTML, Wordpress, interaction design, concept
   clients: 
   collaboration: Ibrahim Farah

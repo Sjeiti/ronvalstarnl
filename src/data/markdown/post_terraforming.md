@@ -4,12 +4,8 @@
   modified: 2012-07-03T09:29:31
   slug: terraforming
   type: post
-  categories: code, Flash, image, Actionscript
+  categories: code, Flash, image, ActionScript
   tags: Filter Forge
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # terraforming
