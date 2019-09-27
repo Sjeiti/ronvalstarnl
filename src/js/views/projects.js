@@ -51,6 +51,7 @@ add(
           const image = currentProject?.thumbnail
           if (image){
             const header = component.of(document.querySelector('[data-header]'))
+            console.log('project thumbnail',header,image) // todo: remove log
             header&&nextTick(header.setImage.bind(header, image))
           }
           parentSlug = 'projects'

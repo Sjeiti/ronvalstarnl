@@ -1,7 +1,9 @@
 <!--
   slug: refactoring-for-speed
   date: 2019-09-26
+  modified: 2019-09-27
   type: post
+  header: seattleIpad3.jpg
   category: JavaScript
   tag: framework, SPA, speed, build, static
 -->

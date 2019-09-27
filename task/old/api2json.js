@@ -61,7 +61,7 @@ read('src/data/json/media_map.json')
           s.forEach(item=>{
             const {id,type,slug} = item
             if (type==='post'&&item.featured_media) {
-              item.featured_media_file = mediaMap.get(item.featured_media)
+              item.header = mediaMap.get(item.featured_media)
             }
             save(`./temp/${type}_${slug}.json`,JSON.stringify(item,null,2))
           })
