@@ -19,7 +19,7 @@ setDefault((view, route, params)=>fetch(`/data/json/post_${route}.json`)
 
       nextTick(()=>{
         prismToRoot(view)
-        scrollToTop(document.querySelector('[data-header]'), 0)
+        !/^experiment-/.test(route)&&scrollToTop(document.querySelector('[data-header]'), 0)
       })
       return Object.assign(post, {parentSlug:'blog'})
     }, searchView.bind(null, view, route, params)))

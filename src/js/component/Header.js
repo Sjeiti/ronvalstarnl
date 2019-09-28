@@ -11,6 +11,7 @@ component.create('[data-header]', class extends BaseComponent{
 
   _seldo
   _experiment
+  _experimentLink
   _background
   _stuck = signal()
   _lastScrollTop = 0
@@ -30,6 +31,7 @@ component.create('[data-header]', class extends BaseComponent{
 
   _initExperiments(){
     this._experimentWrapper = this._select('.experiment-wrapper')
+    this._experimentLink = this._select('.experiment-ui [data-link]')
     clean(this._experimentWrapper)
     this._stuck.add(is=>this._experiment?.pause(is))
   }
@@ -81,6 +83,7 @@ component.create('[data-header]', class extends BaseComponent{
       this._experiment = Object.values(experiments).sort(()=>Math.random()<0.5?1:-1).pop()
       this._experiment?.init(this._experimentWrapper)
     }
+    this._experimentLink.href = this._experiment?`/experiment-${this._experiment.name}`:'#'
   }
 
 })
