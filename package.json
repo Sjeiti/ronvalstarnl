@@ -1,6 +1,6 @@
 {
   "name": "ronvalstarnl",
-  "version": "0.4.114",
+  "version": "0.4.115",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
   "scripts": {
@@ -90,6 +90,7 @@
     "url-loader": "^1.1.1",
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3",
+    "webpack-watch-files-plugin": "^1.0.3",
     "yorkie": "^2.0.0"
   },
   "optionalDependencies": {

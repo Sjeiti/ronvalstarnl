@@ -14,8 +14,6 @@ glob('src/data/markdown/@(post|page|fortpolio)_*.md')
     mapIndex(files, index)
   })
 
-// todo: research/fix project titles do not search (ie boids or marbles)
-
 /**
  * Create the index file with all searchable words
  * @param {object[]} files
@@ -29,7 +27,6 @@ function createIndex(files){
         .join(' ')
         .replace(/<\/?[^>]+(>|$)/g, ' ')
         .replace(/[^\w\s]/g, ' ')
-        .replace(/s\s/g, ' ')
         .toLowerCase()
         .split(/\s+/g)
     })
