@@ -3,7 +3,7 @@
   slug: 3d-panoramas
   type: fortpolio
   excerpt: <p>User interface design and front-end Flash ActionScript 3 development for an application that links 3-dimensional panoramic views for architectural photography.</p>
-  categories: frontend, 3D, Flash, interaction design
+  categories: front end, 3D, Flash, interaction design
   tags: 3D, Perlin Noise, XML, XSLT, ActionScript
   clients: Iwan Baan
   collaboration: 

@@ -3,7 +3,7 @@
   slug: opleidingen-widget
   type: fortpolio
   excerpt: <p>An Elasticsearch JavaScript widget comprised of CDN dependencies, with source-generated documentation and examples.</p>
-  categories: JavaScript, frontend, HTML/CSS, framework, interaction design, backend, mobile
+  categories: JavaScript, front end, HTML/CSS, framework, interaction design, backend, mobile
   tags: CSS, HTML, JavaScript, Grunt, Elasticsearch, Bootstrap, JSDoc
   clients: Studiekeuze123
   collaboration: 

@@ -3,7 +3,7 @@
   slug: philips-website
   type: fortpolio
   excerpt: Transformed demo into workable code. Helped setting up coding guidelines for future views and components. Implemented the more complex components and simpler example components. Setup a build that generated the documentation through JSDoc.
-  categories: JavaScript, frontend, video, mobile
+  categories: JavaScript, front end, video, mobile
   tags: HTML, JavaScript, Less, scrum, JSDoc
   clients: De Voorhoede
   collaboration: Philips, MediaMonks

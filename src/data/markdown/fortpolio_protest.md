@@ -2,7 +2,7 @@
   id: 2626
   slug: protest
   type: fortpolio
-  categories: JavaScript, frontend, HTML/CSS, backend
+  categories: JavaScript, front end, HTML/CSS, backend
   tags: CSS, JavaScript, Wordpress
   clients: Build In Amsterdam
   collaboration: 

@@ -3,7 +3,7 @@
   slug: sfbrowser
   type: fortpolio
   excerpt: <p>With jQuery and PHP I made a very extensive file uploader that can be hooked onto any CMS. You can even port it to a different server side language through the use of connectors.</p>
-  categories: JavaScript, frontend, HTML/CSS, Flash, open source, interaction design, backend
+  categories: JavaScript, front end, HTML/CSS, Flash, open source, interaction design, backend
   tags: CSS, JavaScript, jQuery, PHP, XML
   clients: 
   collaboration: 

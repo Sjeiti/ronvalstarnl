@@ -38,7 +38,7 @@ I would never claim to be _full stack_ but can easily read and write several bac
 
 <!--
 
-I've written in several frontend languages but also several backend languages
+I've written in several front-end languages but also several backend languages
 
 I'm a dedicated front-end developer with more than eighteen years experience in the world of digital media.<br>
 Because of my education and work as a graphic designer, interaction designer and programmer I am able look at a project from more than one perspective. I have a very broad range of highly developed skills which I nurture and expand.<br>

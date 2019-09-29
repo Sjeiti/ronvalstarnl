@@ -2,7 +2,7 @@
   id: 2275
   slug: strange-attractors
   type: fortpolio
-  categories: frontend, 3D, video, open source, illustration
+  categories: front end, 3D, video, open source, illustration
   tags: Processing, interaction design, Java, math, cool shit, concept
   clients: 
   collaboration: 

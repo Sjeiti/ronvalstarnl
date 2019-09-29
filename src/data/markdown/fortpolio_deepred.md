@@ -2,7 +2,7 @@
   id: 2129
   slug: deepred
   type: fortpolio
-  categories: JavaScript, frontend, HTML/CSS, graphic design
+  categories: JavaScript, front end, HTML/CSS, graphic design
   tags: CSS, HTML, JavaScript, interaction design, concept
   clients: Deepred
   collaboration: 
