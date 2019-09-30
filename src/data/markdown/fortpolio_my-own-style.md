@@ -3,7 +3,7 @@
   slug: my-own-style
   type: fortpolio
   excerpt: Implemented Woocommerce webshop into Wordpress. Created a module that enabled customizeable products. 
-  categories: JavaScript, frontend, HTML/CSS, backend, mobile
+  categories: JavaScript, front end, HTML/CSS, backend, mobile
   tags: HTML, jQuery, Wordpress, Less, Woocommerce, Grunt, interaction design
   clients: Zoutpeper
   collaboration: Ibrahim Farah

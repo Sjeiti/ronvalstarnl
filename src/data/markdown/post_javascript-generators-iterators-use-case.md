@@ -19,7 +19,7 @@ I’ve known about JavaScript [generators and iterators](https://developer.mozil
 
 A while back I was working on speed optimizations for a large, somewhat complex form. This came in the form of a list that would usually hold about two hundred rows. But we had edge cases with an excess of three thousand rows. Which would cause the browser to just curl up in a corner and die.
 
-So we made several back- and frontend changes and upped the speed to around thirty thousand rows.  
+So we made several back- and front-end changes and upped the speed to around thirty thousand rows.  
 One of the things we did was divide the rows into blocks with each block containing enough rows to fill a viewport. Then `display:none` all the blocks outside the viewport.  
 While scrolling the blocks are turned on and off depending on viewport visibility. So a maximum of two blocks visible at one time.
 

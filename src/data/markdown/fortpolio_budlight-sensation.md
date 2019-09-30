@@ -2,7 +2,7 @@
   id: 2058
   slug: budlight-sensation
   type: fortpolio
-  categories: JavaScript, frontend, HTML/CSS, framework, video, backend, mobile
+  categories: JavaScript, front end, HTML/CSS, framework, video, backend, mobile
   tags: CSS, HTML, JavaScript, PHP, Laravel, REST, Backbone
   clients: Resn
   collaboration: 

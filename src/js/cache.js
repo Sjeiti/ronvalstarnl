@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
 import {register} from 'register-service-worker'
-import {signal} from '../utils/signal'
+import {signal} from './signal'
 import {ENV} from './config'
 
 export const appReady = signal()

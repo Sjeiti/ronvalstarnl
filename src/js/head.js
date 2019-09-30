@@ -1,9 +1,8 @@
-import {expand} from '@emmetio/expand-abbreviation'
 import {routeChange} from './router'
-import {stringToElement} from './utils/html'
+import {stringToElement, expand} from './utils/html'
 import {getCanonical} from './utils'
 
-const siteName= 'Ron Valstar - frontend developer'
+const siteName= 'Ron Valstar - front-end developer'
 
 /**
  * Head controller for meta properties
