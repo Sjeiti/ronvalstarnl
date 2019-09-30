@@ -10,11 +10,11 @@ add('search/:query', 'search', searchView)
 
 /**
  * View method for search
- * @param {HTMLElement} view
+ * @param {View} view
  * @param {string} route
  * @param {object} params
  * @param {object} error
- * @returns {{title: string}}
+ * @returns {Promise<{title: string}>}
  */
 export function searchView(view, route, params, error){
   const is404 = !!error

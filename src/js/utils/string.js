@@ -18,6 +18,11 @@ export function slugify(string){
     .replace(/-+$/, '') // Trim - from end of text
 }
 
+/**
+ * Wrap classNames object to have both name and selector
+ * @param {object} obj
+ * @return {object}
+ */
 export function makeClassNames(obj){
   Object.entries(obj).forEach(([key, value])=>{
     obj[key] = {

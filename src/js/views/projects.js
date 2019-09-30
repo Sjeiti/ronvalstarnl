@@ -71,7 +71,7 @@ add(
 
 /**
  * Build categories and project list
- * @param {HTMLElement} view
+ * @param {View} view
  * @param {object[]} categories
  * @param {object[]} portfolioProjects
  * @return {HTMLElement[]}
@@ -90,7 +90,7 @@ function buildPage(view, categories, portfolioProjects){
 
 /**
  * Build the current selected project
- * @param {HTMLElement} view
+ * @param {View} view
  * @param {object} project
  * @param {object[]} existingProjects
  */

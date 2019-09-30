@@ -7,7 +7,7 @@ const data = ['page_cv', 'fortpolio-list']
 
 add(
   'cv'
-  , (view/*, route, params*/)=>{
+  , (/**View*/view/*, route, params*/)=>{
     return Promise.all(data.map(n=>fetch(`/data/json/${n}.json`).then(rs=>rs.json())))
       .then(([page, projects])=>{
         view.appendString(page.content)

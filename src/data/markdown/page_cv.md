@@ -32,20 +32,9 @@
 ## profile
 
 I'm a dedicated front-end developer with more than eighteen years of experience in developing digital media.<br/>
-Because of my education and work as a graphic designer, interaction designer and programmer I am able look at a project from multiple perspectives. I strive toward consistency and cleanliness in code as well as design.
+Because of my education and work experience as a graphic designer, interaction designer and programmer I am able look at a project from multiple perspectives. I strive toward consistency and cleanliness in code as well as design.
 Sometimes I have solo projects but mostly I like to work in teams. 
-I would never claim to be _full stack_ but can easily read and write several backend languages and I'm not afraid to learn something new.
-
-<!--
-
-I've written in several front-end languages but also several backend languages
-
-I'm a dedicated front-end developer with more than eighteen years experience in the world of digital media.<br>
-Because of my education and work as a graphic designer, interaction designer and programmer I am able look at a project from more than one perspective. I have a very broad range of highly developed skills which I nurture and expand.<br>
-For solo projects I used to share a workspace with other freelancers but the last few years I have mainly been working on location on larger team-based projects.
-
---> 
-
+I can read and write several backend languages and I'm not afraid to learn something new.
 
 </div>
 <div>
@@ -59,6 +48,7 @@ For solo projects I used to share a workspace with other freelancers but the las
 	<li class="skill-5">build processes <small>(Node.js, Express, Webpack, Gulp)</small></li>
 	<li class="skill-5">HTML/CSS <small>(semantic HTML5, XSLT, CSS3, SASS, LESS)</small></li>
 	<li class="skill-5">testing <small>(Cypress, Mocha, Chai, Cucumber)</small></li>
+	<li class="skill-5">pair programming</li>
 	<li class="skill-4">PHP <small>(WordPress, Laravel, Drupal, Codeigniter)</small></li>
 	<li class="skill-4">ActionScript <small>(Papervision3D, pureMVC, Greensock)</small></li>
 	<li class="skill-3">Java/Processing</li>
@@ -98,8 +88,7 @@ For solo projects I used to share a workspace with other freelancers but the las
  - creative
  - Scrum
  - code reviewing
- - pair programming
- - helping
+ - supportive
 
 </div>
 <div>

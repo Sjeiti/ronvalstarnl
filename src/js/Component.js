@@ -29,7 +29,7 @@ class Component{
 
   /**
    * Initialise manually so clear the next tick timeout
-   * @param {HTMLElement} rootElement
+   * @param {HTMLElement} [rootElement]
    */
   initialise(rootElement){
     this._initialise(rootElement||this._body)
@@ -173,10 +173,6 @@ export class BaseComponent{
   _select(selector){
     return this?._element.querySelector(selector)
   }
-
-  // _selectAll(selector){
-  //   return this?._element.querySelectorAll(selector)
-  // }
 
   /**
    * Try parsing the options to an object
