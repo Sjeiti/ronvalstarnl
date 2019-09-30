@@ -1,6 +1,6 @@
-import {expand} from '@emmetio/expand-abbreviation'
+import {expand} from '../utils/html'
 import {add} from '../router'
-import html2pdf from 'html2pdf.js'
+// import html2pdf from 'html2pdf.js'
 import {slugify} from '../utils/string'
 
 const data = ['page_cv', 'fortpolio-list']
@@ -17,14 +17,15 @@ add(
           .filter(p=>p.inCv)
           .sort((a, b)=>a.dateFrom>b.dateFrom?-1:1)
         let projectString = expand(`ul.unstyled.cv-projects>(${cvProjects.map(
-            (project, i)=>`(li${project.categories.map(c=>`.cat-${slugify(c)}`).join('')}`
-              +`>(.date>time.date-from{${project.dateFrom.replace(/-\d\d$/, '')}}`
-              +`+time.date-to{${project.dateTo.replace(/-\d\d$/, '')}})`
-              +(project.inPortfolio?`+(h3>a[href="/project/${project.slug}"]{${project.title}})`:`+h3{${project.title}}`)
-              +`+{replaceContent${i}}`
-              +(project.clients.length?`+dl>(dt{client}+dd{${project.clients.join(', ')}})`:'')
-              +`+(ul.tags>(${project.tags.map(tag=>`li{${tag}}`).join('+')}))`
-            +')'
+            (project, i)=>`(
+              li${project.categories.map(c=>`.cat-${slugify(c)}`).join('')}
+                >(.date>time.date-from{${project.dateFrom.replace(/-\d\d$/, '')}}
+                +time.date-to{${project.dateTo.replace(/-\d\d$/, '')}})
+                +(h3${(project.inPortfolio?`>a[href="/project/${project.slug}"]{${project.title}}`:`{${project.title}}`)})
+                +{replaceContent${i}}
+                ${(project.clients.length?`+dl>(dt{client}+dd{${project.clients.join(', ')}})`:'')}
+                +(ul.tags>(${project.tags.map(tag=>`li{${tag}}`).join('+')}))
+             )`
           ).join('+')})`)
         cvProjects.forEach((project, i) => projectString = projectString.replace('replaceContent'+i, project.excerpt&&`<p>${project.excerpt}</p>`||project.content))
         view.appendString(projectString, false)

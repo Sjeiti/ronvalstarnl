@@ -6,18 +6,27 @@
  * @param {object} attrs
  * @returns {HTMLDivElement}
  */
-export function appendChild(parent, nodeName='div', content, attrs){
-  const elm = document.createElement(nodeName)
-  Object.entries(attrs).forEach(([name, value])=>elm.setAttribute(name, value))
-  if (typeof content === 'string'){
-    elm.innerHTML = content
-  } else {
-    elm.appendChild(content)
-  }
+import {emmetExpand} from './emmet'
 
-  parent && parent.appendChild(elm)
-  return elm
-}
+// /**
+//  * Shortcut method for quickly appending elements
+//  * @param {HTMLElement} parent
+//  * @param {string} [nodeName]
+//  * @param {string} [content]
+//  * @param {object[]} attrs
+//  * @return {HTMLDivElement}
+//  */
+// export function appendChild(parent, nodeName='div', content, attrs){
+//   const elm = document.createElement(nodeName)
+//   Object.entries(attrs).forEach(([name, value])=>elm.setAttribute(name, value))
+//   if (typeof content === 'string'){
+//     elm.innerHTML = content
+//   } else {
+//     elm.appendChild(content)
+//   }
+//   parent && parent.appendChild(elm)
+//   return elm
+// }
 
 /**
  * Parse string into element
@@ -65,17 +74,28 @@ export function selectEach(root, selector, fn){
   Array.from(root.querySelectorAll(selector)).forEach(fn)
 }
 
+// /**
+//  * Load javascript file
+//  * @param {string} src
+//  * @returns {Promise}
+//  */
+// export function loadScript(src){
+//   return new Promise((resolve, reject)=>{
+//     let script = document.createElement('script')
+//     document.body.appendChild(script)
+//     script.addEventListener('load', resolve)
+//     script.addEventListener('error', reject)
+//     script.setAttribute('src', src)
+//   })
+// }
+
 /**
- * Load javascript file
- * @param {string} src
- * @returns {Promise}
+ * Wrapped emmet expand to have line-breaks in string literals
+ * @param {string} s
+ * @return {String}
  */
-export function loadScript(src){
-  return new Promise((resolve, reject)=>{
-    let script = document.createElement('script')
-    document.body.appendChild(script)
-    script.addEventListener('load', resolve)
-    script.addEventListener('error', reject)
-    script.setAttribute('src', src)
-  })
+export function expand(s){
+  return emmetExpand(s
+      .replace(/\r\n\s*|\r\s*|\n\s*/g, '')
+  )
 }

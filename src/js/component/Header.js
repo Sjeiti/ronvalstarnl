@@ -40,7 +40,7 @@ component.create('[data-header]', class extends BaseComponent{
   }
 
   setImage(src){
-    console.log('setImage src',src) // todo: remove log
+    console.log('setImage src', src) // todo: remove log
     if (src){
       this._background.style.backgroundImage = `url("${MEDIA_URI_HEADER+src}")`
     } else {

@@ -36,12 +36,8 @@ ul.projects {
       height: 100vw/24*3;
     }
     overflow: hidden;
-    //background-size: 10000% 100%;
     background-size: cover;
     background-position: center;
-    //&:nth-child(even){
-    //  background-size: 100% 10000%;
-    //}
   }
   a {
     position: absolute;
@@ -52,14 +48,14 @@ ul.projects {
     text-decoration: none;
   }
   a div {
-    position: absolute;
-    left: 0;
-    top: 0;
+    text-align: center;
     padding: 0 0.25rem;
-    font-size: 0.75rem;
-    line-height: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
     color: white;
-    background: black;
+    background: rgba(0,0,0,0.6);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    font-family: var(--font-name-code);
   }
 }
 ul.project-category {
@@ -116,14 +112,12 @@ ul.project-category {
     color: #f04;
   }
   .img {
-    //background-position: center;
     background-position: calc(30% + 40% * var(--scroll-part)) center;
     background-size: 10000% 100%;
     background-color: @colorDark;
     border-top: 1px solid #f04;
     overflow: hidden;
     transition: background-position 300ms ease;
-    //&:hover { background-position: 60% center; }
     &.portrait {
       width: 50%;
       float: left;

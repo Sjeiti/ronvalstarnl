@@ -1,4 +1,4 @@
-import {expand} from '@emmetio/expand-abbreviation'
+import {expand} from './utils/html'
 
 /**
  * A component factory
@@ -153,12 +153,23 @@ export class BaseComponent{
     return this._element
   }
 
-  _append(zen, target){
+  /**
+   * Append abbreviation to main element or target
+   * @param {string} abbreviation
+   * @param {HTMLElement} [target]
+   * @private
+   */
+  _append(abbreviation, target){
     const parentNode = target||this._element
-    const abbr = zen.replace(/\r|\n|\s{2,}/g, '')
-    parentNode.insertAdjacentHTML('beforeend', expand(abbr))
+    parentNode.insertAdjacentHTML('beforeend', expand(abbreviation))
   }
 
+  /**
+   * QuerySelector component element
+   * @param {string} selector
+   * @return {HTMLElement}
+   * @private
+   */
   _select(selector){
     return this?._element.querySelector(selector)
   }

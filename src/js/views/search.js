@@ -1,6 +1,5 @@
-import {expand} from '@emmetio/expand-abbreviation'
 import {add} from '../router'
-import {clean} from '../utils/html'
+import {clean, expand} from '../utils/html'
 import {nextTick} from '../utils'
 import {search, change} from '../component/Search'
 import {open} from '../router'
@@ -24,7 +23,7 @@ export function searchView(view, route, params, error){
   const data = ['fortpolio-list', 'posts-list', 'pages-list']
   Promise.all(data.map(s=>fetch(`/data/json/${s}.json`).then(r=>r.json())))
       .then(([fortpolio, posts, pages])=>{
-        const query = !is404?decodeURIComponent(params?.query)||'':location.pathname.replace(/[^a-zA-Z]+/g,' ').trim() // todo 404 ... why are params not set?
+        const query = !is404?decodeURIComponent(params?.query)||'':location.pathname.replace(/[^a-zA-Z]+/g, ' ').trim() // todo 404 ... why are params not set?
         const querySplit = query.split(/\s+/g)
         const slugPosts = [...fortpolio, ...posts, ...pages].reduce((acc, o)=>(acc[o.slug]=o, acc), {})
         const sortyQueryTitle = sortSlugByTitleAndQuery.bind(null, querySplit, slugPosts)
@@ -33,12 +32,16 @@ export function searchView(view, route, params, error){
         const existingSearch = querySelector('[data-search]')
         const exists = !!existingSearch
         //
-        !exists&&view.expandAppend(`h1.page404{404}+[data-search="{
+        !exists&&view.expandAppend(`h1.page404{404}
+          +[data-search="{
             label:''
             ,submit:''
             ,placeholder:'search'
             ,autoSuggest:true
-          }"]+ul.unstyled.link-list+.no-result.hidden{No results for '${query}'.}`)
+          }"]
+          +ul.unstyled.link-list
+          +.no-result.hidden{No results for '${query}'.}
+        `)
         //
         const result = querySelector('.link-list')
         const noResult = querySelector('.no-result')

@@ -17,3 +17,20 @@ export function slugify(string){
     .replace(/^-+/, '') // Trim - from start of text
     .replace(/-+$/, '') // Trim - from end of text
 }
+
+export function makeClassNames(obj){
+  Object.entries(obj).forEach(([key, value])=>{
+    obj[key] = {
+      toString: function(){
+        return this.selector
+      }
+      , get name(){
+        return value
+      }
+      , get selector(){
+        return `.${value}`
+      }
+    }
+  })
+  return obj
+}
