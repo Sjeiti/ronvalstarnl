@@ -2,7 +2,7 @@ import {add} from '../router'
 import {selectEach, expand} from '../utils/html'
 import {addRule, removeRule} from '../utils/style'
 import {nextTick, scrollToTop} from '../utils'
-import {component} from '../Component'
+import {componentOf} from '../component'
 import {MEDIA_URI_PROJECT, MEDIA_URI_THUMB} from '../config'
 import {makeClassNames, slugify} from '../utils/string'
 import {open} from '../router'
@@ -104,7 +104,7 @@ function buildCurrentProject(view, project, existingProjects){
   } = project
   const image = project?.thumbnail
   if (image){
-    const header = component.of(document.querySelector('[data-header]'))
+    const header = componentOf(document.querySelector('[data-header]'))
     header&&nextTick(header.setImage.bind(header, image))
   }
   existingProjects.insertAdjacentHTML('beforebegin', expand(`

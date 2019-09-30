@@ -1,6 +1,6 @@
 import {parentQuerySelector, expand} from './utils/html'
 import {signal} from './signal'
-import {component} from './Component'
+import {initialise} from './component'
 
 export const routeChange = signal()
 
@@ -92,7 +92,7 @@ export function open(uri){
         const title = page.title
         history.pushState({}, title, (name[0]==='/'?'':'/')+name)
         routeChange.dispatch(name, page, oldName)
-        component.initialise(view)
+        initialise(view)
         document.body.setAttribute('data-pathname', name)
       })
       .catch(console.error)
@@ -178,7 +178,7 @@ function viewModelFactory(element){
     , appendString(htmlstring, doClean=true){
       doClean&&this.clean()
       this.insertAdjacentHTML('beforeend', htmlstring)
-      component.initialise(this.element)
+      initialise(this.element)
       return this
     }
     /**

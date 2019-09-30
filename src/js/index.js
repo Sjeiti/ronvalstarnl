@@ -1,11 +1,11 @@
 import '../style/screen.less'
 import './views'
 import './head'
-import {component} from './Component'
+import {initialise} from './component'
 import './component/Search'
 import './component/Header'
 import './component/Code'
 
-component.initialise()
+initialise()
 
 import './signal/scroll'

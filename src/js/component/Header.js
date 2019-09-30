@@ -1,13 +1,14 @@
 import experiments from 'Experiments/src/experiment/index.js'
 
-import {component, BaseComponent} from '../Component'
+import {create} from './index'
+import {BaseComponent} from './BaseComponent'
 import {scroll} from '../signal/scroll'
 import {signal} from '../signal'
 import {routeChange} from '../router'
 import {clean, selectEach} from '../utils/html'
 import {MEDIA_URI_HEADER} from '../config'
 
-component.create('[data-header]', class extends BaseComponent{
+create('[data-header]', class extends BaseComponent{
 
   _seldo
   _experiment

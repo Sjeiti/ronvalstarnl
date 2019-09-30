@@ -2,14 +2,14 @@ import {searchView} from './search'
 import {setDefault} from '../router'
 import {nextTick, scrollToTop} from '../utils'
 import {prismToRoot} from '../utils/prism'
-import {component} from '../Component'
+import {componentOf} from '../component'
 
 setDefault((view, route, params)=>fetch(`/data/json/post_${route}.json`)
     .then(rs=>rs.json(), searchView.bind(null, view, route, params))
     .then(post=>{
       const {date, title, content, header} = post
       if (header){
-        const headerElm = component.of(document.querySelector('[data-header]'))
+        const headerElm = componentOf(document.querySelector('[data-header]'))
         headerElm&&nextTick(headerElm.setImage.bind(headerElm, header))
       }
       const time = date.split('T').shift()
