@@ -4,20 +4,14 @@
   modified: 2015-10-25T07:01:50
   slug: experiment-boids
   type: post
-  excerpt: <p>A bunch of fish forming schools by following simple rules. Everything you see is coded.</p>
   categories: uncategorized
   tags: Perlin Noise, cool shit, experiment, particles
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # Experiment: boids
 
 <p>A  bunch of fish forming schools by following simple rules. Everything you see is coded.</p>
-<p><!--more--></p>
-<p>Boids is the name Craig Reynolds came up with to describe <a href="http://www.red3d.com/cwr/boids/">computational flocking behavior</a>. The rules  are simple but getting it up to speed requires some smart coding.</p>
+<p>Boids is the name [Craig Reynolds](http://www.red3d.com/cwr/) came up with to describe <a href="http://www.red3d.com/cwr/boids/">computational flocking behavior</a>. The rules  are simple but getting it up to speed requires some smart coding.</p>
 <p>Two of the original rules are merged into one. The rules &#8216;move to the collective center&#8217; and &#8216;prevent collision with others&#8217; are replaced by &#8216;keep optimum distance&#8217;.</p>
 <p>For speed optimisation there are two important techniques (or design patterns if you will).</p>
 <h3>Object pooling</h3>
