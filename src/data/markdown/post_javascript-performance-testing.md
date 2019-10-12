@@ -1,27 +1,27 @@
 <!--
   id: 907
-  description: A Javascript speed test normally looks something like this: count how many times we can do the same calculation in a fixed amount of time.
+  description: A JavaScript speed test normally looks something like this: count how many times we can do the same calculation in a fixed amount of time.
   date: 2012-04-25T20:59:00
   modified: 2014-08-15T19:20:24
   slug: javascript-performance-testing
   type: post
   excerpt: <p>&#8216;All roads lead to Rome&#8217; is a saying in Dutch that means there are multiple ways to accomplish the same thing. Very true in real life but maybe even more so in programming. You&#8217;d think the fastest code is the best, but a lot of times readability is chosen over speed (or, as in most [&hellip;]</p>
-  categories: code, Javascript, link
+  categories: code, JavaScript, link
   tags: crossbrowser, performance, test
   metaKeyword: test
-  metaTitle: Javascript performance testing
-  metaDescription: A Javascript speed test normally looks something like this: count how many times we can do the same calculation in a fixed amount of time.
+  metaTitle: JavaScript performance testing
+  metaDescription: A JavaScript speed test normally looks something like this: count how many times we can do the same calculation in a fixed amount of time.
   inCv: 
   inPortfolio: 
   dateFrom: 
   dateTo: 
 -->
 
-# Javascript performance testing
+# JavaScript performance testing
 
 <p>&#8216;All roads lead to Rome&#8217; is a saying in Dutch that means there are multiple ways to accomplish the same thing. Very true in real life but maybe even more so in programming. You&#8217;d think the fastest code is the best, but a lot of times readability is chosen over speed (or, as in most cases, speed isn&#8217;t just that important).</p>
 <p><!--more--><br />
-A Javascript speed test will normally look something like this:<br />
+A JavaScript speed test will normally look something like this:<br />
 <em>calculate elapsed time while doing the same calculation a fixed number of times</em><br />
 Or like this:<br />
 <em>count how many times we can do the same calculation in a fixed amount of time</em></p>
@@ -30,7 +30,7 @@ Enter <a href="http://jsperf.com">jsperf</a>, a great online benchmarking applic
 <p>For instance: I know a lot of developers who don&#8217;t like switches because it makes their code unreadable <!--(Crockford, Clean code)-->. Some don&#8217;t even us ternary statements. Tests like these should make them reconcider:<br />
 <a href="http://jsperf.com/ifswitch/4">if vs switch</a><br />
 <a href="http://jsperf.com/if-else-vs-arrays-vs-switch-vs-ternary/6">if switch indexed ternary</a></p>
-<p>Here is a list of Javascript tests that you might find useful or surprising.</p>
+<p>Here is a list of JavaScript tests that you might find useful or surprising.</p>
 <ul>
 <li><a href="http://jsperf.com/fastest-array-loops-in-javascript/4">looping</a></li>
 <li><a href="http://jsperf.com/slice-vs-substr-vs-substring-methods-long-string/3">chars in long strings</a></li>

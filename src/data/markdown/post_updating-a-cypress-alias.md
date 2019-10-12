@@ -4,8 +4,8 @@
   modified: 2018-12-24T15:16:46
   slug: updating-a-cypress-alias
   type: post
-  excerpt: <p>TLDR: a Cypress command script to update DOM aliases by traversing up the selector tree. Aliasing DOM selections is a really handy Cypress feature. It not only makes your code dryer, it also makes it easier to read. You set it like this cy.get(&#8216;li&#8217;).as(&#8216;entries&#8217;) and further down your code use it like so cy.get(&#8216;@entries&#8217;). That [&hellip;]</p>
-  categories: code, Javascript, jQuery, work, open source
+  header: Vincent_van_Gogh_-_Green_Field_-_Google_Art_Project.jpg
+  categories: code, JavaScript, jQuery, work, open source
   tags: test, end to end
   metaDescription: To update a Cypress alias on the fly we can create and overwrite Cypress commands to update DOM aliases by traversing up the selector tree.
   inCv: 

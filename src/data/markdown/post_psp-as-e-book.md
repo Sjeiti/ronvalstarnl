@@ -5,7 +5,7 @@
   slug: psp-as-e-book
   type: post
   excerpt: <p>I removed the obsolete links here. Besides, who wants to read books on a PSP now that we have Kindles, iPads and smartphones. When I first got my PSP I really dove into the Netfront browser and it&#8217;s DOM. First thing I did is create a better typing pad because the PSP&#8217;s build in typing [&hellip;]</p>
-  categories: book, Javascript, backend, tech
+  categories: book, JavaScript, backend, tech
   tags: DOM, PSP
   inCv: 
   inPortfolio: 

@@ -6,7 +6,7 @@
   slug: migrating-a-subversion-repository-from-google-code-to-github
   type: post
   excerpt: <p>Recently I migrated TinySort from Google Code to Github. I&#8217;m a real Git noob so I expected a full history migration to be a real pain in the ass. Plus I also wanted to move both the open and closed issues (since they correspond to the regression tests). Luckily it turned out to be a [&hellip;]</p>
-  categories: code, Javascript, jQuery, Python
+  categories: code, JavaScript, jQuery, Python
   tags: Google Code, SVN, Git, Github, migrating
   metaKeyword: from Google Code to Github
   metaTitle: Migrating a subversion repository from Google Code to Github

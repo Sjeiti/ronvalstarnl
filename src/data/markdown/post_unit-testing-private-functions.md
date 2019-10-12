@@ -1,25 +1,25 @@
 <!--
   id: 879
-  description: For some time now I've been unit testing my Javascript. But how to test those private functions?
+  description: For some time now I've been unit testing my JavaScript. But how to test those private functions?
   date: 2012-01-31T13:47:35
   modified: 2012-08-24T15:40:32
   slug: unit-testing-private-functions
   type: post
-  excerpt: <p>For some time now I&#8217;ve been unit testing my Javascript with qUnit. Not only good practice, it also saves you an incredible amount of time when it comes to crossbrowser testing your scripts. The only problem I was testing private functions that are hidden within closures.</p>
-  categories: code, Javascript, jQuery
+  excerpt: <p>For some time now I&#8217;ve been unit testing my JavaScript with qUnit. Not only good practice, it also saves you an incredible amount of time when it comes to crossbrowser testing your scripts. The only problem I was testing private functions that are hidden within closures.</p>
+  categories: code, JavaScript, jQuery
   tags: Qunit, Tinysort
   metaKeyword: private functions
-  metaTitle: Unit testing private functions in Javascript
-  metaDescription: For some time now I've been unit testing my Javascript. But how to test those private functions?
+  metaTitle: Unit testing private functions in JavaScript
+  metaDescription: For some time now I've been unit testing my JavaScript. But how to test those private functions?
   inCv: 
   inPortfolio: 
   dateFrom: 
   dateTo: 
 -->
 
-# Unit testing private functions in Javascript
+# Unit testing private functions in JavaScript
 
-<p>For some time now I&#8217;ve been unit testing my Javascript with <a href="http://docs.jquery.com/QUnit" rel="external">qUnit</a>. Not only good practice, it also saves you an incredible amount of time when it comes to crossbrowser testing your scripts. The only problem I was testing private functions that are hidden within closures. </p>
+<p>For some time now I&#8217;ve been unit testing my JavaScript with <a href="http://docs.jquery.com/QUnit" rel="external">qUnit</a>. Not only good practice, it also saves you an incredible amount of time when it comes to crossbrowser testing your scripts. The only problem I was testing private functions that are hidden within closures. </p>
 <p><!--more--><br />
 The bulk of the functions you want to test are not (and should not be) accessible from the global scope. So what I used to do is add a function that would expose the private functions I wanted to test, test them, and if all went well I&#8217;d comment out the expose-function. A bit of a hassle really&#8230;</p>
 <p>While I was working on the documentation for <a href="http://tinysort.ronvalstar.nl/">TinySort</a> when I had an idea. In the qUnit test page I don&#8217;t load the script in the head but do it via an ajax request. Then I alter the script exposing the desired private functions and then start the test&#8230; piece of cake really&#8230;</p>

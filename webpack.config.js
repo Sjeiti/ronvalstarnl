@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const lessPluginGlob = require('less-plugin-glob')
+const {default:WatchExternalFilesPlugin} = require('webpack-watch-files-plugin')
 const fileName = '[name]-[hash].[ext]'
 module.exports = env => {
 
@@ -26,10 +27,10 @@ module.exports = env => {
               ,'css-loader' // translates CSS into CommonJS
               // ,'less-loader' // compiles Less to CSS, using Node Sass by default
               ,{
-                loader: 'less-loader',
-                options: {
-                  plugins: [lessPluginGlob],
-                  paths: [path.resolve(__dirname, 'src')] // This is the important part!
+                loader: 'less-loader'
+                ,options: {
+                  plugins: [lessPluginGlob]
+                  ,paths: [path.resolve(__dirname, 'src')] // This is the important part!
                 }
               }
           ]
@@ -71,25 +72,19 @@ module.exports = env => {
       new CopyWebpackPlugin([
           { from: 'src/index.html', to: './'}
           ,{ from: 'src/_redirects', to: './'}
-
-          //,{ from: 'src/style/screen.css', to: './style/'}
-          ,{ from: 'src/data', to: './data' }
+          ,{ from: 'src/data/json', to: './data/json' }
+          ,{ from: 'src/data/search', to: './data/search' }
           ,{ from: 'src/static', to: './static' }
-          //,{ from: 'temp/*.json', to: './data', flatten:true }
           ,{ from: 'node_modules/Experiments/src/experiment/', to: './static/experiment' }
-          // ,{ from: 'node_modules/Experiments/src/experiment/', to: './static/experiment' }
-          /*{ from: `${isProduction?'temp':'src'}/index.html`, to: './'}
-          ,{ from: 'src/.htaccess', to: './'}
-          ,{ from: 'src/_redirects', to: './'}
-          ,{ from: 'src/index.xml', to: './'}
-          ,{ from: 'src/data/root', to: './data/root', ignore:['*.html','*.txt']}
-          ,{ from: 'src/data/audio', to: './data/audio'}
-          ,{ from: 'src/test.html', to: './'}*/
       ], {})
       ,new webpack.DefinePlugin({
         _VERSION: JSON.stringify(require('./package.json').version)
         ,_ENV: JSON.stringify(env||{})
       })
+      ,new WatchExternalFilesPlugin ({
+        files: ['src/js/**/*.less'] // see screen.less with glob import (which doesn't work with watcher)
+      })
+
     ]
   }
 }

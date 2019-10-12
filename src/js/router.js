@@ -1,7 +1,6 @@
-import {expand} from '@emmetio/expand-abbreviation'
-import {parentQuerySelector} from './utils/html'
+import {parentQuerySelector, expand} from './utils/html'
 import {signal} from './signal'
-import {component} from './Component'
+import {initialise} from './component'
 
 export const routeChange = signal()
 
@@ -41,8 +40,17 @@ function onClick(e){
 }
 
 /**
+ * Callback for adding routes
+ * @callback routeCallback
+ * @param {View} view
+ * @param {string} [route]
+ * @param {string[]} [params]
+ * @returns {Promise<object>}
+ */
+
+/**
  * Set the default route
- * @param {function} fn
+ * @param {routeCallback} fn
  */
 export function setDefault(fn){
   defaultRouteResolve = fn
@@ -50,7 +58,7 @@ export function setDefault(fn){
 
 /**
  * Add a route to the router
- * @param {string|function[]} names
+ * @param {Array<string|routeCallback>} names
  */
 export function add(...names){//,callback
   const callback = names.pop()
@@ -84,61 +92,118 @@ export function open(uri){
         const title = page.title
         history.pushState({}, title, (name[0]==='/'?'':'/')+name)
         routeChange.dispatch(name, page, oldName)
-        component.initialise(view)
+        initialise(view)
         document.body.setAttribute('data-pathname', name)
       })
       .catch(console.error)
   }
 }
 
+
 /**
  * A factory method for the view that is parsed with each route change
  * @param {HTMLElement} element
- * @returns {object}
+ * @returns {View}
  * @todo check usages of methods
  */
 function viewModelFactory(element){
+  /** @lends View.prototype */
   return Object.create({
+    /**
+     * Clear the view element contents
+     * @returns {View}
+     */
     clean(){
       const {element} = this
       while (element.firstChild) element.removeChild(element.firstChild)
       return this
     }
+    /**
+     * Add and track eventListener to main element
+     * @param {object[]} args
+     */
     , addEventListener(...args){
       this._events.push(args)
-      return this.element.addEventListener(...args)
+      this.element.addEventListener(...args)
     }
+    /**
+     * Remove all added listeners
+     */
     , removeEventListeners(){
       let args
       while (args = this._events.pop()) this.element.removeEventListener(...args)
     }
-    , appendChild(...args){
-      return this.element.appendChild(...args)
+    /**
+     * Append a child element to the component element
+     * @param {HTMLElement} child
+     * @return {HTMLElement}
+     * @returns {View}
+     */
+    , appendChild(child){
+      this.element.appendChild(child)
+      return this
     }
-    , insertAdjacentHTML(...args){
-      return this.element.insertAdjacentHTML(...args)
+    /**
+     * InsertAdjacentHTML to the component element
+     * @param {string} position
+     * @param {string} text
+     * @returns {View}
+     */
+    , insertAdjacentHTML(position, text){
+      this.element.insertAdjacentHTML(position, text)
+      return this
     }
-    , querySelector(...args){
-      return this.element.querySelector(...args)
+    /**
+     * QuerySelector the component element
+     * @param {string} selector
+     * @return {HTMLElement}
+     */
+    , querySelector(selector){
+      return this.element.querySelector(selector)
     }
-    , querySelectorAll(...args){
-      return this.element.querySelectorAll(...args)
+    /**
+     * QuerySelectorAll the component element
+     * @param {string} selector
+     * @return {NodeList}
+     */
+    , querySelectorAll(selector){
+      return this.element.querySelectorAll(selector)
     }
+    /**
+     * Append an HTML string to the view
+     * @param {string} htmlstring
+     * @param {boolean} doClean
+     * @return {View}
+     */
     , appendString(htmlstring, doClean=true){
       doClean&&this.clean()
       this.insertAdjacentHTML('beforeend', htmlstring)
-      component.initialise(this.element)
+      initialise(this.element)
       return this
     }
+    /**
+     * Append an abbreviation string to the view
+     * @param {string} abbreviation
+     * @param {boolean} doClean
+     * @return {View}
+     */
     , expandAppend(abbreviation, doClean=true){
       this.appendString(expand(abbreviation), doClean)
       return this
     }
   }, {
+    /**
+     * The views HTMLElement
+     * @type {HTMLElement}
+     */
     element: {
       value: element
       , writable: false
     }
+    /**
+     * The views added event listeners
+     * @type {Function[]}
+     */
     , _events: {
       value: []
       , writable: false

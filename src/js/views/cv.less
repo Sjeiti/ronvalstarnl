@@ -1,9 +1,61 @@
 [data-pathname^=cv] {
- @media print {
-   header {
-     background-color: lime;
-   }
- }
+  @media print {
+    main {
+      max-width: fit-content;
+    }
+    header {
+      position: static;
+    }
+    font-size: 11pt;
+    line-height: 19pt;
+    header nav,
+    [href$=".pdf"],
+    footer {
+      display: none;
+    }
+    small { font-size: 0.5rem; }
+    .print-columns {
+      display: flex;
+      flex-wrap: wrap;
+      >div {
+        &:first-child {
+          flex: 0 0 50%;
+          padding-right: 1rem;
+        }
+        &:last-child {
+          flex: 0 0 50%;
+          padding-left: 1rem;
+        }
+      }
+    }
+    .cv-projects {
+      //display: flex; // page-break rules fail with flex
+      //flex-wrap: wrap;
+      >li {
+        width: 50%;
+        float: left;
+        //flex: 0 0 50%;
+        page-break-inside: avoid;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        &:nth-child(2n-1) {
+          clear: left;
+        }
+      }
+    }
+    ul.tags {
+
+    }
+  }
+  small, dl {
+    font-size: 0.875rem;
+    color: #888;
+  }
+  dt:after { content: ': '; }
+  dt, dd {
+    display: inline;
+    margin: 0;
+  }
 }
 
 .cv-projects {
@@ -23,11 +75,9 @@
   .tags {
     padding: 0;
     list-style: none;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     line-height: 1rem;
-    color: #666;
-    font-size: 0.75rem;
-    color: #666;
+    color: #888;
     li {
       display: inline-block;
     }
@@ -39,7 +89,6 @@
   position: relative;
   padding-left: 6*8px;
   &:after,&:before {
-    //.lt(0,10px);
     position: absolute;
     left: 0;
     top: 0.5rem;

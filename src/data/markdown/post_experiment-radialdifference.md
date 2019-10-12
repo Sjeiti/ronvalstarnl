@@ -5,8 +5,8 @@
   slug: experiment-radialdifference
   type: post
   excerpt: <p>Another pretty simple idea with a really cool result (above). These are radial gradients drawn on top of each other with a &#8216;difference&#8217; blend mode.</p>
-  categories: code, Javascript
-  tags: Javascript, cool shit, particles
+  categories: code, JavaScript
+  tags: JavaScript, cool shit, particles
   metaKeyword: difference
   metaDescription: Another pretty simple idea with a really cool result. These are radial gradients drawn on top of each other with a 'difference' blend mode.
   inCv: 

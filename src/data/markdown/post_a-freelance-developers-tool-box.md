@@ -48,7 +48,7 @@ price: $30 standard ($50 pro)</p>
 <p>url: <a href="https://xp-dev.com/">https://xp-dev.com/</a><br />
 price: ranges from $5 p/m for 2GB to $50 p/m for 40GB</p>
 <h2>FDT</h2>
-<p>By far the best IDE for developing Actionscript. Good debugging and refactoring features. It has been a while since I touched it though, with all clients wanting HTML5 and all. The pricing is a bit on the high side: when I first bought FDT4 it was €599 (and €49 to upgrade to 5). A while back they switched to a subscription based model. I&#8217;m not that keen on this new subscription trend you see everywhere. Then again, my FDT5 still works fine and I don&#8217;t do that much as3 anymore anyway (thanks Apple).</p>
+<p>By far the best IDE for developing ActionScript. Good debugging and refactoring features. It has been a while since I touched it though, with all clients wanting HTML5 and all. The pricing is a bit on the high side: when I first bought FDT4 it was €599 (and €49 to upgrade to 5). A while back they switched to a subscription based model. I&#8217;m not that keen on this new subscription trend you see everywhere. Then again, my FDT5 still works fine and I don&#8217;t do that much as3 anymore anyway (thanks Apple).</p>
 <p>url: <a href="http://fdt.powerflasher.com/">http://fdt.powerflasher.com/</a><br />
 price: ranging from €59 for one month to €708 for two years</p>
 <h2>Manictime <small>and/or</small> Chrometa</h2>

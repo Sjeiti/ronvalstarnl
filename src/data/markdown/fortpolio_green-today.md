@@ -2,8 +2,8 @@
   id: 2158
   slug: green-today
   type: fortpolio
-  categories: javascript, HTML/CSS, video, graphic design, interaction design, backend
-  tags: CMS, CSS, HTML, Javascript, Wordpress, concept
+  categories: JavaScript, HTML/CSS, video, graphic design, interaction design, backend
+  tags: CMS, CSS, HTML, JavaScript, Wordpress, concept
   clients: 
   collaboration: 
   prizes: 
@@ -18,4 +18,4 @@
 
 # Green Today
 
-<p>Green Today is een beurs over groen. Geen geitenwollen sokken groen, maar high tech groen. De site is een WordPress CMS met speciaal ontwikkelde HTML5 templates en plugins, met veel Javascript animatie en canvas.</p>
+<p>Green Today is een beurs over groen. Geen geitenwollen sokken groen, maar high tech groen. De site is een WordPress CMS met speciaal ontwikkelde HTML5 templates en plugins, met veel JavaScript animatie en canvas.</p>

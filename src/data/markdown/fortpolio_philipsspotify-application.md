@@ -2,8 +2,8 @@
   id: 2298
   slug: philipsspotify-application
   type: fortpolio
-  categories: javascript, frontend, HTML/CSS
-  tags: HTML, Javascript, Less, Grunt
+  categories: JavaScript, front end, HTML/CSS
+  tags: HTML, JavaScript, Less, Grunt
   clients: Chunk
   collaboration: 
   prizes: 

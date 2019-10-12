@@ -1,10 +1,11 @@
 // <pre line-numbers><code data-language="glsl" data-src="http://...
 
-import {component, BaseComponent} from '../Component'
+import {create} from './index'
+import {BaseComponent} from './BaseComponent'
 import {prismToElement} from '../utils/prism'
 import {nextTick} from '../utils'
 
-component.create('code[data-src]', class extends BaseComponent{
+create('code[data-src]', class extends BaseComponent{
 
   constructor(...args){
     super(...args)

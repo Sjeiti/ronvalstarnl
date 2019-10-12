@@ -3,7 +3,7 @@
   slug: html5-client-presentation-app
   type: fortpolio
   categories: mobile
-  tags: CSS, HTML, Javascript, Less, Grunt
+  tags: CSS, HTML, JavaScript, Less, Grunt
   clients: 72andSunny
   collaboration: 
   prizes: 
@@ -16,4 +16,4 @@
 
 # HTML5 client presentation app
 
-<p>For 72AndSunny I developed a custom HTML5 application that they could use when presenting ideas to their clients. The application is not overly complex so I used pure Javascript (no jQuery, no framework).</p>
+<p>For 72AndSunny I developed a custom HTML5 application that they could use when presenting ideas to their clients. The application is not overly complex so I used pure JavaScript (no jQuery, no framework).</p>

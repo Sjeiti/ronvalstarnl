@@ -1,13 +1,13 @@
 <!--
   id: 2475
-  description: How I use Google spreadsheets for my freelance administration: here are two example spreadsheets to duplicate and some details on the used Javascript.
+  description: How I use Google spreadsheets for my freelance administration: here are two example spreadsheets to duplicate and some details on the used JavaScript.
   date: 2014-05-10T11:10:39
   modified: 2016-12-11T15:26:12
   slug: using-google-spreadsheets-for-invoicing
   type: post
-  categories: admin, code, Javascript, work
-  tags: Google, Javascript, freelance
-  metaDescription: How I use Google spreadsheets for my freelance administration: here are two example spreadsheets to duplicate and some details on the used Javascript.
+  categories: admin, code, JavaScript, work
+  tags: Google, JavaScript, freelance
+  metaDescription: How I use Google spreadsheets for my freelance administration: here are two example spreadsheets to duplicate and some details on the used JavaScript.
   metaTitle: Using Google spreadsheets for your freelance quotations and invoicing
   metaKeyword: spreadsheet
   inCv: 
@@ -18,7 +18,7 @@
 
 # Using Google spreadsheets for your freelance invoicing
 
-<p>Being your own boss is great! You get to pick your own clients, your own hours, your own workplace. Not so great is all the administrative work: making quotations, doing taxes, making invoices (although the latter does make me happy). Luckily I have a spreadsheet and Javascript to do some of the boring stuff for me.</p>
+<p>Being your own boss is great! You get to pick your own clients, your own hours, your own workplace. Not so great is all the administrative work: making quotations, doing taxes, making invoices (although the latter does make me happy). Luckily I have a spreadsheet and JavaScript to do some of the boring stuff for me.</p>
 <p><!--more--></p>
 <p class="notice">The methods described here no longer work because Google silently <a href="https://code.google.com/p/google-apps-script-issues/issues/detail?id=5174">disabled a spreadsheets feature</a>.</p>
 <p>Over the years I&#8217;ve tried to automate and streamline my administrative workflow.<br />
@@ -68,14 +68,14 @@ The variables can be replaced by values from any sheet where the first column is
 <p>For instance in the tasks sheet of the data spreadsheet the first entry is &#8216;interaction design&#8217; with the value &#8216;<span data-sheets-value="[null,2,&quot;We make some drawings for %project name%.&quot;]" data-sheets-userformat="[null,null,9089,[null,0],null,null,null,null,null,null,2,1,0,null,null,null,10]">We make some drawings for %project name%.</span>&#8216;.<br />
 In the template spreadsheet the value is used in the quotation sheet and the variable %project name% is replaced by the corresponding value from the &#8216;data&#8217; sheet. So it now says: &#8216;We make some drawings for ransackthis.&#8217;</p>
 <p>If no key/value pair is present the script responds by returning &#8216;key not found in sheet&#8217;. So if you check the calculation sheet you&#8217;ll notice that the task &#8216;testing&#8217; has a red corner indicating that the key does not exist in the task list. In the quotation sheet you&#8217;ll see &#8221;Testing&#8217; not found in &#8216;tasks&#8221; on row 25. So here we&#8217;ll have to write something ourselves.</p>
-<p>The precise workings of all this is done with the <a title="Spreadsheet Service" href="https://developers.google.com/apps-script/reference/spreadsheet/" target="_blank">Google spreadsheet API</a> and some good old fashioned Javascript.</p>
+<p>The precise workings of all this is done with the <a title="Spreadsheet Service" href="https://developers.google.com/apps-script/reference/spreadsheet/" target="_blank">Google spreadsheet API</a> and some good old fashioned JavaScript.</p>
 <h2>Scripts</h2>
 <p>The template spreadsheet has some custom methods. If you use the top menu and open &#8216;Tools / Script editor&#8217; you&#8217;ll see them.</p>
 <p>The most important methods are &#8216;importSpreadsheet&#8217; and &#8216;getText&#8217;.<br />
 The sheets from the data spreadsheet are loaded into the template spreadsheet. These imported sheets are hidden, you can unhide them from the main menu &#8216;View / Hidden sheets&#8217;. I used a custom import method here because I needed more dynamics: multiple languages and swapping the client data from a row to a column.<br />
 The &#8216;getText&#8217; method does the actual variable replacement. It looks for a key in a sheet, then processes the variables in the value by searching the sheets from the third argument.<br />
 Just check the commented code below.</p>
-<pre><code data-language="Javascript">/**
+<pre><code data-language="JavaScript">/**
  * Imports a spreadsheet into another spreadsheet as a key-value range.
  * @param {String} sheet The spreadsheet id.
  * @param {String} [tab] The sheet name.

@@ -14,8 +14,6 @@ glob('src/data/markdown/@(post|page|fortpolio)_*.md')
     mapIndex(files, index)
   })
 
-// todo: research/fix project titles do not search (ie boids or marbles)
-
 /**
  * Create the index file with all searchable words
  * @param {object[]} files
@@ -30,15 +28,15 @@ function createIndex(files){
         .replace(/<\/?[^>]+(>|$)/g, ' ')
         .replace(/[^\w\s]/g, ' ')
         .toLowerCase()
-        .split(/\s/g)
+        .split(/\s+/g)
     })
     .reduce((acc, a)=>(acc.push(...a), acc), [])
   const text = words
+    .filter(s=>s)
     .filter((s, i, a)=>a.indexOf(s)===i)
     .filter(s=>s.length>2&&s.length<13)
-    .filter(s=>!/^\d{3}$|^\d+\w+$|^_|s$/.test(s))
+    .filter(s=>!/^\d{3}$|^\d+\w+$|^_/.test(s))
     .filter(s=>!common.includes(s))
-    .sort()
     .sort((a, b)=>a.length>b.length?1:-1)
   save(basePath+'words.json', JSON.stringify(text))
   return text

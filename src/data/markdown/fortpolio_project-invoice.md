@@ -3,8 +3,8 @@
   slug: project-invoice
   type: fortpolio
   excerpt: <p>This invoicing application stores all your data on your local machine. It started from a personal need but ended up a full fledged open-source project: end-to-end tests, unit tests, semver, milestones, the works.</p>
-  categories: javascript, frontend, HTML/CSS, framework, open source, interaction design
-  tags: Javascript, interaction design, Vue, invoice, concept
+  categories: JavaScript, front end, HTML/CSS, framework, open source, interaction design
+  tags: JavaScript, interaction design, Vue, invoice, concept
   clients: 
   collaboration: 
   prizes: 

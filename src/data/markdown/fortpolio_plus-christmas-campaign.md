@@ -3,7 +3,7 @@
   slug: plus-christmas-campaign
   type: fortpolio
   categories: 
-  tags: CSS, HTML, Javascript
+  tags: CSS, HTML, JavaScript
   clients: Rhinofly
   collaboration: 
   prizes: 
@@ -16,4 +16,4 @@
 
 # Plus christmas campaign
 
-<p>Frontend development of a christmas campaign for Plus supermarkets. Users can compose their christmas dinner and download/email/print their grocery list.</p>
+<p>Front-end development of a christmas campaign for Plus supermarkets. Users can compose their christmas dinner and download/email/print their grocery list.</p>

@@ -1,4 +1,5 @@
-import {component, BaseComponent} from '../Component'
+import {create} from './index'
+import {BaseComponent} from './BaseComponent'
 import {signal} from '../signal'
 import {clean} from '../utils/html'
 
@@ -8,7 +9,7 @@ export const search = signal()
 /**
  * Search component
  */
-component.create('[data-search]', class extends BaseComponent{
+create('[data-search]', class extends BaseComponent{
 
   _input
 

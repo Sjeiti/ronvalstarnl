@@ -5,7 +5,7 @@
   slug: sfbrowser-3-beta
   type: post
   excerpt: <p>I&#8217;ve made some major changes to SFBrowser. It will now be able to work with other server side languages than PHP. I also implemented a structure so SFBrowser can be extended with plugins. To show I&#8217;ve added two plugins: filetree and imageresize. Plus a ton of other minor changes: dragging, resizing, caching, cookie support etc&#8230; [&hellip;]</p>
-  categories: code, Javascript, jQuery, backend
+  categories: code, JavaScript, jQuery, backend
   tags: PHP, test
   inCv: 
   inPortfolio: 

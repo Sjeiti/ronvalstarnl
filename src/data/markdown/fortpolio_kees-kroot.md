@@ -2,8 +2,8 @@
   id: 2181
   slug: kees-kroot
   type: fortpolio
-  categories: frontend, 3D, Flash, backend
-  tags: 3D, CMS, HTML, XML, Actionscript, cool shit
+  categories: front end, 3D, Flash, backend
+  tags: 3D, CMS, HTML, XML, ActionScript, cool shit
   clients: Pool Worldwide
   collaboration: Krijn van Noordwijk
   prizes: FWA

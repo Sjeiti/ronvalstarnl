@@ -5,7 +5,7 @@
   slug: learning-a-new-language
   type: post
   excerpt: <p>I&#8217;m not so good at languages. I mean real languages, not programming languages (those are easy). I&#8217;m going to a Croatian course but you have to get a big vocabulary to really say something more substantial than &#8216;one beer please&#8217;. Learning words from books is not really my cup of tea so I thought I&#8217;d [&hellip;]</p>
-  categories: code, Javascript, jQuery
+  categories: code, JavaScript, jQuery
   tags: Dutch
   inCv: 
   inPortfolio: 

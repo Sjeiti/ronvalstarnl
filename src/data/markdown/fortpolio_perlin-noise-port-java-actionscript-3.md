@@ -3,7 +3,7 @@
   slug: perlin-noise-port-java-actionscript-3
   type: fortpolio
   categories: Flash, open source
-  tags: Actionscript, Flash, math
+  tags: ActionScript, Flash, math
   clients: 
   collaboration: 
   prizes: 
@@ -16,6 +16,6 @@
   dateTo: 2007-10-01
 -->
 
-# Perlin noise port from Java to Actionscript 3
+# Perlin noise port from Java to ActionScript 3
 
-<p>Since my Processing endeavors I&#8217;ve grown quit fond of Perlin noise. The Flash implementation was rather poor so I converted Ken Perlins original Java class to Actionscript and implemented octaves, falloff and random seed.</p>
+<p>Since my Processing endeavors I&#8217;ve grown quit fond of Perlin noise. The Flash implementation was rather poor so I converted Ken Perlins original Java class to ActionScript and implemented octaves, falloff and random seed.</p>

@@ -1,4 +1,4 @@
-import {expand} from '@emmetio/expand-abbreviation'
+import {expand} from '../utils/html'
 import {add} from '../router'
 import {scrollToTop} from '../utils'
 

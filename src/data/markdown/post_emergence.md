@@ -5,7 +5,7 @@
   slug: emergence
   type: post
   excerpt: <p>It just needs some color.</p>
-  categories: code, Flash, Actionscript
+  categories: code, Flash, ActionScript
   tags: 
   inCv: 
   inPortfolio: 

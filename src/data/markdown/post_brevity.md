@@ -5,7 +5,7 @@
   slug: brevity
   type: post
   excerpt: <p>Oh boy&#8230; I love the sound of this: &#8220;Think &#8216;Processing for Flash&#8217;.&#8220;</p>
-  categories: Processing, Actionscript
+  categories: Processing, ActionScript
   tags: Processing
   inCv: 
   inPortfolio: 

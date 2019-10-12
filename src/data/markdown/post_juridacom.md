@@ -5,7 +5,7 @@
   slug: juridacom
   type: post
   excerpt: <p>My girlfriend uploaded the new flash site I made for her. She is a sound designer currently working at MTV but also still available for freelance work. There&#8217;s a nice technique in there I thought up: normally flash content cannot be indexed by search engines. But in this case the swf file loads the xhtml [&hellip;]</p>
-  categories: Flash, XML, Actionscript
+  categories: Flash, XML, ActionScript
   tags: 
   inCv: 
   inPortfolio: 

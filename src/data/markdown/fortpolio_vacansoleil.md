@@ -2,9 +2,9 @@
   id: 2212
   slug: vacansoleil
   type: fortpolio
-  excerpt: <p>Front-end Flash Actionscript 3 development for a zoomable parallax vacation website.</p>
-  categories: frontend, framework, Flash
-  tags: CSS, Javascript, Actionscript, Flash
+  excerpt: <p>Front-end Flash ActionScript 3 development for a zoomable parallax vacation website.</p>
+  categories: front end, framework, Flash
+  tags: CSS, JavaScript, ActionScript, Flash
   clients: Lukkien
   collaboration: 
   prizes: 
