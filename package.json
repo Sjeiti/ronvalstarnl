@@ -1,6 +1,6 @@
 {
   "name": "ronvalstarnl",
-  "version": "0.4.120",
+  "version": "0.4.121",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
   "scripts": {
@@ -92,9 +92,6 @@
     "webpack-cli": "^3.2.3",
     "webpack-watch-files-plugin": "^1.0.3",
     "yorkie": "^2.0.0"
-  },
-  "optionalDependencies": {
-    "puppeteer": "^1.19.0"
   },
   "postcss": {
     "plugins": {
