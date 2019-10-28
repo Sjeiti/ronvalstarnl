@@ -1,13 +1,11 @@
 {
   "name": "ronvalstarnl",
-  "version": "0.4.129",
+  "version": "0.4.130",
   "license": "MIT",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
   "scripts": {
     "start": "run-p build serve",
-    "build": "run-s clean \"webpack -- --env.development --watch\"",
-    "_build:prod": "run-s clean \"webpack -- --env.production\"",
     "build:prod": "run-s clean build:json build:search \"webpack -- --env.production\" build:sitemap build:rss",
     "build:json": "node task/markdown2json",
     "build:search": "node task/buildSearch",
@@ -59,7 +57,7 @@
     "babel-preset-babili": "0.0.12",
     "babel-preset-minify": "^0.4.3",
     "body-parser": "^1.18.2",
-    "chokidar-cli": "^1.2.2",
+    "chokidar-cli": "^2.0.0",
     "commander": "^3.0.0",
     "copy-webpack-plugin": "^4.5.3",
     "css-loader": "^1.0.0",
@@ -91,6 +89,9 @@
     "webpack-cli": "^3.2.3",
     "webpack-watch-files-plugin": "^1.0.3",
     "yorkie": "^2.0.0"
+  },
+  "optionalDependencies": {
+    "puppeteer": "^1.19.0"
   },
   "postcss": {
     "plugins": {
