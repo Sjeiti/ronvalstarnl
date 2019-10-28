@@ -91,9 +91,6 @@
     "webpack-watch-files-plugin": "^1.0.3",
     "yorkie": "^2.0.0"
   },
-  "optionalDependencies": {
-    "puppeteer": "^1.19.0"
-  },
   "postcss": {
     "plugins": {
       "autoprefixer": {}
