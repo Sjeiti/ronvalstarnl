@@ -1,6 +1,7 @@
 <!--
   slug: project-invoice
   type: fortpolio
+  excerpt: <p>This invoicing application stores all your data on your local machine. It started from a personal need but ended up a full fledged open-source project: end-to-end tests, unit tests, semver, milestones, the works.</p>
   metaKeyword: invoicing
   metaTitle: Project Invoice
   metaDescription: This invoicing application stores all your data on your local machine. It started from a personal need but ended up a full fledged open-source project: end-to-end tests, unit tests, semver, milestones, the works.

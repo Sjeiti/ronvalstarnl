@@ -1,14 +1,14 @@
 {
   "name": "ronvalstarnl",
-  "version": "0.4.127",
+  "version": "0.4.129",
   "license": "MIT",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
   "scripts": {
     "start": "run-p build serve",
     "build": "run-s clean \"webpack -- --env.development --watch\"",
-    "build:prod": "run-s clean \"webpack -- --env.production\"",
-    "_build:prod": "run-s clean build:json build:search \"webpack -- --env.production\" build:sitemap build:rss",
+    "_build:prod": "run-s clean \"webpack -- --env.production\"",
+    "build:prod": "run-s clean build:json build:search \"webpack -- --env.production\" build:sitemap build:rss",
     "build:json": "node task/markdown2json",
     "build:search": "node task/buildSearch",
     "build:sitemap": "node task/buildSitemap --target dist",
