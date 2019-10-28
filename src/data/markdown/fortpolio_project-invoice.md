@@ -1,10 +1,11 @@
 <!--
-  id: 3407
   slug: project-invoice
   type: fortpolio
-  excerpt: <p>This invoicing application stores all your data on your local machine. It started from a personal need but ended up a full fledged open-source project: end-to-end tests, unit tests, semver, milestones, the works.</p>
+  metaKeyword: invoicing
+  metaTitle: Project Invoice
+  metaDescription: This invoicing application stores all your data on your local machine. It started from a personal need but ended up a full fledged open-source project: end-to-end tests, unit tests, semver, milestones, the works.
   categories: JavaScript, front end, HTML/CSS, framework, open source, interaction design
-  tags: JavaScript, interaction design, Vue, invoice, concept
+  tags: JavaScript, Vue, interaction design, invoice, concept, React
   clients: 
   collaboration: 
   prizes: 
@@ -14,7 +15,7 @@
   inCv: true
   inPortfolio: true
   dateFrom: 2015-11-12
-  dateTo: 2019-01-01
+  dateTo: 2019-10-28
 -->
 
 # Project Invoice

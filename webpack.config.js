@@ -23,14 +23,13 @@ module.exports = env => {
       rules: [{
           test: /\.less$/
           ,use: [
-              'style-loader' // creates style nodes from JS strings
-              ,'css-loader' // translates CSS into CommonJS
-              // ,'less-loader' // compiles Less to CSS, using Node Sass by default
+              'style-loader'
+              ,'css-loader'
               ,{
                 loader: 'less-loader'
                 ,options: {
                   plugins: [lessPluginGlob]
-                  ,paths: [path.resolve(__dirname, 'src')] // This is the important part!
+                  ,paths: [path.resolve(__dirname, 'src')]
                 }
               }
           ]
