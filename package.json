@@ -6,6 +6,7 @@
   "description": "ste",
   "scripts": {
     "start": "run-p build serve",
+    "build": "run-s clean \"webpack -- --env.development --watch\"",
     "build:prod": "run-s clean build:json build:search \"webpack -- --env.production\" build:sitemap build:rss",
     "build:json": "node task/markdown2json",
     "build:search": "node task/buildSearch",
