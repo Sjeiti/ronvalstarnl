@@ -19,14 +19,12 @@
 
 # Disconnect
 
-<p>How would it feel to upload your consiousness and be forever? What would it be like to wake up one day and find that you are the last person on earth that is truly alive.</p>
-<p>This website is the online manifestation of an audiovisual performance called Disconnect. The performance and the website tell the story of the inventor of a neural network to which consiousness can be uploaded. Then the inventor wakes up from a coma and finds everybody gone.</p>
-<p>The site is a weird one, reminiscent of the glory days of internet when sites did not all look like a WordPress theme from a can.<br />
-Technically it is one big show off:<br />
-&#8211; Threejs with a lot of custom GLSL shaders<br />
-&#8211; video playing on the texture of an object<br />
-&#8211; same for audio but with subtitles<br />
-&#8211; transformation of HTML elements into GLSL shaders<br />
-&#8211; a working (but limited) command line interface<br />
-&#8211; post-processing shaders</p>
-<p>What was really cool is the way the site came about. Robin Coops came to me with the story but not really with a clear idea on what to build. He did already have the video/renders Wilbert van Veldhuizen made. From there I started experimenting. It just grew. Suzanne from Nonstopcollective created visuals for text-content. Eric Magnée did sound design and background music. And at some point it just came alive.</p>
+How would it feel to upload your consiousness and be forever? What would it be like to wake up one day and find that you are the last person on earth that is truly alive.
+
+[The website](https://dis-connect.nl) is the online manifestation of an audiovisual performance called Disconnect. The performance and the website tell the story of the inventor of a neural network to which consiousness can be uploaded. Then the inventor wakes up from a coma and finds everybody gone.
+
+Robin Coops came to me with the story but not really with a clear idea on what to build. He did already have the video/renders Wilbert van Veldhuizen made. From there I started experimenting. It just grew. Suzanne from Nonstopcollective created visuals for text-content. Eric Magnée did sound design and background music. And at some point it just came alive.
+
+Technically it's a Threejs implementation with custom GLSL shaders for rendering video, text, post-processing and a working (but limited) command line interface.
+
+[https://dis-connect.nl](https://dis-connect.nl)

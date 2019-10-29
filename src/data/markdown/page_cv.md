@@ -1,7 +1,7 @@
 <!--
   id: 2433
   date: 2014-05-23
-  modified: 2018-11-24
+  modified: 2019-10-25
   slug: cv
   type: page
   metaKeyword: front-end developer
@@ -61,7 +61,7 @@ I can read and write several backend languages and I'm not afraid to learn somet
 	<li class="skill-5">prototyping</li>
 	<li class="skill-5">functional design</li>
 	<li class="skill-5">documentation</li>
-	<li class="skill-4">user interface design</li>
+	<li class="skill-4">user interface design (UX)</li>
 	<li class="skill-4">wireframing</li>
 	<li class="skill-4">conceptualisation</li>
 	<li class="skill-3">use cases</li>
@@ -83,21 +83,23 @@ I can read and write several backend languages and I'm not afraid to learn somet
 <div class="print-columns">
 <div>
 
-### soft skills
+### other
 
- - creative
- - Scrum
- - code reviewing
- - supportive
+ - is creative
+ - likes SCRUM
+ - code reviews
+ - likes explaining things
 
 </div>
 <div>
 
-## other interests
+## totally unrelated
 
- - family
- - bread baking
- - gaming
+ - family first
+ - reads books
+ - always bakes own bread
+ - loves gaming 
+
  
 </div>
 </div>
@@ -113,7 +115,7 @@ I can read and write several backend languages and I'm not afraid to learn somet
 
 ## work experience
 
- - <time>2007-2017</time> freelance front-end developer <small>([porfolio](https://ronvalstar.nl/projects))</small>
+ - <time>2007-2019</time> freelance front-end developer <small>([porfolio](https://ronvalstar.nl/projects))</small>
  - <time>2000-2007</time> co-founder of [Shapers](http://www.shapers.nl/)
  - <time>1998-2000</time> freelance webdesigner
 

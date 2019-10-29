@@ -23,14 +23,13 @@ module.exports = env => {
       rules: [{
           test: /\.less$/
           ,use: [
-              'style-loader' // creates style nodes from JS strings
-              ,'css-loader' // translates CSS into CommonJS
-              // ,'less-loader' // compiles Less to CSS, using Node Sass by default
+              'style-loader'
+              ,'css-loader'
               ,{
                 loader: 'less-loader'
                 ,options: {
                   plugins: [lessPluginGlob]
-                  ,paths: [path.resolve(__dirname, 'src')] // This is the important part!
+                  ,paths: [path.resolve(__dirname, 'src')]
                 }
               }
           ]
@@ -76,6 +75,7 @@ module.exports = env => {
           ,{ from: 'src/data/search', to: './data/search' }
           ,{ from: 'src/static', to: './static' }
           ,{ from: 'node_modules/Experiments/src/experiment/', to: './static/experiment' }
+          ,{ from: 'node_modules/Experiments/src/static/glsl/', to: './static/glsl' }
       ], {})
       ,new webpack.DefinePlugin({
         _VERSION: JSON.stringify(require('./package.json').version)
