@@ -70,9 +70,9 @@ create('[data-header]', class extends BaseComponent{
     const headerTop = header.getBoundingClientRect().top
     if (this._lastScrollTop!==h){
       const isStuck = h>0&&headerTop===this._lastHeaderTop
-      const wasStuck = header.classList.contains(_className.stuck)
+      const wasStuck = header.classList.contains(this._className.stuck)
       if (wasStuck!==isStuck){
-        header.classList.toggle(_className.stuck, isStuck)
+        header.classList.toggle(this._className.stuck, isStuck)
         this._stuck.dispatch(isStuck)
       }
     }
@@ -90,8 +90,8 @@ create('[data-header]', class extends BaseComponent{
    */
   _onRouteChange(name, page, oldName){
     const select = page.parentSlug||name
-    this._seldo('.'+_className.current, elm=>elm.classList.remove(_className.current))
-    this._seldo(`a[href="/${select}"]`, elm=>elm.classList.add(_className.current))
+    this._seldo('.'+this._className.current, elm=>elm.classList.remove(this._className.current))
+    this._seldo(`a[href="/${select}"]`, elm=>elm.classList.add(this._className.current))
     this._setExperiment(name, oldName)
     this.setImage()
   }
@@ -114,7 +114,8 @@ create('[data-header]', class extends BaseComponent{
       this._experiment.exit()
       this._experiment = null
     } else if (!name&&!this._experiment){
-      this._experiment = experiments[Math.floor(Math.random()*experiments.length)]
+      const exp = Object.values(experiments)
+      this._experiment = exp[Math.floor(Math.random()*exp.length)]
       //this._experiment = Object.values(experiments).sort(()=>Math.random()<0.5?1:-1).pop()
       this._experiment?.init(this._experimentWrapper)
     }
