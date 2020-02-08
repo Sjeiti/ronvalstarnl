@@ -13,7 +13,7 @@
 
 I am always surprised how few front-end developers are aware of this little trick (but maybe I meet the wrong ones).
 There is an easy way to manage the state of a user interface using *only* HTML and CSS.
-It is a simple way to make a revealing elements, tabs, hamburger menus or even have more complex states onto an HTML element.
+You can easily make expanders, tabs, hamburger menus or even apply multiple complex states onto an HTML element.
 
 ## The basics
 
@@ -97,7 +97,7 @@ input:checked + div {
 
 ## Simple examples
 
-At this point there are already numerous UX patterns you can apply this to.
+At this point you know enough to apply this to numerous UX patterns. Here are some examples.
 
 ### An expander
 
@@ -208,9 +208,9 @@ To created a tabbed interface we use a `radio` instead of a `checkbox`. If you c
 
 ### A hamburger menu
 
-This is really just an expander but just for examples sake: here is a nested one. And a bit of UX advice on hamburgers: try not to use them especially if you only have three menu items.
+This is really just an expander. But just for examples sake: here is a nested one. And a bit of UX advice on hamburgers: try not to use them especially if you only have three menu items.
 
-Here is also a small issue that is hard to resolve without resorting to Javascript. The submenus in this example use `input[type=radio]` and unlike `type=checkbox` radios cannot be disabled when clicking the selected one. Resolving this issue requires adding an extra unrelated input which will be checked by Javascript when a checked radio is clicked.
+Here we have is also a small issue that is hard to resolve without resorting to Javascript. The submenus in this example use `input[type=radio]` and unlike `type=checkbox` radios cannot be disabled when clicking the selected one. Resolving this issue requires adding an extra unrelated input which will be checked by Javascript when a checked radio is clicked.
 
 ```example
 <style>
@@ -300,3 +300,32 @@ Here is also a small issue that is hard to resolve without resorting to Javascri
 Note that this example is merely to illustrate the technique. There are better ways of showing content than [using a carousel](http://shouldiuseacarousel.com/).
 
 TODO TODO TODO TODO TODO TODO TODO TODO 
+
+
+## It's easier with variables
+
+These sibling>child selectors can get a bit tedious or complex. And what if you start moving stuff around, or try to generalise it into a component.
+
+Luckily CSS also has variables. We can also use those and make things even more interesting.
+
+```css
+:root {
+  --color: green;
+}
+input:checked ~ main { 
+  --color: red;
+}
+.text {
+  color: var(--color);
+}
+```
+
+This might not look much different from what we started with but variables allow you to have only one `:checked` declaration that applies to multiple `var(...)` implementations and (even better) multiple different `:checked` declarations can be used in a single rule: `transform: translate(var(--x), var(--y));`.
+
+
+```example
+<style>
+
+</style>
+
+```
