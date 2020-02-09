@@ -7,6 +7,9 @@ section:after {
   main {
     margin: 0;
     max-width: none;
+    h1::after, h2::after, h3::after {
+      content: none;
+    }
     > p {
       padding-left: calc((100vw - 768px)/2);
       padding-right: calc((100vw - 768px)/2);
