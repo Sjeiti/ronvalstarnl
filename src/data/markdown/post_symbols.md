@@ -57,7 +57,7 @@ If you ever create a module and want a clear API: expose states as symbol consta
 
 So for example write:
 
-```
+```javascript
 export const state = {
   IDLE: Symbol('IDLE')
   ,LOADING: Symbol('LOADING')
