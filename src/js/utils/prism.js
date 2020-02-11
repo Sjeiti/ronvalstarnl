@@ -25,11 +25,30 @@ export function prismToRoot(root){
 export function prismToElement(elm){
   const contents = elm.textContent
   const lang = elm.getAttribute('data-language')
-  const prismLang = Prism.languages[lang]||Prism.languages.javascript
-  /*const highlighted = */Prism.highlight(contents, prismLang)
-  elm.innerHTML = Prism.highlight(contents, prismLang)
-  elm.parentNode.hasAttribute('line-numbers')&&addLineNumbers(elm, contents)
-  elm.classList.add('highlighted')
+      ||elm.getAttribute('class').match(/language-(\w+)/).pop()
+      ||'javascript'
+  if (lang==='example') {
+
+    const {parentNode:pre, parentNode: {parentNode}, textContent} = elm
+    const iframe = document.createElement('iframe')
+    iframe.classList.add('example')
+    parentNode.insertBefore(iframe, pre)
+    parentNode.removeChild(pre)
+    requestAnimationFrame(()=>{
+      const {contentWindow: {document}} = iframe
+      document.writeln(textContent)
+      requestAnimationFrame(()=>iframe.style.height = `${document.body.scrollHeight}px`)
+      console.log('document.body',document.body) // todo: remove log
+    })
+
+  } else {
+    elm.setAttribute('data-language', lang)
+    const prismLang = Prism.languages[lang]||Prism.languages.javascript
+    /*const highlighted = */Prism.highlight(contents, prismLang)
+    elm.innerHTML = Prism.highlight(contents, prismLang)
+    elm.parentNode.hasAttribute('line-numbers')&&addLineNumbers(elm, contents)
+    elm.classList.add('highlighted')
+  }
 }
 
 /**

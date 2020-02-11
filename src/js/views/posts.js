@@ -17,6 +17,11 @@ setDefault((view, route, params)=>fetch(`/data/json/post_${route}.json`)
           .expandAppend(`time.blog{${time}}+h1{${title}}`)
           .appendString(content, false)
 
+      Array.from(view.querySelectorAll('iframe')).forEach(iframe=>{
+        const {innerHTML, contentWindow: {document}} = iframe
+        document.writeln(innerHTML)
+      })
+
       nextTick(()=>{
         prismToRoot(view)
         !/^experiment-/.test(route)&&scrollToTop(document.querySelector('[data-header]'), 0)

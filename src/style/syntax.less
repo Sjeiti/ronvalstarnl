@@ -42,8 +42,9 @@ pre {
 
 pre {
   position: relative;
-  padding: 20px 0 20px 30px;
-  margin-bottom: 20px;
+  padding: 1.5rem 0 1.5rem 2rem;
+  margin-bottom: 0.125rem;
+  margin-top: 0.125rem;
   border-color: #000;
   border-radius: 2px;
   background: #2B2B2B;
@@ -59,6 +60,7 @@ pre {
     font-size: .90px;
   }
   code {
+    display: block;
     white-space: pre;
     word-wrap: normal;
     // reset singular code
@@ -71,13 +73,16 @@ pre {
     &[data-language]:after {
       content: attr(data-language);
       position: absolute;
-      right: 2px;
+      left: 0;
       top: 0;
+      padding: 0 0.25rem;
+      width: 100%;
+      text-align: right;
     }
     &.highlighted {
       &:before, &:after {
         margin: 0;
-        color: @colorWhite;
+        color: @colorMain;//@colorWhite;
         font-family: @fontNameCode;
         font-size: 12px;
       }
@@ -118,7 +123,14 @@ pre {
         &.function { color: #FFC66D; }
         &.number { color: #6897BB; }
         &.operator { color: #82a2a9; }
-        &.punctuation { color: #A9B7C6; }
+        &.punctuation { color: #CC7832; } // &.punctuation { color: #A9B7C6; }
+
+        // html
+        &.tag { color: #FFC66D; }
+        &.attr-value { color: #5FBA47; }
+
+        // css
+        &.selector { color: #CC7832; }
       }
     }
   }

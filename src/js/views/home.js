@@ -33,7 +33,9 @@ add(
             })
         //
         // blog
-        const firstTen = posts.slice(0, 10)
+        const today = new Date
+        const currentPast = posts.filter(({date})=>(new Date(date))<=today)
+        const firstTen = currentPast.slice(0, 10)
         const getLi = post=>`(li>a[href="/${post.slug}"]>(time{${post.date.split('T').shift()}}+{${post.title}}))`
         view.expandAppend(`section.written>(h2.section-title>small{articles}+{written})+ul.unstyled.link-list>(${firstTen.map(getLi).join('+')})`, false)
         return page

@@ -1,3 +1,5 @@
+//window.onerror = err=>alert(err)
+
 import '../style/screen.less'
 import './views'
 import './head'
