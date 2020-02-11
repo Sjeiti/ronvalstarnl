@@ -12,6 +12,11 @@ const pages = require(path+'pages-list.json')
 const portfolio = require(path+'fortpolio-list.json')
 const lastmod = new Date().toISOString()
 
+
+const today = new Date
+const currentPast = posts.filter(({date})=>(new Date(date))<=today)
+
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
@@ -20,7 +25,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
       <changefreq>monthly</changefreq>
       <priority>1</priority>
    </url>
-   ${posts.map(post=>`
+   ${currentPast.map(post=>`
    <url>
       <loc>${base}/${post.slug}</loc>
       <lastmod>${post.date}</lastmod>

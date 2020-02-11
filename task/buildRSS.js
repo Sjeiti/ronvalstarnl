@@ -10,6 +10,10 @@ const {target} = require('commander')
 const path = '../src/data/json/'
 const base = 'https://ronvalstar.nl'
 const posts = require(path+'posts-list.json')
+
+const today = new Date    
+const currentPast = posts.filter(({date})=>(new Date(date))<=today)
+
 const portfolio = require(path+'fortpolio-list.json')
 const stripHTML = htmlString=>htmlString.replace(/<[^>]*>?/gm, '')
 const encodedStr = rawStr=>rawStr.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
@@ -33,7 +37,7 @@ const rss = `<?xml version="1.0" ?>
         <url>https://www.xul.fr/xul-icon.gif</url>
         <link>https://www.xul.fr/en/index.php</link>
     </image-->
-    ${posts.map(({title, slug, date})=>`<item>
+    ${currentPast.map(({title, slug, date})=>`<item>
         <title>${title||'blank'}</title>
         <link>${base}/${slug}</link>
         <guid>${base}/${slug}</guid>
