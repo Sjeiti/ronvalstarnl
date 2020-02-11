@@ -1,7 +1,7 @@
 <!--
-  slug: symbols
-  date: 2020-02-30
-  modified: 2020-02-30
+  slug: using-string-literals-sparingly
+  date: 2020-02-11
+  modified: 2020-02-11
   type: post
   header: jason-leung-EXYQt40B3KA-unsplash.jpg
   headerColofon: Jason Leung
@@ -38,15 +38,14 @@ const selector = {
 
 The reason to fully write out that second one instead of `Object.entries(className).map(...)` is simply for autocompletion. Smart oneliners are not always smart.
 
-We can even go one step further by making the entire object immutabke with `Object.freeze(className)`.
+We can even go one step further by making the entire object immutable with `Object.freeze(className)`.
 
 
 ## Events
 
-Events are another annoying use of string literals. One reason never to use `CustomEvent` is because
-it is based on string identifiers. Of course existing DOM events are pretty much set in stone. But replacing those with constants would be overdoing it a bit. But why is the convention for the string in `addEventListener('mousedown',...)` lowercase and `<a onMouseDown="...">` camelcase? And of course my IDE doesn't see anything wrong with `addEventListener('mousedowm',...)`.
+Events are another not-so-smart use of string literals. One reason never to use `CustomEvent` is because it is based on string identifiers. Of course existing DOM events are pretty much set in stone and replacing those with constants would be overdoing it a bit. But why is the convention for the string in `addEventListener('mousedown',...)` lowercase and `<a onMouseDown="...">` camelcase? And of course my IDE doesn't see anything wrong with `addEventListener('mousedowm',...)`.
 
-Which is why an object or symbol based pubsub is much easier to handle than `CustomEvent`. A good stringless pubsub for JavaScript is [SignalsJS](https://millermedeiros.github.io/js-signals/).
+An object or symbol based pubsub is much easier to handle than `CustomEvent` and much more foolproof. It even pay to proxy common DOM events with a pubsub. A good stringless pubsub for JavaScript is [SignalsJS](https://millermedeiros.github.io/js-signals/).
 
 
 ## State
@@ -69,6 +68,7 @@ export const state = {
 ### State managers
 
 Replacing states with symbols can also be easily aplied to the actions in state managers like Redux.
+
 
 ## Conclusion / TLDR
 

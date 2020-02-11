@@ -17,6 +17,11 @@ glob('src/data/markdown/+(post|fortpolio|page)_*.md')
     .then(files=>Promise.all(files.map(read)))
     .then(files=>files.map(markdown2object))
 
+    .then(posts=>{
+      posts.sort((p1,p2)=>new Date(p1.date)>new Date(p2.date)?1:-1)
+      return posts
+    })
+
     // .then(addMetaData)
     // .then(swapKeys)
     // .then(saveObjectsToMarkdown)

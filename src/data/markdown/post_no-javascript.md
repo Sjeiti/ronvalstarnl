@@ -282,14 +282,14 @@ Here we have is also a small issue that is hard to resolve without resorting to 
         <div><a href="#">menu item 2</a></div>
         <div><a href="#">menu item 3</a></div>
         <div><a href="#">menu item 4</a></div>
-        <div><a href="#">menu item 5</a></div>
     </menu>
     <input class="visuallyhidden submenu" name="menu" type="radio" id="menu2" />
     <label for="menu2">menu 2</label>
     <menu>
-        <div><a href="#">menu item 4</a></div>
         <div><a href="#">menu item 5</a></div>
         <div><a href="#">menu item 6</a></div>
+        <div><a href="#">menu item 7</a></div>
+        <div><a href="#">menu item 8</a></div>
     </menu>
 </div>
 ```
@@ -409,6 +409,9 @@ input:checked ~ main {
 
 This might not look much different from what we started with but variables allow you to have only one `:checked` declaration that applies to multiple `var(...)` implementations and (even better) multiple different `:checked` declarations can be used in a single rule: `transform: translate(var(--x), var(--y));`.
 
+Here's a little box. Click on the side to rotate it. Click on the top to open it. And click the inside to look inside.
+
+The topleft checkbox shows all the labels and checkboxes.
 
 ```example
 <style>
