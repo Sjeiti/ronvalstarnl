@@ -10,13 +10,13 @@
 
 # Front-end logic without Javascript
 
-I am always surprised how few front-end developers are aware of this little trick (but maybe I meet the wrong ones).
+It is surprising how few front-end developers are aware of this little trick (but maybe I meet the wrong ones).
 There is an easy way to manage the state of a user interface using *only* HTML and CSS.
-You can easily make expanders, tabs, hamburger menus or even apply multiple complex states onto an HTML element.
+You can easily make expanders, tabs, hamburger menus or even apply multiple complex states onto an HTML element, and everything without a single line of JavaScript.
 
 ## The basics
 
-To get started you use the CSS pseudo selector `input:checked` in combination with a sibling selector `+` or `~`.
+To get started you use the CSS pseudo selector `input:checked` in combination with a sibling selector `+` or `~`. This can be used to have a different element reflect the state of the input.
 
 For instance if you check the checkbox the text in the div will turn red:
 
