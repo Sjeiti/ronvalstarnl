@@ -1,4 +1,4 @@
-import {parentQuerySelector, expand} from './utils/html'
+import {parentQuerySelector, expand, createElement} from './utils/html'
 import {signal} from './signal'
 import {initialise} from './component'
 
@@ -107,6 +107,10 @@ export function open(uri){
  * @todo check usages of methods
  */
 function viewModelFactory(element){
+  //
+  //
+  //
+  //
   /** @lends View.prototype */
   return Object.create({
     /**
@@ -114,8 +118,18 @@ function viewModelFactory(element){
      * @returns {View}
      */
     clean(){
-      const {element} = this
+      const {element, _pastContent} = this
       while (element.firstChild) element.removeChild(element.firstChild)
+      //while (element.firstChild) _pastContent.appendChild(element.firstChild)
+      element.appendChild(_pastContent)
+      // if anim
+      // element.appendChild(_pastContent)
+      setTimeout(()=>{
+         element.removeChild(_pastContent)
+         while (_pastContent.firstChild) _pastContent.removeChild(_pastContent.firstChild)
+      }, 2111)
+      //
+      //
       return this
     }
     /**
@@ -198,6 +212,14 @@ function viewModelFactory(element){
      */
     element: {
       value: element
+      , writable: false
+    }
+    /**
+     * The views HTMLElement for out- animation
+     * @type {HTMLElement}
+     */
+    ,_pastContent: {
+      value: createElement('div', 'past-content')
       , writable: false
     }
     /**
