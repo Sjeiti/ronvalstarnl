@@ -1,7 +1,7 @@
 <!--
   slug: front-end-logic-without-javascript
-  date: 2020-04-30
-  modified: 2020-04-30
+  date: 2020-03-01
+  modified: 2020-03-01
   type: post
   header: boxbox.jpg
   category: JavaScript
@@ -34,6 +34,11 @@ input:checked + div {
 ```example
 <style>
     html { font-size: 2rem; font-family: Arial, sans; }
+    input {
+        width: 2rem;
+        height: 2rem;
+        transform: scale(2);
+    }
     input:checked + div { 
       color: red;
     }
@@ -213,6 +218,7 @@ Here we have is also a small issue that is hard to resolve without resorting to 
 
 ```example
 <style>
+    a, a:hover { color: #333; }
     html { font-family: Arial, sans; }
     body { height: 10rem; }
     [for=hamburger] {
@@ -223,7 +229,7 @@ Here we have is also a small issue that is hard to resolve without resorting to 
         display: block;
         width: 2rem;
         height: 2rem;
-        background-image: repeating-linear-gradient(blue,blue 20%,transparent 20%,transparent 40%,blue 40%,blue 60%,transparent 60%,transparent 80%,blue 80%);
+        background-image: repeating-linear-gradient(#333,#333 20%,transparent 20%,transparent 40%,#333 40%,#333 60%,transparent 60%,transparent 80%,#333 80%);
         cursor: pointer;
         transition: transform 200ms ease;
     }
@@ -233,9 +239,10 @@ Here we have is also a small issue that is hard to resolve without resorting to 
         top: 0;
         height: 100vh;
         padding: 0 0.5rem;
-        background-color: #BBB;
+        background-color: #DDD;
+        box-shadow: 0 0 1rem transparent;
         transform: translateX(100%);
-        transition: transform 200ms ease;
+        transition: transform 200ms ease, box-shadow 200ms linear;
     }
     
     input#hamburger:checked ~ [for=hamburger] {
@@ -243,6 +250,7 @@ Here we have is also a small issue that is hard to resolve without resorting to 
         transform-origin: 50%;
     }
     input#hamburger:checked ~ .menu {
+        box-shadow: 0 0 1rem rgba(0,0,0,0.5);
         transform: translateX(0);
     }
     input.submenu+label:after {
@@ -409,7 +417,9 @@ input:checked ~ main {
 
 This might not look much different from what we started with but variables allow you to have only one `:checked` declaration that applies to multiple `var(...)` implementations and (even better) multiple different `:checked` declarations can be used in a single rule: `transform: translate(var(--x), var(--y));`.
 
-Here's a little box. Click on the side to rotate it. Click on the top to open it. And click the inside to look inside.
+If you use variables you can declare them as high as possible and never worry about moving your variable affected components around. So put your hidden inputs at `body>input` and overwrite them at `body>input~main` for instance.
+
+Here's a little box. It is a relatively simple example how three individual states can amount to sixteen possibilities. Click on the side to rotate it. Click on the top to open it. And click the inside to look inside.
 
 The topleft checkbox shows all the labels and checkboxes.
 
