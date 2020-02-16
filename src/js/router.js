@@ -117,22 +117,15 @@ export function open(uri){
  * @todo check usages of methods
  */
 function viewModelFactory(element){
-  //
-  //
-  //
-  //
   /** @lends View.prototype */
   return Object.create({
     /**
-     * Clear the view element contents
+     * Start page transition, clear the view elements
      * @returns {View}
      */
     clean(){
       const {element, _content, _contentPast} = this
-      //
       _contentPast.parentNode===element&&this._removeAndCleanPastContent()
-      //
-      // while (element.firstChild) element.removeChild(element.firstChild)
       _content.classList.add(className.CONTENT_ANIMATE_IN)
       _contentPast.classList.add(className.CONTENT_ANIMATE_OUT)
       while (_content.firstChild) _contentPast.appendChild(_content.firstChild)
@@ -144,7 +137,6 @@ function viewModelFactory(element){
           this._contentPastTimer = setTimeout(this._removeAndCleanPastContent.bind(this), ms)
         })
       })
-      //
       return this
     }
     /**
@@ -355,12 +347,12 @@ function getPageTransitionTime(){
   Array.from(document.styleSheets).forEach(sheet=>{
     try {
       Array.from(sheet.rules).forEach(rule => {
-        if (rule.selectorText?.includes('animate-out-start')&&rule.cssText?.includes('transition')) {
-          const {style:{transitionDuration,transitionDelay}} = rule
-          if (transitionDuration&&transitionDelay) {
+        if (rule.selectorText?.includes('animate-out-start')&&rule.cssText?.includes('transition')){
+          const {style:{transitionDuration, transitionDelay}} = rule
+          if (transitionDuration&&transitionDelay){
             const durations = transitionDuration.split(',').map(parseFloat)
             const delays = transitionDelay.split(',').map(parseFloat)
-            time = Math.max(...durations.map((t,i)=>t+(delays[i]||0)))
+            time = Math.max(...durations.map((t, i)=>t+(delays[i]||0)))
           }
         }
       })
