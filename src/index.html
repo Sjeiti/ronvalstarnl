@@ -178,23 +178,24 @@
       text-decoration: none;
       color: inherit;
     }
-    main {
+    main { position: relative; }
+    .content {
       max-width: 768px;
       margin: 0 auto;
     }
-    [data-pathname^="project"]:not([data-pathname^="project-"]) main, main.wide {
+    .content[data-pathname^="project"]:not([data-pathname^="project-"]), .content.wide {
       max-width: none;
     }
-    main, aside {
+    .content, aside {
       position: relative;
       padding: 1rem 0 0;
       background-color: #fff;
     }
-    main>*, aside>* {
+    .content>*, aside>* {
       margin-left: 1rem;
       margin-right: 1rem;
     }
-    main {
+    .content {
       min-height: calc(100vh - 14.25rem);
     }
     aside { display: none; }
@@ -268,9 +269,11 @@
     </nav>
   </header>
   <main>
-    <p>My name is Ron Valstar&nbsp;<del><a href="/search?s=cool%20shit">and I make cool shit</a></del>&nbsp;and I develop applications for digital media.</p>
-    <p>I am an Amsterdam based freelance front-end developer with a background in graphic design and interaction design.<br>
-    If you need me <a title="06 33697212" href="tel:+31633697212">give me a call</a> or <a href="mailto:hello@ronvalstar.nl">drop me a line</a>.</p>
+    <div class="content">
+      <p>My name is Ron Valstar&nbsp;<del><a href="/search?s=cool%20shit">and I make cool shit</a></del>&nbsp;and I develop applications for digital media.</p>
+      <p>I am an Amsterdam based freelance front-end developer with a background in graphic design and interaction design.<br>
+      If you need me <a title="06 33697212" href="tel:+31633697212">give me a call</a> or <a href="mailto:hello@ronvalstar.nl">drop me a line</a>.</p>
+    </div>
   </main>
   <aside></aside>
   <footer>

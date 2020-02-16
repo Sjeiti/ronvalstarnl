@@ -1,4 +1,4 @@
-import {parentQuerySelector, expand, createElement} from './utils/html'
+import {parentQuerySelector, expand, createElement, clean} from './utils/html'
 import {signal} from './signal'
 import {initialise} from './component'
 
@@ -12,7 +12,16 @@ const routes = {}
 
 window.addEventListener('popstate', onPopstate)
 
+const ms = getPageTransitionTime()
+
 let url = ''
+
+const className = {
+  CONTENT_ANIMATE_OUT: 'content--animate-out'
+  , CONTENT_ANIMATE_OUT_START: 'content--animate-out-start'
+  , CONTENT_ANIMATE_IN: 'content--animate-in'
+  , CONTENT_ANIMATE_IN_START: 'content--animate-in-start'
+}
 
 document.body.addEventListener('click', onClick, true)
 
@@ -93,7 +102,8 @@ export function open(uri){
         history.pushState({}, title, (name[0]==='/'?'':'/')+name)
         routeChange.dispatch(name, page, oldName)
         initialise(view)
-        document.body.setAttribute('data-pathname', name)
+        viewModel.setViewName(name)
+        // document.body.setAttribute('data-pathname', name)
       })
       .catch(console.error)
   }
@@ -118,17 +128,22 @@ function viewModelFactory(element){
      * @returns {View}
      */
     clean(){
-      const {element, _pastContent} = this
-      while (element.firstChild) element.removeChild(element.firstChild)
-      //while (element.firstChild) _pastContent.appendChild(element.firstChild)
-      element.appendChild(_pastContent)
-      // if anim
-      // element.appendChild(_pastContent)
-      setTimeout(()=>{
-         element.removeChild(_pastContent)
-         while (_pastContent.firstChild) _pastContent.removeChild(_pastContent.firstChild)
-      }, 2111)
+      const {element, _content, _contentPast} = this
       //
+      _contentPast.parentNode===element&&this._removeAndCleanPastContent()
+      //
+      // while (element.firstChild) element.removeChild(element.firstChild)
+      _content.classList.add(className.CONTENT_ANIMATE_IN)
+      _contentPast.classList.add(className.CONTENT_ANIMATE_OUT)
+      while (_content.firstChild) _contentPast.appendChild(_content.firstChild)
+      element.appendChild(_contentPast)
+      requestAnimationFrame(()=>{
+        requestAnimationFrame(()=>{
+          _content.classList.add(className.CONTENT_ANIMATE_IN_START)
+          _contentPast.classList.add(className.CONTENT_ANIMATE_OUT_START)
+          this._contentPastTimer = setTimeout(this._removeAndCleanPastContent.bind(this), ms)
+        })
+      })
       //
       return this
     }
@@ -148,40 +163,40 @@ function viewModelFactory(element){
       while (args = this._events.pop()) this.element.removeEventListener(...args)
     }
     /**
-     * Append a child element to the component element
+     * Append a child element to the content view
      * @param {HTMLElement} child
      * @return {HTMLElement}
      * @returns {View}
      */
     , appendChild(child){
-      this.element.appendChild(child)
+      this._content.appendChild(child)
       return this
     }
     /**
-     * InsertAdjacentHTML to the component element
+     * InsertAdjacentHTML to the content view
      * @param {string} position
      * @param {string} text
      * @returns {View}
      */
     , insertAdjacentHTML(position, text){
-      this.element.insertAdjacentHTML(position, text)
+      this._content.insertAdjacentHTML(position, text)
       return this
     }
     /**
-     * QuerySelector the component element
+     * QuerySelector the content view
      * @param {string} selector
      * @return {HTMLElement}
      */
     , querySelector(selector){
-      return this.element.querySelector(selector)
+      return this._content.querySelector(selector)
     }
     /**
-     * QuerySelectorAll the component element
+     * QuerySelectorAll the content view
      * @param {string} selector
      * @return {NodeList}
      */
     , querySelectorAll(selector){
-      return this.element.querySelectorAll(selector)
+      return this._content.querySelectorAll(selector)
     }
     /**
      * Append an HTML string to the view
@@ -192,7 +207,7 @@ function viewModelFactory(element){
     , appendString(htmlstring, doClean=true){
       doClean&&this.clean()
       this.insertAdjacentHTML('beforeend', htmlstring)
-      initialise(this.element)
+      initialise(this._content)
       return this
     }
     /**
@@ -205,9 +220,36 @@ function viewModelFactory(element){
       this.appendString(expand(abbreviation), doClean)
       return this
     }
+    /**
+     * Append an abbreviation string to the view
+     * @param {string} name
+     * @return {View}
+     */
+    , setViewName(name){
+      const {_content, _contentPast} = this
+      _contentPast.setAttribute('data-pathname', _content.getAttribute('data-pathname'))
+      _content.setAttribute('data-pathname', name)
+      document.body.setAttribute('data-pathname', name) // todo may not be good idea
+      return this
+    }
+    /**
+     * Remove pastContent from view and clean it
+     * @return {View}
+     */
+    , _removeAndCleanPastContent(){
+      const {element, _content, _contentPast} = this
+      element.removeChild(_contentPast)
+      clean(_contentPast)
+      _contentPast.classList.remove(className.CONTENT_ANIMATE_OUT)
+      _contentPast.classList.remove(className.CONTENT_ANIMATE_OUT_START)
+      _content.classList.remove(className.CONTENT_ANIMATE_IN)
+      _content.classList.remove(className.CONTENT_ANIMATE_IN_START)
+      clearTimeout(this._contentPastTimer)
+      return this
+    }
   }, {
     /**
-     * The views HTMLElement
+     * The main container HTMLElement
      * @type {HTMLElement}
      */
     element: {
@@ -215,12 +257,28 @@ function viewModelFactory(element){
       , writable: false
     }
     /**
+     * The main view HTMLElement
+     * @type {HTMLElement}
+     */
+    , _content: {
+      value: element.querySelector('.content')||createElement('div', 'content', element)
+      , writable: false
+    }
+    /**
      * The views HTMLElement for out- animation
      * @type {HTMLElement}
      */
-    ,_pastContent: {
-      value: createElement('div', 'past-content')
+    , _contentPast: {
+      value: createElement('div', 'content content--past')
       , writable: false
+    }
+    /**
+     * The timer must be reset
+     * @type {number}
+     */
+    , _contentPastTimer: {
+      value: 0
+      , writable: true
     }
     /**
      * The views added event listeners
@@ -286,4 +344,27 @@ function getPathname(uri){
  */
 function getIsFullURI(uri){
   return /^(\w+:)?\/\//.test(uri)
+}
+
+/**
+ * Traverse styleSheets to calculate total animation duration
+ * @return {number}
+ */
+function getPageTransitionTime(){
+  let time = 500
+  Array.from(document.styleSheets).forEach(sheet=>{
+    try {
+      Array.from(sheet.rules).forEach(rule => {
+        if (rule.selectorText?.includes('animate-out-start')&&rule.cssText?.includes('transition')) {
+          const {style:{transitionDuration,transitionDelay}} = rule
+          if (transitionDuration&&transitionDelay) {
+            const durations = transitionDuration.split(',').map(parseFloat)
+            const delays = transitionDelay.split(',').map(parseFloat)
+            time = Math.max(...durations.map((t,i)=>t+(delays[i]||0)))
+          }
+        }
+      })
+    }catch(err){/*fails for sheet.rules on external sheets (fonts)*/}
+  })
+  return time
 }

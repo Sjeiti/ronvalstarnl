@@ -22,7 +22,10 @@ main {
       width: 100%;
       height: 0.0625rem;
       background-color: @colorHeadingBorder;
-      box-shadow: -30rem 0 0 0 @colorHeadingBorder, 30rem 0 0 0 @colorHeadingBorder;
+      box-shadow:
+          -30rem 0 0 0 @colorHeadingBorder, 30rem 0 0 0 @colorHeadingBorder
+          ,-70rem 0 0 0 @colorHeadingBorder, 70rem 0 0 0 @colorHeadingBorder
+      ;
     }
   }
   h1:after { height: 1rem; }
