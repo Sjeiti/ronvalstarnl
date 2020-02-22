@@ -25,11 +25,13 @@ export class BaseComponent{
    * Append abbreviation to main element or target
    * @param {string} abbreviation
    * @param {HTMLElement} [target]
+   * @returns {HTMLElement}
    * @private
    */
   _append(abbreviation, target){
     const parentNode = target||this._element
     parentNode.insertAdjacentHTML('beforeend', expand(abbreviation))
+    return parentNode.lastChild
   }
 
   /**
