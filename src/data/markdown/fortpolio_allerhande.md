@@ -2,7 +2,7 @@
   id: 2164
   slug: allerhande
   type: fortpolio
-  excerpt: <p>I was front-end ActionScript developer in the Fabrique/Lukkien/freelancers SCRUM team that developed the Allerhande website.</p>
+  excerpt: I was front-end ActionScript developer in the Fabrique/Lukkien/freelancers SCRUM team that developed the Allerhande website.
   categories: JavaScript, front end, HTML/CSS, framework, Flash
   tags: JavaScript, ActionScript, Flash, scrum, PureMVC
   clients: Lukkien
@@ -19,6 +19,7 @@
 
 # Allerhande
 
-<p>Allerhande is the free magazine of Holland&#8217;s largest supermarket chain Albert Heijn. The focus of this Flash site is recipes; especially with regard to themes and social networks. Where the latter is an implementation of the existing cookbook on ah.nl. And another nice benefit of digital is that you can also consult the articles from previous Allerhande issues.<br />
-Thanks to a good team the result was very cool. </p>
-<p>Allerhande.nl won the public award Customer Medium of the year 2010.</p>
+[Allerhande](https://www.ah.nl/allerhande/) is the free magazine of Holland's largest supermarket chain [Albert Heijn](https://www.ah.nl/). The focus of this site is recipes; especially with regard to themes and social networks. Where the latter is an implementation of the existing cookbook on ah.nl. And another nice benefit of digital is that you can also consult the articles from previous Allerhande issues.
+Thanks to a good team the result was very cool.
+
+Allerhande won the public award Customer Medium of the year 2010.
