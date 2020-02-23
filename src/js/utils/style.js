@@ -1,13 +1,16 @@
 const styleEl = document.createElement('style')
 document.head.appendChild(styleEl)
 const styleSheet = styleEl.sheet
+const {cssRules} = styleSheet
 
 /**
  * Add a rule to the stylesheet
  * @param {string} rule
+ * @returns {CSSRule}
  */
 export function addRule(rule){
-  styleSheet.insertRule(rule, styleSheet.cssRules.length)
+  styleSheet.insertRule(rule, cssRules.length)
+  return cssRules[cssRules.length-1]
 }
 
 /**
@@ -26,8 +29,16 @@ export function removeRule(selector){
 /**
  * Select a rule from the stylesheet
  * @param {string} selector
+ * @return {CSSRule}
  */
 export function select(selector){
-  selector
-  // todo implement
+  let foundRule
+  Array.from(document.styleSheets).forEach(sheet=>{
+    try{
+      !foundRule&&Array.from(sheet.cssRules).forEach(rule=>{
+        rule.selectorText===selector&&(foundRule = rule)
+      })
+    }catch(err){/* prevent InvalidAccessError on external sources*/}
+  })
+  return foundRule
 }

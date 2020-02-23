@@ -6,12 +6,11 @@ ul.link-list {
     display: block;
     margin-bottom: 1rem;
   }
-  @colorLink: #5AABE1;
-  @colorLinkBg: lighten(#5AABE1,30%);
+  @colorLinkBg: @colorLinkL30;
   a {
     position: relative;
     display: inline-block;
-    color:  darken(#5AABE1,20%);
+    color:  darken(@colorLink,20%);
     background-color: @colorLinkBg;
     text-decoration: none;
     box-shadow: -1rem 0 0 @colorLinkBg, 0.5rem 0 0 @colorLinkBg;

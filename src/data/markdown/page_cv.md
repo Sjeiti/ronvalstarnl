@@ -93,7 +93,7 @@ I can read and write several backend languages and I'm not afraid to learn somet
 </div>
 <div>
 
-## totally unrelated
+## and also
 
  - family first
  - reads books

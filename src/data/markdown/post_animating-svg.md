@@ -41,3 +41,8 @@ There are also traces of a plugin for Flash CC called [Snap.svg Animator](http:/
 ### SVGator
 
 Is a good candidate, but it is not as good as Flash (but two dollars cheaper). You can try it out but the 14-day trial sucks a bit because it doesn't reflect all the possibilities.
+
+/*
+https://app.svgator.com/pricing#/
+https://github.com/TomByrne/Flash2Svg
+*/

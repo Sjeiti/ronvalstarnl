@@ -1,7 +1,7 @@
 <!--
   slug: front-end-logic-without-javascript
-  date: 2020-03-01
-  modified: 2020-03-01
+  date: 2020-02-23
+  modified: 2020-02-23
   type: post
   header: boxbox.jpg
   category: JavaScript

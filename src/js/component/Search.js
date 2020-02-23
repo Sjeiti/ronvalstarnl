@@ -2,9 +2,15 @@ import {create} from './index'
 import {BaseComponent} from './BaseComponent'
 import {signal} from '../signal'
 import {clean} from '../utils/html'
+import {select} from '../utils/style'
 
 export const change = signal()
 export const search = signal()
+
+const RETURN = 13
+const UP = 38
+const DOWN = 40
+const ESC = 27
 
 /**
  * Search component
@@ -12,6 +18,10 @@ export const search = signal()
 create('[data-search]', class extends BaseComponent{
 
   _input
+  _autoComplete
+  _suggestionIndex = -1
+  _suggestions = []
+  _selectedRule = select('.search ul > li:nth-child(999) a')
 
   constructor(...args){
     super(...args)
@@ -39,7 +49,7 @@ create('[data-search]', class extends BaseComponent{
     //
     if(options.autoSuggest){
       //
-      this._append('ul.unstyled.autosuggest')
+      this._autoComplete = this._append('ul.unstyled'+(options.autoSuggestTop&&'.top'||''))
       //
       fetch('/data/search/words.json')
         .then(res=>res.json(), console.warn)
@@ -67,7 +77,10 @@ create('[data-search]', class extends BaseComponent{
     const {target:{value}, keyCode} = e
     this._lastValue!==value&&change.dispatch(value)
     this._lastValue = value
-    keyCode===13&&this._onSubmit({value})
+    keyCode===RETURN&&this._onSubmit({value})
+    ||keyCode===UP&&this._selectSuggestion(true)
+    ||keyCode===DOWN&&this._selectSuggestion(false)
+    ||keyCode===ESC&&this._deselectSuggestion()
   }
 
   /**
@@ -83,22 +96,71 @@ create('[data-search]', class extends BaseComponent{
   /**
    * Submit (dispatch) the search
    * @param {string} input
+   * @returns {Search}
    * @private
    */
   _onSubmit(input){
     const {value} = input
-    search.dispatch(value)
+    const hasSuggestion = this._suggestionIndex!==-1
+    search.dispatch(hasSuggestion?this._suggestions[this._suggestionIndex]:value)
+    hasSuggestion&&this._deselectSuggestion()
+    return this
+  }
+
+  /**
+   * Select up/down
+   * @param {boolean} up
+   * @returns {Search}
+   * @private
+   */
+  _selectSuggestion(up){
+    this._suggestionIndex = Math.min(Math.max(this._suggestionIndex + (up?-1:1), 0), this._suggestions.length)
+    this._setSuggestionStyle()
+    return this
+  }
+
+  /**
+   * Deselect selection
+   * @returns {Search}
+   * @private
+   */
+  _deselectSuggestion(){
+    this._suggestionIndex = -1
+    this._setSuggestionStyle()
+    return this
+  }
+
+  /**
+   * Set the index of the suggestion to that of the CSSRule
+   * @private
+   */
+  _setSuggestionStyle(){
+    this._selectedRule&&(this._selectedRule.selectorText = this._selectedRule.selectorText.replace(/\(-?\d+\)/, `(${this._suggestionIndex+1})`))
   }
 
   /**
    * Search suggestions
-   * @todo: implement
+   * @todo: memoize/cache
    * @param {string} value
    * @private
    */
   _suggest(value){
-    if (this._words){
-      this._words.filter(word=>word.includes(value))
+    if (this._words&&value.length>2){
+      this._suggestionIndex = -1
+      this._suggestions = this._words.filter(word=>word.includes(value))
+      clean(this._autoComplete)
+      const fragment = document.createDocumentFragment()
+      this._suggestions.forEach(suggestion=>{
+        const li = document.createElement('li')
+        const a = document.createElement('a')
+        a.href = `/search/${suggestion}`
+        a.innerHTML = suggestion.replace(value, `<span>${value}</span>`)
+        li.appendChild(a)
+        fragment.appendChild(li)
+      })
+      this._autoComplete.appendChild(fragment)
+    } else if (!value){
+      clean(this._autoComplete)
     }
   }
 })
