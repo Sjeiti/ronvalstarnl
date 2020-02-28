@@ -7,7 +7,8 @@
   "scripts": {
     "start": "run-p build serve",
     "build": "run-s clean \"webpack -- --env.development --watch\"",
-    "build:prod": "run-s clean build:json build:search \"webpack -- --env.production\" build:sitemap build:rss",
+    "build:prod": "run-s clean build:unzip build:json build:search \"webpack -- --env.production\" build:sitemap build:rss",
+    "build:unzip": "unzip src/data/icomoon.zip temp/icomoon",
     "build:json": "node task/markdown2json",
     "build:search": "node task/buildSearch",
     "build:sitemap": "node task/buildSitemap --target dist",
@@ -53,6 +54,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-syntax-import-meta": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
+    "adm-zip-cli": "^1.0.0",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.0",
     "babel-preset-babili": "0.0.12",

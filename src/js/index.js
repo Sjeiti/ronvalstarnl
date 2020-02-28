@@ -7,6 +7,8 @@ import {initialise} from './component'
 import './component/Search'
 import './component/Header'
 import './component/Code'
+import './component/Icon'
+import './component/Skill'
 
 initialise()
 

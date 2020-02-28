@@ -44,38 +44,38 @@ I can read and write several backend languages and I'm not afraid to learn somet
 ### programming
 
 <ul class="list-unstyled">
-	<li class="skill-5">JavaScript <small>(Vue, Angular, React, ThreeJS)</small></li>
-	<li class="skill-5">build processes <small>(Node.js, Express, Webpack, Gulp)</small></li>
-	<li class="skill-5">HTML/CSS <small>(semantic HTML5, XSLT, CSS3, SASS, LESS)</small></li>
-	<li class="skill-5">testing <small>(Cypress, Mocha, Chai, Cucumber)</small></li>
-	<li class="skill-5">pair programming</li>
-	<li class="skill-4">PHP <small>(WordPress, Laravel, Drupal, Codeigniter)</small></li>
-	<li class="skill-4">ActionScript <small>(Papervision3D, pureMVC, Greensock)</small></li>
-	<li class="skill-3">Java/Processing</li>
-	<li class="skill-2">Lingo <small>(Director)</small></li>
+	<li data-skill="5">JavaScript <small>(Vue, Angular, React, ThreeJS)</small></li>
+	<li data-skill="5">build processes <small>(Node.js, Express, Webpack, Gulp)</small></li>
+	<li data-skill="5">HTML/CSS <small>(semantic HTML5, XSLT, CSS3, SASS, LESS)</small></li>
+	<li data-skill="5">testing <small>(Cypress, Mocha, Chai, Cucumber)</small></li>
+	<li data-skill="5">pair programming</li>
+	<li data-skill="4">PHP <small>(WordPress, Laravel, Drupal, Codeigniter)</small></li>
+	<li data-skill="4">ActionScript <small>(Papervision3D, pureMVC, Greensock)</small></li>
+	<li data-skill="3">Java/Processing</li>
+	<li data-skill="2">Lingo <small>(Director)</small></li>
 </ul>
 
 ### interaction design
 
 <ul class="list-unstyled">
-	<li class="skill-5">prototyping</li>
-	<li class="skill-5">functional design</li>
-	<li class="skill-5">documentation</li>
-	<li class="skill-4">user interface design (UX)</li>
-	<li class="skill-4">wireframing</li>
-	<li class="skill-4">conceptualisation</li>
-	<li class="skill-3">use cases</li>
-	<li class="skill-3">information visualisation</li>
+	<li data-skill="5">prototyping</li>
+	<li data-skill="5">functional design</li>
+	<li data-skill="5">documentation</li>
+	<li data-skill="4">user interface design (UX)</li>
+	<li data-skill="4">wireframing</li>
+	<li data-skill="4">conceptualisation</li>
+	<li data-skill="3">use cases</li>
+	<li data-skill="3">information visualisation</li>
 </ul>
 
 ### graphic design
 
 <ul class="list-unstyled">
-	<li class="skill-5">page layouts</li>
-	<li class="skill-5">textures</li>
-	<li class="skill-4">logos</li>
-	<li class="skill-3">illustration</li>
-	<li class="skill-2">concept art</li>
+	<li data-skill="5">page layouts</li>
+	<li data-skill="5">textures</li>
+	<li data-skill="4">logos</li>
+	<li data-skill="3">illustration</li>
+	<li data-skill="2">concept art</li>
 </ul>
  
 </div>

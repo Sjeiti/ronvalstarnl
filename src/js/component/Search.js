@@ -1,4 +1,4 @@
-import {create} from './index'
+import {create,initialise} from './index'
 import {BaseComponent} from './BaseComponent'
 import {signal} from '../signal'
 import {clean} from '../utils/html'
@@ -37,9 +37,8 @@ create('[data-search]', class extends BaseComponent{
     this._append(`
       label[for=${options.id}]{${options.label}}
       +input#${options.id}[name=${options.id} type=search placeholder="${options.placeholder}"]
-      +button.rv-search{${options.submit}}
+      +button>svg[data-icon=search]
     `)
-    //
     this._input = this._select('input')
     this._input.addEventListener('keyup', this._onKeyUp.bind(this))
     const button = this._select('button')

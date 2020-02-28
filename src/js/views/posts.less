@@ -1,13 +1,20 @@
-iframe.example {
-  width: calc(100% - 2rem);
-  height: 8rem;
-  margin-top: 0.125rem;
-  margin-bottom: 0.125rem;
-  border: 0;
-  box-shadow: 0.25rem 0.5rem 1rem rgba(0,0,0,0.1) inset,
-    -20rem 0 0 0 #f7f7f2,
-    20rem 0 0 0 #f7f7f2;
-  background-color: #FFFFFA;
+iframe {
+  &.example, &.illustration {
+    width: calc(100% - 2rem);
+    height: 8rem;
+    margin-top: 0.125rem;
+    margin-bottom: 0.125rem;
+    border: 0;
+  }
+  &.example {
+    @colorExample: #fafaf7;
+    box-shadow: 0.25rem 0.5rem 1rem rgba(0,0,0,0.1) inset,
+      -92rem 0 0 0 @colorExample,
+      -46rem 0 0 0 @colorExample,
+      46rem 0 0 0 @colorExample,
+      92rem 0 0 0 @colorExample;
+    background-color: #FFFFFA;
+  }
 }
 
 main {
