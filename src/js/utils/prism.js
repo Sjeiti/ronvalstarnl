@@ -27,11 +27,11 @@ export function prismToElement(elm){
   const lang = elm.getAttribute('data-language')
       ||elm.getAttribute('class').match(/language-(\w+)/).pop()
       ||'javascript'
-  if (lang==='example') {
+  if (lang==='example'||lang==='illustration') {
 
     const {parentNode:pre, parentNode: {parentNode}, textContent} = elm
     const iframe = document.createElement('iframe')
-    iframe.classList.add('example')
+    iframe.classList.add(lang)
     parentNode.insertBefore(iframe, pre)
     parentNode.removeChild(pre)
     requestAnimationFrame(()=>{
