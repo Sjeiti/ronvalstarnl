@@ -18,6 +18,48 @@
 I have a React project that needed [a color picker](https://sjeiti.github.com/clr). Actually I already use `input[type=color]` but the native implementations really suck (both on Windows and OSX). So I set out to find a minimal implementation. After about fifteen minutes I gave up. Most were setup too complex and I am pedantic when it comes to front-end code.
 
 
+
+
+```illustration
+    <style>
+    html,body{padding:0;margin:0;}
+    body { display: flex; flex-wrap: wrap; }
+    .l {
+      position: relative;
+      width: 8rem;
+      height: 8rem;
+    }
+    .l:before, .l:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      mask-image: linear-gradient(90deg, white, transparent);
+    }
+    .l:after {
+      mask-image: linear-gradient(-90deg, white, transparent);
+    }
+    .wyrm:before { background-image: linear-gradient(white, yellow); }
+    .wyrm:after { background-image: linear-gradient(magenta, red); }
+    .wcgy:before { background-image: linear-gradient(white, cyan); }
+    .wcgy:after { background-image: linear-gradient(yellow, green); }
+    .wmbc:before { background-image: linear-gradient(white, magenta); }
+    .wmbc:after { background-image: linear-gradient(cyan, blue); }
+    .bryg:before { background-image: linear-gradient(black, red); }
+    .bryg:after { background-image: linear-gradient(blue, yellow); }
+    </style>
+    <div class="l wyrm"></div>
+    <div class="l wcgy"></div>
+    <div class="l wmbc"></div>
+    <div class="l bryg"></div>
+    <div class="l wmbc"></div>
+    <div class="l wmbc"></div>
+```
+
+
+
 ## One element
 
 That coloured panel for saturation and lightness that you see used everywhere (combined with one for hue) can be done with a single element (including circle selector). And the same goes for the hue panel.
@@ -110,9 +152,9 @@ With that we can have a color picker that looks like this
   <div></div>
   <div></div>
   <input>
-  <input type="number" min="0" max="255">
-  <input type="number" min="0" max="255">
-  <input type="number" min="0" max="255">
+  <input type="number">
+  <input type="number">
+  <input type="number">
 </div>
 ```
 
@@ -128,6 +170,7 @@ With that we can have a color picker that looks like this
   background-color: #631ACF;
   box-shadow: 0 0 0 1px white, 0 2px 4px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+.mcpicker { margin: 1rem; }
 .mcpicker > div:first-child {
   position: relative;
   width: 100%;
@@ -237,11 +280,21 @@ This is straightforward enough but rather difficult when it comes to visual repr
       --translate-x: calc(0.3*var(--size));
       --translate-y: calc(0.25*var(--size));
       --translate-z: calc(-0.5*var(--size));
-      --rotate-x: 150deg;
+      --rotate-x: 160deg;
       --rotate-y: 3deg;
       --perspective: 1600px;
     }
-    
+    @media (max-width: 600px) {
+      body {
+        --size: 12rem;
+        --sizeh: calc(0.5*var(--size));
+        --sceneSize: calc(1.6*var(--size));
+        --sizep: calc(0.259*1.11803*var(--size));
+        --translate-x: calc(0.3*var(--size));
+        --translate-y: calc(0.25*var(--size));
+        --translate-z: calc(-0.5*var(--size));
+      }
+    } 
     .scene {
       width: var(--sceneSize);
       height: var(--sceneSize);
