@@ -219,12 +219,11 @@ Note that the `box-shadow` on the main element is also stacked, you can make you
 
 This makes the entire source of HTML/CSS/JS about 23KB (minified).
 Which kind of bugged me because my unminified source was about 13KB. I was using a third party library called [color-js](https://github.com/brehaut/color-js) for the actual color calculations. The library works perfectly but it's a bit large, and not only because it contains the entire list of CSS color strings. This is a pity if you only use a tiny portion, and the sources are setup in such a way that tree shaking fails.
-Better rewrite that color module. 
 
 ## Three dimensions
 
-This requires some understanding of the color models at play. The screen you are watching now uses the additive RGB model. The red, green and blue are actually teeny tiny light bulbs that, together, can display any color depending on the amount of light emitted.
-This is straightforward enough but rather difficult when it comes to visual representation in a user interface. If you put each color on it's own axis you get a simple three dimensional cube like this:
+Rewriting the color calculations requires some understanding of the color models at play. The screen you are watching now uses the additive RGB model. The red, green and blue are actually teeny tiny light bulbs that, together, can display any color depending on the amount of light emitted.
+This is straightforward enough but rather difficult and unintuïtive when it comes to visual representation in a user interface. If you put each color on it's own axis you get a simple three dimensional cube like this:
 
 ```illustration
 <style>
@@ -479,10 +478,9 @@ run()
 </script>
 ```
 
-
 Then we can force all the coloured vertices into the plane in between the black and white vertice, creating two hexagonal pyramids. 
 
-Instead of a red green and blue scale, we use color, intensity and lightness. Now lightness is easy, it's the diagonal line from black to white in the cube. The color scale (or hue) is a bit more tricky: apart from rgb you also see the subtractive colors cyan, magenta and yellow (cmy). So the hue range is cbmryg, zigzagging along the cube. We can slant the cube so that black is on the bottom and white at the top, and pull all the hue colors into the same plane in between. Now the hue range has become a radial one and the intensity (or saturation or chroma) the distance of the radius to the vertical center.
+Instead of a red green and blue scale, we use color, intensity and lightness. Lightness is easy, it's the diagonal line from black to white in the cube. The color scale (or hue) is a bit more tricky: apart from rgb you also see the subtractive colors cyan, magenta and yellow (cmy). So the hue range is cbmryg, zigzagging along the cube. We can slant the cube so that black is on the bottom and white at the top, and pull all the hue colors into the same plane in between. Now the hue range has become a radial one and the intensity (or saturation or chroma) the distance of the radius to the vertical center.
 
 ```illustration
 <div id="container" style="height:400px;"></div>
@@ -739,7 +737,14 @@ function render() {
 </script>
 ```
 
-By rewriting the color functions I shaved it down to 17KB minified. 
+You see that by rearranging the vertices we get different color models. But the color calculation is still a simple matter of linear interpolation.
+I say simple but I did get the color conversion methods from somewhere, no need to reinvent the wheel for this.
+
+By replacing and rewriting the color functions it is now down to 17KB minified.
+
+## So
+
+So that is that: a simple color picker implementation that works on any `input[type=color]` without any need to initialise. Just add script.
 
 <!--
 https://stackoverflow.com/questions/18452885/building-a-4-corners-colors-css3-gradient
