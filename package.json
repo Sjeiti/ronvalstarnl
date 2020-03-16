@@ -1,5 +1,6 @@
 {
   "name": "ronvalstarnl",
+  "author": "Ron Valstar",
   "version": "0.4.146",
   "license": "MIT",
   "repository": "github:sjeiti/ronvalstarnl",
@@ -93,6 +94,9 @@
     "webpack-watch-files-plugin": "^1.0.3",
     "yorkie": "^2.0.0"
   },
+  "optionalDependencies": {
+    "puppeteer": "^2.1.1"
+  },
   "postcss": {
     "plugins": {
       "autoprefixer": {}
@@ -105,6 +109,5 @@
   ],
   "gitHooks": {
     "pre-commit": "npm run version"
-  },
-  "author": "Ron Valstar"
+  }
 }

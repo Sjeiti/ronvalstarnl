@@ -1,7 +1,7 @@
 <!--
   id: 3319
   date: 2017-01-28
-  modified: 2019-09-27
+  modified: 2020-03-16
   slug: vue-js-timing-hack-component-transitions
   type: post
   header: studio04.jpg
@@ -26,12 +26,14 @@ There’s just one problem. Vue only reads the main classname. So if you are als
 To fix that you can apply a small hack. Simply add a transition to a property that doesn’t change with the desired time.  
 For instance:
 
-    .foo-enter {
-      transition: left 1000ms ease, cursor 2000ms linear;
-    }
-    .foo-enter div {
-      transition: opacity 1000ms linear 1000ms;
-    }
+```css
+.foo-enter {
+  transition: left 1000ms ease, cursor 2000ms linear;
+}
+.foo-enter div {
+  transition: opacity 1000ms linear 1000ms;
+}
+```
 
 That transition on cursor ensures Vue knows the transition lasts 2000ms. We’re not really animating cursor. So now the div can fade after the main transition has completed.
 

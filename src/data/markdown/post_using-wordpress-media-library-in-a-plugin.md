@@ -2,7 +2,7 @@
   id: 938
   description: How to use the Wordpress media library in a plugin or custom post type... the right way.
   date: 2012-05-01T21:42:37
-  modified: 2016-12-14T20:04:32
+  modified: 2020-03-16
   slug: using-wordpress-media-library-in-a-plugin
   type: post
   excerpt: <p>I just spent a couple of hours trying to figure this one out. Here&#8217;s how to use the WordPress media library in a plugin or custom post type&#8230; the right way.</p>

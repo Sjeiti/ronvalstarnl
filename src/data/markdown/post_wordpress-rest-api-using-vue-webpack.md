@@ -1,7 +1,7 @@
 <!--
   id: 3122
   date: 2016-12-24
-  modified: 2019-09-27
+  modified: 2020-03-16
   slug: wordpress-rest-api-using-vue-webpack
   header: studio02.jpg
   type: post
@@ -38,30 +38,32 @@ Luckily Webpack has an easy solution for development: you can proxy specific pat
 The easiest location for our WordPress installation is the dist directory. This does feel a bit blasfemous but the PHP sources do not need any compilation, so why not. The Webpack build task will target dist with the transpiled but it does not clean dist in advance.  
 So we have Apache running a virtual host in dist, and we proxy paths from that virtual host in our Webpack proxy.
 
+```javascript
+(...)
+module.exports = {
+  (...)
+  dev: {
     (...)
-    module.exports = {
-      (...)
-      dev: {
-        (...)
-        proxyTable: {
-          '/api': {
-            target: 'http://localhost.wp/api/',
-            changeOrigin: true,
-            pathRewrite: {
-              '^/api': ''
-            }
-          }
-          ,'/wordpress': {
-            target: 'http://localhost.wp/wordpress/',
-            changeOrigin: true,
-            pathRewrite: {
-              '^/wordpress': ''
-            }
-          }
-        },
-        (...)
+    proxyTable: {
+      '/api': {
+        target: 'http://localhost.wp/api/',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
       }
-    }
+      ,'/wordpress': {
+        target: 'http://localhost.wp/wordpress/',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/wordpress': ''
+        }
+      }
+    },
+    (...)
+  }
+}
+```
 
 ## Deployment
 
@@ -71,50 +73,54 @@ The only problem is that HtmlWebpackPlugin will always resolve to valid html and
 
 Like this:
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <title>A title</title>
-      <meta name="viewport" content="width=device-width,initial-scale=1" />
-      <?php wp_head(); ?>
-    </head>
-    <body>
-      <div id="app"><app></app></div>
-    </body></html>
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>A title</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <?php wp_head(); ?>
+</head>
+<body>
+  <div id="app"><app></app></div>
+</body></html>
+```
 
 Then the build configuration for production becomes:  
 <small>for clarity I’ve written out some directories that are better moved to a config file</small>
 
+```javascript
+(...)
+let webpackConfig = merge(baseWebpackConfig, {
+  (...)
+  plugins: [
     (...)
-    let webpackConfig = merge(baseWebpackConfig, {
+    // see https://github.com/ampedandwired/html-webpack-plugin
+    new HtmlWebpackPlugin({
+      filename: path.resolve(__dirname,'/wp-admin/themes/[theme]/index.php'),
+      template: path.resolve(__dirname,'/wp-admin/themes/[theme]/_index.php'),
       (...)
-      plugins: [
-        (...)
-        // see https://github.com/ampedandwired/html-webpack-plugin
-        new HtmlWebpackPlugin({
-          filename: path.resolve(__dirname,'/wp-admin/themes/[theme]/index.php'),
-          template: path.resolve(__dirname,'/wp-admin/themes/[theme]/_index.php'),
-          (...)
-        }),
-        (...)
-      ]
-    })
+    }),
     (...)
+  ]
+})
+(...)
 
+(...)
+module.exports = {
+  build: {
+    env: require('./prod.env'),
+    index: path.resolve(__dirname,'/dist/index.php'),
+    template: path.resolve(__dirname,'/dist/_index.php'),
+    assetsRoot: path.resolve(__dirname,'/dist'),
+    assetsSubDirectory: path.resolve(__dirname,'/static'),
+    assetsPublicPath: '/',
     (...)
-    module.exports = {
-      build: {
-        env: require('./prod.env'),
-        index: path.resolve(__dirname,'/dist/index.php'),
-        template: path.resolve(__dirname,'/dist/_index.php'),
-        assetsRoot: path.resolve(__dirname,'/dist'),
-        assetsSubDirectory: path.resolve(__dirname,'/static'),
-        assetsPublicPath: '/',
-        (...)
-      },
-      (...)
-    }
+  },
+  (...)
+}
+```
 
 And that’s all there is to it: WordPress with Vue and Webpack using minimal configuration.
 
@@ -126,37 +132,43 @@ Some other configuration changes you could consider:
 
 Both vue-cli and angular-cli have the static assets and their index.html outside of src, directly in the root. My personal opinion is that both are sources and belong in src. Having the index.html in the root right next to package.json and eslint looks really weird. Here’s the adjusted configuration. To move ./index.html to ./scr/index.html:
 
+```javascript
+(...)
+module.exports = merge(baseWebpackConfig, {
+  (...)
+  plugins: [
     (...)
-    module.exports = merge(baseWebpackConfig, {
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'src/index.html', // instead of simply index.html
       (...)
-      plugins: [
-        (...)
-        new HtmlWebpackPlugin({
-          filename: 'index.html',
-          template: 'src/index.html', // instead of simply index.html
-          (...)
-        }),
-        (...)
-      ]
-    })
+    }),
+    (...)
+  ]
+})
+```
 
 To move ./static/ to ./src/static:
 
-    (...)
-    app.use(staticPath, express.static('./src/static'))
-    (...)
+```javascript
+(...)
+app.use(staticPath, express.static('./src/static'))
+(...)
 
-    (...)
-    cp('-R', 'src/static/*', assetsPath)
-    (...)
+(...)
+cp('-R', 'src/static/*', assetsPath)
+(...)
+```
 
 ### Static
 
 Another configuration change you might want to fix is changing the targets for app specific files to the directory of the current theme. We already targeted the theme index.php with a _index.php template. But we can also change the target for static files.
 
-    (...)
-    app.use(staticPath, express.static('./src/static'))
-    (...)
+```javascript
+(...)
+app.use(staticPath, express.static('./src/static'))
+(...)
+```
 
 ### Prefetching data
 

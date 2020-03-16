@@ -1,7 +1,7 @@
 <!--
   id: 3418
   date: 2018-04-25
-  modified: 2019-09-27
+  modified: 2020-03-16
   slug: javascript-generators-iterators-use-case
   type: post
   header: Structure_Paris_les_Halles.jpg
@@ -47,18 +47,22 @@ But I never used generators and I had a deadline and it was monday so I simply w
 
 Actually, using generators is really very easy. All you have to do is append an asterisk to the function keyword and use `yield` somewhere in there.
 
-    function* countBackwards(from) {
-      while(true) yield from--
-    }
+```javascript
+function* countBackwards(from) {
+  while(true) yield from--
+}
+```
 
 That `while` might look like a stackoverflow but it really is not since this is where the `yield` resides.  
 Next instantiate the method by calling it as you would any other method and call the next iteration when needed:
 
-    const count = countBackwards(99)
-    console.log(count.next().value) // 99
-    console.log(count.next().value) // 98
-    console.log(count.next().value) // 97
-    // etcetera
+```javascript
+const count = countBackwards(99)
+console.log(count.next().value) // 99
+console.log(count.next().value) // 98
+console.log(count.next().value) // 97
+// etcetera
+```
 
 ## refactoring
 
@@ -71,42 +75,48 @@ And lo and behold: the generator was indeed faster but only for the first few it
 
 Here is the generator:
 
-    function* reorderFromGenerator(arr, from) {  
-      let index = 0  
-      const len = arr.length  
-      const max = 2*Math.min(from, len-from-1) + 1  
-      const high = from>len/2  
-      while(true) {  
-        let arrayIndex = 0  
-        if (index>=max){  
-          arrayIndex = high?len-index-1:index  
-        } else {  
-          const vibrate = Math.round(index/2)*(index%2?1:-1)  
-          arrayIndex = from + vibrate  
-        }  
-        yield arr[arrayIndex]  
-        index++  
-      }  
+```javascript
+function* reorderFromGenerator(arr, from) {  
+  let index = 0  
+  const len = arr.length  
+  const max = 2*Math.min(from, len-from-1) + 1  
+  const high = from>len/2  
+  while(true) {  
+    let arrayIndex = 0  
+    if (index>=max){  
+      arrayIndex = high?len-index-1:index  
+    } else {  
+      const vibrate = Math.round(index/2)*(index%2?1:-1)  
+      arrayIndex = from + vibrate  
     }  
+    yield arr[arrayIndex]  
+    index++  
+  }  
+}  
+```
 
 Here the remap that uses the generator (the slowest method):
 
-    function reorderByGenerator(arr, from) {  
-        const gen = reorderFromGenerator(arr, from)  
-        return arr.map(()=>gen.next().value)  
-    }  
+```javascript
+function reorderByGenerator(arr, from) {  
+    const gen = reorderFromGenerator(arr, from)  
+    return arr.map(()=>gen.next().value)  
+}  
+```
 
 And here the same functionality without generator: by slicing and pushing to a new array:
 
-    function reorderFrom(arr, from) {  
-        const a1 = arr.slice(0, from).reverse()  
-        const a2 = arr.slice(from);  
-        const reordered = []  
-        for (let i = 0, l = Math.max(a1.length, a2.length); i < l; i++) {  
-            const v2 = a2[i]  
-            v2 !== undefined && reordered.push(v2)  
-            const v1 = a1[i]  
-            v1 !== undefined && reordered.push(v1)  
-        }  
-        return reordered  
-    }
+```javascript
+function reorderFrom(arr, from) {  
+    const a1 = arr.slice(0, from).reverse()  
+    const a2 = arr.slice(from);  
+    const reordered = []  
+    for (let i = 0, l = Math.max(a1.length, a2.length); i < l; i++) {  
+        const v2 = a2[i]  
+        v2 !== undefined && reordered.push(v2)  
+        const v1 = a1[i]  
+        v1 !== undefined && reordered.push(v1)  
+    }  
+    return reordered  
+}
+```
