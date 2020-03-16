@@ -1,10 +1,10 @@
 <!--
   id: 20
-  date: 2222-01-07T12:43:20
-  modified: 2222-01-07T12:43:20
+  date: 2020-03-16
+  modified: 2020-03-16
   slug: mc-picker
   type: post
-  excerpt: <p>Normally you would use Perlin Noise for surfaces, textures, movements or any other form that is continious and irregular. But what if you want points that are spread irregularly, a forest for instance or a starfield. This can be done with Perlin noise as well. You take a grid, place it over the noise field. [&hellip;]</p>
+  excerpt: A very simple, mobile friendly, color picker that works on HTML color inputs. No setup required.
   categories: uncategorized
   tags: 
   inCv: 
@@ -483,7 +483,14 @@ Then we can force all the coloured vertices into the plane in between the black 
 Instead of a red green and blue scale, we use color, intensity and lightness. Lightness is easy, it's the diagonal line from black to white in the cube. The color scale (or hue) is a bit more tricky: apart from rgb you also see the subtractive colors cyan, magenta and yellow (cmy). So the hue range is cbmryg, zigzagging along the cube. We can slant the cube so that black is on the bottom and white at the top, and pull all the hue colors into the same plane in between. Now the hue range has become a radial one and the intensity (or saturation or chroma) the distance of the radius to the vertical center.
 
 ```illustration
-<div id="container" style="height:400px;"></div>
+<style>
+    html, body { margin: 0; padding: 0; }
+    body {
+        background-color: #fff;
+        color: #444;
+    }
+</style>
+<div id="container" style="height:500px;width:400px;"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
 <script>
@@ -586,16 +593,15 @@ function init() {
   initScene();
   initCube();
   initRenderer();
-  initEvents();
-  onWindowResize();
+  onDocumentClick();
 }
 
 function initScene() {
   container = document.getElementById('container');
   scene = new THREE.Scene();
   scene.background = new THREE.Color(0xFFFFFF);
-  camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 1, 10000);
-  camera.position.z = 700;
+  camera = new THREE.PerspectiveCamera(20, container.offsetWidth / container.offsetHeight, 1, 10000);
+  camera.position.z = 800;
   camera.position.y = 300;
   camera.lookAt(scene.position);
   var light = new THREE.AmbientLight(0xFFFFFF);
@@ -658,22 +664,8 @@ function initRenderer() {
     antialias: true
   });
   renderer.setPixelRatio(window.devicePixelRatio);
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(container.offsetWidth, container.offsetHeight);
   container.appendChild(renderer.domElement);
-}
-
-function initEvents() {
-  window.addEventListener('resize', onWindowResize, false);
-  document.addEventListener('click', onDocumentClick, false);
-}
-
-function onWindowResize() {
-  var _window2 = window,
-      innerWidth = _window2.innerWidth,
-      innerHeight = _window2.innerHeight;
-  camera.aspect = innerWidth / innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(innerWidth * .9, innerHeight * .9);
 }
 
 var state = 0;
@@ -723,6 +715,7 @@ function onDocumentClick() {
       cube.geometry.verticesNeedUpdate = true;
     }
   });
+  setTimeout(onDocumentClick,2000)
 }
 
 function animate() {
@@ -742,9 +735,9 @@ I say simple but I did get the color conversion methods from somewhere, no need 
 
 By replacing and rewriting the color functions it is now down to 17KB minified.
 
-## So
+## So...
 
-So that is that: a simple color picker implementation that works on any `input[type=color]` without any need to initialise. Just add script.
+So that is that: [a simple color picker](https://sjeiti.github.io/clr/) implementation that works on any `input[type=color]` without any need to initialise. Just add script.
 
 <!--
 https://stackoverflow.com/questions/18452885/building-a-4-corners-colors-css3-gradient
