@@ -5,8 +5,8 @@
   slug: mc-picker
   type: post
   excerpt: A very simple, mobile friendly, color picker that works on HTML color inputs. No setup required.
-  categories: uncategorized
-  tags: 
+  categories: Javascript
+  tags: color, CSS, 3D
   inCv: 
   inPortfolio: 
   dateFrom: 
