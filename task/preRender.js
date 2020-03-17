@@ -6,9 +6,9 @@ const commander = require('commander')
         .option('--entry [entry]', 'Entry url')
         .option('--target [target]', 'Target path')
         .parse(process.argv)
-
 const {entry, target} = commander
-preRender(entry||'http://localhost:7047', target||'temp/renders', new Map, [])
+const entryUri = entry||'http://localhost:7047'
+preRender(entryUri, target||'temp/renders', new Map, [])
 
 /**
  * Instantiate puppeteer and recursively load and render all local HTML
@@ -29,7 +29,14 @@ async function preRender(currentUri, target, siteMap, todos, browser) {
     page.on('error', console.error.bind(console, 'Page error:'))
     page.on('pageerror', console.error.bind(console, 'Page error:'))
     await page.goto(currentUri, {waitUntil: 'domcontentloaded'})
-    await page.waitForFunction(()=>!!document.querySelector('main>*'), {})
+    await page.waitForFunction(()=>!!document.querySelector('main>*'))
+    // below should work, but does not
+    /*await page.waitForFunction(()=>{
+      const main = document.querySelector('main>*')
+      const contentPast = main&&main.querySelector('.content--past')
+      contentPast&&main.removeChild(contentPast)
+      return !!main
+    }, {})*/
     // await new Promise(r=>setTimeout(r,30))
     const renderedContent = await page.evaluate(() => new XMLSerializer().serializeToString(document))
     const uris = await page.evaluate(() => [...document.querySelectorAll('a')].map(m => m.getAttribute('href')).filter(uri => !/^https?:\/\//i.test(uri)))
@@ -39,7 +46,7 @@ async function preRender(currentUri, target, siteMap, todos, browser) {
     if (!robots){
       const collapseBooleanAttributes = removeAttributeQuotes = collapseInlineTagWhitespace = collapseWhitespace = minifyCSS = removeComments = true
       const minifiedContent = minify(renderedContent, {collapseBooleanAttributes, removeAttributeQuotes, collapseInlineTagWhitespace, collapseWhitespace, minifyCSS, removeComments})
-      save(`${target}${currentUri.replace(entry, '')}/index.html`.replace(/\/+/g, '/'), minifiedContent)
+      currentUri!==entryUri&&save(`${target}${currentUri.replace(entry, '')}/index.html`.replace(/\/+/g, '/'), minifiedContent)
       siteMap.set(currentUri, renderedContent)
       uris.forEach(uri => {
         const isValid = /^\//.test(uri)&&!/\.\w+$|^\/search|^\/\?p=/.test(uri)

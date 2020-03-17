@@ -38,7 +38,6 @@ export function prismToElement(elm){
       const {contentWindow: {document}} = iframe
       document.writeln(textContent)
       requestAnimationFrame(()=>iframe.style.height = `${document.body.scrollHeight}px`)
-      console.log('document.body',document.body) // todo: remove log
     })
 
   } else {

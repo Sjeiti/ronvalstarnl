@@ -55,7 +55,6 @@ export function scrollToTop(topTarget, t=1000){
   const top = topTarget?.getBoundingClientRect().bottom||0
   const {body} = document
   const bodyTop = body.getBoundingClientRect().top
-  console.log('scrollToTop', top-16-bodyTop) // todo: remove log
   return scrollTo(body, t, null, top-16-bodyTop)
 }
 

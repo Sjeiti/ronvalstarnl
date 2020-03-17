@@ -1,9 +1,6 @@
 import {create} from './index'
 import {BaseComponent} from './BaseComponent'
 import {NS_SVG} from '../config'
-import root from '!!raw-loader!../../../temp/icomoon/symbol-defs.svg'
-
-document.body.insertAdjacentHTML('beforeend', root)
 
 /**
  * Search component

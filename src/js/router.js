@@ -4,9 +4,6 @@ import {initialise} from './component'
 
 export const routeChange = signal()
 
-const view = document.querySelector('main')
-const viewModel = viewModelFactory(view)
-
 let defaultRouteResolve
 const routes = {}
 
@@ -23,6 +20,8 @@ const className = {
   , CONTENT_ANIMATE_IN_START: 'content--animate-in-start'
 }
 
+const view = document.querySelector('main')
+const viewModel = viewModelFactory(view).init()
 document.body.addEventListener('click', onClick, true)
 
 /**
@@ -79,33 +78,35 @@ export function add(...names){//,callback
  * @param {string} uri
  */
 export function open(uri){
-  const pathname = getPathname(uri)
+  const pathname = getPathname(uri.replace(/\/$/, ''))
   const oldUrl = url
   const oldName = getName(getPathname(oldUrl))
   url = getURL(pathname)
   const name = getName(pathname)
-  let routeResolve = defaultRouteResolve
-  let routeParams
-  for (let route in routes){
-    const params = getParams(route, pathname)
-    if(params){
-      routeParams = params
-      routeResolve = routes[route]
-      break
+  const currentName = viewModel.getViewName()
+  if (name!==currentName){
+    let routeResolve = defaultRouteResolve
+    let routeParams
+    for (let route in routes){
+      const params = getParams(route, pathname)
+      if(params){
+        routeParams = params
+        routeResolve = routes[route]
+        break
+      }
     }
-  }
-  if (url!==oldUrl){
-    viewModel.removeEventListeners()
-    routeResolve(viewModel, name||'home', routeParams)
-      .then(page=>{
-        const title = page.title
-        history.pushState({}, title, (name[0]==='/'?'':'/')+name)
-        routeChange.dispatch(name, page, oldName)
-        initialise(view)
-        viewModel.setViewName(name)
-        // document.body.setAttribute('data-pathname', name)
-      })
-      .catch(console.error)
+    if (url!==oldUrl){
+      viewModel.removeEventListeners()
+      routeResolve(viewModel, name||'home', routeParams)
+        .then(page=>{
+          const title = page.title
+          history.pushState({}, title, (name[0]==='/'?'':'/')+name)
+          routeChange.dispatch(name, page, oldName)
+          initialise(view)
+          viewModel.setViewName(name)
+        })
+        .catch(console.error)
+    }
   }
 }
 
@@ -119,11 +120,15 @@ export function open(uri){
 function viewModelFactory(element){
   /** @lends View.prototype */
   return Object.create({
+    init(){
+      this._removeAndCleanPastContent()
+      return this
+    }
     /**
      * Start page transition, clear the view elements
      * @returns {View}
      */
-    clean(){
+    , clean(){
       const {element, _content, _contentPast} = this
       _contentPast.parentNode===element&&this._removeAndCleanPastContent()
       _content.classList.add(className.CONTENT_ANIMATE_IN)
@@ -225,12 +230,19 @@ function viewModelFactory(element){
       return this
     }
     /**
+     * Get the name of the current view
+     * @return {String}
+     */
+    , getViewName(){
+      return this._content.getAttribute('data-pathname')
+    }
+    /**
      * Remove pastContent from view and clean it
      * @return {View}
      */
     , _removeAndCleanPastContent(){
       const {element, _content, _contentPast} = this
-      element.removeChild(_contentPast)
+      _contentPast.parentNode&&element.removeChild(_contentPast)
       clean(_contentPast)
       _contentPast.classList.remove(className.CONTENT_ANIMATE_OUT)
       _contentPast.classList.remove(className.CONTENT_ANIMATE_OUT_START)
@@ -253,7 +265,7 @@ function viewModelFactory(element){
      * @type {HTMLElement}
      */
     , _content: {
-      value: element.querySelector('.content')||createElement('div', 'content', element)
+      value: element.querySelector('.content:not(.content--past)')||createElement('div', 'content', element)
       , writable: false
     }
     /**
@@ -261,7 +273,7 @@ function viewModelFactory(element){
      * @type {HTMLElement}
      */
     , _contentPast: {
-      value: createElement('div', 'content content--past')
+      value: element.querySelector('.content--past')||createElement('div', 'content content--past')
       , writable: false
     }
     /**

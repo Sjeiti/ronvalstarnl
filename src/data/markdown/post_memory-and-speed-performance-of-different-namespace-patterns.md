@@ -18,14 +18,18 @@ Recently I had to work on a large codebase where multiple people were working on
 
 The pattern was this:
 
-    window.namespace = function(){
-    	function foo(){}
-    	return {foo:foo};
-    };
+```javascript
+window.namespace = function(){
+    function foo(){}
+    return {foo:foo};
+};
+```
 
 Which is alright by itself, we’re it not that throughout the code the methods were called like this:
 
-    window.namespace().foo();
+```javascript
+window.namespace().foo();
+```
 
 This would redeclare all the methods in that namespace each time a method was called. It also somewhat defeats the purpose of having private variables inside the closure. More often than not the methods were exposed by wrapping the declared function in an anonymous function, adding to the overall memory load.  
 And in some cases, because this is not a singleton, event listeners were being added continuously causing multiple calls to the same method on a single event.  
@@ -34,15 +38,17 @@ So in actuality this is a memory consuming anti-pattern.
 For the instances causing multiple event listeners I refactored the namespace to a revealing object singleton, so people could still use the old function approach.  
 <small>(A simple revealing module pattern would have been better, but I really didn’t feel like refactoring all the files.)</small>
 
-    window.namespace = (function(){
-    	function foo(){}
-    	var exposedModule = {foo:foo}
-    		,exposedFunction = function(){return exposedModule;};
-    	for (var s in exposedModule) {
-    		exposedFunction[s] = exposedModule[s];
-    	}
-    	return exposedFunction;
-    })();
+```javascript
+window.namespace = (function(){
+    function foo(){}
+    var exposedModule = {foo:foo}
+        ,exposedFunction = function(){return exposedModule;};
+    for (var s in exposedModule) {
+        exposedFunction[s] = exposedModule[s];
+    }
+    return exposedFunction;
+})();
+```
 
 But what would have been the reason for this pattern in the first place? Maybe the original author didn’t really think it through and all the others blindly copy pasted. Or maybe it’s a heap stack memory thing I don’t know about.
 
@@ -58,16 +64,18 @@ So we should use the module namespace pattern. But wait, if you look at speed th
 
 So memory or speed? Or both? We still have the singleton pattern which could be the best of both worlds. Although for this test I used an even better type of singleton.
 
-    Object.defineProperty(window,'namespace',{
-    	get:function getter(){
-    		function getExpose(){
-    			function foo(){}
-    			getter.expose = {foo:foo};
-    			return getter.expose;
-    		}
-    		return getter.expose||getExpose();
-    	}
-    });
+```javascript
+Object.defineProperty(window,'namespace',{
+    get:function getter(){
+        function getExpose(){
+            function foo(){}
+            getter.expose = {foo:foo};
+            return getter.expose;
+        }
+        return getter.expose||getExpose();
+    }
+});
+```
 
 The previous singleton would declare functions immediately. Whereas in this implementation (as in the function pattern) declaration is deferred until the first reference.  
 This singleton memory starts as low as the function namespace and after one call increases to the size of the module and stays there. The initial speed is also roughly the same as that of the function pattern.

@@ -1,7 +1,7 @@
 {
   "name": "ronvalstarnl",
   "author": "Ron Valstar",
-  "version": "0.4.146",
+  "version": "0.4.147",
   "license": "MIT",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
@@ -24,8 +24,7 @@
     "version:major": "npm run version -- --major",
     "build:test": "npx webpack --config webpack.test.config.js --env.development",
     "build:test:watch": "npm run build:test & chokidar \"src/**/*.*\" -c \"npm run build:test\"",
-    "prerender:temp": "node task/preRender --entry http://localhost:7047 --target temp/renders",
-    "prerender:build": "node task/preRender --entry http://localhost:7047 --target temp/renders",
+    "__build:prerender": "node task/preRender --entry http://localhost:7047 --target dist",
     "__build:post": "node task/postBuild"
   },
   "dependencies": {

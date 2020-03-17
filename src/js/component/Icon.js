@@ -3,7 +3,8 @@ import {BaseComponent} from './BaseComponent'
 import {NS_SVG, NS_XLINK} from '../config'
 import root from '!!raw-loader!../../../temp/icomoon/symbol-defs.svg'
 
-document.body.insertAdjacentHTML('beforeend', root)
+// conditional because of prerender
+document.querySelector('svg[aria-hidden=true]')||document.body.insertAdjacentHTML('afterbegin', root)
 
 /**
  * Search component

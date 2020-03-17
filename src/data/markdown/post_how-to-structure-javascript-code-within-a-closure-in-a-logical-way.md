@@ -24,18 +24,20 @@ Having a good coding structure increases maintainability. This is true for the s
 
 As a basis I’ll use the revealing object pattern (or revealing module pattern if you will). It looks like this:
 
-    var window.globalObject = (function(){
-    	var privateVar = 254;
-    	function privateFunction() {
-    		return 2*privateVar;
-    	}
-    	function exposedFunction() {
-    		return 3*privateFunction();
-    	}
-    	return {
-    		exposedFunction: exposedFunction
-    	};
-    })();
+```javascript
+var window.globalObject = (function(){
+    var privateVar = 254;
+    function privateFunction() {
+        return 2*privateVar;
+    }
+    function exposedFunction() {
+        return 3*privateFunction();
+    }
+    return {
+        exposedFunction: exposedFunction
+    };
+})();
+```
 
 The returned object literal exposes a private function.
 
@@ -46,11 +48,13 @@ You might argue a shorter way would be to write ‘exposedFunction’ as an anon
 It’s good practise to always declare all the variables at the start of your script. You should know why but if you don’t: [the reason is hoisting](http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html).  
 A common way of declaration is a single var statement with comma separated variables. A lesser common style is prefixing your commas. I know most people don’t like this but we’re not writing literature and prefixing commas has very valid advantages. Watch:
 
-    var greatMethod = someNamespace.greatMethod
-    	,boringCamelCasedInteger = 1
-    	,happyString = 'happy' // 'unhappy'
-    	,somethingUndefined
-    ;
+```javascript
+var greatMethod = someNamespace.greatMethod
+    ,boringCamelCasedInteger = 1
+    ,happyString = 'happy' // 'unhappy'
+    ,somethingUndefined
+;
+```
 
 Code changes, and most changes occur at the end of the variable statement (or array or object declaration). If you suffix your commas and add lines or swap some around you will always have to check that last line (which is why there are so many sloppy arrays with trailing commas out there in the wild).  
 Prefixed commas also form a neat vertical column, making it very easy to spot if you missed one.  
@@ -71,12 +75,14 @@ We can distuinguish a couple of function types that will make it easier to order
 Some also split the last category into public and private methods but you can easily see what is exposed in the return object (so I tend not to).  
 Within this order I try to be chronological. I’ll often do this for instance:
 
-    function init(){
-    	initVariables();
-    	initSomething();
-    	initEvents();
-    	initView();
-    }
+```javascript
+function init(){
+    initVariables();
+    initSomething();
+    initEvents();
+    initView();
+}
+```
 
 The methods are all prefixed ‘init’ and appear in chronological order. The method above, being the first function declared, will read like the index of a book: a glance will give you some idea of what is happening within our closure.  
 Similarly all the event handlers are prefixed ‘handle’. Prefixing this way makes your code readable because it reflects the purpose of the function. For instance: a click handler for a submit button would be called ‘handleSubmitButtonClick’, which reads like an imperative sentence.
