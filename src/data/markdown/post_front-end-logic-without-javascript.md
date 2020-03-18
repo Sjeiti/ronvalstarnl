@@ -1,9 +1,9 @@
 <!--
   slug: front-end-logic-without-javascript
   date: 2020-02-23
-  modified: 2020-02-23
+  modified: 2020-03-18
   type: post
-  header: boxbox.jpg
+  header: vanveenjf-Ou36eroE7k0-unsplash.jpg
   category: JavaScript
   tag: code quality, string
 -->

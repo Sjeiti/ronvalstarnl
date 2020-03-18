@@ -1,9 +1,10 @@
 <!--
   id: 20
   date: 2020-03-16
-  modified: 2020-03-16
+  modified: 2020-03-18
   slug: mc-picker
   type: post
+  header: colorbox.jpg
   excerpt: A very simple, mobile friendly, color picker that works on HTML color inputs. No setup required.
   categories: Javascript
   tags: color, CSS, 3D
