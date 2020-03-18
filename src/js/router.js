@@ -28,7 +28,7 @@ document.body.addEventListener('click', onClick, true)
  * Popstate event handler
  */
 function onPopstate(){
-  open(location.href)
+  open(location.href, true)
 }
 
 /**
@@ -76,8 +76,9 @@ export function add(...names){//,callback
 /**
  * Open an uri
  * @param {string} uri
+ * @param {boolean} [popped=false]
  */
-export function open(uri){
+export function open(uri, popped){
   const pathname = getPathname(uri.replace(/\/$/, ''))
   const oldUrl = url
   const oldName = getName(getPathname(oldUrl))
@@ -100,7 +101,7 @@ export function open(uri){
       routeResolve(viewModel, name||'home', routeParams)
         .then(page=>{
           const title = page.title
-          history.pushState({}, title, (name[0]==='/'?'':'/')+name)
+          popped||history.pushState({}, title, (name[0]==='/'?'':'/')+name)
           routeChange.dispatch(name, page, oldName)
           initialise(view)
           viewModel.setViewName(name)
