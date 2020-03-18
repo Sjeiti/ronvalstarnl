@@ -11,7 +11,7 @@
   thumbnail: fcwalvisch.jpg
   image: fcwalvisch.jpg
   images: fcwalvisch.jpg
-  inCv: true
+  inCv: false
   inPortfolio: false
   dateFrom: 2008-05-01
   dateTo: 2008-07-01

@@ -11,7 +11,7 @@
   thumbnail: blauweplaneet3.jpg
   image: blauweplaneet3.jpg
   images: blauweplaneet1.jpg, blauweplaneet2.jpg, blauweplaneet3.jpg, blauweplaneet4.jpg, blauweplaneet.jpg, blauweplaneet0.jpg
-  inCv: true
+  inCv: false
   inPortfolio: true
   dateFrom: 2009-01-01
   dateTo: 2009-02-01

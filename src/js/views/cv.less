@@ -1,13 +1,23 @@
-.content[data-pathname^=cv] {
+body[data-pathname^=cv] {
   @media print {
-    //main {
-      max-width: fit-content;
-    //}
-    header { // todo: all outside content now fails
-      position: static;
-    }
+
     font-size: 11pt;
     line-height: 19pt;
+
+    header { // todo: all outside content now fails
+      position: static;
+      height: 8rem;
+      h1 {
+        transform: translateX(-50%) scale(0.75) translateY(-1rem);
+      }
+    }
+    main {
+      margin: 0 auto;
+      max-width: fit-content;
+      h1:after, h2:after, h3:after {
+        box-shadow: none;
+      }
+    }
     header nav,
     [href$=".pdf"],
     footer {
