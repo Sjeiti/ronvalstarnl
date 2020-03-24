@@ -16,6 +16,23 @@ iframe {
     background-color: #FFFFFA;
   }
 }
+.example-ui {
+  position: relative;
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    background: transparent;
+    //transform: translateY(-100%);
+    transform: translateX(100%);
+    svg {
+      fill: @colorLink;
+      //transform: translate(0.5rem, 0.25rem);
+      transform: translateX(-0.5rem);
+    }
+  }
+}
 
 main {
   h1, h2, h3 {

@@ -1,7 +1,7 @@
 <!--
   slug: front-end-logic-without-javascript
   date: 2020-02-23
-  modified: 2020-03-18
+  modified: 2020-03-24
   type: post
   header: vanveenjf-Ou36eroE7k0-unsplash.jpg
   category: JavaScript
@@ -31,7 +31,8 @@ input:checked + div {
 }
 ```
 
-```example
+```html
+<!--example-->
 <style>
     html { font-size: 2rem; font-family: Arial, sans; }
     input {
@@ -77,7 +78,8 @@ input:checked + div {
 }
 ```
 
-```example
+```html
+<!--example-->
 <style>
     html { font-size: 2rem; font-family: Arial, sans; }
     input:checked + div { 
@@ -107,7 +109,8 @@ At this point you know enough to apply this to numerous UX patterns. Here are so
 
 An element that reveals more content when clicked.
 
-```example
+```html
+<!--example-->
 <style>
     html { font-family: Arial, sans; }
     label {
@@ -163,7 +166,8 @@ An element that reveals more content when clicked.
 To created a tabbed interface we use a `radio` instead of a `checkbox`. If you check the source you might notice that the sections all have the className `visuallyhidden`. The reason is that, contrary to `display:none`, hiding it this way still allows for search engines to read it's content.
 
 
-```example
+```html
+<!--example-->
 <style>
     html { font-family: Arial, sans; }
     header, label, main { padding: 0.5rem; }
@@ -216,7 +220,8 @@ This is really just an expander. But just for examples sake: here is a nested on
 
 Here we have is also a small issue that is hard to resolve without resorting to Javascript. The submenus in this example use `input[type=radio]` and unlike `type=checkbox` radios cannot be disabled when clicking the selected one. Resolving this issue requires adding an extra unrelated input which will be checked by Javascript when a checked radio is clicked.
 
-```example
+```html
+<!--example-->
 <style>
     a, a:hover { color: #333; }
     html { font-family: Arial, sans; }
@@ -306,7 +311,8 @@ Here we have is also a small issue that is hard to resolve without resorting to 
 
 Note that this example is merely to illustrate the technique. There are better ways of showing content than [using a carousel](http://shouldiuseacarousel.com/).
 
-```example
+```html
+<!--example-->
 <style>
     html, body, ul, li { padding: 0; margin: 0; }
     .wrapper {
@@ -423,7 +429,8 @@ Here's a little box. It is a relatively simple example how three individual stat
 
 The topleft checkbox shows all the labels and checkboxes.
 
-```example
+```html
+<!--example-->
 <style>
 * {
   box-sizing: border-box; }

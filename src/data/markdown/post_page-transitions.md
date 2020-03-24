@@ -3,7 +3,7 @@
   modified: 2022-03-18
   slug: the-basics-of-css-page-transitions
   type: post
-  header: colorbox.jpg
+  header: sincerely-media-IKzmglo7JLk-unsplash.jpg
   excerpt: 
   categories: Javascript
   tags: CSS, transitions
@@ -65,79 +65,533 @@ We'll use the following className naming convention: `[name]-[type]-[state]` whi
 
 ```css
 .page-enter { opacity: 0; }
-.page-enter-active { opacity: 1; }
+.page-enter-to { opacity: 1; }
 .page-leave { opacity: 1; }
-.page-leave-active { opacity: 0; }
+.page-leave-to { opacity: 0; }
 ```
 
 <small>(and yes: you could combine them for brevity)</small>
 
-Upon transition `page-enter` is added and one tick later `page-enter-active` (same for `leave`). When the animation is finished the classes are to be removed.
-We can determine the finished state with the `animationend` event.
+Upon transition `page-enter` is added and two ticks later `page-enter-to` (same for `leave`). The two tick interval is for the browser to settle down; if we were to add the `page-enter-to` immediately it would seem both classes were set simultaneously and no transition would occur.
+When the animation is finished the classes are to be removed.
+We can determine the finished state with the `transitionend` event. This event *will* bubble up so you *can* apply transitions to child elements if you want to.
 
-```example
+```html
+<!--example-->
+<link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
 <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  body {
+    padding: 1rem;
+    height: 12rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+  }
   article {
     position: relative;
   }
+  article>* {
+    padding: 1px 2rem 0;
+  }
+  h1, p {
+  }
+  h1 { 
+    margin-top: 2rem; 
+    font-weight: 500;
+  }
+  h1:first-letter, p:first-letter {
+    text-transform: uppercase;
+  }
+  p:after { content: '.'; }
   .page-enter {
     position: absolute;
+    left: 0;
+    top: 0;
     opacity: 0;
+    transition: opacity 1000ms linear;
   }
   .page-enter-to { opacity: 1; }
-  .page-leave { opacity: 1; }
+  .page-leave { 
+    opacity: 1;
+    transition: opacity 1000ms linear;
+  }
   .page-leave-to { opacity: 0; }
 </style>
-<article>
-  <div>lorem ipsum</div>
-</article>
 <button>next</button>
+<article>
+  <div><h1>lorem ipsum</h1><p>dolor sit amet consectetur adipiscing elit curabitur vel hendrerit</p></div>
+</article>
 <script>
-  const className = {
-    pageEnter: 'page-enter'
-    ,pageEnterTo: 'page-enter-to'
-    ,pageLeave: 'page-leave'
-    ,pageLeaveTo: 'page-leave-to'
-  }
+  const pageEnter = 'page-enter'
+  const pageEnterTo = 'page-enter-to'
+  const pageLeave = 'page-leave'
+  const pageLeaveTo = 'page-leave-to'
   const article = document.querySelector('article')
-  document.querySelector('button').addEventListener('click', ()=>{
-    const contentOld = article.firstChildElement
+  const button = document.querySelector('button')
+  const lipsum = 'lorem ipsum dolor sit amet consectetur adipiscing elit curabitur vel hendrerit libero eleifend blandit nunc ornare odio ut orci gravida imperdiet nullam purus lacinia a pretium quis congue praesent sagittis laoreet auctor mauris non velit eros dictum proin accumsan sapien nec massa volutpat venenatis sed eu molestie lacus quisque porttitor ligula dui mollis tempus at magna vestibulum turpis ac diam tincidunt id condimentum enim sodales in hac habitasse platea dictumst aenean neque fusce augue leo eget semper mattis tortor scelerisque nulla interdum tellus malesuada rhoncus porta sem aliquet et nam suspendisse potenti vivamus luctus fringilla erat donec justo vehicula ultricies varius ante primis faucibus ultrices posuere cubilia curae etiam cursus aliquam quam dapibus nisl feugiat egestas class aptent taciti sociosqu ad litora torquent per conubia nostra inceptos himenaeos phasellus nibh pulvinar vitae urna iaculis lobortis nisi viverra arcu morbi pellentesque metus commodo ut facilisis felis tristique ullamcorper placerat aenean convallis sollicitudin integer rutrum duis est etiam bibendum donec pharetra vulputate maecenas mi fermentum consequat suscipit aliquam habitant senectus netus fames quisque euismod curabitur lectus elementum tempor risus cras'.split(' ')
+  const random = ()=>Math.random()<0.5?1:-1
+  const randomText = (len=2,vr=4)=>lipsum.slice(0).sort(random).splice(0, len+Math.round(vr*Math.random())).join(' ')
+  const nexFrame = (num, fn)=>fn()
+  button.addEventListener('click', ()=>{
+    const contentOld = article.firstElementChild
     const contentNew = document.createElement('div')
-    contentNew.textContent = Date.now().toString(16)
+    const title = document.createElement('h1')
+    title.textContent = randomText()
+    const body = document.createElement('p')
+    body.textContent = randomText(10, 10)
+    contentNew.appendChild(title)
+    contentNew.appendChild(body)
     article.appendChild(contentNew)
+    button.disabled = true
     //
-    contentOld.classList.add('page-leave')
-    contentNew.classList.add('page-enter')
+    contentOld.classList.add(pageLeave)
+    contentNew.classList.add(pageEnter)
     requestAnimationFrame(()=>{
-      contentOld.classList.add('page-leave-to')
-      contentNew.classList.add('page-enter-to')
+      requestAnimationFrame(()=>{
+        contentOld.classList.add(pageLeaveTo)
+        contentNew.classList.add(pageEnterTo)
+      })
     })
     //
-    contentOld.addEventListener('animationend', ()=>{
+    contentOld.addEventListener('transitionend', ()=>{
       article.removeChild(contentOld)
-      contentNew.classList.remove('page-enter', 'page-enter-to')
+      contentNew.classList.remove(pageEnter, pageEnterTo)
+      button.disabled = false
     })
   })
 </script>
 ```
 
-The tricky thing is the animation target. If your enter animation is this
+A tricky part is the padding and margin to the parent `<section>` and the first child in the new content element respectively. Padding onto the `<section>` is not wanted here because the absolute positioned child element simply ignores it. Less logical is the margin of the first child element of the content. It is so counterintuïtive that there is a name for it and an [MDN article](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing). So either don't give that first child a top margin *or* give that content element somewhat of a top padding so that the first child margin doesn't collapse.
 
-```css
-.page-enter div { opacity: 0; }
-.page-enter-to div { opacity: 1; }
+### Adding time
+
+If you read the previous code you'll notice the pages are not really loaded, they are created from random lorem-ipsum words and shown immediately (because we were keeping it simple and concentrating on CSS).
+But we have to add our XHR indication (or spinner) so for the next example we'll fake the XHR with a random timeout. It's either fast or slow, so you'll notice the effect of a delayed indicator (actually you don't, but that's the point).
+
+```html
+<!--example-->
+<link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+<style>
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+  padding: 1rem;
+  height: 12rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+}
+nav a {
+  padding: 0.25rem 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: #EEE;
+  transition: background-color 100ms linear;
+}
+nav a:hover {
+  background-color: #DDD;
+}
+nav a.current {
+  background-color: transparent;
+}
+article {
+  position: relative;
+  overflow: hidden;
+}
+article>* {
+  padding: 1px 2rem 0;
+}
+h1, p {
+}
+h1 { 
+  margin-top: 2rem; 
+  font-weight: 500;
+}
+h1:first-letter, p:first-letter {
+  text-transform: uppercase;
+}
+p:after { content: '.'; }
+
+.page-enter {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.page-enter, .page-leave {
+  transition: transform 200ms ease-in-out;
+}
+.page-enter { 
+  transform: translateX(100%);
+}
+.page-enter-to, .page-leave { 
+  transform: translateX(0%);
+}
+.page-leave-to { 
+  transform: translateX(-100%);
+}
+
+.spinner {
+  position: fixed;
+  left: calc(50% - 1rem);
+  top:calc(50% - 1rem);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 500ms linear 100ms;
+  animation: rotate 1500ms infinite linear;
+} 
+.spinner:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(transparent 0 70%, #888 70%);
+  box-shadow: 0 0 0 10rem #888;
+  transform: translateX(-5%);
+}
+.spinner--visible {
+  opacity: 1;
+}
+@keyframes rotate { 100% { transform: rotate(360deg); }}
+</style>
+
+<nav>
+  <a href="#home" class="current">home</a>
+  <a href="#about">about</a>
+  <a href="#contact">contact</a>
+</nav>
+
+<article>
+  <div><h1>home</h1><p>dolor sit amet consectetur adipiscing elit curabitur vel hendrerit</p></div>
+</article>
+ 
+<script>
+const {body} = document
+const pageEnter = 'page-enter'
+const pageEnterTo = 'page-enter-to'
+const pageLeave = 'page-leave'
+const pageLeaveTo = 'page-leave-to'
+const current = 'current'
+const spinnerVisible = 'spinner--visible'
+const article = document.querySelector('article')
+const nav = document.querySelector('nav')
+const pages = {
+  home: 'malesuada lorem vehicula dolor interdum nulla sit ipsum tellus adipiscing amet consectetur justo aliquet in elit donec curabitur sodales'
+  ,about: 'ultricies vehicula elit consectetur in amet inceptos lacinia sit odio aenean justo platea purus feugiat conubia interdum himenaeos nisl'
+  ,contact: 'aenean ipsum lorem dolor platea sodales sit neque dictumst sem tellus interdum malesuada elit in'
+}
+const nextFrame = (fn, num=1)=>{
+	const a = []
+  ;a[num-1] = fn
+  const down = ()=>{
+  	const fnc = a.shift()
+    fnc?fnc():requestAnimationFrame(down)
+  }
+  requestAnimationFrame(down)
+}
+const spinner = document.createElement('div')
+spinner.classList.add('spinner')
+
+let loading = false
+
+nav.addEventListener('click', e=>{
+  e.preventDefault()
+  if (!loading){
+    const {target, target: {textContent:title}} = e
+    const href = target.getAttribute('href')
+    const text = pages[title]
+
+    setSpinner(true)
+
+    // XHR or fetch here !!!
+
+    setTimeout(
+      onLoad.bind(null, `<h1>${title}</h1><p>${text}</p>`, href)
+      ,Math.random()<.5?40:2000
+    )
+    loading = true
+  }
+})
+
+function onLoad(content, state){
+  setNavCurrent(state)
+  const contentOld = article.firstElementChild
+  const contentNew = document.createElement('div')
+  contentNew.innerHTML = content
+  article.appendChild(contentNew)
+  contentOld.classList.add(pageLeave)
+  contentNew.classList.add(pageEnter)
+  nextFrame(()=>{
+    contentOld.classList.add(pageLeaveTo)
+    contentNew.classList.add(pageEnterTo)
+  }, 2)
+  contentOld.addEventListener('transitionend', ()=>{
+    article.removeChild(contentOld)
+    contentNew.classList.remove(pageEnter, pageEnterTo)
+  })
+  loading = false
+  setSpinner(false)
+}
+
+function setSpinner(show){
+  if (show) {
+    body.appendChild(spinner)
+    nextFrame(()=>spinner.classList.add(spinnerVisible), 2)
+  } else {
+    body.removeChild(spinner)
+    spinner.classList.remove(spinnerVisible)
+  }
+}
+
+function setNavCurrent(currentHref){
+  const currentA = nav.querySelector('.'+current) 
+  currentA&&currentA.classList.remove(current)
+  nav.querySelector(`[href="${currentHref}"]`).classList.add(current)
+}
+</script>
 ```
 
+In reality this can timeout so you'll have to account for that as well. But that is more on the subject of building a proper router. So you must figure that out yourself.
+For now, with the basics out of the way, lets have a look at some easy effects.
 
----
+### Page height and left or right
 
-Lets have a look at the existing frameworks for a naming convention.
+It is a bit more difficult to see with an `<iframe>` but we still haven't done anything about the changing page height.
 
-[Vue transitions](https://vuejs.org/v2/guide/transitions.html)
-```css
-.fade-enter-active, .fade-leave-active { transition: opacity .5s; }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ { opacity: 0; }
+The previous example does look a bit weird when you go from 'contact' to 'home' in that it still animates from right to left. It would be nice to have it change direction depending on the direction of the menu item.
+
+```html
+<!--example-->
+<link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+<style>
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+  padding: 1rem;
+  height: 12rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #FFFFFA;
+}
+nav a {
+  padding: 0.25rem 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: #EEE;
+  transition: background-color 100ms linear;
+}
+nav a:hover {
+  background-color: #DDD;
+}
+nav a.current {
+  background-color: transparent;
+}
+article {
+  position: relative;
+  overflow: hidden;
+}
+article>* {
+  padding: 1px 2rem 0;
+}
+h1, p {
+}
+h1 { 
+  margin-top: 2rem; 
+  font-weight: 500;
+}
+h1:first-letter, p:first-letter {
+  text-transform: uppercase;
+}
+p:after { content: '.'; }
+
+.page-enter, .right-enter {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.page-enter, .page-leave, .right-enter, .right-leave {
+  transition: transform 200ms ease-in-out;
+}
+
+.page-enter { 
+  transform: translateX(100%);
+}
+.page-enter-to, .page-leave { 
+  transform: translateX(0%);
+}
+.page-leave-to { 
+  transform: translateX(-100%);
+}
+
+.right-enter { 
+  transform: translateX(-100%);
+}
+.right-enter-to, .right-leave { 
+  transform: translateX(0%);
+}
+.right-leave-to { 
+  transform: translateX(100%);
+}
+
+.spinner {
+  position: fixed;
+  left: calc(50% - 1rem);
+  top:calc(50% - 1rem);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 500ms linear 100ms;
+  animation: rotate 1500ms infinite linear;
+} 
+.spinner:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(transparent 0 70%, #888 70%);
+  box-shadow: 0 0 0 10rem #888;
+  transform: translateX(-5%);
+}
+.spinner--visible {
+  opacity: 1;
+}
+@keyframes rotate { 100% { transform: rotate(360deg); }}
+</style>
+
+<nav>
+  <a href="#home" class="current">home</a>
+  <a href="#about">about</a>
+  <a href="#contact">contact</a>
+</nav>
+
+<article>
+  <div><h1>home</h1><p>dolor sit amet consectetur adipiscing elit curabitur vel hendrerit</p></div>
+</article>
+ 
+<script>
+const {body} = document
+const pageEnter = 'page-enter'
+const pageEnterTo = 'page-enter-to'
+const pageLeave = 'page-leave'
+const pageLeaveTo = 'page-leave-to'
+const rightEnter = 'right-enter'
+const rightEnterTo = 'right-enter-to'
+const rightLeave = 'right-leave'
+const rightLeaveTo = 'right-leave-to'
+const current = 'current'
+const spinnerVisible = 'spinner--visible'
+const article = document.querySelector('article')
+const nav = document.querySelector('nav')
+const pages = {
+  home: 'malesuada lorem vehicula dolor interdum nulla sit ipsum tellus adipiscing amet consectetur justo aliquet in elit donec curabitur sodales'
+  ,about: 'ultricies vehicula elit consectetur in amet inceptos lacinia sit odio aenean justo platea purus feugiat conubia interdum himenaeos nisl etiam aliquam justo ante lorem dolor donec ultrices hac in sit interdum ipsum posuere consectetur elit cubilia massa adipiscing amet dolor accumsan elit molestie nec ipsum non lorem sit ligula velit consectetur eros mauris non ipsum hac phasellus integer aenean sodales nibh augue proin lorem pulvinar vitae nisi iaculis in ullamcorper felis odio morbi viverra arcu auctor ut ipsum nibh pulvinar orci dolor lorem nullam pellentesque facilisis vitae imperdiet'
+  ,contact: 'aenean ipsum lorem dolor platea sodales sit neque dictumst sem tellus interdum malesuada elit in'
+}
+const nextFrame = (fn, num=1)=>{
+	const a = []
+  ;a[num-1] = fn
+  const down = ()=>{
+  	const fnc = a.shift()
+    fnc?fnc():requestAnimationFrame(down)
+  }
+  requestAnimationFrame(down)
+}
+const spinner = document.createElement('div')
+spinner.classList.add('spinner')
+
+let loading = false
+let currentState = ''
+
+const states = Array.from(nav.querySelectorAll('a')).map(m=>m.getAttribute('href'))
+
+nav.addEventListener('click', e=>{
+  e.preventDefault()
+  if (!loading){
+    const {target, target: {textContent:title}} = e
+    const href = target.getAttribute('href')
+    const text = pages[title]
+    
+    const oldStateIndex = states.indexOf(currentState)
+    const newStateIndex = states.indexOf(href)
+    currentState = href
+
+    setSpinner(true)
+
+    // XHR or fetch here !!! 
+
+    setTimeout(
+      onLoad.bind(null, `<h1>${title}</h1><p>${text}</p>`, href, newStateIndex>oldStateIndex)
+      ,Math.random()<.5?40:2000
+    )
+    loading = true
+  }
+})
+
+function onLoad(content, state, toLeft){
+  setNavCurrent(state)
+  const contentOld = article.firstElementChild
+  const contentNew = document.createElement('div')
+  contentNew.innerHTML = content
+  article.appendChild(contentNew)
+
+  const leave = toLeft?pageLeave:rightLeave
+  const enter = toLeft?pageEnter:rightEnter
+  const leaveTo = toLeft?pageLeaveTo:rightLeaveTo
+  const enterTo = toLeft?pageEnterTo:rightEnterTo
+
+  contentOld.classList.add(leave)
+  contentNew.classList.add(enter)
+  nextFrame(()=>{
+    contentOld.classList.add(leaveTo)
+    contentNew.classList.add(enterTo)
+  }, 2)
+  contentOld.addEventListener('transitionend', ()=>{
+    article.removeChild(contentOld)
+    contentNew.classList.remove(enter, enterTo)
+  })
+  loading = false
+  setSpinner(false)
+}
+
+function setSpinner(show){
+  if (show) {
+    body.appendChild(spinner)
+    nextFrame(()=>spinner.classList.add(spinnerVisible), 2)
+  } else {
+    body.removeChild(spinner)
+    spinner.classList.remove(spinnerVisible)
+  }
+}
+
+function setNavCurrent(currentHref){
+  const currentA = nav.querySelector('.'+current) 
+  currentA&&currentA.classList.remove(current)
+  nav.querySelector(`[href="${currentHref}"]`).classList.add(current)
+}
+</script>
 ```
 
+### Other easy effects
 
-
+lorem   

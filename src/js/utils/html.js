@@ -111,17 +111,17 @@ export function expand(s){
  * @param {Function} click An optional click event handler
  * @returns {HTMLElement} Returns the newly created element
  */
-export function createElement(type,classes,parent,attributes,text,click) {
-	const mElement = document.createElement(type||'div')
-	if (attributes) for (var attr in attributes) mElement.setAttribute(attr,attributes[attr])
-	if (classes) {
-		const oClassList = mElement.classList
-			,aArguments = typeof(classes)==='string'?classes.split(' '):classes
-		oClassList.add.apply(oClassList,aArguments)
-	}
-	if (text) mElement.textContent = text
-	click&&mElement.addEventListener('click',click)
-	parent&&parent.appendChild(mElement)
-	return mElement
+export function createElement(type, classes, parent, attributes, text, click){
+  const mElement = document.createElement(type||'div')
+  if (attributes) for (let attr in attributes) mElement.setAttribute(attr, attributes[attr])
+  if (classes){
+    const oClassList = mElement.classList
+      , aArguments = typeof(classes)==='string'?classes.split(' '):classes
+    oClassList.add.apply(oClassList, aArguments)
+  }
+  if (text) mElement.textContent = text
+  click&&mElement.addEventListener('click', click)
+  parent&&parent.appendChild(mElement)
+  return mElement
 }
 

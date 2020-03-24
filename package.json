@@ -14,6 +14,7 @@
     "build:search": "node task/buildSearch",
     "build:sitemap": "node task/buildSitemap --target dist",
     "build:rss": "node task/buildRSS --target dist",
+    "write": "chokidar \"src/data/markdown/*.md\" -c \"npm run build:json\"",
     "webpack": "npx webpack --config webpack.config.js",
     "clean": "del-cli dist -f",
     "serve": "node task/serve dist 7047",

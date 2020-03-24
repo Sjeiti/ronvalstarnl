@@ -1,4 +1,6 @@
 import Prism from 'prismjs'
+import {createElement} from './html'
+import {initialise} from '../component'
 
 Prism.languages.insertBefore('javascript', 'comment', {
   'cut': /\s*\(\.\.\.\)\s*/
@@ -27,11 +29,21 @@ export function prismToElement(elm){
   const lang = elm.getAttribute('data-language')
       ||elm.getAttribute('class').match(/language-(\w+)/).pop()
       ||'javascript'
-  if (lang==='example'||lang==='illustration') {
+
+  const matchFirstComment = contents.match(/^<!--(.*)-->/)
+  const type = matchFirstComment&&matchFirstComment.pop()||lang
+
+  const isExample = type==='example'
+  const isIllustration = type==='illustration'
+  if (isExample||isIllustration){
+
+    // createElement(type, classes, parent, attributes, text, click)
+    const exampleUI = isExample&&getJSFiddleButton(contents)
 
     const {parentNode:pre, parentNode: {parentNode}, textContent} = elm
     const iframe = document.createElement('iframe')
-    iframe.classList.add(lang)
+    iframe.classList.add(type)
+    exampleUI&&parentNode.insertBefore(exampleUI, pre)
     parentNode.insertBefore(iframe, pre)
     parentNode.removeChild(pre)
     requestAnimationFrame(()=>{
@@ -48,6 +60,39 @@ export function prismToElement(elm){
     elm.parentNode.hasAttribute('line-numbers')&&addLineNumbers(elm, contents)
     elm.classList.add('highlighted')
   }
+}
+
+/**
+ * Creates a form with button to post to JSFiddle
+ * @param contents
+ * @return {HTMLElement}
+ */
+function getJSFiddleButton(contents){
+  const wrapper = document.createElement('div')
+  wrapper.innerHTML = contents
+  const style = wrapper.querySelector('style')
+  const script = wrapper.querySelector('script')
+
+  const css = style?.innerText||''
+  const js = script?.innerText||''
+
+  style&&wrapper.removeChild(style)
+  script&&wrapper.removeChild(script)
+  const html = wrapper.innerHTML
+  //
+  const ui = createElement('form', 'example-ui', null, {
+    method: 'post'
+    , action: 'http://jsfiddle.net/api/post/library/pure/'
+    , target: 'check'
+  })
+  const button = createElement('button', null, ui, {type:'submit'}, 'jsfiddle')
+  button.innerHTML = '<svg data-icon="jsfiddle"><title>JSFiddle</title></svg>'
+  initialise(button)
+
+  createElement('input', null, ui, {type:'hidden', name:'css', value:css})
+  createElement('input', null, ui, {type:'hidden', name:'html', value:html})
+  createElement('input', null, ui, {type:'hidden', name:'js', value:js})
+  return ui
 }
 
 /**
