@@ -125,3 +125,16 @@ export function createElement(type, classes, parent, attributes, text, click){
   return mElement
 }
 
+/**
+ * Simple string method for converting markdown syntax links only
+ * @param {string} text
+ * @return {string}
+ */
+export function markdownLinks(text){
+  const matches = text.match(/\[([^\]]*)]\(([^)]*)\)/g)
+  matches&&matches.forEach(match=>{
+    const [ehr, title, uri] = match.match(/\[([^\]]*)]\(([^)]*)\)/)
+    text = text.replace(match, `<a href="${uri}">${title}</a>`)
+  })
+  return text
+}

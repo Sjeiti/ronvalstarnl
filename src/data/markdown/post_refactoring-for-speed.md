@@ -3,7 +3,9 @@
   date: 2019-09-26
   modified: 2019-09-27
   type: post
-  header: seattleIpad3.jpg
+  header: mathew-schwartz-sb7RUrRMaC4-unsplash.jpg
+  headerColofon: photo by [Mathew Schwartz](https://unsplash.com/@cadop)
+  headerClassName: no-blur darken
   category: JavaScript
   tag: framework, SPA, speed, build, static
 -->

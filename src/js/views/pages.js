@@ -1,10 +1,10 @@
 import {add} from '../router'
+import {fetchJSONFiles} from '../utils'
 
 add(
   'contact'
   , 'about'
   , (view, route)=>{
-    return fetch(`/data/json/page_${route}.json`)
-      .then(rs=>rs.json())
-      .then(page=>(view.appendString(page.content), page))
+    return fetchJSONFiles(`page_${route}`)
+      .then(([page])=>(view.appendString(page.content), page))
   })

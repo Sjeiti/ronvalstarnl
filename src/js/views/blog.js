@@ -1,15 +1,13 @@
 import {expand} from '../utils/html'
 import {add} from '../router'
-import {scrollToTop} from '../utils'
+import {fetchJSONFiles,scrollToTop,todayOlderFilter} from '../utils'
 
-add('blog', (view/*, route*/)=>
-    fetch('/data/json/posts-list.json')
-      .then(rs=>rs.json())
-      .then(posts=>{
-        const today = new Date
-        const currentPast = posts.filter(({date})=>(new Date(date))<=today)
+add('blog', view=>
+    fetchJSONFiles('posts-list')
+      .then(([posts])=>{
+        const currentPast = posts.filter(todayOlderFilter)
         const firstTen = currentPast.slice(0, 10)
-        const theRest = currentPast.slice(9)
+        const theRest = currentPast.slice(10)
         const getLi = post=>`(li>a[href="/${post.slug}"]>(time{${post.date.split('T').shift()}}+{${post.title}}))`
         const ul = view.expandAppend(`ul.unstyled.link-list>(${firstTen.map(getLi).join('+')})`).querySelector('ul.link-list')
         requestAnimationFrame(()=>ul.insertAdjacentHTML('beforeend', expand(theRest.map(getLi).join('+'))))

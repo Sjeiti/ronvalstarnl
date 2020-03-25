@@ -7,3 +7,4 @@ export const MEDIA_URI_THUMB = MEDIA_URI.replace('upload/', 'upload/c_scale,w_31
 export const MEDIA_URI_PROJECT = MEDIA_URI.replace('upload/', 'upload/c_scale,w_768/')
 export const NS_SVG = 'http://www.w3.org/2000/svg'
 export const NS_XLINK = 'http://www.w3.org/1999/xlink'
+export const TODAY = new Date

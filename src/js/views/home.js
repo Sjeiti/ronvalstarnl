@@ -1,12 +1,13 @@
 import {add} from '../router'
-import {MEDIA_URI, MEDIA_URI_THUMB} from '../config'
+import {MEDIA_URI,MEDIA_URI_THUMB,TODAY} from '../config'
 import {slugify} from '../utils/string'
+import {fetchJSONFiles,todayOlderFilter} from '../utils'
 
 add(
   ''
   , 'home'
   , (view, route)=>{
-    return Promise.all([`page_${route}`, 'posts-list', 'fortpolio-list'].map(s=>fetch(`/data/json/${s}.json`).then(rs=>rs.json())))
+    return fetchJSONFiles(`page_${route}`, 'posts-list', 'fortpolio-list')
       .then(([page, posts, projects])=>{
         view.appendString(page.content)
         //
@@ -33,8 +34,7 @@ add(
             })
         //
         // blog
-        const today = new Date
-        const currentPast = posts.filter(({date})=>(new Date(date))<=today)
+        const currentPast = posts.filter(todayOlderFilter)
         const firstTen = currentPast.slice(0, 10)
         const getLi = post=>`(li>a[href="/${post.slug}"]>(time{${post.date.split('T').shift()}}+{${post.title}}))`
         view.expandAppend(`section.written>(h2.section-title>small{articles}+{written})+ul.unstyled.link-list>(${firstTen.map(getLi).join('+')})`, false)

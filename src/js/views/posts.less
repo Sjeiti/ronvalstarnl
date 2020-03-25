@@ -65,3 +65,17 @@ main {
   //h5:after { height: 0.125rem; }
   //h6:after { height: 0.0625rem; }
 }
+
+.prevnext {
+  position: relative;
+  font-size: 0.75rem;
+  line-height: 0.75rem;
+  .prev, .next {
+    position: absolute;
+    top: 0;
+    text-decoration: none;
+    transform: translateY(-100%);
+  }
+  .prev { left: 0; }
+  .next { right: 0; }
+}

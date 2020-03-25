@@ -1,4 +1,6 @@
 import {TweenMax, Power1} from 'gsap'
+import {searchView} from '../views/search'
+import {TODAY} from '../config'
 
 
 // get css rule
@@ -189,4 +191,26 @@ export function nextTick(fn){
  */
 export function getCanonical(page){
   return 'https://ronvalstar.nl/'+(page.type==='fortpolio'?'project/':'')+page.slug
+}
+
+/**
+ * Fetch multiple json files and parse them
+ * @param {string} names
+ * @return {Promise<object[]>}
+ */
+export function fetchJSONFiles(...names){
+  return Promise.all(names.map(s=>fetch(`/data/json/${s}.json`)
+      .then(
+        rs=>rs.json()))
+        // , searchView.bind(null, view, route, params)
+      )
+}
+
+/**
+ * Filter method for posts to exclude future dates
+ * @param {string} date
+ * @return {boolean}
+ */
+export function todayOlderFilter({date}){
+  return new Date(date) <= TODAY
 }

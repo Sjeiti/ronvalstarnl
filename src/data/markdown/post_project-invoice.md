@@ -5,6 +5,7 @@
   slug: project-invoice
   type: post
   header: pi.jpg
+  headerClassName: no-blur
   categories: code, CSS, HTML, JavaScript, work, open source
   tags: Angular, accounting, invoicing, Vue
   metaKeyword: invoice

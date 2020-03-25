@@ -4,7 +4,8 @@
   modified: 2020-02-11
   type: post
   header: jason-leung-EXYQt40B3KA-unsplash.jpg
-  headerColofon: Jason Leung
+  headerColofon: photo by [Jason Leung](https://unsplash.com/@ninjason)
+  headerClass: 
   category: JavaScript
   tag: code quality, string
 -->

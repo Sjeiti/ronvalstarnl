@@ -5,6 +5,7 @@
   slug: updating-a-cypress-alias
   type: post
   header: Vincent_van_Gogh_-_Green_Field_-_Google_Art_Project.jpg
+  headerClassName: no-blur
   categories: code, JavaScript, jQuery, work, open source
   tags: test, end to end
   metaDescription: To update a Cypress alias on the fly we can create and overwrite Cypress commands to update DOM aliases by traversing up the selector tree.

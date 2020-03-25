@@ -5,7 +5,7 @@ import {BaseComponent} from './BaseComponent'
 import {scroll} from '../signal/scroll'
 import {signal} from '../signal'
 import {routeChange} from '../router'
-import {clean, selectEach} from '../utils/html'
+import {clean, markdownLinks, selectEach} from '../utils/html'
 import {MEDIA_URI_HEADER} from '../config'
 
 create('[data-header]', class extends BaseComponent{
@@ -15,12 +15,13 @@ create('[data-header]', class extends BaseComponent{
   _experimentUI
   _experimentLink
   _background
+  _colofon
   _stuck = signal()
   _lastScrollTop = 0
   _lastHeaderTop = 0
-  _className = { 
+  _className = {
     stuck: 'stuck'
-    ,current: 'current'
+    , current: 'current'
   }
 
   constructor(...args){
@@ -33,6 +34,7 @@ create('[data-header]', class extends BaseComponent{
 
     this._initExperiments()
     this._background = this._element.querySelector('.background')
+    this._colofon = this._element.querySelector('.colofon')
   }
 
   /**
@@ -50,12 +52,18 @@ create('[data-header]', class extends BaseComponent{
   /**
    * Set or remove the header image
    * @param {string} src
+   * @param {string} colofon
+   * @param {string} classNames
    */
-  setImage(src){
+  setImage(src, colofon, classNames){
     if (src){
       this._background.style.backgroundImage = `url("${MEDIA_URI_HEADER+src}")`
+      classNames&&this._background.classList.add(...classNames.split(' '))
+      colofon&&(this._colofon.innerHTML = markdownLinks(colofon))
     } else {
       this._background.style.removeProperty('background-image')
+      this._background.setAttribute('class', 'background')
+      this._colofon.innerHTML = ''
     }
   }
 
@@ -126,7 +134,7 @@ create('[data-header]', class extends BaseComponent{
   /**
    * Test if page is experiment by slug prefix
    * @param {string} name
-   * @returns boolean
+   * @returns {boolean}
    */
   _isExperiment(name){
     return /^experiment-.+/.test(name)

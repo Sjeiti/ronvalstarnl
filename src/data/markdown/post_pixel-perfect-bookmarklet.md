@@ -4,7 +4,9 @@
   modified: 2019-09-27
   slug: pixel-perfect-bookmarklet
   type: post
-  header: Sus_scrofa_piglet.jpg
+  header: dil-8OECtq8rrNg-unsplash.jpg
+  headerClassName: no-blur
+  headerColofon: photo by [Dil](https://unsplash.com/@thevisualiza)
   categories: code, CSS, HTML, JavaScript, graphic design
   tags: bookmarklet, JavaScript, graphic design
   metaKeyword: pixel perfect

@@ -1,13 +1,12 @@
 import {add} from '../router'
 import {selectEach, expand} from '../utils/html'
 import {addRule, removeRule} from '../utils/style'
-import {nextTick, scrollToTop} from '../utils'
+import {fetchJSONFiles, nextTick, scrollToTop} from '../utils'
 import {componentOf} from '../component'
 import {MEDIA_URI_PROJECT, MEDIA_URI_THUMB} from '../config'
 import {makeClassNames, slugify} from '../utils/string'
 import {open} from '../router'
 
-const data = ['fortpolio-list']
 const classNames = makeClassNames({
   current: 'current'
   , projectCategory: 'project-category'
@@ -23,7 +22,7 @@ add(
     const {project:projectSlug, category} = params
     let title = 'projects'
     let parentSlug
-    return Promise.all(data.map(n=>fetch(`/data/json/${n}.json`).then(rs=>rs.json())))
+    return fetchJSONFiles('fortpolio-list')
       .then(([projects])=>{
         const portfolioProjects = projects.filter(p=>p.inPortfolio).sort((a, b)=>new Date(a.dateFrom)<new Date(b.dateFrom)?1:-1)
         const categories = portfolioProjects.reduce((acc, p)=>(p.categories.forEach(c=>!acc.includes(c)&&acc.push(c)), acc), []).map(c=>({name:c, slug:slugify(c)}))
@@ -43,10 +42,14 @@ add(
         existingProject&&existingProject.parentNode.removeChild(existingProject )
         if(projectSlug){
           const currentProject = projects.filter(p=>p.slug===projectSlug).pop()
-          buildCurrentProject(view, currentProject, existingProjects)
-          title = currentProject.title
-          parentSlug = 'projects'
-          scrollToTop(existingCategories)
+          // todo make project 404 page
+          // currentProject||searchView(view, route, params)
+          if (currentProject){
+            buildCurrentProject(view, currentProject, existingProjects)
+            title = currentProject.title
+            parentSlug = 'projects'
+            scrollToTop(existingCategories)
+          }
         }
         //
         // project filtering
@@ -65,7 +68,8 @@ add(
         }
         //
         return {title, parentSlug}
-      })
+      }
+    )
   }
 )
 
@@ -101,11 +105,12 @@ function buildCurrentProject(view, project, existingProjects){
     , dateFrom
     , dateTo
     , title
+    , headerColofon, headerClassName
   } = project
   const image = project?.thumbnail
   if (image){
     const header = componentOf(document.querySelector('[data-header]'))
-    header&&nextTick(header.setImage.bind(header, image))
+    header&&nextTick(header.setImage.bind(header, image, headerColofon, headerClassName))
   }
   existingProjects.insertAdjacentHTML('beforebegin', expand(`
     div${classNames.project}>

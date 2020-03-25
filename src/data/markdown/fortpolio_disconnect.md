@@ -8,6 +8,7 @@
   clients: Stichting M31 Foundation
   collaboration: Robin Coops, Suzanne Hoenderboom, Wilbert van Veldhuizen, Eric Magnée, Sytze Schalk
   prizes: 
+  headerClassName: no-blur
   thumbnail: 04_video.jpg
   image: 04_video.jpg
   images: 01_welcome.png, 02_wake-up.jpg, 03_boot-sequence.jpg, 04_video.jpg, 05_medisch-rapport.jpg, 06_glitches.jpg

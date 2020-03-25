@@ -2,13 +2,12 @@ import {expand} from '../utils/html'
 import {add} from '../router'
 // import html2pdf from 'html2pdf.js'
 import {slugify} from '../utils/string'
-
-const data = ['page_cv', 'fortpolio-list']
+import {fetchJSONFiles} from '../utils'
 
 add(
   'cv'
   , (/**View*/view/*, route, params*/)=>{
-    return Promise.all(data.map(n=>fetch(`/data/json/${n}.json`).then(rs=>rs.json())))
+    return fetchJSONFiles('page_cv', 'fortpolio-list')
       .then(([page, projects])=>{
         view.appendString(page.content)
         // view.addEventListener('click', onClickPDF)
