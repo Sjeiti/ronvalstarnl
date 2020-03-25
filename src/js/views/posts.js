@@ -21,12 +21,14 @@ setDefault((view, route, params)=>fetchJSONFiles(`post_${route}`, 'posts-list')
       const hasNext = listingIndex>0
       const prev = hasPrev&&currentPast[listingIndex+1]
       const next = hasNext&&currentPast[listingIndex-1]
-      const prevLink = prev&&`a.prev[href="/${prev.slug}"]{< ${prev.title}}`||''
-      const nextLink = next&&`a.next[href="/${next.slug}"]{${next.title} >}`||''
+      const prevLink = prev&&`a.prev[href="/${prev.slug}"]{${prev.title}}`||''
+      const nextLink = next&&`a.next[href="/${next.slug}"]{${next.title}}`||''
+      const nav = `(nav.prevnext>(${prevLink}+${nextLink}))`
 
       view
-          .expandAppend(`(nav.prevnext>(${prevLink}+${nextLink}))+time.blog{${time}}+h1{${title}}`)
+          .expandAppend(`time.blog{${time}}+h1{${title}}`)
           .appendString(content, false)
+          .expandAppend(nav, false)
 
       Array.from(view.querySelectorAll('iframe')).forEach(iframe=>{
         const {innerHTML, contentWindow: {document}} = iframe

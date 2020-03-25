@@ -8,7 +8,8 @@
   clients: 
   collaboration: 
   prizes: 
-  thumbnail: attractors01.jpg
+  thumbnail: Lorenz-84-31.gif
+  headerClassName: no-blur
   image: attractors01.jpg
   images: attractors00.png, attractors01.jpg, attractors02.jpg, Lorenz-84-52.gif, Lorenz-84-31.gif, Lorenz-84-57.png
   inCv: true

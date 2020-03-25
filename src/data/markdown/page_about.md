@@ -13,7 +13,7 @@
 I love writing [JavaScript](/search/javascript). So naturally I also know a lot about [DOM](/search/dom), [HTML](/search/html), [CSS](/search/css) and even [XML](/search/xml).
 My favorite work is streamlining [build](/search/build) processes, refactoring and optimizing DOM and JavaScript for [speed](/search/speed).
 
-Among the JavaScript frameworks and libraries I've used are Angular, Vue, React, Backbone, jQuery, ThreeJS etc... But I will never start projects with a specific framework by default. The choice to add abstractions should be weighed carefully.
+Among the JavaScript frameworks and libraries I've used are [Angular](/search/angular), [Vue](/search/vue), [React](/search/react), [Backbone](/search/backbone), [jQuery](/search/jquery), [ThreeJS](/search/threejs) etc... But I will never start projects with a specific framework by default. The choice to add abstractions should be weighed carefully.
 
 For backend I mostly resort to [NodeJS](/search/node) or [PHP](/search/php). The latter often with [Laravel](/search/laravel) or [Wordpress](/search/wordpress).
 But I've also mandhandled Java, Python and .NET.
@@ -22,7 +22,7 @@ But I've also mandhandled Java, Python and .NET.
 
 In a team my role is mostly lead- or senior front-end developer. I care greatly about code quality backed by build processes. But I also think the strictness should reflect the team's experience.
 
-Since my background also encompasses graphic- and interaction design this strive towards consistency also emerges in those fields.
+Since my formal background is graphic- and interaction design this strive towards consistency also emerges in those fields.
 
 ## clients
 

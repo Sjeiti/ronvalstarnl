@@ -25,6 +25,7 @@ export function searchView(view, route, params, error){
       .then(([fortpolio, posts, pages])=>{
         const query = !is404?decodeURIComponent(params?.query)||'':location.pathname.replace(/[^a-zA-Z]+/g, ' ').trim() // todo 404 ... why are params not set?
         const querySplit = query.split(/\s+/g)
+        // todo portfolio items, posts and page slugs might collide in search results (fix by prefixing slug)
         const slugPosts = [...fortpolio, ...posts, ...pages].reduce((acc, o)=>(acc[o.slug]=o, acc), {})
         const sortyQueryTitle = sortSlugByTitleAndQuery.bind(null, querySplit, slugPosts)
         //
@@ -56,7 +57,9 @@ export function searchView(view, route, params, error){
           .then(allSlugs=>allSlugs.reduce((acc, slugs)=>(acc.push(...slugs), acc), []))
           .then(slugs=>{
             const slugAmount = slugs.reduce((acc, s)=>(acc[s]++||(acc[s]=1), acc), {})
-            slugs = slugs.sort((a, b)=>slugAmount[a]>slugAmount[b]?-1:1).filter((s, i, a)=>a.indexOf(s)===i)
+            slugs = slugs
+                .sort((a, b)=>slugAmount[a]>slugAmount[b]?-1:1)
+                .filter((s, i, a)=>a.indexOf(s)===i&&slugPosts[s.split('_').pop()])
             const {length} = slugs
             noResult.classList.toggle('hidden', !!length)
             noResult.textContent = noResult.textContent.replace(/'.*'/, `'${query}'`)

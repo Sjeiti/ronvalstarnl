@@ -24,12 +24,14 @@ iframe {
     right: 0;
     cursor: pointer;
     background: transparent;
-    //transform: translateY(-100%);
     transform: translateX(100%);
     svg {
       fill: @colorLink;
-      //transform: translate(0.5rem, 0.25rem);
       transform: translateX(-0.5rem);
+    }
+    @media (max-width: 830px) {
+      transform: translateX(0%);
+      svg { transform: translateX(0.5rem); }
     }
   }
 }
@@ -67,15 +69,20 @@ main {
 }
 
 .prevnext {
-  position: relative;
-  font-size: 0.75rem;
-  line-height: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  line-height: 3rem;
+  margin-top: 4rem;
+  background-color: #F4F4F4;
+  box-shadow: -46rem 0 0 #F4F4F4, 46rem 0 0 #F4F4F4, -50vw 0 0 #F4F4F4, 50vw 0 0 #F4F4F4;
   .prev, .next {
-    position: absolute;
-    top: 0;
     text-decoration: none;
-    transform: translateY(-100%);
+    //transform: translateY(-100%);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
-  .prev { left: 0; }
-  .next { right: 0; }
+  .prev:before { content: '< '; }
+  .next:after { content: ' >'; }
 }
