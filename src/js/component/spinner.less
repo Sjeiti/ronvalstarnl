@@ -1,0 +1,52 @@
+.spinner {
+  --anim:  1900ms infinite cubic-bezier(0.85, 0.25, 0.5, 1);
+  --color: #F04;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 1rem;
+  height: 2rem;
+  border-radius: 0.25rem;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  animation: spin var(--anim);
+
+  opacity: 0;
+  transition: opacity 300ms linear 300ms;
+  &--start { opacity: 1; }
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-style: solid;
+    border-width: 1rem 0.5rem;
+  }
+  &:before {
+    position: absolute;
+    border-color: var(--color) transparent transparent transparent;
+    animation: spinBefore var(--anim);
+  }
+  &:after {
+    border-color: transparent transparent var(--color) transparent;
+    transform: translateY(50%);
+    animation: spinAfter var(--anim);
+  }
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%); }
+  80% { transform: translate(-50%, -50%); }
+  100% { transform: translate(-50%, -50%) rotate(180deg); }
+}
+@keyframes spinBefore {
+  0% { clip-path: inset(0 0 50%); }
+  80% { clip-path: inset(50% 0 50%); }
+  100% { clip-path: inset(50% 0 50%); }
+}
+@keyframes spinAfter {
+  0% { transform: translateY(50%); }
+  80% { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}

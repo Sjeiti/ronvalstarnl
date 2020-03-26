@@ -1,5 +1,4 @@
 import {TweenMax, Power1} from 'gsap'
-import {searchView} from '../views/search'
 import {TODAY} from '../config'
 
 
@@ -184,6 +183,21 @@ export function nextTick(fn){
 }
 
 /**
+ * Tick delay helper method
+ * @param {Function} fn
+ * @param {number} num
+ */
+export function nextFrame(fn, num=1){
+  const a = []
+  ;a[num-1] = fn
+  const down = ()=>{
+    const fnc = a.shift()
+    fnc?fnc():requestAnimationFrame(down)
+  }
+  requestAnimationFrame(down)
+}
+
+/**
  * Reduce canonical uri from page/post/project item
  * @param {object} page
  * @return {string}
@@ -193,17 +207,25 @@ export function getCanonical(page){
   return 'https://ronvalstar.nl/'+(page.type==='fortpolio'?'project/':'')+page.slug
 }
 
+const {body} = document
+const spinnerStart = 'spinner--start'
+const spinner = document.createElement('div')
+const {classList} = spinner
+const spinnerStartAdd = classList.add.bind(classList, spinnerStart)
+const spinnerStartRem = classList.remove.bind(classList, spinnerStart)
+classList.add('spinner')
+const fetchStart = ()=>body.appendChild(spinner)&&nextFrame(spinnerStartAdd, 2)
+const fetchDone = ()=>body.removeChild(spinner)&&spinnerStartRem()
+
 /**
  * Fetch multiple json files and parse them
  * @param {string} names
  * @return {Promise<object[]>}
  */
 export function fetchJSONFiles(...names){
-  return Promise.all(names.map(s=>fetch(`/data/json/${s}.json`)
-      .then(
-        rs=>rs.json()))
-        // , searchView.bind(null, view, route, params)
-      )
+  fetchStart()
+  return Promise.all(names.map(s=>fetch(`/data/json/${s}.json`).then(rs=>rs.json())))
+      .then(thenPass(fetchDone))
 }
 
 /**
@@ -213,4 +235,13 @@ export function fetchJSONFiles(...names){
  */
 export function todayOlderFilter({date}){
   return new Date(date) <= TODAY
+}
+
+/**
+ * Apply a method but pass the original param (for use in Promise->then)
+ * @param {Function} fn
+ * @return {Function}
+ */
+export function thenPass(fn){
+  return pass=>(fn(pass), pass)
 }
