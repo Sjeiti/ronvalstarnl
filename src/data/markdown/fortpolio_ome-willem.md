@@ -8,7 +8,7 @@
   clients: Ome Willem
   collaboration: 
   prizes: 
-  thumbnail: omewillem1.jpg
+  thumbnail: omeWillemLoop.gif
   image: omewillem1.jpg
   images: omewillem3.jpg, omewillem.jpg, omewillem0.jpg, omewillem1.jpg, omewillem2.jpg
   inCv: true
