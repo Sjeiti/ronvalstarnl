@@ -1,6 +1,6 @@
 <!--
   date: 2020-04-03
-  modified: 2020-04-03
+  modified: 2020-04-05
   slug: render-html-to-an-image
   type: post
   header: jonny-caspari-KuudDjBHIlA-unsplash.jpg
@@ -13,7 +13,7 @@
 
 # Rendering HTML to an image
 
-With HTML/JavaScript trivial things are sometimes quite ... eeh well, not difficult ...  but *weird*.
+With HTML/JavaScript trivial things are sometimes quite ... eeh well, not difficult ...  but *weird*. Turning HTML into images is weird..
 
 [MDN](https://developer.mozilla.org) used to have an article about it but it got removed. It's still on the [Waybackmachine](https://web.archive.org/web/20181006205840/https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Drawing_DOM_objects_into_a_canvas) but it might be smart to have it as a blog post on the real interwebs, not the archive.
 
@@ -156,8 +156,6 @@ function getSVGString(w,h,style,html) {
 Oh, that's not right. The fonts don't load.
 You see, the [foreignObject](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/foreignObject) does not really like foreign stuff after all. The name is about including foreign XML namespaces. But for security reasons it will never load any external files.
 This means not only your styles should be inlined, but also images and fonts.
-
-Luckily [somebody already did this](https://amio.github.io/embedded-google-fonts/). And the author Amio made [the sources available](https://github.com/amio/embedded-google-fonts) under MIT license so that is very kind. I was simply going to use the base64 result but seeing the code is only a mere 106 lines it should be simpler to use that.
 
 The size is also a bit off. We used the `offsetWidth` and `offsetHeight` of the `<section>` element but the child `<p>` has a margin. Normally this would collapse but not inside the SVG. To make it a bit easier we'll just make two CSS rules that collapse the margins manually so the SVG *can* read it. 
 
