@@ -41,7 +41,7 @@ So that means two UX issues to fix.
 - indication of an XHR response
 
 The first should be a clear continuous animation for the duration of the load but not so obvious that it obscures the content. Plus it should not be visible immediately; with fast loads showing a spinner for a single frame looks really sloppy.
-The second indication should feel short and natural. You could give the transition some sort of order (left/right) or hirarchy (top/bottom) but nothing fancy.
+The second indication should feel short and natural. You could give the transition some sort of order (left/right) or hierarchy (top/bottom) but nothing fancy.
 
 Now our  timeline becomes
 
