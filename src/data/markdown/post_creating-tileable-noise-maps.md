@@ -1,7 +1,7 @@
 <!--
   id: 1775
-  date: 2012-09-26T11
-  modified: 2015-12-24T19
+  date: 2012-09-26
+  modified: 2015-12-24
   slug: creating-tileable-noise-maps
   type: post
   categories: code
@@ -9,6 +9,7 @@
   metaKeyword: tileable noise
   metaTitle: Creating tileable noise maps
   metaDescription: Creating proper tileable noise maps is a bit tricky to get your head around if you want to do it right. Here's how to do it step by step.
+  sticky: true
 -->
 
 #  Creating tileable noise maps

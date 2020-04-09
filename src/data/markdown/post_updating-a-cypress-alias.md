@@ -1,6 +1,6 @@
 <!--
   id: 3465
-  date: 2018-12-24T15:16:38
+  date: 2018-12-24
   modified: 2020-03-16
   slug: updating-a-cypress-alias
   type: post
@@ -9,10 +9,7 @@
   categories: code, JavaScript, jQuery, work, open source
   tags: test, end to end
   metaDescription: To update a Cypress alias on the fly we can create and overwrite Cypress commands to update DOM aliases by traversing up the selector tree.
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
+  sticky: true
 -->
 
 # Updating a Cypress alias

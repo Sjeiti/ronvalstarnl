@@ -9,6 +9,7 @@
   tags: CSS, HTML, JavaScript, cli, linux, bash, android
   metaKeyword: android
   metaDescription: Apps for programming on an Android are clumsy at best, and full of adds. But the best one is really just a Linux terminal: Termux!
+  sticky: true
 -->
 
 # The best programming editor on Android is free

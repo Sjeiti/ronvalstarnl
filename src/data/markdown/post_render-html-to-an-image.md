@@ -9,6 +9,7 @@
   excerpt: Turning HTML into an image at runtime is easy but the implementation is a bit insane.
   categories: Javascript
   tags: HTML, DOM, SVG, image, screenshot
+  sticky: true
 -->
 
 # Rendering HTML to an image
