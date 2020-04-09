@@ -35,6 +35,7 @@ export function scrollTo(elm, t=1000, ease=Power1.easeInOut, offset=0){
   const animObj = {y:currentY}
   const elmTop = elm.getBoundingClientRect().top
   const y = currentY + elmTop + offset
+  console.log('scrollTo',currentY,y) // todo: remove log
   return TweenMax.to(
       animObj
       , t/1000
@@ -53,10 +54,15 @@ export function scrollTo(elm, t=1000, ease=Power1.easeInOut, offset=0){
  * @returns {object}
  */
 export function scrollToTop(topTarget, t=1000){
-  const top = topTarget?.getBoundingClientRect().bottom||0
+  const rect = topTarget?.getBoundingClientRect()
+  const top = rect?.bottom||0
+  const height = rect?.height||0
   const {body} = document
-  const bodyTop = body.getBoundingClientRect().top
-  return scrollTo(body, t, null, top-16-bodyTop)
+  // const bodyTop = body.getBoundingClientRect().top
+  // console.log('scrollToTop', top-16-bodyTop) // todo: remove log
+  return scrollTo(body, t, null, height-top)
+  // return scrollTo(body, t, null, top-16-bodyTop)
+  // return scrollTo(document.body, t)
 }
 
 /**
@@ -235,6 +241,15 @@ export function fetchJSONFiles(...names){
  */
 export function todayOlderFilter({date}){
   return new Date(date) <= TODAY
+}
+
+/**
+ * Method for stickies first
+ * @param {object[]} posts
+ * @return {object[]}
+ */
+export function stickiesFirst(posts){
+  return [...posts.filter(p=>p.sticky), ...posts.filter(p=>!p.sticky)]
 }
 
 /**

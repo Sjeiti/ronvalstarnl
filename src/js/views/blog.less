@@ -5,6 +5,13 @@ ul.link-list {
   li {
     display: block;
     margin-bottom: 1rem;
+    &.sticky a {
+      @colorSticky: lighten(@colorLink, 20%);
+      color: @colorBlack;
+      background-color: @colorSticky;
+      box-shadow: -1rem 0 0 @colorSticky, 0.5rem 0 0 @colorSticky;
+      &:before { background-color: @colorSticky; }
+    }
   }
   @colorLinkBg: @colorLinkL30;
   a {

@@ -1,7 +1,7 @@
 import {add} from '../router'
-import {MEDIA_URI,MEDIA_URI_THUMB,TODAY} from '../config'
+import {MEDIA_URI, MEDIA_URI_THUMB} from '../config'
 import {slugify} from '../utils/string'
-import {fetchJSONFiles,todayOlderFilter} from '../utils'
+import {fetchJSONFiles, stickiesFirst, todayOlderFilter} from '../utils'
 
 add(
   ''
@@ -34,10 +34,14 @@ add(
             })
         //
         // blog
-        const currentPast = posts.filter(todayOlderFilter)
+        //   console.log('st', posts.filter(p=>p.sticky)) // todo: remove log
+        const currentPast = stickiesFirst(posts.filter(todayOlderFilter))
+          // console.log('st', currentPast.filter(p=>p.sticky)) // todo: remove log
         const firstTen = currentPast.slice(0, 10)
         const getLi = post=>`(li>a[href="/${post.slug}"]>(time{${post.date.split('T').shift()}}+{${post.title}}))`
-        view.expandAppend(`section.written>(h2.section-title>small{articles}+{written})+ul.unstyled.link-list>(${firstTen.map(getLi).join('+')})`, false)
+        const stickies = `(.paper>div>ul.unstyled.link-list>(${firstTen.filter(p=>p.sticky).map(getLi).join('+')}))`
+        const others = `ul.unstyled.link-list>(${firstTen.filter(p=>!p.sticky).map(getLi).join('+')})`
+        view.expandAppend(`section.written>(h2.section-title>small{articles}+{written})+${stickies}+${others}`, false)
         return page
       })
   })
