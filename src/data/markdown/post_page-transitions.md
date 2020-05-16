@@ -1,6 +1,6 @@
 <!--
-  date: 2022-03-16
-  modified: 2022-03-18
+  date: 9999-99-99
+  modified: 9999-99-99
   slug: the-basics-of-css-page-transitions
   type: post
   header: sincerely-media-IKzmglo7JLk-unsplash.jpg

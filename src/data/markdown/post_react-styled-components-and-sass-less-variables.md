@@ -1,41 +1,40 @@
 <!--
-  date: 2050-05-16
-  modified: 2050-05-16
+  date: 2020-05-17
+  modified: 2020-05-17
   slug: react-styled-components-and-sass-less-variables
   type: post
-  header: termux.png
+  header: element5-digital-Xf7o2W7qgP0-unsplash.jpg
+  headerColofon: photo by [Element5 Digital](https://unsplash.com/@element5digital)
   categories: code, CSS, HTML, JavaScript
-  tags: CSS, HTML, JavaScript, cli, linux, bash, android
-  metaKeyword: android
-  metaDescription: Apps for programming on an Android are clumsy at best, and full of adds. But the best one is really just a Linux terminal: Termux!
+  tags: React, CSS, Sass, Less
+  metaKeyword: React
+  metaDescription: A simple solution on how to use Sass variables in React styled-components.
 -->
 
-# React styled components and SASS/LESS variables
+# React styled-components and SASS/LESS variables
 
 Programming is the art of abstracting complex processes into simpler ones so humans can understand what is really happening.
-For a website the basics are crudely divided into content, style and code in the form of HTML, CSS and JavaScript.
+For a website the basics are crudely divided into content, style and logic in the form of HTML, CSS and JavaScript.
 
-## preprocessors
+## preprocessors and components
 
-One of the tools of the last decade that help to not make a complete mess of the styling are CSS preprocessors (namely Sass and Less). These make your CSS dryer by using variables, functions and nesting structures for specificity.
-
-## components
+One of the tools of the last decade that help to not make a complete mess of the visual styling are CSS preprocessors (namely Sass and Less). These make your CSS [dryer](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) by using variables, functions and nesting structures for specificity.
 
 To help structure front-end code we make use of libraries and frameworks. The front-end tendency to separate into components is logical; abstractions should be semantically meaningful and the HTML/CSS/JS separation only gets you so far. 
 
 ## styled components
 
-With React you can make use of styled components. This blurs the line between styling and code somewhat but we do end up with clearly separated components and a lot less CSS clashes.
+With React you can make use of [styled-components](https://styled-components.com/). This blurs the line between styling and code somewhat but we do end up with clearly separated components and a lot less CSS specificity clashes.
 
-The thing is, we still have generic style to implement. If you decide to change the global padding by one unit you do not want to change forty components.
-And there is always that first render that is mostly just plain HTML/CSS, so we do want to use a CSS preprocessor as the starting point for our styling.
+But we still have a generic global style to implement. If you decide to change the global padding by one unit you do not want to change forty components.
+And there is always that first render that is mostly just plain HTML/CSS, so we *do* want to use a CSS preprocessor as the starting point for our styling.
 
-Styled components are an awesome solution for creating modular components but it does create problems we thought we already solved with preprocessors: variables and functions.
+Styled-components are an awesome solution for creating modular components but it does create problems we thought we already solved with preprocessors: variables and functions.
 
 ### live with it
 
 You could forget about preprocessors and create a JavaScript module with your styling variables. Then use these by with ES6 string interpolation.
-For instance here's a module called `style.js` and a styled component:
+For instance here's a module called `style.js` and a styled-component:
 
 ```js
 export const breakpoint = {
@@ -72,20 +71,79 @@ export const Thing = styled.div`
 `
 ```
 
-You see what happens in that last declaration. With a preprocessor this would just be `padding-top: 2*$padding;` but you can't with styled components. You can with CSS calc, but no fancy color calculations.
+You see what happens in that last declaration. With a preprocessor this would just be `padding-top: 2*$padding;` but you cannot do that with styled components. You can with CSS calc, but not with colors.
+So they made [Polished](https://polished.js.org/). 
 
-So here is Polished. 
 
+### Polished
 
-### polished
-
-You can forget about preprocessors but bring some of the magic back by using [Polished](https://polished.js.org/). Brought to you by the same people who made styled components.
+You can bring some of the preprocessor magic back by using [Polished](https://polished.js.org/). Brought to you by the same people who made styled-components. Polished exports functions. Instead of `calc` you can use `math` like this: `padding-top: ${math('2*1rem')};`.
+But since we want to use variables it becomes this `padding-top: ${math('2*${padding}')};`, which is getting a bit ridiculous compared to what we had earlier `padding-top: 2*$padding;`.
+Polished is useful though, it has color functions, mixins, helper methods and more. 
 
 ### styled theming
 
-You can even use variables like you used to by means of [styled theming](https://github.com/styled-components/styled-theming).
+The people at styled-components also created an easy way the make themes, called [styled theming](https://github.com/styled-components/styled-theming). This has a similar effect to overriding CSS variables created at `:root`. Read [this blogpost](https://jamie.build/styled-theming.html) if you're interested.
 
-### keep using Sass
+### take a step back
 
-You can act like nothing ever happened by adding a module that interprets your Sass variables in the styled component. But it's only Sass (I sometimes use Less depending on the build platform). This solution makes it also a bit harder for your favorite IDE to determine where the variable is set.
+I love what styled-components do, it is so good an abstraction that I'll take the steps back for granted. But Polished and styled theming takes it a step too far for my taste. An easier solution that made me revert both Polished and styled-theming is the following.
 
+For first render Sass was still needed. This means a lot of sizes and colors that are used in the components are first used as Sass variable.
+
+At first I tried converting the Sass variables to JavaScript object. A bit similar to [a technique I wrote about](https://ronvalstar.nl/less-variables-to-javascript) in 2012. Only now we use `:root` and CSS variables to extract them.
+
+So we have a `_variables.scss`:
+
+```scss
+$padding: 1rem;
+
+:root {
+  --padding: $padding;
+}
+```
+
+Which we use like this:
+
+```javascript
+import '../style/_variables.scss'
+
+const cssVars = Array.from(document.styleSheets).reduce((acc, sheet)=>{
+  Array.from(sheet.cssRules).forEach(rule=>{
+    const {selectorText, style} = rule
+    if (selectorText===':root') {
+      for (let i=0, l=style.length;i<l;i++) {
+      	const key = style[i];
+      	acc[key] = style.getPropertyValue(key)
+      }
+    }
+  })
+  return acc
+}, {})
+
+export const cssVar = Object.keys(cssVars).reduce((acc, key)=>{
+  acc[camelCase(key.substr(2))] = `var(${key})`
+  return acc
+}, {})
+
+export const cssVarValue = Object.entries(cssVars).reduce((acc, [key, value])=>{
+  acc[camelCase(key.substr(2))] = value
+  return acc
+}, {})
+```
+
+Where `cssVar` would be `{ padding: 'var(padding)' }` and `cssVarValue` would be `{ padding: '1rem' }`.
+Which is a neat clean way to do it but I was overthinking things.
+
+In the end I wrote the CSS declarations inside the styled-component like this:
+
+`padding-top: calc(2*var(padding));`
+
+That's right: I simply used CSS variables everywhere.
+ 
+- it is readable
+- there is no need for extra JavaScript because this is already implemented in DOM/CCSOM
+- my IDE understands the references
+- it takes a single className to change theme
+
+The only downside is the lack color functions ([yet](https://gist.github.com/una/edcfa0d3600e0b89b2ebf266bf549721)?). Which means more CSS variables or stricter color management.
