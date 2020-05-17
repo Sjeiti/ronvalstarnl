@@ -132,13 +132,13 @@ export const cssVarValue = Object.entries(cssVars).reduce((acc, [key, value])=>{
 }, {})
 ```
 
-Where `cssVar` would be `{ padding: 'var(padding)' }` and `cssVarValue` would be `{ padding: '1rem' }`.
+Where `cssVar` would be `{ padding: 'var(--padding)' }` and `cssVarValue` would be `{ padding: '1rem' }`.
 Which is a neat clean way to do it but I was overthinking things.
 
 In the end I wrote the CSS declarations inside the styled-component like this:
 
 ```css
-padding-top: calc(2*var(padding));
+padding-top: calc(2*var(--padding));
 ```
 
 That's right: I simply used CSS variables everywhere.
