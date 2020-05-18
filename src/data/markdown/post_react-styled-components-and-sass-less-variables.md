@@ -1,6 +1,6 @@
 <!--
   date: 2020-05-17
-  modified: 2020-05-17
+  modified: 2020-05-18
   slug: react-styled-components-and-sass-less-variables
   type: post
   header: element5-digital-Xf7o2W7qgP0-unsplash.jpg
@@ -149,3 +149,9 @@ That's right: I simply used CSS variables everywhere.
 - it takes a single className to change theme
 
 The only downside is the lack color functions ([yet](https://gist.github.com/una/edcfa0d3600e0b89b2ebf266bf549721)?). Which means more CSS variables or stricter color management.
+
+
+## Conclusion
+
+I'm *not* saying that you don't need Polished (I might use it again in future projects).
+Just be critical of the abstractions you use and take a step back from time to time: chances are that you can simplify things by going back to basics.

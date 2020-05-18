@@ -14,15 +14,15 @@
 
 # Useful custom Cypress commands
 
-Cypress is still one of the easiest testing frameworks out there. It is so ridiculously user-friendly that writing tests is no longer a chore, but fun.
+Cypress is still one of the easiest testing frameworks out there. It is so ridiculously user-friendly that writing tests is no longer a chore, but *almost* fun.
 
 ## custom commands
 
-After using it for a while you might stumble upon *[custom commands](https://docs.cypress.io/api/cypress-api/custom-commands.html)*. Most testing frameworks have similar implementations. They are functions you write for repeating patterns. For instance: logging into a certain part of a site.
+After using it for a while you might stumble upon *[custom commands](https://docs.cypress.io/api/cypress-api/custom-commands.html)*. Most testing frameworks have similar implementations. They are functions you write for repeating patterns (ie: logging into a certain part of a site).
 
 A lot of these will be very project specific. But some are generic enough to use in different projects. One of these I wrote about a year back is for [updating an alias](https://docs.cypress.io/api/cypress-api/custom-commands.html) (a custom command plus some overrides).
 
-Here are a few others that are useful:
+Here are a few others that are generic enough to be useful:
 
 
 ## **expectPathname** for checking the uri
@@ -38,8 +38,8 @@ Cypress.Commands.add('expectPathname', pathname => cy
 
 ## **asAll** for aliasing all *data-cy* attributes
 
-This one depends on your environment and implementation. The Cypress recommendation is for selectors to use a variant of the following signature: `<div data-cy="box"></div>` to be used as `cy.get('[data-cy=box]')`.
-But mostly you will have to do this more than once at which point you should create an alias for it: `cy.get('[data-cy=box]').as('box')` and use `cy.get('@box')`.
+This custom command depends on your environment and implementation. The Cypress recommendation is for selectors to use a variant of the following: `<div data-cy="box"></div>` to be used in tetst as `cy.get('[data-cy=box]')`.
+Mostly you will have to do this more than once at which point you should create an alias for it: `cy.get('[data-cy=box]').as('box')` and use `cy.get('@box')`.
 
 The following command does all that aliasing for you if you call it in your `beforeEach(() => cy.asAll())`.
 
@@ -109,17 +109,20 @@ The JSON fixture files act as key/value pairs. So a fixture with the contents `{
 ## override an override
 
 This could be an edge case but sometimes you want to override an existing command. But in the rare case you want to do that twice you'll be out of luck because Cypress only remembers you last override.
-Here's an implementation with which you can chain overrides. <small>(only implemented for `get` but you get the idea)</small>
+Here's an implementation with which you can chain overrides.
 
 ```javascript
-overrides.get&&overrides.get.length&&Cypress.Commands.overwrite('get', (orig, selector, options={}) => {
-  const [fn, ...arg] = overrides.get.reduce((acc, fn) => fn(...acc), [orig, selector, options])
-  return fn(...arg)
+Object.entries(overrides).forEach(([key, list])=>{
+  Cypress.Commands.overwrite(key, (orig, selector, options={}) => {
+    const [fn, ...arg] = list.reduce((acc, fn) => fn(...acc), [orig, selector, options])
+    return fn(...arg)
+  })
 })
 ```
 
 The overrides object could be something like:
-
+<small>(only implemented for `get` but you get the idea)</small>
+ 
 ```javascript
 const overrides = {
   get: [
@@ -137,4 +140,4 @@ const overrides = {
 
 ## Well
 
-I hope you find these examples useful. They sure make my test files a lot easier to read. Also: let me know if you have any cool additions.
+I hope you find these examples useful. They sure make my test files a lot easier to read. [Let me know](mailto:ron@ronvalstar.nl) if you have any cool additions of your own.
