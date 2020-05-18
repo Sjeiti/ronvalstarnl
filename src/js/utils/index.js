@@ -35,7 +35,6 @@ export function scrollTo(elm, t=1000, ease=Power1.easeInOut, offset=0){
   const animObj = {y:currentY}
   const elmTop = elm.getBoundingClientRect().top
   const y = currentY + elmTop + offset
-  console.log('scrollTo',currentY,y) // todo: remove log
   return TweenMax.to(
       animObj
       , t/1000

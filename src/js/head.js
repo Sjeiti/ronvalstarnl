@@ -1,6 +1,7 @@
 import {routeChange} from './router'
 import {stringToElement, expand} from './utils/html'
 import {getCanonical} from './utils'
+import {MEDIA_URI_HEADER} from './config'
 
 const siteName= 'Ron Valstar - front-end developer'
 
@@ -11,9 +12,10 @@ routeChange.add((slug, page)=>{
   const title = page.title
   const {metaDescription, date, modified} = page
   const link = getCanonical(page)
-  const image = ''//http://...' // todo implement
-  const imageW = ''//768 // todo implement
-  const imageH = ''//512 // todo implement
+
+  const image = page.header&&(MEDIA_URI_HEADER+page.header)
+  const [imageW, imageH] = getSizeFromURI(MEDIA_URI_HEADER)
+
   const twitterUser = '@Sjeiti'
   //
   document.title = title+(title?' - ':'')+siteName
@@ -85,4 +87,15 @@ function selectOrCreate(root, selector){
   const created = !selected&&stringToElement(expand(selector)).firstChild
   created&&root.appendChild(created)
   return selected||created
+}
+
+/**
+ * Determine image width and height from uri params
+ * @param {string} uri
+ * @return {string[]}
+ */
+function getSizeFromURI(uri){
+  const w = uri.match(/,?w_(\d+)/).pop()||''
+  const h = uri.match(/,?h_(\d+)/).pop()||''
+  return [w, h]
 }
