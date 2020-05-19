@@ -31,8 +31,8 @@ routeChange.add((slug, page)=>{
   setSelector('meta[property="og:site_name"]', 'content', siteName)
   setSelector('meta[property="og:updated_time"]', 'content', modified)
   setSelector('meta[property="og:image"]', 'content', image)
-  setSelector('meta[property="og:image:width"]', 'content', imageW)
-  setSelector('meta[property="og:image:height"]', 'content', imageH)
+  image&&setSelector('meta[property="og:image:width"]', 'content', imageW)
+  image&&setSelector('meta[property="og:image:height"]', 'content', imageH)
   // Facebook
   // setSelector('meta[property="article:tag"]','content','foo') // todo implement setSelector multiple
   // setSelector('meta[property="article:tag"]','content','foo') // todo implement setSelector multiple
