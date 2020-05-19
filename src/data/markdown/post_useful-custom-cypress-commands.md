@@ -1,6 +1,6 @@
 <!--
-  date: 2020-05-24
-  modified: 2020-05-24
+  date: 2020-05-20
+  modified: 2020-05-20
   slug: useful-custom-cypress-commands
   type: post
   header: julian-scholl-hlHq4Qezjr8-unsplash.jpg
@@ -54,9 +54,10 @@ Cypress.Commands.add('asAll', () => cy
 )
 ```
 
-Needless to say this command only aliases nodes that exist in the DOM. If a new node is created by an event you must reassign the alias. You can do this manually or by calling `asAll` again (or use the previously mentioned [updateAlias](https://docs.cypress.io/api/cypress-api/custom-commands.html)).
-
 <small>The reason not to use the returned element in `list.each` with `cy.wrap` is to be able to have a collection, not a single result</small>
+
+Needless to say this command only aliases nodes that exist in the DOM. If a new node is created by an event you must reassign the alias. You can do this manually or by calling `asAll` again (or use the previously mentioned [updateAlias](https://docs.cypress.io/api/cypress-api/custom-commands.html)).
+At the end of this article we'll revisit this command for an alternative.
 
 
 ## **visitPage** to set session-, localStorage and/or cookies
@@ -105,6 +106,37 @@ Or if you set that `localStorage` key/value in your config file `./cypress.json`
 
 The JSON fixture files act as key/value pairs. So a fixture with the contents `{"color":"red","theme":"dark"}` creates two entries.
 
+## upload a file
+
+Cypress does not yet support native (OS) events but we can fake the upload by setting the file date programmatically. The following command should only be applied to an `input[type=file]`.
+Due to [a Cypress bug](https://github.com/cypress-io/cypress/issues/7412) the upload fixture cannot be a JSON file, but if you rename the extension to `.notjson` (or whatever) it will work just fine.
+Also notice that the change event is triggered by force; a common implementation applies styling to the label and hides the input (`.visuallyhidden`) and Cypress accounts for invisible elements.
+
+```javascript
+Cypress.Commands.add('upload', {prevSubject: 'element'}, (subject, fileName, type) => cy
+  .fixture(fileName, 'hex').then(fileHex => {
+    if (typeof fileHex!=='string') throw('When uploading json rename your filetype to \'notjson\'. See Cypress issue #7412')
+    const bytes = hexStringToByteArray(fileHex)
+    const file = new File([bytes], fileName, {type})
+    const dataTransfer = new DataTransfer()
+    dataTransfer.items.add(file)
+    subject.get(0).files = dataTransfer.files
+    return subject
+  })
+  .trigger('change', {force:true})
+)
+
+function hexStringToByteArray(str) {
+    return new Uint8Array(str.match(/.{2}|./g).map(s=>parseInt(s, 16)));
+}
+```
+
+With the above as command and a test along the lines of:
+
+```javascript
+cy.get('input[type=file]').upload('upload.json_', 'text/json')
+```
+
 
 ## override an override
 
@@ -138,6 +170,65 @@ const overrides = {
 }
 ```
 
+## override **get** to find and alias **data-cy** automatically
+
+The `asAll` command I showed you is nice, but I told you we'd revisit it.
+Normally I am not so fond of overwriting existing methods. Over writing JavaScript prototypes is generally frowned upon. But with Cypress it can be helpful, and they made a method for it.
+I also mentioned [updating an alias](https://docs.cypress.io/api/cypress-api/custom-commands.html) briefly, this overwrites the `get` command as well, which is why I first wanted to show you how to override overrides, or chain them or whatever.
+What bugs me about `asAll` is that it requires a `beforeEach` (won't work in `before`), and that it will alias all those `[data-cy]` instances. I know that was the whole idea, but in a test with ten `it.should`s that each use some aliases, an average of 90% of the aliases will not be used. This is not only inefficient but it also pollutes the test results.
+
+When you don't want to overwrite a simple solution could be this 
+
+```javascript
+Cypress.Commands.add('getAs', name => Cypress
+  .state('aliases').hasOwnProperty(name)
+    ?cy.get('@' + name)
+    :cy.get(`[data-cy=${name}]`).as(name)
+)
+```
+
+But you'd have to call `cy.getAs('button')` prior to using `cy.get('@button')`. It is still properly chainable like this `cy.getAs('button').should('not.be.disabled')` but it works the vertical flow of your test a bit.
+
+But we can overwrite `get`. Normally if we do `cy.get('@button')` and the alias does not exist we'll get an error. We'll make it so that instead of an error, we'll search for `[data-cy=button]` and alias that.
+Thing is, we cannot use `cy.get('@button')` to check if the alias exists because the Cypress error halts the test. What we can use is `Cypress.state`. It is not documented but `Cypress.state('aliases')` returns an object which keys correspond with the alias names (when no aliases exist the object will not exist either so we have to account for that too). 
+
+```javascript
+Cypress.Commands.overwrite('get', (orig, selector, options={}) => {
+  if (selector.substr(0, 1)==='@') {
+    const name = selector.substr(1)
+    const aliasExists = (Cypress.state('aliases')||{}).hasOwnProperty(name)
+    orig = aliasExists?orig:(()=>cy.get(`[data-cy=${name}]`).as(name))
+  }
+  return orig(selector, options)
+})
+```
+
+Now, if you want to combine this with another override you'll have to change it a bit. For instance, here is the overrides object for both the alias update and the data-cy-alias. 
+With both of these in place your test will become a lot simpler and easier to read.
+
+```javascript
+const overrides = {
+  get: [
+    // (...arg) => [...arg]
+    (orig, selector, options={}) => {
+      if (selector.substr(0, 1)==='@') {
+        const name = selector.substr(1)
+        const aliasExists = (Cypress.state('aliases')||{}).hasOwnProperty(name)
+        orig = aliasExists?orig:(()=>cy.get(`[data-cy=${name}]`).as(name))
+      }
+      return [orig, selector, options]
+    }
+    , (orig, selector, options={}) => {
+      const {update, ignoreLive} = options
+      const aliasName = getAliasName(selector)
+      const isLive = aliasName && !ignoreLive && asLive.includes(aliasName)
+      return [aliasName&&(update||isLive)?cy.updateAlias:orig, selector, options]
+    }
+  ]
+}
+```
+
+
 ## Well
 
-I hope you find these examples useful. They sure make my test files a lot easier to read. [Let me know](mailto:ron@ronvalstar.nl) if you have any cool additions of your own.
+I hope you find these examples useful. They sure make my test files a little easier. [Let me know](mailto:ron@ronvalstar.nl) if you have any cool additions of your own.
