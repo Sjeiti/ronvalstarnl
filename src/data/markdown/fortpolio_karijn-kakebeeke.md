@@ -3,7 +3,7 @@
   slug: karijn-kakebeeke
   type: fortpolio
   categories: 
-  tags: CSS, HTML, JavaScript, Wordpress, graphic design, interaction design, concept
+  tags: CSS, HTML, JavaScript, Wordpress, graphic design, interaction design, graphic design, concept
   clients: Karijn Kakebeeke
   collaboration: 
   prizes: 

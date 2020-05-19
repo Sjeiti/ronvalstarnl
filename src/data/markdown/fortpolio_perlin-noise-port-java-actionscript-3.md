@@ -2,7 +2,7 @@
   id: 2286
   slug: perlin-noise-port-java-actionscript-3
   type: fortpolio
-  categories: Flash, open source
+  categories: open source
   tags: ActionScript, Flash, math
   clients: 
   collaboration: 

@@ -2,7 +2,7 @@
   id: 2262
   slug: frogs-space
   type: fortpolio
-  categories: Flash, game
+  categories: game, illustration
   tags: ActionScript, Flash, interaction design, game, cool shit, concept
   clients: 
   collaboration: 

@@ -3,8 +3,8 @@
   slug: mitsubishi-colt
   type: fortpolio
   excerpt: <p>Lead developer for the new Colt site. A Flash site with lots of video interwoven with content. And a scrollable panoramic video with 3D sound.</p>
-  categories: framework, Flash
-  tags: 3D, ActionScript, video
+  categories: framework, front end
+  tags: 3D, ActionScript, video, Flash
   clients: Lukkien
   collaboration: Olaf Gremie
   prizes: 
