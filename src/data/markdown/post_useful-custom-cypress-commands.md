@@ -7,9 +7,10 @@
   headerColofon: photo by [Julian Schöll](https://unsplash.com/@js90)
   headerClassName: no-blur darken
   categories: Javascript
-  tags: CSS, transitions
+  tags: testing, e2e, end-to-end
   metaKeyword: Cypress
   metaDescription: Some useful Cypress custom commands
+  sticky: true
 -->
 
 # Useful custom Cypress commands
