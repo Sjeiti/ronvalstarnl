@@ -173,9 +173,9 @@ const overrides = {
 ## override **get** to find and alias **data-cy** automatically
 
 The `asAll` command I showed you is nice, but I told you we'd revisit it.
-Normally I am not so fond of overwriting existing methods. Over writing JavaScript prototypes is generally frowned upon. But with Cypress it can be helpful, and they made a method for it.
+Normally I am not so fond of overwriting existing methods. Overwriting JavaScript prototypes is generally frowned upon. But with Cypress it can be helpful, and they made a method for it.
 I also mentioned [updating an alias](https://docs.cypress.io/api/cypress-api/custom-commands.html) briefly, this overwrites the `get` command as well, which is why I first wanted to show you how to override overrides, or chain them or whatever.
-What bugs me about `asAll` is that it requires a `beforeEach` (won't work in `before`), and that it will alias all those `[data-cy]` instances. I know that was the whole idea, but in a test with ten `it.should`s that each use some aliases, an average of 90% of the aliases will not be used. This is not only inefficient but it also pollutes the test results.
+What bugs me about `asAll` is that it requires a `beforeEach` (won't work in `before`), which will alias *all* those `[data-cy]` instances. I know that was the whole idea, but in a test with ten `it.should`s (each using some aliases), an average of 90% of the aliases will not be used. This is not only inefficient but it also pollutes the test results.
 
 When you don't want to overwrite a simple solution could be this 
 
@@ -187,7 +187,7 @@ Cypress.Commands.add('getAs', name => Cypress
 )
 ```
 
-But you'd have to call `cy.getAs('button')` prior to using `cy.get('@button')`. It is still properly chainable like this `cy.getAs('button').should('not.be.disabled')` but it works the vertical flow of your test a bit.
+But you'd have to call `cy.getAs('button')` prior to using `cy.get('@button')`. It is still properly chainable like this `cy.getAs('button').should('not.be.disabled')` but it breaks the vertical flow of your test a bit.
 
 But we can overwrite `get`. Normally if we do `cy.get('@button')` and the alias does not exist we'll get an error. We'll make it so that instead of an error, we'll search for `[data-cy=button]` and alias that.
 Thing is, we cannot use `cy.get('@button')` to check if the alias exists because the Cypress error halts the test. What we can use is `Cypress.state`. It is not documented but `Cypress.state('aliases')` returns an object which keys correspond with the alias names (when no aliases exist the object will not exist either so we have to account for that too). 
