@@ -3,6 +3,7 @@ import {clean, expand} from '../utils/html'
 import {nextTick} from '../utils'
 import {search, change} from '../component/Search'
 import {open} from '../router'
+import {initialise} from '../component'
 
 search.add(query=>open(`/search/${encodeURIComponent(query)}`))
 
@@ -20,6 +21,7 @@ export function searchView(view, route, params, error){
   const is404 = !!error
   let title = is404?'404':'search'
   //
+  const typeToIcon = {page:'file-empty', post:'file-text', fortpolio:'file-picture'}
   const data = ['fortpolio-list', 'posts-list', 'pages-list']
   Promise.all(data.map(s=>fetch(`/data/json/${s}.json`).then(r=>r.json())))
       .then(([fortpolio, posts, pages])=>{
@@ -68,13 +70,16 @@ export function searchView(view, route, params, error){
                   .sort(sortyQueryTitle)
                   .map(slug=>{
                     const uri = getSlugUri(slug)
-                    const key = slug.split('_').pop()
-                    return `li>a[href="${uri}"]{${slugPosts[key]?.title}}`
+                    const splitSlug = slug.split('_')
+                    const key = splitSlug.pop()
+                    const type = splitSlug.shift()
+                    const icon = typeToIcon[type]
+                    return `li>a[href="${uri}"]>((svg[data-icon=${icon}]>title{${type}})+{${slugPosts[key]?.title}})`
                   }).join('+')
             ))
+            initialise(result)
           })
           .catch(console.warn.bind(console, 'eerr'))
-          //
         })
   //
   return Promise.resolve({title})
