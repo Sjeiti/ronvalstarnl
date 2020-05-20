@@ -6,13 +6,15 @@ const {save, read} = utils
 
 const arrayKeys = ['tags', 'categories', 'collaboration', 'clients', 'prizes', 'images']
 const booleanKeys = ['inCv', 'inPortfolio', 'sticky']
+const t = s=>(new Date(s)).getTime()||Number.MAX_VALUE
 
 glob('src/data/markdown/+(post|fortpolio|page)_*.md')
     .then(files=>Promise.all(files.map(read)))
     .then(files=>files.map(markdown2object))
 
     .then(posts=>{
-      posts.sort((p1, p2)=>new Date(p1.date)>new Date(p2.date)?1:-1)
+      posts.sort((p1, p2)=>t(p1.date)>t(p2.date)?1:-1)
+      console.log('posts', posts.filter(o=>o.type==='post').map(p=>p.date +' '+ p.slug).join('\n')) // todo: remove log
       return posts
     })
 

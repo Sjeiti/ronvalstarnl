@@ -1,7 +1,7 @@
 <!--
   slug: animating-svg
-  date: 2222-04-30
-  modified: 2222-04-30
+  date: 9999-04-30
+  modified: 9999-04-30
   type: post
   header: boxbox.jpg
   category: SVG

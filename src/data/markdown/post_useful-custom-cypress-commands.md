@@ -9,7 +9,7 @@
   categories: Javascript
   tags: testing, e2e, end-to-end
   metaKeyword: Cypress
-  metaDescription: Some useful Cypress custom commands
+  metaDescription: Some useful Cypress custom commands to make your tests cleaner
   sticky: true
 -->
 
