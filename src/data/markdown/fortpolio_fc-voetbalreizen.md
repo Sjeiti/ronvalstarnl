@@ -2,7 +2,7 @@
   id: 2300
   slug: fc-voetbalreizen
   type: fortpolio
-  categories: JavaScript, HTML/CSS, interaction design, backend
+  categories: JavaScript, HTML/CSS, UX
   tags: CSS, HTML, JavaScript, Wordpress, interaction design, concept
   clients: FC Voetbalreizen
   collaboration: 

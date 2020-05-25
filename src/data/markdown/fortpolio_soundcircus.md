@@ -3,7 +3,7 @@
   slug: soundcircus
   type: fortpolio
   excerpt: <p>Flash website that won an FWASOTD, an ADCN Lamp and a Webby!</p>
-  categories: front end, 3D, video, backend
+  categories: 3D, video
   tags: CSS, HTML, jQuery, PHP, ActionScript, Flash
   clients: Pool Worldwide
   collaboration: DPPLR

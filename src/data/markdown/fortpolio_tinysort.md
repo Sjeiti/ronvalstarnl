@@ -3,7 +3,7 @@
   slug: tinysort
   type: fortpolio
   excerpt: <p>A sorting script I wrote and maintain.</p>
-  categories: JavaScript, front end, open source
+  categories: JavaScript, open source
   tags: JavaScript, jQuery, JSDoc
   clients: 
   collaboration: 

@@ -2,7 +2,7 @@
   id: 2805
   slug: dashboard
   type: fortpolio
-  categories: JavaScript, front end, framework
+  categories: JavaScript, framework
   tags: JavaScript, Angular
   clients: 
   collaboration: 

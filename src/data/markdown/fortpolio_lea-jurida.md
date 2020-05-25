@@ -3,7 +3,7 @@
   slug: lea-jurida
   type: fortpolio
   excerpt: <p>Flash website for sound designer Lea Jurida.</p>
-  categories: front end, illustration, graphic design, interaction design, backend
+  categories: illustration, graphic design, UX
   tags: HTML, XML, graphic design, ActionScript, Flash, illustration, video, interaction design, concept
   clients: Lea Jurida
   collaboration: 

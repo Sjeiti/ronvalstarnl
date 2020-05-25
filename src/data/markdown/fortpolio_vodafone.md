@@ -3,7 +3,7 @@
   slug: vodafone
   type: fortpolio
   excerpt: Rebuilt shop flow into a single page application using Angular. Added several improvements to the buil process. Updated/refactored a lot of legacy code. Improved code quality.
-  categories: JavaScript, front end, HTML/CSS, framework
+  categories: JavaScript, HTML/CSS, framework
   tags: CSS, HTML, JavaScript, Angular, Grunt, scrum, nodejs
   clients: Vodafone
   collaboration: 

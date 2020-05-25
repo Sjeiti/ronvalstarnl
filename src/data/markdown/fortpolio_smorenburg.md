@@ -2,7 +2,7 @@
   id: 2083
   slug: smorenburg
   type: fortpolio
-  categories: JavaScript, HTML/CSS, backend
+  categories: JavaScript, HTML/CSS
   tags: CSS, HTML, JavaScript, Wordpress
   clients: Cinographic
   collaboration: 

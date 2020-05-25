@@ -2,7 +2,7 @@
   slug: boonlearning
   type: fortpolio
   excerpt: 
-  categories: front end, HTML/CSS
+  categories: HTML/CSS
   tags: HTML, CSS, BEM, Docker, Haxe, framework
   clients: Boon software
   thumbnail:

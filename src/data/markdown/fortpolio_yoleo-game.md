@@ -18,4 +18,4 @@
 
 # Yoleo game
 
-<p>Development of an online game and level-editor for Yoleo.</p>
+Yoleo is a website that helps children with their reading by making it fun and challenging. I developed an 'end-game' that children could play after reading a certain amount. Development of the game also required a level-editor.

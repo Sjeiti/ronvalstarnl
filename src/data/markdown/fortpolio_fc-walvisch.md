@@ -3,7 +3,7 @@
   slug: fc-walvisch
   type: fortpolio
   excerpt: <p>Re-design and creation of the site of one of the foremost Dutch sound studios.</p>
-  categories: JavaScript, front end, HTML/CSS, illustration, graphic design, interaction design, backend
+  categories: JavaScript, HTML/CSS, illustration, graphic design, UX
   tags: CSS, Wordpress, XML, graphic design, ActionScript, illustration, video, interaction design, concept, Flash
   clients: FC Walvisch
   collaboration: 

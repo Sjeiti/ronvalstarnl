@@ -3,7 +3,7 @@
   slug: allerhande
   type: fortpolio
   excerpt: I was front-end ActionScript developer in the Fabrique/Lukkien/freelancers SCRUM team that developed the Allerhande website.
-  categories: JavaScript, front end, HTML/CSS, framework
+  categories: JavaScript, HTML/CSS, framework
   tags: JavaScript, ActionScript, Flash, scrum, PureMVC
   clients: Lukkien
   collaboration: Fabrique

@@ -2,7 +2,7 @@
   id: 2121
   slug: juridaii
   type: fortpolio
-  categories: front end, 3D, illustration, graphic design, interaction design
+  categories: 3D, illustration, graphic design, UX
   tags: HTML, XML, ActionScript, Flash, interaction design, concept
   clients: Lea Jurida
   collaboration: 

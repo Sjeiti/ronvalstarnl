@@ -3,12 +3,13 @@
   slug: ome-willem
   type: fortpolio
   excerpt: <p>Interaction design, graphic design and development for the Ome Willem website.</p>
-  categories: JavaScript, HTML/CSS, backend
+  categories: JavaScript, HTML/CSS
   tags: CMS, HTML, XML, graphic design, ActionScript, Flash, illustration, interaction design, graphic design, concept
   clients: Ome Willem
   collaboration: 
   prizes: 
-  thumbnail: omeWillemLoop.gif
+  thumbnail: omewillem1.jpg
+  thumbnailVideo: omeWillem.mp4
   image: omewillem1.jpg
   images: omewillem3.jpg, omewillem.jpg, omewillem0.jpg, omewillem1.jpg, omewillem2.jpg
   inCv: true
