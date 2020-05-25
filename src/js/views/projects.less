@@ -16,21 +16,29 @@ ul.projects {
     position: relative;
     float: left;
     width: 100%/2;
+    max-width: 100%/2;
     height: 100vw/8*3;
+
+    transition: max-width 300ms ease-in-out;
+
     @media @mediaS {
       width: 100%/3;
+      max-width: 100%/3;
       height: 100vw/12*3;
     }
     @media @mediaM {
       width: 100%/4;
+      max-width: 100%/4;
       height: 100vw/16*3;
     }
     @media @mediaL {
       width: 100%/5;
+      max-width: 100%/5;
       height: 100vw/20*3;
     }
     @media @mediaXL {
       width: 100%/6;
+      max-width: 100%/6;
       height: 100vw/24*3;
     }
     overflow: hidden;
@@ -46,6 +54,8 @@ ul.projects {
     text-decoration: none;
   }
   a div {
+    position: relative;
+    z-index: 1;
     text-align: center;
     padding: 0 0.25rem;
     font-size: 0.875rem;
@@ -54,6 +64,16 @@ ul.projects {
     background: rgba(0,0,0,0.6);
     box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     font-family: var(--font-name-code);
+  }
+  video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
   }
 }
 ul.project-category {

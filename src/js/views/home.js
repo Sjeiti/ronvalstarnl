@@ -1,7 +1,7 @@
 import {add} from '../router'
-import {MEDIA_URI, MEDIA_URI_THUMB} from '../config'
-import {slugify} from '../utils/string'
+import {MEDIA_URI} from '../config'
 import {fetchJSONFiles, stickiesFirst, todayOlderFilter} from '../utils'
+import {getProjectThumbZen} from './projects'
 
 add(
   ''
@@ -13,9 +13,7 @@ add(
         //
         // projects // todo duplicate code in `view/projects.js`
         const projectHighlight = ['strange-attractors-javascript', 'kees-kroot', 'disconnect', 'project-invoice'].map(slug=>projects.filter(p=>p.slug===slug).pop())
-        view.expandAppend(`section.built>(h2.section-title>small{projects}+{built})+ul.unstyled.projects>(${projectHighlight.map(
-              project=>`(li${project.categories.map(c=>`.cat-${slugify(c)}`).join('')}[style="background-image:url(${MEDIA_URI_THUMB+project.thumbnail})"]>a[href="/project/${project.slug}"]>(div{${project.title}}))`
-            ).join('+')})`, false)
+        view.expandAppend(`section.built>(h2.section-title>small{projects}+{built})+ul.unstyled.projects>(${projectHighlight.map(getProjectThumbZen).join('+')})`, false)
         //
         // clients
         view.expandAppend('section.for>(h2.section-title>small{worked}+{for})+ul.unstyled.svg-list.clients', false)

@@ -14,7 +14,6 @@ glob('src/data/markdown/+(post|fortpolio|page)_*.md')
 
     .then(posts=>{
       posts.sort((p1, p2)=>t(p1.date)>t(p2.date)?1:-1)
-      console.log('posts', posts.filter(o=>o.type==='post').map(p=>p.date +' '+ p.slug).join('\n')) // todo: remove log
       return posts
     })
 

@@ -3,7 +3,7 @@ import {selectEach, expand} from '../utils/html'
 import {addRule, removeRule} from '../utils/style'
 import {fetchJSONFiles, nextTick, scrollToTop} from '../utils'
 import {componentOf} from '../component'
-import {MEDIA_URI_PROJECT, MEDIA_URI_THUMB} from '../config'
+import {MEDIA_URI_PROJECT, MEDIA_URI_THUMB, MEDIA_URI_VIDEO} from '../config'
 import {makeClassNames, slugify} from '../utils/string'
 import {open} from '../router'
 
@@ -63,7 +63,7 @@ add(
           //
           const select = `projects/${category}`
           const categoryID = categories.filter(c=>c.slug===category).pop()?.slug
-          addRule(`ul.projects>li:not(.cat-${categoryID}){display:none;}`)
+          addRule(`ul.projects>li:not(.cat-${categoryID}){max-width:0%;}`)
           seldo(`a[href="/${select}"]`, elm=>elm.classList.add(classNames.current.name))
         }
         //
@@ -84,9 +84,7 @@ function buildPage(view, categories, portfolioProjects){
   const querySelector = ::view.querySelector
   view.expandAppend(`(ul.unstyled${classNames.projectCategory}>(${categories.map(
       o=>`(li>a[href="/projects/${o.slug}"]{${o.name}})`
-    ).join('+')}))+ul.unstyled${classNames.projects}>(${portfolioProjects.map(
-      project=>`(li${project.categories.map(c=>`.cat-${slugify(c)}`).join('')}[style="background-image:url(${MEDIA_URI_THUMB+project.thumbnail})"]>a[href="/project/${project.slug}"]>(div{${project.title}}))`
-    ).join('+')})`)
+    ).join('+')}))+ul.unstyled${classNames.projects}>(${portfolioProjects.map(getProjectThumbZen).join('+')})`)
   const categoriesElm = querySelector(classNames.projectCategory)
   categoriesElm.addEventListener('click', onClickCategory)
   return [categoriesElm, querySelector(classNames.projects)]
@@ -137,4 +135,18 @@ function onClickCategory(e){
     open('/projects')
     e.preventDefault()
   }
+}
+
+/**
+ * Create Zen selector for a project thumb
+ * @param {project} project
+ * @return {string}
+ */
+export function getProjectThumbZen(project){
+  const ext = project.thumbnail.split(/\./).pop()
+  const liAttr = `[style="background-image:url(${MEDIA_URI_THUMB+project.thumbnail})"]`
+  const hasVideo = !!project.thumbnailVideo
+  const videoSrc = `[src=${MEDIA_URI_VIDEO+project.thumbnailVideo}]`
+  const video = hasVideo?`+video${videoSrc}[autoplay][loop][muted]>source${videoSrc}[type=video/${ext}]`:''
+  return `(li${project.categories.map(c=>`.cat-${slugify(c)}`).join('')}${liAttr}>a[href="/project/${project.slug}"]>(div{${project.title}}${video}))`
 }

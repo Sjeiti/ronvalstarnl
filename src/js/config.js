@@ -5,6 +5,7 @@ export const MEDIA_URI = 'https://res.cloudinary.com/dn1rmdjs5/image/upload/v156
 export const MEDIA_URI_HEADER = MEDIA_URI.replace('upload/', 'upload/c_scale,w_768/c_crop,w_768,h_200/')
 export const MEDIA_URI_THUMB = MEDIA_URI.replace('upload/', 'upload/c_scale,w_316/')
 export const MEDIA_URI_PROJECT = MEDIA_URI.replace('upload/', 'upload/c_scale,w_768/')
+export const MEDIA_URI_VIDEO = MEDIA_URI.replace('image/', 'video/')
 export const NS_SVG = 'http://www.w3.org/2000/svg'
 export const NS_XLINK = 'http://www.w3.org/1999/xlink'
 export const TODAY = new Date
