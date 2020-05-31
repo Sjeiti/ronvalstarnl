@@ -1,7 +1,7 @@
 <!--
   id: 821
-  date: 2011-02-02T10:56:35
-  modified: 2011-02-02T10:56:35
+  date: 2011-02-02
+  modified: 2011-02-02
   slug: pig-in-woods
   type: post
   excerpt: [object Object]

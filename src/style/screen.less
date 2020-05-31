@@ -115,3 +115,20 @@ img, svg {
   position: absolute;
   width: 1px;
 }
+
+.no-result { text-align: center; }
+
+del[data-href]:hover {
+  position: relative;
+  &:after {
+    content: attr(data-href);
+    position: absolute;
+    left: 10%;
+    top: 70%;
+    display: block;
+    padding: 0.0125rem 0.5rem!important;
+    background-color: @colorLinkL30;
+    font-size: 0.8125rem;
+    box-shadow: 0 0 1rem rgba(@colorLink,0.3);
+  }
+}

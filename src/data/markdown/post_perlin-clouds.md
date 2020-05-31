@@ -1,7 +1,7 @@
 <!--
   id: 336
-  date: 2009-02-28T00:00:29
-  modified: 2009-02-28T00:00:29
+  date: 2009-02-28
+  modified: 2009-02-28
   slug: perlin-clouds
   type: post
   excerpt: [object Object]

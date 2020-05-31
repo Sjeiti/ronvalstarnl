@@ -1,7 +1,7 @@
 <!--
   id: 657
-  date: 2010-10-22T13:07:44
-  modified: 2010-10-22T13:07:44
+  date: 2010-10-22
+  modified: 2010-10-22
   slug: perpetuum-mobile
   type: post
   excerpt: <p>I&#8217;m just about finishing up on the mobile version of ronvalstar.nl and thought I&#8217;d share some things. Especially since a lot of people don&#8217;t seem to have their shit act together.</p>

@@ -1,7 +1,7 @@
 <!--
   id: 2589
-  date: 2014-08-26T18:17:47
-  modified: 2015-10-25T07:09:46
+  date: 2014-08-26
+  modified: 2015-10-25
   slug: experiment-voronoi
   type: post
   excerpt: <p>Particle scattering with Voronoi division.</p>

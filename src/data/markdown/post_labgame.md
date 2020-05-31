@@ -1,7 +1,7 @@
 <!--
   id: 255
-  date: 2004-07-16T21:57:38
-  modified: 2004-07-16T21:57:38
+  date: 2004-07-16
+  modified: 2004-07-16
   slug: labgame
   type: post
   excerpt: <p>I coded a puzzle game for our Shapers website. See if you can beat the highscore at our labgame. The link doesn&#8217;t work anymore (and I don&#8217;t work @Shapers anymore). I do have the game somewhere, maybe oneday I&#8217;ll put it up again.</p>

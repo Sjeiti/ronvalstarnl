@@ -1,7 +1,7 @@
 <!--
   id: 473
-  date: 2010-05-13T22:49:36
-  modified: 2016-12-14T19:57:50
+  date: 2010-05-13
+  modified: 2016-12-14
   slug: simplex-noise-in-as3
   type: post
   categories: code, ActionScript

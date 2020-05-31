@@ -1,7 +1,7 @@
 <!--
   id: 316
-  date: 2008-02-10T22:26:46
-  modified: 2008-02-10T22:26:46
+  date: 2008-02-10
+  modified: 2008-02-10
   slug: strange-stuff
   type: post
   excerpt: <p>The first animation from the &#8216;Attractor viewer&#8216; rebuild. Rendering animations is now easy as pie (thanks to Daniel Shiffmans MovieMaker library). In the last version I would spit out tons of tif files and import them into Flash to export it as a movie. The problem with the last version was that it was built [&hellip;]</p>

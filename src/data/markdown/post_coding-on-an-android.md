@@ -1,7 +1,7 @@
 <!--
   id: 604
-  date: 2010-09-13T18:41:39
-  modified: 2016-12-14T20:18:35
+  date: 2010-09-13
+  modified: 2016-12-14
   slug: coding-on-an-android
   type: post
   excerpt: <p>I&#8217;ve always found that taking ones computer on vacation is rather pointless. Then why go on vacation! I guess in this day and age you cannot bring your phone along anymore either.</p>

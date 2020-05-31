@@ -1,8 +1,8 @@
 <!--
   id: 1826
   description: Multiple properties as variables can take up a lot of space. Here's a way to store them in a single variable using bitwise operations.
-  date: 2013-01-22T14:37:43
-  modified: 2014-05-06T16:24:03
+  date: 2013-01-22
+  modified: 2014-05-06
   slug: multiple-properties-in-one-variable
   type: post
   excerpt: <p>Objects with multiple properties with each their own variable can get a bit messy. Here&#8217;s a nice solution to store multiple properties in a single variable.</p>

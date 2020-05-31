@@ -1,7 +1,7 @@
 <!--
   id: 297
-  date: 2007-04-26T08:21:09
-  modified: 2007-04-26T08:21:09
+  date: 2007-04-26
+  modified: 2007-04-26
   slug: jquery
   type: post
   excerpt: <p>It seems my days of JavaScripting are over :.( My colleague pointed me to jquery. No more browser quircks, one syntax for all (and a cool effects library too).</p>

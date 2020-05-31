@@ -1,7 +1,7 @@
 <!--
   id: 236
-  date: 2005-05-20T20:47:51
-  modified: 2012-07-03T09:21:15
+  date: 2005-05-20
+  modified: 2012-07-03
   slug: screensaver
   type: post
   excerpt: <p>I found some free screensaver software for director and made one of the 3D kaleidoscope thing.</p>

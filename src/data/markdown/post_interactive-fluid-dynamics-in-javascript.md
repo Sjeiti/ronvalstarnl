@@ -1,8 +1,8 @@
 <!--
   id: 934
   description: I wanted to use Oliver Hunt's fluid solver as an interactive particle flowfield. But the fluid dynamics worked wrongly for on square images.
-  date: 2012-05-25T12:47:34
-  modified: 2014-05-06T17:51:26
+  date: 2012-05-25
+  modified: 2020-05-31
   slug: interactive-fluid-dynamics-in-javascript
   type: post
   excerpt: <p>Don&#8217;t know why, but after seeing Oliver Hunt&#8217;s fluid solver I wanted to use fluid dynamics on my site as an interactive particle flowfield.</p>
@@ -26,6 +26,6 @@
 <p>When I got the port up and running it ran faster than Olivers script but it had the same vertical vs horizontal discrepancy. Luckily, while optimizing, I found out why and fixed it.</p>
 <p>Porting stuff from C++ to Java to ActionScript to JavaScript does not go by unpunished. The Webkit browers will run it quite nicely but Firefox really sucks at it (even moreso than IE).</p>
 <p>Here it is:</p>
-<p><iframe src="http://test.ronvalstar.nl/fluidSolver" width="100%" height="200px"></iframe></p>
-<p>In the above implementation I&#8217;ve used the raw fluid in a canvas, and the red dots are tiny 1px divs above it. You can also watch it fullscreen from <a href="http://test.ronvalstar.nl/fluidSolver">http://test.ronvalstar.nl/fluidSolver</a> or <a href="http://test.ronvalstar.nl/fluidSolver/fluidSolver.zip">download the source</a>.</p>
+<p><iframe src="https://test.ronvalstar.nl/fluidSolver" width="100%" height="200px"></iframe></p>
+<p>In the above implementation I&#8217;ve used the raw fluid in a canvas, and the red dots are tiny 1px divs above it. You can also watch it fullscreen from <a href="https://test.ronvalstar.nl/fluidSolver">https://test.ronvalstar.nl/fluidSolver</a> or <a href="https://test.ronvalstar.nl/fluidSolver/fluidSolver.zip">download the source</a>.</p>
 <p>With it I&#8217;ve made a minimal dusty look on <a href="/">ronvalstar.nl</a> (only Webkit since Firefox and IE aren&#8217;t fast enough). It uses only the velocity field for the dust particles. It starts with a low number of particles that is in- or decremented depending on the framerate. The dust particles are influenced by mouse movement, but also by interacting with the menu and/or projects.</p>

@@ -1,7 +1,7 @@
 <!--
   id: 836
-  date: 2011-04-09T00:24:10
-  modified: 2011-04-09T00:24:10
+  date: 2011-04-09
+  modified: 2011-04-09
   slug: it-could-be-dawn
   type: post
   excerpt: [object Object]

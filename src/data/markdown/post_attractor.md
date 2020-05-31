@@ -1,7 +1,7 @@
 <!--
   id: 16
-  date: 2007-01-07T12:41:34
-  modified: 2012-07-03T09:30:37
+  date: 2007-01-07
+  modified: 2020-05-31
   slug: attractor
   type: post
   excerpt: <p>This attractor Viewer was made with Processing. The attractor viewer can be used to make movies like these: a a Lorenz, a Lorenz 84 and the other of a de Jong attractor. I&#8217;ve also put up some nice wallpaper sized images on Flickr. An attractor is a set of rules upon a number of variables [&hellip;]</p>
@@ -15,7 +15,7 @@
 
 # attractor viewer
 
-<p>This  <a href="javascript:Sjeiti.showIFrame('http://attractors.ronvalstar.nl/',1024,768,'attractor viewer')">attractor Viewer</a> was made with <a href="http://www.processing.org/">Processing</a>.<br />
+<p>This  <a href="javascript:Sjeiti.showIFrame('https://attractors.ronvalstar.nl/',1024,768,'attractor viewer')">attractor Viewer</a> was made with <a href="http://www.processing.org/">Processing</a>.<br />
 The attractor viewer can be used to make movies like these: a <a target="_blank" href="http://www.youtube.com/user/sjeiti#p/u/12/DuIVQRvriI8">a Lorenz</a>, <a target="_blank" href="http://www.youtube.com/user/sjeiti#p/u/8/a82FJjQPs2Q">a Lorenz 84</a> and the other of a <a target="_blank" href="http://www.youtube.com/user/sjeiti#p/u/13/BCblQTvaWY8">de Jong attractor</a>.<br />
 I&#8217;ve also put up some nice wallpaper sized images on <a href="http://www.flickr.com/photos/sjeiti/sets/72157603957488195/">Flickr</a>.</p>
 <p>An <a target="_blank" href="http://en.wikipedia.org/wiki/Strange_attractor">attractor</a> is a set of rules upon a number of variables (dimensions) that, after time, can either converge to a point, diverge to </p>

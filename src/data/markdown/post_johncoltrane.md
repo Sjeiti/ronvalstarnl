@@ -1,7 +1,7 @@
 <!--
   id: 240
-  date: 2005-03-03T10:11:06
-  modified: 2005-03-03T10:11:06
+  date: 2005-03-03
+  modified: 2005-03-03
   slug: johncoltrane
   type: post
   excerpt: <p>John Coltrane is brilliant as well.</p>

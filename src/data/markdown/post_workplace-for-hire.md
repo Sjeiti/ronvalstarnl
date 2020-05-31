@@ -1,7 +1,7 @@
 <!--
   id: 327
-  date: 2008-10-06T16:11:43
-  modified: 2014-03-11T08:45:36
+  date: 2008-10-06
+  modified: 2014-03-11
   slug: workplace-for-hire
   type: post
   excerpt: <p>For a year now I&#8217;ve been freelancing. Sometimes on location, but mostly at the studio I share with two other freelancers. One of them has now decided to leave because she rarely used the studio. So, if you are, or you know, someone who needs a place to work right in the middle of Amsterdam, [&hellip;]</p>

@@ -1,7 +1,7 @@
 <!--
   id: 217
-  date: 2006-07-09T00:50:41
-  modified: 2014-03-11T08:48:42
+  date: 2006-07-09
+  modified: 2014-03-11
   slug: comicomaticupdate
   type: post
   excerpt: <p>Sending people stupid messages is great fun so I updated the comic.o.matic with an image upload and a drawing tool. Enjoy!</p>

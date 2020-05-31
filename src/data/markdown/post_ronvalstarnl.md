@@ -1,7 +1,7 @@
 <!--
   id: 334
-  date: 2009-01-29T16:10:23
-  modified: 2014-03-11T08:44:48
+  date: 2009-01-29
+  modified: 2014-03-11
   slug: ronvalstarnl
   type: post
   excerpt: <p>I &#8216;slightly&#8217; restyled my ronvalstar.nl site. Partly because I was not completely satisfied with it but mainly to prove a point: in a lot of cases a HTML site is a better solution than Flash. Don&#8217;t get me wrong, I love Flash, especially the new features in the new version 10 (although they still didn&#8217;t [&hellip;]</p>

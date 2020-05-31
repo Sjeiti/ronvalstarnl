@@ -31,7 +31,7 @@ One of the techniques I used that was already in the old version is scattering e
 The same goes for secondary data like iteration distance and Lyapunov exponent which can be used for colouring. Although these two are a bit different because the values are not cumulative but an average. The trick is to use the same scattering and when all iterations are complete divide it by the result of the iteration points.  
 A trickier problem is the distance of the nearest point to the camera. It’s trickier because the value is neither cumulative nor averaged. Pixel scattering cannot be applied because a closest distance simply cannot be distributed over four pixels and still hold a meaningful value.
 
-I’ll probably be adding a few more features and speed/memory improvements. For now [enjoy](http://attractors.ronvalstar.nl).
+I’ll probably be adding a few more features and speed/memory improvements. For now [enjoy](https://attractors.ronvalstar.nl).
 
 -update-
 

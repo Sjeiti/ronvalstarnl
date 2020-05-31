@@ -1,7 +1,7 @@
 <!--
   id: 224
-  date: 2006-05-29T22:21:47
-  modified: 2006-05-29T22:21:47
+  date: 2006-05-29
+  modified: 2006-05-29
   slug: irrepressible
   type: post
   excerpt: [object Object]

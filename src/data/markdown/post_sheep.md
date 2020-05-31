@@ -1,7 +1,7 @@
 <!--
   id: 235
-  date: 2005-06-23T16:04:58
-  modified: 2005-06-23T16:04:58
+  date: 2005-06-23
+  modified: 2005-06-23
   slug: sheep
   type: post
   excerpt: <p>I had some free time at Shapers and started this little game, though soon I was over my head in work and had to finish it at home. Luckily I have a very patient girlfriend (who happened to create the sounds for this game).</p>

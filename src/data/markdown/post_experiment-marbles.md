@@ -1,7 +1,7 @@
 <!--
   id: 3328
-  date: 2017-08-02T08:59:52
-  modified: 2017-09-27T05:39:51
+  date: 2017-08-02
+  modified: 2020-05-31
   slug: experiment-marbles
   type: post
   excerpt: <p>Last week I saw an old image in my library of something I created back in 2006. It was a few marbles created using Flash and displacement mapping. Remember BitmapData and DisplacementMapFilter? No I didn&#8217;t either. But since I&#8217;m learning GLSL I thought this would be an excellent little experiment to recreate.</p>
@@ -15,7 +15,7 @@
 
 # Experiment: marbles
 
-Last week I saw an old image in my library of [something I created](http://test.sjeiti.com/knikkeren/) back in 2006\. It was a few marbles created using Flash and displacement mapping. Remember BitmapData and DisplacementMapFilter? No I didn’t either.  
+Last week I saw an old image in my library of [something I created](https://test.sjeiti.com/knikkeren/) back in 2006\. It was a few marbles created using Flash and displacement mapping. Remember BitmapData and DisplacementMapFilter? No I didn’t either.  
 But since I’m learning GLSL I thought this would be an excellent little experiment to recreate.  
 
 Back then I did the physics myself but this time I wanted to concentrate on the WebGL part so I used Matter.js. Circles in Matter are really just a polygon of vertices, but it works just fine.  

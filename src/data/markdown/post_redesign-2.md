@@ -1,7 +1,7 @@
 <!--
   id: 266
-  date: 2003-12-01T03:42:32
-  modified: 2014-08-15T21:29:58
+  date: 2003-12-01
+  modified: 2014-08-15
   slug: redesign-2
   type: post
   categories: admin

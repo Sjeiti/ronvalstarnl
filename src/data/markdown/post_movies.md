@@ -1,7 +1,7 @@
 <!--
   id: 238
-  date: 2005-03-19T10:58:24
-  modified: 2005-03-19T10:58:24
+  date: 2005-03-19
+  modified: 2005-03-19
   slug: movies
   type: post
   excerpt: <p>Three quicktime movies, one of a Lorenz, a Lorenz 84 and the other of a de Jong attractor.</p>

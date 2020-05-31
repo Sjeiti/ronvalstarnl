@@ -1,7 +1,7 @@
 <!--
   id: 2565
-  date: 2014-04-24T11:19:04
-  modified: 2015-10-25T07:08:04
+  date: 2014-04-24
+  modified: 2015-10-25
   slug: experiment-plasma
   type: post
   excerpt: <p>Just a clever trick using canvas native shadow to create something that looks like a plasma.</p>

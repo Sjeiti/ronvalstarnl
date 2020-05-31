@@ -1,7 +1,7 @@
 <!--
   id: 3273
-  date: 2017-01-14T10:07:46
-  modified: 2017-01-24T15:36:32
+  date: 2017-01-14
+  modified: 2017-01-24
   slug: experiment-spiralmap
   type: post
   excerpt: The first WebGL shader I published was 3D Perlin noise dripping from the ceiling. But one of the first WebGL shaders I made was a simple displacement map.

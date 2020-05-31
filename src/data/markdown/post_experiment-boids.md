@@ -1,6 +1,6 @@
 <!--
   id: 2555
-  date: 2014-04-22T15:38:25
+  date: 2014-04-22
   modified: 2020-03-17
   slug: experiment-boids
   type: post

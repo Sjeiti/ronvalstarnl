@@ -1,7 +1,7 @@
 <!--
   id: 294
-  date: 2007-03-29T15:27:53
-  modified: 2012-07-03T09:29:31
+  date: 2007-03-29
+  modified: 2012-07-03
   slug: illustration
   type: post
   excerpt: <p>I really should illustrate more. Apart from good practice it&#8217;s also fun to do.</p>

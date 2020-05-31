@@ -1,7 +1,7 @@
 <!--
   id: 20
-  date: 2007-01-07T12:43:20
-  modified: 2007-01-07T12:43:20
+  date: 2007-01-07
+  modified: 2007-01-07
   slug: noise-grid
   type: post
   excerpt: <p>Normally you would use Perlin Noise for surfaces, textures, movements or any other form that is continious and irregular. But what if you want points that are spread irregularly, a forest for instance or a starfield. This can be done with Perlin noise as well. You take a grid, place it over the noise field. [&hellip;]</p>

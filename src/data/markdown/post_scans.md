@@ -1,7 +1,7 @@
 <!--
   id: 264
-  date: 2003-12-24T03:11:47
-  modified: 2003-12-24T03:11:47
+  date: 2003-12-24
+  modified: 2003-12-24
   slug: scans
   type: post
   excerpt: <p>finally managed to scan something somewhere</p>

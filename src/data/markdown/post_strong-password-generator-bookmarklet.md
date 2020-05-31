@@ -1,7 +1,7 @@
 <!--
   id: 2665
-  date: 2014-11-11T12:21:49
-  modified: 2014-11-18T21:46:59
+  date: 2014-11-11
+  modified: 2014-11-18
   slug: strong-password-generator-bookmarklet
   type: post
   excerpt: <p>A bookmarklet that creates strong passwords that can safely be used from any browser on any system without accessing the internet. The bookmarklet is generated with presets and seeds making it unique for every user.</p>

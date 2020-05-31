@@ -1,7 +1,7 @@
 <!--
   id: 414
-  date: 2010-02-13T19:01:37
-  modified: 2012-07-03T09:29:31
+  date: 2010-02-13
+  modified: 2012-07-03
   slug: icon-for-new-jquery-plugin
   type: post
   excerpt: [object Object]

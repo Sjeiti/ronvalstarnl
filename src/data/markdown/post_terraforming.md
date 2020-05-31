@@ -1,7 +1,7 @@
 <!--
   id: 291
-  date: 2007-03-05T12:16:54
-  modified: 2012-07-03T09:29:31
+  date: 2007-03-05
+  modified: 2012-07-03
   slug: terraforming
   type: post
   categories: code, Flash, image, ActionScript

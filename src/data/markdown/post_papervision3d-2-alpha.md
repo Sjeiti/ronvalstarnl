@@ -1,7 +1,7 @@
 <!--
   id: 311
-  date: 2007-12-14T22:39:00
-  modified: 2012-09-30T08:50:52
+  date: 2007-12-14
+  modified: 2012-09-30
   slug: papervision3d-2-alpha
   type: post
   excerpt: <p>The long awaited version 2 alpha is out. Well it has been out for about two weeks but I haven&#8217;t had time to look into it. I&#8217;ve cooked up a little something to try it out together with some Filter Forge filters: check it out. There are of course still some things that need to [&hellip;]</p>

@@ -1,8 +1,8 @@
 <!--
   id: 892
   description: The last two days I found myself having a crack at the JS1k competition. Actually did about half of it on an iPad at night.
-  date: 2012-02-14T23:26:43
-  modified: 2012-07-25T05:34:51
+  date: 2012-02-14
+  modified: 2012-07-25
   slug: js1k
   type: post
   excerpt: <p>I saw something on Zite about the js1k competition. Now I&#8217;ve never really been into competitions (the last time I even won something was for a drawing contest when I was 13). And these programming things always look like you have to be some kind of l33t demo haxor or something.</p>

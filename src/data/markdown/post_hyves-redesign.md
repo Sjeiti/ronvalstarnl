@@ -1,7 +1,7 @@
 <!--
   id: 337
-  date: 2008-06-19T13:17:28
-  modified: 2014-03-11T08:46:41
+  date: 2008-06-19
+  modified: 2014-03-11
   slug: hyves-redesign
   type: post
   excerpt: <p>For the last year Ultrafris (a friend of mine) has been working very hard on the Hyves redesign. It has gone live for goldmemenbers now. If you are not a goldmember you can get a previeuw over here.</p>

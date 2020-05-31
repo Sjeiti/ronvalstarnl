@@ -1,7 +1,7 @@
 <!--
   id: 420
-  date: 2010-05-04T14:45:21
-  modified: 2012-07-03T09:30:12
+  date: 2010-05-04
+  modified: 2012-07-03
   slug: freelance-space-for-hire
   type: post
   excerpt: <p>Workplace for hire in the heart of Amsterdam behind Dam square. The studio is shared with a film maker and an interaction designer (me). Directly available for €152 per month. Contact me or Claudia.</p>

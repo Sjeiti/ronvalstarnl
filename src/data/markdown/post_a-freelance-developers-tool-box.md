@@ -1,8 +1,8 @@
 <!--
   id: 2388
   description: It's not the tools that make you a good developer, but good tools certainly help. Here's a list of software and tools I use as a freelancer.
-  date: 2013-05-29T09:53:26
-  modified: 2014-05-06T13:01:35
+  date: 2013-05-29
+  modified: 2014-05-06
   slug: a-freelance-developers-tool-box
   type: post
   categories: code, work

@@ -1,7 +1,7 @@
 <!--
   id: 26
-  date: 2007-01-07T12:45:18
-  modified: 2007-01-07T12:45:18
+  date: 2007-01-07
+  modified: 2007-01-07
   slug: tissue
   type: post
   excerpt: <p>Perlin Noise can also be used as a directional field for particles. The particles in this example range between two colours. Two dimensions of the noise field correspond with the position of the particle. The third dimension is coupled to the particles colour and the horizontal position of the mouse. So the left side of [&hellip;]</p>

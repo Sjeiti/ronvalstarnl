@@ -1,7 +1,7 @@
 <!--
   id: 2343
-  date: 2014-04-01T20:26:06
-  modified: 2016-12-11T12:39:57
+  date: 2014-04-01
+  modified: 2016-12-11
   slug: home
   type: page
   excerpt: <p>My name is Ron Valstar and I make cool shit and I develop applications for digital media. I am an Amsterdam based freelance front-end developer with a background in graphic design and interaction design. If you need me give me a call or drop me a line.</p>

@@ -1,7 +1,7 @@
 <!--
   id: 216
-  date: 2006-07-19T08:48:25
-  modified: 2006-07-19T08:48:25
+  date: 2006-07-19
+  modified: 2006-07-19
   slug: pspbrowsing
   type: post
   excerpt: <p>My girlfriend gave me a PSP for my birthday. One of the first things I did was get online and check out that Netfront browser that comes with it. The browser is great: HTML4, CSS2, JavaScript 1.5. Creating websites for it is a bit hard. There are only a few websites that tell you the [&hellip;]</p>

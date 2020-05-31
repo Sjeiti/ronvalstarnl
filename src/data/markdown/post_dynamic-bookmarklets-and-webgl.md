@@ -1,8 +1,8 @@
 <!--
   id: 849
   description: Creating a dynamic bookmarklet with Three.js and WebGL to display Filter Forge filters in 3D.
-  date: 2011-06-03T00:12:36
-  modified: 2016-12-14T20:15:14
+  date: 2011-06-03
+  modified: 2020-05-31
   slug: dynamic-bookmarklets-and-webgl
   type: post
   excerpt: <p>Whenever I&#8217;m up to my neck in work I mostly get utterly bored. So to keep focussed I tend to create these little side projects. Last week I thought I&#8217;d create my first bookmarklet using WebGL rendering with Three.js</p>
@@ -56,4 +56,4 @@ for (var i=0;i&#60;aScripts.length;i++) {
 	}
 }</code></pre>
 <p>So once the init method fires we can use jQuery the same way we always do. But we don&#8217;t have to stop there. Why not dynamically load the entire bookmarklet functionality. That way people will always have the latest version plus we can make the bookmarklet as big as we want.</p>
-<p>I almost forgot about the WebGL part of this post. Oh well, it might look cool but it&#8217;s not that interesting really. Just check out <a href="http://ffpreview.sjeiti.com">ffPreview</a> (you&#8217;ll also find the uncompressed source <a href="http://ffpreview.sjeiti.com/ffPreview.js">here</a>). I&#8217;ll be expanding on it while Three.js grows.</p>
+<p>I almost forgot about the WebGL part of this post. Oh well, it might look cool but it&#8217;s not that interesting really. Just check out <a href="https://ffpreview.sjeiti.com">ffPreview</a> (you&#8217;ll also find the uncompressed source <a href="http://ffpreview.sjeiti.com/ffPreview.js">here</a>). I&#8217;ll be expanding on it while Three.js grows.</p>

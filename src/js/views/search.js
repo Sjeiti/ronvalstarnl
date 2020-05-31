@@ -1,6 +1,6 @@
 import {add} from '../router'
 import {clean, expand} from '../utils/html'
-import {nextTick} from '../utils'
+import {fetchJSONFiles,nextTick} from '../utils'
 import {search, change} from '../component/Search'
 import {open} from '../router'
 import {initialise} from '../component'
@@ -78,6 +78,7 @@ export function searchView(view, route, params, error){
                   }).join('+')
             ))
             initialise(result)
+            fetchJSONFiles()
           })
           .catch(console.warn.bind(console, 'eerr'))
         })

@@ -1,7 +1,7 @@
 <!--
   id: 338
-  date: 2008-06-29T12:16:32
-  modified: 2008-06-29T12:16:32
+  date: 2008-06-29
+  modified: 2008-06-29
   slug: sfbrowser
   type: post
   excerpt: <p>I created another jQuery plugin: SFBrowser. It&#8217;s a jQuery/PHP5 file- browsing and uploading plugin and features: ajax file upload, localisation, file filtering, file renameing, sortable file table, folder creation, file download, file/folder context menu, image resize, image preview, text/ascii preview&#8230; etc&#8230; I haven&#8217;t got round to setting up an example page yet but examples and [&hellip;]</p>

@@ -1,7 +1,7 @@
 <!--
   id: 232
-  date: 2005-11-24T00:23:48
-  modified: 2012-07-03T09:29:30
+  date: 2005-11-24
+  modified: 2012-07-03
   slug: gddiagrams
   type: post
   excerpt: <p>Ever since I read this book I wanted to change the ugly line diagrams I once made with php/gd (for my site statistics). The revised diagram here shows the hourly hits.If you want the source just save this and rename it to a php file.</p>

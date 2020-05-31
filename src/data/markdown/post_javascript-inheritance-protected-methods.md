@@ -1,7 +1,7 @@
 <!--
   id: 2764
-  date: 2015-02-19T19:14:01
-  modified: 2016-12-07T10:10:08
+  date: 2015-02-19
+  modified: 2016-12-07
   slug: javascript-inheritance-protected-methods
   type: post
   excerpt: <p>I really like JavaScript, but it&#8217;s far from perfect. One of it&#8217;s imperfections is that you&#8217;ll have to resort to trickery to create private variables (iife). So what aboutinheritance and protected variables?</p>

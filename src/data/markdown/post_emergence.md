@@ -1,7 +1,7 @@
 <!--
   id: 579
-  date: 2010-06-02T10:33:04
-  modified: 2012-07-03T09:30:13
+  date: 2010-06-02
+  modified: 2012-07-03
   slug: emergence
   type: post
   excerpt: <p>It just needs some color.</p>

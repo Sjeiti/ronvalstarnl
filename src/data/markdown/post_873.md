@@ -1,7 +1,7 @@
 <!--
   id: 873
-  date: 2012-01-30T13:41:24
-  modified: 2012-01-30T13:41:24
+  date: 2012-01-30
+  modified: 2012-01-30
   slug: 873
   type: post
   excerpt: [object Object]

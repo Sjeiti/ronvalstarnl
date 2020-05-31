@@ -1,7 +1,7 @@
 <!--
   id: 2563
-  date: 2014-01-22T15:42:48
-  modified: 2015-10-25T07:01:18
+  date: 2014-01-22
+  modified: 2015-10-25
   slug: experiment-heart
   type: post
   excerpt: <p>My entry for js1k, so don&#8217;t mind the code too much.</p>

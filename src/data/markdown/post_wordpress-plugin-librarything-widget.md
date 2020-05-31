@@ -1,7 +1,7 @@
 <!--
   id: 284
-  date: 2007-01-28T13:11:15
-  modified: 2007-01-28T13:11:15
+  date: 2007-01-28
+  modified: 2007-01-28
   slug: wordpress-plugin-librarything-widget
   type: post
   excerpt: <p>You might have noticed: this plugin has been discontinued.</p>

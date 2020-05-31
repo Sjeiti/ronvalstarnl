@@ -1,7 +1,7 @@
 <!--
   id: 262
-  date: 2004-01-17T16:41:20
-  modified: 2004-01-17T16:41:20
+  date: 2004-01-17
+  modified: 2004-01-17
   slug: magnet
   type: post
   excerpt: <p>made a little magnet&#8230;</p>

@@ -1,8 +1,8 @@
 <!--
   id: 907
   description: A JavaScript speed test normally looks something like this: count how many times we can do the same calculation in a fixed amount of time.
-  date: 2012-04-25T20:59:00
-  modified: 2014-08-15T19:20:24
+  date: 2012-04-25
+  modified: 2014-08-15
   slug: javascript-performance-testing
   type: post
   excerpt: <p>&#8216;All roads lead to Rome&#8217; is a saying in Dutch that means there are multiple ways to accomplish the same thing. Very true in real life but maybe even more so in programming. You&#8217;d think the fastest code is the best, but a lot of times readability is chosen over speed (or, as in most [&hellip;]</p>

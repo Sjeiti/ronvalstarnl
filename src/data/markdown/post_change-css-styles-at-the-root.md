@@ -1,7 +1,7 @@
 <!--
   id: 2390
-  date: 2014-05-06T20:58:18
-  modified: 2014-05-19T17:21:08
+  date: 2014-05-06
+  modified: 2014-05-19
   slug: change-css-styles-at-the-root
   type: post
   excerpt: <p>When building web applications a lot of times a certain elements style needs to be changed. Mostly you can suffice by using one of the Element.classList methods. But sometimes you have to set an elements style directly (think of non-constant values like width, height, padding etc&#8230;). This is fine for single elements but when dealing [&hellip;]</p>

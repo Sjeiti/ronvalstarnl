@@ -1,7 +1,7 @@
 <!--
   id: 305
-  date: 2007-10-04T00:06:33
-  modified: 2012-07-25T21:45:50
+  date: 2007-10-04
+  modified: 2012-07-25
   slug: perlin-noise-in-as3
   type: post
   excerpt: <p>When I started doing processing I fell in love with the Perlin noise function. A little while later Flash 8 came out including noise. But I was a bit disappointed in their noise implementation, since it was only (and still is) a BitmapData function (without falloff). Perlin noise can be used for much than just [&hellip;]</p>

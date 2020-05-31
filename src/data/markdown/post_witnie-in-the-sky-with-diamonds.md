@@ -1,7 +1,7 @@
 <!--
   id: 830
-  date: 2011-02-02T23:39:45
-  modified: 2011-02-02T23:39:45
+  date: 2011-02-02
+  modified: 2011-02-02
   slug: witnie-in-the-sky-with-diamonds
   type: post
   excerpt: [object Object]

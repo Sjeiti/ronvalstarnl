@@ -1,7 +1,7 @@
 <!--
   id: 8
-  date: 2007-01-06T17:10:32
-  modified: 2014-05-01T11:20:23
+  date: 2007-01-06
+  modified: 2014-05-01
   slug: images
   type: page
   excerpt: <p>I used to sketch with pencils. But it&#8217;s very hard to get good contrast with those, unless you use 6B of course. But smudge a 6B line with your hand and you get a nasty stain (or maybe it&#8217;s my sweaty hands). Then I discovered that a good black balpoint works perfectly for contrasts, and [&hellip;]</p>

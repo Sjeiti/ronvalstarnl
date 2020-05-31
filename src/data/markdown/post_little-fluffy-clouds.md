@@ -1,7 +1,7 @@
 <!--
   id: 312
-  date: 2007-12-23T19:56:43
-  modified: 2007-12-23T19:56:43
+  date: 2007-12-23
+  modified: 2007-12-23
   slug: little-fluffy-clouds
   type: post
   excerpt: <p>Oh how cute is that&#8230; while accidentally recreating my old Terraformer filter I took a little sidestep in Flash, displacing the new filter&#8217;s cloud map with it&#8217;s animated self. It looks almost real.</p>

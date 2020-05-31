@@ -32,7 +32,7 @@ So what are the current tools with which you can create an animated SVG?
 
 ### Adobe Animate
 
-[Adobe Animate](https://www.adobe.com/products/animate.html) is used to animate and in fact looks like an exact clone of what once was called Flash <small>(they must have rebranded it because somebody gave it a bad name)</small>. But strangely it does not export to SVG.
+[Adobe Animate](https://www.adobe.com/products/animate.html) looks like an exact clone of what once was called Flash <small>(they must have rebranded it because somebody gave it a bad name)</small>. But strangely it does not export to SVG.
 
 There is a possibility to export to animated SVG using a plugin called [Flash2Svg](https://github.com/TomByrne/Flash2Svg)
 
@@ -40,7 +40,20 @@ There are also traces of a plugin for Flash CC called [Snap.svg Animator](http:/
 
 ### SVGator
 
-Is a good candidate, but it is not as good as Flash (but two dollars cheaper). You can try it out but the 14-day trial sucks a bit because it doesn't reflect all the possibilities.
+SVGator is a possibility, but it is not as good as Flash (two dollars cheaper though). It is an online web application. You can try it out but the 14-day trial sucks a bit because it doesn't reflect all the possibilities.
+
+You cannot draw things so you have to start your SVG creation in something like Illustrator or Inkscape and import it.
+
+The user interface really lacks in UX. For instance the button that collapse the animation row is the size of the tiny icon. And a lot of icon buttons lack the title attribute, so you have to guess at their functionality.
+This makes animating itself rather unintuitive. It's also a pity that animation is divided into properties: you cannot simply transform an element, you have to scale, rotate and translate separately.
+There is an annoying bug where the interface can flip into a state where it cannot drag-select items anymore (because of a JS error blocking execution).
+It has keyboard shortcuts, but they don't always work. But maybe that is because they assume Apple users.
+
+It's also a pity that the resulting output is not optimised for web. My imported SVG had digits with an accuracy of one floating point (ie 231.3). But SVGator turns all those into six, and in most cases with five trailing zeroes (ie 231.300000). Which is really accurate, but when I ran my simple animation through an optimiser I got more than 50% reduction in filesize.
+
+Once you get used to these things
+It makes Adobe Animate well worth the two dollar difference.
+
 
 /*
 https://app.svgator.com/pricing#/

@@ -1,7 +1,7 @@
 <!--
   id: 283
-  date: 2007-02-12T16:15:49
-  modified: 2007-02-12T16:15:49
+  date: 2007-02-12
+  modified: 2007-02-12
   slug: updated-plugins
   type: post
   excerpt: <p>It started with a little update on the Cronfaker plugin but one thing led to another so now I&#8217;ve updated the Librarything plugin and the Stats plugin as well (and the sparkline one is almost done).</p>

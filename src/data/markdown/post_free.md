@@ -1,7 +1,7 @@
 <!--
   id: 299
-  date: 2007-07-26T18:43:35
-  modified: 2007-07-26T18:43:35
+  date: 2007-07-26
+  modified: 2007-07-26
   slug: free
   type: post
   excerpt: <p>No posts for some time, but for a good reason. A lot has changed in the last few months. Since 2000 I&#8217;ve been working at Shapers, a company that I co-founded with four other guys. One of them had left in 2003 to become a stunt man. Well, to make a long story short, we [&hellip;]</p>

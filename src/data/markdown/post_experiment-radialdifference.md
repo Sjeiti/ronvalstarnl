@@ -1,7 +1,7 @@
 <!--
   id: 3058
-  date: 2016-09-06T15:06:00
-  modified: 2017-01-14T13:32:06
+  date: 2016-09-06
+  modified: 2017-01-14
   slug: experiment-radialdifference
   type: post
   excerpt: <p>Another pretty simple idea with a really cool result (above). These are radial gradients drawn on top of each other with a &#8216;difference&#8217; blend mode.</p>

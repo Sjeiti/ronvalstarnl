@@ -1,7 +1,7 @@
 <!--
   id: 331
-  date: 2008-11-22T21:07:44
-  modified: 2008-11-22T21:07:44
+  date: 2008-11-22
+  modified: 2008-11-22
   slug: 331
   type: post
   excerpt: <p>For those interested: I just updated my jQuery plugins: SFBrowser TinySort TagCloud</p>

@@ -1,7 +1,7 @@
 <!--
   id: 3282
-  date: 2017-01-24T15:30:55
-  modified: 2017-01-24T17:49:30
+  date: 2017-01-24
+  modified: 2017-01-24
   slug: experiment-fire
   type: post
   excerpt: <p>Here&#8217;s a hot shader: fire with sparks. The fire is Simplex noise, nothing special apart from some displacement to fake realism. But the sparks might need some explanation.</p>

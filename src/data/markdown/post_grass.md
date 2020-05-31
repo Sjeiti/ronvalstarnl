@@ -1,7 +1,7 @@
 <!--
   id: 21
-  date: 2007-01-07T12:43:34
-  modified: 2007-01-07T12:43:34
+  date: 2007-01-07
+  modified: 2007-01-07
   slug: grass
   type: post
   excerpt: <p>A simulation of grass or weeds in processing. The seamless underground was done by making a cylindrical texture of which the x position corresponds the 3dimensional x and y position in a noise fields. So the x position in the texture is basicly the amount of radians in x and y position of the noise [&hellip;]</p>

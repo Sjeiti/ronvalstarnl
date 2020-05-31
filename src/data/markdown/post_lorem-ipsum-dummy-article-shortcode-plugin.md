@@ -1,7 +1,7 @@
 <!--
   id: 2687
-  date: 2015-01-28T12:24:12
-  modified: 2015-01-28T12:50:44
+  date: 2015-01-28
+  modified: 2015-01-28
   slug: lorem-ipsum-dummy-article-shortcode-plugin
   type: post
   excerpt: <p>I&#8217;ve been using a lorem-ipsum generator for WordPress development for the last few years but there were some features that could be implemented better and some features that I missed. Normally I try to contribute to existing code instead of reinventing the wheel. But the plugin I used hadn&#8217;t been updated in over two years [&hellip;]</p>

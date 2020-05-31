@@ -1,7 +1,7 @@
 <!--
   id: 2905
-  date: 2015-10-25T07:22:25
-  modified: 2017-01-14T13:30:03
+  date: 2015-10-25
+  modified: 2017-01-14
   slug: experiment-blob
   type: post
   excerpt: <p>This is an experiment with WebGL shaders. The JavaScript code is nothing much; just a scaffold to load GLSL scripts, run the shader program and some events to parse mouse- and keyboard input. The cool bit is the shader code itself.</p>

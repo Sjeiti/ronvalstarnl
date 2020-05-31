@@ -1,7 +1,7 @@
 <!--
   id: 285
-  date: 2007-01-31T19:38:56
-  modified: 2007-01-31T19:38:56
+  date: 2007-01-31
+  modified: 2007-01-31
   slug: faking-cron-jobs-for-sparklines
   type: post
   excerpt: <p>I did search for a fake cron job plugin of course (I wouldn&#8217;t want to reinvent the wheel). But the only one I could find does not make a difference between bots and humans. If that doesn&#8217;t matter for you the plugin is worth a look (it also comes with a couple of plugins that [&hellip;]</p>

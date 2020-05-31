@@ -1,7 +1,7 @@
 <!--
   id: 2339
-  date: 2014-04-01T20:25:07
-  modified: 2017-10-07T19:36:02
+  date: 2014-04-01
+  modified: 2017-10-07
   slug: contact
   type: page
   excerpt: <p>Ron Valstar, MA +31 (0)6 33697212 hello@ronvalstar.nl</p>

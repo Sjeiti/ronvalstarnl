@@ -1,7 +1,7 @@
 <!--
   id: 239
-  date: 2005-03-12T01:06:18
-  modified: 2014-05-08T06:00:44
+  date: 2005-03-12
+  modified: 2014-05-08
   slug: attractorviewer
   type: post
   excerpt: <p>I&#8217;ve made a thing for you to explore the chaos of strange attractors.</p>

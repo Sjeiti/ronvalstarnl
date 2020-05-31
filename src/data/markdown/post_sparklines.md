@@ -1,7 +1,7 @@
 <!--
   id: 230
-  date: 2005-12-27T10:15:55
-  modified: 2012-07-03T09:29:30
+  date: 2005-12-27
+  modified: 2012-07-03
   slug: sparklines
   type: post
   excerpt: <p>This infostetics article pointed me to sparkline.org. Sparklines are &#8220;intense, simple, wordlike graphics&#8221;, invented(?) by Edward Tufte. You can download a gd sparkline-library at sparkline.org. My first sparkline (no use of that library though) is to the right showing the unique visitors on top and the spiders/bots on the bottom, clearly showing the spider/bot harrassment [&hellip;]</p>

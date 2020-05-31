@@ -1,8 +1,8 @@
 <!--
   id: 632
   description: Too bad you can't zoom in with stereoscopic 3D. But with a little JavaScript you can...
-  date: 2010-09-17T14:17:38
-  modified: 2012-07-25T07:15:34
+  date: 2010-09-17
+  modified: 2020-05-31
   slug: stereoscopic-3d-zoom-with-javascript
   type: post
   excerpt: <p>Last year I got a microscope for my birthday. As with most toys, you play around with them for a while but eventually they end up on a shelf somewhere.</p>
@@ -54,4 +54,4 @@
 					}
 	}
 --></script></p>
-<p>More zoomeable images <a href="http://test.ronvalstar.nl/stereozoom/" rel="external">are here</a>. Or on my <a href="http://www.flickr.com/photos/sjeiti/sets/72157624940839316/" rel="external">flickr page</a>.</p>
+<p>More zoomeable images <a href="https://test.ronvalstar.nl/stereozoom/" rel="external">are here</a>. Or on my <a href="http://www.flickr.com/photos/sjeiti/sets/72157624940839316/" rel="external">flickr page</a>.</p>

@@ -1,7 +1,7 @@
 <!--
   id: 426
-  date: 2010-05-10T13:39:54
-  modified: 2015-12-24T20:09:44
+  date: 2010-05-10
+  modified: 2015-12-24
   slug: perlin-noise-in-javascript-comparisons
   type: post
   categories: code, HTML, JavaScript

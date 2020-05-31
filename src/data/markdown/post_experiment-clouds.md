@@ -1,7 +1,7 @@
 <!--
   id: 2557
-  date: 2017-01-08T11:19:03
-  modified: 2017-01-24T15:37:33
+  date: 2017-01-08
+  modified: 2017-01-24
   slug: experiment-clouds
   type: post
   excerpt: <p>At first I tried this in plain JavaScript but it was way too slow. So here are some clouds in GLSL.</p>

@@ -1,7 +1,7 @@
 <!--
   id: 273
-  date: 2007-01-19T01:57:10
-  modified: 2007-01-19T01:57:10
+  date: 2007-01-19
+  modified: 2007-01-19
   slug: wordpress
   type: post
   excerpt: <p>For years I&#8217;ve been using my own CMS which actually started as a sort of personal project to learn more php. And now that I know how to write php I&#8217;m too lazy to extend or rewrite my own CMS so I&#8217;ve poored all my data into WordPress, which seems to be the most popular [&hellip;]</p>

@@ -1,7 +1,7 @@
 <!--
   id: 1775
   date: 2012-09-26
-  modified: 2015-12-24
+  modified: 2020-05-31
   slug: creating-tileable-noise-maps
   type: post
   categories: code
@@ -19,7 +19,7 @@ Creating a tileable image in Photoshop is easy; crop an image, take the cropped 
 If you have a [basic understanding of Perlin noise](http://freespace.virgin.net/hugo.elias/models/m_perlin.htm "Hugo Elias on Perlin noise") you’ll know that it consists of interpolated random numbers. People mostly use it in two dimensions. But it’s also useful in one dimension (movement for instance), in three dimensions (cylindrical and spherical mapping of 3D objects) and even four or five dimensions.  
 You can use four dimensional noise to create a tileable 2D image. Thinking in four dimensions is not an everday practice so we’ll take it one dimension at a time.
 
-In [the examples](http://test.ronvalstar.nl/noiseTiling) I’ve used [Simplex noise](http://en.wikipedia.org/wiki/Simplex_noise "Simplex noise on Wikipedia") with two octaves. Simplex noise is faster in higher dimensions and it looks better because of it’s triangular nature.  
+In [the examples](https://test.ronvalstar.nl/noiseTiling) I’ve used [Simplex noise](http://en.wikipedia.org/wiki/Simplex_noise "Simplex noise on Wikipedia") with two octaves. Simplex noise is faster in higher dimensions and it looks better because of it’s triangular nature.  
 I’ve written a small function called drawNoise to deal with canvas creation and pixel array looping. You can [download the examples here](https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/noiseTiling.zip).
 
 ## One dimensional tileable noise

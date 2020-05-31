@@ -1,7 +1,7 @@
 <!--
   id: 2578
-  date: 2014-04-26T19:37:36
-  modified: 2017-01-17T12:10:05
+  date: 2014-04-26
+  modified: 2017-01-17
   slug: experiment-snow
   type: post
   excerpt: <p>A simple implementation of procedural particle scattering: an infinite field of snow falling upward.</p>

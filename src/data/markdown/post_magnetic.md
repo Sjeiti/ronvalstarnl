@@ -1,7 +1,7 @@
 <!--
   id: 22
-  date: 2007-01-07T12:44:04
-  modified: 2007-01-07T12:44:04
+  date: 2007-01-07
+  modified: 2007-01-07
   slug: magnetic
   type: post
   excerpt: <p>I had already coded something like this with imaging-lingo (director) under the name of magnet. I just wanted to see the difference in speed between lingo and java.</p>

@@ -1,7 +1,7 @@
 <!--
   id: 301
-  date: 2007-09-19T13:49:51
-  modified: 2007-09-19T13:49:51
+  date: 2007-09-19
+  modified: 2007-09-19
   slug: algorithmic-botany
   type: post
   excerpt: <p>I&#8217;m currently doing a project that uses the growth of computer generated plants to visualize the progress students make in subjects like: adding, subtracting and multiplication (so yes it&#8217;s for kids). A good chance for me to read up on the mathematical aspects of L-systems. The site algorithmic botany is a great help, and apart [&hellip;]</p>

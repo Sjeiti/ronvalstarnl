@@ -1,7 +1,7 @@
 <!--
   id: 23
-  date: 2007-01-07T12:44:19
-  modified: 2007-01-07T12:44:19
+  date: 2007-01-07
+  modified: 2007-01-07
   slug: cells
   type: post
   excerpt: <p>I don&#8217;t remember why I made this, sometimes it just happens. When you drag your mouse (while clicking) different sized balls appear. When you press a key the thing resets.</p>

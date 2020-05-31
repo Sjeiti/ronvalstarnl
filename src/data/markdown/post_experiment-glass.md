@@ -1,7 +1,7 @@
 <!--
   id: 2553
-  date: 2014-06-22T15:25:56
-  modified: 2015-10-25T06:59:52
+  date: 2014-06-22
+  modified: 2015-10-25
   slug: experiment-glass
   type: post
   categories: uncategorized

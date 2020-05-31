@@ -1,7 +1,7 @@
 <!--
   id: 587
-  date: 2010-07-22T21:38:36
-  modified: 2012-07-03T09:31:39
+  date: 2010-07-22
+  modified: 2012-07-03
   slug: meten-is-weten
   type: post
   excerpt: [object Object]

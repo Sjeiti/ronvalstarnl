@@ -1,7 +1,7 @@
 <!--
   id: 25
-  date: 2007-01-07T12:44:51
-  modified: 2012-07-03T09:30:37
+  date: 2007-01-07
+  modified: 2012-07-03
   slug: growth
   type: post
   excerpt: <p>A study in Lindemayer-systems and Fibonacci&#8217;s golden mean. However, this L-system is quite random, but that&#8217;s also the case in the great outside world.</p>

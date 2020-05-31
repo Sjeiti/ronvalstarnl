@@ -1,7 +1,7 @@
 <!--
   id: 278
-  date: 2007-02-24T19:37:19
-  modified: 2012-07-03T15:56:45
+  date: 2007-02-24
+  modified: 2012-07-03
   slug: papervision3d
   type: post
   excerpt: <p>ActionScript 3 is easy as pie, it just looks a bit scary at first. As I mentioned earlier I had a look at Papervision3D (a 3D engine for Flash) and decided it would be a good oppurtunity to take up as3 (and test some of my filters in 3D at the same time). After some [&hellip;]</p>

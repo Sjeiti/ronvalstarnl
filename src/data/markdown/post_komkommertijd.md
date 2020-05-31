@@ -1,7 +1,7 @@
 <!--
   id: 215
-  date: 2006-10-07T00:26:58
-  modified: 2012-09-30T08:50:52
+  date: 2006-10-07
+  modified: 2012-09-30
   slug: komkommertijd
   type: post
   excerpt: <p>Not much going on at this side of the web. I am keeping very busy at Shapers of couse. And Filterforge keeps me busy as well, as you can see on the background: done with a filter I called Splatter. Another nice one I recently did was Baroque Frame II. A bit corny I agree, [&hellip;]</p>
