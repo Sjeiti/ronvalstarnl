@@ -19,8 +19,12 @@
 
 # Kleuren speuren
 
-<p>Kleuren Speuren is an educational game designed for children aged 6 to 12.<br />
-It is a playable learning environment that teaches fun things about color theory.<br />
-Kleuren Speuren was brought out as freeware, on CD-ROM as well as an online download.</p>
-<p>The overarching game element creates the additional challenge to go on. The aim is to catch all the chameleons by searching in six different color spaces that are accessible from the courtyard. In every room six chameleons are hidden. To find a chameleon, you must accomplish a task. If you do it well, the chameleon appears and you can catch him. When all chameleons are caught you will have the best chance of winning the bonus game. </p>
-<p>In 2004 Kleuren Speuren was nominated for the Gouden Apenstaart.</p>
+Kleuren Speuren is an educational game designed for children aged 6 to 12.
+It is a playable learning environment that teaches fun things about color theory.
+Kleuren Speuren was brought out as freeware, on CD-ROM as well as an online download.
+
+The overarching game element creates the additional challenge to go on. The aim is to catch all the chameleons by searching in six different color spaces that are accessible from the courtyard. In every room six chameleons are hidden. To find a chameleon, you must accomplish a task. If you do it well, the chameleon appears and you can catch him. When all chameleons are caught you will have the best chance of winning the bonus game. 
+
+In 2004 Kleuren Speuren was nominated for the Gouden Apenstaart.
+
+Kleuren Speuren can be downloaded at  [https://kleurenspeuren.ronvalstar.nl](https://kleurenspeuren.ronvalstar.nl)

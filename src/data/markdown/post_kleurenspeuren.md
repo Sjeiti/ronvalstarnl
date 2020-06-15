@@ -1,18 +1,17 @@
 <!--
   id: 223
   date: 2006-05-31
-  modified: 2006-05-31
+  modified: 2020-06-15
   slug: kleurenspeuren
   type: post
-  excerpt: <p>The game &#8216;Kleuren Speuren&#8216; is now available for download. Kleuren Speuren is a playfull educational CD-rom about color. It&#8217;s only available in Dutch though (sorry).</p>
+  excerpt: The game Kleuren Speuren is now available for download. Kleuren Speuren is a playfull educational CD-rom about color.
   categories: Director, game
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # kleuren speuren
 
-<p>The game &#8216;<a href="http://kleurenspeuren.shapers.nl/" target="_blank">Kleuren Speuren</a>&#8216; is now available for download. Kleuren Speuren is a playfull educational CD-rom about color. It&#8217;s only available in Dutch though (sorry).</p>
+The game [Kleuren Speuren](/project/kleuren-speuren) is now available for download. Kleuren Speuren is a playful educational CD-rom about color. It's only available in Dutch though (sorry).
+
+-update-
+
+The download location was gone (after fourteen years). So I've put it up under my own domain: [https://kleurenspeuren.ronvalstar.nl](https://kleurenspeuren.ronvalstar.nl)
