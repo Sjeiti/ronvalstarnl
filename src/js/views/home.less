@@ -43,11 +43,22 @@ section:after {
   section {
     margin: 0;
     overflow: hidden; // to prevent margin collapse
+    h2 { margin-top: 10rem; }
     &.built {
+      h2 { margin-top: 4rem; }
     }
     &.for {
       background-color: #d9e4e4;
       li { box-shadow: inset -32px -64px 128px #e3eef2; }
+      .svg-list {
+        white-space: nowrap;
+        overflow: hidden;
+        width: 999rem;
+        margin-bottom: 0;
+        li {
+          width: 12rem;
+        }
+      }
     }
     &.won {
       background-color: #e3eef2;

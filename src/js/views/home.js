@@ -2,6 +2,11 @@ import {add} from '../router'
 import {MEDIA_URI} from '../config'
 import {fetchJSONFiles, stickiesFirst, todayOlderFilter} from '../utils'
 import {getProjectThumbZen} from './projects'
+import {TweenMax, Linear} from 'gsap'
+import clientSymbols from '!!raw-loader!../../static/svg/client-symbol-defs.svg'
+
+// conditional because of prerender
+document.querySelector('#client-symbol-defs')||document.body.insertAdjacentHTML('afterbegin', clientSymbols)
 
 add(
   ''
@@ -17,11 +22,37 @@ add(
         //
         // clients
         view.expandAppend('section.for>(h2.section-title>small{worked}+{for})+ul.unstyled.svg-list.clients', false)
-        const clients = ['sikkens', '72', 'uva', 'resn', 'tddb', 'novartis', 'randstad', '2x4', 'vodafone', 'bia', 'philips']
-        Promise.all(clients.map(s=>fetch(`${MEDIA_URI}clients_${s}.svg`).then(rs=>rs.text())))
-            .then(clients=>{
-              view.querySelector('.clients').insertAdjacentHTML('beforeend', clients.map(s=>`<li>${s}</li>`).join(''))
-            })
+        const clientNames = [
+              'sikkens'
+            , '72andsunny'
+            , 'uva'
+            , 'resn'
+            , 'tribalddb'
+            , 'novartis'
+            , 'randstad'
+            , '2x4'
+            , 'vodafone'
+            , 'buildinamsterdam'
+            , 'philips'
+          ]
+        const elmClients = view.querySelector('.clients')
+        elmClients.insertAdjacentHTML('beforeend', clientNames.map(s=>`<li><svg><use xlink:href="#client-${s}"></use></svg></li>`).join(''))
+        setTimeout(()=>{
+            const {children: [{offsetWidth}], style} = elmClients
+            elmClients.style.width = `${clientNames.length*offsetWidth}px`
+            //
+            style.marginLeft = 0
+            TweenMax.to(
+                style
+                , 6
+                , {
+                  marginLeft: `${-offsetWidth}px`
+                  , onRepeat: () => elmClients.appendChild(elmClients.children[0])
+                  , repeat: -1
+                  , ease: Linear.easeNone
+                }
+            )
+        }, 140)
         //
         // won
         view.expandAppend('section.won>(h2.section-title>small{prizes}+{won})+ul.unstyled.svg-list.prizes', false)
