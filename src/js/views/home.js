@@ -1,12 +1,16 @@
 import {add} from '../router'
-import {MEDIA_URI} from '../config'
 import {fetchJSONFiles, stickiesFirst, todayOlderFilter} from '../utils'
 import {getProjectThumbZen} from './projects'
 import {TweenMax, Linear} from 'gsap'
 import clientSymbols from '!!raw-loader!../../static/svg/client-symbol-defs.svg'
+import prizesSymbols from '!!raw-loader!../../static/svg/prizes-symbol-defs.svg'
 
 // conditional because of prerender
 document.querySelector('#client-symbol-defs')||document.body.insertAdjacentHTML('afterbegin', clientSymbols)
+document.querySelector('#prize-symbol-defs')||document.body.insertAdjacentHTML('afterbegin', prizesSymbols)
+
+const populateSVGList = (ul, names)=>
+  ul.insertAdjacentHTML('beforeend', names.map(s=>`<li><svg><use xlink:href="#${s}"></use></svg></li>`).join(''))
 
 add(
   ''
@@ -36,7 +40,7 @@ add(
             , 'philips'
           ]
         const elmClients = view.querySelector('.clients')
-        elmClients.insertAdjacentHTML('beforeend', clientNames.map(s=>`<li><svg><use xlink:href="#client-${s}"></use></svg></li>`).join(''))
+        populateSVGList(elmClients, clientNames.map(s=>`client-${s}`))
         setTimeout(()=>{
             const {children: [{offsetWidth}], style} = elmClients
             elmClients.style.width = `${clientNames.length*offsetWidth}px`
@@ -57,15 +61,11 @@ add(
         // won
         view.expandAppend('section.won>(h2.section-title>small{prizes}+{won})+ul.unstyled.svg-list.prizes', false)
         const prizes = ['fwa', 'adcn', 'webby']
-        Promise.all(prizes.map(s=>fetch(`${MEDIA_URI}prizes_${s}.svg`).then(rs=>rs.text())))
-            .then(clients=>{
-              view.querySelector('.prizes').insertAdjacentHTML('beforeend', clients.map(s=>`<li>${s}</li>`).join(''))
-            })
+        const elmPrizes = view.querySelector('.prizes')
+        populateSVGList(elmPrizes, prizes.map(s=>`prize-${s}`))
         //
         // blog
-        //   console.log('st', posts.filter(p=>p.sticky)) // todo: remove log
         const currentPast = stickiesFirst(posts.filter(todayOlderFilter))
-          // console.log('st', currentPast.filter(p=>p.sticky)) // todo: remove log
         const firstTen = currentPast.slice(0, 10)
         const getLi = post=>`(li>a[href="/${post.slug}"]>(time{${post.date.split('T').shift()}}+{${post.title}}))`
         const stickies = `(.paper>div>ul.unstyled.link-list>(${firstTen.filter(p=>p.sticky).map(getLi).join('+')}))`
