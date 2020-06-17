@@ -4,7 +4,7 @@
   modified: 2014-08-15
   slug: php-finally
   type: post
-  excerpt: <p>finnally some php&#8230; only thing not working yet is shockwave on mozilla</p>
+  excerpt: <p>finally some php&#8230; only thing not working yet is shockwave on mozilla</p>
   categories: backend
   tags: 
   inCv: 
@@ -15,4 +15,4 @@
 
 # php
 
-<p>finnally some php&#8230; only thing not working yet is shockwave on mozilla</p>
+<p>finally some php&#8230; only thing not working yet is shockwave on mozilla</p>

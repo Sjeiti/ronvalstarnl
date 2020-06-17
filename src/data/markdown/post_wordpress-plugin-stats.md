@@ -44,7 +44,7 @@
 Here is a screenshot:<br />
 <br />
 As you can see there are a couple of lines with an extremely small font size, those are the bot and spider hits. The font sizes return to normal when you rollover them.<br />
-The page also retreives the &#8216;exact&#8217; location of the ip, displayed by a flag and an abreviation. The ip2location database table is quite large (an extra 3.66MB) so activating the plugin wil take a few more seconds than usual.<br />
+The page also retrieves the &#8216;exact&#8217; location of the ip, displayed by a flag and an abreviation. The ip2location database table is quite large (an extra 3.66MB) so activating the plugin wil take a few more seconds than usual.<br />
 The list of search engines will first display the url of the engine, followed by a number of keywords searched for with that engine (so in this screenshots unclear case some idiot searched for &#8216;www&#8217; and found my site).</p>
 <h3>download</h3>
 <table cellpadding="0" cellspacing="0" class="download">
@@ -75,7 +75,7 @@ The list of search engines will first display the url of the engine, followed by
 <ul>
 <li>added seperate keyword listing</li>
 <li>bot displayed in tiny font-size</li>
-<li>removed self from refferers</li>
+<li>removed self from referers</li>
 </ul>
 </td>
 </tr>

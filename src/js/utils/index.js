@@ -65,7 +65,7 @@ export function scrollToTop(topTarget, t=1000){
 }
 
 /**
- * Retreive current vertical scroll position
+ * Retrieve current vertical scroll position
  * @returns {Number}
  */
 export function getScrollY(){
@@ -73,7 +73,7 @@ export function getScrollY(){
 }
 
 /**
- * Retreive current vertical scroll position
+ * Retrieve current vertical scroll position
  * @returns {Number}
  */
 export function getScrollX(){

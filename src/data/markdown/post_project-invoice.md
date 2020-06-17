@@ -14,7 +14,7 @@
 
 # Project invoice
 
-A few years ago Google silently [disabled a spreadsheets feature](https://code.google.com/p/google-apps-script-issues/issues/detail?id=5174) that could be used to retreive data from other spreadsheets. So I could no longer [create invoices](http://ronvalstar.nl/using-google-spreadsheets-for-invoicing) automatically and was back to having to make them by hand.
+A few years ago Google silently [disabled a spreadsheets feature](https://code.google.com/p/google-apps-script-issues/issues/detail?id=5174) that could be used to retrieve data from other spreadsheets. So I could no longer [create invoices](http://ronvalstar.nl/using-google-spreadsheets-for-invoicing) automatically and was back to having to make them by hand.
 
 ## alternatives
 

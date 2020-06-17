@@ -19,4 +19,4 @@
 
 # Novartis
 
-<p><a href="http://www.novartis.com">Novartis</a> is a Swiss farmacuetical company. Their headquarters in Basel consists of several buildings, some of which are architectural materpieces. Along with the Dutch architectural photographer <a href="http://www.iwan.com/">Iwan Baan</a> and <a href="http://2x4.org/">2&#215;4</a> from New York, I made a prototype for a virtual tour of this campus. With the three-dimensional panorama pictures you can walk through the campus and watch a variety of content.</p>
+<p><a href="http://www.novartis.com">Novartis</a> is a Swiss farmacuetical company. Their headquarters in Basel consists of several buildings, some of which are architectural masterpieces. Along with the Dutch architectural photographer <a href="http://www.iwan.com/">Iwan Baan</a> and <a href="http://2x4.org/">2&#215;4</a> from New York, I made a prototype for a virtual tour of this campus. With the three-dimensional panorama pictures you can walk through the campus and watch a variety of content.</p>

@@ -131,4 +131,4 @@ Yeah this looks convoluted, but it’s for shows. I’m sure you can manage some
 
 ## Swirls and rotation
 
-Like I said; this is not 3D. But I did want stuff to roll around somewhat realisticly. And marbles have these colorfull swirls. So in the end what I’ve settled for is rotation depending on horizontal direction.
+Like I said; this is not 3D. But I did want stuff to roll around somewhat realisticly. And marbles have these colorful swirls. So in the end what I’ve settled for is rotation depending on horizontal direction.

@@ -21,7 +21,7 @@ Anyway&#8230; just to show you I was pretty bad at it once, here are the previou
 <li><a title="the problem was always content" href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/1997april.jpg">1997 april</a></li>
 <li><a title="ah, now we&#039;re getting somewhere" href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/1997jun.jpg">1997 jun</a></li>
 <li><a title="separate site cus I started freelancing..." href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/1997sept.jpg">1997 sept</a></li>
-<li><a title="everthing in total blackness... quite a search" href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/1998mrt.jpg">1998 mrt</a></li>
+<li><a title="everything in total blackness... quite a search" href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/1998mrt.jpg">1998 mrt</a></li>
 <li><a title="similar design elements but content less hidden" href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/1998jun.jpg">1998 jun</a></li>
 <li><a title="cool design and interface but not very userfriendly" href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/1998nov.jpg">1998 nov</a></li>
 <li><a title="nihilisticly fast, I had this one running for almost two years" href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/1999april.jpg">1999 april</a></li>

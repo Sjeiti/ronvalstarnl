@@ -38,7 +38,7 @@ And Cypress makes it quite easy because we can build or own commands.
 
 ```javascript
 Cypress.Commands.add('updateAlias', domAlias => {
-    // first we retreive the alias name, domAlias without the @
+    // first we retrieve the alias name, domAlias without the @
     const aliasName = (domAlias.match(/^@(.*)$/)||[])[1]
     return aliasName&&cy.get(domAlias).then($result => {
         const tree = [$result] // initial $result is the last branch on the tree

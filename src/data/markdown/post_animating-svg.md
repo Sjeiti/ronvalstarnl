@@ -18,7 +18,7 @@ For instance 3D on the web is old. Our current hardware accelerated webGL is bet
 
 ## Back to start
 
-So Flash won, and then *lost* because it couldn't adapt to mobile. And although we now have WegGL for 3D and the SVG format for vector graphics, it is a pity that we have to reinvent the wheel again for vector animation.
+So Flash won, and then *lost* because it couldn't adapt to mobile. And although we now have WebGL for 3D and the SVG format for vector graphics, it is a pity that we have to reinvent the wheel again for vector animation.
 
 Last week I needed an animated rolling cloud icon, to indicate an ongoing XMLHTTPRequest. Fifteen years ago a vector animation like that would have been trivial: just motion tween some circles along a bezier curve, create a symbol from that animation to duplicate and offset in time, et voila.
 Yet now, 2020, I could not figure out how to get the same result with SVG.

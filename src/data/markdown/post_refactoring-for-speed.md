@@ -21,7 +21,7 @@ On vacation this year I thought I'd speed up my site (on my phone). This soon go
 In 2006 I implemented Wordpress into my site. Before that I was using a custom built CMS.
 Back then Wordpress was not what it is now but through the years it got better and [more popular](https://trends.google.com/trends/explore/TIMESERIES/1569346200?hl=en-AU&tz=-120&date=all&q=wordpress,joomla,drupal,wix,typo3&sni=3), and with that popularity: more prone to get hacked.
 
-To protect it you use plugins that in turn slow down your site. To speed it all up there are caching plugins. All of which need to be updated every time Worpress pushes another minor version.
+To protect it you use plugins that in turn slow down your site. To speed it all up there are caching plugins. All of which need to be updated every time Wordpress pushes another minor version.
 
 My site really wasn't that slow: I was using cached REST responses onto a Vue single page application. But every now and then an uncached call would slow it to a crawl. And it got me wondering why I was using Wordpress in the first place. I had no webshop or anything so the only server side code that would justify it were the comments and the search.
 People used to comment in the webs heydays. But the only comment as of late is one last year, by my dad :-)
@@ -63,7 +63,7 @@ This is the main reason I mostly just wrote plain HTML. Writing in Markdown is a
 
 JavaScript does not interpret Markdown by default. So since I wrote a script to leech the old REST API I was going to need a script to turn that JSON into Markdown _and_ back. Write Markdown, read JSON, that's the idea. So eventually only the script for turning Markdown to JSON is kept in the build process.
 
-One problem though: [Commonmark](https://commonmark.org) (the Makdown spec) does not specify metadata and will not anytime soon according to the discussions.
+One problem though: [Commonmark](https://commonmark.org) (the Markdown spec) does not specify metadata and will not anytime soon according to the discussions.
 And we _need_ metadata (like type, tags, date etc...) and it should _not_ be kept in a separate file because that's messy. That leaves us with a [couple of options](https://stackoverflow.com/questions/44215896/markdown-metadata-format). Most of which look clean enough but have the downside that they are rendered when the markdown parser does not recognise the syntax. Which made me choose a simple HTML comment; it looks just as clean and Markdown parsers will never render it.
 
 ## speed

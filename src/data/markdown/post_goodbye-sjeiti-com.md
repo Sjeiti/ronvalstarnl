@@ -33,7 +33,7 @@ I liked pixeling stuff
 ![1997 jun](https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/1997jun.jpg)
 
 **1998 mrt**
-everthing in total blackness untill you hover (Flash 3)  
+everything in total blackness untill you hover (Flash 3)  
 ![1998 mrt](https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/1998mrt.jpg)
 
 **1998 jun**
@@ -95,4 +95,3 @@ guess this is the Angular-onto-Wordpress-REST-API version
 **2017 jun**
 then this must be the Vue implementation
 ![2017 06](https://res.cloudinary.com/dn1rmdjs5/image/upload/c_scale,w_350/v1569576487/rv/web.archive.org_web_20170616014738_http___ronvalstar.nl_.png)
-    
