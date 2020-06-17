@@ -11,5 +11,6 @@ import './component/Icon'
 import './component/Skill'
 
 initialise()
+document.documentElement.classList.remove('no-js')
 
 import './signal/scroll'

@@ -9,7 +9,7 @@ ul.link-list {
       @colorSticky: lighten(@colorLink, 20%);
       color: @colorBlack;
       background-color: @colorSticky;
-      box-shadow: -1rem 0 0 @colorSticky, 0.5rem 0 0 @colorSticky;
+      box-shadow: -1.0625rem 0 0 @colorSticky, 0.5rem 0 0 @colorSticky;
       &:before { background-color: @colorSticky; }
     }
   }
@@ -20,7 +20,7 @@ ul.link-list {
     color:  darken(@colorLink,20%);
     background-color: @colorLinkBg;
     text-decoration: none;
-    box-shadow: -1rem 0 0 @colorLinkBg, 0.5rem 0 0 @colorLinkBg;
+    box-shadow: -1.0625rem 0 0 @colorLinkBg, 0.5rem 0 0 @colorLinkBg;
     &:before {
       content: '';
       display: block;
@@ -31,7 +31,7 @@ ul.link-list {
       top: 0;
       z-index: -1;
       background-color: #dbedf9;
-      transform: rotate(calc(var(--scroll-part) * 45deg));
+      transform: rotate(calc(var(--scroll-part) * 45deg)) scaleY(calc(1 - 0.3 * var(--scroll-part)));
       transform-origin: bottom right;
     }
     svg {
