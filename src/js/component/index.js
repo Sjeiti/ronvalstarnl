@@ -26,6 +26,7 @@ export function create(componentSelector, componentClass){
 export function initialise(rootElement){
   _initialise(rootElement||_body)
   _initEvents()
+  _initScripts(rootElement)
   _dispatchOnInit()
 }
 
@@ -91,6 +92,23 @@ function _initEvents(){
       _eventInitialised[i] = true
     }
   })
+}
+
+/**
+ * Because router uses 'insertAdjacentHTML' the scripts are not run
+ * So we re-add them to fix it (with an IIFE).
+ * @param {HTMLElement} rootElement
+ * @private
+ */
+function _initScripts(rootElement){
+  Array.from(rootElement.querySelectorAll('script'))
+      .filter(m=>m.parentNode===rootElement)
+      .forEach(m=>{
+        const script = document.createElement('script')
+        script.innerText = `(function(){\n${m.innerText}\n})()`
+        rootElement.insertBefore(script, m)
+        rootElement.removeChild(m)
+      })
 }
 
 /**

@@ -19,7 +19,7 @@
 
 # Bookmarklet for fullscreen Google Maps
 
-As a developer I use bookmarklets all the time. For those of you who don’t know: a bookmarklet is similar to a bookmark but instead of a hyperlink it points to: “javascript:console.log(‘…do some Javacript to alter the page you’re currently viewing’);”.  
+As a developer I use bookmarklets all the time. For those of you who don’t know: a bookmarklet is similar to a bookmark but instead of a hyperlink it points to: “javascript:console.log(‘…do some JavaScript to alter the page you’re currently viewing’);”.  
 So when developing I tend to use it for lots of stuff: quick login into a secure part, automatically fill forms with random data, altering data I get from some site… I even used it to load and initialize the level editor for a game I recently built.
 
 Here’s one I just made that strips everything on Google Maps but the map itself. Put the browser fullscreen and you’ve got the whole world to printscreen desktop images from. Siberia has some pretty awesome landscapes.

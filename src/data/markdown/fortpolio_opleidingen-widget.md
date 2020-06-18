@@ -4,7 +4,7 @@
   type: fortpolio
   excerpt: <p>An Elasticsearch JavaScript widget comprised of CDN dependencies, with source-generated documentation and examples.</p>
   categories: JavaScript, HTML/CSS, framework, UX, mobile
-  tags: CSS, HTML, JavaScript, Grunt, Elasticsearch, Bootstrap, JSDoc
+  tags: CSS, HTML, JavaScript, Grunt, Elasticsearch, Bootstrap, JSDoc, Python
   clients: Studiekeuze123
   collaboration: 
   prizes: 
@@ -23,7 +23,9 @@ The total of educations that can be followed in the Netherlands amount to a reas
 
 Our reason for choosing Elasticsearch was speed. Elasticsearch is extremely fast. The downside is that it takes a whole different mindset because it seems limited compared to regular databases where you can easily execute a joined query for instance.
 
-The script itself is relatively small. CSS and HTML are parsed into the script through the build process using the headless browser [PhantomJS](http://phantomjs.org/). For other dependencies CDN&#8217;s are used.
+We used Python to pull everything from existing endpoints into Elasticsearch at regular intervals.
+
+The final result is relatively small. CSS and HTML are parsed into the script through the build process using the headless browser [PhantomJS](http://phantomjs.org/). For other dependencies CDN&#8217;s are used.
 
 Bootstrap is used for the CSS basis but this can be disabled at will. The layout is very easy to override since the CSS the script provides is injected to [document.styleSheets](https://developer.mozilla.org/en-US/docs/Web/API/document.styleSheets) rather than simply added to the DOM.
 
