@@ -26,7 +26,7 @@ export function create(componentSelector, componentClass){
 export function initialise(rootElement){
   _initialise(rootElement||_body)
   _initEvents()
-  _initScripts(rootElement)
+  rootElement&&_initScripts(rootElement)
   _dispatchOnInit()
 }
 

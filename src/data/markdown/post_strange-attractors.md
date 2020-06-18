@@ -13,9 +13,9 @@
   dateTo: 
 -->
 
-# Protected: Strange attractors
+# Strange attractors
 
-<div id="applet">
+<!--<div id="applet">
 	<applet name="PApplet"
 	 code="Attractors"
 	 archive="code/Strange_attractors.jar,code/core.jar,code/javascript.jar,code/video.jar,code/xml.jar"
@@ -30,7 +30,10 @@
 	<param name="baseuri" value="/" />
 	To view this content, you need to install Java from <a href="http://java.com">java.com</a>
 	</param></applet>
-</div>
+	
+</div>-->
+<p class="notice">This space used to be occupied by a <a href="https://en.wikipedia.org/wiki/Java_applet">Java applet</a> but these have been deprecated since 2015.</p>
+    
 <p>Here you see a mathematical phenomenon known as <a href="http://en.wikipedia.org/wiki/Attractor#Strange_attractor" target="wikipedia">strange attractors</a>. The basic principle is to have a point in space and use it&#8217;s coordinates as input to a relatively simple formula to compute the new point. This means an attractor is deterministic: it’s state at a certain point (in time) can only be calculated by iterating toward that point.<br />
 Mostly the attractor will converge to one or more singular points, or diverge to infinity. But sometimes strange patterns can emerge.<br />
 Each attractor has one or more constants (phace space). The attractor changes</p>

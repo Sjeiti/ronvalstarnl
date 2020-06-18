@@ -4,13 +4,9 @@
   modified: 2007-01-28
   slug: wordpress-plugin-librarything-widget
   type: post
-  excerpt: <p>You might have noticed: this plugin has been discontinued.</p>
+  excerpt: A Librarything plugin for Wordpress
   categories: uncategorized
   tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # Librarything widget
