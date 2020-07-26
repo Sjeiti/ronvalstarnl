@@ -25,7 +25,7 @@ export function prismToRoot(root){
  * @param {HTMLElement} elm
  */
 export function prismToElement(elm){
-  const contents = elm.textContent
+  let contents = elm.textContent
   const lang = elm.getAttribute('data-language')
       ||elm.getAttribute('class').match(/language-(\w+)/).pop()
       ||'javascript'
@@ -37,10 +37,20 @@ export function prismToElement(elm){
   const isIllustration = type==='illustration'
   if (isExample||isIllustration){
 
+    //include
+    const matchIncludes = contents.match(/<!--include:(\w+)-->/g)
+    matchIncludes?.forEach(inc=>{
+      const id = inc.match(/<!--include:(\w+)-->/).pop()
+      const template = document.getElementById?.(id)
+      const div = document.createElement('div')
+      div.appendChild(template.content.cloneNode(true))
+      contents = contents.replace(`<!--include:${id}-->`,div.innerHTML)
+    })
+
     // createElement(type, classes, parent, attributes, text, click)
     const exampleUI = isExample&&getJSFiddleButton(contents)
 
-    const {parentNode:pre, parentNode: {parentNode}, textContent} = elm
+    const {parentNode:pre, parentNode: {parentNode}} = elm
     const iframe = document.createElement('iframe')
     iframe.classList.add(type)
     exampleUI&&parentNode.insertBefore(exampleUI, pre)
@@ -48,7 +58,7 @@ export function prismToElement(elm){
     parentNode.removeChild(pre)
     requestAnimationFrame(()=>{
       const {contentWindow: {document}} = iframe
-      document.writeln(textContent)
+      document.writeln(contents)
       requestAnimationFrame(()=>iframe.style.height = `${document.body.scrollHeight}px`)
     })
 

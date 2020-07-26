@@ -802,4 +802,12 @@ function setNavCurrent(currentHref){
 </script>
 ```
 
+<template id="foo">
+<div>foobar</div>
+</template>
 
+```html
+<!--example-->
+<!--include:foo-->
+hello
+```
