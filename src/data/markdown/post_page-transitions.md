@@ -368,7 +368,7 @@ For now, with the basics out of the way, lets have a look at some easy effects.
 
 ### Page height and left or right
 
-It is a bit more difficult to see with an `<iframe>` but we still haven't done anything about the changing page height.
+It is a bit more difficult to see with an `<iframe />` but we still haven't done anything about the changing page height.
 
 The previous example does look a bit weird when you go from 'contact' to 'home' in that it still animates from right to left. It would be nice to have it change direction depending on the direction of the menu item.
 
@@ -422,13 +422,11 @@ h1:first-letter, p:first-letter {
   text-transform: uppercase;
 }
 p:after { content: '.'; }
-
 .page-enter, .right-enter {
   position: absolute;
   left: 0;
   top: 0;
 }
-
 .spinner {
   position: fixed;
   left: calc(50% - 1rem);
@@ -511,6 +509,9 @@ nav.addEventListener('click', e=>{
     
     const oldStateIndex = states.indexOf(currentState)
     const newStateIndex = states.indexOf(href)
+    const hasRight = nav.hasAttribute('data-has-right')
+    const pageClassName = `page-${title.toLowerCase().replace(/[^a-z]/g,'-')}`
+    const toLeft = hasRight ? newStateIndex>oldStateIndex : true
     currentState = href
 
     setSpinner(true)
@@ -518,20 +519,21 @@ nav.addEventListener('click', e=>{
     // XHR or fetch here !!! 
 
     setTimeout(
-      onLoad.bind(null, `<h1>${title}</h1><p>${text}</p>`, href, newStateIndex>oldStateIndex)
+      onLoad.bind(null, `<h1>${title}</h1><p>${text}</p>`, href, pageClassName, toLeft)
       ,Math.random()<.5?40:200
     )
     loading = true
   }
 })
 
-function onLoad(content, state, toLeft){
+function onLoad(content, state, pageClassName, toLeft){
   setNavCurrent(state)
   const contentOld = article.firstElementChild
   const contentNew = document.createElement('div')
+  contentNew.classList.add('page', pageClassName)
   contentNew.innerHTML = content
   article.appendChild(contentNew)
-
+  
   const leave = toLeft?pageLeave:rightLeave
   const enter = toLeft?pageEnter:rightEnter
   const leaveTo = toLeft?pageLeaveTo:rightLeaveTo
@@ -544,7 +546,8 @@ function onLoad(content, state, toLeft){
     contentNew.classList.add(enterTo)
   }, 2)
   contentOld.addEventListener('transitionend', ()=>{
-    article.removeChild(contentOld)
+    contentOld.parentNode===article&&article.removeChild(contentOld)
+    contentOld.classList.remove(leave, leaveTo)
     contentNew.classList.remove(enter, enterTo)
   })
   loading = false
@@ -560,7 +563,6 @@ function setSpinner(show){
     spinner.classList.remove(spinnerVisible)
   }
 }
-
 function setNavCurrent(currentHref){
   const currentA = nav.querySelector('.'+current) 
   currentA&&currentA.classList.remove(current)
@@ -572,6 +574,7 @@ function setNavCurrent(currentHref){
 ```html
 <!--example-->
 <!--include:pageExample-->
+<script>document.querySelector('nav').setAttribute('data-has-right','1')</script>
 <style>
 .page-enter, .page-leave, .right-enter, .right-leave {
   transition: transform 200ms ease-in-out;
@@ -608,8 +611,8 @@ The examples above use opacity or translation, which is what is mostly used for 
 <!--example-->
 <!--include:pageExample-->
 <style>
-.page-enter, .page-leave, .right-enter, .right-leave {
-  transition: clip-path 400ms ease-in-out;
+.page-enter, .page-leave {
+  transition: clip-path 500ms ease-in-out;
 }
 
 .page-enter { 
@@ -624,17 +627,20 @@ The examples above use opacity or translation, which is what is mostly used for 
 </style>
 ```
 
-Another easy way to animate is to just stretch it very far. 
+Another easy way to animate is to stretch the content by setting the `transform:scale`. You can make it even better if you combine different types of movement. Here we translate the header and scale the content. Also note that the header transition is timing function is a [cubic-bezier](https://cubic-bezier.com/#.5,-0.5,.5,.5) to create a slight bounce.
 
 ```html
 <!--example-->
 <!--include:pageExample-->
 <style>
-.page-enter, .page-leave, .right-enter, .right-leave {
-  transition: opacity 400ms linear;
+.page-enter, .page-leave {
+  transition: opacity 500ms linear;
 }
-.page-enter *, .page-leave *, .right-enter *, .right-leave * {
-  transition: transform 400ms ease-in-out;
+.page-enter *, .page-leave * {
+  transition: transform 500ms ease-in-out;
+}
+.page-enter h1, .page-leave h1 {
+  transition: transform 500ms cubic-bezier(.5,-0.5,.5,.5);
 }
 
 .page-enter.page-enter-to, .page-leave { 
@@ -643,49 +649,100 @@ Another easy way to animate is to just stretch it very far.
 .page-enter, .page-leave-to { 
   opacity: 0;
 }
-.page-enter.page-enter-to *, .page-leave * { 
-  transform: scaleY(1);
+.page-enter.page-enter-to h1, .page-leave h1 { 
+  transform: translateX(0);
 }
-.page-enter *, .page-leave-to * { 
-  transform: scaleY(22);
+.page-enter h1, .page-leave-to h1 { 
+  transform: translateX(-10rem);
 }
-</style>
-```
-
-or horizontally
-
-```html
-<!--example-->
-<!--include:pageExample-->
-<style>
-.page-enter, .page-leave, .right-enter, .right-leave {
-  transition: opacity 400ms linear;
-}
-.page-enter *, .page-leave *, .right-enter *, .right-leave * {
-  transition: transform 400ms ease-in-out;
-}
-
-.page-enter.page-enter-to, .page-leave { 
-  opacity: 1;
-}
-.page-enter, .page-leave-to { 
-  opacity: 0;
-}
-.page-enter.page-enter-to *, .page-leave * { 
+.page-enter.page-enter-to p, .page-leave p { 
   transform: scaleX(1);
 }
-.page-enter *, .page-leave-to * { 
+.page-enter p, .page-leave-to p { 
   transform: scaleX(22);
 }
 </style>
 ```
 
-<template id="foo">
-<div>foobar</div>
-</template>
+Here is a different use of `transform:scale` that makes it look as though you're zooming in.
 
 ```html
 <!--example-->
-<!--include:foo-->
-hello
+<!--include:pageExample-->
+<style>
+.page-enter, .page-leave {
+  transform-origin: center 3rem;
+  transition: opacity 500ms linear, transform 500ms ease-in-out;
+}
+.page-enter.page-enter-to, .page-leave { 
+  opacity: 1;
+  transform: scale(1);
+}
+.page-enter, .page-leave-to { 
+  opacity: 0;
+}
+.page-enter { 
+  transform: scale(0.1);
+}
+.page-leave-to { 
+  transform: scale(4);
+}
+</style>
+```
+
+
+asdf
+
+
+```html
+<!--example-->
+<!--include:pageExample-->
+<style>
+  .page-enter, .page-leave {
+    transition: all 500ms ease-in-out;
+  }
+  .page-enter>*, .page-leave>* {
+    transition: opacity 500ms ease-in-out;
+  }
+  
+  :root {
+    --page-color: transparent;
+  }
+  .page-home {
+    --page-color: #fff37d;
+  }
+  .page-about {
+    --page-color: #ffb2cd;
+  }
+  .page-contact {
+    --page-color: #79b8ff;
+  }
+
+  .page {
+    /*background-color: var(--page-color);  */
+  }
+  
+  .page-enter {
+    box-shadow: 0 0 0 var(--page-color) inset;
+    /*background-color: transparent;  */
+  }
+  .page-enter-to, .page-leave {
+    box-shadow: 100vw 0 0 var(--page-color) inset;
+    /*background-color: var(--page-color);  */
+  }
+  .page-leave-to {
+    box-shadow: 0 0 0 var(--page-color) inset;
+    /*background-color: var(--page-color);  */
+  }
+  
+  .page-enter>* {
+    opacity: 0;
+  }
+  .page-enter-to>*, .page-leave>* {
+    opacity: 1;
+  }
+  .page-leave-to>* {
+    opacity: 0;
+  }
+</style>
 ```

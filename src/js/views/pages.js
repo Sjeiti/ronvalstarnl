@@ -6,9 +6,5 @@ add(
   , 'about'
   , (view, route)=>{
     return fetchJSONFiles(`page_${route}`)
-      .then(a=>{
-        console.log('a',a) // todo: remove log
-        return a
-      })
       .then(([page])=>(view.appendString(page.content), page))
   })
