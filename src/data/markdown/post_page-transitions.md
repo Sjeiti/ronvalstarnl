@@ -704,35 +704,19 @@ asdf
   .page-enter>*, .page-leave>* {
     transition: opacity 500ms ease-in-out;
   }
-  
-  :root {
-    --page-color: transparent;
-  }
-  .page-home {
-    --page-color: #fff37d;
-  }
-  .page-about {
-    --page-color: #ffb2cd;
-  }
-  .page-contact {
-    --page-color: #79b8ff;
-  }
 
-  .page {
-    /*background-color: var(--page-color);  */
+  article {
+    perspective: 100px;
   }
   
   .page-enter {
-    box-shadow: 0 0 0 var(--page-color) inset;
-    /*background-color: transparent;  */
+    transform: rotate3d(1, 0, 0, 90deg);
   }
   .page-enter-to, .page-leave {
-    box-shadow: 100vw 0 0 var(--page-color) inset;
-    /*background-color: var(--page-color);  */
+    transform: rotate3d(1, 0, 0, 0deg);
   }
   .page-leave-to {
-    box-shadow: 0 0 0 var(--page-color) inset;
-    /*background-color: var(--page-color);  */
+    transform: rotate3d(1, 0, 0, -90deg);
   }
   
   .page-enter>* {
