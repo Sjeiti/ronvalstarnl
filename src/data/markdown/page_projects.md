@@ -1,10 +1,10 @@
 <!--
   id: 2347
   date: 2014-04-28
-  modified: 2015-10-26
+  modified: 2020-07-29
   slug: projects
   type: page
-  excerpt: [object Object]
+  excerpt: projects
   metaKeyword: project
   metaDescription: Project portfolio
   inCv: 
@@ -15,4 +15,4 @@
 
 # projects
 
-[object Object]
+

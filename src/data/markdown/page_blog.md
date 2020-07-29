@@ -4,7 +4,7 @@
   modified: 2014-08-14
   slug: blog
   type: page
-  excerpt: [object Object]
+  excerpt: blog
   inCv: 
   inPortfolio: 
   dateFrom: 
@@ -13,4 +13,4 @@
 
 # blog
 
-[object Object]
+

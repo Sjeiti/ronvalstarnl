@@ -4,7 +4,7 @@
   modified: 2012-07-03
   slug: meten-is-weten
   type: post
-  excerpt: [object Object]
+  excerpt: meten is weten
   categories: illustration
   tags: 
   inCv: 
@@ -15,4 +15,4 @@
 
 # meten is weten
 
-<p><img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/metenIsWeten.png" /></p>
+![meten is weten](https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/metenIsWeten.png)
