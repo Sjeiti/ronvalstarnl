@@ -1,6 +1,6 @@
 <!--
-  date: 9999-99-99
-  modified: 9999-99-99
+  date: 2020-07-29
+  modified: 2020-07-29
   slug: the-basics-of-css-page-transitions
   type: post
   header: sincerely-media-IKzmglo7JLk-unsplash.jpg
@@ -60,7 +60,7 @@ When the content has loaded the two articles will exist simultaneously for some 
 
 ### CSS animation
 
-There are rare situations where you must primarily animate by script (with WebGL for instance). In most cases however a simple CSS animation wil suffice.
+There are rare situations where you must primarily animate by script (with WebGL for instance). In most cases however a simple CSS animation wil suffice. This also keeps your logic and styling separated.
 To use the CSS `transition` we simply toggle classes on the content elements. This adds up to four classes in total: for each element we set the initial state and the final state.
 
 We'll use the following className naming convention: `[name]-[type]-[state]` which amounts to the following:
@@ -381,16 +381,16 @@ html, body {
   height: 100%;
 }
 body {
-  padding: 1rem;
   height: 12rem;
   font-family: 'Quicksand', sans-serif;
   font-weight: 300;
 }
 nav {
   position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1;
-  background-color: #FFFFFA;
+  margin: 1rem 1rem 0;
 }
 nav a {
   padding: 0.25rem 0.5rem;
@@ -409,8 +409,8 @@ article {
   position: relative;
   overflow: hidden;
 }
-article>* {
-  padding: 1px 2rem 0;
+.page {
+  padding: 1rem 1rem 2rem;
 }
 h1, p {
 }
@@ -461,7 +461,7 @@ p:after { content: '.'; }
 </nav>
 
 <article>
-  <div><h1>home</h1><p>dolor sit amet consectetur adipiscing elit curabitur vel hendrerit</p></div>
+  <div class="page"><h1>home</h1><p>dolor sit amet consectetur adipiscing elit curabitur vel hendrerit</p></div>
 </article>
  
 <script>
@@ -605,7 +605,49 @@ function setNavCurrent(currentHref){
 
 ### Other easy effects
 
-The examples above use opacity or translation, which is what is mostly used for transitions. One nice thing about the more recent CSS capabilities is masking. This can be done by using a property called `clip-path` and it's values can of course be animated.
+The examples above use opacity or translation, which is what is mostly used for transitions. Below are some other things you can try.
+
+#### box-shadow and color
+
+Not many people realise you can use `box-shadow` for something else than shadows.
+
+```html
+<!--example-->
+<!--include:pageExample-->
+<style>
+  .page-enter, .page-leave {
+    transition: box-shadow 500ms ease-in-out;
+  }
+  .page-enter>*, .page-leave>* {
+    transition: opacity 500ms ease-in-out;
+  }
+
+  article {
+    perspective: 100px;
+  }
+
+  .page-enter, .page-leave {
+    box-shadow: 0 0 0 0 black inset;
+  }
+  .page-enter-to, .page-leave-to {
+    box-shadow: 100vw 0 0 0 transparent inset;
+  }
+  
+  .page-enter>* {
+    opacity: 0;
+  }
+  .page-enter-to>*, .page-leave>* {
+    opacity: 1;
+  }
+  .page-leave-to>* {
+    opacity: 0;
+  }
+</style>
+```
+
+#### masked elements
+
+One nice thing about the more recent CSS capabilities is masking. This can be done by using a property called `clip-path` and it's values can of course be animated.
 
 ```html
 <!--example-->
@@ -626,6 +668,8 @@ The examples above use opacity or translation, which is what is mostly used for 
 }
 </style>
 ```
+
+#### stretching and combining
 
 Another easy way to animate is to stretch the content by setting the `transform:scale`. You can make it even better if you combine different types of movement. Here we translate the header and scale the content. Also note that the header transition is timing function is a [cubic-bezier](https://cubic-bezier.com/#.5,-0.5,.5,.5) to create a slight bounce.
 
@@ -664,6 +708,8 @@ Another easy way to animate is to stretch the content by setting the `transform:
 </style>
 ```
 
+#### zoom
+
 Here is a different use of `transform:scale` that makes it look as though you're zooming in.
 
 ```html
@@ -690,8 +736,9 @@ Here is a different use of `transform:scale` that makes it look as though you're
 </style>
 ```
 
+#### 3D rotation
 
-asdf
+A transition onto `transform:rotate3d`. Note you have to set `perspective` onto the parent for this to show actual depth.
 
 
 ```html
@@ -699,7 +746,7 @@ asdf
 <!--include:pageExample-->
 <style>
   .page-enter, .page-leave {
-    transition: all 500ms ease-in-out;
+    transition: transform 500ms ease-in-out;
   }
   .page-enter>*, .page-leave>* {
     transition: opacity 500ms ease-in-out;
@@ -707,6 +754,10 @@ asdf
 
   article {
     perspective: 100px;
+  }
+
+  .page {
+    transform-origin: 50% 3rem;
   }
   
   .page-enter {
@@ -730,3 +781,7 @@ asdf
   }
 </style>
 ```
+
+## conclusion
+
+As you can see you can go far with this before having to resort to JavaScript. Just make sure your transitions are of the same length, if they are not you cannot rely on the transitionEnd event but must use a fixed duration or traverse the stylesheets to calculate the exact duration.

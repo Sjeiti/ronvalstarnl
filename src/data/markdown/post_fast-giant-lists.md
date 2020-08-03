@@ -19,7 +19,7 @@ Mostly it would run fine with about two hundred to eight hundred lines. But ther
 Funny thing was that the current implementation was already a 'better' version. So prior to that the performance was even worse.
 
 Now normally I'm not sure about infinite scroll. In most cases I would simply recommend pagination. Not only because of speed, but also because pagination gives you a clear sense of how large the actual set is.
-But it is what was already in place. Only if I couldn't fix the problem I would send it back to the UX drawing board.
+But infinite scroll was already in place. Only if I couldn't fix the problem I would send it back to the UX drawing board.
 
 ## To frame or not to work
 
@@ -61,7 +61,7 @@ But this is theory, before implementing a final solution to our problem we want 
 
 ### Testing DOM removal
 
-This first quick test worked but did required more work for calculating the top and bottom padding.
+This first test is one where DOM elements are removed and added. This works well but does require some work for calculating the top and bottom padding.
 
 ```html
 <!--example-->
@@ -101,7 +101,7 @@ const increment = 50
 const edge = 0.05
 let index = 0
 
-div.addEventListener('scroll', onScroll)
+div.addEventListener('scroll', onScroll, {passive:true})
 ul.appendChild(getRows(index, index = 2 * increment))
 
 function getRows(ind, amount) {
@@ -158,7 +158,11 @@ function decrementList() {
 
 ### Testing chunk visibility
 
-The second test made use of turning chunk visibility on- and off. 
+This second test makes use of turning chunk visibility on- and off. So the rows are grouped into chunks of x rows.
+This is faster than the previous method for two reasons.
+We're not calculating the visibility of individual rows but two chunks of rows. This is where the pinch method comes in which you can read about [here](/javascript-generators-iterators-use-case).
+The other reason is that the scroll handling is debounced. The downside is that when debouncing the handling takes place after the events stop firing (throttling is rather pointless in this cas). This shows as empty space prior to the chunk turned visible again. We can make it easier on the eyes by setting a repeating backround image.
+
 
 ```html
 <!--example-->
@@ -182,12 +186,25 @@ div {
 ul {
   list-style: none;
   padding: 0;
+  background-image: linear-gradient(
+    180deg
+    , #FFF 0% 20%
+    , #EEE 20% 40%
+    , #DDD 40% 60%
+    , #CCC 60% 80%
+    , #BBB 80% 100%
+  );
+  background-size: 160px 160px;
 }
-li { line-height: 32px; }
+li li { 
+  line-height: 32px; 
+  height: 32px; 
+}
 .row0 { background-color: #FFF; }
 .row1 { background-color: #EEE; }
 .row2 { background-color: #DDD; }
 .row3 { background-color: #CCC; }
+.row4 { background-color: #BBB; }
 </style>
 <script>
 const templateStream = document.querySelector('template#stream')
@@ -202,6 +219,7 @@ let index = 0
 
 div.addEventListener('scroll',onScroll,{passive:true,capture:true})
 for (let i=0,l=11;i<l;i++) incrementList()
+checkStreamVisibility(1,10,1)
 
 function onScroll(e){
     clearTimeout(scrollTimeoutId)
@@ -297,15 +315,24 @@ function pinch(a,p){
 </script>
 ```
 
-### Testing content complexity
+### Testing complex content
 
-When the chunk
+The above examples are fine technically, but in real life we have more complex content. Maybe a heading with an image, some body text, an anchor or even a button.
+
+Speaking of buttons, you know what is a drain on giant lists? Form elements: for some reason form elements (with a parent HTMLFormElement) are so expensive to render that it pays to swap them with a fake them until they receive focus.
+
+Anyway, complex content might also differ in height. This makes it harder to create a good preview, but not impossible with SVG backgrounds.
+
 
 ```html
 <!--example-->
-<template id="li"><li>foo</li></template>
-<template id="slowli"><li><input type="checkbox"/></li></template>
-<button data-start>start</button><button data-start-complex>start-complex</button><button data-clear>clear</button>
+<template id="li"><li>
+<img />
+<h3>foo</h3>
+<p></p>
+<input type="button" />
+</li></template>
+<button data-start>start</button>
 <div><form><ul></ul></form></div>
 <style>
 html, body {
@@ -332,28 +359,27 @@ li:nth-child(4n+3) { background-color: #DDD; }
 li:nth-child(4n+4) { background-color: #CCC; }
 </style>
 <script>
-const templateLi = document.querySelector('template#li')
-const templateSlowLi = document.querySelector('template#slowli')
-const ul = document.querySelector('ul')
+const lorem = ['a','ab','accusamus','accusantium','ad','adipisci','adipiscing','alias','aliqua','aliquam','aliquid','aliquip','amet','anim','animi','aperiam','architecto','asperiores','aspernatur','assumenda','at','atque','aut','aute','autem','beatae','blanditiis','cillum','commodi','commodo','consectetur','consequat','consequatur','consequuntur','corporis','corrupti','culpa','cum','cumque','cupidatat','cupiditate','debitis','delectus','deleniti','deserunt','dicta','dignissimos','distinctio','do','dolor','dolore','dolorem','doloremque','dolores','doloribus','dolorum','ducimus','duis','ea','eaque','earum','eius','eiusmod','eligendi','elit','enim','eos','error','esse','est','et','eu','eum','eveniet','ex','excepteur','excepturi','exercitation','exercitationem','expedita','explicabo','facere','facilis','fuga','fugiat','fugit','harum','hic','id','illo','illum','impedit','in','incididunt','incidunt','inventore','ipsa','ipsam','ipsum','irure','iste','itaque','iure','iusto','labore','laboriosam','laboris','laborum','laudantium','libero','lorem','magna','magnam','magni','maiores','maxime','minim','minima','minus','modi','molestiae','molestias','mollit','mollitia','nam','natus','necessitatibus','nemo','neque','nesciunt','nihil','nisi','nobis','non','nostrud','nostrum','nulla','numquam','occaecat','occaecati','odio','odit','officia','officiis','omnis','optio','pariatur','perferendis','perspiciatis','placeat','porro','possimus','praesentium','proident','provident','quae','quaerat','quam','quas','quasi','qui','quia','quibusdam','quidem','quis','quisquam','quo','quod','quos','ratione','recusandae','reiciendis','rem','repellat','repellendus','reprehenderit','repudiandae','rerum','saepe','sapiente','sed','sequi','similique','sint','sit','soluta','sunt','suscipit','tempor','tempora','tempore','temporibus','tenetur','totam','ullam','ullamco','unde','ut','vel','velit','veniam','veritatis','vero','vitae','voluptas','voluptate','voluptatem','voluptates','voluptatibus','voluptatum']
+let seed = 234                                  const rnd = _seed => seed = (25214903917*(_seed||seed||0)+11)%2E48                              const random = _seed => rnd(_seed)/2E48         const capitalize = s => s.charAt(0).toUpperCase() + s.slice(1)                                  const getLinePart = () => words.sort(()=>rnd()<1E48?-1:1).slice(0,10 + random()*15<<0).join(' ')
+const getLine = () => capitalize(getLinePart())+'.'                                             const getParagraph = () => Array.from(new Array(3 + random()*7<<0)).map(getLine).join(' ')
+const $ = document.querySelector.bind(document)
+const templateLi = $('template#li')
+const ul = $('ul')
 
-document.querySelector('[data-start]').addEventListener('click', ()=>{
-  for (let i=0,l=3E4;i<l;i++) ul.appendChild(getRow(templateLi, i))
+$('[data-start]').addEventListener('click', ()=>{
+  alert(1)
+  for (let i=0,l=3E3;i<l;i++) ul.appendChild(getRow(templateLi, i))
 })
-document.querySelector('[data-start-complex]').addEventListener('click', ()=>{
-  for (let i=0,l=3E4;i<l;i++) ul.appendChild(getRow(templateSlowLi, i))
-})
-document.querySelector('[data-clear]').addEventListener('click', ()=>{
-  ul.innerHTML = ''
-})
-
+ 
 function getRow(template,ind){
   const row = document.importNode(template.content, true)
   const li = row.childNodes[0]
   li.appendChild(document.createTextNode(ind))
-  const input = li.querySelector('input')
-  input&&input.setAttribute('name',`i${ind}`)
+  //const input = li.querySelector('input')
+  //input&&input.setAttribute('name',`i${ind}`)
   return row
 }
 </script>
 ```
 
+1

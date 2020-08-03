@@ -1,10 +1,10 @@
 <!--
   id: 414
   date: 2010-02-13
-  modified: 2012-07-03
+  modified: 2020-07-29
   slug: icon-for-new-jquery-plugin
   type: post
-  excerpt: [object Object]
+  excerpt: icon illustration for new plugin
   categories: work, illustration
   tags: 
   inCv: 
@@ -15,4 +15,4 @@
 
 # icon for new jQuery plugin
 
-<p><img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/elephant.jpg" alt="" /></p>
+![](https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/elephant.jpg)

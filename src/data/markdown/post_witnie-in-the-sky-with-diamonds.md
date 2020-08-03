@@ -4,7 +4,7 @@
   modified: 2011-02-02
   slug: witnie-in-the-sky-with-diamonds
   type: post
-  excerpt: [object Object]
+  excerpt: Witnie in the sky with diamonds
   categories: illustration
   tags: Sketchbook pro
   inCv: 
@@ -15,4 +15,4 @@
 
 # Witnie in the sky with diamonds
 
-<p><a href="http://www.flickr.com/photos/sjeiti/5411825070/" title="Witnie in the sky with diamonds" class="flickr-image alignnone"><img src="http://farm6.static.flickr.com/5138/5411825070_d1e14a106d.jpg" alt="Witnie in the sky with diamonds" class=""  /></a></p>
+![Witnie in the sky with diamonds](http://farm6.static.flickr.com/5138/5411825070_d1e14a106d.jpg)
