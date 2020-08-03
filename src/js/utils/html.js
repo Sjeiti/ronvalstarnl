@@ -138,3 +138,12 @@ export function markdownLinks(text){
   })
   return text
 }
+
+/**
+ * Get the index of an element (in relation to the parent_
+ * @param {Element} elm
+ * @return {number}
+ */
+export function getElementIndex(elm){
+  return Array.from(elm.parentNode.children).indexOf(elm)
+}

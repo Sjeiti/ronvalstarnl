@@ -5,11 +5,12 @@ import {BaseComponent} from './BaseComponent'
 import {scroll} from '../signal/scroll'
 import {signal} from '../signal'
 import {routeChange} from '../router'
-import {clean, markdownLinks, selectEach} from '../utils/html'
+import {clean, markdownLinks, selectEach, getElementIndex} from '../utils/html'
 import {MEDIA_URI_HEADER} from '../config'
 
 create('[data-header]', class extends BaseComponent{
 
+  _$
   _seldo
   _experiment
   _experimentUI
@@ -22,19 +23,21 @@ create('[data-header]', class extends BaseComponent{
   _className = {
     stuck: 'stuck'
     , current: 'current'
+    , currentSmaller: 'current--smaller'
   }
 
   constructor(...args){
     super(...args)
 
+    this._$ = this._element.querySelector.bind(this._element)
     this._seldo = selectEach.bind(null, this._element)
 
     scroll.add(this._onScroll.bind(this))
     routeChange.add(this._onRouteChange.bind(this))
 
     this._initExperiments()
-    this._background = this._element.querySelector('.background')
-    this._colofon = this._element.querySelector('.colofon')
+    this._background = this._$('.background')
+    this._colofon = this._$('.colofon')
   }
 
   /**
@@ -98,8 +101,17 @@ create('[data-header]', class extends BaseComponent{
    */
   _onRouteChange(name, page, oldName){
     const select = page.parentSlug||name
+
+    // const elmCurrent = this._$('.'+this._className.current)
+    // const elmNext = this._$(`a[href="/${select}"]`)
+    // const isIndexSmaller = getElementIndex(elmNext)<getElementIndex(elmCurrent)
+    // elmCurrent.classList.remove(this._className.current, this._className.currentSmaller)
+    // elmNext.classList.add(this._className.current)
+    // isIndexSmaller&&elmNext.classList.add(this._className.currentSmaller)
+
     this._seldo('.'+this._className.current, elm=>elm.classList.remove(this._className.current))
     this._seldo(`a[href="/${select}"]`, elm=>elm.classList.add(this._className.current))
+
     this._setExperiment(name, oldName)
     this.setImage()
   }
