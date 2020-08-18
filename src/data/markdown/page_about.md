@@ -1,7 +1,7 @@
 <!--
   id: 324
   date: 2007-01-04
-  modified: 2020-07-27
+  modified: 2020-08-18
   slug: about
   type: page
   metaKeyword: about
@@ -13,15 +13,16 @@
 I love writing [JavaScript](/search/javascript). So naturally I also know a lot about [DOM](/search/dom), [HTML](/search/html) and [CSS](/search/css).
 My favorite work is streamlining [build](/search/build) processes, refactoring and optimizing DOM and JavaScript for [speed](/search/speed).
 
-Among the JavaScript frameworks and libraries I've used are [Angular](/search/angular), [Vue](/search/vue), [React](/search/react), [Backbone](/search/backbone), [jQuery](/search/jquery), [ThreeJS](/search/threejs) etc... But I will never start projects with a specific framework by default. The choice to add abstractions should be weighed carefully.
+Among the JavaScript frameworks and libraries I've used are [React](/search/react), [Vue](/search/vue), [Angular](/search/angular), [Backbone](/search/backbone), [jQuery](/search/jquery), [ThreeJS](/search/threejs). But I will never start projects with a specific framework by default. The choice to add abstractions should be weighed carefully.
 
-For backend I mostly resort to [NodeJS](/search/node) or [PHP](/search/php). The latter often with [Laravel](/search/laravel) or [Wordpress](/search/wordpress). But I've also mandhandled Java, Python and .NET.
+For backend I mostly resort to [NodeJS](/search/node) or [PHP](/search/php). The latter often with [Laravel](/search/laravel) or [Wordpress](/search/wordpress). But I've also used Java, Python and .NET. Don't call me full-stack though, imho that term is moot.
 
 ## role
 
+Sometimes I work on solo- or open-source projects but mostly I like to work in teams. 
 In a team my role is mostly lead- or senior front-end developer. I care greatly about code quality backed by build processes. But I also think the strictness should reflect the team's experience.
 
-Since my formal background is graphic- and interaction design this strive towards consistency also emerges in those fields.
+My formal background is graphic- and interaction design and I strive toward consistency and cleanliness in both code *and* design.
 
 ## clients
 

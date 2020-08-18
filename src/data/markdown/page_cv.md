@@ -1,7 +1,7 @@
 <!--
   id: 2433
   date: 2014-05-23
-  modified: 2019-10-25
+  modified: 2020-08-18
   slug: cv
   type: page
   metaKeyword: front-end developer
@@ -31,8 +31,8 @@
 
 ## profile
 
-I'm a dedicated front-end developer with more than eighteen years of experience in developing digital media.<br/>
-Because of my education and work experience as a graphic designer, interaction designer and programmer I am able look at a project from multiple perspectives. I strive toward consistency and cleanliness in code as well as design.
+I'm a dedicated front-end developer with more than twenty years of experience in developing digital media.<br/>
+My formal background is graphic- and interaction design and I strive toward consistency and cleanliness in both code *and* design.
 Sometimes I have solo projects but mostly I like to work in teams. 
 I can read and write several backend languages and I'm not afraid to learn something new.
 
