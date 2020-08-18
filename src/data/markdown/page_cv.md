@@ -16,7 +16,12 @@
 
 ## personal info
 
-<small class="pull-right"><a href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1569508867/rv/Curiculum-Vitae_Ron-Valstar_front-end-developer.pdf" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.pdf">download pdf</a></small>
+<small class="pull-right" data-download>
+    download as 
+    <a data-download-pdf href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1569508867/rv/Curiculum-Vitae_Ron-Valstar_front-end-developer.pdf" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.pdf">pdf</a> 
+    <!--<a data-download-md href="Curiculum-Vitae_Ron-Valstar_front-end-developer.md" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.md">md</a>-->
+    or <a data-download-txt href="Curiculum-Vitae_Ron-Valstar_front-end-developer.md" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.txt">txt</a>
+</small>
 <ul class="list-unstyled">
 	<li>Ron Valstar <small>BA / MA</small></li>
 	<li>van Bossestraat 82-3</li>
@@ -80,6 +85,7 @@ I can read and write several backend languages and I'm not afraid to learn somet
  
 </div>
 </div>
+<!--
 <div class="print-columns">
 <div>
 
@@ -103,6 +109,7 @@ I can read and write several backend languages and I'm not afraid to learn somet
  
 </div>
 </div>
+-->
 <div style="page-break-after: always;"></div>
 
 ## education
@@ -120,3 +127,5 @@ I can read and write several backend languages and I'm not afraid to learn somet
  - <time>1998-2000</time> freelance webdesigner
 
 <!--<div style="page-break-after: always;"></div>-->
+
+## projects
