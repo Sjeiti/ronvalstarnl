@@ -1,4 +1,4 @@
-<!--
+<!-- 
   date: 9999-99-99
   modified: 9999-99-99
   slug: fast-giant-lists
@@ -51,7 +51,7 @@ Changing the DOM this way works, but it is a bit heavy on memory and calculation
 The big surprise was 9GAG. Like with the other sites I just added this lousy line to console `setInterval(()=>window.scrollTo(0,document.body.scrollHeight),2000)` which output ID can be used to stop it. Which I did while it was still quite responsive at about three thousand items.
 They also just toggle item visibility but they do it in chunks. A chunk being the amount of items that fit into a page wrapped by an element. At any given moment only two of these wrappers have to be visible.
 
-## Test all the things!
+## Test all the things! 
 
 With all these different implementations there is not really one best solution, some work well, some not so much. And it all depends on a lot of factors: how complex is the HTML of the item, the width and height of the item, how far do people scroll on average, how are the items stacked, are they the same size.
 
@@ -61,16 +61,18 @@ But this is theory, before implementing a final solution to our problem we want 
 
 ### Testing DOM removal
 
-This first test is one where DOM elements are removed and added. This works well but does require some work for calculating the top and bottom padding.
+This first test is one where DOM elements are removed and added. This fairly works well but does require some work for calculating the top and bottom padding because right now the scrollbar does not work as it should. 
 
 ```html
-<!--example-->
+<!--embed-->
+<template id="listDOM">
 <template><li>foo</li></template>
 <div><ul></ul></div>
 <style>
 html, body {
   width: 100%;
-  height: 20rem;
+  height: 20rem; 
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -101,8 +103,10 @@ const increment = 50
 const edge = 0.05
 let index = 0
 
-div.addEventListener('scroll', onScroll, {passive:true})
-ul.appendChild(getRows(index, index = 2 * increment))
+requestAnimationFrame(()=>{
+  div.addEventListener('scroll', onScroll, {passive:true})
+  ul.appendChild(getRows(index, index = 2 * increment))
+})
 
 function getRows(ind, amount) {
   const fragment = document.createDocumentFragment()
@@ -140,7 +144,7 @@ function onScroll(e) {
     decrementList()
   }
 }
-
+ 
 function incrementList() {
   ul.appendChild(getRows(index, increment))
   for (let i = 0; i < increment; i++) cache.appendChild(ul.firstChild)
@@ -154,6 +158,13 @@ function decrementList() {
   index -= increment
 }
 </script>
+</template>
+```
+
+```html 
+<!--example-->
+<!--include:listDOM-->
+<!--height:20rem-->
 ```
 
 ### Testing chunk visibility
@@ -164,15 +175,23 @@ We're not calculating the visibility of individual rows but two chunks of rows. 
 The other reason is that the scroll handling is debounced. The downside is that when debouncing the handling takes place after the events stop firing (throttling is rather pointless in this cas). This shows as empty space prior to the chunk turned visible again. We can make it easier on the eyes by setting a repeating backround image.
 
 
-```html
-<!--example-->
-<template id="stream"><li><ul class="stream"></ul></li></template>
-<template id="li"><li>foo</li></template>
+```html 
+<!--embed-->
+<template id="listChunk">
+<template id="stream">
+  <li>
+    <ul class="stream"></ul>
+  </li>
+</template>
+<template id="li">
+  <li>foo</li>
+</template>
 <div><ul></ul></div>
 <style>
 html, body {
   width: 100%;
   height: 20rem;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -186,6 +205,8 @@ div {
 ul {
   list-style: none;
   padding: 0;
+}
+div>ul {
   background-image: linear-gradient(
     180deg
     , #FFF 0% 20%
@@ -196,9 +217,9 @@ ul {
   );
   background-size: 160px 160px;
 }
-li li { 
-  line-height: 32px; 
-  height: 32px; 
+li li {
+  line-height: 32px;
+  height: 32px;
 }
 .row0 { background-color: #FFF; }
 .row1 { background-color: #EEE; }
@@ -217,9 +238,11 @@ const edge = 200
 let scrollTimeoutId
 let index = 0
 
-div.addEventListener('scroll',onScroll,{passive:true,capture:true})
-for (let i=0,l=11;i<l;i++) incrementList()
-checkStreamVisibility(1,10,1)
+requestAnimationFrame(()=>{
+  div.addEventListener('scroll',onScroll,{passive:true,capture:true})
+  for (let i=0,l=11;i<l;i++) incrementList()
+  div.dispatchEvent(new CustomEvent('scroll', {target:div}))
+})
 
 function onScroll(e){
     clearTimeout(scrollTimeoutId)
@@ -285,14 +308,14 @@ function toggleVisibility(elm,show){
 
 function getRows(ind,amount) {
     const stream = document.importNode(templateStream.content, true)
-    const streamUl = stream.childNodes[0].querySelector('ul')
+    const streamUl = stream.children[0].querySelector('ul')
     for (let i=0;i<amount;i++) streamUl.appendChild(getRow(ind + i))
     return stream
 }
 
 function getRow(ind){
     const row = document.importNode(templateLi.content, true)
-    const rowElm = row.childNodes[0]
+    const rowElm = row.children[0]
     rowElm.textContent += ind
     rowElm.setAttribute('value', ind)
     rowElm.classList.add(`row${ind%5}`)
@@ -313,6 +336,13 @@ function pinch(a,p){
     return returnA
 }
 </script>
+</template>
+```
+
+```html
+<!--example-->
+<!--include:listChunk-->
+<!--height:20rem-->
 ```
 
 ### Testing complex content
@@ -326,60 +356,175 @@ Anyway, complex content might also differ in height. This makes it harder to cre
 
 ```html
 <!--example-->
-<template id="li"><li>
-<img />
-<h3>foo</h3>
-<p></p>
-<input type="button" />
-</li></template>
-<button data-start>start</button>
-<div><form><ul></ul></form></div>
+<!--include:listChunk-->
+<!--height:30rem-->
+<template id="liComplex">
+  <li>
+    <img/>
+    <h3>foo</h3>
+    <p></p>
+    <input type="button"/>
+  </li>
+</template>
+<!--<svg viewBox="0 0 640 160">
+  <rect width="640" height="160" fill="#EEE" />
+  <rect x="16" y="16" width="192" height="128" fill="#CCC" />
+  <rect x="192" y="16" width="416" height="128" fill="#FFF" />
+  <rect x="208" y="32" width="192" height="16" fill="#BBB" />
+  <rect x="208" y="64" width="384" height="32" fill="#DDD" />
+  <rect x="208" y="64" width="224" height="48" fill="#DDD" />
+  <rect x="528" y="112" width="64" height="16" fill="#BBB" />
+</svg>-->
 <style>
-html, body {
-  width: 100%;
-  height: 20rem;
-  margin: 0;
-  padding: 0;
-}
-body { font-family: monospace; }
-div {
-  height: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  box-shadow: 0 0 0 1px green;
-}
-ul {
-  list-style: none;
-  padding: 0;
-}
-li { line-height: 32px; }
-li:nth-child(4n+1) { background-color: #FFF; }
-li:nth-child(4n+2) { background-color: #EEE; }
-li:nth-child(4n+3) { background-color: #DDD; }
-li:nth-child(4n+4) { background-color: #CCC; }
+  div>ul {
+    background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 160'><rect width='640' height='160' fill='%23EEE' /><rect x='16' y='16' width='192' height='128' fill='%23CCC' /><rect x='192' y='16' width='416' height='128' fill='%23FFF' /><rect x='208' y='32' width='192' height='16' fill='%23BBB' /><rect x='208' y='64' width='384' height='32' fill='%23DDD' /><rect x='208' y='64' width='224' height='48' fill='%23DDD' /><rect x='528' y='112' width='64' height='16' fill='%23BBB' /></svg>");
+    /*background-size: 100% 1.5625%;*/
+    background-size: 100%;
+  }
+  li li {
+    padding: 1rem;
+    box-shadow: 0 0 0 1rem #EEE inset;
+    background-color: #FFF;
+    line-height: 130%;
+    height: auto;
+  }
+  li li:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  img {
+    float: left;
+    margin-right: 1rem;
+  }
+  p {
+    margin-right: 1rem;
+  }
+  input {
+    float: right;
+    margin: 0 1rem 1rem 0;
+  }
 </style>
 <script>
+const imgBasePath = 'https://res.cloudinary.com/dn1rmdjs5/image/upload/c_thumb,w_200,g_face/v1566568767/rv/'
+const imgs = ['jurida0','studio01','02_wake-up','yoleo_0','kosmonaut3','Experiment-glass-Ron-Valstar-8','clouds','Clipboard35','ill_schelp','noiseCubeMap3D1','gridfloored','disconnectLoop','hypnosis','HSO-App-students','marbles','ill_nherengrachtalt','Lorenz84-1235-655-946-484-356','ill_lorenz','5410177218_d28d7c8f42_o','jurida3','elephant','PIMockup','kleurenspeuren']
 const lorem = ['a','ab','accusamus','accusantium','ad','adipisci','adipiscing','alias','aliqua','aliquam','aliquid','aliquip','amet','anim','animi','aperiam','architecto','asperiores','aspernatur','assumenda','at','atque','aut','aute','autem','beatae','blanditiis','cillum','commodi','commodo','consectetur','consequat','consequatur','consequuntur','corporis','corrupti','culpa','cum','cumque','cupidatat','cupiditate','debitis','delectus','deleniti','deserunt','dicta','dignissimos','distinctio','do','dolor','dolore','dolorem','doloremque','dolores','doloribus','dolorum','ducimus','duis','ea','eaque','earum','eius','eiusmod','eligendi','elit','enim','eos','error','esse','est','et','eu','eum','eveniet','ex','excepteur','excepturi','exercitation','exercitationem','expedita','explicabo','facere','facilis','fuga','fugiat','fugit','harum','hic','id','illo','illum','impedit','in','incididunt','incidunt','inventore','ipsa','ipsam','ipsum','irure','iste','itaque','iure','iusto','labore','laboriosam','laboris','laborum','laudantium','libero','lorem','magna','magnam','magni','maiores','maxime','minim','minima','minus','modi','molestiae','molestias','mollit','mollitia','nam','natus','necessitatibus','nemo','neque','nesciunt','nihil','nisi','nobis','non','nostrud','nostrum','nulla','numquam','occaecat','occaecati','odio','odit','officia','officiis','omnis','optio','pariatur','perferendis','perspiciatis','placeat','porro','possimus','praesentium','proident','provident','quae','quaerat','quam','quas','quasi','qui','quia','quibusdam','quidem','quis','quisquam','quo','quod','quos','ratione','recusandae','reiciendis','rem','repellat','repellendus','reprehenderit','repudiandae','rerum','saepe','sapiente','sed','sequi','similique','sint','sit','soluta','sunt','suscipit','tempor','tempora','tempore','temporibus','tenetur','totam','ullam','ullamco','unde','ut','vel','velit','veniam','veritatis','vero','vitae','voluptas','voluptate','voluptatem','voluptates','voluptatibus','voluptatum']
-let seed = 234                                  const rnd = _seed => seed = (25214903917*(_seed||seed||0)+11)%2E48                              const random = _seed => rnd(_seed)/2E48         const capitalize = s => s.charAt(0).toUpperCase() + s.slice(1)                                  const getLinePart = () => words.sort(()=>rnd()<1E48?-1:1).slice(0,10 + random()*15<<0).join(' ')
-const getLine = () => capitalize(getLinePart())+'.'                                             const getParagraph = () => Array.from(new Array(3 + random()*7<<0)).map(getLine).join(' ')
-const $ = document.querySelector.bind(document)
-const templateLi = $('template#li')
-const ul = $('ul')
+let seed = 3124
+const rnd = _seed => seed = (25214903917*(_seed||seed||0)+11)%2E48
+const random = _seed => rnd(_seed)/2E48
+const capitalize = s => s.charAt(0).toUpperCase() + s.slice(1)
+const getLinePart = (max=25) => {
+  const min = Math.max(Math.round(0.3*max), 1)
+  const rest = max - min
+  return lorem.sort(()=>rnd()<1E48?-1:1).slice(0,min + random()*rest<<0).join(' ')
+}
+const getLine = () => capitalize(getLinePart())+'.'
+const getParagraph = (max=10) => {
+  const min = Math.max(Math.round(0.3*max), 1)
+  const rest = max - min
+  return Array.from(new Array(min + random()*rest<<0)).map(getLine).join(' ')
+}
+const getImg = ()=>{
+	return imgBasePath+imgs[rnd()%imgs.length]+'.jpg'
+}
 
-$('[data-start]').addEventListener('click', ()=>{
-  alert(1)
-  for (let i=0,l=3E3;i<l;i++) ul.appendChild(getRow(templateLi, i))
-})
- 
-function getRow(template,ind){
-  const row = document.importNode(template.content, true)
-  const li = row.childNodes[0]
-  li.appendChild(document.createTextNode(ind))
-  //const input = li.querySelector('input')
-  //input&&input.setAttribute('name',`i${ind}`)
+let liIndex = 0
+const $ = document.querySelector.bind(document)
+const templateLiComplex = $('template#liComplex')
+
+function getRow(liIndex){
+  const row = document.importNode(templateLiComplex.content, true)
+  const li = row.children[0]
+  const _$ = li.querySelector.bind(li)
+  _$('h3').textContent = (liIndex++) + ' ' + capitalize(getLinePart(6))
+  _$('p').textContent = getParagraph(3)
+  _$('input').setAttribute('value', capitalize(getLinePart(3)))
+  _$('img').setAttribute('src', getImg())
   return row
 }
 </script>
 ```
 
-1
+
+
+```html 
+<!--example-->
+<!--include:listDOM-->
+<!--height:30rem-->
+
+<template id="liComplex">
+  <li>
+    <img/>
+    <h3>foo</h3>
+    <p></p>
+    <input type="button"/>
+  </li>
+</template>
+<style>
+  div>ul {
+    background-image: none;
+  }
+  li {
+    padding: 1rem;
+    box-shadow: 0 0 0 1rem #EEE inset;
+    background-color: #FFF;
+    line-height: 130%;
+    height: auto;
+  }
+  li:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  img {
+    float: left;
+    margin-right: 1rem;
+  }
+  p {
+    margin-right: 1rem;
+  }
+  input {
+    float: right;
+    margin: 0 1rem 1rem 0;
+  }
+</style>
+<script>
+// document.body.insertBefore(document.querySelector('svg'),div) // todo remove
+const imgBasePath = 'https://res.cloudinary.com/dn1rmdjs5/image/upload/c_thumb,w_200,g_face/v1566568767/rv/'
+const imgs = ['jurida0','studio01','02_wake-up','yoleo_0','kosmonaut3','Experiment-glass-Ron-Valstar-8','clouds','Clipboard35','ill_schelp','noiseCubeMap3D1','gridfloored','disconnectLoop','hypnosis','HSO-App-students','marbles','ill_nherengrachtalt','Lorenz84-1235-655-946-484-356','ill_lorenz','5410177218_d28d7c8f42_o','jurida3','elephant','PIMockup','kleurenspeuren']
+const lorem = ['a','ab','accusamus','accusantium','ad','adipisci','adipiscing','alias','aliqua','aliquam','aliquid','aliquip','amet','anim','animi','aperiam','architecto','asperiores','aspernatur','assumenda','at','atque','aut','aute','autem','beatae','blanditiis','cillum','commodi','commodo','consectetur','consequat','consequatur','consequuntur','corporis','corrupti','culpa','cum','cumque','cupidatat','cupiditate','debitis','delectus','deleniti','deserunt','dicta','dignissimos','distinctio','do','dolor','dolore','dolorem','doloremque','dolores','doloribus','dolorum','ducimus','duis','ea','eaque','earum','eius','eiusmod','eligendi','elit','enim','eos','error','esse','est','et','eu','eum','eveniet','ex','excepteur','excepturi','exercitation','exercitationem','expedita','explicabo','facere','facilis','fuga','fugiat','fugit','harum','hic','id','illo','illum','impedit','in','incididunt','incidunt','inventore','ipsa','ipsam','ipsum','irure','iste','itaque','iure','iusto','labore','laboriosam','laboris','laborum','laudantium','libero','lorem','magna','magnam','magni','maiores','maxime','minim','minima','minus','modi','molestiae','molestias','mollit','mollitia','nam','natus','necessitatibus','nemo','neque','nesciunt','nihil','nisi','nobis','non','nostrud','nostrum','nulla','numquam','occaecat','occaecati','odio','odit','officia','officiis','omnis','optio','pariatur','perferendis','perspiciatis','placeat','porro','possimus','praesentium','proident','provident','quae','quaerat','quam','quas','quasi','qui','quia','quibusdam','quidem','quis','quisquam','quo','quod','quos','ratione','recusandae','reiciendis','rem','repellat','repellendus','reprehenderit','repudiandae','rerum','saepe','sapiente','sed','sequi','similique','sint','sit','soluta','sunt','suscipit','tempor','tempora','tempore','temporibus','tenetur','totam','ullam','ullamco','unde','ut','vel','velit','veniam','veritatis','vero','vitae','voluptas','voluptate','voluptatem','voluptates','voluptatibus','voluptatum']
+let seed = 3124
+const rnd = _seed => seed = (25214903917*(_seed||seed||0)+11)%2E48
+const random = _seed => rnd(_seed)/2E48
+const capitalize = s => s.charAt(0).toUpperCase() + s.slice(1)
+const getLinePart = (max=25) => {
+  const min = Math.max(Math.round(0.3*max), 1)
+  const rest = max - min
+  return lorem.sort(()=>rnd()<1E48?-1:1).slice(0,min + random()*rest<<0).join(' ')
+}
+const getLine = () => capitalize(getLinePart())+'.'
+const getParagraph = (max=10) => {
+  const min = Math.max(Math.round(0.3*max), 1)
+  const rest = max - min
+  return Array.from(new Array(min + random()*rest<<0)).map(getLine).join(' ')
+}
+const getImg = ()=>{
+	return imgBasePath+imgs[rnd()%imgs.length]+'.jpg'
+}
+
+const $ = document.querySelector.bind(document)
+const templateLiComplex = $('template#liComplex')
+
+function getRow(index){
+  const row = document.importNode(templateLiComplex.content, true)
+  const li = row.children[0]
+  const _$ = li.querySelector.bind(li)
+  _$('h3').textContent = index + ' ' + capitalize(getLinePart(6))
+  _$('p').textContent = getParagraph(3)
+  _$('input').setAttribute('value', capitalize(getLinePart(3)))
+  _$('img').setAttribute('src', getImg())
+  return row
+}
+</script>
+```

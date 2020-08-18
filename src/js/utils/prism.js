@@ -34,6 +34,7 @@ export function prismToElement(elm){
   const type = matchFirstComment&&matchFirstComment.pop()||lang
 
   const isExample = type==='example'
+  const isEmbed = type==='embed'
   const isIllustration = type==='illustration'
   if (isExample||isIllustration){
 
@@ -44,7 +45,7 @@ export function prismToElement(elm){
       const template = document.getElementById?.(id)
       const div = document.createElement('div')
       div.appendChild(template.content.cloneNode(true))
-      contents = contents.replace(`<!--include:${id}-->`,div.innerHTML)
+      contents = contents.replace(`<!--include:${id}-->`, div.innerHTML)
     })
 
     // createElement(type, classes, parent, attributes, text, click)
@@ -56,11 +57,22 @@ export function prismToElement(elm){
     exampleUI&&parentNode.insertBefore(exampleUI, pre)
     parentNode.insertBefore(iframe, pre)
     parentNode.removeChild(pre)
+
+    const matchHeight = contents.match(/<!--height:(\d+\.?\d*\w+)-->/g)
+    const matchedHeight = matchHeight&&contents.match(/<!--height:(\d+\.?\d*\w+)-->/).pop()
+
     requestAnimationFrame(()=>{
       const {contentWindow: {document}} = iframe
       document.writeln(contents)
-      requestAnimationFrame(()=>iframe.style.height = `${document.body.scrollHeight}px`)
+
+      const height = matchedHeight||`${document.body.scrollHeight}px`
+      requestAnimationFrame(()=>iframe.style.height = height)
     })
+
+  } else if (isEmbed){
+    const {parentNode:pre, parentNode: {parentNode}} = elm
+    pre.insertAdjacentHTML('beforebegin', contents)
+    parentNode.removeChild(pre)
 
   } else {
     elm.setAttribute('data-language', lang)
@@ -74,22 +86,20 @@ export function prismToElement(elm){
 
 /**
  * Creates a form with button to post to JSFiddle
- * @param contents
+ * @param {string} contents
  * @return {HTMLElement}
  */
 function getJSFiddleButton(contents){
   const wrapper = document.createElement('div')
   wrapper.innerHTML = contents
-  const style = wrapper.querySelector('style')
-  const script = wrapper.querySelector('script')
 
-  const css = style?.innerText||''
-  const js = script?.innerText||''
+  const [css, js] = ['style', 'script'].map(name=>Array.from(wrapper.querySelectorAll(name)).reduce((acc, elm)=>{
+    wrapper.removeChild(elm)
+    return acc + elm.innerText
+  }, ''))
 
-  style&&wrapper.removeChild(style)
-  script&&wrapper.removeChild(script)
   const html = wrapper.innerHTML
-  //
+
   const ui = createElement('form', 'example-ui', null, {
     method: 'post'
     , action: 'http://jsfiddle.net/api/post/library/pure/'

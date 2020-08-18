@@ -8,6 +8,16 @@ const arrayKeys = ['tags', 'categories', 'collaboration', 'clients', 'prizes', '
 const booleanKeys = ['inCv', 'inPortfolio', 'sticky']
 const t = s=>(new Date(s)).getTime()||Number.MAX_VALUE
 
+
+// const renderer = {
+//   html(html) {
+//     const match = html.match(/^(<template[^>]+>)(.*)(<\/template>)$/);
+//     return match&&match.join('')||html;
+//   }
+// };
+marked.use({ renderer: { html: s => s } })
+
+
 glob('src/data/markdown/+(post|fortpolio|page)_*.md')
     .then(files=>Promise.all(files.map(read)))
     .then(files=>files.map(markdown2object))
@@ -40,7 +50,7 @@ function markdown2object(contents){
   const contentLines = lines.slice(endComments+1)
   const titleIndex = firstMatchIndex(contentLines, /^\s*#\s(.*)$/)
   const title = (titleIndex!==-1&&contentLines[titleIndex].match(/#(.*)/).pop()||'').trim()
-  const content = marked(contentLines.slice(titleIndex+1).join('\n').trim(), {breaks: true})
+  const content = marked(contentLines.slice(titleIndex+1).join('\n').trim(), {breaks: true/*, gfm: true*/})
   return Object.assign(meta, {title, content})
 }
 

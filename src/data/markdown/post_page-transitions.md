@@ -372,6 +372,8 @@ It is a bit more difficult to see with an `<iframe />` but we still haven't done
 
 The previous example does look a bit weird when you go from 'contact' to 'home' in that it still animates from right to left. It would be nice to have it change direction depending on the direction of the menu item.
 
+```html 
+<!--embed-->
 <template id="pageExample">
 <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet" />
 <style>
@@ -542,7 +544,7 @@ function onLoad(content, state, pageClassName, toLeft){
   contentOld.classList.add(leave)
   contentNew.classList.add(enter)
   nextFrame(()=>{
-    contentOld.classList.add(leaveTo)
+    contentOld.classList.add(leaveTo)pack
     contentNew.classList.add(enterTo)
   }, 2)
   contentOld.addEventListener('transitionend', ()=>{
@@ -570,6 +572,7 @@ function setNavCurrent(currentHref){
 }
 </script>
 </template>
+```
 
 ```html
 <!--example-->

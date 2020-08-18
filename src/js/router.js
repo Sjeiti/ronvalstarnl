@@ -117,7 +117,6 @@ export function open(uri, popped){
  * A factory method for the view that is parsed with each route change
  * @param {HTMLElement} element
  * @returns {View}
- * @todo check usages of methods
  */
 function viewModelFactory(element){
   /** @lends View.prototype */
