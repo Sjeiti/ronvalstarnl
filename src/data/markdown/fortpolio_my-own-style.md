@@ -11,7 +11,7 @@
   thumbnail: MYOS_home.png
   image: MYOS_home.png
   images: MYOS_Karly_mobile.png, MYOS_home.png, MYOS_Karly.png
-  inCv: true
+  inCv: false
   inPortfolio: true
   dateFrom: 2014-02-01
   dateTo: 2014-04-01

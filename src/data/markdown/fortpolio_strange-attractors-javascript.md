@@ -12,7 +12,7 @@
   headerClassName: no-blur
   image: attractors01.jpg
   images: attractors00.png, attractors01.jpg, attractors02.jpg, Lorenz-84-52.gif, Lorenz-84-31.gif, Lorenz-84-57.png
-  inCv: true
+  inCv: false
   inPortfolio: true
   dateFrom: 2016-03-04
   dateTo: 2016-07-14
