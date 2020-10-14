@@ -544,7 +544,7 @@ function onLoad(content, state, pageClassName, toLeft){
   contentOld.classList.add(leave)
   contentNew.classList.add(enter)
   nextFrame(()=>{
-    contentOld.classList.add(leaveTo)pack
+    contentOld.classList.add(leaveTo)
     contentNew.classList.add(enterTo)
   }, 2)
   contentOld.addEventListener('transitionend', ()=>{
