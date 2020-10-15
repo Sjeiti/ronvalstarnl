@@ -28,16 +28,18 @@ add(
         view.expandAppend('section.for>(h2.section-title>small{worked}+{for})+ul.unstyled.svg-list.clients', false)
         const clientNames = [
               'sikkens'
-            , '72andsunny'
             , 'uva'
-            , 'resn'
-            , 'tribalddb'
-            , 'novartis'
+            , 'tudelft'
+            , 'wageningen'
             , 'randstad'
-            , '2x4'
-            , 'vodafone'
-            , 'buildinamsterdam'
             , 'philips'
+            , 'vodafone'
+            , '2x4'
+            , 'novartis'
+            , 'resn'
+            , 'buildinamsterdam'
+            , '72andsunny'
+            , 'tribalddb'
           ]
         const elmClients = view.querySelector('.clients')
         populateSVGList(elmClients, clientNames.map(s=>`client-${s}`))
