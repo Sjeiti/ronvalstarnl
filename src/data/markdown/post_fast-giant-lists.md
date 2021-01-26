@@ -18,7 +18,7 @@ A while back I was asked to fix a page speed issue. This was an online applicati
 Mostly it would run fine with about two hundred to eight hundred lines. But there were edge cases with up to three *thousand* lines. Which would simply make the browser completely unresponsive.
 Funny thing was that the current implementation was already a 'better' version. So prior to that the performance was even worse.
 
-Now normally I'm not sure about infinite scroll. In most cases I would simply recommend pagination. Not only because of speed, but also because pagination gives you a clear sense of how large the actual set is.
+I am no fan of infinite scroll. In most cases I would simply recommend pagination. Not only because of speed, but also because pagination gives you a clear sense of how large the actual set is.
 But infinite scroll was already in place. Only if I couldn't fix the problem I would send it back to the UX drawing board.
 
 ## To frame or not to work
@@ -45,11 +45,11 @@ Youtube stops loading at six hundred thirty four items and it doesn't toggle any
 
 I tried reaching the end at Reddit but I do no think there is. At eight hundred items it slowed down to a crawl even though it did toggle the item visibility.
 
-Twitter and Pinterest have a list of *n* visible items (where *n* is a number depending on your screen size). When you scroll they change the DOM by simply adding and removing elements. The invisible elements are kept in memory. Which makes it difficult to count the maximum number of items without checking the code but it is roughly seven hundred for Twitter and one thousand for Pinterest (`document.body.scrollHeight/window.innerHeight*averageItemsInView`).
+Twitter and Pinterest have a list of *n* visible items (where *n* is a number depending on your screen size). When you scroll they change the DOM by simply adding and removing elements. The invisible elements are kept in memory. Which makes it difficult to count the maximum number of items without checking the code but it is roughly seven hundred for Twitter and one thousand for Pinterest (`document.body.scrollHeight / window.innerHeight * averageItemsInView`).
 Changing the DOM this way works, but it is a bit heavy on memory and calculation. Which is probably why both capped the maximum number.
 
-The big surprise was 9GAG. Like with the other sites I just added this lousy line to console `setInterval(()=>window.scrollTo(0,document.body.scrollHeight),2000)` which output ID can be used to stop it. Which I did while it was still quite responsive at about three thousand items.
-They also just toggle item visibility but they do it in chunks. A chunk being the amount of items that fit into a page wrapped by an element. At any given moment only two of these wrappers have to be visible.
+The big surprise was 9GAG. Like with the other sites I just added this lousy line to console `setInterval(() = >window.scrollTo(0, document.body.scrollHeight), 2000)` which output ID can be used to stop it. When I did this it was still quite responsive at about three thousand items.
+They also just toggle item visibility but in chunks. A chunk being the amount of items that fit into a page wrapped by an element. At any given moment only two of these wrappers have to be visible.
 
 ## Test all the things! 
 
@@ -528,3 +528,4 @@ function getRow(index){
 }
 </script>
 ```
+
