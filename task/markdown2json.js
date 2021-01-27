@@ -96,7 +96,7 @@ function saveObjectsToLists(objects){
   const listPosts = objects.filter(o=>o.type==='post')
   const listProjects = objects.filter(o=>o.type==='fortpolio'&&(o.inCv||o.inPortfolio))
   save('src/data/json/pages-list.json', JSON.stringify(listPages.map(({slug, title})=>({slug, title}))))
-  save('src/data/json/posts-list.json', JSON.stringify(listPosts.map(({date, slug, title, sticky})=>({date, slug, title, sticky})).sort((a, b)=>new Date(a.date)>new Date(b.date)?-1:1)))
+  save('src/data/json/posts-list.json', JSON.stringify(listPosts.map(({date, slug, title, sticky})=>({date, slug, title, sticky})).sort((a, b)=>new Date(a.date)-new Date(b.date))))
   save('src/data/json/fortpolio-list.json', JSON.stringify(listProjects))
   return objects
 }
