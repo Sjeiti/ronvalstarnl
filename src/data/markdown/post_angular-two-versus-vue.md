@@ -1,7 +1,7 @@
 <!--
   id: 3093
-  date: 2016-11-26
-  modified: 2019-09-27
+  date: 2016-06-26
+  modified: 2020-10-23
   slug: angular-two-versus-vue
   type: post
   header: vangular.png
@@ -19,7 +19,7 @@ My site <del>right now is</del> was WordPress with a REST API coupled to a Angul
 
 ## migrating to Angular 2
 
-My site had a few quirky patterns like routes from a REST API, template injection and DOM node swapping. But I wasn’t too worried; if it worked in v1, why would it not work in v2?  
+My site had a few quirky things like routes from a REST API, template injection and DOM node swapping. But I wasn’t too worried; if it worked in v1, why would it not work in v2?  
 At first I read numerous articles on how to migrate from Angular v1 to v2\. Tried it, and decided it would be easier to simply start over. Then I tried to get started using the docs on the Angular site. While still trying to get my tutorial stuff compiled I found [angular-cli](https://github.com/angular/angular-cli), which simply creates a working scaffold (after downloading +200MB of NPM scripts).
 
 ## So far so good

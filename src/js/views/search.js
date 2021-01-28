@@ -1,6 +1,6 @@
 import {add} from '../router'
 import {clean, expand} from '../utils/html'
-import {fetchJSONFiles,nextTick} from '../utils'
+import {fetchJSONFiles,getZenIcon,nextTick} from '../utils'
 import {search, change} from '../component/Search'
 import {open} from '../router'
 import {initialise} from '../component'
@@ -21,7 +21,6 @@ export function searchView(view, route, params, error){
   const is404 = !!error
   let title = is404?'404':'search'
   //
-  const typeToIcon = {page:'file-empty', post:'file-text', fortpolio:'file-picture'}
   const data = ['fortpolio-list', 'posts-list', 'pages-list']
   Promise.all(data.map(s=>fetch(`/data/json/${s}.json`).then(r=>r.json())))
       .then(([fortpolio, posts, pages])=>{
@@ -73,8 +72,8 @@ export function searchView(view, route, params, error){
                     const splitSlug = slug.split('_')
                     const key = splitSlug.pop()
                     const type = splitSlug.shift()
-                    const icon = typeToIcon[type]
-                    return `li>a[href="${uri}"]>((svg[data-icon=${icon}]>title{${type}})+{${slugPosts[key]?.title}})`
+                    const icon = getZenIcon(type)
+                    return `li>a[href="${uri}"]>((${icon})+{${slugPosts[key]?.title}})`
                   }).join('+')
             ))
             initialise(result)

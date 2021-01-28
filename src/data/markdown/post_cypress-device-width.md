@@ -9,6 +9,7 @@
   excerpt: A crude fix for Cypress inability to test `device-width`
   categories: Javascript, HTML, CSS
   tags: CSS, speed, test, responsive, media queries
+  related: useful-custom-cypress-commands
 -->
 
 # Cypress and `device-width`

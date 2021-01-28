@@ -1,7 +1,7 @@
 {
   "name": "ronvalstarnl",
   "author": "Ron Valstar",
-  "version": "0.4.189",
+  "version": "0.4.192",
   "license": "MIT",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
@@ -16,6 +16,7 @@
     "build:rss": "node task/buildRSS --target dist",
     "write": "chokidar \"src/data/markdown/*.md\" -c \"npm run build:json\"",
     "write:future": "grep -rlw 9999 src/data/markdown/*",
+    "write:futurew": "findstr 9999 src/data/markdown/* 2>nul",
     "webpack": "npx webpack --config webpack.config.js",
     "clean": "del-cli dist -f",
     "serve": "node task/serve dist 7047",

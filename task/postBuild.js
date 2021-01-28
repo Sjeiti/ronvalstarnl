@@ -1,4 +1,4 @@
-const {run,spawnTask} = require('./util/utils.js')
+const {run, spawnTask} = require('./util/utils.js')
 
 const port = 1231
 const serveTask = `node task/serve dist ${port} -s`

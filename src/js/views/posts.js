@@ -1,12 +1,12 @@
 import {searchView} from './search'
 import {setDefault} from '../router'
-import {fetchJSONFiles,nextTick,scrollToTop,todayOlderFilter} from '../utils'
+import {fetchJSONFiles,getZenIcon,nextTick,scrollToTop,todayOlderFilter} from '../utils'
 import {prismToRoot} from '../utils/prism'
 import {componentOf} from '../component'
 
-setDefault((view, route, params)=>fetchJSONFiles(`post_${route}`, 'posts-list')
-    .then(([post, posts])=>{
-      const {date, title, content, header, headerColofon, headerClassName, slug} = post
+setDefault((view, route, params)=>fetchJSONFiles(`post_${route}`, 'posts-list', 'fortpolio-list')
+    .then(([post, posts, fortpolios])=>{
+      const {date, title, content, header, headerColofon, headerClassName, slug, related} = post
       if (header){
         const headerComp = componentOf(document.querySelector('[data-header]'))
         headerComp&&nextTick(headerComp.setImage.bind(headerComp, header, headerColofon, headerClassName))
@@ -25,9 +25,21 @@ setDefault((view, route, params)=>fetchJSONFiles(`post_${route}`, 'posts-list')
       const nextLink = next&&`a.next[href="/${next.slug}"]{${next.title}}`||''
       const nav = `(nav.prevnext>(${prevLink}+${nextLink}))`
 
+      const relatedPages = related
+          ?'hr+h4{Related:}+ul.unstyled.link-list.related>'+related.split(/\s/g)
+            .map(slug=> {
+              const slog = slug.replace(/^project\//, '')
+              return posts.find(p => p.slug===slug) || fortpolios.find(p => p.slug===slug || p.slug===slog)
+            })
+            .filter(p=>p)
+            .map(({slug, title, type})=>`li>a[href="/${type==='fortpolio'?'project/':''}${slug}"]>((${getZenIcon(type)})+{${title}})`)
+            .join('+')
+          :''
+
       view
           .expandAppend(`time.blog{${time}}+h1{${title}}`)
           .appendString(content, false)
+          .expandAppend(relatedPages, false)
           .expandAppend(nav, false)
 
       Array.from(view.querySelectorAll('iframe')).forEach(iframe=>{

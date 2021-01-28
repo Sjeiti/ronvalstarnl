@@ -259,3 +259,13 @@ export function stickiesFirst(posts){
 export function thenPass(fn){
   return pass=>(fn(pass), pass)
 }
+
+/**
+ * Get zen code for icon from a document type
+ * @param {string} type
+ * @return {string}
+ */
+export function getZenIcon(type){
+  const typeToIcon = {page:'file-empty', post:'file-text', fortpolio:'file-picture'}
+  return `svg[data-icon=${typeToIcon[type]||'file-text'}]>title{${type}}`
+}
