@@ -9,6 +9,7 @@
   excerpt: 
   categories: Javascript
   tags: CSS, transitions
+  related: front-end-logic-without-javascript
 -->
 
 # The basics of CSS page transitions

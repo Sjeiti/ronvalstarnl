@@ -6,6 +6,7 @@
   header: vanveenjf-Ou36eroE7k0-unsplash.jpg
   category: JavaScript
   tag: code quality, string
+  related: the-basics-of-css-page-transitions
 -->
 
 # Front-end logic without Javascript
