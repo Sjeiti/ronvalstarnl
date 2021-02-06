@@ -57,7 +57,6 @@ I can read and write several backend languages and I'm not afraid to learn somet
 	<li data-skill="4">PHP <small>(WordPress, Laravel, Drupal, Codeigniter)</small></li>
 	<li data-skill="4">ActionScript <small>(Papervision3D, pureMVC, Greensock)</small></li>
 	<li data-skill="3">Java/Processing</li>
-	<li data-skill="2">Lingo <small>(Director)</small></li>
 </ul>
 
 ### interaction design
@@ -122,7 +121,7 @@ I can read and write several backend languages and I'm not afraid to learn somet
 
 ## work experience
 
- - <time>2007-2019</time> freelance front-end developer <small>([porfolio](https://ronvalstar.nl/projects))</small>
+ - <time>2007-<span data-now>2019</span></time> freelance front-end developer <small>([porfolio](https://ronvalstar.nl/projects))</small>
  - <time>2000-2007</time> co-founder of [Shapers](http://www.shapers.nl/)
  - <time>1998-2000</time> freelance webdesigner
 

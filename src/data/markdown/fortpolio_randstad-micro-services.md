@@ -11,7 +11,7 @@
   image:
   images: 
   inCv: true
-  inPortfolio: true
+  inPortfolio: false
   dateFrom: 2020-10-01
   dateTo: 2021-09-25
 -->
