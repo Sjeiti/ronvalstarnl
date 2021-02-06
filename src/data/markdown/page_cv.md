@@ -1,7 +1,7 @@
 <!--
   id: 2433
   date: 2014-05-23
-  modified: 2020-08-18
+  modified: 2021-02-06
   slug: cv
   type: page
   metaKeyword: front-end developer
@@ -49,7 +49,7 @@ I can read and write several backend languages and I'm not afraid to learn somet
 ### programming
 
 <ul class="list-unstyled">
-	<li data-skill="5">JavaScript <small>(Vue, Angular, React, ThreeJS)</small></li>
+	<li data-skill="5">JavaScript <small>(TypeScript, React, Angular, Vue, ThreeJS)</small></li>
 	<li data-skill="5">build processes <small>(Node.js, Express, Webpack, Gulp)</small></li>
 	<li data-skill="5">HTML/CSS <small>(semantic HTML5, XSLT, CSS3, SASS, LESS)</small></li>
 	<li data-skill="5">testing <small>(Cypress, Mocha, Chai, Cucumber)</small></li>
