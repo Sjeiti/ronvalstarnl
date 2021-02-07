@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const lessPluginGlob = require('less-plugin-glob')
 const {default:WatchExternalFilesPlugin} = require('webpack-watch-files-plugin')
 const fileName = '[name]-[hash].[ext]'
 module.exports = env => {
@@ -27,10 +26,9 @@ module.exports = env => {
               ,'css-loader'
               ,{
                 loader: 'less-loader'
-                ,options: {
-                  plugins: [lessPluginGlob]
-                  ,paths: [path.resolve(__dirname, 'src')]
-                }
+                ,options: {lessOptions:{
+                  paths: [path.resolve(__dirname, 'src')]
+                }}
               }
           ]
       },{
@@ -68,7 +66,7 @@ module.exports = env => {
       }]
     }
     ,plugins: [
-      new CopyWebpackPlugin([
+      new CopyWebpackPlugin({patterns:[
           { from: 'src/index.html', to: './'}
           ,{ from: 'src/_redirects', to: './'}
           ,{ from: 'src/data/json', to: './data/json' }
@@ -77,7 +75,7 @@ module.exports = env => {
           ,{ from: 'src/static', to: './static' }
           ,{ from: 'node_modules/Experiments/src/experiment/', to: './static/experiment' }
           ,{ from: 'node_modules/Experiments/src/static/glsl/', to: './static/glsl' }
-      ], {})
+      ]})
       ,new webpack.DefinePlugin({
         _VERSION: JSON.stringify(require('./package.json').version)
         ,_ENV: JSON.stringify(env||{})
