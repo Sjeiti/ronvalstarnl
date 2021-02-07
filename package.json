@@ -1,14 +1,14 @@
 {
   "name": "ronvalstarnl",
   "author": "Ron Valstar",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "license": "MIT",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
   "scripts": {
     "start": "run-p build serve",
     "build": "run-s clean build:less \"webpack -- --env development --watch\"",
-    "build:prod": "run-s clean build:less build:unzip build:json build:search \"webpack -- --env.production\" build:sitemap build:rss",
+    "build:prod": "run-s clean build:less build:unzip build:json build:search \"webpack -- --env production\" build:sitemap build:rss",
     "build:unzip": "unzip src/data/icomoon.zip temp/icomoon",
     "build:json": "node task/markdown2json",
     "build:search": "node task/buildSearch",
