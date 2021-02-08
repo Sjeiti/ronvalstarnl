@@ -1,6 +1,6 @@
 import {expand} from '../utils/html'
 import {add} from '../router'
-import {fetchJSONFiles,scrollToTop,stickiesFirst,todayOlderFilter} from '../utils'
+import {fetchJSONFiles, scrollToTop, stickiesFirst, todayOlderFilter} from '../utils'
 
 add('blog', view=>
     fetchJSONFiles('posts-list')

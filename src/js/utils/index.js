@@ -194,7 +194,7 @@ export function nextTick(fn){
  */
 export function nextFrame(fn, num=1){
   const a = []
-  ;a[num-1] = fn
+  a[num-1] = fn
   const down = ()=>{
     const fnc = a.shift()
     fnc?fnc():requestAnimationFrame(down)

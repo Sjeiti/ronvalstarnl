@@ -1,6 +1,6 @@
 import {searchView} from './search'
 import {setDefault} from '../router'
-import {fetchJSONFiles,getZenIcon,nextTick,scrollToTop,todayOlderFilter} from '../utils'
+import {fetchJSONFiles, getZenIcon, nextTick, scrollToTop, todayOlderFilter} from '../utils'
 import {prismToRoot} from '../utils/prism'
 import {componentOf} from '../component'
 

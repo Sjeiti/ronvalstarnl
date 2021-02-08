@@ -1,6 +1,6 @@
 import {add} from '../router'
 import {clean, expand} from '../utils/html'
-import {fetchJSONFiles,getZenIcon,nextTick} from '../utils'
+import {fetchJSONFiles, getZenIcon, nextTick} from '../utils'
 import {search, change} from '../component/Search'
 import {open} from '../router'
 import {initialise} from '../component'

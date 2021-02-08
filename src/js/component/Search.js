@@ -1,4 +1,4 @@
-import {create,initialise} from './index'
+import {create, initialise} from './index'
 import {BaseComponent} from './BaseComponent'
 import {signal} from '../signal'
 import {clean} from '../utils/html'
