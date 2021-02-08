@@ -6,6 +6,7 @@ const {target} = require('commander')
         .usage('[options] <files ...>')
         .option('--target [target]', 'Target path')
         .parse(process.argv)
+        .opts()
 
 const path = '../src/data/json/'
 const base = 'https://ronvalstar.nl'

@@ -6,6 +6,7 @@ const commander = require('commander')
         .option('--entry [entry]', 'Entry url')
         .option('--target [target]', 'Target path')
         .parse(process.argv)
+        .opts()
 const {entry, target} = commander
 const entryUri = entry||'http://localhost:7047'
 preRender(entryUri, target||'temp/renders', new Map, [])
