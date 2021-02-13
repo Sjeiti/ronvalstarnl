@@ -213,7 +213,7 @@ function viewModelFactory(element){
      * @return {View}
      */
     , expandAppend(abbreviation, doClean=true){
-      this.appendString(expand(abbreviation), doClean)
+      abbreviation&&this.appendString(expand(abbreviation), doClean)
       return this
     }
     /**

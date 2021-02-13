@@ -68,17 +68,30 @@ main {
   //h6:after { height: 0.0625rem; }
 }
 
+.related {
+  @colorRelatedBg: #fbfbfb;
+  //@colorRelatedBg: mix(@colorMain, white, 15%);
+  z-index: -1;
+  background-color: @colorRelatedBg;
+  box-shadow: -46rem 0 0 @colorRelatedBg, 46rem 0 0 @colorRelatedBg, -50vw 0 0 @colorRelatedBg, 50vw 0 0 @colorRelatedBg;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  + .prevnext { margin-top: 0; }
+  ul.link-list a { z-index: 0; }
+}
+
 .prevnext {
+  @colorPrevnextBg: @colorGrayLighter;
   display: flex;
   justify-content: space-between;
   font-size: 1rem;
   line-height: 3rem;
   margin-top: 4rem;
-  background-color: #F4F4F4;
-  box-shadow: -46rem 0 0 #F4F4F4, 46rem 0 0 #F4F4F4, -50vw 0 0 #F4F4F4, 50vw 0 0 #F4F4F4;
+  background-color: @colorPrevnextBg;
+  box-shadow: -46rem 0 0 @colorPrevnextBg, 46rem 0 0 @colorPrevnextBg, -50vw 0 0 @colorPrevnextBg, 50vw 0 0 @colorPrevnextBg;
   .prev, .next {
     text-decoration: none;
-    //transform: translateY(-100%);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
