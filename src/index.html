@@ -200,6 +200,7 @@
     aside { display: none; }
 
     footer {
+      position: relative;
       display: flex;
       padding: 0 0.5rem;
       justify-content: space-between;
@@ -219,6 +220,16 @@
     }
     footer>*:last-child {
       flex: 0 1 10rem;
+    }
+    footer .rss {
+      flex: 0 0 0;
+      position: absolute;
+      left: 0;
+      bottom: -0.25rem;
+      transform-origin: top left;
+      transform: rotate(-90deg);
+      font-size: 0.5rem;
+      line-height: 100%;
     }
     footer .social {
       display: flex;
@@ -280,6 +291,7 @@
   </main>
   <aside></aside>
   <footer>
+    <a href="/feed.rss" class="rss">RSS</a>
     <nav class="social">
       <a href="https://stackoverflow.com/users/695734/sjeiti"><svg data-icon="stack-overflow"><title>Stack Overflow</title></svg></a>
       <a href="https://nl.linkedin.com/in/ron-valstar-4b20a917"><svg data-icon="linkedin"><title>LinkedIn</title></svg></a>
