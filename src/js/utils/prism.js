@@ -27,8 +27,8 @@ export function prismToRoot(root){
 export function prismToElement(elm){
   let contents = elm.textContent
   const lang = elm.getAttribute('data-language')
-      ||elm.getAttribute('class').match(/language-(\w+)/).pop()
-      ||'javascript'
+      ||elm.getAttribute('class').match(/language-(\w+)/)?.pop()
+      ||''
 
   const matchFirstComment = contents.match(/^<!--(.*)-->/)
   const type = matchFirstComment&&matchFirstComment.pop()||lang
