@@ -19,7 +19,7 @@ Objects with multiple properties with each their own variable can get a bit mess
 
 Watch:
 
-```JavaScript
+```JavaScript-noscroll 
 function bitwisenate(...args) {
   return args.reduce((acc,key,index)=>(acc[key] = 2**index, acc), {})
 }
