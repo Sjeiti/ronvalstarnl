@@ -1,26 +1,18 @@
 @preLineHeight: 19px;
 
+.code {
+  &--noscroll { max-height: none!important; }
+  &--large code { font: 24px/30px Inconsolata, courier, monospace; }
+}
+
 code {
   margin: 0 4px;
   padding: 0 4px;
   background-color: @colorGrayLight;
   box-shadow: 0 0 0 4px @colorGrayLight;
-  &.language {
-    &-JavaScript, &-text, &- {
-      &-large {
-        font: 24px/30px Inconsolata, courier, monospace;
-      }
-      &-noscroll {
-        max-height: none;
-      }
-    }
-  }
 }
 
 pre, code {
-  //font-family: @fontNameCode;
-  //font-size: 12px;
-  //line-height: @preLineHeight;
   font-family: var(--font-name-code);
   font-size: 0.75rem;
   line-height: 180%;
@@ -62,12 +54,10 @@ pre {
   white-space: pre;
   tab-size: 2;
   box-shadow: -50vw 0 0 #2B2B2B, 50vw 0 0 #2B2B2B;
-  //.tab-size;
 
   a.source-url {
     position: absolute;
     left: 0.4rem;
-    //.lt(.4);
     font-size: .90px;
   }
   code {
@@ -93,13 +83,12 @@ pre {
     &.highlighted {
       &:before, &:after {
         margin: 0;
-        color: @colorMain;//@colorWhite;
+        color: @colorMain;
         font-family: @fontNameCode;
         font-size: 12px;
       }
       &:before {
         content: attr(data-filename);
-        //.lt(2px,0);
         position: absolute;
         left: 2px;
         top: 0;
@@ -146,11 +135,9 @@ pre {
     }
   }
   .line-numbers-rows {
-    //.lt;
     position: absolute;
     left: 0;
     top: 0;
-    //.size(100%);
     width: 100%;
     height: 100%;
     margin: 0;
@@ -177,11 +164,9 @@ pre {
       }
       &.highlight:after {
         content: '';
-        //.lb;
         position: absolute;
         left: 0;
         bottom: 0;
-        //.dim(100%,@preLineHeight - 1px);
         width: 100%;
         height: @preLineHeight - 1px;
         background-color: fade(#6897BB,15%);

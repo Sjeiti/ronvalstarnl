@@ -25,10 +25,15 @@ export function prismToRoot(root){
  * @param {HTMLElement} elm
  */
 export function prismToElement(elm){
-  let contents = elm.textContent
-  const lang = elm.getAttribute('data-language')
-      ||elm.getAttribute('class').match(/language-(\w+)/)?.pop()
+  const {parentNode:pre, parentNode: {parentNode}, textContent, dataset: {language}} = elm
+
+  let contents = textContent
+
+  const className = elm.getAttribute('class')
+  const lang = language
+      ||className.match(/language-(\w+)/)?.pop()
       ||''
+  const [, , ...props] = className.match(/language(-\w*)*/g)?.pop()?.split(/-/)||[]
 
   const matchFirstComment = contents.match(/^<!--(.*)-->/)
   const type = matchFirstComment&&matchFirstComment.pop()||lang
@@ -51,7 +56,6 @@ export function prismToElement(elm){
     // createElement(type, classes, parent, attributes, text, click)
     const exampleUI = isExample&&getJSFiddleButton(contents)
 
-    const {parentNode:pre, parentNode: {parentNode}} = elm
     const iframe = document.createElement('iframe')
     iframe.classList.add(type)
     exampleUI&&parentNode.insertBefore(exampleUI, pre)
@@ -70,17 +74,18 @@ export function prismToElement(elm){
     })
 
   } else if (isEmbed){
-    const {parentNode:pre, parentNode: {parentNode}} = elm
     pre.insertAdjacentHTML('beforebegin', contents)
     parentNode.removeChild(pre)
 
   } else {
     elm.setAttribute('data-language', lang)
+    lang&&(elm.dataset.language = lang)
     const prismLang = Prism.languages[lang]||Prism.languages.javascript
     /*const highlighted = */Prism.highlight(contents, prismLang)
     elm.innerHTML = Prism.highlight(contents, prismLang)
     elm.parentNode.hasAttribute('line-numbers')&&addLineNumbers(elm, contents)
     elm.classList.add('highlighted')
+    props.forEach(prop=>pre.classList.add('code--'+prop))
   }
 }
 
@@ -109,9 +114,8 @@ function getJSFiddleButton(contents){
   button.innerHTML = '<svg data-icon="jsfiddle"><title>JSFiddle</title></svg>'
   initialise(button)
 
-  createElement('input', null, ui, {type:'hidden', name:'css', value:css})
-  createElement('input', null, ui, {type:'hidden', name:'html', value:html})
-  createElement('input', null, ui, {type:'hidden', name:'js', value:js})
+  Object.entries({css, html, js}).forEach(([name, value]) => createElement('input', null, ui, {type: 'hidden', name, value}))
+
   return ui
 }
 
@@ -134,7 +138,6 @@ function addLineNumbers(elm, code){
   elm.parentNode.appendChild(lineNumbersWrapper)
   // todo timeout scrollto if route has #code-\d+
 }
-
 
 /*
 lineHighlighted.add((from,to)=>{
