@@ -5,7 +5,7 @@
   modified: 2021-03-02
   slug: multiple-properties-in-one-variable
   type: post
-  excerpt: <p>Objects with multiple properties with each their own variable can get a bit messy. Here&#8217;s a nice solution to store multiple properties in a single variable.</p>
+  excerpt: Objects with multiple properties with each their own variable can get a bit messy. Here's a nice solution to store multiple properties in a single variable.
   categories: code, JavaScript
   tags: bitwise, and, or, pipe
   metaKeyword: properties
@@ -19,7 +19,7 @@ Objects with multiple properties with each their own variable can get a bit mess
 
 Watch:
 
-```JavaScript
+```JavaScript-noscroll
 function bitwisenate(...args) {
   return args.reduce((acc,key,index)=>(acc[key] = 2**index, acc), {})
 }
@@ -95,12 +95,8 @@ So that’s basically how it works. Fast. Practical in numerous cases (for stori
 
 There is however a maximum to all this. Bitwise operations in JavaScript are done on 32 bit numbers. But that should be more than enough for most.
 
+<!--
 ## ps
 
-We didn't use it, but since you now know how bitwise AND and OR work you might want to know about the third bitwise operator: XOR represented by the `^` sign. 
-
-```-large
-0101 ^ // 5
-0011 = // 3
-0110   // 6
-``` 
+Since you now know how bitwise AND and OR work you might want to know a bit more. If you also want to learn about NOT and XOR I suggest you read [this article](https://blog.logrocket.com/interesting-use-cases-for-javascript-bitwise-operators/).
+-->
