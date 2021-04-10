@@ -1,4 +1,5 @@
 //window.onerror = err=>alert(err)
+document.documentElement.classList.remove('no-js')
 
 import '../style/screen.less'
 import './views'
@@ -11,8 +12,6 @@ import './component/Icon'
 import './component/Skill'
 import './component/Now'
 
-document.documentElement.classList.remove('no-js')
-document.querySelector('.content--intro').classList.remove('content--intro')
 initialise()
 
 import './signal/scroll'
