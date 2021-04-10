@@ -5,6 +5,7 @@ import {nextFrame} from './utils'
 
 export const routeChange = signal()
 
+let doAnimateRoute = false
 let defaultRouteResolve
 const routes = {}
 
@@ -131,16 +132,23 @@ function viewModelFactory(element){
      */
     , clean(){
       const {element, _content, _contentPast} = this
-      _contentPast.parentNode===element&&this._removeAndCleanPastContent()
-      _content.classList.add(className.CONTENT_ANIMATE_IN)
-      _contentPast.classList.add(className.CONTENT_ANIMATE_OUT)
-      while (_content.firstChild) _contentPast.appendChild(_content.firstChild)
-      element.appendChild(_contentPast)
-      nextFrame(()=>{
-        _content.classList.add(className.CONTENT_ANIMATE_IN_START)
-        _contentPast.classList.add(className.CONTENT_ANIMATE_OUT_START)
-        this._contentPastTimer = setTimeout(this._removeAndCleanPastContent.bind(this), ms)
-      }, 2)
+      if (doAnimateRoute){
+        _contentPast.parentNode===element && this._removeAndCleanPastContent()
+        _content.classList.add(className.CONTENT_ANIMATE_IN)
+        _contentPast.classList.add(className.CONTENT_ANIMATE_OUT)
+        while (_content.firstChild) _contentPast.appendChild(_content.firstChild)
+        element.appendChild(_contentPast)
+        nextFrame(() => {
+          _content.classList.add(className.CONTENT_ANIMATE_IN_START)
+          _contentPast.classList.add(className.CONTENT_ANIMATE_OUT_START)
+          this._contentPastTimer = setTimeout(this._removeAndCleanPastContent.bind(this), ms)
+        }, 2)
+      } else {
+        while (_content.firstChild) _contentPast.appendChild(_content.firstChild)
+        element.appendChild(_contentPast)
+        this._removeAndCleanPastContent()
+        doAnimateRoute = true
+      }
       return this
     }
     /**

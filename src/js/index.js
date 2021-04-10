@@ -11,9 +11,9 @@ import './component/Icon'
 import './component/Skill'
 import './component/Now'
 
-initialise()
 document.documentElement.classList.remove('no-js')
 document.querySelector('.content--intro').classList.remove('content--intro')
+initialise()
 
 import './signal/scroll'
 
