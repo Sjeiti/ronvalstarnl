@@ -8,7 +8,9 @@
   clients: 
   collaboration: 
   prizes: 
-  thumbnail: Lorenz-84-31.gif
+  thumbnail_old: Lorenz-84-31.gif
+  thumbnail: Lorenz-84-31-b.jpg
+  thumbnailVideo: Lorenz-84-31-a.mp4
   headerClassName: no-blur
   image: attractors01.jpg
   images: attractors00.png, attractors01.jpg, attractors02.jpg, Lorenz-84-52.gif, Lorenz-84-31.gif, Lorenz-84-57.png
