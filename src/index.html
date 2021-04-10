@@ -76,6 +76,7 @@
       position: relative;
       z-index: 10;
     }
+    .experiment-ui { position: absolute; }
     .logo {
       font-size: 3px;
       width: 6.7em;
@@ -182,6 +183,18 @@
       max-width: 768px;
       margin: 0 auto;
     }
+    .content--intro {
+      text-align: center;
+    }
+    .content--intro p:first-child {
+      font-size: 2rem;
+      font-family: 'Source Code Pro', monospace;
+      line-height: 130%;
+    }
+    .content--intro p:first-child a {
+      text-decoration: none;
+      color: inherit;
+    }
     .content[data-pathname^="project"]:not([data-pathname^="project-"]), .content.wide {
       max-width: none;
     }
@@ -283,7 +296,7 @@
     </nav>
   </header>
   <main>
-    <div class="content">
+    <div class="content content--intro">
       <p>My name is Ron Valstar&nbsp;<del><a href="/search?s=cool%20shit" class="cool-shit"></a></del>&nbsp;and I develop applications for digital media.</p>
       <p>I am an Amsterdam based freelance front-end developer with a background in graphic design and interaction design.<br>
       If you need me <a title="06 33697212" href="tel:+31633697212">give me a call</a> or <a href="mailto:hello@ronvalstar.nl">drop me a line</a>.</p>
