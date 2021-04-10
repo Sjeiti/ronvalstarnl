@@ -3,7 +3,7 @@ import {selectEach, expand} from '../utils/html'
 import {addRule, removeRule} from '../utils/style'
 import {fetchJSONFiles, nextTick, scrollToTop} from '../utils'
 import {componentOf} from '../component'
-import {MEDIA_URI_PROJECT, MEDIA_URI_THUMB, MEDIA_URI_VIDEO} from '../config'
+import {MEDIA_URI_PROJECT,MEDIA_URI_THUMB,MEDIA_URI_VIDEO,PROBABLY_MOBILE} from '../config'
 import {makeClassNames, slugify} from '../utils/string'
 import {open} from '../router'
 
@@ -145,7 +145,7 @@ function onClickCategory(e){
 export function getProjectThumbZen(project){
   const ext = project.thumbnail.split(/\./).pop()
   const liAttr = `[style="background-image:url(${MEDIA_URI_THUMB+project.thumbnail})"]`
-  const hasVideo = !!project.thumbnailVideo
+  const hasVideo = !!project.thumbnailVideo // && !PROBABLY_MOBILE // don't show video thumbs on mobile ???
   const videoSrc = `[src=${MEDIA_URI_VIDEO+project.thumbnailVideo}]`
   const video = hasVideo?`+video${videoSrc}[autoplay][loop][muted]>source${videoSrc}[type=video/${ext}]`:''
   return `(li${project.categories.map(c=>`.cat-${slugify(c)}`).join('')}${liAttr}>a[href="/project/${project.slug}"]>(div{${project.title}}${video}))`
