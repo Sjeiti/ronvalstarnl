@@ -1,12 +1,12 @@
 <!-- 
-  date: 9999-99-99
-  modified: 9999-99-99
+  date: 2021-03-07
+  modified: 2021-03-07
   slug: fast-giant-lists
   type: post
   header: allie-GA3_Rp-m9jc-unsplash.jpg
   headerColofon: photo by [Allie](https://unsplash.com/@acreativegangster)
   headerClassName: no-blur darken
-  excerpt: 
+  excerpt: How to scroll giant lists. 
   categories: Javascript, HTML, CSS
   tags: CSS, speed, performance
 -->
@@ -21,11 +21,11 @@ Funny thing was that the current implementation was already a 'better' version. 
 I am no fan of infinite scroll. In most cases I would simply recommend pagination. Not only because of speed, but also because pagination gives you a clear sense of how large the actual set is.
 But infinite scroll was already in place. Only if I couldn't fix the problem I would send it back to the UX drawing board.
 
-## To frame or not to work
+## Frameworks
 
 It must be pointed out that these speed issues are hardly related to framework or absence of one. If you have three thousand rows you'll run into the same issues regardless.
 
-## What happens inside your machine
+## Under the hood
 
 When you are improving performance it is good to have some idea of what happens inside the browser the moment you load an URL. So you know where to look for problems. I'll not repeat the details, [enough articles  on that](https://duckduckgo.com/?q=html+dom+cssom+render).
 When a browser requests a website it will contact a server which responds by sending an HTML file, which is just text. It parses the text into DOM and then loads CSS (mostly). It parses that into CSSOM and together with the DOM it cooks up the first paint.
@@ -172,7 +172,7 @@ function decrementList() {
 This second test makes use of turning chunk visibility on- and off. So the rows are grouped into chunks of x rows.
 This is faster than the previous method for two reasons.
 We're not calculating the visibility of individual rows but two chunks of rows. This is where the pinch method comes in which you can read about [here](/javascript-generators-iterators-use-case).
-The other reason is that the scroll handling is debounced. The downside is that when debouncing the handling takes place after the events stop firing (throttling is rather pointless in this cas). This shows as empty space prior to the chunk turned visible again. We can make it easier on the eyes by setting a repeating backround image.
+The other reason is that the scroll handling is debounced. The downside is that when debouncing the handling takes place after the events stop firing (throttling is rather pointless in this case). This shows as empty space prior to the chunk turned visible again. We can make it easier on the eyes by setting a repeating backround image.
 
 
 ```html 
@@ -349,7 +349,7 @@ function pinch(a,p){
 
 The above examples are fine technically, but in real life we have more complex content. Maybe a heading with an image, some body text, an anchor or even a button.
 
-Speaking of buttons, you know what is a drain on giant lists? Form elements: for some reason form elements (with a parent HTMLFormElement) are so expensive to render that it pays to swap them with a fake them until they receive focus.
+Speaking of buttons, you know what is a drain on giant lists? Form elements: for some reason form elements (with a parent HTMLFormElement) are so expensive to render that it pays to swap them with a fake element until they receive focus.
 
 Anyway, complex content might also differ in height. This makes it harder to create a good preview, but not impossible with SVG backgrounds.
 
@@ -528,4 +528,9 @@ function getRow(index){
 }
 </script>
 ```
+
+## So...
+
+If you ever need to render a lot of rows: use pagination. If you cannot use pagination: fire the UX team. If all else fails: toggle visibility in chunks.
+And to finish with a Dutch saying: better well stolen than badly thought up.
 
