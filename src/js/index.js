@@ -13,6 +13,7 @@ import './component/Now'
 
 initialise()
 document.documentElement.classList.remove('no-js')
+document.querySelector('.content--intro').classList.remove('content--intro')
 
 import './signal/scroll'
 
