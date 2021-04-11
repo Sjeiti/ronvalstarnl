@@ -1,7 +1,7 @@
 <!--
   slug: front-end-logic-without-javascript
   date: 2020-02-23
-  modified: 2020-03-24
+  modified: 2021-04-11
   type: post
   header: vanveenjf-Ou36eroE7k0-unsplash.jpg
   category: JavaScript
@@ -39,7 +39,6 @@ input:checked + div {
     input {
         width: 2rem;
         height: 2rem;
-        transform: scale(2);
     }
     input:checked + div { 
       color: red;
