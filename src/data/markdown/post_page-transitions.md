@@ -1,6 +1,6 @@
 <!--
   date: 2020-07-29
-  modified: 2020-07-29
+  modified: 2021-04-12
   slug: the-basics-of-css-page-transitions
   type: post
   header: sincerely-media-IKzmglo7JLk-unsplash.jpg
@@ -10,6 +10,8 @@
   categories: Javascript
   tags: CSS, transitions
   related: front-end-logic-without-javascript
+  metaKeyword: transitions
+  metaDescription: Basic structure and example of a page transition in a single page application.
 -->
 
 # The basics of CSS page transitions
