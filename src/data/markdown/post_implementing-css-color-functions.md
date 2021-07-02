@@ -83,6 +83,82 @@ Besides, we'll only be parsing some functions and we can cut a few corners imple
 
 If you want to read up on parsing ###
 For our corner cutting: we'll just lexe our function string right into an AST (of sorts).
+The following is crude and simple but gets us the tree we want.
 
+```TypeScript
+const type = {
+  FUNCTION: 'FUNCTION'
+  , STRING: 'STRING'
+  , NUMBER: 'NUMBER'
+}
 
+const paren1 = '('
+const paren0 = ')'
+const comma = ','
+const space = ' '
 
+const regexNumeric = /^\d+(\.\d+)?$/
+
+export interface IParam {
+  type: string
+  , name?: string
+  , params?: IParam[]
+  , value?: string|number
+}
+
+export function parse(string:string, result:IParam[] = []) {
+
+  let indent = 0
+  let start = 0
+  let name = ''
+
+  for (let index = 0, length = string.length; index < length; index++) {
+
+    const character = string[index]
+    const isParen1 = character === paren1
+    const isParen0 = character === paren0
+    const isComma = character === comma
+    const isSpace = character === space
+    const isDelimiter = isParen0 || isComma || isSpace
+    const isLastIndex = index === length - 1
+
+    const wasIndentZero = indent === 0
+
+    if (isParen1 && wasIndentZero) {
+      name = string.substring(start, index).trim()
+      start = index + 1
+    }
+
+    isParen1 && indent++
+    isParen0 && indent--
+
+    const isIndentZero = indent === 0
+
+    if (isIndentZero) {
+      if (name && isParen0) {
+        const value = string.substring(start, index).trim()
+        const params:IParam[] = parse(value.substr(0, value.length).trim(), [])
+        result.push({
+          type: type.FUNCTION
+          , name
+          , params
+        })
+        name = ''
+        start = index
+      } else if (!name && (isDelimiter || isLastIndex) && start !== index) {
+        const substring = string.substring(start, index + (isLastIndex ? 1 : 0)).trim()
+        const isValid = substring !== comma && substring !== paren0
+        const isNumeric = regexNumeric.test(substring)
+        substring && isValid && result.push({
+          type: isNumeric ? type.NUMBER : type.STRING
+          , value: isNumeric ? parseFloat(substring) : substring
+        })
+        start = index + 1
+      }
+    }
+  }
+  return result
+}
+```
+
+You may notice that this is recursive. When a left- or right-paren is encountered `indent` will change
