@@ -36,8 +36,8 @@ The idea is:
  - create a new rule and overwrite the variables with the applied color functions
 
 Looping the stylesheets is easy enough but we'll have to use try..catch in case we access external stylesheets.
-To weed out any valid functions we can use `getComputedStyle`. So for each definition we end up with an initial value and a computed value. We'll store all variable definitions in an object because we might need their values if they are used in a function.
-We'll also store all color functions in a separate object because we'll need to loop them.
+To weed out any valid functions we can use `getComputedStyle`. So for each definition we end up with an initial value and a computed value. Variable definitions are stored in an object because we might need their values if they are used in a function.
+Color functions are stored in a separate object because we'll need to loop them.
 
 ```TypeScript
 interface ICSSVar {
@@ -74,7 +74,7 @@ Array.from(document.styleSheets).forEach(sheet=>{
 
 We have the function names and parameters, how do we run them?
 We could use regex to dismantle them but that would get messy pretty soon because functions can be nested. Even CSS variables use a lookup function: `var(--my-value)`.
-I'm afraid we're going to have to write... (imagine spooky sound effects here),,, a parser.
+I'm afraid we're going to have to write... (imagine spooky sound effects here)... a parser.
 
 I'm a very visual programmer and I imagine a lot of front-end developers are. I've always steered clear of lexers, parsers and AST thinking it was for smart people, with thick glasses.
 
@@ -161,4 +161,8 @@ export function parse(string:string, result:IParam[] = []) {
 }
 ```
 
-You may notice that this is recursive. When a left- or right-paren is encountered `indent` will change
+You may notice that this is recursive. When a left- or right-paren is encountered `indent` will change. When the `indent` is back to zero we should have a result. Then the parameters are fed into the same parse function.
+The parser may encounter another function which turns our resulting object into a happy little tree.
+
+Once we have that AST-like tree we have something we can work with. All that is left now is to traverse the tree and apply any of the functions we encounter. 
+
