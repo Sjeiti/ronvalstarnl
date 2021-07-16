@@ -5,7 +5,7 @@ import {BaseComponent} from './BaseComponent'
 import {scroll} from '../signal/scroll'
 import {signal} from '../signal'
 import {routeChange} from '../router'
-import {clean, markdownLinks, selectEach, getElementIndex} from '../utils/html'
+import {clean, markdownLinks, selectEach} from '../utils/html'
 import {MEDIA_URI_HEADER} from '../config'
 
 create('[data-header]', class extends BaseComponent{

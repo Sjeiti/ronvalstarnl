@@ -446,8 +446,6 @@ function getRow(liIndex){
 </script>
 ```
 
-
-
 ```html 
 <!--example-->
 <!--include:listDOM-->
@@ -533,4 +531,3 @@ function getRow(index){
 
 If you ever need to render a lot of rows: use pagination. If you cannot use pagination: fire the UX team. If all else fails: toggle visibility in chunks.
 And to finish with a Dutch saying: better well stolen than badly thought up.
-
