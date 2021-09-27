@@ -1,7 +1,7 @@
 {
   "name": "ronvalstarnl",
   "author": "Ron Valstar",
-  "version": "0.5.19",
+  "version": "0.5.20",
   "license": "MIT",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
@@ -15,7 +15,7 @@
     "build:sitemap": "node task/buildSitemap --target dist",
     "build:rss": "node task/buildRSS --target dist",
     "build:less": "node task/lessGlob",
-    "build:icons": "node task/icons --source temp/icomoon/SVG/logo.svg --target ./dist/static/icon --sizes 16,32,320x460,48,57,64,72,96,114,144,168,128,192,196,256,512",
+    "build:icons": "node task/icons --source temp/icomoon/SVG/logo.svg --target ./dist/static/icon --sizes 16,32,180",
     "write": "chokidar \"src/data/markdown/*.md\" -c \"npm run build:json\"",
     "write:future": "grep -rlw 9999 src/data/markdown/*",
     "write:futurew": "findstr 9999 src/data/markdown/* 2>nul",
