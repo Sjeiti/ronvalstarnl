@@ -98,8 +98,10 @@ function getJSFiddleButton(contents){
   const wrapper = document.createElement('div')
   wrapper.innerHTML = contents
 
+  const resources = []
   const [css, js] = ['style', 'script'].map(name=>Array.from(wrapper.querySelectorAll(name)).reduce((acc, elm)=>{
     wrapper.removeChild(elm)
+    elm.hasAttribute('src')&&resources.push(elm.getAttribute('src'))
     return acc + elm.innerText
   }, ''))
 
@@ -114,7 +116,7 @@ function getJSFiddleButton(contents){
   button.innerHTML = '<svg data-icon="jsfiddle"><title>JSFiddle</title></svg>'
   initialise(button)
 
-  Object.entries({css, html, js}).forEach(([name, value]) => createElement('input', null, ui, {type: 'hidden', name, value}))
+  Object.entries({css, html, js, resources}).forEach(([name, value]) => createElement('input', null, ui, {type: 'hidden', name, value}))
 
   return ui
 }
