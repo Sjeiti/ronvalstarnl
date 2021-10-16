@@ -52,7 +52,7 @@ I can read and write several backend languages and I'm not afraid to learn somet
 	<li data-skill="5">build processes <small>(Node.js, Express, Webpack, Gulp)</small></li>
 	<li data-skill="5">HTML/CSS <small>(semantic HTML5, XSLT, CSS3, SASS, LESS)</small></li>
 	<li data-skill="5">testing <small>(Cypress, Jest,  Mocha, Chai, Cucumber)</small></li>
-	<li data-skill="4">continuous integration</li>
+	<li data-skill="4">devops <small>(Netlify, CI/CD pipelines, Jenkins)</small></li>
 	<li data-skill="4">PHP <small>(Kirby, WordPress, Laravel, Drupal, Codeigniter)</small></li>
 	<li data-skill="3">Java/Processing</li>
 </ul>
@@ -60,7 +60,7 @@ I can read and write several backend languages and I'm not afraid to learn somet
 ### interaction design
 
 <ul class="list-unstyled">
-	<li data-skill="5">arototyping</li>
+	<li data-skill="5">prototyping</li>
 	<li data-skill="5">functional design</li>
 	<li data-skill="5">documentation</li>
 	<li data-skill="4">user interface design (UX)</li>
