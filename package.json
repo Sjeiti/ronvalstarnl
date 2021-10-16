@@ -1,20 +1,21 @@
 {
   "name": "ronvalstarnl",
   "author": "Ron Valstar",
-  "version": "0.5.16",
+  "version": "0.5.20",
   "license": "MIT",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
   "scripts": {
     "start": "run-p build serve",
     "build": "run-s clean build:less \"webpack -- --env development --watch\"",
-    "build:prod": "run-s clean build:less build:unzip build:json build:search \"webpack -- --env production\" build:sitemap build:rss",
+    "build:prod": "run-s clean build:less build:unzip build:json build:search build:icons \"webpack -- --env production\" build:sitemap build:rss",
     "build:unzip": "unzip src/data/icomoon.zip temp/icomoon",
     "build:json": "node task/markdown2json",
     "build:search": "node task/buildSearch",
     "build:sitemap": "node task/buildSitemap --target dist",
     "build:rss": "node task/buildRSS --target dist",
     "build:less": "node task/lessGlob",
+    "build:icons": "node task/icons --source temp/icomoon/SVG/logo.svg --target ./dist/static/icon --sizes 16,32,180",
     "write": "chokidar \"src/data/markdown/*.md\" -c \"npm run build:json\"",
     "write:future": "grep -rlw 9999 src/data/markdown/*",
     "write:futurew": "findstr 9999 src/data/markdown/* 2>nul",
@@ -64,7 +65,7 @@
     "babel-preset-minify": "^0.5.1",
     "body-parser": "^1.19.0",
     "chokidar-cli": "^2.1.0",
-    "commander": "^7.0.0",
+    "commander": "^7.2.0",
     "copy-webpack-plugin": "^7.0.0",
     "css-loader": "^5.0.1",
     "css-properties-values": "^1.0.0",
@@ -87,6 +88,7 @@
     "raw-loader": "^4.0.2",
     "rimraf": "^3.0.2",
     "serve-static": "^1.14.1",
+    "sharp": "^0.29.1",
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.21.1",
@@ -109,5 +111,9 @@
   ],
   "gitHooks": {
     "pre-commit": "npm run version"
+  },
+  "engines": {
+    "node": "^14.15.1",
+    "npm": "^6.14.9"
   }
 }
