@@ -36,7 +36,7 @@
     "@emmetio/expand-abbreviation": "^0.7.3",
     "Experiments": "git+https://github.com/Sjeiti/experiment.git",
     "gsap": "^3.6.0",
-    "prismjs": "^1.23.0",
+    "prismjs": "^1.25.0",
     "signals": "^1.0.0"
   },
   "devDependencies": {
