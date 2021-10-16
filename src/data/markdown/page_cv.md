@@ -19,7 +19,6 @@
 <small class="pull-right" data-download>
     download as 
     <a data-download-pdf href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1569508867/rv/Curiculum-Vitae_Ron-Valstar_front-end-developer.pdf" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.pdf">pdf</a> 
-    <!--<a data-download-md href="Curiculum-Vitae_Ron-Valstar_front-end-developer.md" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.md">md</a>-->
     or <a data-download-txt href="Curiculum-Vitae_Ron-Valstar_front-end-developer.md" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.txt">txt</a>
 </small>
 <ul class="list-unstyled">
@@ -52,17 +51,16 @@ I can read and write several backend languages and I'm not afraid to learn somet
 	<li data-skill="5">JavaScript <small>(TypeScript, React, Angular, Vue, ThreeJS)</small></li>
 	<li data-skill="5">build processes <small>(Node.js, Express, Webpack, Gulp)</small></li>
 	<li data-skill="5">HTML/CSS <small>(semantic HTML5, XSLT, CSS3, SASS, LESS)</small></li>
-	<li data-skill="5">testing <small>(Cypress, Mocha, Chai, Cucumber)</small></li>
-	<li data-skill="5">pair programming</li>
-	<li data-skill="4">PHP <small>(WordPress, Laravel, Drupal, Codeigniter)</small></li>
-	<li data-skill="4">ActionScript <small>(Papervision3D, pureMVC, Greensock)</small></li>
+	<li data-skill="5">testing <small>(Cypress, Jest,  Mocha, Chai, Cucumber)</small></li>
+	<li data-skill="4">continuous integration</li>
+	<li data-skill="4">PHP <small>(Kirby, WordPress, Laravel, Drupal, Codeigniter)</small></li>
 	<li data-skill="3">Java/Processing</li>
 </ul>
 
 ### interaction design
 
 <ul class="list-unstyled">
-	<li data-skill="5">prototyping</li>
+	<li data-skill="5">arototyping</li>
 	<li data-skill="5">functional design</li>
 	<li data-skill="5">documentation</li>
 	<li data-skill="4">user interface design (UX)</li>
@@ -84,31 +82,7 @@ I can read and write several backend languages and I'm not afraid to learn somet
  
 </div>
 </div>
-<!--
-<div class="print-columns">
-<div>
 
-### other
-
- - is creative
- - likes SCRUM
- - code reviews
- - likes explaining things
-
-</div>
-<div>
-
-## and also
-
- - family first
- - reads books
- - always bakes own bread
- - loves gaming 
-
- 
-</div>
-</div>
--->
 <div style="page-break-after: always;"></div>
 
 ## education
