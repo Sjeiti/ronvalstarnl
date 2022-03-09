@@ -3,7 +3,7 @@ import {selectEach, expand} from '../utils/html'
 import {addRule, removeRule} from '../utils/style'
 import {fetchJSONFiles, nextTick, scrollToTop} from '../utils'
 import {componentOf} from '../component'
-import {MEDIA_URI_PROJECT,MEDIA_URI_THUMB,MEDIA_URI_VIDEO,PROBABLY_MOBILE} from '../config'
+import {MEDIA_URI_PROJECT, MEDIA_URI_THUMB, MEDIA_URI_VIDEO, PROBABLY_MOBILE} from '../config'
 import {makeClassNames, slugify} from '../utils/string'
 import {open} from '../router'
 
