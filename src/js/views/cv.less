@@ -4,7 +4,7 @@ body[data-pathname^=cv] {
     font-size: 11pt;
     line-height: 19pt;
 
-    header { // todo: all outside content now fails
+    >header { // todo: all outside content now fails
       position: static;
       height: 8rem;
       h1 {
@@ -67,23 +67,52 @@ body[data-pathname^=cv] {
     margin: 0;
   }
 
+  [data-skill]  {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    small {
+      font-size: 0.75rem;
+    }
+  }
+
 }
 
 .cv-projects {
   margin: 0;
-  h3 {
-    margin-top: 0;
-    font-weight: 400;
-  }
-  h3, h3>a { color: #f04; }
   >li {
+    position: relative;
     padding: 3rem 1rem;
     box-shadow: 0 -1px 0 #eee;
   }
-  time {
+  header {
+    @colorHeadingBorder: #F4F4F4; // @colorMain
     position: relative;
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 0.0625rem;
+      background-color: @colorHeadingBorder;
+      box-shadow:
+          -30rem 0 0 0 @colorHeadingBorder, 30rem 0 0 0 @colorHeadingBorder
+          ,-70rem 0 0 0 @colorHeadingBorder, 70rem 0 0 0 @colorHeadingBorder
+      ;
+    }
+  }
+  h3 {
+    margin: 0;
+    font-weight: 400;
+    &:after { content: initial; }
+  }
+  h3, h3>a { color: #f04; }
+  .date {
+    position: absolute;
+    right: 0;
+    bottom: -0.8125rem;
     z-index: 2;
     line-height: 100%;
+    @media @mediaM { bottom: -1.125rem; }
   }
   .tags {
     padding: 0;
