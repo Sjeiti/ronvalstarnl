@@ -13,7 +13,7 @@
 
 <div class="print-columns">
 <div>
-
+ 
 ## personal info
 
 <small class="pull-right" data-download>
@@ -68,7 +68,7 @@ I can read and write several backend languages and I'm not afraid to learn somet
 	<li data-skill="3">illustration</li>
 	<li data-skill="4">user interface design</li>
 	<li data-skill="3">information visualisation</li>
-	<!-- accesibility, usability, information architecture -->
+	<!-- accesibility, usability, information architecture  -->
 </ul> 
  
 </div>

@@ -28,6 +28,12 @@ My formal background is graphic- and interaction design and I strive toward cons
 
 In the course of time I have worked with: Randstad, Vodafone, Novartis, Philips, ThiemeMeulenhoff, Resn, 2x4, BNN, Pool Worldwide, Tribal DDB, Kennisnet, Centraal Museum and Ome Willem!
 
+## ethics
+
+There is work that I've done in the past that I would no longer take on today. My morals have changed.
+I no longer do hardcore commercial work; I will not help you sell products nobody needs. I do not work for banks or insurance companies; these lie at the heart off what is wrong today. I do not work on anything bitcoin related; not until mining and transacrions are energy efficient.
+Everybody is responsible. You cannot be responsible for everything but you should at least try. Nothing is in vain when you're part of a chaotic system.
+
 ## past
 
 My programming endeavors started with a book about Basic and and MSX.
