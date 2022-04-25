@@ -31,8 +31,8 @@ In the course of time I have worked with: Randstad, Vodafone, Novartis, Philips,
 ## ethics
 
 There is work that I've done in the past that I would no longer take on today. My morals have changed.
-I no longer do hardcore commercial work; I will not help you sell products nobody needs. I do not work for banks or insurance companies; these lie at the heart off what is wrong today. I do not work on anything bitcoin related; not until mining and transacrions are energy efficient.
-Everybody is responsible. You cannot be responsible for everything but you should at least try. Nothing is in vain when you're part of a chaotic system.
+I no longer do hardcore commercial work; I will not help sell products nobody needs. I will not work for (most) banks or insurance companies. I will not work on anything bitcoin related. <!-- Amazon, Apple, Google, Facebook, Nestle, Coca Cola, oil companies -->
+Everybody is responsible. You cannot be responsible for everything but you should at least try; nothing is in vain when you're part of a chaotic system.
 
 ## past
 

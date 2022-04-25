@@ -60,22 +60,24 @@ I can read and write several backend languages and I'm not afraid to learn somet
 ### other
 
 <ul class="list-unstyled">
-	<li data-skill="5">documentation <small>(JSDoc, Markdown)</small></li>
 	<li data-skill="4">devops <small>(Netlify, Gitlab, CI/CD pipelines, Jenkins)</small></li>
+	<li data-skill="5">documentation <small>(JSDoc, Markdown)</small></li>
 	<li data-skill="5">prototyping</li>
 	<li data-skill="4">interaction design</li>
+	<li data-skill="4">user interface design</li>
 	<li data-skill="4">graphic design</li>
 	<li data-skill="3">illustration</li>
-	<li data-skill="4">user interface design</li>
 	<li data-skill="3">information visualisation</li>
 	<!-- accesibility, usability, information architecture  -->
 </ul> 
  
 </div>
 </div>
-
+ 
 <div style="page-break-after: always;"></div>
 
+<!-- wtf? --> 
+ 
 ## education
 
  - <time>1999-2000</time> HKU: European Media Master of Arts, Interactive Multi Media <small>(MA)</small>
