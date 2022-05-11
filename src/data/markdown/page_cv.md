@@ -50,11 +50,11 @@ I can read and write several backend languages and I'm not afraid to learn somet
 
 <ul class="list-unstyled">
 	<li data-skill="5">JavaScript <small>(TypeScript, React, Angular, Vue, ThreeJS)</small></li>
+	<li data-skill="5">build processes <small>(Node.js, Express, Webpack)</small></li>
 	<li data-skill="5">HTML <small>(semantic HTML5, XSLT)</small></li>
 	<li data-skill="5">CSS <small>(CSS3, SASS, LESS, BEM)</small></li>
 	<li data-skill="5">testing <small>(Cypress, Jest, Mocha, Chai, Cucumber)</small></li>
-	<li data-skill="4">PHP <small>(WordPress, Laravel, Kirby)</small></li>
-	<li data-skill="5">build processes <small>(Node.js, Express, Webpack)</small></li>
+	<li data-skill="4">PHP <small>(Kirby, Laravel, WordPress)</small></li>
 </ul> 
 
 ### other
