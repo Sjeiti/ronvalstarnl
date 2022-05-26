@@ -1,9 +1,9 @@
 <!--
   slug: randstad-micro-services
   type: fortpolio
-  excerpt: White-label Angular implementation of micro-service based functionalities for Randstad operating companies. Leading role in moving all front-end teams to a monorepository housing Angular as well as vanilla and React.
+  excerpt: White-label Angular implementation of micro-service based functionalities for Randstad operating companies. Leading role in moving and aligning all front-end projects to an Nx-based monorepository housing Angular as well as vanilla and React. 
   categories: JavaScript, HTML/CSS, UX, mobile
-  tags: CSS, HTML, TypeScript, Nx, Angular, test, scrum, Cypress
+  tags: CSS, HTML, TypeScript, Nx, Angular, Storybook, Cypress
   clients: Randstad
   collaboration: 
   prizes: 
@@ -17,3 +17,5 @@
 --> 
  
 # Randstad monolith to micro services in Angular
+
+
