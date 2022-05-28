@@ -42,13 +42,21 @@ I have been using JSFiddle for about ten years now. That is 17 pages of fiddles,
 
 The nice thing about this one is that it is the oldest one, written with jQuery, using `setTimeout`, systems Hungarian notation. All stuff I don't do anymore. But we all came from somewhere, had phases, do everthing we used to do differently now. Except using `asdf` for quick names, `asdf` and `poepjes`.
 
-```html 
-<!--example-->
-<iframe src="https://jsfiddle.net/EaNPh/embedded/result/" width="100%" height="400" frameborder="0"></iframe>
-``` 
+<!--
 
+//fiddle.jshell.net/EaNPh/show/light/
 <iframe src="https://jsfiddle.net/EaNPh/embedded/result/" width="100%" height="400" frameborder="0"></iframe>
 
-<iframe src="https://jsfiddle.net/EaNPh/embedded/result/?username=Sjeiti" id="JSFEMB_19138" sandbox="allow-modals allow-forms allow-same-origin allow-scripts allow-popups allow-top-navigation-by-user-activation allow-downloads" allow="midi; geolocation; microphone; camera; display-capture; encrypted-media;" width="100%" height="400" frameborder="0"></iframe>
+-->
 
-<script async src="//jsfiddle.net/Sjeiti/EaNPh/embed/result/"></script>
+<iframe width="100%" height="300" src="//jsfiddle.net/Sjeiti/EaNPh/embedded/result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+<!--jsfiddle:EaNPh-->
+
+### One element fits all
+
+<!--jsfiddle:twMhY-->
+
+https://jsfiddle.net/Sjeiti/twMhY/
+
+abc

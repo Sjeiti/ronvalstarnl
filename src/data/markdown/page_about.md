@@ -8,7 +8,7 @@
   metaDescription: I love writing JavaScript. So naturally I know a lot about: DOM, HTML and CSS. Streamlining build processes is also one of my favorite pasttimes.
 -->
 
-# about
+# about 
 
 I love writing [JavaScript](/search/javascript). So naturally I also know a lot about [DOM](/search/dom), [HTML](/search/html) and [CSS](/search/css).
 My favorite work is streamlining [build](/search/build) processes, refactoring and optimizing DOM and JavaScript for [speed](/search/speed).

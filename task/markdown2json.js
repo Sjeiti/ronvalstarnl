@@ -51,6 +51,7 @@ function markdown2object(contents){
   const titleIndex = firstMatchIndex(contentLines, /^\s*#\s(.*)$/)
   const title = (titleIndex!==-1&&contentLines[titleIndex].match(/#(.*)/).pop()||'').trim()
   const content = marked(contentLines.slice(titleIndex+1).join('\n').trim(), {breaks: true/*, gfm: true*/})
+      .replace(/<!--jsfiddle:(\w+)-->/g, '<iframe width="100%" height="300" src="//jsfiddle.net/Sjeiti/$1/embedded/result/" frameborder="0"></iframe>')
   return Object.assign(meta, {title, content})
 }
 
