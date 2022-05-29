@@ -38,25 +38,90 @@ p {
 
 I have been using JSFiddle for about ten years now. That is 17 pages of fiddles, which amounts to 17*20=340 fiddles. Since I never bothered to clean it up it is of course filled with junk. But there are some nice little gems in there that are maybe worth showing. So I thought I'd sift throught them and show you the nice ones (and maybe cleanup along the way).
 
+
 ### The oldest
 
-The nice thing about this one is that it is the oldest one, written with jQuery, using `setTimeout`, systems Hungarian notation. All stuff I don't do anymore. But we all came from somewhere, had phases, do everthing we used to do differently now. Except using `asdf` for quick names, `asdf` and `poepjes`.
-
-<!--
-
-//fiddle.jshell.net/EaNPh/show/light/
-<iframe src="https://jsfiddle.net/EaNPh/embedded/result/" width="100%" height="400" frameborder="0"></iframe>
-
--->
-
-<iframe width="100%" height="300" src="//jsfiddle.net/Sjeiti/EaNPh/embedded/result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+The nice thing about this one is that it is the oldest one, written with jQuery, using `setTimeout`, systems Hungarian notation. All stuff I don't do anymore. But we all came from somewhere, had phases, do everything we used to do differently now. Except using `asdf` for quick names, `asdf` and `poepjes`.
 
 <!--jsfiddle:EaNPh-->
 
-### One element fits all
+
+### One element
 
 <!--jsfiddle:twMhY-->
 
-https://jsfiddle.net/Sjeiti/twMhY/
 
-abc
+### Project invoice spinner
+
+<!--jsfiddle:dztazgub-->
+
+
+### Middle ellipsis
+
+<!--jsfiddle:cxsqv50n-->
+
+
+### Pinch generator
+
+<!--jsfiddle:rtb5uhhv-->
+
+
+### Paper shade
+
+<!--jsfiddle:6awmp7sk-->
+
+
+### Cliche CLI
+
+<!--jsfiddle:xqdruj1e-->
+
+
+### Proxy keymap
+
+<!--jsfiddle:a9xk6cme-->
+
+
+### HTML to image
+
+<!--jsfiddle:Lgm50j8y-->
+
+
+### Golden angles
+
+<!--jsfiddle:ub9sztk5-->
+
+
+### A cardboard box
+
+<!--jsfiddle:sqb7Lo5e-->
+
+
+### Trippy background
+
+<!--jsfiddle:xwohszrc-->
+
+
+### Rainbow box
+
+<!--jsfiddle:21wo6bc0-->
+
+
+### Zandloper
+
+<!--jsfiddle:4n12ytxf-->
+
+
+### CSS background
+
+<!--jsfiddle:v37cn5gk-->
+
+
+### Totally forgot about text gradients
+
+<!--jsfiddle:w5udqrf2-->
+
+
+
+____
+
+xyz a
