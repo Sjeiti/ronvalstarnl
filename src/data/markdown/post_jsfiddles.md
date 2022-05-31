@@ -48,16 +48,24 @@ I have been using JSFiddle for about ten years now. That is 17 pages of fiddles,
 
 ### The oldest
 
+<div class="example-fiddle">
+
 The nice thing about this one is that it is the oldest one, written with jQuery, using `setTimeout`, systems Hungarian notation. All stuff I don't do anymore. But we all came from somewhere, had phases, do everything we used to do differently now. Except using `asdf` for quick names, `asdf` and `poepjes`.
 
 <!--jsfiddle:EaNPh-->
 
+</div>
+
 
 ### One element
+
+<div class="example-fiddle">
 
 Once I had the idea the logo I use should be a single element: some psuedo selectors, roundings and transformations.
 
 <!--jsfiddle:twMhY-->
+
+</div> 
 
 
 ### Project invoice spinner

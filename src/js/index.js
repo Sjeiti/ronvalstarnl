@@ -11,6 +11,7 @@ import './component/Code'
 import './component/Icon'
 import './component/Skill'
 import './component/Now'
+import './component/JSFiddle'
 
 initialise()
 

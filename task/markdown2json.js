@@ -52,9 +52,12 @@ function markdown2object(contents){
   const title = (titleIndex!==-1&&contentLines[titleIndex].match(/#(.*)/).pop()||'').trim()
   const content = marked(contentLines.slice(titleIndex+1).join('\n').trim(), {breaks: true/*, gfm: true*/})
       .replace(/<!--jsfiddle:(\w+)-->/g, `
+        <div data-jsfiddle="$1"></div>
+        <!--<div>
+        <iframe src="//jsfiddle.net/Sjeiti/$1/embedded/result/"></iframe>
         <a href="https://jsfiddle.net/Sjeiti/$1/">https://jsfiddle.net/Sjeiti/$1/</a>
-        <!--<iframe width="90%" height="300" style="width:calc(100% - 2rem)" src="//jsfiddle.net/Sjeiti/$1/embedded/result/" frameborder="0"></iframe>-->
         <script async src="//jsfiddle.net/Sjeiti/$1/embed/js,html,css,result/dark/"></script>
+        </div>-->
       `)
   return Object.assign(meta, {title, content})
 }
