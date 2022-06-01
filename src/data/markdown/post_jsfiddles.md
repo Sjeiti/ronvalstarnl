@@ -14,37 +14,16 @@
 
 # JSFiddles
 
-There are quite a lot of online sandbox environments online in which you can quickly mockup HTML, CSS and JS. There's [CodePen](https://codepen.io/), [plnkr](https://plnkr.co/), [JS Bin](https://jsbin.com), [CodeSandbox](https://codesandbox.io) and [JSFiddle](http://jsfiddle.net/) to name a few.
+There are quite a lot of online sandbox environments in which you can quickly mockup HTML, CSS and JS. There's [CodePen](https://codepen.io/), [plnkr](https://plnkr.co/), [JS Bin](https://jsbin.com), [CodeSandbox](https://codesandbox.io) and [JSFiddle](http://jsfiddle.net/) to name a few.
 
-I myself have always been fond of JSFiddle.
+I myself have always been fond of JSFiddle. I cannot think of a particular reason why, maybe it's the simplicity.
 
-```html 
-<!--example-->
-<style>
-@import url(//fonts.googleapis.com/css?family=Istok+Web:400,700);
-* {
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  box-shadow: none;
-  font-family: 'Istok Web', sans-serif;
-  font-size: 1rem;
-}
-@media (min-width: 736px) {
-  * {font-size: 1.125rem; }
-}
-body { padding-right: 1rem; }
-</style>
-I even coded the code examples in my site in such a way that you can open them as JSFiddle if you press that button ↗
-<script>console.log('See?')</script>
-``` 
-
-No particular reason why I would use it over the other sandboxes mentioned, maybe it's the simplicity. I use it for [testing functionality](https://jsfiddle.net/Sjeiti/L0wy29an/), quick mockups like this [skeleton loader](https://jsfiddle.net/Sjeiti/eym7nu4a/) or even to make [quick illustrations](https://jsfiddle.net/Sjeiti/0zq5sn3o/). I do use CodeSandbox from time to time if I want to quickly test something more complex.
+I use it for [testing functionality](https://jsfiddle.net/Sjeiti/L0wy29an/), quick mockups like this [skeleton loader](https://jsfiddle.net/Sjeiti/eym7nu4a/) or even to make [quick illustrations](https://jsfiddle.net/Sjeiti/0zq5sn3o/). I do use CodeSandbox from time to time if I want to quickly test something more complex.
 
 
-## Ten years equals threehundredandforty fiddles
+## Threehundredandforty fiddles
 
-I have been using JSFiddle for about ten years now. That is 17 pages of fiddles, which amounts to `17 * 20 = 340` fiddles. Since I never bothered to clean it up it is of course filled with junk. But there are some nice little ones that are maybe worth showing. So I thought I'd sift throught them and list them below (and maybe cleanup along the way).
+I have been using JSFiddle for about ten years now. 17 pages of fiddles, which amounts to `17 * 20 = 340` fiddles. I never bothered to clean it up so a lot of it is junk. But there are some nice little ones that are maybe worth showing. So I thought I'd sift through all of them and list some nicer ones below (and maybe cleanup along the way).
 
 
 ### The oldest
@@ -84,7 +63,7 @@ Animating SVG is a tricky thing (since we lost Flash). This here is the mockup o
 
 <div class="flexM">
 
-The ellipsis is used to shorten text and show there is more. But using it as a suffix is sometimes not handy if a list of strings all start the same. An ellipsis in the middle can make a list clearer because you can see the ending of the string. Unlike `overflow: hidden; text-overflow: ellipsis;` this should be coded and updated on resize.
+The ellipsis is used to shorten text and show there is more. But using it as a suffix is less clear if a list of strings all start the same. An ellipsis in the middle can be better because you can see the ending of the string. Unlike `overflow: hidden; text-overflow: ellipsis;` this should be coded and updated on resize.
 
 <div data-jsfiddle="cxsqv50n"></div>
 
@@ -225,4 +204,8 @@ Totally forgot about text gradients
 </div>
 
 
-## hope you like it
+---
+
+## That's about it
+
+There's more, but I didn't want to make this post too long. Hope you liked it.
