@@ -91,7 +91,7 @@ A generator written to help traverse an array starting somewhere in the middle a
 
 ### Paper shade
 
-This note is just one HTMLElement and some CSS. Note the layered shadow for realism. CSS is underrated. 
+This note is just one HTMLElement and some CSS. Note the layered shadow for realism. What you can do with CSS is really underrated. 
 
 <!--jsfiddle:6awmp7sk-->
 
@@ -113,7 +113,7 @@ Here is a good use-case for
 
 ### HTML to image
 
-Yeah that, but in a weird stupid way (should be way easier).
+Yes you can render HTML to an image, but in a weird stupid way (should be way easier).
 
 <!--jsfiddle:Lgm50j8y-->
 
@@ -122,7 +122,7 @@ Yeah that, but in a weird stupid way (should be way easier).
 
 This is a great example how I sometimes use JSFiddle: for [the disconnect project](/project/disconnect) I needed a pattern or form to place 28 pieces of content in nine chapters. This here is the start of finding that form:
 
-<!--jsfiddle:ub9sztk5-->
+<!--jsfiddle:ub9sztk5:18-->
 
 
 ### A cardboard box
