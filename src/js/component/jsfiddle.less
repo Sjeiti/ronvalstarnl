@@ -1,18 +1,16 @@
 
-[data-jsfiddle] iframe {
-  width: 100%;
+[data-jsfiddle] {
   height: 12rem;
   margin-bottom: 3rem;
-  border: 0;
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+      flex: 0 0 @goldS;
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+  }
 }
 
 @media @mediaM {
-  .example-fiddle {
-    display: flex;
-    iframe {
-      width: auto;
-      flex: 0 0 30%;
-    }
-  }
+  .flexM [data-jsfiddle] { margin-left: 2rem; }
 }

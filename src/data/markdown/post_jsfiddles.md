@@ -9,6 +9,7 @@
   excerpt: 
   categories: Javascript
   tags: CSS, transitions
+  related: fast-giant-lists project/disconnect front-end-logic-without-javascript mc-picker
 -->
 
 # JSFiddles
@@ -48,126 +49,180 @@ I have been using JSFiddle for about ten years now. That is 17 pages of fiddles,
 
 ### The oldest
 
-<div class="example-fiddle">
+<div class="flexM">
 
 The nice thing about this one is that it is the oldest one, written with jQuery, using `setTimeout`, systems Hungarian notation. All stuff I don't do anymore. But we all came from somewhere, had phases, do everything we used to do differently now. Except using `asdf` for quick names, `asdf` and `poepjes`.
 
-<!--jsfiddle:EaNPh-->
+<div data-jsfiddle="EaNPh"></div>
 
 </div>
 
 
 ### One element
 
-<div class="example-fiddle">
+<div class="flexM">
 
 Once I had the idea the logo I use should be a single element: some psuedo selectors, roundings and transformations.
 
-<!--jsfiddle:twMhY-->
+<div data-jsfiddle="twMhY"></div>
 
 </div> 
 
 
 ### Project invoice spinner
 
+<div class="flexM">
+
 Animating SVG is a tricky thing (since we lost Flash). This here is the mockup of the loading spinner used in [project invoice](https://projectinvoice.nl/).
 
-<!--jsfiddle:dztazgub-->
+<div data-jsfiddle="dztazgub"></div>
+
+</div>
 
 
 ### Middle ellipsis
 
+<div class="flexM">
+
 The ellipsis is used to shorten text and show there is more. But using it as a suffix is sometimes not handy if a list of strings all start the same. An ellipsis in the middle can make a list clearer because you can see the ending of the string. Unlike `overflow: hidden; text-overflow: ellipsis;` this should be coded and updated on resize.
 
-<!--jsfiddle:cxsqv50n-->
+<div data-jsfiddle="cxsqv50n"></div>
+
+</div>
 
 
 ### Pinch generator
 
+<div class="flexM">
+
 A generator written to help traverse an array starting somewhere in the middle and making your way outwards. The generator is used in the [giant lists post](/fast-giant-lists).
 
-<!--jsfiddle:rtb5uhhv-->
+<div data-jsfiddle="rtb5uhhv"></div>
+
+</div>
 
 
 ### Paper shade
 
+<div class="flexM">
+
 This note is just one HTMLElement and some CSS. Note the layered shadow for realism. What you can do with CSS is really underrated. 
 
-<!--jsfiddle:6awmp7sk-->
+<div data-jsfiddle="6awmp7sk" style="height:27rem;flex: 0 0 var(--gold-l);"></div>
+
+</div>
 
 
 ### A command line interface
 
+<div class="flexM">
+
 It's a bit cliche to use command line interfaces in designs, so I eventually removed it from [the disconnect project](/project/disconnect).
 
-<!--jsfiddle:xqdruj1e-->
+<div data-jsfiddle="xqdruj1e"></div>
+
+</div>
 
 
 ### Proxy keymap
 
-Most developers I know never use(d) Proxy because it is a bit abstract. Well, basically you can use it for anything you'd normally have to define a lot of properties for: like this keyboard binding example.
-Here is a good use-case for 
+<div class="flexM">
 
-<!--jsfiddle:a9xk6cme-->
+Most developers I know never use(d) Proxy because it is a bit abstract. Well, basically you can use it for anything you'd normally have to define a lot of properties for: like this keyboard binding example.
+You'll need a proper keyboard for this to work though.
+
+<div data-jsfiddle="a9xk6cme"></div>
+
+</div>
 
 
 ### HTML to image
 
+<div class="flexM">
+
 Yes you can render HTML to an image, but in a weird stupid way (should be way easier).
 
-<!--jsfiddle:Lgm50j8y-->
+<div data-jsfiddle="Lgm50j8y"></div>
+
+</div>
 
 
 ### Golden angles
 
+<!--<div class="flexM">-->
+
 This is a great example how I sometimes use JSFiddle: for [the disconnect project](/project/disconnect) I needed a pattern or form to place 28 pieces of content in nine chapters. This here is the start of finding that form:
 
-<!--jsfiddle:ub9sztk5:18-->
+<div data-jsfiddle="ub9sztk5" style="height:38rem;flex: 0 0 var(--gold-l);"></div> 
+
+<!--</div>-->
 
 
 ### A cardboard box
 
-Like I said: CSS is underrated.
+<div class="flexM">
 
-<!--jsfiddle:sqb7Lo5e-->
+Like I said: CSS is underrated.
+This was created as the last example in the post about [front-end logic without JavaScript](/front-end-logic-without-javascript).
+
+<div data-jsfiddle="sqb7Lo5e" style="height:31rem;flex: 0 0 var(--gold-l);"></div>
+
+</div>
 
 
 ### Trippy background
 
-Totally forgot what this was for, but it looks nice.
+<div class="flexM">
 
-<!--jsfiddle:xwohszrc-->
+Totally forgot what this was for, but it looks nice. I think I was trying to figure out why background gradients rotate so strangely.
+
+<div data-jsfiddle="xwohszrc"></div>
+
+</div>
 
 
 ### Rainbow box
 
+<div class="flexM">
+
 An illustration for [the MC Picker blog post](/mc-picker)
 
-<!--jsfiddle:21wo6bc0-->
+<div data-jsfiddle="21wo6bc0" style="height:27rem;flex: 0 0 var(--gold-l);"></div>
+
+</div>
 
 
 ### Zandloper
 
+<div class="flexM">
+
 This spinner used on this site
 
-<!--jsfiddle:4n12ytxf-->
+<div data-jsfiddle="4n12ytxf"></div>
+
+</div>
 
 
 ### CSS background
 
+<div class="flexM">
+
 Just a nice background-gradient in CSS ([think I saw it here](https://nxtmuseum.com/)).
 
-<!--jsfiddle:v37cn5gk-->
+<div data-jsfiddle="v37cn5gk"></div>
+
+</div>
 
 
 ### Text gradients
 
+<div class="flexM">
+
 Totally forgot about text gradients
 
-<!--jsfiddle:w5udqrf2-->
+<div data-jsfiddle="w5udqrf2"></div>
+
+</div>
 
 
-
-____
-
-xyz a
+## hope you like it

@@ -119,6 +119,13 @@ img, svg {
 
 .no-result { text-align: center; }
 
+.flex { display: flex; }
+.flex, .flexM { justify-content: space-between; }
+@media @mediaM { .flexM { display: flex; } }
+.flex, .flexM {
+  >*:first-child { margin-top: 0; }
+}
+
 del[data-href]:hover {
   position: relative;
   &:after {
