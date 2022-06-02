@@ -13,12 +13,13 @@
 
 <div class="print-columns">
 <div>
-
+ 
 ## personal info
 
 <small class="pull-right" data-download>
     download as 
     <a data-download-pdf href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1569508867/rv/Curiculum-Vitae_Ron-Valstar_front-end-developer.pdf" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.pdf">pdf</a> 
+    <!--<a data-download-md href="Curiculum-Vitae_Ron-Valstar_front-end-developer.md" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.md">md</a>-->
     or <a data-download-txt href="Curiculum-Vitae_Ron-Valstar_front-end-developer.md" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.txt">txt</a>
 </small>
 <ul class="list-unstyled">
@@ -49,42 +50,34 @@ I can read and write several backend languages and I'm not afraid to learn somet
 
 <ul class="list-unstyled">
 	<li data-skill="5">JavaScript <small>(TypeScript, React, Angular, Vue, ThreeJS)</small></li>
-	<li data-skill="5">build processes <small>(Node.js, Express, Webpack, Gulp)</small></li>
-	<li data-skill="5">HTML/CSS <small>(semantic HTML5, XSLT, CSS3, SASS, LESS)</small></li>
-	<li data-skill="5">testing <small>(Cypress, Jest,  Mocha, Chai, Cucumber)</small></li>
-	<li data-skill="4">devops <small>(Netlify, CI/CD pipelines, Jenkins)</small></li>
-	<li data-skill="4">PHP <small>(Kirby, WordPress, Laravel, Drupal, Codeigniter)</small></li>
-	<li data-skill="3">Java/Processing</li>
-</ul>
+	<li data-skill="5">build processes <small>(Node.js, Express, Webpack)</small></li>
+	<li data-skill="5">HTML <small>(semantic HTML5, XSLT)</small></li>
+	<li data-skill="5">CSS <small>(CSS3, SASS, LESS, BEM)</small></li>
+	<li data-skill="5">testing <small>(Cypress, Jest, Mocha, Chai, Cucumber)</small></li>
+	<li data-skill="4">PHP <small>(Kirby, Laravel, WordPress)</small></li>
+</ul> 
 
-### interaction design
+### other
 
 <ul class="list-unstyled">
+	<li data-skill="4">devops <small>(Netlify, Gitlab, CI/CD pipelines, Jenkins)</small></li>
+	<li data-skill="5">documentation <small>(JSDoc, Markdown)</small></li>
 	<li data-skill="5">prototyping</li>
-	<li data-skill="5">functional design</li>
-	<li data-skill="5">documentation</li>
-	<li data-skill="4">user interface design (UX)</li>
-	<li data-skill="4">wireframing</li>
-	<li data-skill="4">conceptualisation</li>
-	<li data-skill="3">use cases</li>
-	<li data-skill="3">information visualisation</li>
-</ul>
-
-### graphic design
-
-<ul class="list-unstyled">
-	<li data-skill="5">page layouts</li>
-	<li data-skill="5">textures</li>
-	<li data-skill="4">logos</li>
+	<li data-skill="4">interaction design</li>
+	<li data-skill="4">user interface design</li>
+	<li data-skill="4">graphic design</li>
 	<li data-skill="3">illustration</li>
-	<li data-skill="2">concept art</li>
-</ul>
+	<li data-skill="3">information visualisation</li>
+	<!-- accesibility, usability, information architecture  -->
+</ul> 
  
 </div>
 </div>
-
+ 
 <div style="page-break-after: always;"></div>
 
+<!-- wtf? --> 
+ 
 ## education
 
  - <time>1999-2000</time> HKU: European Media Master of Arts, Interactive Multi Media <small>(MA)</small>

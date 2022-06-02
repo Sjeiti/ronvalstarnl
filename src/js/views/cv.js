@@ -23,9 +23,11 @@ add(
         let projectString = expand(`ul.unstyled.cv-projects>(${cvProjects.map(
             (project, i)=>`(
               li${project.categories.map(c=>`.cat-${slugify(c)}`).join('')}
-                >(.date>time.date-from{${project.dateFrom.replace(/-\d\d$/, '')}}
-                +time.date-to{${project.dateTo.replace(/-\d\d$/, '')}})
-                +(h3${(project.inPortfolio?`>a[href="/project/${project.slug}"]{${project.title}}`:`{${project.title}}`)})
+                >(header
+                  >(h3${(project.inPortfolio?`>a[href="/project/${project.slug}"]{${project.title}}`:`{${project.title}}`)})
+                  +(.date>time.date-from{${project.dateFrom.replace(/-\d\d$/,'')}}
+                  +time.date-to{${project.dateTo.replace(/-\d\d$/,'')}})
+                )
                 +{replaceContent${i}}
                 ${(project.clients.length?`+dl>(dt{client}+dd{${project.clients.join(', ')}})`:'')}
                 +(ul.tags>(${project.tags.map(tag=>`li{${tag}}`).join('+')}))
