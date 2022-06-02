@@ -10,7 +10,7 @@ const siteName= 'Ron Valstar - front-end developer'
  */
 routeChange.add((slug, page)=>{
   const title = page.title
-  const {metaDescription, date, modified} = page
+  const {metaDescription, date, dateFrom, modified} = page
   const link = getCanonical(page)
 
   const image = page.header&&(MEDIA_URI_HEADER+page.header)
@@ -50,7 +50,10 @@ routeChange.add((slug, page)=>{
   setSelector('link[rel="alternate"][href="https://ronvalstar.nl/feed.rss"]')
   //
   // robots
-  const isNoIndex = /^search\//.test(slug)||page.title==='404'
+  const isNoIndex = /^search\//.test(slug)
+    ||title==='404'
+    ||date?.includes('9999')  
+    ||dateFrom?.includes('9999')  
   if (isNoIndex){
     setSelector('meta[property="robots"]', 'content', 'noindex,follow')
   } else {

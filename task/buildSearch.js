@@ -10,8 +10,9 @@ glob('src/data/markdown/@(post|page|fortpolio)_*.md')
   .then(files=>Promise.all(files.map(read)))
   .then(files=>files.map(markdown2object))
   .then(files=>{
-    const index = createIndex(files)
-    mapIndex(files, index)
+    const validFiles = files.filter(file=>!(file.date||file.dateFrom).includes('9999'))
+    const index = createIndex(validFiles)
+    mapIndex(validFiles, index)
   })
 
 /**
