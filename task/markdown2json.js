@@ -1,4 +1,4 @@
-const marked = require('marked')
+const {marked} = require('marked')
 const {promisify} = require('util')
 const glob = promisify(require('glob'))
 const utils = require('./util/utils.js')
