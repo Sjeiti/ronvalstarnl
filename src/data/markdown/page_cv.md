@@ -32,6 +32,7 @@
 	<li><a href="http://ronvalstar.nl">http://ronvalstar.nl</a></li>
 	<li><a href="https://github.com/Sjeiti">https://github.com/Sjeiti</a></li>
 	<li><a href="https://stackoverflow.com/users/695734/sjeiti">https://stackoverflow.com/users/695734/sjeiti</a></li>
+	<li><a href="https://nl.linkedin.com/in/ron-valstar-4b20a917">https://nl.linkedin.com/in/ron-valstar-4b20a917</a></li>
 </ul>
 
 ## profile
