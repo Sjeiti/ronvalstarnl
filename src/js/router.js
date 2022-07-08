@@ -81,6 +81,7 @@ export function add(...names){//,callback
  * @param {boolean} [popped=false]
  */
 export function open(uri, popped){
+  const {hash} = new URL(uri)
   const pathname = getPathname(uri.replace(/\/$/, ''))
   const oldUrl = url
   const oldName = getName(getPathname(oldUrl))
@@ -103,7 +104,7 @@ export function open(uri, popped){
       routeResolve(viewModel, name||'home', routeParams)
         .then(page=>{
           const title = page.title
-          popped||history.pushState({}, title, (name[0]==='/'?'':'/')+name)
+          popped||history.pushState({}, title, (name[0]==='/'?'':'/')+name+hash)
           routeChange.dispatch(name, page, oldName)
           initialise(view)
           viewModel.setViewName(name)
