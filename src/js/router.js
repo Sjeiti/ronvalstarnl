@@ -81,7 +81,7 @@ export function add(...names){//,callback
  * @param {boolean} [popped=false]
  */
 export function open(uri, popped){
-  const {hash} = new URL(uri)
+  const [hash=''] = uri.match(/#\w+/)||[]
   const pathname = getPathname(uri.replace(/\/$/, ''))
   const oldUrl = url
   const oldName = getName(getPathname(oldUrl))
