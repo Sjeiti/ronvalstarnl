@@ -148,13 +148,29 @@ ul.project-category {
       + .img.portrait + .img.portrait img { float: right; }
       + .img.portrait + .img.portrait + .img.portrait img { float: left; }
     }
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      max-width: 768px;
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      box-shadow: 0 0 20rem 5rem #333;
+      mix-blend-mode: soft-light;
+    }
     img{
       display: block;
       width: 100%;
       max-width: 768px;
       margin: 0 auto;
       padding: 0;
-      box-shadow: 0 0 10rem 5rem @colorBlack;
+      position: relative;
+      z-index: 1;
+      //box-shadow: 0 0 10rem 5rem @colorBlack;
+      box-shadow: 0 0 5rem 1rem @colorBlack;
     }
   }
 }
