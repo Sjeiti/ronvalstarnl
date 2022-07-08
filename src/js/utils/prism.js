@@ -31,9 +31,9 @@ export function prismToElement(elm){
 
   const className = elm.getAttribute('class')
   const lang = language
-      ||className.match(/language-(\w+)/)?.pop()
+      ||className?.match(/language-(\w+)/)?.pop()
       ||''
-  const [, , ...props] = className.match(/language(-\w*)*/g)?.pop()?.split(/-/)||[]
+  const [, , ...props] = className?.match(/language(-\w*)*/g)?.pop()?.split(/-/)||[]
 
   const matchFirstComment = contents.match(/^<!--(.*)-->/)
   const type = matchFirstComment&&matchFirstComment.pop()||lang

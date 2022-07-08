@@ -141,6 +141,7 @@ create('[data-header]', class extends BaseComponent{
     }
     this._experimentUI.classList.toggle('experiment-ui-hide', !this._experiment)
     this._experimentLink.href = this._experiment?`/experiment-${this._experiment.name}`:'#'
+    this._experimentLink.title = name||'experiment'
   }
 
   /**

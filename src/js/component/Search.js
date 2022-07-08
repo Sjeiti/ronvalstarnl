@@ -34,10 +34,11 @@ create('[data-search]', class extends BaseComponent{
       , autoSuggest: false
     }, this._parseOptions(this._element.getAttribute('data-search')))
     this._element.classList.add('search')
+    const {id, label, placeholder} = options
     this._append(`
-      label[for=${options.id}]{${options.label}}
-      +input#${options.id}[name=${options.id} type=search placeholder="${options.placeholder}"]
-      +button>svg[data-icon=search]
+      label${label?'':'.visually-hidden'}[for=${id}][aria-label=search]{${label||'search'}}
+      +input#${id}[name=${id} type=search placeholder="${placeholder}"]
+      +button[aria-label=search]>svg[data-icon=search]
     `)
     this._input = this._select('input')
     this._input.addEventListener('keyup', this._onKeyUp.bind(this))

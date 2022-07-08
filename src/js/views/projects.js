@@ -3,19 +3,19 @@ import {selectEach, expand} from '../utils/html'
 import {addRule, removeRule} from '../utils/style'
 import {fetchJSONFiles, nextTick, scrollToTop} from '../utils'
 import {componentOf} from '../component'
-import {MEDIA_URI_PROJECT, MEDIA_URI_THUMB, MEDIA_URI_VIDEO, PROBABLY_MOBILE} from '../config'
+import {MEDIA_URI_PROJECT, MEDIA_URI_THUMB, MEDIA_URI_VIDEO/*, PROBABLY_MOBILE*/} from '../config'
 import {makeClassNames, slugify} from '../utils/string'
 import {open} from '../router'
 
 const classNames = makeClassNames({
-  current: 'current'
+    current: 'current'
   , projectCategory: 'project-category'
   , projects: 'projects'
   , project: 'project'
 })
 
 add(
-  'projects'
+    'projects'
   , 'projects/:category'
   , 'project/:project'
   , (view, route, params)=>{
@@ -118,7 +118,7 @@ function buildCurrentProject(view, project, existingProjects){
           +h2{${title}}
           +{${content}}
       )
-    +${images.map(m=>MEDIA_URI_PROJECT+m).map(m=>`(div.img[style="background-image:linear-gradient(#000 0,rgba(0,0,0,0.2) 0),url(${m})"]>img[src="${m}"])`).join('+')}`
+    +${images.map(m => [MEDIA_URI_PROJECT + m, m.replace(/\..+$/, '').replace(/[^a-z0-9]/gi, ' ')]).map(([m, s]) => `(div.img[style="background-image:linear-gradient(#000 0,rgba(0,0,0,0.2) 0),url(${m})"]>img[alt="${s}"][src="${m}"])`).join('+')}`
   ))
   selectEach(view.querySelector(classNames.project), 'img', img=>{
     img.addEventListener('load', ()=>img.naturalHeight>img.naturalWidth&&img.parentNode.classList.add('portrait'))
