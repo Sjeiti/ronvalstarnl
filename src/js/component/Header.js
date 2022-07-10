@@ -2,6 +2,7 @@ import experiments from 'Experiments/src/experiment/index.js'
 
 import {create} from './index'
 import {BaseComponent} from './BaseComponent'
+import fullscreen from '../signal/fullscreen'
 import {scroll} from '../signal/scroll'
 import {signal} from '../signal'
 import {routeChange} from '../router'
@@ -35,6 +36,10 @@ create('[data-header]', class extends BaseComponent{
     scroll.add(this._onScroll.bind(this))
     routeChange.add(this._onRouteChange.bind(this))
 
+    //
+    fullscreen.add(::this._onFullscreenChange)
+    //
+
     this._initExperiments()
     this._background = this._$('.background')
     this._colofon = this._$('.colofon')
@@ -48,6 +53,11 @@ create('[data-header]', class extends BaseComponent{
     this._experimentUI = this._select('.experiment-ui')
     this._experimentLink = this._experimentUI.querySelector('[data-link]')
     this._experimentLink.addEventListener('click', ::this._onClickLink)
+    //
+    this._experimentSave = this._experimentUI.querySelector('[data-save]')
+    this._experimentSave.addEventListener('click', ::this._onMouseDownSave,true)
+    this._experimentSave.addEventListener('click', ::this._onMouseUpSave,true)
+    //
     clean(this._experimentWrapper)
     this._stuck.add(is=>this._experiment?.pause(is))
   }
@@ -155,10 +165,83 @@ create('[data-header]', class extends BaseComponent{
 
   /**
    * Handle fullscreen click
+   * @private
    */
   _onClickLink(){
     document.body.matches('[data-pathname^="experiment-"]')
       &&this._experimentWrapper.requestFullscreen()
   }
 
+  /**
+   * Handle mousedown event on save link
+   * @private
+   */
+  _onMouseDownSave(){
+    const elm = this._experimentWrapper
+    const {offsetWidth:w, offsetHeight:h} = elm
+
+    const canvas = document.createElement('canvas')
+    const context = canvas.getContext('2d')
+    canvas.width = w
+    canvas.height = h
+
+    this._experimentSave.remove()
+    const contentString = elm.outerHTML.replace(/\n/g, '')
+    this._experimentWrapper.appendChild(this._experimentSave)
+
+    const SVGstring = `<svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="${w}px"
+        height="${h}px">
+      <foreignObject width="100%" height="100%">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <style>
+            .experiment-wrapper{
+              width:${w}px;
+              height:${h}px;
+            }
+          </style>
+          ${contentString}
+        </div>
+      </foreignObject>
+    </svg>`.replace(/\s+/g, ' ').replace(/,\s+/g, ',')
+
+    const tempImg = document.createElement('img')
+    tempImg.addEventListener('load', this._onLoadTempImg.bind(this, canvas, context), true)
+    tempImg.src = 'data:image/svg+xml,' + encodeURIComponent(SVGstring)
+  }
+
+  /**
+   * Handle temporary image load and force download
+   * @param {HTMLCanvasElement} canvas
+   * @param {RenderingContext} context
+   * @param {Event} e
+   * @private
+   */
+  _onLoadTempImg(canvas, context, e){
+    const anchor = document.createElement('a')
+    context.drawImage(e.target, 0, 0)
+    anchor.setAttribute('download', location.href.substr(8).replace(/[/#]/g, '_').replace(/\.nl/, '-nl')+'.png')
+    anchor.href = `${canvas.toDataURL()}`
+    anchor.click()
+  }
+
+  /**
+   * Handle mouseup event on save link
+   * @param {MouseEvent} e
+   */
+  _onMouseUpSave(e){
+    e.preventDefault()
+    e.stopImmediatePropagation()
+  }
+
+  /**
+   * Handle fullscreen change event
+   * @param {boolean} fullscreen
+   * @private
+   */
+  _onFullscreenChange(fullscreen){
+    if (fullscreen) this._experimentWrapper.appendChild(this._experimentSave)
+    else this._experimentSave.remove()
+  }
 })
