@@ -20,7 +20,9 @@ create('code[data-src]', class extends BaseComponent{
           const {content} = obj.files&&Object.values(obj.files).pop()
           if (content) text = content
         } catch (err){ /*silent fail*/ }
-        this._element.textContent = text
+
+        this._element.textContent = text.replace(/\n/g, '\r\n').replace(/\r\r/g, '\r')
+
         // todo: can be done without nextTick/redraw
         nextTick(()=>prismToElement(this._element))
       })
