@@ -2,6 +2,7 @@ import experiments from 'Experiments/src/experiment/index.js'
 
 import {create} from './index'
 import {BaseComponent} from './BaseComponent'
+import fullscreen from '../signal/fullscreen'
 import {scroll} from '../signal/scroll'
 import {signal} from '../signal'
 import {routeChange} from '../router'
@@ -35,6 +36,10 @@ create('[data-header]', class extends BaseComponent{
     scroll.add(this._onScroll.bind(this))
     routeChange.add(this._onRouteChange.bind(this))
 
+    //
+    fullscreen.add(::this._onFullscreenChange)
+    //
+
     this._initExperiments()
     this._background = this._$('.background')
     this._colofon = this._$('.colofon')
@@ -48,6 +53,11 @@ create('[data-header]', class extends BaseComponent{
     this._experimentUI = this._select('.experiment-ui')
     this._experimentLink = this._experimentUI.querySelector('[data-link]')
     this._experimentLink.addEventListener('click', ::this._onClickLink)
+    //
+    this._experimentSave = this._experimentUI.querySelector('[data-save]')
+    this._experimentSave.addEventListener('click', ::this._onMouseDownSave,true)
+    this._experimentSave.addEventListener('click', ::this._onMouseUpSave,true)
+    //
     clean(this._experimentWrapper)
     this._stuck.add(is=>this._experiment?.pause(is))
   }
@@ -160,5 +170,44 @@ create('[data-header]', class extends BaseComponent{
     document.body.matches('[data-pathname^="experiment-"]')
       &&this._experimentWrapper.requestFullscreen()
   }
+  
+  _onMouseDownSave(){
+    const elm = this._experimentWrapper
+    const {offsetWidth:w, offsetHeigt:h} = elm
 
+    const canvas = document.createElement('canvas')
+    const ctx = canvas.getContext('2d')
+    canvas.width = w
+    canvas.height = h
+
+    const tempImg = document.createElement('img')
+    tempImg.addEventListener('load', onTempImageLoad)
+    tempImg.src = 'data:image/svg+xml,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+      <foreignObject width="${w}" height="${h}">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <style>em{color:red;}</style><em>I</em> lick <span>cheese</span>
+          ${elm.outerHTML}
+        </div>
+      </foreignObject>
+    </svg>`)
+
+    const es = this._experimentSave
+    function onTempImageLoad(e){
+      ctx.drawImage(e.target, 0, 0)
+      es.setattribute('r'+location.hash)
+      es.href = `download:${canvas.toDataURL()}`
+      alert(e)
+    }
+  }
+
+  _onMouseUpSave(e){
+    //e.preventDefault()
+    //e.stopImmediatePropagation()
+    e.stopPropagation()
+  }
+
+  _onFullscreenChange(fullscreen){
+    if (fullscreen) this._experimentWrapper.appendChild(this._experimentSave)
+    else this._experimentSave.remove( )
+  }
 })
