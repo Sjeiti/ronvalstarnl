@@ -185,9 +185,9 @@ create('[data-header]', class extends BaseComponent{
     canvas.width = w
     canvas.height = h
 
-    const content = elm.cloneNode(true)
-    content.querySelector('a').remove()
-    const contentString = content.outerHTML.replace(/\n/g, '')
+    this._experimentSave.remove()
+    const contentString = elm.outerHTML.replace(/\n/g, '')
+    this._experimentWrapper.appendChild(this._experimentSave)
 
     const SVGstring = `<svg
         xmlns="http://www.w3.org/2000/svg"
@@ -242,6 +242,6 @@ create('[data-header]', class extends BaseComponent{
    */
   _onFullscreenChange(fullscreen){
     if (fullscreen) this._experimentWrapper.appendChild(this._experimentSave)
-    else this._experimentSave.remove( )
+    else this._experimentSave.remove()
   }
 })
