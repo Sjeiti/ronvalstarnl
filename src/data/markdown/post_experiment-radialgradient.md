@@ -1,6 +1,6 @@
 <!--
-  date: 2022-07-07
-  modified: 2022-07-07
+  date: 2022-07-08
+  modified: 2022-07-10
   slug: experiment-radialgradient
   type: post
   excerpt: A single background with radial gradients seeded with a prng and animated with Perlin noise.
@@ -21,10 +21,14 @@ It's a single background seeded with a prng and animated with Perlin noise.
 I'll save the detailed explanation for a later post. I just wanted to share the source and some cool varieties.
 
 - [#945818140](#945818140)
-- [#628786461](#628786461)
+- [#393149262](#393149262)
 - [#995592255](#995592255)
-- [#22854839](#22854839)
+- [#559697725](#559697725)
 - [#596974341](#596974341)
+- [#835523363](#835523363)
+- [#467870464](#467870464)
+
+<small>ps: there's a fullscreen button on the top right!</small>
 
 <pre><code data-language="javascript" data-src="/static/experiment/radialgradient.js"></code></pre>
 

@@ -165,47 +165,81 @@ create('[data-header]', class extends BaseComponent{
 
   /**
    * Handle fullscreen click
+   * @private
    */
   _onClickLink(){
     document.body.matches('[data-pathname^="experiment-"]')
       &&this._experimentWrapper.requestFullscreen()
   }
-  
+
+  /**
+   * Handle mousedown event on save link
+   * @private
+   */
   _onMouseDownSave(){
     const elm = this._experimentWrapper
-    const {offsetWidth:w, offsetHeigt:h} = elm
+    const {offsetWidth:w, offsetHeight:h} = elm
 
     const canvas = document.createElement('canvas')
-    const ctx = canvas.getContext('2d')
+    const context = canvas.getContext('2d')
     canvas.width = w
     canvas.height = h
 
-    const tempImg = document.createElement('img')
-    tempImg.addEventListener('load', onTempImageLoad)
-    tempImg.src = 'data:image/svg+xml,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
-      <foreignObject width="${w}" height="${h}">
+    const content = elm.cloneNode(true)
+    content.querySelector('a').remove()
+    const contentString = content.outerHTML.replace(/\n/g, '')
+
+    const SVGstring = `<svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="${w}px"
+        height="${h}px">
+      <foreignObject width="100%" height="100%">
         <div xmlns="http://www.w3.org/1999/xhtml">
-          <style>em{color:red;}</style><em>I</em> lick <span>cheese</span>
-          ${elm.outerHTML}
+          <style>
+            .experiment-wrapper{
+              width:${w}px;
+              height:${h}px;
+            }
+          </style>
+          ${contentString}
         </div>
       </foreignObject>
-    </svg>`)
+    </svg>`.replace(/\s+/g, ' ').replace(/,\s+/g, ',')
 
-    const es = this._experimentSave
-    function onTempImageLoad(e){
-      ctx.drawImage(e.target, 0, 0)
-      es.setattribute('r'+location.hash)
-      es.href = `download:${canvas.toDataURL()}`
-      alert(e)
-    }
+    const tempImg = document.createElement('img')
+    tempImg.addEventListener('load', this._onLoadTempImg.bind(this, canvas, context), true)
+    tempImg.src = 'data:image/svg+xml,' + encodeURIComponent(SVGstring)
   }
 
+  /**
+   * Handle temporary image load and force download
+   * @param {HTMLCanvasElement} canvas
+   * @param {RenderingContext} context
+   * @param {Event} e
+   * @private
+   */
+  _onLoadTempImg(canvas, context, e){
+    const anchor = document.createElement('a')
+    context.drawImage(e.target, 0, 0)
+    anchor.setAttribute('download', location.href.substr(8).replace(/[/#]/g, '_').replace(/\.nl/, '-nl')+'.png')
+    anchor.href = `${canvas.toDataURL()}`
+    anchor.click()
+  }
+
+  /**
+   * Handle mouseup event on save link
+   * @param {MouseEvent} e
+   */
   _onMouseUpSave(e){
-    //e.preventDefault()
-    //e.stopImmediatePropagation()
-    e.stopPropagation()
+    e.preventDefault()
+    e.stopImmediatePropagation()
   }
 
+  /**
+   * Handle fullscreen change event
+   * @param {boolean} fullscreen
+   * @private
+   */
   _onFullscreenChange(fullscreen){
     if (fullscreen) this._experimentWrapper.appendChild(this._experimentSave)
     else this._experimentSave.remove( )
