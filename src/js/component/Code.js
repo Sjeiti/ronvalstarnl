@@ -21,7 +21,7 @@ create('code[data-src]', class extends BaseComponent{
           if (content) text = content
         } catch (err){ /*silent fail*/ }
 
-        this._element.textContent = text.replace(/\n/g, '\r\n').replace(/\r\r/g, '\r')
+        this._element.textContent = text
 
         // todo: can be done without nextTick/redraw
         nextTick(()=>prismToElement(this._element))

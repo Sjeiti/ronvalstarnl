@@ -28,6 +28,8 @@ export function prismToElement(elm){
   const {parentNode:pre, parentNode: {parentNode}, textContent, dataset: {language}} = elm
 
   let contents = textContent
+      .replace(/\n/g, '\r\n').replace(/\r+/g, '\r')
+      .replace(/\r/g, '\r\n').replace(/\n+/g, '\n')
 
   const className = elm.getAttribute('class')
   const lang = language

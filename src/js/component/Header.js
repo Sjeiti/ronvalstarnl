@@ -140,7 +140,7 @@ create('[data-header]', class extends BaseComponent{
         this._experiment = experiments[experimentName]
         this._experiment&&this._experiment.init(this._experimentWrapper)
       }
-    }else if (name&&this._experiment){
+    } else if (name&&this._experiment){
       this._experiment.exit()
       this._experiment = null
     } else if (!name&&!this._experiment){
@@ -177,6 +177,48 @@ create('[data-header]', class extends BaseComponent{
    * @private
    */
   _onMouseDownSave(){
+    const canvas = this._experimentWrapper.querySelector('canvas')
+    canvas
+      ?this._downloadFromAnchor(canvas)
+      :this._htmlScreenshot()
+  }
+
+  /**
+   * Handle mouseup event on save link
+   * @param {MouseEvent} e
+   */
+  _onMouseUpSave(e){
+    e.preventDefault()
+    e.stopImmediatePropagation()
+  }
+
+  /**
+   * Handle fullscreen change event
+   * @param {boolean} fullscreen
+   * @private
+   */
+  _onFullscreenChange(fullscreen){
+    if (fullscreen) this._experimentWrapper.appendChild(this._experimentSave)
+    else this._experimentSave.remove()
+  }
+
+  /**
+   * Create an HTML anchor and click it to download canvasData
+   * @param {HTMLCanvasElement} canvas
+   * @private
+   */
+  _downloadFromAnchor(canvas){
+    const anchor = document.createElement('a')
+    anchor.setAttribute('download', location.href.substr(8).replace(/[/#]/g, '_').replace(/\.nl/, '-nl')+'.png')
+    anchor.href = `${canvas.toDataURL()}`
+    anchor.click()
+  }
+
+  /**
+   * Take screenshot of experiment HTML when no canvas is present
+   * @private
+   */
+  _htmlScreenshot(){
     const elm = this._experimentWrapper
     const {offsetWidth:w, offsetHeight:h} = elm
 
@@ -207,6 +249,7 @@ create('[data-header]', class extends BaseComponent{
     </svg>`.replace(/\s+/g, ' ').replace(/,\s+/g, ',')
 
     const tempImg = document.createElement('img')
+
     tempImg.addEventListener('load', this._onLoadTempImg.bind(this, canvas, context), true)
     tempImg.src = 'data:image/svg+xml,' + encodeURIComponent(SVGstring)
   }
@@ -219,29 +262,7 @@ create('[data-header]', class extends BaseComponent{
    * @private
    */
   _onLoadTempImg(canvas, context, e){
-    const anchor = document.createElement('a')
     context.drawImage(e.target, 0, 0)
-    anchor.setAttribute('download', location.href.substr(8).replace(/[/#]/g, '_').replace(/\.nl/, '-nl')+'.png')
-    anchor.href = `${canvas.toDataURL()}`
-    anchor.click()
-  }
-
-  /**
-   * Handle mouseup event on save link
-   * @param {MouseEvent} e
-   */
-  _onMouseUpSave(e){
-    e.preventDefault()
-    e.stopImmediatePropagation()
-  }
-
-  /**
-   * Handle fullscreen change event
-   * @param {boolean} fullscreen
-   * @private
-   */
-  _onFullscreenChange(fullscreen){
-    if (fullscreen) this._experimentWrapper.appendChild(this._experimentSave)
-    else this._experimentSave.remove()
+    this._downloadFromAnchor(canvas)
   }
 })
