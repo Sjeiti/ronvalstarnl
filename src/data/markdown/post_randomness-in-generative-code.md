@@ -3,7 +3,9 @@
   date: 9999-04-30
   modified: 9999-04-30
   type: post
-  header: adi-goldstein-Hli3R6LKibo-unsplash.jpg
+  header: manas-taneja-Mse8VazeO-c-unsplash.jpg
+  headerColofon: photo by [Manas Tajena](https://unsplash.com/@manastaneja)
+  headerClassName: no-blur darken
   category: code
   tag: code
 -->
@@ -12,35 +14,137 @@
 
 Recently I wrote an [experiment](/search/experiment) with a single background on a single element using [radial gradients](/experiment/radialgradients). This resulted in a seedable image set in motion by simplex noise.
 
-This made me think of a merge request I made a week back that puzzled my co-worker because it had an linear congruential generator in it. My work isn't usually this exiting but I was adding a skeleton loader to a table component. This has to be random, but seedable, hence the LCG.
+This made me think of a merge request I made a while back that puzzled my co-worker because it had a [linear congruential generator](https://en.wikipedia.org/wiki/Linear_congruential_generator) in it. My work isn't usually this exciting but I was adding a skeleton loader to a table component. This had to be random, but seedable, hence the LCG.
+
 
 ## Wait wut?!
 
-Okay, I'll take a few steps back, starting with 'seedable'.
+Okay, a few steps back, starting with 'seedable'.
 
-As you may know computers are great at computing. Give it a problem and it will always calculate the same result. Which is fine mostly, but a problem when you do not want the same result. It turns out computers are really bad at random.
+As you may know computers are great at computing. Give it a problem and it will always calculate the same result. Which is fine mostly, but a problem when you do not want the same result. Because unfortunately computers are really bad at random.
 
 Luckily our human pattern matching capabilities fail with large enough numbers. Computers don't mind large numbers. So we came up with something called a pseudo random number generator, or PRNG.
-This is a function that turns any number into a seemingly unrelated different number. It seems random, but it will always give the same result for a given input. So pseudo random.
+This is a function that turns any number into a seemingly unrelated different number. It seems random, but it will always give the same result for a given input. So ehrm, pseudo random.
 And this input number is what is called 'the seed'.
 
-What makes this very useful is that random seeds allow us to create something that looks chaotic but is in fact very predictable.
-You might have used seeds in games or seen it in genrative art. Minecraft has world seeds for instance. The planets in No Mans Sky or Star Citizen are generated this way as well.
+And this is very useful. A random seeds allows us to create something that looks chaotic but is in fact very predictable.
+You might have used seeds in games or seen it in generative art. Minecraft has world seeds that are used for terrain generation. The planets in No Mans Sky or Star Citizen are generated this way as well.
 
-# So how does this work?
 
-Terrain generation is a step further where you interpolate random numbers and stack different distributions, a technique called Perlin noise.
+## So how does pseudo random work?
 
-So let's start with the random number generator. The linear congruential generator looks like this:
+Terrain generation is a bit more advanced. You interpolate random numbers and stack different distributions, a technique called Perlin noise.
+
+So let's start with the random number generator. The linear congruential generator, a popular type of PRNG, looks like this:
 
 ```
 seed = ( seed * multiplier + increment ) % modulus
 ```
 
-This uses just three constant variables. Basically you multiply your seed, add something and check the remainder should you divide by another number (% is the modulo operator).
-This is a very simple operation even my ten year old son could do by hand.
-Note that the outcome of the operation is often used as the seed input for the next.
+This uses just three constant variables. Multiply the seed and add something (that is the linear part `ax+b`) and calculate the remainder for a division by another number (`%` is the remainder operator).
+This is a simple operation even my ten year old son can do by hand.
+Note that the outcome of the operation is generally used as the seed input for the next.
 
-For most values of the constants this will produce very regular results.
+For most values of the constants this will produce very regular results. Take the following simple example:
+
+```JavaScript
+const multiplier = 47
+const increment = 59
+const modulus = 113
+let seed = 12
+const random = _seed => seed = ( (_seed||seed) * multiplier + increment ) % modulus
+// run `random()` 150 times:
+// 58 73 100 13 105 22 76 15 86 33 28 19
+// 48 55 45 27 85 99 79 43 46 74 34 75 81
+// 24 57 26 38 37 103 41 65 63 82 71 6 2
+// 40 18 1 106 69 25 104 88 14 39 84 52
+// 17 67 44 93 23 10 77 62 35 9 30 0 59
+// 7 49 102 107 3 87 80 90 108 50 36 56
+// 92 89 61 101 60 54 111 78 109 97 98 32
+// 94 70 72 53 64 16 20 95 4 21 29 66 110
+// 31 47 8 96 51 83 5 68 91 42 112 12 58
+// 73 100 13 105 22 76 15 86 33 28 19 48
+// 55 45 27 85 99 79 43 46 74 34 75 81 24
+// 57 26 38 37 103 41 65 63 82 71 6 2
+```
+
+Well thats no good. These starting conditions start repeating after 112 iterations, and the distance between two numbers repeats after only 57 iterations.
+
+This might sound a bit vague, so lets put it in an image where every pixels is generated by a random value. We'll take some better starting values. The ideal image would be one that looks like white noise.
 
 
+```JavaScript
+const multiplier = 13523
+const increment = 13
+const modulus = 31457
+```
+
+```html
+<!--example-->
+<canvas id="wronglcg"></canvas>
+<script>
+window.onerror = alert
+//document.addEventListener('DOMContentLoaded', function() {
+const multiplier = 13523
+const increment = 13
+const modulus = 31457
+let seed = 12
+const random = _seed => seed = ( (_seed||seed) * multiplier + increment ) % modulus
+
+const size = 256
+
+//const canvas = document.createElement('canvas')
+//canvas.width = canvas.height = size
+//const context = canvas.getContext('2d')
+//document.body.appendChild(canvas)
+const canvas = document.getElementById('wronglcg')
+canvas.width = canvas.height = size
+const context = canvas.getContext('2d')
+
+const imageData = context.getImageData(0,0,size,size)
+
+const pixels = new Array(size*size).fill(0).reduce((acc)=>{
+	const pixel = Math.round(255*(random()/modulus))
+	acc.push(pixel)
+	acc.push(pixel)
+	acc.push(pixel)
+	acc.push(255)
+  return acc
+}, [])
+
+imageData.data.set(new Uint8ClampedArray(pixels))
+context.putImageData(imageData,0,0)
+//})
+</script> 
+```
+
+A sheet of numbers is difficult to compare, but in this image here you can easily discern the repetition (which has a period of about 1292 pixels). Note that this is for a remainder size of 31457.
+
+
+### Carefully chosen starting values
+
+The exact mathematical science evades me but the multiplication and increment must fit the modulus in such a way that a large period is reached. You could say that the angle of the linear equation must cover as much points as possible before doubling onto itself again.
+
+Prime numbers are popular modulo values, especially Mersenne primes. But you can find relatively random constants by trial and error. A large enough modulo certainly helps.
+Wikipedia has a good [list of values](https://en.m.wikipedia.org/wiki/Linear_congruential_generator) that have proven to give good results.
+
+<small>(an LCG works with modulus but JavaScript's `%` operator is a remainder calculation, which has different outcomes for negative values.)</small>
+
+## True randomness
+
+To come back to the skeleton loader: I said it had to be seedable. But by now you may realise randomisation in computers is **always** seeded. The seed may be hidden, like with JavaScript's `Math.random`, but it is definitely in there.
+
+True randomness can only come from the real physical world. Like the atmospheric noise used by [random.org](https://www.random.org/) or Cloudflare's [lava lamps](https://www.cloudflare.com/learning/ssl/lava-lamp-encryption/). You can let your computer use a [special electronic circuit board](https://en.m.wikipedia.org/wiki/Hardware_random_number_generator) that derives the numbers from real life, not from ones and zeroes.
+
+
+## Perlin noise
+
+True randomness is very useful for encryption and other security related matters. But for things like terrain generation predictability is really essential, you don't want the ground under your feet to change when you look away.
+
+You can put random numbers in a grid to get a noise field. This is a bit coarse for a terrain, but we can space the points out a bit and interpolate between them to create a more even floor.
+Do it a couple of times with a smaller period and a smaller amplitude, add it all together and you have something called Perlin noise.
+
+The variant we use for the movement is Simplex noise. This is a newer version that works better in higher dimensions.
+
+So terrain generation is what interpolated noise is used for most, but it also works extremely well on creating lifelike movement.
+Simple movement can be a single value change over time, so we only need a single dimension of noise to calculate it.
