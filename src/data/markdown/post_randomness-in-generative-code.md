@@ -1,18 +1,18 @@
 <!--
   slug: randomness-in-generative-code
-  date: 9999-04-30
-  modified: 9999-04-30
+  date: 2022-07-22
+  modified: 2022-07-22
   type: post
   header: manas-taneja-Mse8VazeO-c-unsplash.jpg
   headerColofon: photo by [Manas Tajena](https://unsplash.com/@manastaneja)
   headerClassName: no-blur darken
   category: code
-  tag: code
+  tag: code random
 -->
 
 # Randomness in generative code
 
-Recently I wrote an [experiment](/search/experiment) with a single background on a single element using [radial gradients](/experiment/radialgradients). This resulted in a seedable image set in motion by simplex noise.
+Recently I wrote an [experiment](/search/experiment) with a single background on a single element using [radial gradients](/experiment/radialgradients). This resulted in a seedable image set in motion by Simplex noise.
 
 This made me think of a merge request I made a while back that puzzled my co-worker because it had a [linear congruential generator](https://en.wikipedia.org/wiki/Linear_congruential_generator) in it. My work isn't usually this exciting but I was adding a skeleton loader to a table component. This had to be random, but seedable, hence the LCG.
 
@@ -25,17 +25,18 @@ As you may know computers are great at computing. Give it a problem and it will 
 
 Luckily our human pattern matching capabilities fail with large enough numbers. Computers don't mind large numbers. So we came up with something called a pseudo random number generator, or PRNG.
 This is a function that turns any number into a seemingly unrelated different number. It seems random, but it will always give the same result for a given input. So ehrm, pseudo random.
-And this input number is what is called 'the seed'.
+This input number is what is called 'the seed'.
 
-And this is very useful. A random seeds allows us to create something that looks chaotic but is in fact very predictable.
+And this is very useful. A random seed allows us to create something that looks chaotic but is in fact very predictable.
 You might have used seeds in games or seen it in generative art. Minecraft has world seeds that are used for terrain generation. The planets in No Mans Sky or Star Citizen are generated this way as well.
 
 
 ## So how does pseudo random work?
 
-Terrain generation is a bit more advanced. You interpolate random numbers and stack different distributions, a technique called Perlin noise.
-
-So let's start with the random number generator. The linear congruential generator, a popular type of PRNG, looks like this:
+There are different ways to create a random number.
+A linear congruential generator is fast but of quite low quality. Higher quality generators are generally slower because they are more complex. Relatively fast ones are [the Mersenne Twister](https://en.m.wikipedia.org/wiki/Mersenne_Twister) and [Xorshift](https://en.m.wikipedia.org/wiki/Xorshift).
+We'll stick with the linear congruential generator because it is easy to understand.
+It looks like this:
 
 ```
 seed = ( seed * multiplier + increment ) % modulus
@@ -43,7 +44,7 @@ seed = ( seed * multiplier + increment ) % modulus
 
 This uses just three constant variables. Multiply the seed and add something (that is the linear part `ax+b`) and calculate the remainder for a division by another number (`%` is the remainder operator).
 This is a simple operation even my ten year old son can do by hand.
-Note that the outcome of the operation is generally used as the seed input for the next.
+The outcome of the operation is generally used as the seed input for the next.
 
 For most values of the constants this will produce very regular results. Take the following simple example:
 
@@ -54,21 +55,24 @@ const modulus = 113
 let seed = 12
 const random = _seed => seed = ( (_seed||seed) * multiplier + increment ) % modulus
 // run `random()` 150 times:
-// 58 73 100 13 105 22 76 15 86 33 28 19
-// 48 55 45 27 85 99 79 43 46 74 34 75 81
-// 24 57 26 38 37 103 41 65 63 82 71 6 2
-// 40 18 1 106 69 25 104 88 14 39 84 52
-// 17 67 44 93 23 10 77 62 35 9 30 0 59
-// 7 49 102 107 3 87 80 90 108 50 36 56
-// 92 89 61 101 60 54 111 78 109 97 98 32
-// 94 70 72 53 64 16 20 95 4 21 29 66 110
-// 31 47 8 96 51 83 5 68 91 42 112 12 58
-// 73 100 13 105 22 76 15 86 33 28 19 48
-// 55 45 27 85 99 79 43 46 74 34 75 81 24
-// 57 26 38 37 103 41 65 63 82 71 6 2
+//  58  73 100  13 105  22  76  15  86  33
+//  28  19  48  55  45  27  85  99  79  43
+//  46  74  34  75  81  24  57  26  38  37
+// 103  41  65  63  82  71   6   2  40  18
+//   1 106  69  25 104  88  14  39  84  52
+//  17  67  44  93  23  10  77  62  35   9
+//  30   0  59   7  49 102 107   3  87  80
+//  90 108  50  36  56  92  89  61 101  60
+//  54 111  78 109  97  98  32  94  70  72
+//  53  64  16  20  95   4  21  29  66 110
+//  31  47   8  96  51  83   5  68  91  42
+// 112  12  58  73 100  13 105  22  76  15
+//  86  33  28  19  48  55  45  27  85  99
+//  79  43  46  74  34  75  81  24  57  26
+//  38  37 103  41  65  63  82  71   6   2
 ```
 
-Well thats no good. These starting conditions start repeating after 112 iterations, and the distance between two numbers repeats after only 57 iterations.
+Well that's no good. These starting conditions start repeating after 112 iterations, and the distance between two numbers repeats after only 56 iterations.
 
 This might sound a bit vague, so lets put it in an image where every pixels is generated by a random value. We'll take some better starting values. The ideal image would be one that looks like white noise.
 
@@ -83,8 +87,6 @@ const modulus = 31457
 <!--example-->
 <canvas id="wronglcg"></canvas>
 <script>
-window.onerror = alert
-//document.addEventListener('DOMContentLoaded', function() {
 const multiplier = 13523
 const increment = 13
 const modulus = 31457
@@ -93,10 +95,6 @@ const random = _seed => seed = ( (_seed||seed) * multiplier + increment ) % modu
 
 const size = 256
 
-//const canvas = document.createElement('canvas')
-//canvas.width = canvas.height = size
-//const context = canvas.getContext('2d')
-//document.body.appendChild(canvas)
 const canvas = document.getElementById('wronglcg')
 canvas.width = canvas.height = size
 const context = canvas.getContext('2d')
@@ -114,21 +112,137 @@ const pixels = new Array(size*size).fill(0).reduce((acc)=>{
 
 imageData.data.set(new Uint8ClampedArray(pixels))
 context.putImageData(imageData,0,0)
-//})
 </script> 
 ```
 
-A sheet of numbers is difficult to compare, but in this image here you can easily discern the repetition (which has a period of about 1292 pixels). Note that this is for a remainder size of 31457.
+A sheet of numbers is difficult to compare, but in this image you can easily discern the repetition (which is after 1292 pixels). This is for a remainder size of 31457.
 
 
 ### Carefully chosen starting values
 
-The exact mathematical science evades me but the multiplication and increment must fit the modulus in such a way that a large period is reached. You could say that the angle of the linear equation must cover as much points as possible before doubling onto itself again.
+The multiplication and increment must fit the modulus in such a way that a large number of unique values are passed. You could say that the angle of the linear equation must cover as much points as possible before doubling onto itself again.
+This is called the period. One of the characteristics of a good PRNG is a large period.
 
 Prime numbers are popular modulo values, especially Mersenne primes. But you can find relatively random constants by trial and error. A large enough modulo certainly helps.
 Wikipedia has a good [list of values](https://en.m.wikipedia.org/wiki/Linear_congruential_generator) that have proven to give good results.
 
 <small>(an LCG works with modulus but JavaScript's `%` operator is a remainder calculation, which has different outcomes for negative values.)</small>
+
+```html
+<!--example-->
+<div id="diy"></div>
+<script>
+const size = 256
+const diy = document.getElementById('diy')
+
+let modulus = 1
+let multiplier = 1
+let increment = 1
+let seed = 1
+
+init()
+
+function init(){
+  const inputs = initInputs()
+  const [imageData, context] = initCanvas()
+  const draw = ()=>{
+    fillCanvas(imageData, context)
+  }
+  inputs.forEach(input=>input.addEventListener('input', onInput.bind(null, inputs, draw)))
+  onInput(inputs, draw)
+  draw()
+}
+
+function initInputs(){
+	return [
+     ['modulus', '4294967296']
+    ,['multiplier', '1664525']
+    ,['increment', '1013904223']
+    ,['seed', '12']
+  ].map(([name,value])=>{
+    const label = elm('label')
+    elm('span', label, name)
+    const input = elm('input', label)
+    input.type = 'number'
+    input.value = value
+    diy.appendChild(label)
+    return input
+  })
+}
+
+function initCanvas(){
+  const canvas = elm('canvas', diy)
+  canvas.width = canvas.height = size
+  const context = canvas.getContext('2d')
+  const imageData = context.getImageData(0,0,size,size)
+  return [imageData, context]
+}
+
+function onInput(inputs, callback){
+  const values = inputs.map(input=>input.valueAsNumber)
+  modulus = values[0]
+  multiplier = values[1]
+  increment = values[2]
+  seed = values[3]
+  callback()
+}
+
+function fillCanvas(imageData, context){
+  const pixels = array(size*size).reduce((acc)=>{
+    const pixel = Math.round(255*(random()/modulus))
+    acc.push(pixel)
+    acc.push(pixel)
+    acc.push(pixel)
+    acc.push(255)
+    return acc
+  }, [])
+  imageData.data.set(new Uint8ClampedArray(pixels))
+  context.putImageData(imageData,0,0)
+}
+
+function array(size, map){
+  const array = new Array(size).fill(0)
+  return map?array.map(map):array
+}
+
+function random(_seed){
+  return seed = ( (_seed||seed) * multiplier + increment ) % modulus
+}
+
+function elm(name, parent, text){
+	const elm = document.createElement(name)
+  text&&elm.appendChild(document.createTextNode(text))
+  parent&&parent.appendChild(elm)
+  return elm
+}
+</script>
+<style>
+body {
+  font-family: monospace;
+}
+label {
+  display: flex;
+  justify-content: space-between;
+  width: 16rem;
+}
+label span { flex: 0 0 5rem; }
+label input{ flex: 1 0 5rem; }
+canvas {
+  display: block;
+  box-shadow: 0 0 0 1px black inset;
+}
+</style>
+```
+
+
+## Movement
+
+A lifelike random movement is created by using Simplex noise. This Perlin noise variation is generally used for terrain and texture generation, but works great for movement as well.
+It is created by interpolating random numbers and stacking one or more results with different periods. Thanks to the [Wayback machine](http://wayback.archive.org/) we can still access [this very good explanation](https://web.archive.org/web/20160510013854/http://freespace.virgin.net/hugo.elias/models/m_perlin.htm).
+
+The random number generator used in Simplex noise is a bit different from the one shown above. It uses the [Alea PRNG](https://github.com/coverslide/node-alea) (by Johannes Baagøe). Alea has a period of about `2^16`.
+The original Perlin noise uses a hash table. Not a PRNG per se, but it works for the particular application.
+
 
 ## True randomness
 
@@ -136,15 +250,3 @@ To come back to the skeleton loader: I said it had to be seedable. But by now yo
 
 True randomness can only come from the real physical world. Like the atmospheric noise used by [random.org](https://www.random.org/) or Cloudflare's [lava lamps](https://www.cloudflare.com/learning/ssl/lava-lamp-encryption/). You can let your computer use a [special electronic circuit board](https://en.m.wikipedia.org/wiki/Hardware_random_number_generator) that derives the numbers from real life, not from ones and zeroes.
 
-
-## Perlin noise
-
-True randomness is very useful for encryption and other security related matters. But for things like terrain generation predictability is really essential, you don't want the ground under your feet to change when you look away.
-
-You can put random numbers in a grid to get a noise field. This is a bit coarse for a terrain, but we can space the points out a bit and interpolate between them to create a more even floor.
-Do it a couple of times with a smaller period and a smaller amplitude, add it all together and you have something called Perlin noise.
-
-The variant we use for the movement is Simplex noise. This is a newer version that works better in higher dimensions.
-
-So terrain generation is what interpolated noise is used for most, but it also works extremely well on creating lifelike movement.
-Simple movement can be a single value change over time, so we only need a single dimension of noise to calculate it.
