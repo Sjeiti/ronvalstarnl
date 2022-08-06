@@ -227,9 +227,9 @@ create('[data-header]', class extends BaseComponent{
     canvas.width = w
     canvas.height = h
 
-    this._experimentSave.remove()
-    const contentString = elm.outerHTML.replace(/\n/g, '')
-    this._experimentWrapper.appendChild(this._experimentSave)
+    const clone = elm.cloneNode(true)
+    clone.querySelectorAll('form,input,a').forEach(elm=>elm.remove())
+    const contentString = clone.outerHTML.replace(/\n/g, '')
 
     const SVGstring = `<svg
         xmlns="http://www.w3.org/2000/svg"

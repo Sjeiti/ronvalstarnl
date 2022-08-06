@@ -8,27 +8,16 @@ const arrayKeys = ['tags', 'categories', 'collaboration', 'clients', 'prizes', '
 const booleanKeys = ['inCv', 'inPortfolio', 'sticky']
 const t = s=>(new Date(s)).getTime()||Number.MAX_VALUE
 
-
-// const renderer = {
-//   html(html) {
-//     const match = html.match(/^(<template[^>]+>)(.*)(<\/template>)$/);
-//     return match&&match.join('')||html;
-//   }
-// };
 marked.use({ renderer: { html: s => s } })
 
-
-glob('src/data/markdown/+(post|fortpolio|page)_*.md')
-    .then(files=>Promise.all(files.map(read)))
-    .then(files=>files.map(markdown2object))
-
-    .then(posts=>{
-      posts.sort((p1, p2)=>t(p1.date)>t(p2.date)?1:-1)
-      return posts
-    })
-
-    .then(saveObjectsToJSON)
-    .then(saveObjectsToLists)
+;(async ()=>{
+  const files = await glob('src/data/markdown/+(post|fortpolio|page)_*.md')
+  const contents = await Promise.all(files.map(read))
+  const objects = contents.map(markdown2object)
+      .sort((p1, p2)=>t(p1.date)>t(p2.date)?1:-1)
+  saveObjectsToJSON(objects)
+  saveObjectsToLists(objects)
+})()
 
 /**
  * Convert markdown string data to an object literal with meta data
@@ -81,6 +70,8 @@ function saveObjectsToJSON(objects){
     if (obj.slug&&obj.type){
       const fileName = `src/data/json/${obj.type}_${obj.slug}.json`
       save(fileName, JSON.stringify(obj), true)
+    } else {
+      console.log('ignored',obj.title,obj.slug,obj.type)
     }
   })
   return objects
