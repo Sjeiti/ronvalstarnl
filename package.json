@@ -96,7 +96,7 @@
     "webpack-watch-files-plugin": "^1.1.0",
     "yorkie": "^2.0.0"
   },
-  "optionalDependencies": {
+  "_optionalDependencies": {
     "puppeteer": "^7.0.1"
   },
   "postcss": {
