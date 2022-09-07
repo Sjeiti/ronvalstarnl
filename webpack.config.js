@@ -74,6 +74,11 @@ module.exports = env => {
           ,{ from: 'RV_algvw20*.*', to: './data', context: 'src/data/' }
           ,{ from: 'src/static', to: './static' }
           ,{ from: 'node_modules/Experiments/src/experiment/', to: './static/experiment' }
+          ,{ 
+            from: 'node_modules/Experiments/src/experiment/'
+            , to: './static/experiment/[name].[ext]_'
+            , toType: 'template',
+          }
           ,{ from: 'node_modules/Experiments/src/static/glsl/', to: './static/glsl' }
       ]})
       ,new webpack.DefinePlugin({
