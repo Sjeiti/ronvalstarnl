@@ -1,7 +1,7 @@
 {
   "name": "ronvalstarnl",
   "author": "Ron Valstar",
-  "version": "0.5.35",
+  "version": "0.5.36",
   "license": "MIT",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
@@ -96,7 +96,7 @@
     "webpack-watch-files-plugin": "^1.1.0",
     "yorkie": "^2.0.0"
   },
-  "optionalDependencies": {
+  "_optionalDependencies": {
     "puppeteer": "^7.0.1"
   },
   "postcss": {
@@ -113,7 +113,7 @@
     "pre-commit": "npm run version"
   },
   "_engines": {
-    "node": "^14.15.1",
+    "node": "^16.17.0",
     "npm": "^6.14.9"
   }
 }
