@@ -11,7 +11,8 @@ create('code[data-src]', class extends BaseComponent{
     super(...args)
 
     const src = this._element.getAttribute('data-src')
-    //fetch(src)
+    // For some reason Netlify minifies js automatically.
+    // To circumvent we copy/rename the `.js` extension with an underscore suffix.
     fetch(src.includes('static/experiment')?src+'_':src)
       .then(res=>res.text())
       .then(text=>{
