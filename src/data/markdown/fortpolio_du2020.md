@@ -2,7 +2,7 @@
   slug: du2020
   type: fortpolio
   excerpt: <p>Development of the 2020 design-united website that broadcasts the Dutch Design Week live. The site is a React SPA onto a Wordpress REST API and showcases about 40 projects from students of four Dutch universities.</p>
-  metaKeyword: invoicing
+  metaKeyword: dutch design week
   metaTitle: Design United 2020
   metaDescription: Development of the 2020 design-united website that broadcasts the Dutch Design Week.
   categories: JavaScript, HTML/CSS, video
@@ -13,7 +13,7 @@
   thumbnail: DU2020_1_home.jpg
   image: DU2020_5_footer.jpg
   images: DU2020_1_home.jpg, DU2020_2_to-day-1.jpg, DU2020_3_day-blocks.jpg, DU2020_4_article.jpg, DU2020_5_footer.jpg
-  inCv: true
+  inCv: false
   inPortfolio: false
   dateFrom: 2020-09-01
   dateTo: 2020-10-07

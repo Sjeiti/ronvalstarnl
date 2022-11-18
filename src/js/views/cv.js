@@ -18,7 +18,17 @@ add(
         // projects
         const cvProjects = projects
           .filter(p=>p.inCv)
-          .sort((a, b)=>new Date(a.dateFrom)>new Date(b.dateFrom)?-1:1)
+          // .sort((a, b)=>new Date(a.dateFrom)>new Date(b.dateFrom)?-1:1)
+          .sort((a, b)=>new Date(a.dateTo)>new Date(b.dateTo)?-1:1)
+
+        // cvProjects
+        const tagList = cvProjects.reduce((acc, project)=>{
+          project.tags.forEach(tag=>acc.includes(tag)||acc.push(tag))
+          return acc
+        }, [])
+        const tagUl = expand(`ul.tags>(${tagList.map(tag=>`li{${tag}}`).join('+')})`)
+        // view.appendString(tagUl, false)
+        console.log('tagList', tagList) // todo: remove log
 
         let projectString = expand(`ul.unstyled.cv-projects>(${cvProjects.map(
             (project, i)=>`(
@@ -29,7 +39,7 @@ add(
                   +time.date-to{${project.dateTo.replace(/-\d\d$/,'')}})
                 )
                 +{replaceContent${i}}
-                ${(project.clients.length?`+dl>(dt{client}+dd{${project.clients.join(', ')}})`:'')}
+                ${(project.clients?.length?`+dl>(dt{client}+dd{${project.clients.join(', ')}})`:'')}
                 +(ul.tags>(${project.tags.map(tag=>`li{${tag}}`).join('+')}))
              )`
           ).join('+')})`)
