@@ -13,7 +13,7 @@
   inCv: true 
   inPortfolio: false
   dateFrom: 2020-10-01
-  dateTo: 2022-09-25
+  dateTo: 2023-01-24
 --> 
  
 # Randstad monolith to micro services in Angular
