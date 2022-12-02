@@ -17,4 +17,5 @@
  
 # Randstad monolith to micro services
 
-White-label Angular implementation of micro-service based functionalities for Randstad operating companies. Leading role in moving and aligning all front-end projects to an Nx-based monorepository housing Angular as well as vanilla and React.
+Front-end support in a team to rebuild existing monolitic functionalities to orchestrated microservices. 
+White-label Angular implementation of functionalities for Randstad operating companies. Leading role in moving and aligning all front-end projects to an Nx-based monorepository housing Angular as well as vanilla and React.

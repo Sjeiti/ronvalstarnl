@@ -6,7 +6,7 @@
   metaDescription: &hellip;
   categories: JavaScript, HTML/CSS
   tags: PHP, Kirby, JavaScript, HTML/CSS, Vue, volunteer work
-  inCv: true
+  inCv: false
   inPortfolio: false
   dateFrom: 2021-11-01
   dateTo: 2022-11-01

@@ -1,9 +1,9 @@
 <!--
   slug: studyblendII
   type: fortpolio
-  excerpt: Rebuild of a learning tool with up-to-date technologies in order to add new features.
+  excerpt: Complete rebuild of an online learning tool to up-to-date technologies in order to add new features more easily.
   categories: JavaScript, HTML/CSS, framework, mobile
-  tags: React, REST, NodeJS, MongoDB, cloud
+  tags: React, REST, NodeJS, MongoDB/Mongoose, Imagekit, Sendgrid, Netlify
   clients: Shapers
   thumbnail: HSO-App-students.png
   image: HSO-App-students.png
@@ -20,4 +20,4 @@ In 2014 developed the Studyblend application for (and with) Shapers.
 
 Studyblend is a blended learning tool designed by the pioneers of learning experience design.
 
-Because of the good track-record and overall feedback on the ease of use we decided to rebuild it from the ground up with up-to-date technologies. This also allows to add new features that are difficult to implement in the old version.
+Because of the good track-record and overall feedback on the ease of use we decided to rebuild it from the ground up with up-to-date technologies. This also allows to add new features that are difficult to implement in the old version. 
