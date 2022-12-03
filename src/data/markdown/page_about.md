@@ -8,19 +8,28 @@
   metaDescription: I love writing JavaScript. So naturally I know a lot about: DOM, HTML and CSS. Streamlining build processes is also one of my favorite pasttimes.
 -->
 
-# about 
+# about
 
 I love writing [JavaScript](/search/javascript). So naturally I also know a lot about [DOM](/search/dom), [HTML](/search/html) and [CSS](/search/css).
-My favorite work is streamlining [build](/search/build) processes, refactoring and optimizing DOM and JavaScript for [speed](/search/speed).
+
+There are many aspects to the work I do but the recurring theme is to bring structure in the chaos. This can be streamlining a [build](/search/build), ordering components into a [semantic](/search/semantic) context, or knowing when to apply which [HTMLElement](/search/HTMLElement). Code must structured from the bottom up with the help of linting, unit tests, component tests and end-to-end tests.
+I care greatly about code quality backed by tests build processes but I also think the strictness should reflect the team's experience.
+
+Another thing I like to work on are [speed](/search/speed) optimisations, whether it be in build processes, JavaScript code or CSS markup.
+
+A substantial portion of my work is writing documentation: how and why is a codebase structured in a certain way.
+
+## stack
 
 Among the JavaScript frameworks and libraries I've used are [React](/search/react), [Vue](/search/vue), [Angular](/search/angular), [Backbone](/search/backbone), [jQuery](/search/jquery), [ThreeJS](/search/threejs). But I will never start projects with a specific framework by default. The choice to add abstractions should be weighed carefully.
 
-For backend I mostly resort to [NodeJS](/search/node) or [PHP](/search/php). The latter often with [Laravel](/search/laravel) or [Wordpress](/search/wordpress). But I've also used Java, Python and .NET. You might say full-stack, but I don't believe that is really a thing.
+For backend I mostly resort to [NodeJS](/search/node) or [PHP](/search/php). The latter often with [Laravel](/search/laravel) or [Wordpress](/search/wordpress). But I've also used Java, Python and .NET. You might say *full-stack*, but I don't believe that is really a thing.
 
 ## role
 
 Sometimes I work on solo- or open-source projects but mostly I like to work in teams. 
-In a team my role is mostly lead- or senior front-end developer. I care greatly about code quality backed by build processes. But I also think the strictness should reflect the team's experience.
+In a team my role is mostly lead- or senior front-end developer. 
+In larger environments I also love working across teams in scrum chapters.
 
 My formal background is graphic- and interaction design and I strive toward consistency and cleanliness in both code *and* design.
 
@@ -63,3 +72,7 @@ terms.innerHTML = terms.textContent
 ## education
 
 <small>(I also have a BA and an MA, but with years of work experience titles hardly matter)</small>
+
+## also...
+
+I have a wife and a son. I've been baking my own bread for about <span data-from="01-04-2015">eight</span> years. I'm part of a [gardening collective](https://www.icanchangetheworldwithmytwohands.nl). I like to put stuff [under a microscope](https://vimeo.com/showcase/9363359).
