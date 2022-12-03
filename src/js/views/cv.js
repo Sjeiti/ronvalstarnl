@@ -62,7 +62,7 @@ function onClickDownload(e){
       const [timeF, timeT] = div.children
       const span = document.createElement('span')
       span.appendChild(document.createTextNode(` (${timeF.textContent} _ ${timeT.textContent})`))
-      div.nextElementSibling.appendChild(span)
+      div.nextElementSibling?.appendChild(span)
       div.parentNode.removeChild(div)
     })
     Array.from(html.querySelectorAll('h1,h2,h3')).forEach(elm=>{

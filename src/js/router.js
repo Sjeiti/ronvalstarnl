@@ -2,6 +2,7 @@ import {parentQuerySelector, expand, createElement, clean} from './utils/html'
 import {signal} from './signal'
 import {initialise} from './component'
 import {nextFrame} from './utils'
+import {applyDirectives} from './directives'
 
 export const routeChange = signal()
 
@@ -107,6 +108,7 @@ export function open(uri, popped){
           popped||history.pushState({}, title, (name[0]==='/'?'':'/')+name+hash)
           routeChange.dispatch(name, page, oldName)
           initialise(view)
+          applyDirectives(view)
           viewModel.setViewName(name)
         })
         .catch(console.error)
