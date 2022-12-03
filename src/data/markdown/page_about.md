@@ -12,8 +12,8 @@
 
 I love writing [JavaScript](/search/javascript). So naturally I also know a lot about [DOM](/search/dom), [HTML](/search/html) and [CSS](/search/css).
 
-There are many aspects to the work I do but the recurring theme is to bring structure in the chaos. This can be streamlining a [build](/search/build), ordering components into a [semantic](/search/semantic) context, or knowing when to apply which [HTMLElement](/search/HTMLElement). Code must structured from the bottom up with the help of linting, unit tests, component tests and end-to-end tests.
-I care greatly about code quality backed by tests build processes but I also think the strictness should reflect the team's experience.
+The recurring theme in my work is bringing structure in the chaos. This can be streamlining a [build](/search/build), ordering components into a [semantic](/search/semantic) context, or knowing when to apply which [HTMLElement](/search/HTMLElement). Code must structured from the bottom up with the help of linting, unit tests, component tests and end-to-end tests.
+I care greatly about code quality backed by tests and build processes but I also think the strictness should reflect the team's experience.
 
 Another thing I like to work on are [speed](/search/speed) optimisations, whether it be in build processes, JavaScript code or CSS markup.
 
@@ -56,23 +56,11 @@ Then Flash died in 2011 and I was back coding good old JavaScript applications. 
 
 Here is a random list of terms I know stuff about: 
 <div data-terms style="font-family:'Source Code Pro',monospace;font-size:0.875rem;line-height:1.25rem;">Nx Storybook QR P2P WebRTC TURN/STUN particles:particle REST Google_maps:maps Spotify Jenkins Leaflet Drive XHTTP 3D UX SQL Android AMD Zen BEM DOS Ant GIF RSS XHR SVN OSX ES5 PNG RGB W3C ZIP CSV GPS Vim E2E SVG JPG NPM CLI ES6 GIT MP3 VCS FDT PSD FTP FLV MSX P55 IOS PDF IE8 AS3 AS2 DOM XML sIFR POP3 PHP SCSS CORS Vue vectors:vector PRNG PV3D Wiki icon Trac Sass CSS3 Node WebM iPad seeds GLSL Less REST IIFE Haxe HTML XSLT Redux Docker Express.js:express proxy JSON routing macro TypeScript ActionScript Boids React Regex Papervision3D pureMVC Linux chaos ASCII Vue.js:vue Lingo WebGL video MVC JSDoc Perlin_noise:perlin Simplex_noise:simplex Grunt React SCRUM noise bread Flash Director ESLint ESNext Apache pubsub Uglify builds:build Joomla OpenGL modulo Webkit Termux system Flickr Lorenz Bezier AmfPHP pixels:pixel Github Python Node.js:nodejs Chrome Laravel Drupal random JQuery Gulp Mongoose MongoDB Google GetText Twitter streams:stream doctype sitemap parsers:parser WYSIWYG CSS_variables:cssvars Firebug vertice widgets:widget bitwise strings boolean modules Webpack Eclipse classes:class folding applets:applet Linting falloff interaction_design:interaction octaves PureMVC aliasing canvas Netfront Prettier Cypress Mocha Chai Cucumber Three.js:threejs pageload iterator hoisting Elasticsearch Mersenne_primes:mersenne gradient Webstorm EditPlus PhoneGap Markdown panorama Signals immutable performance chaining:chain localhost webserver pushState shortcode monospace Netlify Sparklines minifiers classList Java JavaScript Angular singleton Photoshop databases Wordpress Prototype Bootstrap controller breakpoint regression Voronoi Babel Commander procedural repository Macromedia Cloudinary TypeScript sorting functional ECMAScript strange_attractors:attractors Phantom.js:phantom complexity primitives topography translation inheritance HTMLElement generators Backbone crossorigin Illustrator CodeIgniter Stylesheets WooCommerce minification antialiasing spreadsheets Processing milliseconds microseconds Librarything localStorage benchmarking CSSStyleRule Chokidar bookmarklets:bookmarklet Uint8Array GreenSock Shockwave Wikipedia</div> 
-<script>
-const terms = document.querySelector('[data-terms]');
-terms.innerHTML = terms.textContent
-    .split(/\s/g)
-    .sort(()=>Math.random()<0.5?1:-1)
-    .map(s=>{
-        const [all,name,term] = s.match(/([^:]*):(.*)|.*/);
-        const searchTerm = (term||all).toLowerCase();
-        const searchName = (name||all).replace(/_/g,' ');
-        return `<a href="/search/${searchTerm}">${searchName}</a>`
-    }).join(' ');
-</script>
 
 ## education
 
-<small>(I also have a BA and an MA, but with years of work experience titles hardly matter)</small>
+<small>(I also have a BA and an MA, but with <span data-from="1997-01-01"></span> years of work experience titles hardly matter)</small>
 
 ## also...
 
-I have a wife and a son. I've been baking my own bread for about <span data-from="01-04-2015">eight</span> years. I'm part of a [gardening collective](https://www.icanchangetheworldwithmytwohands.nl). I like to put stuff [under a microscope](https://vimeo.com/showcase/9363359).
+I have a wife and a son. I've been baking my own bread for about <span data-from="2015-04-04">nine</span> years. I'm part of a [gardening collective](https://www.icanchangetheworldwithmytwohands.nl). I like to put stuff [under a microscope](https://vimeo.com/showcase/9363359). I am a retired ninja.

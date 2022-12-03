@@ -39,3 +39,34 @@ export function makeClassNames(obj){
   })
   return obj
 }
+
+/**
+ * Convert numbers to words
+ * @param {number} num
+ * @return {string}
+ */
+export function numberToWords(num) {
+  const ones = ['','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen']
+  const tens = ['','','twenty','thirty','fourty','fifty','sixty','seventy','eighty','ninety']
+  const sep = ['',' thousand ',' million ',' billion ',' trillion ',' quadrillion ',' quintillion ',' sextillion ']
+
+  const arr = []
+  let val = num
+  let str = ''
+  let i = 0
+
+  while (val){
+    arr.push(val % 1000)
+    val = parseInt(val / 1000, 10)
+  }
+
+  while (arr.length) {
+    str = (function (a) {
+      const x = Math.floor(a / 100), y = Math.floor(a / 10) % 10, z = a % 10
+
+      return (x>0?ones[x] + ' hundred ':'') + (y>=2?tens[y] + ' ' + ones[z]:ones[10 * y + z])
+    })(arr.shift()) + sep[i++] + str
+  }
+
+  return str
+}

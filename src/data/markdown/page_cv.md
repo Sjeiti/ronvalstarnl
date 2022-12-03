@@ -37,7 +37,7 @@
 
 ## profile
 
-I'm a dedicated front-end developer with more than twenty years of experience in developing digital media.<br/>
+I'm a dedicated front-end developer with more than <span data-from="1997-01-01">twenty</span> years of experience in developing digital media.<br/>
 My formal background is graphic- and interaction design and I strive toward consistency and cleanliness in both code *and* design.
 Sometimes I have solo projects but mostly I like to work in teams. 
 I can read and write several backend languages and I'm not afraid to learn something new.
