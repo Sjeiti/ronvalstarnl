@@ -68,10 +68,11 @@ function firstMatchIndex(a, r){
 function saveObjectsToJSON(objects){
   objects.forEach(obj=>{
     if (obj.slug&&obj.type){
-      const fileName = `src/data/json/${obj.type}_${obj.slug}.json`
-      save(fileName, JSON.stringify(obj), true)
+      const data = JSON.stringify(obj)
+      const subPath = `/data/json/${obj.type}_${obj.slug}.json`
+      ;['src', 'dist'].forEach(basePath=>save(basePath+subPath, data, true))
     } else {
-      console.log('ignored',obj.title,obj.slug,obj.type)
+      console.log('ignored', obj.title, obj.slug, obj.type)
     }
   })
   return objects

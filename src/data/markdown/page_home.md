@@ -10,11 +10,11 @@
   inCv: 
   inPortfolio: 
   dateFrom: 
-  dateTo: 
+  dateTo:
 -->
 
 # home
-
-<p>My name is Ron Valstar and I develop applications for digital media.</p>
+ 
+<p>My name is Ron Valstar and <a href="/search?s=cool%20shit">I develop</a> applications for digital media.</p>
 <p>I am an Amsterdam based freelance front-end developer with a background in graphic design and interaction design.<br />
 If you need me <a title="06 33697212" href="tel:+31633697212">give me a call</a> or <a href="mailto:hello@ronvalstar.nl">drop me a line</a>.</p>
