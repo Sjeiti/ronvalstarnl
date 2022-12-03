@@ -12,80 +12,80 @@ module.exports = env => {
 
   return {
     mode
-    ,entry: './src/js/index.js'
-    ,output: {
+    , entry: './src/js/index.js'
+    , output: {
       filename: 'js/index.js'
-      ,path: path.resolve(__dirname,'dist')
+      , path: path.resolve(__dirname, 'dist')
     }
-    ,devtool: 'source-map'
-    ,module: {
+    , devtool: 'source-map'
+    , module: {
       rules: [{
           test: /\.less$/
-          ,use: [
+          , use: [
               'style-loader'
-              ,'css-loader'
-              ,{
+              , 'css-loader'
+              , {
                 loader: 'less-loader'
-                ,options: {lessOptions:{
+                , options: {lessOptions:{
                   paths: [path.resolve(__dirname, 'src')]
                 }}
               }
           ]
-      },{
+      }, {
         test: /\.(log|frag|vert|txt|css)/
-        ,use: [{
+        , use: [{
             loader: 'raw-loader'
-            ,options: {
+            , options: {
                 name: `data/${fileName}`
             }
         }]
-      },{
+      }, {
         test: /\.(mp3|mp4)$/
-        ,use: [{
+        , use: [{
             loader: 'file-loader'
-            ,options: {
+            , options: {
                 name: `media/${fileName}`
             }
         }]
-      },{
+      }, {
         test: /\.(eot|woff|woff2|ttf|png|jp(e*)g|svg)$/
-        ,use: [{
+        , use: [{
             loader: 'url-loader'
-            ,options: {
+            , options: {
                 limit: 8000 // Convert images < 8kb to base64 strings
-                ,name: `img/${fileName}`
+                , name: `img/${fileName}`
             }
         }]
-      },{
+      }, {
         test: /\.js$/
-        ,exclude: /node_modules/
-        ,use: {
+        , exclude: /node_modules/
+        , use: {
           loader: 'babel-loader'
-          ,options: { babelrc: true }
+          , options: { babelrc: true }
         }
       }]
     }
-    ,plugins: [
+    , plugins: [
       new CopyWebpackPlugin({patterns:[
           { from: 'src/index.html', to: './'}
-          ,{ from: 'src/_redirects', to: './'}
-          ,{ from: 'src/data/json', to: './data/json' }
-          ,{ from: 'src/data/search', to: './data/search' }
-          ,{ from: 'RV_algvw20*.*', to: './data', context: 'src/data/' }
-          ,{ from: 'src/static', to: './static' }
-          ,{ from: 'node_modules/Experiments/src/experiment/', to: './static/experiment' }
-          ,{ 
+          , { from: 'src/_redirects', to: './'}
+          , { from: 'src/data/json', to: './data/json' }
+          , { from: 'src/data/search', to: './data/search' }
+          , { from: 'RV_algvw20*.*', to: './data', context: 'src/data/' }
+          , { from: 'src/static', to: './static' }
+          , { from: 'node_modules/Experiments/src/experiment/', to: './static/experiment' }
+          , {
             from: 'node_modules/Experiments/src/experiment/'
             , to: './static/experiment/[name].[ext]_'
             , toType: 'template',
           }
-          ,{ from: 'node_modules/Experiments/src/static/glsl/', to: './static/glsl' }
+          , { from: 'node_modules/Experiments/src/static/glsl/', to: './static/glsl' }
       ]})
-      ,new webpack.DefinePlugin({
+      , new webpack.DefinePlugin({
         _VERSION: JSON.stringify(require('./package.json').version)
-        ,_ENV: JSON.stringify(env||{})
+        , _ENV: JSON.stringify(env||{})
       })
-      ,new WatchExternalFilesPlugin ({
+      , new WatchExternalFilesPlugin ({
         files: ['src/js/**/*.less'] // see screen.less with glob import (which doesn't work with watcher)
       })
 

@@ -2,7 +2,7 @@
   slug: du2021
   type: fortpolio
   excerpt: <p>Development of the 2021 design-united website that broadcasts the Dutch Design Week live. The site is a React SPA onto a Wordpress REST API and showcases about 40 projects from students of four Dutch universities.</p>
-  metaKeyword: invoicing
+  metaKeyword: dutch design week
   metaTitle: Design United 2021
   metaDescription: Development of the 2020 design-united website that broadcasts the Dutch Design Week.
   categories: JavaScript, HTML/CSS, video
