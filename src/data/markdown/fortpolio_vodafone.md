@@ -4,7 +4,7 @@
   type: fortpolio
   excerpt: Rebuilt shop flow into a single page application using Angular. Added several improvements to the build process. Updated/refactored a lot of legacy code. Improved code quality.
   categories: JavaScript, HTML/CSS, framework
-  tags: CSS, HTML, JavaScript, Angular, Grunt, scrum, nodejs
+  tags: scrum, CSS, HTML, JavaScript, Angular, Grunt, nodejs
   clients: Vodafone
   collaboration: 
   prizes: 

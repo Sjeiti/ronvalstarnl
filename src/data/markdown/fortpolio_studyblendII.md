@@ -1,7 +1,7 @@
 <!--
   slug: studyblendII
   type: fortpolio
-  excerpt: Complete rebuild of an online learning tool to up-to-date technologies in order to add new features more easily.
+  excerpt: Complete rebuild of an online learning tool. Implementing up-to-date technologies makes adding new features easier which in turn automates a lot of manual configuration.
   categories: JavaScript, HTML/CSS, framework, mobile
   tags: React, REST, NodeJS, MongoDB/Mongoose, Imagekit, Sendgrid, Netlify
   clients: Shapers

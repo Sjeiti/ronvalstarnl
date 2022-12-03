@@ -2,7 +2,7 @@
   slug: randstad-micro-services
   type: fortpolio
   categories: JavaScript, HTML/CSS, UX, mobile
-  tags: CSS, HTML, TypeScript, Nx, Angular, Storybook, Cypress
+  tags: scrum, design system, CSS, HTML, TypeScript, Nx, Angular, Storybook, MKDocs, Cypress, i18n, a11y
   clients: Randstad
   collaboration: 
   prizes: 
@@ -17,5 +17,5 @@
  
 # Randstad monolith to micro services
 
-Front-end support in a team to rebuild existing monolitic functionalities to orchestrated microservices. 
+Front-end developer in a team to rebuild existing monolitic functionalities to orchestrated microservices. 
 White-label Angular implementation of functionalities for Randstad operating companies. Leading role in moving and aligning all front-end projects to an Nx-based monorepository housing Angular as well as vanilla and React.

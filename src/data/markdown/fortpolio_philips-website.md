@@ -4,7 +4,7 @@
   type: fortpolio
   excerpt: Transformed demo into workable code. Helped setting up coding guidelines for future views and components. Implemented the more complex components and simpler example components. Setup a build that generated the documentation through JSDoc.
   categories: JavaScript, video, mobile
-  tags: HTML, JavaScript, Less, scrum, JSDoc
+  tags: scrum, design system, HTML, JavaScript, Less, i18n, JSDoc
   clients: De Voorhoede
   collaboration: Philips, MediaMonks
   prizes: 
@@ -19,6 +19,6 @@
 
 # Philips website
 
-For the responsive re-make of the Philips a demo was made by de Voorhoede. The demo had to be turned into workable code.
+For the responsive re-make of the Philips a demo was made by de Voorhoede. The demo had to be turned into a proper design system and workable code.
 I helped setting up the the JavaScript coding guidelines for structuring and documenting the components. We used JSDoc to generate source code documentation.<br />
 The scrum team I was part of also implemented the first few (and most difficult) components. There were about 140 components, the bulk of these were later implemented by MediaMonks.

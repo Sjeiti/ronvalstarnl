@@ -2,7 +2,7 @@
   slug: takeaway
   type: fortpolio
   categories: JavaScript, HTML/CSS, framework, mobile
-  tags: React, Sass, Nextjs, Laravel
+  tags: scrum, React, Sass, Nextjs, Laravel
   clients: Superhero Cheesecake
   collaboration: 
   prizes: 
