@@ -12,7 +12,7 @@
 
 # Randomness in generative code
 
-Recently I wrote an [experiment](/search/experiment) with a single background on a single element using [radial gradients](/experiment/radialgradients). This resulted in a seedable image set in motion by Simplex noise.
+Recently I wrote an [experiment](/search/experiment) with a single background on a single element using [radial gradients](/experiment-radialgradient). This resulted in a seedable image set in motion by Simplex noise.
 
 This made me think of a merge request I made a while back that puzzled my co-worker because it had a [linear congruential generator](https://en.wikipedia.org/wiki/Linear_congruential_generator) in it. My work isn't usually this exciting but I was adding a skeleton loader to a table component. This had to be random, but seedable, hence the LCG.
 
