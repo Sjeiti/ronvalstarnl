@@ -219,3 +219,11 @@ function setBodyClasses() {
 }
 ```
 
+### Some assumptions
+
+The above script can be seen at work in [this fiddle](https://jsfiddle.net/Sjeiti/x1vwu6at/).
+Some assumptions are made that can easily be adjusted.
+
+For one the storage used is `sessionStorage`. I always default to `sessionStorage` to circumvent the mandatory cookie notification. Should you decide to use `localStorage` make sure to clear it after testing.
+
+The other assumption is that mouse or touch is either/or. 
