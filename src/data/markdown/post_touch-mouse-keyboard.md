@@ -1,7 +1,7 @@
 <!--
   slug: to-determine-touch-mouse-or-keyboard
-  date: 9999-99-99
-  modified: 2022-07-22
+  date: 2022-12-24
+  modified: 2022-12-24
   type: post
   header: mousekey.jpg
   headerColofon: image by [DeepAI](https://deepai.org)
@@ -12,7 +12,7 @@
 
 # To determine touch-, mouse- or keyboard input and use it
 
-The DOM in Gecko, Blink and Webkit has no good way to determine device capabilities or user input state.
+The DOM in Gecko, Blink and Webkit has no easy way to determine device capabilities or physical user input state.
 
 <small>Gecko, Blink and Webkit are the engines running Firefox, Chrome and Safari respectively. All other browsers use one of these engines (mostly Blink).</small>
 
@@ -29,7 +29,7 @@ Other times you'll see the default `:focus` state on buttons and links disabled 
 
 The difficulty is that browsers have no standard to determine input environment. Devices may support multiple types of input. A user may even switch from one to the other while browsing.
 
-What's more, the state of a component is often determined by the width of the window, not by feature detection and the width of the component.
+What's more, the state of a component is often programmed to be determined by the width of the window, not by feature detection and the width of the component.
 
 We do have the [CSS pointer media query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer) but this is a static mechanism. A laptop with a touch screen will have `pointer:coarse` even when using a mouse.
 
@@ -37,8 +37,6 @@ We do have the [CSS pointer media query](https://developer.mozilla.org/en-US/doc
 ## A JavaScript solution
 
 Luckily we can fix this with a small set of JavaScript methods.
-
-### What the result could be
 
 Most issues may be solved by some strategically placed CSS classNames. 
 
@@ -55,14 +53,16 @@ So for instance placing `html.user-input--mouse` is enough to use in a CSS prepr
 
 The above shows the hover effect *only* when interacting with a mouse.
 
-Some implementations might require a bit more logic. Apart from exposing the state with classNames we can use getters and event dispatchers (or observables) as well.
+Some implementations might require a bit more logic. Apart from exposing the state with classNames we can use getters and event dispatchers (or observables) to communicate the physical interaction state.
 
 ### Proper feature detection
 
-There are enough examples online that use `window.innerWidth` or `navigator.userAgent` to determine a mobile environment. But matching the useragent string with a giant regex is never up-to-date.
+There are a lot of examples online that use `window.innerWidth` or `navigator.userAgent` to determine a mobile environment. Which is a prejudiced way of going about it, not to mention the convoluted regex that is required (and outdated as soon as used).
 
-The only way to be really sure the user is navigating by touch, mouse, or keyboard is to use feature detection. That means adding listeners for these events: `mousemove`, `touchstart` and `keyup`.
-This also means you'll only know for sure once the events fire. This is why it pays to also store this state in `sessionStorage` to persist after (re)load.
+The only way to be sure the user is navigating by touch, mouse, or keyboard is to use event listeners for `mousemove`, `touchstart` and `keyup`.
+This means you'll only know for sure once the events fire. Which is why it pays to also store this state in `sessionStorage` to persist after (re)load.
+
+The module below adds classNames to the documentElement and exposes callback methods for when the input state changes. A bit further down is an implementation example.
 
 ```JavaScript
 /**
@@ -238,15 +238,17 @@ function setDocumentElementClasses() {
 
 The above script can be seen at work in [this fiddle](https://jsfiddle.net/Sjeiti/x1vwu6at/) or in the example below.
 
-Note that keyboard interaction will not automatically toggle the keyboard state. A lot of people will navigate a form using a mouse. The status is only set when the keyboard is used to navigate (ie by pressing TAB or arrows).
+Note that keyboard interaction will not automatically toggle the keyboard state. A lot of people will navigate a form using a mouse, type something, and navigate to the next field using the mouse. In this module the keyboard-state is only set when the keyboard is used to navigate (ie by pressing TAB or arrows).
 
-Some assumptions are made that can easily be adjusted.
+Some assumptions are made that can easily be adjusted if needed.
 
 For one the storage used is `sessionStorage`. It is smart to always default to `sessionStorage` to circumvent the mandatory cookie notification. Should you decide to use `localStorage` make sure to clear it after testing.
 
 The other assumption is that you either use touch *or* mouse. There are indeed devices that are capable of both touch *and* mouse, and fewer users that actually switch between the two. Should you want both you'll have to remove the conditional before  `addEventListener`, remove `removeEventListener` and add a toggle between the two.
 
-### Example
+### Example implementation
+
+A login screen with indicators below to show what state it is in, and also light up when the callbacks are fired:
 
 ```html 
 <!--example-->
@@ -285,7 +287,7 @@ legend {
   line-height: 160%;
 }
 .label>* {
-  flex: 1 1 50%;
+  flex: 1 1 auto;
 }
 .input {
   border: 0;
@@ -293,6 +295,7 @@ legend {
   font-size: inherit;
   padding: 0 0.5rem;
   margin-left: 0.5rem;
+  max-width: 50vw;
 }
 .wrap {
   display: flex;
@@ -557,3 +560,6 @@ window.addEventListener('load', ()=>{
 </script>
 ```
 
+## &mldr;
+
+I hope the module and example will help you with detecting the physical user input to create a more consistent user experience.
