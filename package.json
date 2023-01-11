@@ -1,7 +1,7 @@
 {
   "name": "ronvalstarnl",
   "author": "Ron Valstar",
-  "version": "0.5.41",
+  "version": "0.5.42",
   "license": "MIT",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@emmetio/expand-abbreviation": "^0.7.3",
-    "Experiments": "github:Sjeiti/experiment",
+    "experiments": "github:Sjeiti/experiment",
     "gsap": "^3.6.0",
     "prismjs": "^1.27.0",
     "signals": "^1.0.0"
