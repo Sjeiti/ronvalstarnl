@@ -1,7 +1,7 @@
 {
   "name": "ronvalstarnl",
   "author": "Ron Valstar",
-  "version": "0.5.42",
+  "version": "0.5.43",
   "license": "MIT",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
@@ -95,6 +95,7 @@
     "webpack": "^5.21.1",
     "webpack-cli": "^4.5.0",
     "webpack-watch-files-plugin": "^1.1.0",
+    "xmldom": "^0.6.0",
     "yorkie": "^2.0.0"
   },
   "_optionalDependencies": {
