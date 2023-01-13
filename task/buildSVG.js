@@ -5,8 +5,18 @@ const {markdown2object} = require('./util/markdown2object')
 const {read, save} = utils
 const { DOMImplementation, XMLSerializer } = require('xmldom')
 
-const subjects = ['PureMVC', 'JavaScript', 'jQuery', 'Angular', 'React', 'Vue', 'Backbone']
-const sbjescts = ['#2980B9', '#FF0044', '#0769AD', '#E23137', '#149ECA', '#41B783', '#0071B5']
+//const subjects = ['PureMVC', 'JavaScript', 'jQuery', 'Angular', 'React', 'Vue', 'Backbone']
+//const sbjescts = ['#2980B9', '#FF0044', '#0769AD', '#E23137', '#149ECA', '#41B783', '#0071B5']
+
+const subjects = [
+  {name:'JavaScript',color:'#FF0044'}, 
+  //,{name:'PureMVC',color:'#2980B9'}, 
+  ,{name:'jQuery',color:'#0769AD'}, 
+  ,{name:'Angular',color:'#E23137'}, 
+  ,{name:'React',color:'#149ECA'}, 
+  ,{name:'Vue',color:'#41B783'}, 
+  ,{name:'Backbone',color:'#0071B5'}
+]
 
 writeSVG()
 
@@ -21,14 +31,12 @@ async function writeSVG() {
       .filter(({tags})=>{
         return tags.filter(value => subjects.includes(value)).length>0
       })
-  console.log('objects', objects[3]) // todo: remove log
 
-  const data = subjects.reduce((acc, name)=>{
-    acc[name] = {
-      name, ranges: []
-    }
-    return acc
-  }, {})
+  const data = subjects
+    .reduce((acc, {name, color})=>{
+      acc[name] = {name, color, ranges: []}
+      return acc
+    }, {})
 
   const allRanges = []
 
@@ -36,6 +44,7 @@ async function writeSVG() {
     const from = getMillis(dateFrom)
     const to = getMillis(dateTo)
     allRanges.push(from, to)
+    // todo here
     tags.forEach(tag=>data[tag]?.ranges.push({from, to}))
   })
 
@@ -44,6 +53,7 @@ async function writeSVG() {
 
   const xmlSerializer = new XMLSerializer()
   const markupSVG = xmlSerializer.serializeToString(drawSVG(data, min, max))
+  console.log('markupSVG', markupSVG) // todo: remove log
   await save('temp/graph.svg', markupSVG)
 }
 
@@ -97,14 +107,17 @@ function drawSVG(data, min, max){
   drawPath(svg, 10,128,50, 'green')
   drawPath(svg, 10,256,47, 'blue')
 
+  console.log('data', data) // todo: remove log
+
   ////////////////////
-  Object.values(data).forEach(({name, ranges})=>{
+  Object.values(data).forEach(({name, color, ranges})=>{
     ranges.forEach(({from, to})=>{
       const size = max - min
       const x1 = (from - min)/size*width
       const x2 = (to - min)/size*width
-      drawPath(svg, x1,x2,30, 'lime')
+      drawPath(svg, x1, x2, 30, 'lime')
     })
+    console.log('objects', name) // todo: remove log
   })
   ////////////////////
 
