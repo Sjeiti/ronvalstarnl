@@ -4,7 +4,7 @@
   type: fortpolio
   excerpt: Lead front-end developer responsible for responsive implementation of an existing planning application. Improved speed performance in existing lists and tables with large amounts of data. Implemented stricter code linting and added component testing with Cypress. Created prototypes for possible future implementations.
   categories: JavaScript, HTML/CSS, UX, mobile
-  tags: scrum, CSS, HTML, JavaScript, performance, test, i18n, a11y, scrum, interaction design, Cypress
+  tags: scrum, CSS, HTML, JavaScript, performance, test, accessibility, scrum, UX, Cypress
   clients: Randstad
   collaboration: 
   prizes: 

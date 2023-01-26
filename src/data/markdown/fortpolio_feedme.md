@@ -3,7 +3,7 @@
   slug: feedme
   type: fortpolio
   categories: JavaScript, HTML/CSS, framework, mobile
-  tags: API, JavaScript, Angular, Less
+  tags: REST, JavaScript, Angular, Less
   clients: 72andSunny
   collaboration: 
   prizes: 

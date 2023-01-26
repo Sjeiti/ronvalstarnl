@@ -3,7 +3,7 @@
   slug: total-timeline
   type: fortpolio
   categories: JavaScript, 3D, HTML/CSS, open source, illustration, graphic design, UX, mobile
-  tags: 3D, API, CSS, HTML, JavaScript, Perlin Noise, Grunt, illustration, interaction design, cool shit
+  tags: 3D, REST, CSS, HTML, JavaScript, Perlin Noise, Grunt, illustration, UX, cool shit
   clients: 
   collaboration: 
   prizes: 

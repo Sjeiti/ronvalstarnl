@@ -3,7 +3,7 @@
   slug: strange-attractors
   type: fortpolio
   categories: 3D, video, open source
-  tags: Processing, interaction design, Java, math, cool shit, concept
+  tags: Processing, UX, Java, procedural, cool shit, concept
   clients: 
   collaboration: 
   prizes: 

@@ -3,7 +3,7 @@
   slug: chocolatl
   type: fortpolio
   categories: JavaScript, HTML/CSS
-  tags: CSS, HTML, Wordpress, interaction design, concept
+  tags: CSS, HTML, Wordpress, UX, concept
   clients: 
   collaboration: Ibrahim Farah
   prizes: 

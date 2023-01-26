@@ -3,7 +3,7 @@
   slug: frogs-space
   type: fortpolio
   categories: game, illustration
-  tags: ActionScript, Flash, interaction design, game, cool shit, concept
+  tags: ActionScript, Flash, UX, game, cool shit, concept
   clients: 
   collaboration: 
   prizes: 

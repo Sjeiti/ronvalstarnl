@@ -4,7 +4,7 @@
   type: fortpolio
   excerpt: <p>Re-design and creation of the site of one of the foremost Dutch sound studios.</p>
   categories: JavaScript, HTML/CSS, illustration, graphic design, UX
-  tags: CSS, Wordpress, XML, graphic design, ActionScript, illustration, video, interaction design, concept, Flash
+  tags: HTML, CSS, Wordpress, XML, graphic design, ActionScript, illustration, video, UX, concept, Flash
   clients: FC Walvisch
   collaboration: 
   prizes: 

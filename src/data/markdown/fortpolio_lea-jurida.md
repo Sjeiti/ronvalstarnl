@@ -4,7 +4,7 @@
   type: fortpolio
   excerpt: <p>Flash website for sound designer Lea Jurida.</p>
   categories: illustration, graphic design, UX
-  tags: HTML, XML, graphic design, ActionScript, Flash, illustration, video, interaction design, concept
+  tags: HTML, XML, graphic design, ActionScript, Flash, illustration, video, UX, concept
   clients: Lea Jurida
   collaboration: 
   prizes: 

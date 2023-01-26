@@ -3,7 +3,7 @@
   slug: papervision3d-primitives
   type: fortpolio
   categories: game, open source, 3D
-  tags: 3D, ActionScript, Flash, Papervision3D, open source, concept
+  tags: 3D, ActionScript, Flash, open source, concept
   clients: 
   collaboration: 
   prizes: 

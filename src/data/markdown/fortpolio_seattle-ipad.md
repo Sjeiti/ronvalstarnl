@@ -3,7 +3,7 @@
   slug: seattle-ipad
   type: fortpolio
   categories: JavaScript, 3D, HTML/CSS, mobile
-  tags: JavaScript, XML, XSLT, Phonegap, iOS, iPad
+  tags: JavaScript, XML, XSLT, Phonegap, iOS
   clients: Iwan Baan
   collaboration: 
   prizes: 

@@ -4,7 +4,7 @@
   type: fortpolio
   excerpt: <p>Front- and backend development of zekermetjecreditcard.nl, a single page Angular website that uses Wordpress as a REST API.</p>
   categories: JavaScript, 3D, HTML/CSS, framework, mobile
-  tags: 3D, HTML, JavaScript, Wordpress, Angular
+  tags: 3D/WebGL, HTML, JavaScript, Wordpress, Angular
   clients: Build In Amsterdam
   collaboration: 
   prizes: 

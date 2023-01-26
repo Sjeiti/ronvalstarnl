@@ -47,6 +47,8 @@ I can read and write several backend languages and I'm not afraid to learn somet
 
 ## skills
 
+<div id="skillsWrapper"></div>
+
 ### programming
 
 <ul class="list-unstyled">
@@ -69,7 +71,7 @@ I can read and write several backend languages and I'm not afraid to learn somet
 	<li data-skill="4">graphic design</li>
 	<li data-skill="3">illustration</li>
 	<li data-skill="3">information visualisation</li>
-	<!-- accesibility, usability, information architecture  -->
+	<!-- accessibility, usability, information architecture  -->
 </ul> 
  
 </div>
@@ -94,5 +96,3 @@ I can read and write several backend languages and I'm not afraid to learn somet
  - <time>1998-2000</time> freelance webdesigner
 
 <!--<div style="page-break-after: always;"></div>-->
-
-## projects

@@ -6,7 +6,7 @@
   metaTitle: Project Invoice
   metaDescription: This invoicing application stores all your data on your local machine. It started from a personal need but ended up a full fledged open-source project: end-to-end tests, unit tests, semver, milestones, the works.
   categories: JavaScript, HTML/CSS, framework, open source, UX, graphic design, mobile
-  tags: JavaScript, Vue, interaction design, invoice, React
+  tags: JavaScript, Vue, UX, React
   clients: 
   collaboration: 
   prizes: 

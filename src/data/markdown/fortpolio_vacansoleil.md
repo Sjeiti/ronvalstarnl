@@ -4,7 +4,7 @@
   type: fortpolio
   excerpt: <p>Front-end Flash ActionScript 3 development for a zoomable parallax vacation website.</p>
   categories: framework
-  tags: CSS, JavaScript, ActionScript, Flash
+  tags: HTML, CSS, JavaScript, ActionScript, Flash
   clients: Lukkien
   collaboration: 
   prizes: 

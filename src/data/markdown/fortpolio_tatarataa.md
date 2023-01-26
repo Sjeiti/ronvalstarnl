@@ -3,7 +3,7 @@
   slug: tatarataa
   type: fortpolio
   categories: 
-  tags: CSS, JavaScript, Wordpress, interaction design, concept
+  tags: CSS, JavaScript, Wordpress, UX, concept
   clients: Tatarataa!
   collaboration: 
   prizes: 

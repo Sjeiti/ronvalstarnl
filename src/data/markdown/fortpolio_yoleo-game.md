@@ -3,7 +3,7 @@
   slug: yoleo-game
   type: fortpolio
   categories: JavaScript, HTML/CSS, game
-  tags: CSS, JavaScript, Less, interaction design, concept
+  tags: CSS, JavaScript, Less, UX, concept
   clients: Shapers
   collaboration: 
   prizes: 

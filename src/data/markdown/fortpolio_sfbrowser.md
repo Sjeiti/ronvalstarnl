@@ -4,7 +4,7 @@
   type: fortpolio
   excerpt: <p>With jQuery and PHP I made a very extensive file uploader that can be hooked onto any CMS. You can even port it to a different server side language through the use of connectors.</p>
   categories: JavaScript, HTML/CSS, open source, UX
-  tags: CSS, JavaScript, jQuery, PHP, XML, Flash
+  tags: HTML, CSS, JavaScript, jQuery, PHP, XML, Flash
   clients: 
   collaboration: 
   prizes: 
@@ -16,7 +16,7 @@
   dateFrom: 2008-05-01
   dateTo: 2014-04-01
 -->
-
+  
 # SFBrowser
 
 <p>Most content management systems have a fairly crummy way of uploading and managing files. With jQuery and PHP I made a very extensive file uploader that can be hooked onto any CMS. You can even port it to a different server side language through the use of connectors.</p>
