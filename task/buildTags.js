@@ -5,6 +5,12 @@ const {markdown2object} = require('./util/markdown2object')
 const {read, save} = utils
 const { DOMImplementation, XMLSerializer } = require('xmldom')
 
+const {target} = require('commander')
+    .usage('[options] <files ...>')
+    .option('--target [target]', 'Target path')
+    .parse(process.argv)
+    .opts()
+
 //const subjects = ['PureMVC', 'JavaScript', 'jQuery', 'Angular', 'React', 'Vue', 'Backbone']
 //const sbjescts = ['#2980B9', '#FF0044', '#0769AD', '#E23137', '#149ECA', '#41B783', '#0071B5']
 
@@ -15,11 +21,8 @@ const subjects = [
   ,{name:'Angular',   color:'#E23137', skill:9},
   ,{name:'React',     color:'#149ECA', skill:8},
   ,{name:'Vue',       color:'#41B783', skill:7},
-  ,{name:'Backbone',  color:'#0071B5', skill:5}
+  ,{name:'Backbone',  color:'#005485', skill:5} // 0071B5
 ]
-
-const svgns = 'http://www.w3.org/2000/svg'
-const document = new DOMImplementation().createDocument('http://www.w3.org/1999/xhtml', 'html', null)
 
 writeSVG()
 
@@ -61,13 +64,13 @@ async function writeSVG() {
     tags.forEach(tag=>addToRanges(data[tag]?.ranges,{from, to}))
   })
 
-  const min = Math.min(...allRanges)
-  const max = Math.max(...allRanges)
+  // const min = Math.min(...allRanges)
+  // const max = Math.max(...allRanges)
 
-  const xmlSerializer = new XMLSerializer()
-  const markupSVG = xmlSerializer.serializeToString(drawSVG(data, min, max))
-  console.log('markupSVG', markupSVG) // todo: remove log
-  await save('temp/graph.svg', markupSVG)
+  const filtered = objects.map(({dateFrom, dateTo, tags})=>({dateFrom, dateTo, tags}))
+
+  console.log('filtered',filtered) // todo: remove log
+  await save((target||'temp')+'/tags.json', JSON.stringify(filtered))
 }
 
 /**
@@ -102,68 +105,4 @@ function addToRanges(ranges, range){
  */
 function getMillis(date){
   return new Date(date).getTime()
-}
-
-/**
- * Draw graph based on data
- * @param {object} data
- * @param {number} min
- * @param {number} max
- * @returns {Element}
- */
-function drawSVG(data, min, max){
-
-  console.log('data', JSON.stringify(data, null, '  ')) // todo: remove log
-
-  const svg = document.createElementNS(svgns, 'svg')
-  const width = 512
-  svg.setAttributeNS(null, 'width', width)
-  svg.setAttributeNS(null, 'height', 128)
-  // document.body.appendChild(svg)
-
-  // const shape = document.createElementNS(svgns, 'circle')
-  // shape.setAttributeNS(null, 'cx', 25)
-  // shape.setAttributeNS(null, 'cy', 25)
-  // shape.setAttributeNS(null, 'r',  20)
-  // shape.setAttributeNS(null, 'fill', 'green')
-  //svg.appendChild(shape)
-
-  //path.setAttributeNS(null, 'd',  'M 0 128 C 64 128, 64 30, 128 30 C 128 30, 256 30, 256 30')
-  // drawPath(svg, 0,256,30, 'red')
-  // drawPath(svg, 10,128,50, 'green')
-  // drawPath(svg, 10,256,47, 'blue')
-
-  ////////////////////
-  Object.values(data).forEach(({name, color, skill, ranges})=>{
-    ranges.forEach(({from, to})=>{
-      const size = max - min
-      const x1 = (from - min)/size*width
-      const x2 = (to - min)/size*width
-      drawPath(svg, x1, x2, 30+8*skill, color)
-    })
-    console.log('objects', name) // todo: remove log
-  })
-  ////////////////////
-
-  return svg
-}
-
-/**
- * Draw path onto SVG document
- * @param {SVGElement} svg
- * @param {number} x1
- * @param {number} x2
- * @param {number} size
- * @param {string} color
- */
-function drawPath(svg, x1, x2, size, color) {
-  const margin = Math.min((x2-x1)/2, 8)
-  const y = 128 - 2
-  const path = document.createElementNS(svgns, 'path')
-  //path.setAttributeNS(null, 'd',  'M 0 128 C 64 128, 64 30, 128 30 L 256 30')
-  path.setAttributeNS(null, 'd',  `M ${x1} ${y} C ${x1+margin} ${y}, ${x1+margin} ${y-size}, ${x1+2*margin} ${y-size} L ${x2-2*margin} ${y-size} C ${x2-margin} ${y-size} ${x2-margin} ${y} ${x2} ${y} `)
-  path.setAttributeNS(null, 'fill', 'transparent')
-  path.setAttributeNS(null, 'stroke', color)
-  path.setAttributeNS(null, 'stroke-width', '2')
-  svg.appendChild(path)
 }

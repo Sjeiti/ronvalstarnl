@@ -1,7 +1,7 @@
 {
   "name": "ronvalstarnl",
   "author": "Ron Valstar",
-  "version": "0.5.43",
+  "version": "0.5.45",
   "license": "MIT",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
@@ -14,6 +14,8 @@
     "build:json": "node task/markdown2json",
     "build:search": "node task/buildSearch",
     "build:sitemap": "node task/buildSitemap --target dist",
+    "build:tags": "node task/buildTags --target dist/data/json",
+    "build:tags:watch": "npm run build:tags & chokidar \"src/data/markdown/fortpolio_*.md\" -c \"npm run build:tags\"",
     "build:rss": "node task/buildRSS --target dist",
     "build:less": "node task/lessGlob",
     "build:icons": "node task/icons --source temp/icomoon/SVG/logo.svg --target ./dist/static/icon --sizes 16,32,180",
