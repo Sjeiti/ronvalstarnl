@@ -1,7 +1,7 @@
 {
   "name": "ronvalstarnl",
   "author": "Ron Valstar",
-  "version": "0.5.45",
+  "version": "0.5.47",
   "license": "MIT",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
@@ -9,7 +9,7 @@
     "start": "run-p build serve write dev:less",
     "dev:less": "chokidar \"src/*.less\" -c \"npm run build:less\"",
     "build": "run-s clean build:less \"webpack -- --env development --watch\"",
-    "build:prod": "run-s clean build:less build:unzip build:json build:search build:icons \"webpack -- --env production\" build:sitemap build:rss",
+    "build:prod": "run-s clean build:less build:unzip build:json build:search build:tags build:icons \"webpack -- --env production\" build:sitemap build:rss",
     "build:unzip": "unzip src/data/icomoon.zip temp/icomoon",
     "build:json": "node task/markdown2json",
     "build:search": "node task/buildSearch",

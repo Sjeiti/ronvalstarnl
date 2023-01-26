@@ -23,7 +23,7 @@ add(
 
       // skills
       view.appendString(expand('h2{skills by year}'), false)
-      view.appendChild(buildSkillsTable(tags), false)
+      view.querySelector('#skillsWrapper').appendChild(buildSkillsTable(tags))
 
 
       // projects
@@ -168,6 +168,7 @@ function buildSkillsTable(projects){
       includes&&(xp = xp + 1 + year - lowest)
     }
     tbodytr.dataset.xp = xp
+    tbodytr.firstChild.dataset.skill = Math.ceil(xp/153*5)
   })
 
   const entryList = Array.from(tbody.querySelectorAll('tr'))
@@ -175,9 +176,14 @@ function buildSkillsTable(projects){
   const menu = elm('menu')
   elm('button', menu, 'sort by weight').addEventListener('click', sortAscDesc(sortXP))
   elm('button', menu, 'sort by A-Z').addEventListener('click', sortAscDesc(sortAZ))
-  elm('input', first).addEventListener('input', onInputFilter)
+  const input = elm('input', first)
+  input.addEventListener('input', onInputFilter)
+  input.addEventListener('dblclick', ()=>menu.style.display='block')
+
 
   sortXP()()
+  onInputFilter({currentTarget:{value:'css|html|javascript|vue|react|angular|accessibility|UX|design system|storybook|scrum|Cypress|JSDoc'}})
+
 
   const skillsTable = elm('div')
   skillsTable.classList.add(classSkillsTable)

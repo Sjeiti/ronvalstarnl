@@ -146,22 +146,25 @@ body[data-pathname^=cv] {
 .skillsTable {
 
   --color-row: #F04;
+  --color-row-off: #EEE;
 
   font-size: 0.75rem;
   line-height: 160%;
   menu {
     padding: 0;
+    display: none;
   }
   table {
+    width: 100%;
     border-spacing: 0;
     border-collapse: separate;
   }
-  thead th {
-    padding: 0 0.5rem;
+  thead td {
+    width: 8rem;
   }
   tbody tr:nth-child(even) {
     --color-row: #E03;
-    background-color: #EEE;
+    background-color: var(--color-row-off);
   }
   tr.hide {
     display: none;
@@ -173,10 +176,18 @@ body[data-pathname^=cv] {
     padding: 0;
   }
   thead {
-    box-shadow: 0 0.0625rem 0 0 black;
+    box-shadow: 0 0.0625rem 0 0 var(--color-row-off);
+    @media (max-width: 582px) {
+      th {
+        overflow: visible;
+        &:nth-child(odd) {
+          color: transparent;
+        }
+      }
+    }
   }
   tbody th:first-child {
-    box-shadow: 0.0625rem 0 0 0 black;
+    box-shadow: -0.0625rem 0 0 0 var(--color-row-off) inset;
   }
   th:first-child {
     text-align: left;
