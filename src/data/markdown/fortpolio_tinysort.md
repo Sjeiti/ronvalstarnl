@@ -4,7 +4,7 @@
   type: fortpolio
   excerpt: <p>A sorting script I wrote and maintain.</p>
   categories: JavaScript, open source
-  tags: JavaScript, jQuery, JSDoc
+  tags: JavaScript, jQuery, JSDoc, TDD, JUnit
   clients: 
   collaboration: 
   prizes: 

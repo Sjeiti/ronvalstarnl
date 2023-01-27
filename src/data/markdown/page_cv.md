@@ -47,7 +47,14 @@ I can read and write several backend languages and I'm not afraid to learn somet
 
 ## skills
 
-<div id="skillsWrapper"></div>
+<div 
+    id="skillsWrapper"
+    data-skills="css|html|javascript|vue|react|angular|accessibility|ux|design system|storybook|scrum|tdd|cypress|jsdoc"
+    data-associations='{
+  "css": ["CSS3", "SASS", "LESS", "BEM"]  
+}'
+>
+</div>
 
 <!--
 ### programming
