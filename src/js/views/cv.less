@@ -182,7 +182,7 @@ body[data-pathname^=cv] {
         top: 0;
         transform: translateX(-50%);
       }
-      @media (max-width: 582px) {
+      @media (max-width: 640px) {
         .year {
           display: none;
           &.year--lowest
@@ -198,9 +198,12 @@ body[data-pathname^=cv] {
   th:first-child {
     text-align: left;
   }
-  tbody td:not(:empty) {
-    color: var(--color-row);
-    background-color: var(--color-row);
+  tbody td {
+    font-size: 0;
+    &:not(:empty) {
+      color: var(--color-row);
+      background-color: var(--color-row);
+    }
   }
   input {
     width: 100%;

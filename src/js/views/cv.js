@@ -1,63 +1,52 @@
-import {expand} from '../utils/html'
+import {createElement, expand} from '../utils/html'
 import {add} from '../router'
-// import html2pdf from 'html2pdf.js'
 import {slugify} from '../utils/string'
 import {fetchJSONFiles} from '../utils'
-// import htmlDocx from 'html-docx-js/dist/html-docx'
-// import {saveAs} from 'file-saver'
-// import turndown from 'turndown'
+import {initialise} from '../component'
 
 add(
   'cv'
-  ,async (/**View*/view/*, route, params*/) => {
+  , async(/**View*/view/*, route, params*/) => {
 
       const response = await fetchJSONFiles('page_cv', 'fortpolio-list', 'tags')
-      const [page,projects,tags] = response
-      console.log('{page, projects, tags}',{page,projects,tags}) // todo: remove log
+      const [page, projects, tags] = response
 
       view.appendString(page.content)
-      // try { // A Shrodingers error here
       view.addEventListener('click', onClickDownload)
-      // }catch(err){/**/}
 
+      buildSkillsTable(tags, view.querySelector('#skillsWrapper'))
 
-      // skills
-      //view.appendString(expand('h2{skills by year}'), false)
-      view.querySelector('#skillsWrapper').appendChild(buildSkillsTable(tags))
+      buildProjects(projects, view)
 
+      return page
+    }
+)
 
-      // projects
-      view.appendString(expand('h2{projects}'),false)
-      const cvProjects = projects
-          .filter(p => p.inCv)
-          // .sort((a, b)=>new Date(a.dateFrom)>new Date(b.dateFrom)?-1:1)
-          .sort((a,b) => new Date(a.dateTo)>new Date(b.dateTo)?-1:1)
+/**
+ * Build a project list and append it to the view
+ * @param {any[]} projects
+ * @param {View} target
+ */
+function buildProjects(projects, target){
+  target.appendString(expand('h2{projects}'), false)
+  const cvProjects = projects
+      .filter(p => p.inCv)
+      .sort((a, b) => new Date(a.dateTo)>new Date(b.dateTo)?-1:1)
 
-      // cvProjects
-      // const tagList = cvProjects.reduce((acc, project)=>{
-      //   project.tags.forEach(tag=>acc.includes(tag)||acc.push(tag))
-      //   return acc
-      // }, [])
-      // const tagUl = expand(`ul.tags>(${tagList.map(tag=>`li{${tag}}`).join('+')})`)
-      // view.appendString(tagUl, false)
-
-      let projectString = expand(`ul.unstyled.cv-projects>(${cvProjects.map((project,i) => `(
+  let projectString = expand(`ul.unstyled.cv-projects>(${cvProjects.map((project, i) => `(
           li${project.categories.map(c => `.cat-${slugify(c)}`).join('')}
             >(header
               >(h3${(project.inPortfolio?`>a[href="/project/${project.slug}"]{${project.title}}`:`{${project.title}}`)})
-              +(.date>time.date-from{${project.dateFrom.replace(/-\d\d$/,'')}}
-              +time.date-to{${project.dateTo.replace(/-\d\d$/,'')}})
+              +(.date>time.date-from{${project.dateFrom.replace(/-\d\d$/, '')}}
+              +time.date-to{${project.dateTo.replace(/-\d\d$/, '')}})
             )
             +{replaceContent${i}}
             ${(project.clients?.length?`+dl>(dt{client}+dd{${project.clients.join(', ')}})`:'')}
             +(ul.tags>(${project.tags.map(tag => `li{${tag}}`).join('+')}))
          )`).join('+')})`)
-      cvProjects.forEach((project,i) => projectString = projectString.replace('replaceContent' + i,project.excerpt && `<p>${project.excerpt}</p>` || project.content))
-      view.appendString(projectString,false)
-
-      return page
-    }
-)
+  cvProjects.forEach((project, i) => projectString = projectString.replace('replaceContent' + i, project.excerpt && `<p>${project.excerpt}</p>` || project.content))
+  target.appendString(projectString, false)
+}
 
 /**
  * Download doc if correct anchor is clicked
@@ -93,22 +82,7 @@ function onClickDownload(e){
         .replace(/\n\n\n+/gm, '\n\n')
         .replace(/\nclient\n/gm, '\nclient: ')
     target.setAttribute('href', 'data:text/plain;charset=utf-8;base64,' + btoa(text))
-  }/* else if (target.matches('a[data-download-md]')){
-    const td = new turndown()
-    const md = td.turndown(getHTMLToParse().outerHTML)
-    target.setAttribute('href', 'data:text/plain;charset=utf-8;base64,'+btoa(md))
-  } else if (target.matches('a[data-pdf]')){
-    e.preventDefault()
-    html2pdf(getHTMLToParse(), {
-      filename: target.getAttribute('href').split(/\//g).pop()
-      , image: {type: 'png', quality: 0.95}
-    })
-  } else if (target.matches('a[data-doc]')){
-    e.preventDefault()
-    const data = getHTMLToParse()
-    const converted = htmlDocx.asBlob(data)
-    saveAs(converted, 'test.docx')
-  }*/
+  }
 }
 
 /**
@@ -124,7 +98,13 @@ function getHTMLToParse(){
 
 ////////////////////////////////////////////////////////////////////////
 
-function buildSkillsTable(projects){
+/**
+ * Build a skills table and append it to the view
+ * @param {object[]} projects
+ * @param {HTMLElement} target
+ * @returns {HTMLElement}
+ */
+function buildSkillsTable(projects, target){
 
   const desc = 'desc'
   const classSkillsTable = 'skillsTable'
@@ -134,7 +114,7 @@ function buildSkillsTable(projects){
   const result = projects.reduce((acc, project)=>{
     const {tags, dateFrom, dateTo} = project
 
-    const [yearFrom, yearTo] = [dateFrom, dateTo].map(s=>parseInt(s.split(/-/)[0],10))
+    const [yearFrom, yearTo] = [dateFrom, dateTo].map(s=>parseInt(s.split(/-/)[0], 10))
 
     tags?.forEach(tag=>{
 
@@ -148,15 +128,14 @@ function buildSkillsTable(projects){
   const lowest = Math.min(...Object.values(result).map(a=>Math.min(...a)))
   const highest = Math.max(...Object.values(result).map(a=>Math.max(...a)))
 
-  const table = elm('table')
-  const thead = elm('thead', table)
-  const theadtr = elm('tr', thead)
-  const tbody = elm('tbody', table)
+  const table = createElement('table')
+  const thead = createElement('thead', null, table)
+  const theadtr = createElement('tr', null, thead)
+  const tbody = createElement('tbody', null, table)
 
-  const first = elm('td', theadtr)
-  for(let year=lowest;year<=highest;year++) {
-    const span = elm('span', elm('th', theadtr))
-    span.textContent = year
+  const first = createElement('td', null, theadtr)
+  for(let year=lowest;year<=highest;year++){
+    const span = createElement('span', null, createElement('th', null, theadtr), null, year)
     const add = s=>span.classList.add(s)
     add('year')
     add('year--'+year)
@@ -164,41 +143,57 @@ function buildSkillsTable(projects){
     year===highest&&add('year--highest')
   }
 
-  Object.entries(result).forEach(([title,years])=>{
-    const tbodytr = elm('tr', tbody)
-    elm('th', tbodytr).textContent = title
+  const trxp = Object.entries(result).map(([title, years])=>{
+    const tr = createElement('tr', null, tbody)
+    createElement('th', null, tr, null, title)
+    //
     let xp = 0
-    for(let year=lowest;year<=highest;year++) {
+    for(let year=lowest;year<=highest;year++){
+      const index = year - lowest
       const includes = years.includes(year)
-      elm('td', tbodytr).textContent = includes?'1':''
-      includes&&(xp = xp + 1 + year - lowest)
+      createElement('td', null, tr, null,  includes?'1':'')
+      includes&&(xp = xp + 1 + 0.5*index)
     }
-    tbodytr.dataset.xp = xp
-    tbodytr.firstChild.dataset.skill = Math.ceil(xp/153*5)
+    tr.dataset.xp = xp.toFixed(0)
+    //
+    return {tr, xp}
   })
 
-  const entryList = Array.from(tbody.querySelectorAll('tr'))
+  const maxXp = Math.max(...trxp.map(o=>o.xp))
+  trxp.forEach(({tr, xp})=>{
+    tr.firstChild.dataset.skill = Math.round(1 + xp/maxXp*4.4) // Math.ceil(1 + (1-((1-(xp/maxXp))**2))*4)
+    initialise(tr)
+  })
 
-  const menu = elm('menu')
-  elm('button', menu, 'sort by weight').addEventListener('click', sortAscDesc(sortXP))
-  elm('button', menu, 'sort by A-Z').addEventListener('click', sortAscDesc(sortAZ))
-  const input = elm('input', first)
+  const entryList = trxp.map(o=>o.tr)
+
+  const menu = createElement('menu')
+  createElement('button', null, menu, null, 'sort by weight').addEventListener('click', sortAscDesc(sortXP))
+  createElement('button', null, menu, null, 'sort by A-Z').addEventListener('click', sortAscDesc(sortAZ))
+  const input = createElement('input', null, first)
   input.addEventListener('input', onInputFilter)
   input.addEventListener('dblclick', ()=>menu.style.display='block')
 
 
   sortXP()()
-  onInputFilter({currentTarget:{value:'css|html|javascript|vue|react|angular|accessibility|UX|design system|storybook|scrum|Cypress|JSDoc'}})
+  const {skills} = target.dataset
+  skills&&onInputFilter({currentTarget:{value:skills}})
 
 
-  const skillsTable = elm('div')
+  const skillsTable = createElement('div')
   skillsTable.classList.add(classSkillsTable)
   skillsTable.appendChild(menu)
   skillsTable.appendChild(table)
+  target.appendChild(skillsTable)
+
   return skillsTable
 
   //////////////////////////////////////////////////////////////////////////////////////
 
+  /**
+   * Event handler to sort skills table
+   * @param {Event} e
+   */
   function onInputFilter(e){
     const {currentTarget: {value}} = e
     const fragment = document.createDocumentFragment()
@@ -213,6 +208,11 @@ function buildSkillsTable(projects){
     tbody.appendChild(fragment)
   }
 
+  /**
+   * Sorting for table rows
+   * @param {Function} sortMethod
+   * @returns {Function}
+   */
   function sort(sortMethod){
     return ()=>{
       const children = clearBody()
@@ -224,25 +224,44 @@ function buildSkillsTable(projects){
     }
   }
 
+  /**
+   * Clear the table body
+   * @returns {Element[]}
+   */
   function clearBody(){
     const children = Array.from(tbody.children)
     children.forEach(child=>child.remove())
     return children
   }
 
+  /**
+   * Sort by experience
+   * @param {boolean} asc
+   * @returns {Function}
+   */
   function sortXP(asc=true){
-    return sort((a,b)=>(asc?-1:1)*(parseInt(a.dataset.xp, 10)>parseInt(b.dataset.xp, 10)?1:-1))
+    return sort((a, b)=>(asc?-1:1)*(parseInt(a.dataset.xp, 10)>parseInt(b.dataset.xp, 10)?1:-1))
   }
 
+  /**
+   * Sort alfabetically
+   * @param {boolean} asc
+   * @returns {Function}
+   */
   function sortAZ(asc=true){
-    return sort((a,b)=>(asc?1:-1)*(a.firstChild.textContent>b.firstChild.textContent?1:-1))
+    return sort((a, b)=>(asc?1:-1)*(a.firstChild.textContent>b.firstChild.textContent?1:-1))
   }
 
+  /**
+   * Sort ascending or descending
+   * @param {Function} method
+   * @returns {Function}
+   */
   function sortAscDesc(method){
     return (e)=>{
       const current = document.querySelector(currentSortSelector)
       const {currentTarget} = e
-      if (current===currentTarget) {
+      if (current===currentTarget){
         currentTarget.classList.toggle(desc)
       } else {
         current?.classList.remove(classCurrentSort)
@@ -250,12 +269,5 @@ function buildSkillsTable(projects){
       }
       method(!currentTarget.classList.contains(desc))()
     }
-  }
-
-  function elm(name, parent, text){
-    const m = document.createElement(name)
-    text&&m.appendChild(document.createTextNode(text))
-    parent?.appendChild(m)
-    return m
   }
 }

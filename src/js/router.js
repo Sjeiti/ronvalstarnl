@@ -116,6 +116,9 @@ export function open(uri, popped){
   }
 }
 
+/**
+ * @typedef {Object} View
+ */
 
 /**
  * A factory method for the view that is parsed with each route change
