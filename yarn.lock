@@ -2908,7 +2908,7 @@ expand-template@^2.0.3:
 
 "experiments@github:Sjeiti/experiment":
   version "1.1.8"
-  resolved "git+ssh://git@github.com/Sjeiti/experiment.git#f6ad41b32d1349e0c1db698cd38602e1b159d8a1"
+  resolved "https://codeload.github.com/Sjeiti/experiment/tar.gz/f6ad41b32d1349e0c1db698cd38602e1b159d8a1"
   dependencies:
     "@emmetio/expand-abbreviation" "^0.7.3"
     gsap "^3.6.0"
