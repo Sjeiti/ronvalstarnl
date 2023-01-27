@@ -166,9 +166,6 @@ body[data-pathname^=cv] {
     --color-row: #E03;
     background-color: var(--color-row-off);
   }
-  tr.hide {
-    display: none;
-  }
   th {
     font-weight: normal;
   }
@@ -177,17 +174,26 @@ body[data-pathname^=cv] {
   }
   thead {
     box-shadow: 0 0.0625rem 0 0 var(--color-row-off);
-    @media (max-width: 582px) {
-      th {
-        overflow: visible;
-        &:nth-child(odd) {
-          color: transparent;
+    th {
+      position: relative;
+      span {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+      }
+      @media (max-width: 582px) {
+        .year {
+          display: none;
+          &.year--lowest
+          , &.year--highest
+          , &.year--2015 { display: inline; }
         }
       }
     }
   }
   tbody th:first-child {
-    box-shadow: -0.0625rem 0 0 0 var(--color-row-off) inset;
+    box-shadow: -0.125rem 0 0 0 var(--color-row-off) inset;
   }
   th:first-child {
     text-align: left;

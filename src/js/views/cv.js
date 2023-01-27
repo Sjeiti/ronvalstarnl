@@ -22,7 +22,7 @@ add(
 
 
       // skills
-      view.appendString(expand('h2{skills by year}'), false)
+      //view.appendString(expand('h2{skills by year}'), false)
       view.querySelector('#skillsWrapper').appendChild(buildSkillsTable(tags))
 
 
@@ -155,7 +155,13 @@ function buildSkillsTable(projects){
 
   const first = elm('td', theadtr)
   for(let year=lowest;year<=highest;year++) {
-    elm('th', theadtr).textContent = year
+    const span = elm('span', elm('th', theadtr))
+    span.textContent = year
+    const add = s=>span.classList.add(s)
+    add('year')
+    add('year--'+year)
+    year===lowest&&add('year--lowest')
+    year===highest&&add('year--highest')
   }
 
   Object.entries(result).forEach(([title,years])=>{

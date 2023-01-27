@@ -49,6 +49,7 @@ I can read and write several backend languages and I'm not afraid to learn somet
 
 <div id="skillsWrapper"></div>
 
+<!--
 ### programming
 
 <ul class="list-unstyled">
@@ -71,9 +72,10 @@ I can read and write several backend languages and I'm not afraid to learn somet
 	<li data-skill="4">graphic design</li>
 	<li data-skill="3">illustration</li>
 	<li data-skill="3">information visualisation</li>
-	<!-- accessibility, usability, information architecture  -->
+	accessibility, usability, information architecture
 </ul> 
- 
+-->
+
 </div>
 </div>
  
