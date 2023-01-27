@@ -1,12 +1,12 @@
 {
   "name": "ronvalstarnl",
   "author": "Ron Valstar",
-  "version": "0.5.49",
+  "version": "0.5.50",
   "license": "MIT",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
   "scripts": {
-    "start": "run-p build serve write dev:less",
+    "start": "run-p build serve write dev:less build:tags",
     "dev:less": "chokidar \"src/*.less\" -c \"npm run build:less\"",
     "build": "run-s clean build:less \"webpack -- --env development --watch\"",
     "build:prod": "run-s clean build:less build:unzip build:json build:search build:tags build:icons \"webpack -- --env production\" build:sitemap build:rss",
