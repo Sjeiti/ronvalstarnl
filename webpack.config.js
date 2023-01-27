@@ -73,13 +73,13 @@ module.exports = env => {
           , { from: 'src/data/search', to: './data/search' }
           , { from: 'RV_algvw20*.*', to: './data', context: 'src/data/' }
           , { from: 'src/static', to: './static' }
-          , { from: 'node_modules/Experiments/src/experiment/', to: './static/experiment' }
+          , { from: 'node_modules/experiments/src/experiment/', to: './static/experiment' }
           , {
-            from: 'node_modules/Experiments/src/experiment/'
+            from: 'node_modules/experiments/src/experiment/'
             , to: './static/experiment/[name].[ext]_'
             , toType: 'template',
           }
-          , { from: 'node_modules/Experiments/src/static/glsl/', to: './static/glsl' }
+          , { from: 'node_modules/experiments/src/static/glsl/', to: './static/glsl' }
       ]})
       , new webpack.DefinePlugin({
         _VERSION: JSON.stringify(require('./package.json').version)
