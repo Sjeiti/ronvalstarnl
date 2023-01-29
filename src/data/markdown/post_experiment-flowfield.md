@@ -6,7 +6,7 @@
   type: post
   excerpt: <p>A flow field is a vector field used to move particles. In this case the field is provided by a 3D Simplex field (2D and time). The number of particles is dynamic; particles are added and removed to reach an optimal framerate.</p>
   categories: uncategorized
-  tags: simplex noise, cool shit, experiment, particles
+  tags: procedural, cool shit, experiment, particles
   inCv: 
   inPortfolio: 
   dateFrom: 

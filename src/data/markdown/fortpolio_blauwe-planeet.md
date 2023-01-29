@@ -4,7 +4,7 @@
   type: fortpolio
   excerpt: <p>This is an actually an older CD-Rom project I&#8217;d worked on before at Shapers for Thieme Meullenhoff. Within a week I created a Flash prototype that looked and worked better than the original Director version.</p>
   categories: game, illustration, graphic design
-  tags: XML, graphic design, ActionScript, Flash, illustration, interaction design, game, concept
+  tags: XML, graphic design, ActionScript, Flash, illustration, UX, game, concept
   clients: Shapers
   collaboration: 
   prizes: 

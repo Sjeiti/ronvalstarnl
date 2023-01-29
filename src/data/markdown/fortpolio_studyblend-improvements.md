@@ -3,7 +3,7 @@
   slug: studyblend-improvements
   type: fortpolio
   categories: 
-  tags: Angular, REST, Grunt, interaction design, JSDoc, concept
+  tags: Angular, REST, Grunt, UX, JSDoc, concept
   clients: 
   collaboration: 
   prizes: 

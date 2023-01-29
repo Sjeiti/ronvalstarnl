@@ -69,9 +69,11 @@ add(
         // blog
         const currentPast = stickiesFirst(posts.filter(todayOlderFilter))
         const firstTen = currentPast.slice(0, 10)
+        const [first, ...rest] = firstTen.filter(p=>!p.sticky)
+        const sticked = [first, ...firstTen.filter(p=>p.sticky)]
         const getLi = post=>`(li>a[href="/${post.slug}"]>(time{${post.date.split('T').shift()}}+{${post.title}}))`
-        const stickies = `(.paper>div>ul.unstyled.link-list>(${firstTen.filter(p=>p.sticky).map(getLi).join('+')}))`
-        const others = `ul.unstyled.link-list>(${firstTen.filter(p=>!p.sticky).map(getLi).join('+')})`
+        const stickies = `(.paper>div>ul.unstyled.link-list>(${sticked.map(getLi).join('+')}))`
+        const others = `ul.unstyled.link-list>(${rest.map(getLi).join('+')})`
         view.expandAppend(`section.written>(h2.section-title>small{articles}+{written})+${stickies}+${others}`, false)
         return page
       })

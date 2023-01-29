@@ -3,9 +3,9 @@
   type: fortpolio
   metaKeyword: spreadsheet
   metaTitle: Sympany spreadsheet
-  metaDescription: Development of the 2020 design-united website that broadcasts the Dutch Design Week.
+  metaDescription: Development of an open source Wordpress plugin that reads and displays spreadsheets that can be interacted with.
   categories: JavaScript, HTML/CSS
-  tags: JavaScript, HTML/CSS, Wordpress, volunteer work
+  tags: JavaScript, HTML, CSS, Wordpress, open source
   clients: Sympany
   inCv: true
   inPortfolio: false
@@ -16,3 +16,4 @@
 # Sympany spreadsheet plugin
 
 Development of an open source Wordpress plugin that reads and displays spreadsheets that can be interacted with.
+Work was done as volunteer work.

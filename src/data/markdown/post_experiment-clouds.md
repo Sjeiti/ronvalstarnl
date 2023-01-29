@@ -6,7 +6,7 @@
   type: post
   excerpt: <p>At first I tried this in plain JavaScript but it was way too slow. So here are some clouds in GLSL.</p>
   categories: code, GLSL
-  tags: simplex noise, cool shit, experiment
+  tags: procedural, cool shit, experiment
   inCv: 
   inPortfolio: 
   dateFrom: 

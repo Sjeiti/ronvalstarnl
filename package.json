@@ -1,19 +1,21 @@
 {
   "name": "ronvalstarnl",
   "author": "Ron Valstar",
-  "version": "0.5.41",
+  "version": "0.5.53",
   "license": "MIT",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
   "scripts": {
-    "start": "run-p build serve write dev:less",
+    "start": "run-p build serve write dev:less build:tags",
     "dev:less": "chokidar \"src/*.less\" -c \"npm run build:less\"",
     "build": "run-s clean build:less \"webpack -- --env development --watch\"",
-    "build:prod": "run-s clean build:less build:unzip build:json build:search build:icons \"webpack -- --env production\" build:sitemap build:rss",
+    "build:prod": "run-s clean build:less build:unzip build:json build:search build:tags build:icons \"webpack -- --env production\" build:sitemap build:rss",
     "build:unzip": "unzip src/data/icomoon.zip temp/icomoon",
     "build:json": "node task/markdown2json",
     "build:search": "node task/buildSearch",
     "build:sitemap": "node task/buildSitemap --target dist",
+    "build:tags": "node task/buildTags --target dist/data/json",
+    "build:tags:watch": "npm run build:tags & chokidar \"src/data/markdown/fortpolio_*.md\" -c \"npm run build:tags\"",
     "build:rss": "node task/buildRSS --target dist",
     "build:less": "node task/lessGlob",
     "build:icons": "node task/icons --source temp/icomoon/SVG/logo.svg --target ./dist/static/icon --sizes 16,32,180",
@@ -35,7 +37,7 @@
   },
   "dependencies": {
     "@emmetio/expand-abbreviation": "^0.7.3",
-    "Experiments": "github:Sjeiti/experiment",
+    "experiments": "github:Sjeiti/experiment",
     "gsap": "^3.6.0",
     "prismjs": "^1.27.0",
     "signals": "^1.0.0"
@@ -95,6 +97,7 @@
     "webpack": "^5.21.1",
     "webpack-cli": "^4.5.0",
     "webpack-watch-files-plugin": "^1.1.0",
+    "xmldom": "^0.6.0",
     "yorkie": "^2.0.0"
   },
   "_optionalDependencies": {

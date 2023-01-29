@@ -4,7 +4,7 @@
   type: fortpolio
   excerpt: <p>A crossplatform Air application that turns image sequences into an HTML5 3D viewer that works crossdevice, crossplatform and crossbrowser.</p>
   categories: 
-  tags: HTML, JavaScript, ActionScript, Air, Flash, interaction design, concept
+  tags: HTML, JavaScript, ActionScript, Air, Flash, UX, concept
   clients: StillsnMotion
   collaboration: 
   prizes: 

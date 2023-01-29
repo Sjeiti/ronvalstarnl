@@ -4,7 +4,7 @@
   type: fortpolio
   excerpt: <p>Design and creation of a website that depicted a wooden desktop over which a camera pans, zooms and rotates.</p>
   categories: JavaScript, HTML/CSS, video, illustration
-  tags: Filter Forge, HTML, graphic design, ActionScript, Flash, video, interaction design, concept
+  tags: Filter Forge, HTML, CSS, JavaScript, graphic design, ActionScript, Flash, video, UX, concept
   clients: Kosmonaut
   collaboration: 
   prizes: 

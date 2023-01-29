@@ -142,3 +142,78 @@ body[data-pathname^=cv] {
       fill: @colorGray;
   }
 }
+
+.skillsTable {
+
+  --color-row: #F04;
+  --color-row-off: #EEE;
+
+  font-size: 0.75rem;
+  line-height: 160%;
+  menu {
+    padding: 0;
+    display: none;
+  }
+  table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+  }
+  thead td {
+    width: 8rem;
+  }
+  tbody tr:nth-child(even) {
+    --color-row: #E03;
+    background-color: var(--color-row-off);
+  }
+  th {
+    font-weight: normal;
+  }
+  th, td {
+    padding: 0;
+  }
+  thead {
+    box-shadow: 0 0.0625rem 0 0 var(--color-row-off);
+    th {
+      position: relative;
+      span {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+      }
+      @media (max-width: 640px) {
+        .year {
+          display: none;
+          &.year--lowest
+          , &.year--highest
+          , &.year--2015 { display: inline; }
+        }
+      }
+    }
+  }
+  tbody th:first-child {
+    box-shadow: -0.125rem 0 0 0 var(--color-row-off) inset;
+  }
+  th:first-child {
+    text-align: left;
+  }
+  tbody td {
+    font-size: 0;
+    &:not(:empty) {
+      color: var(--color-row);
+      background-color: var(--color-row);
+    }
+  }
+  input {
+    width: 100%;
+    margin: 0;
+  }
+
+  .currentSort:after {
+    content: ' \25BC'; /* ▼ */
+  }
+  .currentSort.desc:after {
+    content: ' \25B2'; /* ▲ */
+  }
+}

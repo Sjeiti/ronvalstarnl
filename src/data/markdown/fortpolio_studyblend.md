@@ -4,7 +4,7 @@
   type: fortpolio
   excerpt: Design and development of a single-page responsive web application that allows teachers and students to track their progress during a course. Used Angular as JavaScript framework and Laravel to create a REST service.
   categories: JavaScript, HTML/CSS, framework, mobile
-  tags: Angular, Laravel, REST, Grunt, interaction design, JSDoc, concept
+  tags: Angular, Laravel, REST, Grunt, UX, JSDoc, concept
   clients: Shapers
   thumbnail: HSO-App-students.png
   image: HSO-App-students.png

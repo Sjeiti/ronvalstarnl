@@ -3,7 +3,7 @@
   slug: juridaii
   type: fortpolio
   categories: 3D, illustration, graphic design, UX
-  tags: HTML, XML, ActionScript, Flash, interaction design, concept
+  tags: HTML, XML, ActionScript, Flash, UX, concept
   clients: Lea Jurida
   collaboration: 
   prizes: 

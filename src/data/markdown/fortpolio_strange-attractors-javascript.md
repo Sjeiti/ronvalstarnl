@@ -4,7 +4,7 @@
   type: fortpolio
   excerpt: <p>A pure JavaScript strange attractor renderer with a WebGL preview. Renders images and animated gifs from mathematical formulas with interpolated variables.</p>
   categories: JavaScript, 3D, video, open source
-  tags: JavaScript, UX, math, cool shit, particles, WebGL, concept
+  tags: JavaScript, UX, procedural, cool shit, WebGL, concept
   clients: 
   collaboration: 
   prizes: 

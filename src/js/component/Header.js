@@ -1,4 +1,4 @@
-import experiments from 'Experiments/src/experiment/index.js'
+import experiments from 'experiments/src/experiment/index.js'
 
 import {create} from './index'
 import {BaseComponent} from './BaseComponent'

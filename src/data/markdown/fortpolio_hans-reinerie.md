@@ -3,7 +3,7 @@
   slug: hans-reinerie
   type: fortpolio
   categories: JavaScript, HTML/CSS
-  tags: CSS, HTML, JavaScript, Wordpress, graphic design, interaction design, concept
+  tags: CSS, HTML, JavaScript, Wordpress, graphic design, UX, concept
   clients: Hans Reinerie
   collaboration: 
   prizes: 
