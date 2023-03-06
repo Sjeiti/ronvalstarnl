@@ -8,15 +8,20 @@ add(
   'cv'
   , async(/**View*/view/*, route, params*/) => {
 
+      console.log('cv')// todo remove
       const response = await fetchJSONFiles('page_cv', 'fortpolio-list', 'tags')
       const [page, projects, tags] = response
 
+      console.log('cv1')// todo remove
       view.appendString(page.content)
       view.addEventListener('click', onClickDownload)
 
       buildSkillsTable(tags, view.querySelector('#skillsWrapper'))
 
+      console.log('cv2')// todo remove
       buildProjects(projects, view)
+
+      console.log('cv3')// todo remove
 
       return page
     }
@@ -143,6 +148,23 @@ function buildSkillsTable(projects, target){
     year===highest&&add('year--highest')
   }
 
+    //////////////////
+    //////////////////
+  //try{
+    const xps = target.dataset.skills
+      .toLowerCase()
+      .split(/\|/g)
+      .reduce((acc, s)=>{
+        const [key, value] = s.split(':')
+        value&&(acc[key] = parseFloat(value))
+        return acc
+      }, {})
+  //}catch(err){
+  //  console.log('err',err)
+  //}
+    console.log('xps',JSON.stringify(xps))
+    //////////////////
+    //////////////////
   const trxp = Object.entries(result).map(([title, years])=>{
     const tr = createElement('tr', null, tbody)
     createElement('th', null, tr, null, title)
@@ -154,7 +176,9 @@ function buildSkillsTable(projects, target){
       createElement('td', null, tr, null,  includes?'1':'')
       includes&&(xp = xp + 1 + 0.5*index)
     }
-    tr.dataset.xp = xp.toFixed(0)
+    // 
+    tr.dataset.xp = xps[title.toLowerCase()]||xp.toFixed(0)
+    console.log('title',title,tr.dataset.xp)
     //
     return {tr, xp}
   })
@@ -195,9 +219,11 @@ function buildSkillsTable(projects, target){
    * @param {Event} e
    */
   function onInputFilter(e){
+    console.log('onInputFilter')// todo remove
     const {currentTarget: {value}} = e
     const fragment = document.createDocumentFragment()
-    const filters = value.toLowerCase().split(/\|/g).map(s=>s.trim())
+    const filters = value.toLowerCase()
+      .split(/\|/g).map(s=>s.split(':').shift().trim())
     clearBody()
     entryList.forEach(tr=>
       filters.forEach(filter=>
