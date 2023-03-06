@@ -49,10 +49,10 @@ I can read and write several backend languages and I'm not afraid to learn somet
 
 <div 
     id="skillsWrapper"
-    data-skills="css|html|javascript|vue|react|angular|accessibility|ux|design system|storybook|scrum|tdd|cypress|jsdoc"
+    data-skills="css|html|javascript|vue|react:4.5|angular|accessibility|ux|design system|storybook|scrum|tdd|cypress:5|jsdoc"
     data-associations='{
   "css": ["CSS3", "SASS", "LESS", "BEM"]  
-}'
+}' 
 >
 </div>
 
