@@ -11,6 +11,23 @@ body[data-pathname^=cv] {
         transform: translateX(-50%) scale(0.75) translateY(-1rem);
       }
     }
+
+    .page-break {
+      page-break-after: always;
+    }
+
+    header nav
+    , [href$=".pdf"]
+    , footer
+    , .experiment-wrapper
+    , [data-download] { display: none; }
+
+    #skills { margin-top: 1rem; }
+    #projects {
+      margin-top: 0;
+      padding-top: 4rem;
+    }
+
     main {
       margin: 0 auto;
       max-width: fit-content;
@@ -18,22 +35,16 @@ body[data-pathname^=cv] {
         box-shadow: none;
       }
     }
-    header nav,
-    [href$=".pdf"],
-    footer {
-      display: none;
-    }
     small { font-size: 0.5rem; }
     .print-columns {
       display: flex;
       flex-wrap: wrap;
       >div {
+        flex: 0 0 50%;
         &:first-child {
-          flex: 0 0 50%;
           padding-right: 1rem;
         }
         &:last-child {
-          flex: 0 0 50%;
           padding-left: 1rem;
         }
       }
@@ -51,11 +62,13 @@ body[data-pathname^=cv] {
         &:nth-child(2n-1) {
           clear: left;
         }
+        &:nth-child(1), &:nth-child(2) {
+          box-shadow: none;
+        }
       }
+      .date { bottom: -0.75rem; }
     }
-    ul.tags {
-
-    }
+    ul.tags {}
   }
   small, dl {
     font-size: 0.875rem;
@@ -127,19 +140,22 @@ body[data-pathname^=cv] {
 }
 
 [data-skill] {
+  position: relative;
   .icon {
     width: 0.5rem;
     height: 0.5rem;
-    fill: @colorMain;
+    fill: @colorGray;
     &:nth-child(n+5) {
       margin-right: 0.5rem;
     }
   }
-  &[data-skill="4"] .icon:nth-child(n+5),
-  &[data-skill="3"] .icon:nth-child(n+4),
-  &[data-skill="2"] .icon:nth-child(n+3),
-  &[data-skill="1"] .icon:nth-child(n+2) {
-      fill: @colorGray;
+  div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2.5rem;
+    height: 100%;
+    .icon { fill: @colorMain; }
   }
 }
 

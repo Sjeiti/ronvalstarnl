@@ -1,13 +1,14 @@
 <!--
   id: 2433
   date: 2014-05-23
-  modified: 2021-02-06
+  modified: 2023-03-07
   slug: cv
   type: page
   metaKeyword: front-end developer
   metaTitle: Curriculum Vitae Ron Valstar
   metaDescription: I am a front-end developer with more than eighteen years experience doing graphic design, interaction design and programming.
 -->
+
 
 # Curriculum Vitae
 
@@ -35,6 +36,8 @@
 	<li><a href="https://nl.linkedin.com/in/ron-valstar-4b20a917">https://nl.linkedin.com/in/ron-valstar-4b20a917</a></li>
 </ul>
 
+</div><div>
+
 ## profile
 
 I'm a dedicated front-end developer with more than <span data-from="1997-01-01">twenty</span> years of experience in developing digital media.<br/>
@@ -43,20 +46,23 @@ Sometimes I have solo projects but mostly I like to work in teams.
 I can read and write several backend languages and I'm not afraid to learn something new.
 
 </div>
-<div>
+</div>
 
-## skills
+## skills 
 
 <div 
     id="skillsWrapper"
-    data-skills="css|html|javascript|vue|react|angular|accessibility|ux|design system|storybook|scrum|tdd|cypress|jsdoc"
+    data-skills="html|css|javascript|react:4.75|angular:4.45|vue|tdd|cypress:5|jsdoc|design-system|ux:3.75|accessibility|storybook|scrum"
     data-associations='{
   "css": ["CSS3", "SASS", "LESS", "BEM"]  
-}'
+}' 
 >
 </div>
 
 <!--
+
+<div class="print-columns">
+<div>
 ### programming
 
 <ul class="list-unstyled">
@@ -67,6 +73,8 @@ I can read and write several backend languages and I'm not afraid to learn somet
 	<li data-skill="5">testing <small>(Cypress, Jest, Mocha, Chai, Cucumber)</small></li>
 	<li data-skill="4">PHP <small>(Kirby, Laravel, WordPress)</small></li>
 </ul> 
+
+</div><div>
 
 ### other
 
@@ -86,9 +94,11 @@ I can read and write several backend languages and I'm not afraid to learn somet
 </div>
 </div>
  
-<div style="page-break-after: always;"></div>
+<!-- <div class="page-break"></div> -->
 
 <!-- wtf? --> 
+
+<div class="print-columns"><div>
  
 ## education
 
@@ -98,10 +108,16 @@ I can read and write several backend languages and I'm not afraid to learn somet
  - <time>1992-1993</time> Basisopleiding reclame, LOI
  - <time>1987-1992</time> HAVO
 
+</div><div>
+
 ## work experience
 
  - <time>2007-<span data-now>2019</span></time> freelance front-end developer <small>([porfolio](https://ronvalstar.nl/projects))</small>
  - <time>2000-2007</time> co-founder of [Shapers](http://www.shapers.nl/)
  - <time>1998-2000</time> freelance webdesigner
 
-<!--<div style="page-break-after: always;"></div>-->
+</div></div>
+
+<div class="page-break"></div>
+
+<!--<div class="page-break"></div>-->

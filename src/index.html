@@ -316,6 +316,40 @@
       ,autoSuggestTop:true
     }"></div>
   </footer>
+  <script>
+
+    const {body} = document
+    const createElement = document.createElement.bind(document)
+    const isMobile = window.matchMedia('(max-device-width: 600px)').matches
+    const isLocalhost = window.location.hostname==='localhost'
+
+    if (isMobile&&isLocalhost) {
+      const pre = createElement('pre')
+      Object.entries({
+        maxHeight: '70vh'
+        , maxWidth: '100vh'
+        , margin: '0'
+        , padding: '1rem'
+        , overflow: 'auto'
+        , backgroundColor: '#000'
+        , color: '#DDD'
+        , fontSize: '0.6125rem'
+        , lineHeight: '0.75rem'
+        , fontFamily: 'mono, courier'
+          }).forEach(([key,val])=>pre.style[key]=val)
+      body.appendChild(pre)
+      const logOriginal = console.log
+      console.log = (...write) => {
+        pre.appendChild(document.createTextNode(write.join(' ')+'\n'))
+        requestAnimationFrame(()=>pre.scrollTop=1E9)
+        logOriginal(...write)
+      }
+      console.log('console')
+      window.addEventListener('error',e=>console.log(e.message,e.source))
+    }
+
+  </script>
+
   <script src="/js/index.js"></script>
 </body>
 </html>
