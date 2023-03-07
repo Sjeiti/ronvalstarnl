@@ -8,20 +8,15 @@ add(
   'cv'
   , async(/**View*/view/*, route, params*/) => {
 
-      console.log('cv')// todo remove
       const response = await fetchJSONFiles('page_cv', 'fortpolio-list', 'tags')
       const [page, projects, tags] = response
 
-      console.log('cv1')// todo remove
       view.appendString(page.content)
       view.addEventListener('click', onClickDownload)
 
       buildSkillsTable(tags, view.querySelector('#skillsWrapper'))
 
-      console.log('cv2')// todo remove
       buildProjects(projects, view)
-
-      console.log('cv3')// todo remove
 
       return page
     }
@@ -33,7 +28,7 @@ add(
  * @param {View} target
  */
 function buildProjects(projects, target){
-  target.appendString(expand('h2{projects}'), false)
+  target.appendString(expand('h2#projects{projects}'), false)
   const cvProjects = projects
       .filter(p => p.inCv)
       .sort((a, b) => new Date(a.dateTo)>new Date(b.dateTo)?-1:1)
@@ -82,11 +77,25 @@ function onClickDownload(e){
       span.appendChild(document.createTextNode(' - '))
       li.insertAdjacentElement('afterbegin', span)
     })
+
+    const skills = html.querySelector('#skillsWrapper')
+    const table = skills.querySelector('.skillsTable')
+    table.remove()
+    skills.textContent = Array.from(table.querySelectorAll('tbody>tr')).map(tr=>{
+          const th = tr.querySelector('th')
+          const text = th.textContent
+          const skill = Math.round(parseFloat(th.dataset.skill))
+          // return `- ${'U+02605'.repeat(skill)+'U+02606'.repeat(5-skill)} ${text}`
+          // return `- ${'&#9733;'.repeat(skill)+'&#9734;'.repeat(5-skill)} ${text}`
+          // return `- ${'★'.repeat(skill)+'☆'.repeat(5-skill)} ${text}`
+          return `- ${'*'.repeat(skill)+'_'.repeat(5-skill)} ${text}`
+        }).join('\n')
+
     const text = html.textContent
         .replace(/^[ \t]+|[ \t]+$/gm, '')
         .replace(/\n\n\n+/gm, '\n\n')
         .replace(/\nclient\n/gm, '\nclient: ')
-    target.setAttribute('href', 'data:text/plain;charset=utf-8;base64,' + btoa(text))
+    target.setAttribute('href', 'data:text/plain;charset=utf-8;base64,' + encodeURI(btoa(text)))
   }
 }
 
@@ -148,24 +157,8 @@ function buildSkillsTable(projects, target){
     year===highest&&add('year--highest')
   }
 
-    //////////////////
-    //////////////////
-  //try{
-    const xps = target.dataset.skills
-      .toLowerCase()
-      .split(/\|/g)
-      .reduce((acc, s)=>{
-        const [key, value] = s.split(':')
-        value&&(acc[key] = parseFloat(value))
-        return acc
-      }, {})
-  //}catch(err){
-  //  console.log('err',err)
-  //}
-    console.log('xps',JSON.stringify(xps))
-    //////////////////
-    //////////////////
   const trxp = Object.entries(result).map(([title, years])=>{
+    const slug = slugify(title)
     const tr = createElement('tr', null, tbody)
     createElement('th', null, tr, null, title)
     //
@@ -176,16 +169,24 @@ function buildSkillsTable(projects, target){
       createElement('td', null, tr, null,  includes?'1':'')
       includes&&(xp = xp + 1 + 0.5*index)
     }
-    // 
-    tr.dataset.xp = xps[title.toLowerCase()]||xp.toFixed(0)
-    console.log('title',title,tr.dataset.xp)
-    //
-    return {tr, xp}
+    tr.dataset.xp = xp.toFixed(1)
+    return {tr, xp, slug}
   })
 
+  const xps = target.dataset.skills
+      .toLowerCase()
+      .split(/\|/g)
+      .reduce((acc, s, i)=>{
+        const [key, value] = s.split(':')
+        value&&(acc[key] = parseFloat(value))
+        const tr = trxp.find(tr=>tr.slug===key)?.tr
+        tr&&(tr.dataset.index = i)
+        return acc
+      }, {})
+
   const maxXp = Math.max(...trxp.map(o=>o.xp))
-  trxp.forEach(({tr, xp})=>{
-    tr.firstChild.dataset.skill = Math.round(1 + xp/maxXp*4.4) // Math.ceil(1 + (1-((1-(xp/maxXp))**2))*4)
+  trxp.forEach(({slug, tr, xp})=>{
+    tr.firstChild.dataset.skill = xps[slug]||(1 + xp/maxXp*4.4) // Math.ceil(1 + (1-((1-(xp/maxXp))**2))*4)
     initialise(tr)
   })
 
@@ -198,11 +199,12 @@ function buildSkillsTable(projects, target){
   input.addEventListener('input', onInputFilter)
   input.addEventListener('dblclick', ()=>menu.style.display='block')
 
+  // sortXP()()
+  sortIndex()()
+  // requestAnimationFrame(()=>sortIndex()())
 
-  sortXP()()
   const {skills} = target.dataset
   skills&&onInputFilter({currentTarget:{value:skills}})
-
 
   const skillsTable = createElement('div')
   skillsTable.classList.add(classSkillsTable)
@@ -219,7 +221,6 @@ function buildSkillsTable(projects, target){
    * @param {Event} e
    */
   function onInputFilter(e){
-    console.log('onInputFilter')// todo remove
     const {currentTarget: {value}} = e
     const fragment = document.createDocumentFragment()
     const filters = value.toLowerCase()
@@ -266,7 +267,22 @@ function buildSkillsTable(projects, target){
    * @returns {Function}
    */
   function sortXP(asc=true){
-    return sort((a, b)=>(asc?-1:1)*(parseInt(a.dataset.xp, 10)>parseInt(b.dataset.xp, 10)?1:-1))
+    return sort((a, b)=>(asc?-1:1)*(parseFloat(a.dataset.xp)>parseFloat(b.dataset.xp)?1:-1))
+  }
+
+  /**
+   * Sort by Markdown index
+   * @param {boolean} asc
+   * @returns {Function}
+   */
+  function sortIndex(asc=false){
+    // return sort((a, b)=>(asc?-1:1)*(parseInt(a.dataset.index, 10)>parseInt(b.dataset.index, 10)?1:-1))
+    return sort((a, b)=>{
+      const va = parseInt(a.dataset.index>-1?a.dataset.index:1E9, 10)
+      const vb = parseInt(b.dataset.index>-1?b.dataset.index:1E9, 10)
+      // (asc?-1:1)*(parseInt(a.dataset.index, 10)>parseInt(b.dataset.index, 10)?1:-1)
+      return (asc?-1:1)*(va>vb?1:(va<vb?-1:0))
+    })
   }
 
   /**

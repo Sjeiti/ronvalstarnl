@@ -1,6 +1,7 @@
 import {create} from './index'
 import {BaseComponent} from './BaseComponent'
 import {NS_SVG} from '../config'
+import {createElement} from '../utils/html'
 
 /**
  * Search component
@@ -23,5 +24,15 @@ export function applySkillSVG(parent){
     const svg = document.createElementNS(NS_SVG, 'svg')
     svg.setAttribute('data-icon', 'star')
     parent.insertBefore(svg, parent.firstChild)
+  })
+  //
+  const skill = parseFloat(parent.dataset.skill)
+  const skillPercentage = skill*20
+  const wrap = createElement('div', null, parent)
+  wrap.style.clipPath = `polygon(0 0, ${skillPercentage}% 0, ${skillPercentage}% 100%, 0% 100%)`
+  Array.from(new Array(5)).forEach(()=>{
+    const svg = document.createElementNS(NS_SVG, 'svg')
+    svg.setAttribute('data-icon', 'star')
+    wrap.appendChild(svg)
   })
 }

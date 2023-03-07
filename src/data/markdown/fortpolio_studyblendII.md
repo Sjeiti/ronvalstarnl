@@ -1,7 +1,7 @@
 <!--
   slug: studyblendII
   type: fortpolio
-  excerpt: Complete rebuild of an online learning tool. Implementing up-to-date technologies makes adding new features easier which in turn automates a lot of manual configuration.
+  excerpt: Complete rebuild of an online learning tool. The application allows teachers and students to track their progress during a course. The reimplementation with up-to-date technologies makes adding new features easier and automates a lot of things that were previously dependent on manual configuration.
   categories: JavaScript, HTML/CSS, framework, mobile
   tags: JavaScript, React, REST, NodeJS, MongoDB, Imagekit, Sendgrid, Netlify
   clients: Shapers
