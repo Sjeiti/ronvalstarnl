@@ -1,6 +1,6 @@
 <!--
-  date: 2023-03-23
-  modified: 2023-03-23
+  date: 2023-03-17
+  modified: 2023-03-17
   slug: custom-local-eslint-rules
   type: post
   excerpt: How to easily implement custom local ESLint rules by installing a module locally
@@ -13,7 +13,7 @@
 
 # How to easily implement custom local ESLint rules
 
-[ESLint](https://en.wikipedia.org/wiki/ESLint) is the [linter](https://en.wikipedia.org/wiki/Lint_(software)) for EcmaScript, so static code analysis for JavaScript as well as TypeScript and JSX.
+[ESLint](https://en.wikipedia.org/wiki/ESLint) is the [linter](https://en.wikipedia.org/wiki/Lint_(software)) for EcmaScript, that means static code analysis for JavaScript as well as TypeScript and JSX.
 
 A year back I created two custom ESLint rules that I wanted to use in a current project. Then I remembered I don't have the code because it was written on the machine of the client I was working for at that time.
 
@@ -25,7 +25,7 @@ I implemented it a second time. But because I ran into some small things, the so
 Linters touch the most fundamental rules of a codebase or project. They are often defined once across all teams within a company. With different ways of working (as in WoW) oftentimes standardized linting configurations like the one from [Google](https://github.com/google/eslint-config-google) or [AirBnB](https://github.com/airbnb/javascript) fall short.
 
 The two rules I wanted to add for instance have everything to do with development.
-In my IntellIJ IDE I have a 'live template' that looks like this `console.log('$LOG$',$LOG$$END$) // todo: remove log`. The suffixed todo gives a clear indication in the scrollbar margin to remove the log when I'm done. But among less immediate todo's, it is sometimes overlooked. A custom ESLint rule can prevent this from being pushed to the repository.
+In my IntellIJ IDE I have a *live template* that looks like this: `console.log('$LOG$',$LOG$$END$) // todo: remove log`. The suffixed todo gives a clear indication in the scrollbar margin to remove the log when I'm done. But among less immediate todo's, it is sometimes overlooked. A custom ESLint rule can prevent this from being pushed to the repository.
 Similarly there is a specific function call I never want to push. For faster development I often infix the tests I write with `only`, as in `it.only('should', ...etc)`. That way only the tests I am writing are executed. But when I'm done writing and push it I want all the tests to be executed. A custom ESLint rule would make sure any `.only` instances are removed prior to pushing.
 
 
@@ -37,8 +37,8 @@ As of ESLint 3 the way to use a custom rule is to write and configure it as a pl
 
 So here's the rundown:
 
-You can use a local file as a dependency by installing it through NPM or Yarn. The syntax is `npm i -D file:[location]` or `yarn add --dev file:[location]`.
-Since we're trying to install a local file as a package, the location is a folder with a small custom `package.json`.
+You can use a local module as a dependency by installing it through NPM or Yarn. The syntax is `npm i -D file:[location]` or `yarn add --dev file:[location]`.
+Since we're trying to install it as a package, the location is a folder with a small custom `package.json`.
 
 ```JSON
 {
@@ -48,7 +48,7 @@ Since we're trying to install a local file as a package, the location is a folde
 }
 ```
 
-Any ESLint plugin must be prefixed as such. So the name in `package.json` is `eslint-plugin-custom-rules` (prefixed `eslint-plugin-`) but the plugin is referenced in `.eslintrc.js` as `custom-rules`.
+Any ESLint plugin must be prefixed as such. So the name in `package.json` is `eslint-plugin-custom-rules` (prefixed `eslint-plugin-`). Yet the plugin is referenced in `.eslintrc.js` as `custom-rules`.
 
 That same name is also prefixed in the rules. So your `.eslintrc.js` will look something like this:
 
@@ -91,7 +91,7 @@ module.exports = {
 }
 ```
 
-The rules may be written inline, which would replace the `require` with `{meta:{(...)}, create(context){(...)}}`. Inlining it might suffice for a single rule, but it is better to structure it into different files. In my case the file structure I use is the following:
+The rules may be written inline, which would replace the `require` with `{meta:{(...)}, create(context){(...)}}`. This might suffice for a single rule, but it is better to structure it into different files. In my case the file structure I use is the following:
 
 ```bash
 ├──.eslint
@@ -124,7 +124,7 @@ module.exports = {
 
 The return value in the `create` method is where most of the magic happens. In this particular example comments are retrieved and tested against a regex. 
 
-The used callback is `CallExpression`. The ESLint documentation simply assumes we all know how this magic works and does not really elaborate. So I'll give it a shot. Properties of the return object are callback methods named for points in a structure called AST.
+The used callback is `CallExpression`. The ESLint documentation simply assumes we all know how this magic works and does not really elaborate. So I'll try: properties of the return object are callback methods named for points in a structure called AST.
 
 ### What is AST?
 
