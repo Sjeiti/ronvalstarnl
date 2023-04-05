@@ -9,10 +9,10 @@
   tags: JavaScript, Vue, UX, TDD, Cypress
   clients: 
   collaboration: 
-  prizes: 
+  prizes:
   thumbnail: PIMockup.jpg
-  image: pi.png
-  images: Screenshot_2018-03-25-20-58-43.png, Screenshot_2018-03-25-20-55-28.png, Screenshot_2018-03-25-20-56-46.png, Screenshot_2018-03-25-20-57-20.png
+  image: project-invoice_7.png
+  images: project-invoice_1.png, project-invoice_2.png, project-invoice_3.png, project-invoice_4.png, project-invoice_5.png, project-invoice_6.png, project-invoice_7.png, project-invoice_9.png
   inCv: true
   inPortfolio: true
   dateFrom: 2015-11-12

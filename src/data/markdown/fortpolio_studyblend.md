@@ -10,7 +10,7 @@
   image: HSO-App-students.png
   images: HSO-App-mobile-login.png, HSO-App-mobile-week-1.png, HSO-App-mobile-group-tasks.png, HSO-App-mobile-menu.png, HSO-App-profile.png, HSO-App-overview.png, HSO-App-week-1.png, HSO-App-students.png, HSO-App-student.png, HSO-App-settings.png
   inCv: false
-  inPortfolio: true
+  inPortfolio: false
   dateFrom: 2014-01-17
   dateTo: 2015-07-31
 -->
