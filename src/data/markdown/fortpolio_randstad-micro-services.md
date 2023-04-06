@@ -17,5 +17,5 @@
  
 # Randstad monolith to micro services
 
-Front-end developer in a team to rebuild existing monolitic functionalities to orchestrated microservices. 
+Front-end developer in a team to rebuild existing monolithic functionalities to orchestrated microservices. 
 White-label Angular implementation of functionalities for Randstad operating companies. Leading role in moving and aligning all front-end projects to an Nx-based monorepository housing Angular as well as vanilla and React.
