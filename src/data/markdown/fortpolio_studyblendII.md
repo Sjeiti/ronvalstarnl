@@ -3,7 +3,7 @@
   type: fortpolio
   excerpt: Rebuild of an online learning tool that allows teachers and students to track their progress during a course. Previous manual configuration is now automated and new features are added. The build implements a merged test coverage from back- to front-end, from unit- to end-to-end tests.
   categories: JavaScript, HTML/CSS, framework, mobile
-  tags: JavaScript, React, REST, NodeJS, MongoDB, Imagekit, Sendgrid, Netlify, Jest, Cypress
+  tags: JavaScript, React, REST, NodeJS, MongoDB, Imagekit, Sendgrid, Netlify, Jest, Cypress, Docker
   clients: Shapers
   thumbnail: studyblend-1.png
   thumbnailVideo: testStudyBlend.mp4
