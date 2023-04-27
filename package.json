@@ -1,7 +1,7 @@
 {
   "name": "ronvalstarnl",
   "author": "Ron Valstar",
-  "version": "0.5.60",
+  "version": "0.5.64",
   "license": "MIT",
   "repository": "github:sjeiti/ronvalstarnl",
   "description": "ste",
@@ -26,14 +26,11 @@
     "clean": "del-cli dist -f",
     "serve": "node task/serve dist 7047",
     "serve:temp": "node task/serve temp 7777",
+    "lint": "eslint src/js/**/*.js",
     "lint:fix": "eslint src/js/**/*.js --fix",
-    "version": "next-version package.json",
-    "version:minor": "npm run version -- --minor",
-    "version:major": "npm run version -- --major",
+    "test": "echo \"Todo: implement tests\"",
     "build:test": "npx webpack --config webpack.test.config.js --env.development",
-    "build:test:watch": "npm run build:test & chokidar \"src/**/*.*\" -c \"npm run build:test\"",
-    "__build:prerender": "node task/preRender --entry http://localhost:7047 --target dist",
-    "__build:post": "node task/postBuild"
+    "build:test:watch": "npm run build:test & chokidar \"src/**/*.*\" -c \"npm run build:test\""
   },
   "dependencies": {
     "@emmetio/expand-abbreviation": "^0.7.3",
@@ -79,6 +76,7 @@
     "glob": "^7.1.6",
     "html-loader": "^1.3.2",
     "html-minifier": "^4.0.0",
+    "husky": "^8.0.3",
     "less": "^4.1.1",
     "less-loader": "^8.0.0",
     "marked": "^4.0.16",
@@ -113,9 +111,6 @@
     "last 2 versions",
     "not ie <= 10"
   ],
-  "gitHooks": {
-    "pre-commit": "npm run version"
-  },
   "_engines": {
     "node": "^16.17.0",
     "npm": "^6.14.9"
