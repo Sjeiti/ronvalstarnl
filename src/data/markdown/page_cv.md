@@ -36,7 +36,7 @@
 	<li><a href="https://nl.linkedin.com/in/ron-valstar-4b20a917">https://nl.linkedin.com/in/ron-valstar-4b20a917</a></li>
 </ul>
 
-</div><div>
+</div><div> 
 
 ## profile
 
@@ -61,8 +61,8 @@ I can read and write several backend languages and I'm not afraid to learn somet
 
 <!--
 
-<div class="print-columns">
-<div>
+<div class="print-columns"><div>
+
 ### programming
 
 <ul class="list-unstyled">
@@ -102,7 +102,7 @@ I can read and write several backend languages and I'm not afraid to learn somet
  
 ## education
 
- - <time>1999-2000</time> HKU: European Media Master of Arts, Interactive Multi Media <small>(MA)</small>
+ - <time>1999-2000</time> University of Portsmouth (HKU): European Media Master of Arts, Interactive Multi Media <small>(MA)</small>
  - <time>1996-1999</time> HKU: Interaction Design <small>(BA)</small>
  - <time>1993-1996</time> CIBAP: Reclame
  - <time>1992-1993</time> Basisopleiding reclame, LOI
