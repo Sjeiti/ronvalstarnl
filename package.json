@@ -34,8 +34,11 @@
   },
   "dependencies": {
     "@emmetio/expand-abbreviation": "^0.7.3",
+    "docx": "^8.0.4",
     "experiments": "github:Sjeiti/experiment",
+    "file-saver": "^2.0.5",
     "gsap": "^3.6.0",
+    "jspdf": "^2.5.1",
     "prismjs": "^1.27.0",
     "signals": "^1.0.0"
   },
