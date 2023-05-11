@@ -8,7 +8,7 @@
   "scripts": {
     "start": "run-p build serve write dev:less build:tags",
     "dev:less": "chokidar \"src/*.less\" -c \"npm run build:less\"",
-    "build": "run-s clean build:less \"webpack -- --env development --watch\"",
+    "build": "run-s clean build:less build:tags \"webpack -- --env development --watch\"",
     "build:prod": "run-s clean build:less build:unzip build:json build:search build:tags build:icons \"webpack -- --env production\" build:sitemap build:rss",
     "build:unzip": "unzip src/data/icomoon.zip temp/icomoon",
     "build:json": "node task/markdown2json",
