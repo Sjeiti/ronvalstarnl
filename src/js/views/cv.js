@@ -3,6 +3,11 @@ import {add} from '../router'
 import {slugify} from '../utils/string'
 import {fetchJSONFiles} from '../utils'
 import {initialise} from '../component'
+////////////////////////////////////////
+import {jsPDF} from 'jspdf'
+// import * as docx from 'docx'
+import { Document, HeadingLevel, Packer, Paragraph, TextRun } from 'docx'
+import { saveAs } from 'file-saver'
 
 add(
   'cv'
@@ -41,12 +46,14 @@ function buildProjects(projects, target){
               +time.date-to{${project.dateTo.replace(/-\d\d$/, '')}})
             )
             +{replaceContent${i}}
-            ${(project.clients?.length?`+dl>(dt{client}+dd{${project.clients.join(', ')}})`:'')}
+            ${(project.clients?.length?`+(dl>(dt{client}+dd{${project.clients.join(', ')}}))`:'')}
             +(ul.tags>(${project.tags.map(tag => `li{${tag}}`).join('+')}))
          )`).join('+')})`)
   cvProjects.forEach((project, i) => projectString = projectString.replace('replaceContent' + i, project.excerpt && `<p>${project.excerpt}</p>` || project.content))
   target.appendString(projectString, false)
 }
+
+const documentTitle = 'Curiculum-Vitae_Ron-Valstar_front-end-developer'
 
 /**
  * Download doc if correct anchor is clicked
@@ -54,49 +61,267 @@ function buildProjects(projects, target){
  */
 function onClickDownload(e){
   const {target} = e
-  if (target.matches('a[data-download-txt]')){
-    const html = getHTMLToParse()
-    Array.from(html.querySelectorAll('div.date')).forEach(div=>{
-      const [timeF, timeT] = div.children
-      const span = document.createElement('span')
-      span.appendChild(document.createTextNode(` (${timeF.textContent} _ ${timeT.textContent})`))
-      div.nextElementSibling?.appendChild(span)
-      div.parentNode.removeChild(div)
-    })
-    Array.from(html.querySelectorAll('h1,h2,h3')).forEach(elm=>{
-      elm.textContent = `${elm.textContent}\n\n`
-    })
-    Array.from(html.querySelectorAll('ul.tags')).forEach(ul=>{
-      const span = document.createElement('span')
-      span.appendChild(document.createTextNode('tags: '+ul.textContent.replace(/^[ \t]+|[ \t]+$/gm, '').replace(/^\n*|\n*$/g, '').replace(/\n/g, ', ')))
-      ul.insertAdjacentElement('afterend', span)
-      ul.parentNode.removeChild(ul)
-    })
-    Array.from(html.querySelectorAll('li')).forEach(li=>{
-      const span = document.createElement('span')
-      span.appendChild(document.createTextNode(' - '))
-      li.insertAdjacentElement('afterbegin', span)
-    })
+  target.matches('[data-download-word]')&&dowloadWordDocument(target)
+  ||target.matches('[data-download-pdf]')&&downloadPDFDocument(target)
+  ||target.matches('a[data-download-txt]')&&downloadTextDocument(target)
+}
 
-    const skills = html.querySelector('#skillsWrapper')
-    const table = skills.querySelector('.skillsTable')
-    table.remove()
-    skills.textContent = Array.from(table.querySelectorAll('tbody>tr')).map(tr=>{
-          const th = tr.querySelector('th')
-          const text = th.textContent
-          const skill = Math.round(parseFloat(th.dataset.skill))
-          // return `- ${'U+02605'.repeat(skill)+'U+02606'.repeat(5-skill)} ${text}`
-          // return `- ${'&#9733;'.repeat(skill)+'&#9734;'.repeat(5-skill)} ${text}`
-          // return `- ${'★'.repeat(skill)+'☆'.repeat(5-skill)} ${text}`
-          return `- ${'*'.repeat(skill)+'_'.repeat(5-skill)} ${text}`
-        }).join('\n')
+/**
+ * Flatten a nested, mixed array.
+ * @param {Array} acc
+ * @param {Array|Object} o
+ * @return {Array}
+ */
+function flattenNestedMixed(acc, o){
+  Array.isArray(o)
+      ?o.forEach(oo=>flattenNestedMixed(acc, oo))
+      :acc.push(o)
+  return acc
+}
 
-    const text = html.textContent
-        .replace(/^[ \t]+|[ \t]+$/gm, '')
-        .replace(/\n\n\n+/gm, '\n\n')
-        .replace(/\nclient\n/gm, '\nclient: ')
-    target.setAttribute('href', 'data:text/plain;charset=utf-8;base64,' + encodeURI(btoa(text)))
-  }
+/**
+ * Get a Word section
+ * @param {HTMLElement} root
+ * @return {Array}
+ */
+function getWordSection(root){
+  return Array.from(root.children)
+      .map(child=>{
+        const {nodeName, textContent} = child
+        const matches = child.matches.bind(child)
+        const text = textContent?.replace(/^\s+|\s+(?=\s)|\s+$/g, '')?.replace(/\s/g, ' ')||''
+        const [, headerDigit] = nodeName.match(/^H(\d)$/)||[]
+        // console.log('child.nodeName', nodeName, matches('h2,h3')?textContent:' ', headerDigit) // todo: remove log
+        const hasBlockChildren = child.querySelectorAll('div,p,h2,h3,h4').length>0
+        return matches('h2,h3')&&new Paragraph({text: textContent, heading: HeadingLevel['HEADING_'+headerDigit], style: nodeName})
+            ||matches('li,header')&&(hasBlockChildren&&getWordSection(child)||new Paragraph({text}))
+            ||matches('.date')&&new Paragraph({text, style: 'small'})
+            ||matches('.tags')&&new Paragraph({text, style: 'small'})
+            ||matches('#skillsWrapper')&&Array.from(child.querySelectorAll('tbody>tr')).map(tr=>{
+              const th = tr.querySelector('th')
+              const text = th.textContent
+              const skill = Math.round(parseFloat(th.dataset.skill))
+              return new Paragraph({
+                children: [
+                  new TextRun({text:'*'.repeat(skill)+' '.repeat(5-skill)+' ', font:'Courier New'})
+                  , new TextRun(text)
+                ]
+              })
+            })
+            ||matches('div,ul')&&getWordSection(child)
+            ||new Paragraph({text})
+      })
+      .reduce((acc, o)=>{
+        o&&flattenNestedMixed(acc, o)
+        return acc
+      }, [])
+}
+/**
+ * Download a Word document
+ * @param {HTMLElement} target
+ */
+function dowloadWordDocument(target){
+  const html = getHTMLToParse()
+  const children = getWordSection(html.querySelector('.content'))
+
+  const doc = new Document({
+    title: documentTitle
+    , styles: {
+      paragraphStyles: [
+        {
+          name: 'Normal'
+          , run: {
+            font: 'Calibri' // 'Monospace'
+          }
+        }
+        , {
+          id: 'H2'
+          , name: 'H2'
+          , basedOn: 'Normal'
+          , next: 'Normal'
+          , quickFormat: true
+          , run: {
+            size: 28
+            , bold: true
+            , color: '000000'
+          }
+          , paragraph: {
+            spacing: {
+              before: 120
+              , after: 120
+            }
+          }
+        }
+        , {
+          id: 'H3'
+          , name: 'H3'
+          , basedOn: 'H2'
+          , run: {
+            size: 20
+            , bold: true
+            , color: '000000'
+          }
+          , paragraph: {
+            spacing: {
+              before: 120
+              , after: 20
+            }
+          }
+        }
+        , {
+          id: 'small'
+          , name: 'small'
+          , basedOn: 'Normal'
+          , run: {
+            size: 16
+            , color: '888888'
+          }
+        }
+        // {
+        //   id: "Heading1",
+        //   name: "Heading 1",
+        //   basedOn: "Normal",
+        //   next: "Normal",
+        //   quickFormat: true,
+        //   run: {
+        //     size: 28,
+        //     bold: true,
+        //     italics: true,
+        //     color: "FF0000",
+        //   },
+        //   paragraph: {
+        //     spacing: {
+        //       after: 120,
+        //     },
+        //   },
+        // },
+        // {
+        //   id: "Heading2",
+        //   name: "Heading 2",
+        //   basedOn: "Normal",
+        //   next: "Normal",
+        //   quickFormat: true,
+        //   run: {
+        //     size: 26,
+        //     bold: true,
+        //     underline: {
+        //       type: UnderlineType.DOUBLE,
+        //       color: "FF0000",
+        //     },
+        //   },
+        //   paragraph: {
+        //     spacing: {
+        //       before: 240,
+        //       after: 120,
+        //     },
+        //   },
+        // },
+        // {
+        //   id: "aside",
+        //   name: "Aside",
+        //   basedOn: "Normal",
+        //   next: "Normal",
+        //   run: {
+        //     color: "999999",
+        //     italics: true,
+        //   },
+        //   paragraph: {
+        //     indent: {
+        //       left: 720,
+        //     },
+        //     spacing: {
+        //       line: 276,
+        //     },
+        //   },
+        // },
+        // {
+        //   id: "wellSpaced",
+        //   name: "Well Spaced",
+        //   basedOn: "Normal",
+        //   quickFormat: true,
+        //   paragraph: {
+        //     spacing: { line: 276, before: 20 * 72 * 0.1, after: 20 * 72 * 0.05 },
+        //   },
+        // },
+        // {
+        //   id: "ListParagraph",
+        //   name: "List Paragraph",
+        //   basedOn: "Normal",
+        //   quickFormat: true,
+        // },
+      ],
+    }
+    , sections: [{children}]
+  })
+  Packer.toBlob(doc).then(blob => saveAs(blob, documentTitle+'.docx'))
+  target
+}
+
+/**
+ * Download a PDF document
+ * @param {HTMLElement} target
+ * @todo jsPDF uses html2canvas internally, which ignores print CSS
+ */
+function downloadPDFDocument(target){
+  // jsPDF uses html2canvas internally, which ignores print CSS
+  const doc = new jsPDF()
+  doc.html(document.body, {
+    callback: doc=>doc.save(`${documentTitle}.pdf`)
+    , x: 0
+    , y: 0
+    , width: 211 // = mm
+    , windowWidth: 800 // = px
+  })
+  target
+}
+
+/**
+ * Download a text file
+ * @param {HTMLAnchorElement} target
+ */
+function downloadTextDocument(target){
+  const html = getHTMLToParse()
+  Array.from(html.querySelectorAll('div.date')).forEach(div=>{
+    const [timeF, timeT] = div.children
+    const span = document.createElement('span')
+    span.appendChild(document.createTextNode(` (${timeF.textContent} _ ${timeT.textContent})`))
+    div.nextElementSibling?.appendChild(span)
+    div.parentNode.removeChild(div)
+  })
+  Array.from(html.querySelectorAll('h1,h2,h3')).forEach(elm=>{
+    elm.textContent = `${elm.textContent}\n\n`
+  })
+  Array.from(html.querySelectorAll('ul.tags')).forEach(ul=>{
+    const span = document.createElement('span')
+    span.appendChild(document.createTextNode('tags: '+ul.textContent.replace(/^[ \t]+|[ \t]+$/gm, '').replace(/^\n*|\n*$/g, '').replace(/\n/g, ', ')))
+    ul.insertAdjacentElement('afterend', span)
+    ul.parentNode.removeChild(ul)
+  })
+  Array.from(html.querySelectorAll('li')).forEach(li=>{
+    const span = document.createElement('span')
+    span.appendChild(document.createTextNode(' - '))
+    li.insertAdjacentElement('afterbegin', span)
+  })
+
+  const skills = html.querySelector('#skillsWrapper')
+  const table = skills.querySelector('.skillsTable')
+  table.remove()
+  skills.textContent = Array.from(table.querySelectorAll('tbody>tr')).map(tr=>{
+    const th = tr.querySelector('th')
+    const text = th.textContent
+    const skill = Math.round(parseFloat(th.dataset.skill))
+    // return `- ${'U+02605'.repeat(skill)+'U+02606'.repeat(5-skill)} ${text}`
+    // return `- ${'&#9733;'.repeat(skill)+'&#9734;'.repeat(5-skill)} ${text}`
+    // return `- ${'★'.repeat(skill)+'☆'.repeat(5-skill)} ${text}`
+    // return `- ${'*'.repeat(skill)+'_'.repeat(5-skill)} ${text}`
+    return `  ${'*'.repeat(skill)+' '.repeat(5-skill)} ${text}`
+  }).join('\n')
+
+  const text = html.textContent
+      .replace(/^[ \t]+|[ \t]+$/gm, '')
+      .replace(/\n\n\n+/gm, '\n\n')
+      .replace(/\nclient\n/gm, '\nclient: ')
+  target.setAttribute('href', 'data:text/plain;charset=utf-8;base64,' + encodeURI(btoa(text)))
 }
 
 /**
@@ -105,8 +330,9 @@ function onClickDownload(e){
  */
 function getHTMLToParse(){
   const main = document.querySelector('main').cloneNode(true)
-  const download = main.querySelector('[data-download]')
-  download.parentNode.removeChild(download)
+  main.querySelector('[data-download]')?.remove()
+  // const download = main.querySelector('[data-download]')
+  // download.parentNode.removeChild(download)
   return main
 }
 
