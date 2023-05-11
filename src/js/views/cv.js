@@ -256,7 +256,6 @@ function dowloadWordDocument(target){
   Packer.toBlob(doc).then(blob => saveAs(blob, documentTitle+'.docx'))
   target
 }
-setTimeout(dowloadWordDocument, 500)
 
 /**
  * Download a PDF document
