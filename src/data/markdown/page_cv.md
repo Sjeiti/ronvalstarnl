@@ -20,9 +20,10 @@
 <small class="pull-right" data-download>
     download as 
     <a href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1569508867/rv/Curiculum-Vitae_Ron-Valstar_front-end-developer.pdf" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.pdf">pdf</a>,
-    <button class="anchor" data-download-word>Word</button> 
+<!--<button class="anchor" data-download-word>Word</button>-->
+    <a data-download-word href="Curiculum-Vitae_Ron-Valstar_front-end-developer.docx" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.docx">docx</a>
     or <a data-download-txt href="Curiculum-Vitae_Ron-Valstar_front-end-developer.md" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.txt">txt</a>
-    <!--or <button class="anchor" data-download-pdf>pdf</button>-->
+<!--or <button class="anchor" data-download-pdf>pdf</button>-->
 </small>
 <ul class="list-unstyled">
 	<li>Ron Valstar <small>BA / MA</small></li>
