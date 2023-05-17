@@ -2,14 +2,20 @@ body[data-pathname^=cv] {
   @media print {
 
     font-size: 11pt;
-    line-height: 19pt;
+    line-height: 15pt;
 
     >header { // todo: all outside content now fails
       position: static;
       height: 8rem;
+      box-shadow: none;
+      &:after { display: none; }
       h1 {
         transform: translateX(-50%) scale(0.75) translateY(-1rem);
       }
+    }
+    .content {
+      margin-top: 1rem;
+      padding-top: 0;
     }
 
     .page-break {
@@ -52,6 +58,9 @@ body[data-pathname^=cv] {
     .cv-projects {
       //display: flex; // page-break rules fail with flex
       //flex-wrap: wrap;
+      header:after {
+        display: none;
+      }
       >li {
         width: 50%;
         float: left;
@@ -70,8 +79,9 @@ body[data-pathname^=cv] {
     }
     ul.tags {}
   }
-  small, dl {
-    font-size: 0.875rem;
+  small, dl, ul.tags {
+    //font-size: 0.875rem;
+    font-size: 0.75rem;
     color: #888;
   }
   dt:after { content: ': '; }
