@@ -6,7 +6,7 @@
   metaTitle: Project Invoice
   metaDescription: This local-first invoicing application stores all your data on your local machine. Styling and copy are completely customizable.
   categories: JavaScript, HTML/CSS, framework, open source, UX, graphic design, mobile
-  tags: JavaScript, Vue, UX, TDD, Cypress
+  tags: JavaScript, Vue, UX, TDD, Cypress, Redux
   thumbnail: PIMockup.jpg
   image: project-invoice_7.png
   images: project-invoice_1.png, project-invoice_2.png, project-invoice_3.png, project-invoice_4.png, project-invoice_5.png, project-invoice_6.png, project-invoice_7.png, project-invoice_9.png
