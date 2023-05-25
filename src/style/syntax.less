@@ -83,7 +83,7 @@ pre {
     &.highlighted {
       &:before, &:after {
         margin: 0;
-        color: @colorMain;
+        color: var(--color-main);
         font-family: @fontNameCode;
         font-size: 12px;
       }
@@ -113,7 +113,7 @@ pre {
       .token {
         &.cut { color: #9876AA; }
         &.comment { color: #FFDD00; }
-        &.jsdoc { color: @colorMain; }
+        &.jsdoc { color: var(--color-main); }
         &.string { color: #5FBA47; }
         &.template-string { color: #538d45; }
         &.class-name { color: #89A; font-style: italic; }

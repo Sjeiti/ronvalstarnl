@@ -60,9 +60,8 @@
         padding: 0 0.5rem;
         display: block;
         text-decoration: none;
-        &:hover { background-color: @colorLinkL30; }
+        &:hover { background-color: color-mix(in hwb, var(--color-bg), var(--color-text) 50%); }
       }
-      &:nth-child(999) a { background-color: @colorLinkL30; }
       span { color: darken(desaturate(#5aabe1, 0.2), 20); }
     }
   }

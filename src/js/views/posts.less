@@ -31,7 +31,7 @@ iframe {
     background: transparent;
     transform: translateX(100%);
     svg {
-      fill: @colorLink;
+      fill: currentColor;
       transform: translateX(-0.5rem);
     }
     @media (max-width: 830px) {
@@ -72,8 +72,6 @@ main {
 
 .related {
   --color-related-bg: color-mix(in hwb, var(--color-border), var(--color-bg) 50%);
-  //@colorRelatedBg: #fbfbfb;
-  //@colorRelatedBg: mix(@colorMain, white, 15%);
   z-index: -1;
   background-color: var(--color-related-bg);
   box-shadow: -46rem 0 0 var(--color-related-bg), 46rem 0 0 var(--color-related-bg), -50vw 0 0 var(--color-related-bg), 50vw 0 0 var(--color-related-bg);
