@@ -11,21 +11,32 @@ ul.link-list {
     display: block;
     margin-bottom: 1rem;
     &.sticky a {
-      @colorSticky: lighten(@colorLink, 20%);
-      color: @colorBlack;
-      background-color: @colorSticky;
-      box-shadow: -1.0625rem 0 0 @colorSticky, 0.5rem 0 0 @colorSticky;
-      &:before { background-color: @colorSticky; }
+
+      --color-sticky: color-mix(in hwb, var(--color-link), black 80%);
+      --color-sticky-bg: color-mix(in hwb, var(--color-link), white 60%);
+      @media (prefers-color-scheme: dark) {
+        --color-sticky: color-mix(in hwb, var(--color-link), white 20%);
+        --color-sticky-bg: color-mix(in hwb, var(--color-link), black 75%);
+      }
+
+      color: var(--color-sticky);
+      background-color: var(--color-sticky-bg);
+      box-shadow: -1.0625rem 0 0 var(--color-sticky-bg), 0.5rem 0 0 var(--color-sticky-bg);
+      &:before { background-color: var(--color-sticky-bg); }
     }
   }
-  @colorLinkBg: @colorLinkL30;
+
   a {
     position: relative;
     display: inline-block;
-    color:  darken(@colorLink,20%);
-    background-color: @colorLinkBg;
+
+    --color-link-bg: color-mix(in hwb, var(--color-link), white 85%);
+    @media (prefers-color-scheme: dark) { --color-link-bg: color-mix(in hwb, var(--color-link), black 85%); }
+
+    color: color-mix(in hwb, var(--color-link), black 20%);
+    background-color: var(--color-link-bg);
     text-decoration: none;
-    box-shadow: -1.0625rem 0 0 @colorLinkBg, 0.5rem 0 0 @colorLinkBg;
+    box-shadow: -1.0625rem 0 0 var(--color-link-bg), 0.5rem 0 0 var(--color-link-bg);
     &:before {
       content: '';
       display: block;
@@ -35,26 +46,15 @@ ul.link-list {
       left: calc(-1rem - 100vw);
       top: 0;
       z-index: -1;
-      background-color: #dbedf9;
+      background-color: var(--color-link-bg);
       transform: rotate(calc(var(--scroll-part) * 45deg)) scaleY(calc(1 - 0.3 * var(--scroll-part)));
       transform-origin: bottom right;
     }
     svg {
       width: 1rem;
       height: 1rem;
-      fill: darken(@colorLink,20%);
+      fill: currentColor;
     }
-    /*&.type- {
-      &page {
-        background-image: url(../../static/svg/down.svg);
-      }
-      &post {
-        background-image: url(../../static/svg/left.svg);
-      }
-      &fortpolio {
-        background-image: url(../../static/svg/right.svg);
-      }
-    }*/
   }
 }
 
@@ -63,7 +63,7 @@ ul.link-list {
   font-size: 60px;
   line-height: 100%;
   font-weight: 300;
-  color: #547979;
+  color: var(--color-text-header);
   text-transform: uppercase;
   text-align: center;
   &:before {

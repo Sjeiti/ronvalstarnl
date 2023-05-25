@@ -7,13 +7,18 @@ iframe {
     border: 0;
   }
   &.example {
-    @colorExample: #fafaf7;
+    --color-example-side: #fafaf7;
+    --color-example-bg: #FFFFFA;
+    @media (prefers-color-scheme: dark) {
+      --color-example-side: #222;
+      --color-example-bg: #444;
+    }
     box-shadow: 0.25rem 0.5rem 1rem rgba(0,0,0,0.1) inset,
-      -92rem 0 0 0 @colorExample,
-      -46rem 0 0 0 @colorExample,
-      46rem 0 0 0 @colorExample,
-      92rem 0 0 0 @colorExample;
-    background-color: #FFFFFA;
+      -92rem 0 0 0 var(--color-example-side),
+      -46rem 0 0 0 var(--color-example-side),
+      46rem 0 0 0 var(--color-example-side),
+      92rem 0 0 0 var(--color-example-side);
+    background-color: var(--color-example-bg);
   }
 }
 .example-ui {
@@ -38,19 +43,16 @@ iframe {
 
 main {
   h1, h2, h3 {
-  //h1,h2,h3,h4,h5,h6 {
-    //box-shadow: -30rem 0 0 0 @colorMain;
-    @colorHeadingBorder: #F4F4F4; // @colorMain
     position: relative;
     &:after {
       content: '';
       display: block;
       width: 100%;
       height: 0.0625rem;
-      background-color: @colorHeadingBorder;
+      background-color: var(--color-border);
       box-shadow:
-          -30rem 0 0 0 @colorHeadingBorder, 30rem 0 0 0 @colorHeadingBorder
-          ,-70rem 0 0 0 @colorHeadingBorder, 70rem 0 0 0 @colorHeadingBorder
+          -30rem 0 0 0 var(--color-border), 30rem 0 0 0 var(--color-border)
+          ,-70rem 0 0 0 var(--color-border), 70rem 0 0 0 var(--color-border)
       ;
     }
   }
@@ -69,11 +71,12 @@ main {
 }
 
 .related {
-  @colorRelatedBg: #fbfbfb;
+  --color-related-bg: color-mix(in hwb, var(--color-border), var(--color-bg) 50%);
+  //@colorRelatedBg: #fbfbfb;
   //@colorRelatedBg: mix(@colorMain, white, 15%);
   z-index: -1;
-  background-color: @colorRelatedBg;
-  box-shadow: -46rem 0 0 @colorRelatedBg, 46rem 0 0 @colorRelatedBg, -50vw 0 0 @colorRelatedBg, 50vw 0 0 @colorRelatedBg;
+  background-color: var(--color-related-bg);
+  box-shadow: -46rem 0 0 var(--color-related-bg), 46rem 0 0 var(--color-related-bg), -50vw 0 0 var(--color-related-bg), 50vw 0 0 var(--color-related-bg);
   margin-top: 4rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -82,14 +85,13 @@ main {
 }
 
 .prevnext {
-  @colorPrevnextBg: @colorGrayLighter;
   display: flex;
   justify-content: space-between;
   font-size: 1rem;
   line-height: 3rem;
   margin-top: 4rem;
-  background-color: @colorPrevnextBg;
-  box-shadow: -46rem 0 0 @colorPrevnextBg, 46rem 0 0 @colorPrevnextBg, -50vw 0 0 @colorPrevnextBg, 50vw 0 0 @colorPrevnextBg;
+  background-color: var(--color-border);
+  box-shadow: -46rem 0 0 var(--color-border), 46rem 0 0 var(--color-border), -50vw 0 0 var(--color-border), 50vw 0 0 var(--color-border);
   .prev, .next {
     text-decoration: none;
     overflow: hidden;

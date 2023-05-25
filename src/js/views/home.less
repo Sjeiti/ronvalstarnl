@@ -4,6 +4,19 @@ section:after {
   clear: both;
 }
 
+:root {
+  --color-home-bg1: #d9e4e4;
+  --color-home-bg2: #e3eef2;
+  --color-home-bg3: #edf6ff;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    --color-home-bg1: #111;
+    --color-home-bg2: #222;
+    --color-home-bg3: #333;
+  }
+}
+
 .content[data-pathname=''], .content[data-pathname='home'] {
   //main {
     margin: 0;
@@ -48,8 +61,8 @@ section:after {
       h2 { margin-top: 4rem; }
     }
     &.for {
-      background-color: #d9e4e4;
-      li { box-shadow: inset -32px -64px 128px #e3eef2; }
+      background-color: var(--color-home-bg1);
+      li { box-shadow: inset -32px -64px 128px var(--color-home-bg2); }
       .svg-list {
         white-space: nowrap;
         overflow: hidden;
@@ -61,12 +74,12 @@ section:after {
       }
     }
     &.won {
-      background-color: #e3eef2;
-      li { box-shadow: inset -32px -64px 128px #edf6ff; }
+      background-color: var(--color-home-bg2);
+      li { box-shadow: inset -32px -64px 128px var(--color-home-bg3); }
     }
     &.written {
       padding: 0 calc((100vw - 768px)/2) 2rem;
-      background-color: #edf6ff;
+      background-color: var(--color-home-bg3);
       li { text-align: center; }
       a {
         background-color: transparent;

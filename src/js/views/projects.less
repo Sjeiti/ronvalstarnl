@@ -21,6 +21,20 @@ ul.projects {
 
     transition: max-width 300ms ease-in-out;
 
+    @media (prefers-color-scheme: dark) {
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #0009;
+        pointer-events: none;
+      }
+    }
+
     @media @mediaS {
       width: (100%/3);
       max-width: (100%/3);
@@ -61,6 +75,7 @@ ul.projects {
     font-size: 0.875rem;
     line-height: 1.25rem;
     color: white;
+    @media (prefers-color-scheme: dark) { color: var(--color-gray); }
     background: rgba(0,0,0,0.6);
     box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     font-family: var(--font-name-code);
@@ -86,7 +101,7 @@ ul.project-category {
   list-style: none;
   text-align: center;
   background-color: #f04;
-  color: white;
+  color: var(--color-bg);
   font-size: 0.75rem;
   line-height: 0.75rem;
   @media @mediaM {
@@ -95,16 +110,18 @@ ul.project-category {
   }
   li {
     display: block;
+    a.current {
+      @media (prefers-color-scheme: dark) { color: white; }
+    }
   }
   a {
     display: block;
     margin: 0 1px 1px 0;
     padding: 3px 6px;
-    //padding: 0.1875rem 0.375rem;
     @media @mediaM { padding: 6px 12px; }
-    box-shadow: 0 0 0 1px white;
+    box-shadow: 0 0 0 1px var(--color-bg);
     text-decoration: none;
-    color: white;
+    color: inherit;
     &.current{
       background-color: black;
     }
@@ -172,7 +189,6 @@ ul.project-category {
       padding: 0;
       position: relative;
       z-index: 1;
-      //box-shadow: 0 0 10rem 5rem @colorBlack;
       box-shadow: 0 0 5rem 1rem @colorBlack;
     }
   }
