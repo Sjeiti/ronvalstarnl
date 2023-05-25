@@ -43,6 +43,8 @@ create('[data-header]', class extends BaseComponent{
     this._initExperiments()
     this._background = this._$('.background')
     this._colofon = this._$('.colofon')
+
+    this._initColorScheme()
   }
 
   /**
@@ -60,6 +62,16 @@ create('[data-header]', class extends BaseComponent{
     //
     clean(this._experimentWrapper)
     this._stuck.add(is=>this._experiment?.pause(is))
+  }
+
+  _initColorScheme(){
+    const key = 'scheme'
+    const dark = 'dark'
+    this._select('[data-color-scheme]').addEventListener('click', ()=>{
+      document.documentElement.classList.toggle(dark)
+          ?localStorage.setItem(key, dark)
+          :localStorage.removeItem(key)
+    })
   }
 
   /**

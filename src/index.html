@@ -32,16 +32,14 @@
       --scroll-percentage: 0%;
       --scroll-part: 0;
     }
-		@media (prefers-color-scheme: dark) {
-			body {
-				--color-main-text: #000;
-				--color-link: #2e8cce;
-				--color-bg: black;
-				--color-text: #888;
-				--color-border: #222;
-				--color-bg-code: #333;
-			}
-		}
+    .dark {
+			--color-main-text: #000;
+			--color-link: #2e8cce;
+			--color-bg: black;
+			--color-text: #888;
+			--color-border: #222;
+			--color-bg-code: #333;
+    }
 
     @media (min-width: 768px) {}
     
@@ -198,6 +196,14 @@
       text-decoration: none;
       color: inherit;
     }
+		[data-color-scheme] {
+			position: absolute;
+			right: 0;
+			top:0;
+			background-color: transparent;
+			border: 0;
+			color: inherit;
+		}
     main { position: relative; }
     .content {
       max-width: 768px;
@@ -312,6 +318,7 @@
       <a href="/contact"><span>contact</span></a>
       <a href="/cv"><span>cv</span></a>
     </nav>
+    <button data-color-scheme>o</button>
   </header>
   <main>
     <div class="content">
@@ -370,6 +377,14 @@
       console.log('console')
       window.addEventListener('error',e=>console.log(e.message,e.source))
     }
+
+    const key = 'scheme'
+    const dark = 'dark'
+    ;(
+        localStorage.getItem(key)
+        ||window.matchMedia('(prefers-color-scheme: dark)').matches&&dark
+    )===dark
+    &&document.documentElement.classList.add(dark)
 
   </script>
 
