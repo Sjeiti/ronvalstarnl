@@ -64,13 +64,13 @@ create('[data-header]', class extends BaseComponent{
     this._stuck.add(is=>this._experiment?.pause(is))
   }
 
+  /**
+   * Initialise color scheme switching
+   * @see `index.html` for initial setup
+   */
   _initColorScheme(){
-    const key = 'scheme'
-    const dark = 'dark'
     this._select('[data-color-scheme]').addEventListener('click', ()=>{
-      document.documentElement.classList.toggle(dark)
-          ?localStorage.setItem(key, dark)
-          :localStorage.removeItem(key)
+      localStorage.setItem('scheme', document.documentElement.classList.toggle('dark')?'dark':'light')
     })
   }
 
