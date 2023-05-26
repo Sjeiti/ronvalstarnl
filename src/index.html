@@ -197,12 +197,21 @@
       color: inherit;
     }
 		[data-color-scheme] {
+			padding: 0;
 			position: absolute;
 			right: 0;
 			top:0;
-			background-color: transparent;
 			border: 0;
+			background-color: transparent;
 			color: inherit;
+      cursor: pointer;
+		}
+		[data-color-scheme]:hover {
+      color: var(--color-text);
+			transition: color linear 300ms;
+		}
+		[data-color-scheme] svg {
+			transform: translate(20%,-20%) rotate(45deg) scale(80%);
 		}
     main { position: relative; }
     .content {
@@ -318,7 +327,7 @@
       <a href="/contact"><span>contact</span></a>
       <a href="/cv"><span>cv</span></a>
     </nav>
-    <button data-color-scheme>o</button>
+    <button data-color-scheme><svg data-icon="brightness-contrast"><title>brightness-contrast</title></svg></button>
   </header>
   <main>
     <div class="content">
