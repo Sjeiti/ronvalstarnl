@@ -371,6 +371,8 @@ function buildSkillsTable(projects, target){
   const trxp = Object.entries(result).map(([title, years])=>{
     const slug = slugify(title)
     const tr = createElement('tr', null, tbody)
+    tr.dataset.slug = slug
+    tr.dataset.title = title
     createElement('th', null, tr, null, title)
     //
     let xp = 0
@@ -384,7 +386,8 @@ function buildSkillsTable(projects, target){
     return {tr, xp, slug}
   })
 
-  const xps = target.dataset.skills
+  const {skills} = target.dataset
+  const xps = skills
       .toLowerCase()
       .split(/\|/g)
       .reduce((acc, s, i)=>{
@@ -414,7 +417,6 @@ function buildSkillsTable(projects, target){
   sortIndex()()
   // requestAnimationFrame(()=>sortIndex()())
 
-  const {skills} = target.dataset
   skills&&onInputFilter({currentTarget:{value:skills}})
 
   const skillsTable = createElement('div')
@@ -438,10 +440,7 @@ function buildSkillsTable(projects, target){
       .split(/\|/g).map(s=>s.split(':').shift().trim())
     clearBody()
     entryList.forEach(tr=>
-      filters.forEach(filter=>
-        tr.querySelector('th').textContent.toLowerCase().includes(filter)
-            &&fragment.appendChild(tr)
-      )
+      filters.includes(tr.dataset.slug)&&fragment.appendChild(tr)
     )
     tbody.appendChild(fragment)
   }

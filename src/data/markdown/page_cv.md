@@ -107,8 +107,13 @@ I can read and write several backend languages and I'm not afraid to learn somet
  - <time>1999-2000</time> University of Portsmouth (HKU): European Media Master of Arts, Interactive Multi Media <small>(MA)</small>
  - <time>1996-1999</time> HKU: Interaction Design <small>(BA)</small>
  - <time>1993-1996</time> CIBAP: Reclame
- - <time>1992-1993</time> Basisopleiding reclame, LOI
  - <time>1987-1992</time> HAVO
+
+## courses
+- <time>2023</time> Practical accessibility
+- <time>2021</time> Scythe handling
+- <time>2013</time> Basic welding techniques
+- <time>1992-1993</time> Basisopleiding reclame, LOI
 
 </div><div>
 
