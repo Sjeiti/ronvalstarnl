@@ -15,8 +15,6 @@
 
 I've been using signals since the latter days of Flash, so since before 2010. Loved it in AS3, so kept using it in JavaScript in the form of [js-signals](https://millermedeiros.github.io/js-signals/). This was modeled after [AS3 signals](https://github.com/robertpenner/as3-signals) which in turn was in turn inspired by [C# events](http://en.wikipedia.org/wiki/C_Sharp_syntax#Events) and [signals/slots](http://en.wikipedia.org/wiki/Signals_and_slots) in Qt.
 
-<small>Small sidenote: there is also a [port of AS3 signals](https://github.com/RobotlegsJS/SignalsJS) in the RobotlegsJS repository.</small>
-
 <small>A [port of AS3 signals](https://github.com/RobotlegsJS/SignalsJS) exists in the RobotlegsJS repo.</small>
 
 As a concept, signals are very simple, and very powerful. It is basically a pub/sub, an event emitter, without the ugly string identifier implementation.
@@ -42,7 +40,7 @@ function createSignal(){
   })
 }
 
-// Usage
+// Usage -------------------------------------
 
 // Create signal
 const somethingHappened = createSignal()
@@ -90,6 +88,7 @@ If you want a more detailed explanation read [A General Theory of Reactivity](ht
 Let's make our minimal example a bit more realistic. We'll implement state, slots and some extra methods.
 What I like about the Angular implementation is that the signal itself is both the instance, as wel as the get-method for the current value. This does require a bit of trickery.
 
+<!--line-numbers-->
 ```JavaScript
 /**
  * A signal
@@ -273,7 +272,7 @@ Thing is; even though JavaScript is prototypal by nature, most people will use i
 ### So...
 
 ---
-
+ 
 Actually, my first React implementation used signals alongside Redux, because I hate boilerplate.
 
 

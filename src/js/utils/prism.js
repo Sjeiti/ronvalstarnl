@@ -80,12 +80,17 @@ export function prismToElement(elm){
     parentNode.removeChild(pre)
 
   } else {
+    const lineNumbers = 'line-numbers'
+    const pre = elm.parentElement
+    const maybeComment = pre.previousSibling.previousSibling
+    maybeComment.nodeType===8&&maybeComment.textContent==='line-numbers'&&pre.setAttribute(lineNumbers, '')
+
     elm.setAttribute('data-language', lang)
     lang&&(elm.dataset.language = lang)
     const prismLang = Prism.languages[lang]||Prism.languages.javascript
     /*const highlighted = */Prism.highlight(contents, prismLang)
     elm.innerHTML = Prism.highlight(contents, prismLang)
-    elm.parentNode.hasAttribute('line-numbers')&&addLineNumbers(elm, contents)
+    pre.hasAttribute(lineNumbers)&&addLineNumbers(elm, contents)
     elm.classList.add('highlighted')
     props.forEach(prop=>pre.classList.add('code--'+prop))
   }
