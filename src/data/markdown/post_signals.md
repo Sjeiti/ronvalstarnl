@@ -1,6 +1,6 @@
 <!--
-  date: 2023-05-17
-  modified: 2023-05-17
+  date: 9999-99-99
+  modified: 9999-99-99
   slug: signals
   type: post
   header: takahiro-sakamoto-wcWvku7gqHc-unsplash.jpg
@@ -11,9 +11,13 @@
   metaDescription: Thoughts about signals
 -->
 
+# Signals
+
 I've been using signals since the latter days of Flash, so since before 2010. Loved it in AS3, so kept using it in JavaScript in the form of [js-signals](https://millermedeiros.github.io/js-signals/). This was modeled after [AS3 signals](https://github.com/robertpenner/as3-signals) which in turn was in turn inspired by [C# events](http://en.wikipedia.org/wiki/C_Sharp_syntax#Events) and [signals/slots](http://en.wikipedia.org/wiki/Signals_and_slots) in Qt.
 
 <small>Small sidenote: there is also a [port of AS3 signals](https://github.com/RobotlegsJS/SignalsJS) in the RobotlegsJS repository.</small>
+
+<small>A [port of AS3 signals](https://github.com/RobotlegsJS/SignalsJS) exists in the RobotlegsJS repo.</small>
 
 As a concept, signals are very simple, and very powerful. It is basically a pub/sub, an event emitter, without the ugly string identifier implementation.
 
@@ -63,7 +67,7 @@ When I read in [JavaScript Weekly](https://javascriptweekly.com/issues/626) abou
 
 I missed the [JSW september memo](https://javascriptweekly.com/issues/605) about PReact introducing signals.
 
-Also didn't know about signals being at the core of [SolidJS](https://www.solidjs.com/) <small>(frankly I knew SolidJS only by name)</small>.
+Knowing [SolidJS](https://www.solidjs.com/) only by name, I also didn't know about signals being at the core of it.
 
 
 ## Almost but not quite
@@ -83,7 +87,8 @@ If you want a more detailed explanation read [A General Theory of Reactivity](ht
 
 ## While we're at it
 
-So, for shits and giggles, let's make our minimal example a bit more realistic. We'll implement state, slots and some extra methods. What I like about the Angular implementation is that the signal itself is both the instance, as wel as the get-method for the current value. This does require a bit of trickery...
+Let's make our minimal example a bit more realistic. We'll implement state, slots and some extra methods.
+What I like about the Angular implementation is that the signal itself is both the instance, as wel as the get-method for the current value. This does require a bit of trickery.
 
 ```JavaScript
 /**
@@ -256,7 +261,13 @@ spent.clear().dispatch(5)
 console.log('cleared',totals()) // : 200
 ```
 
-This is still only 111 lines including JSDoc.
+This is still only 111 lines including JSDoc, or 934 bytes minified.
+
+The code is no rocket science either.
+I'll run you through some of the less obvious points.
+
+Starting with JSDoc; you might notice the different ways both prototypes are documented. The `Signal` as `@function` but the `Slot` as `@typedef`.
+Thing is; even though JavaScript is prototypal by nature, most people will use it in a classical way.
 
 
 ### So...
