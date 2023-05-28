@@ -13,14 +13,13 @@
 
 # Signals
 
-I've been using signals since the latter days of Flash, so since before 2010. Loved it in AS3, so kept using it in JavaScript in the form of [js-signals](https://millermedeiros.github.io/js-signals/). This was modeled after [AS3 signals](https://github.com/robertpenner/as3-signals) which in turn was in turn inspired by [C# events](http://en.wikipedia.org/wiki/C_Sharp_syntax#Events) and [signals/slots](http://en.wikipedia.org/wiki/Signals_and_slots) in Qt.
-
-<small>A [port of AS3 signals](https://github.com/RobotlegsJS/SignalsJS) exists in the RobotlegsJS repo.</small>
+I've been using signals since the latter days of Flash, so since before 2010. Loved it in AS3, so kept using it in JavaScript in the form of [js-signals](https://millermedeiros.github.io/js-signals/). This was modeled after [AS3 signals](https://github.com/robertpenner/as3-signals) which in turn was in turn inspired by [C# events](http://en.wikipedia.org/wiki/C_Sharp_syntax#Events) and [signals/slots](http://en.wikipedia.org/wiki/Signals_and_slots) in Qt. (<small>a [port of AS3 signals](https://github.com/RobotlegsJS/SignalsJS) exists in the RobotlegsJS repo</small>)
 
 As a concept, signals are very simple, and very powerful. It is basically a pub/sub, an event emitter, without the ugly string identifier implementation.
 
 So really nothing more than this...
 
+<!--line-numbers-->
 ```JavaScript
 const signalPrototype = {
   add(callback){
@@ -39,9 +38,11 @@ function createSignal(){
     }
   })
 }
+```
 
-// Usage -------------------------------------
+Which you can use like this:
 
+```JavaScript
 // Create signal
 const somethingHappened = createSignal()
 
@@ -55,7 +56,7 @@ somethingHappened.dispatch('yesterday', 'evening')
 // > Something happened yesterday evening
 ```
 
-The above was really quick and dirty. An actual implementation would have the `add` method return a `slot` that can be used to remove the 'listener', as well as some other useful methods.
+That was really quick and dirty. An actual implementation would have the `add` method return a `slot` that can be used to remove the 'listener', as well as some other useful methods.
 But I hope this illustrates the basic simplicity.
 
 
@@ -88,195 +89,28 @@ If you want a more detailed explanation read [A General Theory of Reactivity](ht
 Let's make our minimal example a bit more realistic. We'll implement state, slots and some extra methods.
 What I like about the Angular implementation is that the signal itself is both the instance, as wel as the get-method for the current value. This does require a bit of trickery.
 
-<!--line-numbers-->
-```JavaScript
-/**
- * A signal
- * @name Signal
- * @function
- */
-const signalPrototype = {
-  /**
-   * Add listener to signal
-   * @memberof Signal#
-   * @param callback {Function}
-   * @returns {Slot}
-   */
-  add(callback){
-    const slot = createSlot(callback, this)
-    this._slots.push(slot)
-    return slot
-  },
-  /**
-   * Add listener to signal
-   * @memberof Signal#
-   * @param callback {Function}
-   * @returns {Slot}
-   */
-  addOnce(callback){
-    const slot = createSlot(r, this)
-    function r(...values){
-      callback(...values)
-      slot.remove()
-    }
-    this._slots.push(slot)
-    return slot
-  },
-  /**
-   * Remove all signal listeners
-   * @memberof Signal#
-   * @returns {Signal}
-   */
-  clear(){
-    this._slots.forEach(slot=>slot._signal = null)
-    this._slots.splice(0, Number.MAX_SAFE_INTEGER)
-    return this
-  },
-  /**
-   * Dispatch the signal
-   * @memberof Signal#
-   * @param values {any[]}
-   * @returns {Signal}
-   */
-  dispatch(...values){
-    this._values.splice(0, Number.MAX_SAFE_INTEGER, ...values)
-    this._slots.forEach(slot=>slot._callback(...values))
-    return this
-  }
-}
+I've split it into two files, `signal.js`:
 
-/**
- * Factory method to create a signal
- * @param values {any[]}
- * @return {Signal}
- */
-function createSignal(...values){
-  const signalProperties = {
-    /**
-     * @memberof Signal#
-     * @type {any}
-     */
-    _values: {
-      writable: false,
-      value: values
-    },
-    /**
-     * @memberof Signal#
-     * @type {Slot[]}
-     */
-    _slots: {
-      writable: false,
-      value: []
-    }
-  }
-  const inst = Object.create(signalPrototype, signalProperties)
-  return Object.defineProperties( ()=>{
-    const {_values} = inst
-    return _values.length===1?_values[0]:_values
-  }, Object.keys({...signalPrototype, ...signalProperties}).reduce((acc, key)=>{
-    acc[key] = { get: ()=>inst[key] }
-    return acc
-  }, {}))
-}
+<pre line-numbers><code data-language="javascript" data-src="https://raw.githubusercontent.com/Sjeiti/state-signals/master/src/signal.js"></code></pre>
 
-/**
- * @typedef Slot {object}
- */
-const slotPrototype = {
-  /**
-   * Remove signal listener
-   * @memberof Slot#
-   */
-  remove(){
-    const {_slots} = this._signal
-    const slotIndex = _slots.indexOf(this)
-    if (slotIndex!==-1) _slots.splice(slotIndex, 1)
-  }
-}
+And `slot.js`:
 
-/**
- * Factory method to create a slot
- * @param callback {Function}
- * @return {Slot}
- */
-function createSlot(callback, signal){
-  return Object.create(slotPrototype, {
-      /**
-       * @memberof Slot#
-       * @type {Function}
-       */
-      _callback: {
-        writable: false,
-        value: callback
-      },
-      /**
-       * @memberof Slot#
-       * @type {Signal}
-       */
-      _signal: {
-        writable: true,
-        value: signal
-      }
-    }
-  )
-}
+<pre line-numbers><code data-language="javascript" data-src="https://raw.githubusercontent.com/Sjeiti/state-signals/master/src/slot.js"></code></pre>
 
-// Usage
+This is still only 181 lines including JSDoc, or 1.24 KB minified.
 
-const somethingHappened = createSignal('tomorrow')
-console.log('somethingHappened', somethingHappened, somethingHappened())
+I've gone ahead and [published it to NPM](https://www.npmjs.com/package/state-signals).
 
-// Do something when something happens
-const slotLog = somethingHappened.add(console.log)
-somethingHappened.add(console.log.bind(console, 'Something happened'))
-slotLog.remove()
 
-// So when something really happens
-somethingHappened.dispatch('yesterday', 'evening')
-console.log('somethingHappened',somethingHappened())
-
-//////////////////////////////////////////////////////////////////
-
-const earned = createSignal(0)
-const spent = createSignal(0)
-const totals = createSignal(0)
-
-earned.add(n=>totals.dispatch(totals()+n))
-spent.add(n=>totals.dispatch(totals()-n))
-totals.add(console.log.bind(console,'totals'))
-totals.addOnce(console.log.bind(console,'totals only once'))
-
-earned.dispatch(100) // :   0 + 100 = 100
-      .dispatch(50)  // : 100 +  50 = 150
-spent.dispatch(120)  // : 150 - 120 =  30
-earned.dispatch(20)  // :  30 +  20 =  50
-console.log('totals()',totals()) // : 50
-
-console.log('reset',totals.dispatch(200)()) // : 200
-
-earned.clear()
-spent.clear().dispatch(5)
-
-console.log('cleared',totals()) // : 200
-```
-
-This is still only 111 lines including JSDoc, or 934 bytes minified.
+## Explanation
 
 The code is no rocket science either.
 I'll run you through some of the less obvious points.
 
-Starting with JSDoc; you might notice the different ways both prototypes are documented. The `Signal` as `@function` but the `Slot` as `@typedef`.
-Thing is; even though JavaScript is prototypal by nature, most people will use it in a classical way.
+~~Starting with JSDoc; you might notice the different ways both prototypes are documented. The `Signal` as `@function` but the `Slot` as `@typedef`.
+Thing is; even though JavaScript is prototypal by nature, most people will use it in a classical way.~~
 
 
-### So...
+## Summary
 
----
- 
-Actually, my first React implementation used signals alongside Redux, because I hate boilerplate.
-
-
-$ observable/observer
-
-finite state machine
-
+Signals are awesome.
