@@ -99,16 +99,41 @@ And `slot.js`:
 
 This is still only 181 lines including JSDoc, or 1.24 KB minified.
 
-I've gone ahead and [published it to NPM](https://www.npmjs.com/package/state-signals).
+I've gone ahead and [published it to NPM](https://www.npmjs.com/package/state-signals). There's already 468 packages mentioning signals. One more won't hurt.
 
 
 ## Explanation
 
-The code is no rocket science either.
-I'll run you through some of the less obvious points.
+The code is no rocket science. I'll run you through some of the less obvious points.
 
-~~Starting with JSDoc; you might notice the different ways both prototypes are documented. The `Signal` as `@function` but the `Slot` as `@typedef`.
-Thing is; even though JavaScript is prototypal by nature, most people will use it in a classical way.~~
+### Vanilla
+
+Why Vanilla with a separate dts file, why not TypeScript? Because you do not need TypeScript to write typed JavaScript. Simply adding JSDoc accomplishes the same with the added benefit of being able to generate documentation.
+For code as simple as this, TypeScript would just be an extra abstraction layer without real benefits.
+
+### Prototype
+
+JavaScript is prototypal by nature, but most people will use it in a classical way. That is: class declarations, and instantiation with `new`. Not classical in the historical sense, because that *is* prototypal.
+Let's just say the prototypal approach can give you a more fine grained control over properties and methods.
+
+### Factories
+
+You might notice that both files consist of a prototype declaration and a factory method. The factory creates an instance using `Object.create`. The factory in `slot.js` is how you'd normally go about things.
+The factory in `signal.js` is a bit unorthodox. In order to create an instance that is also callable we have to create the instance and the callable function separately, apply all instance properties to the function, and return that.
+
+### Chaining
+
+Chaining is the the ability to call multiple methods in succession. It is easily implemented: whenever a method returns nothing, return the object scope instead (that is `this`).
+
+[line 0 5](#code-0-5)
+
+[line 0 10](#code-0-10)
+
+[line 1 10](#code-1-10)
+
+[line 2 10](#code-2-10)
+
+[line 3 10](#code-3-10)
 
 
 ## Summary
