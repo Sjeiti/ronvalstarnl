@@ -1,7 +1,7 @@
 import {parentQuerySelector, expand, createElement, clean} from './utils/html'
 import {signal} from './signal'
 import {initialise} from './component'
-import {nextFrame} from './utils'
+import {nextFrame,nextTick} from './utils'
 import {applyDirectives} from './directives'
 
 export const routeChange = signal()
@@ -105,11 +105,16 @@ export function open(uri, popped){
       routeResolve(viewModel, name||'home', routeParams)
         .then(page=>{
           const title = page.title
-          popped||history.pushState({}, title, (name[0]==='/'?'':'/')+name+hash)
+          const urlNew = (name[0]==='/'?'':'/')+name
+          popped||history.pushState({}, title, urlNew)
           routeChange.dispatch(name, page, oldName)
           initialise(view)
           applyDirectives(view)
           viewModel.setViewName(name)
+          hash&&nextTick(()=>{
+            history.replaceState({}, title, urlNew+hash)
+            location.hash = hash
+          })
         })
         .catch(console.error)
     }
