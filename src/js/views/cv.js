@@ -409,7 +409,7 @@ function buildSkillsTable(projects, target){
   const menu = createElement('menu')
   createElement('button', null, menu, null, 'sort by weight').addEventListener('click', sortAscDesc(sortXP))
   createElement('button', null, menu, null, 'sort by A-Z').addEventListener('click', sortAscDesc(sortAZ))
-  const input = createElement('input', null, first)
+  const input = createElement('input', null, first, {'aria-hidden': true})
   input.addEventListener('input', onInputFilter)
   input.addEventListener('dblclick', ()=>menu.style.display='block')
 
