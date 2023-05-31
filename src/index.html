@@ -41,6 +41,12 @@
 			--color-bg-code: #333;
     }
 
+    @media (prefers-contrast: more) {
+			:root {
+        --color-link: #005999;
+      }
+    }
+    
     @media (min-width: 768px) {}
     
     html { box-sizing: border-box; }
@@ -353,7 +359,7 @@
       ,placeholder:'search'
       ,autoSuggest:true
       ,autoSuggestTop:true
-    }"></div>
+    }" role="search"></div>
   </footer>
   <script>
 
