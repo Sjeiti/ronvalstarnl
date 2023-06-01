@@ -21,7 +21,7 @@ ul.projects {
 
     transition: max-width 300ms ease-in-out;
 
-    .dark & {
+    .color-scheme-dark & {
       &:after {
         content: '';
         position: absolute;
@@ -75,7 +75,7 @@ ul.projects {
     font-size: 0.875rem;
     line-height: 1.25rem;
     color: white;
-    .dark & { color: var(--color-gray); }
+    .color-scheme-dark & { color: var(--color-gray); }
     background: rgba(0,0,0,0.6);
     box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     font-family: var(--font-name-code);
@@ -111,7 +111,7 @@ ul.project-category {
   li {
     display: block;
     a.current {
-      .dark & { color: white; }
+      .color-scheme-dark & { color: white; }
     }
   }
   a {

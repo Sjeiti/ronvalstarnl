@@ -33,7 +33,7 @@
       --scroll-percentage: 0%;
       --scroll-part: 0;
     }
-    .dark {
+    .color-scheme-dark {
 			--color-main-text: #000;
 			--color-link: #2e8cce;
 			--color-bg: black;
@@ -394,14 +394,21 @@
       console.log('console')
       window.addEventListener('error',e=>console.log(e.message,e.source))
     }
-
-    const key = 'scheme'
-    const dark = 'dark'
-    ;(
-        localStorage.getItem(key)
-        ||window.matchMedia('(prefers-color-scheme: dark)').matches&&dark
-    )===dark
-    &&document.documentElement.classList.add(dark)
+    
+    // https://www.w3.org/TR/mediaqueries-5/#mf-user-preferences
+    function findPrefers(key, value) {
+      ;(
+          localStorage.getItem(key)
+          ||window.matchMedia(`(prefers-${key}: ${value})`).matches&&value
+      )===value
+      &&document.documentElement.classList.add(`${key}-${value}`)
+    }
+    
+    findPrefers('color-scheme', 'dark')
+    findPrefers('contrast', 'more')
+    findPrefers('reduced-motion', 'reduce')
+    findPrefers('reduced-transparency', 'reduce')
+    findPrefers('reduced-data', 'reduce')
 
   </script>
 

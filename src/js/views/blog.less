@@ -14,7 +14,7 @@ ul.link-list {
 
       --color-sticky: color-mix(in hwb, var(--color-link), black 80%);
       --color-sticky-bg: color-mix(in hwb, var(--color-link), white 60%);
-      .dark & {
+      .color-scheme-dark & {
         --color-sticky: color-mix(in hwb, var(--color-link), white 20%);
         --color-sticky-bg: color-mix(in hwb, var(--color-link), black 75%);
       }
@@ -31,7 +31,7 @@ ul.link-list {
     display: inline-block;
 
     --color-link-bg: color-mix(in hwb, var(--color-link), white 85%);
-    .dark & { --color-link-bg: color-mix(in hwb, var(--color-link), black 85%); }
+    .color-scheme-dark & { --color-link-bg: color-mix(in hwb, var(--color-link), black 85%); }
 
     color: color-mix(in hwb, var(--color-link), black 20%);
     background-color: var(--color-link-bg);
