@@ -94,18 +94,29 @@ So here are good alternatives that are **not** subscription based: [Affinity Pho
 
 ### Kagi
 
-
 Ever since Google ditched their 'don't be evil' motto, they've also been going downhill in search engine result quality. It got so bad I immediately switched to Kagi the moment I heard about it.
 I'm willing to pay for good search results and privacy.
 
 ### Termux
 
+Termux is a Linux application for Android. As such it can be used to checkout Git repos, build projects, edit files using Vim, etcetera. You can read more about it [here](/best-free-editor-on-android),
+
 ### Awesome Screenshot
+
+[Awesome screenshot](https://www.awesomescreenshot.com/) records and captures screens and is available as a pugin for Firefox and Chrome. I use it mostly to make screenshots for documentation, or for visual explanation in an email. It comes with a basic editor to add highlights and annotations.
 
 ### StandardNotes
 
+A basic cloud based notes editor that supports Markdown. It has a webapp as well as native apps for Android and IOS. It has end-to-end encryption and is very easy to use.
+
 ### Stylus
+
+A well known browser addon that lets you add custom CSS to websites. Very handy for dark modes and such.
 
 ### httpbin.org
 
+The easy basic way to test REST reponses.
+
 ### tiny-helpers.dev
+
+I could add a lot more web tools, but I'll suffice by adding a site that lists a curated selection of very useful tools.
