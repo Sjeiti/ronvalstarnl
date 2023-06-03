@@ -11,11 +11,11 @@
   thumbnail: Screenshot_2015-06-03-19-31-03-e1433359905965.png
   image: Screenshot_2015-06-03-19-31-03-e1433359905965.png
   images: 1.jpg, 2.jpg, 3.jpg, 4.jpg, 5.jpg, Screenshot_2015-06-03-20-00-12-e1433359959134.png, Screenshot_2015-06-03-19-31-03-e1433359905965.png
-  inCv: false
+  inCv: true
   inPortfolio: true
   dateFrom: 2015-04-03
   dateTo: 2015-06-01
--->
+--> 
 
 # Zeker met je creditcard
 

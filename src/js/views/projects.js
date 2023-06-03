@@ -82,7 +82,7 @@ add(
  */
 function buildPage(view, categories, portfolioProjects){
   const querySelector = ::view.querySelector
-  view.expandAppend(`(ul.unstyled${classNames.projectCategory}>(${categories.map(
+  view.expandAppend(`(ul${classNames.projectCategory}>(${categories.map(
       o=>`(li>a[href="/projects/${o.slug}"]{${o.name}})`
     ).join('+')}))+ul.unstyled${classNames.projects}>(${portfolioProjects.map(getProjectThumbZen).join('+')})`)
   const categoriesElm = querySelector(classNames.projectCategory)

@@ -23,16 +23,18 @@ body>header {
   }
   nav a {
     transition: box-shadow 200ms linear;
-    box-shadow: 0 0 0 -1px @colorBlack inset;
+    box-shadow: 0 0 0 -1px #000 inset;
     &:hover, &.current, &-parent.current {
-      background-color: @colorMain;
-      box-shadow: -100px 0 0 @colorBlack inset;
+      background-color: var(--color-main);
+      color: #FFF;
+      box-shadow: -100px 0 0 #000 inset;
+      &:hover:not(.current) { color: var(--color-main); }
     }
   }
   .colofon {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 1.3rem;
+    top: 0.1rem;
     padding-right: 0.25rem;
     z-index: 2;
     color: rgba(white, 0.7);

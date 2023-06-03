@@ -119,6 +119,7 @@ function getWordSection(root){
 /**
  * Download a Word document
  * @param {HTMLElement} target
+ * @todo check: https://social.msdn.microsoft.com/Forums/en-US/aa101f8e-6a48-4ae2-bb60-e2c684b4c536/export-document-to-word?forum=sharepointdevelopmentprevious
  */
 function dowloadWordDocument(target){
   const html = getHTMLToParse()
@@ -177,84 +178,65 @@ function dowloadWordDocument(target){
             , color: '888888'
           }
         }
-        // {
-        //   id: "Heading1",
-        //   name: "Heading 1",
-        //   basedOn: "Normal",
-        //   next: "Normal",
-        //   quickFormat: true,
-        //   run: {
-        //     size: 28,
-        //     bold: true,
-        //     italics: true,
-        //     color: "FF0000",
-        //   },
-        //   paragraph: {
-        //     spacing: {
-        //       after: 120,
-        //     },
-        //   },
-        // },
-        // {
-        //   id: "Heading2",
-        //   name: "Heading 2",
-        //   basedOn: "Normal",
-        //   next: "Normal",
-        //   quickFormat: true,
-        //   run: {
-        //     size: 26,
-        //     bold: true,
-        //     underline: {
-        //       type: UnderlineType.DOUBLE,
-        //       color: "FF0000",
-        //     },
-        //   },
-        //   paragraph: {
-        //     spacing: {
-        //       before: 240,
-        //       after: 120,
-        //     },
-        //   },
-        // },
-        // {
-        //   id: "aside",
-        //   name: "Aside",
-        //   basedOn: "Normal",
-        //   next: "Normal",
-        //   run: {
-        //     color: "999999",
-        //     italics: true,
-        //   },
-        //   paragraph: {
-        //     indent: {
-        //       left: 720,
-        //     },
-        //     spacing: {
-        //       line: 276,
-        //     },
-        //   },
-        // },
-        // {
-        //   id: "wellSpaced",
-        //   name: "Well Spaced",
-        //   basedOn: "Normal",
-        //   quickFormat: true,
-        //   paragraph: {
-        //     spacing: { line: 276, before: 20 * 72 * 0.1, after: 20 * 72 * 0.05 },
-        //   },
-        // },
-        // {
-        //   id: "ListParagraph",
-        //   name: "List Paragraph",
-        //   basedOn: "Normal",
-        //   quickFormat: true,
-        // },
-      ],
+      ]
     }
     , sections: [{children}]
   })
+  target.removeAttribute('href')
   Packer.toBlob(doc).then(blob => saveAs(blob, documentTitle+'.docx'))
-  target
+
+  // console.log('poepjes', 23) // todo: remove log
+
+  //////////////////
+
+  // Packer.toBlob(doc).then(blob => {
+  //   target.setAttribute('href', 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(blob))
+  // })
+
+  //////////////////
+
+  // Packer.toBlob(doc).then(blob => {
+  //   // target.setAttribute('href', 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(blob))
+  //
+  //   const data = window.URL.createObjectURL(blob);
+  //
+  //   target.setAttribute('href', data)
+  //
+  //   setTimeout(() => {
+  //     // For Firefox it is necessary to delay revoking the ObjectURL
+  //     window.URL.revokeObjectURL(data);
+  //   }, 400)
+  // })
+
+  //////////////////
+
+  // const newBlob = new Blob(['\ufeff', doc], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' })
+  // const data = window.URL.createObjectURL(newBlob);
+  //
+  // target.setAttribute('href', data)
+  //
+  // setTimeout(() => {
+  //   // For Firefox it is necessary to delay revoking the ObjectURL
+  //   window.URL.revokeObjectURL(data);
+  // }, 400)
+
+  //////////////////
+
+  // var HtmlHead = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><style>body {font-family: Calibri, Arial, sans-serif; white-space: pre;}</style></head><body>";
+  // var EndHtml = "</body></html>";
+  //
+  // // ENTER YOUR HTML/CONTENT HERE - use strings for tags and player.GetVar for the Storyline variables
+  // var htmll = HtmlHead + html + EndHtml;
+  //
+  // // //This specifies the type
+  // // var blob = new Blob(['\ufeff', doc], {
+  // //   type: 'application/msword'
+  // // });
+  //
+  // // This specifies the link url
+  // var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(htmll);
+  // target.setAttribute('href', 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(htmll))
+
 }
 
 /**
@@ -266,13 +248,16 @@ function downloadPDFDocument(target){
   // jsPDF uses html2canvas internally, which ignores print CSS
   const doc = new jsPDF()
   doc.html(document.body, {
-    callback: doc=>doc.save(`${documentTitle}.pdf`)
+    callback: doc=>{
+      // doc.save(`${documentTitle}.pdf`)
+      target.setAttribute('href', 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(doc))
+    }
     , x: 0
     , y: 0
     , width: 211 // = mm
     , windowWidth: 800 // = px
   })
-  target
+  // target.setAttribute('href', 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html))
 }
 
 /**
@@ -386,6 +371,8 @@ function buildSkillsTable(projects, target){
   const trxp = Object.entries(result).map(([title, years])=>{
     const slug = slugify(title)
     const tr = createElement('tr', null, tbody)
+    tr.dataset.slug = slug
+    tr.dataset.title = title
     createElement('th', null, tr, null, title)
     //
     let xp = 0
@@ -399,7 +386,8 @@ function buildSkillsTable(projects, target){
     return {tr, xp, slug}
   })
 
-  const xps = target.dataset.skills
+  const {skills} = target.dataset
+  const xps = skills
       .toLowerCase()
       .split(/\|/g)
       .reduce((acc, s, i)=>{
@@ -421,7 +409,7 @@ function buildSkillsTable(projects, target){
   const menu = createElement('menu')
   createElement('button', null, menu, null, 'sort by weight').addEventListener('click', sortAscDesc(sortXP))
   createElement('button', null, menu, null, 'sort by A-Z').addEventListener('click', sortAscDesc(sortAZ))
-  const input = createElement('input', null, first)
+  const input = createElement('input', null, first, {'aria-hidden': true})
   input.addEventListener('input', onInputFilter)
   input.addEventListener('dblclick', ()=>menu.style.display='block')
 
@@ -429,7 +417,6 @@ function buildSkillsTable(projects, target){
   sortIndex()()
   // requestAnimationFrame(()=>sortIndex()())
 
-  const {skills} = target.dataset
   skills&&onInputFilter({currentTarget:{value:skills}})
 
   const skillsTable = createElement('div')
@@ -453,10 +440,7 @@ function buildSkillsTable(projects, target){
       .split(/\|/g).map(s=>s.split(':').shift().trim())
     clearBody()
     entryList.forEach(tr=>
-      filters.forEach(filter=>
-        tr.querySelector('th').textContent.toLowerCase().includes(filter)
-            &&fragment.appendChild(tr)
-      )
+      filters.includes(tr.dataset.slug)&&fragment.appendChild(tr)
     )
     tbody.appendChild(fragment)
   }

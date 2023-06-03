@@ -12,16 +12,43 @@
   <style>
     
     :root {
+			color-scheme: normal;
+      
       --color-main: #f04;
+      --color-main-text: #FFF;
       --color-link: #3baeff;
-      --color-gray-light: #E7ECE9;
+      --color-bg: white;
+      --color-bg-code: #E7ECE9;
+      --color-text: black;
+      --color-text-: #888;
+      --color-gray: #888;
+      --color-text-header: #547979;
+      --color-border: #F4F4F4;
+      --color-notice: #FD0;
+
       --font-name-heading: 'Source Code Pro', monospace;
       --font-name-body: 'Istok Web', sans-serif;
       --font-name-code: 'Source Code Pro', monospace;
+      
       --scroll-percentage: 0%;
       --scroll-part: 0;
     }
+    .color-scheme-dark {
+			--color-main-text: #000;
+			--color-link: #2e8cce;
+			--color-bg: black;
+			--color-text: #888;
+			--color-border: #222;
+			--color-bg-code: #333;
+    }
 
+    @media (prefers-contrast: more) {
+			:root {
+        --color-link: #059;
+				--color-text-: #595959;
+      }
+    }
+    
     @media (min-width: 768px) {}
     
     html { box-sizing: border-box; }
@@ -39,7 +66,8 @@
 
     body {
       margin: 0;
-      background-color: white;
+      background-color: var(--color-bg);
+			color: var(--color-text);
       font-family: var(--font-name-body);
       font-size: 1rem;
       overflow-y: scroll;
@@ -57,7 +85,7 @@
       margin: 0;
       padding: 1rem 0;
       overflow: hidden;
-      color: white;
+      color: var(--color-main-text);
       text-transform: uppercase;
       background-color: var(--color-main);
       background-size: cover;
@@ -87,7 +115,7 @@
       display: block;
       width:5.6em;
       height:2.8em;
-      background-color: #fff;
+      background-color: var(--color-main-text);
       border-radius: 0 2.8em 0 2.8em;
       transform: rotate(40deg) skewx(-3deg) skewy(-3deg);
     }
@@ -143,6 +171,7 @@
     header nav a.current
     ,header nav a.current-parent {
       background-color: #000;
+      color: var(--color-text);
     }
     header nav a span {
       font-size: 0.625rem;
@@ -175,6 +204,23 @@
       text-decoration: none;
       color: inherit;
     }
+		[data-color-scheme] {
+			padding: 0;
+			position: absolute;
+			right: 0;
+			top:0;
+			border: 0;
+			background-color: transparent;
+			color: inherit;
+      cursor: pointer;
+		}
+		[data-color-scheme]:hover {
+      color: var(--color-text);
+			transition: color linear 300ms;
+		}
+		[data-color-scheme] svg {
+			transform: translate(20%,-20%) rotate(45deg) scale(80%);
+		}
     main { position: relative; }
     .content {
       max-width: 768px;
@@ -199,7 +245,7 @@
     .content, aside {
       position: relative;
       padding: 1rem 0 0;
-      background-color: #fff;
+			background-color: var(--color-bg);
     }
     .content>*, aside>* {
       margin-left: 1rem;
@@ -252,7 +298,7 @@
       height: 2rem;
       font-size: 1.5rem;
       line-height: 2rem;
-      background-color: #fff;
+      background-color: var(--color-bg);
       border-radius: 50%;
     }
     footer .social span {
@@ -289,6 +335,7 @@
       <a href="/contact"><span>contact</span></a>
       <a href="/cv"><span>cv</span></a>
     </nav>
+    <button data-color-scheme><svg data-icon="brightness-contrast"><title>brightness-contrast</title></svg></button>
   </header>
   <main>
     <div class="content">
@@ -314,7 +361,7 @@
       ,placeholder:'search'
       ,autoSuggest:true
       ,autoSuggestTop:true
-    }"></div>
+    }" role="search"></div>
   </footer>
   <script>
 
@@ -347,6 +394,21 @@
       console.log('console')
       window.addEventListener('error',e=>console.log(e.message,e.source))
     }
+    
+    // https://www.w3.org/TR/mediaqueries-5/#mf-user-preferences
+    function findPrefers(key, value) {
+      ;(
+          localStorage.getItem(key)
+          ||window.matchMedia(`(prefers-${key}: ${value})`).matches&&value
+      )===value
+      &&document.documentElement.classList.add(`${key}-${value}`)
+    }
+    
+    findPrefers('color-scheme', 'dark')
+    findPrefers('contrast', 'more')
+    findPrefers('reduced-motion', 'reduce')
+    findPrefers('reduced-transparency', 'reduce')
+    findPrefers('reduced-data', 'reduce')
 
   </script>
 

@@ -50,7 +50,7 @@ function setHeaderImage(post){
 function getBlogHeading(post){
   const {date, title} = post
   const time = date.split('T').shift()
-  return `time.blog{${time}}+h1{${title}}`
+  return `time.blog[datetime=${time}]{${time}}+h1{${title}}`
 }
 
 /**

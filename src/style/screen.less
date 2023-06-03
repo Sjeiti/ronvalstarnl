@@ -74,8 +74,9 @@ main {
 }
 
 footer {
+  color: var(--color-main-text);
   .social a {
-    color: #fff;
+    color: inherit;
     background-color: transparent;
   }
 }
@@ -117,7 +118,7 @@ img, svg {
 .icon {
   width: 1.5rem;
   height: 1.5rem;
-  fill: #FFF;
+  fill: currentColor;
   vertical-align: middle;
 }
 
@@ -142,6 +143,7 @@ img, svg {
 }
 
 del[data-href]:hover {
+  //color: red;
   position: relative;
   &:after {
     content: attr(data-href);
@@ -150,16 +152,16 @@ del[data-href]:hover {
     top: 70%;
     display: block;
     padding: 0.0125rem 0.5rem!important;
-    background-color: @colorLinkL30;
+    background-color: color-mix(in hwb, var(--color-bg), var(--color-text) 30%);
     font-size: 0.8125rem;
-    box-shadow: 0 0 1rem rgba(@colorLink,0.3);
+    box-shadow: 0 0 1rem rgba(var(--color-link),0.3);
   }
 }
 
 .content .notice {
   padding: 1rem 0;
-  background-color: @colorNotice;
-  box-shadow: -50vw 0 0 @colorNotice, 50vw 0 0 @colorNotice;
+  background-color: var(--color-notice);
+  box-shadow: -50vw 0 0 var(--color-notice), 50vw 0 0 var(--color-notice);
 }
 
 code {

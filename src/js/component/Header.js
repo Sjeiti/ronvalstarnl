@@ -1,4 +1,4 @@
-import experiments from 'experiments/src/experiment/index.js'
+import * as experiments from 'experiments/src/experiment/index.js'
 
 import {create} from './index'
 import {BaseComponent} from './BaseComponent'
@@ -43,6 +43,8 @@ create('[data-header]', class extends BaseComponent{
     this._initExperiments()
     this._background = this._$('.background')
     this._colofon = this._$('.colofon')
+
+    this._initColorScheme()
   }
 
   /**
@@ -60,6 +62,18 @@ create('[data-header]', class extends BaseComponent{
     //
     clean(this._experimentWrapper)
     this._stuck.add(is=>this._experiment?.pause(is))
+  }
+
+  /**
+   * Initialise color scheme switching
+   * @see `index.html` for initial setup
+   */
+  _initColorScheme(){
+    const key = 'color-scheme'
+    const value = 'dark'
+    this._select(`[data-${key}]`).addEventListener('click', ()=>{
+      localStorage.setItem(key, document.documentElement.classList.toggle(`${key}-${value}`)?value:'light')
+    })
   }
 
   /**

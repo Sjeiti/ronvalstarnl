@@ -2,14 +2,20 @@ body[data-pathname^=cv] {
   @media print {
 
     font-size: 11pt;
-    line-height: 19pt;
+    line-height: 15pt;
 
     >header { // todo: all outside content now fails
       position: static;
       height: 8rem;
+      box-shadow: none;
+      &:after { display: none; }
       h1 {
         transform: translateX(-50%) scale(0.75) translateY(-1rem);
       }
+    }
+    .content {
+      margin-top: 1rem;
+      padding-top: 0;
     }
 
     .page-break {
@@ -52,6 +58,9 @@ body[data-pathname^=cv] {
     .cv-projects {
       //display: flex; // page-break rules fail with flex
       //flex-wrap: wrap;
+      header:after {
+        display: none;
+      }
       >li {
         width: 50%;
         float: left;
@@ -70,9 +79,9 @@ body[data-pathname^=cv] {
     }
     ul.tags {}
   }
-  small, dl {
-    font-size: 0.875rem;
-    color: #888;
+  small, dl, ul.tags {
+    font-size: 0.75rem;
+    color: var(--color-text-);
   }
   dt:after { content: ': '; }
   dt, dd {
@@ -96,20 +105,19 @@ body[data-pathname^=cv] {
   >li {
     position: relative;
     padding: 3rem 1rem;
-    box-shadow: 0 -1px 0 #eee;
+    box-shadow: 0 -1px 0 var(--color-border);
   }
   header {
-    @colorHeadingBorder: #F4F4F4; // @colorMain
     position: relative;
     &:after {
       content: '';
       display: block;
       width: 100%;
       height: 0.0625rem;
-      background-color: @colorHeadingBorder;
+      background-color: var(--color-border);
       box-shadow:
-          -30rem 0 0 0 @colorHeadingBorder, 30rem 0 0 0 @colorHeadingBorder
-          ,-70rem 0 0 0 @colorHeadingBorder, 70rem 0 0 0 @colorHeadingBorder
+          -30rem 0 0 0 var(--color-border), 30rem 0 0 0 var(--color-border)
+          ,-70rem 0 0 0 var(--color-border), 70rem 0 0 0 var(--color-border)
       ;
     }
   }
@@ -118,7 +126,7 @@ body[data-pathname^=cv] {
     font-weight: 400;
     &:after { content: initial; }
   }
-  h3, h3>a { color: #f04; }
+  h3, h3>a { color: var(--color-main); }
   .date {
     position: absolute;
     right: 0;
@@ -132,7 +140,7 @@ body[data-pathname^=cv] {
     list-style: none;
     font-size: 0.875rem;
     line-height: 1rem;
-    color: #888;
+    color: var(--color-gray);
     li {
       display: inline-block;
     }
@@ -144,7 +152,7 @@ body[data-pathname^=cv] {
   .icon {
     width: 0.5rem;
     height: 0.5rem;
-    fill: @colorGray;
+    fill: color-mix(in hwb, var(--color-gray), var(--color-bg) 59%);
     &:nth-child(n+5) {
       margin-right: 0.5rem;
     }
@@ -155,14 +163,15 @@ body[data-pathname^=cv] {
     top: 0;
     width: 2.5rem;
     height: 100%;
-    .icon { fill: @colorMain; }
+    .icon { fill: var(--color-main); }
   }
 }
 
 .skillsTable {
 
-  --color-row: #F04;
+  --color-row: var(--color-main);
   --color-row-off: #EEE;
+  .color-scheme-dark & { --color-row-off: #222; }
 
   font-size: 0.75rem;
   line-height: 160%;
@@ -179,7 +188,7 @@ body[data-pathname^=cv] {
     width: 8rem;
   }
   tbody tr:nth-child(even) {
-    --color-row: #E03;
+    --color-row: color-mix(in hwb, var(--color-main), var(--color-bg) 9%);
     background-color: var(--color-row-off);
   }
   th {
@@ -224,6 +233,7 @@ body[data-pathname^=cv] {
   input {
     width: 100%;
     margin: 0;
+    background-color: transparent;
   }
 
   .currentSort:after {

@@ -25,7 +25,14 @@ export function prismToRoot(root){
  * @param {HTMLElement} elm
  */
 export function prismToElement(elm){
+  
+  const pres = Array.from(document.querySelectorAll('pre'))
+
   const {parentNode:pre, parentNode: {parentNode}, textContent, dataset: {language}} = elm
+
+  const index = pres.indexOf(pre)
+
+  console.log(elm.nodeName,index)
 
   let contents = textContent
       .replace(/\n/g, '\r\n').replace(/\r+/g, '\r')
@@ -80,12 +87,17 @@ export function prismToElement(elm){
     parentNode.removeChild(pre)
 
   } else {
+    const lineNumbers = 'line-numbers'
+    const pre = elm.parentElement
+    const maybeComment = pre.previousSibling.previousSibling
+    maybeComment.nodeType===8&&maybeComment.textContent==='line-numbers'&&pre.setAttribute(lineNumbers, '')
+
     elm.setAttribute('data-language', lang)
     lang&&(elm.dataset.language = lang)
     const prismLang = Prism.languages[lang]||Prism.languages.javascript
     /*const highlighted = */Prism.highlight(contents, prismLang)
     elm.innerHTML = Prism.highlight(contents, prismLang)
-    elm.parentNode.hasAttribute('line-numbers')&&addLineNumbers(elm, contents)
+    pre.hasAttribute(lineNumbers)&&addLineNumbers(elm, index, contents)
     elm.classList.add('highlighted')
     props.forEach(prop=>pre.classList.add('code--'+prop))
   }
@@ -126,15 +138,16 @@ function getJSFiddleButton(contents){
 /**
  * Add line numbers to code
  * @param {HTMLElement} elm
+ * @param {number} index
  * @param {string} code
  */
-function addLineNumbers(elm, code){
+function addLineNumbers(elm, index, code){
   const match = code.match(/\n(?!$)/g)
   const linesNum = match ? match.length + 1 : 1
   const lineNumbersWrapper = document.createElement('ol')
   for (let i=0;i<linesNum;i++){
     const line = document.createElement('li')
-    line.setAttribute('id', 'code-'+(i+1)) // todo: fix id for multiple code instances
+    line.setAttribute('id', `code-${index}-${i+1}`)
     lineNumbersWrapper.appendChild(line)
   }
   lineNumbersWrapper.setAttribute('aria-hidden', 'true')

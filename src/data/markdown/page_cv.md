@@ -20,9 +20,10 @@
 <small class="pull-right" data-download>
     download as 
     <a href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1569508867/rv/Curiculum-Vitae_Ron-Valstar_front-end-developer.pdf" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.pdf">pdf</a>,
-    <button class="anchor" data-download-word>word</button> 
+<!--<button class="anchor" data-download-word>Word</button>-->
+    <a data-download-word href="Curiculum-Vitae_Ron-Valstar_front-end-developer.docx" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.docx">docx</a>
     or <a data-download-txt href="Curiculum-Vitae_Ron-Valstar_front-end-developer.md" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.txt">txt</a>
-    <!--or <button class="anchor" data-download-pdf>pdf</button>-->
+<!--or <button class="anchor" data-download-pdf>pdf</button>-->
 </small>
 <ul class="list-unstyled">
 	<li>Ron Valstar <small>BA / MA</small></li>
@@ -106,8 +107,13 @@ I can read and write several backend languages and I'm not afraid to learn somet
  - <time>1999-2000</time> University of Portsmouth (HKU): European Media Master of Arts, Interactive Multi Media <small>(MA)</small>
  - <time>1996-1999</time> HKU: Interaction Design <small>(BA)</small>
  - <time>1993-1996</time> CIBAP: Reclame
- - <time>1992-1993</time> Basisopleiding reclame, LOI
  - <time>1987-1992</time> HAVO
+
+## courses
+- <time>2023</time> Practical accessibility
+- <time>2021</time> Scythe handling
+- <time>2013</time> Basic welding techniques
+- <time>1992-1993</time> Basisopleiding reclame, LOI
 
 </div><div>
 

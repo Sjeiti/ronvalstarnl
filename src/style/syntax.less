@@ -1,5 +1,42 @@
 @preLineHeight: 19px;
 
+:root {
+  --color-code-bg: #2B2B2B;
+  --color-code-cut: #9876AA;
+  --color-code-comment: #FFDD00;
+  --color-code-string: #5FBA47;
+  --color-code-template-string: #538d45;
+  --color-code-class-name: #89A;
+  --color-code-keyword: #CC7832;
+  --color-code-boolean: #CC7832;
+  --color-code-function: #FFC66D;
+  --color-code-number: #6897BB;
+  --color-code-operator: #82a2a9;
+  --color-code-punctuation: #CC7832;
+  --color-code-tag: #FFC66D;
+  --color-code-attr-value: #5FBA47;
+  --color-code-selector: #CC7832;
+}
+@media (prefers-contrast: more) {
+  :root {
+    --color-code-bg: #222;
+    --color-code-cut: #9876AA;
+    --color-code-comment: #FFDD00;
+    --color-code-string: #5FBA47;
+    --color-code-template-string: #86BA73;
+    --color-code-class-name: #89A;
+    --color-code-keyword: #CC7832;
+    --color-code-boolean: #CC7832;
+    --color-code-function: #E1AE84;
+    --color-code-number: #6897BB;
+    --color-code-operator: #82a2a9;
+    --color-code-punctuation: #CC7832;
+    --color-code-tag: #FFC66D;
+    --color-code-attr-value: #5FBA47;
+    --color-code-selector: #CC7832;
+  }
+}
+
 .code {
   &--noscroll { max-height: none!important; }
   &--large code { font: 24px/30px Inconsolata, courier, monospace; }
@@ -8,8 +45,8 @@
 code {
   margin: 0 4px;
   padding: 0 4px;
-  background-color: @colorGrayLight;
-  box-shadow: 0 0 0 4px @colorGrayLight;
+  background-color: var(--color-bg-code);
+  box-shadow: 0 0 0 4px var(--color-bg-code);
 }
 
 pre, code {
@@ -49,11 +86,11 @@ pre {
   margin-top: 0.125rem;
   border-color: #000;
   border-radius: 2px;
-  background: #2B2B2B;
+  background: var(--color-code-bg);
   overflow-x: auto;
   white-space: pre;
   tab-size: 2;
-  box-shadow: -50vw 0 0 #2B2B2B, 50vw 0 0 #2B2B2B;
+  box-shadow: -50vw 0 0 var(--color-code-bg), 50vw 0 0 var(--color-code-bg);
 
   a.source-url {
     position: absolute;
@@ -83,7 +120,7 @@ pre {
     &.highlighted {
       &:before, &:after {
         margin: 0;
-        color: @colorMain;
+        color: var(--color-main);
         font-family: @fontNameCode;
         font-size: 12px;
       }
@@ -111,33 +148,33 @@ pre {
 
       color: #A9B7C6;
       .token {
-        &.cut { color: #9876AA; }
-        &.comment { color: #FFDD00; }
-        &.jsdoc { color: @colorMain; }
-        &.string { color: #5FBA47; }
-        &.template-string { color: #538d45; }
-        &.class-name { color: #89A; font-style: italic; }
+        &.cut { color: var(--color-code-cut); }
+        &.comment { color: var(--color-code-comment); }
+        &.jsdoc { color: var(--color-main); }
+        &.string { color: var(--color-code-string); }
+        &.template-string { color: var(--color-code-template-string); }
+        &.class-name { color:  var(--color-code-class-name); font-style: italic; }
 
-        &.keyword { color: #CC7832; }
-        &.boolean { color: #CC7832; }
-        &.function { color: #FFC66D; }
-        &.number { color: #6897BB; }
-        &.operator { color: #82a2a9; }
-        &.punctuation { color: #CC7832; } // &.punctuation { color: #A9B7C6; }
+        &.keyword { color: var(--color-code-keyword); }
+        &.boolean { color: var(--color-code-boolean); }
+        &.function { color: var(--color-code-function); }
+        &.number { color: var(--color-code-number); }
+        &.operator { color: var(--color-code-operator); }
+        &.punctuation { color: var(--color-code-punctuation); }
 
         // html
-        &.tag { color: #FFC66D; }
-        &.attr-value { color: #5FBA47; }
+        &.tag { color: var(--color-code-tag); }
+        &.attr-value { color: var(--color-code-attr-value); }
 
         // css
-        &.selector { color: #CC7832; }
+        &.selector { color: var(--color-code-selector); }
       }
     }
   }
   .line-numbers-rows {
     position: absolute;
     left: 0;
-    top: 0;
+    top: 0.125rem;
     width: 100%;
     height: 100%;
     margin: 0;
@@ -159,10 +196,10 @@ pre {
         width: 20px;
         content: counter(linenumber);
       }
-      &.highlight:before {
+      &.highlight:before, &:target:before {
         color: #6897BB;
       }
-      &.highlight:after {
+      &.highlight:after, &:target:after {
         content: '';
         position: absolute;
         left: 0;
@@ -171,6 +208,7 @@ pre {
         height: @preLineHeight - 1px;
         background-color: fade(#6897BB,15%);
       }
+      &:target { color: var(--color-main); }
     }
   }
 }

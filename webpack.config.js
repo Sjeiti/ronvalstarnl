@@ -80,6 +80,7 @@ module.exports = env => {
             , toType: 'template',
           }
           , { from: 'node_modules/experiments/src/static/glsl/', to: './static/glsl' }
+          , { from: 'node_modules/experiments/src/static/img/', to: './static/img' }
       ]})
       , new webpack.DefinePlugin({
         _VERSION: JSON.stringify(require('./package.json').version)

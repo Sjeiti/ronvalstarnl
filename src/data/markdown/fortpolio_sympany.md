@@ -15,5 +15,4 @@
 
 # Sympany spreadsheet plugin
 
-Development of an open source Wordpress plugin that reads and displays spreadsheets that can be interacted with.
-Work was done as volunteer work.
+Volunteer work developing an open source Wordpress plugin that reads and displays spreadsheets that can be interacted with.
