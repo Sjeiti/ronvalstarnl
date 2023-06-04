@@ -1,7 +1,7 @@
 <!--
   date: 9999-99-99
   modified: 9999-99-99
-  slug: signals
+  slug: using-toggable-user-preference-media-features
   type: post
   header: ...
   headerColofon: photo by [Takahiro Sakamoto](https://unsplash.com/@takahiro)

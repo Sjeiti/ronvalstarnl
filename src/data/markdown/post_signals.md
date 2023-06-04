@@ -8,10 +8,16 @@
   headerColofon: photo by [Takahiro Sakamoto](https://unsplash.com/@takahiro)
   headerClassName: no-blur darken
   categories: code, CSS, HTML, JavaScript, work, open source
-  tags: signals
+  tags: signal
+-->
+<!--
+  date: 9999-99-99
+  modified: 9999-9999-99
+  date: 2023-06-04
+  modified: 2023-06-04
 -->
 
-# Signals
+# Signals 
 
 I've been using signals since the latter days of Flash, so since before 2010. Loved it in AS3, so kept using it in JavaScript in the form of [js-signals](https://millermedeiros.github.io/js-signals/). This was modeled after [AS3 signals](https://github.com/robertpenner/as3-signals) which in turn was in turn inspired by [C# events](http://en.wikipedia.org/wiki/C_Sharp_syntax#Events) and [signals/slots](http://en.wikipedia.org/wiki/Signals_and_slots) in Qt. (<small>a [port of AS3 signals](https://github.com/RobotlegsJS/SignalsJS) exists in the RobotlegsJS repo</small>)
 
@@ -56,7 +62,7 @@ somethingHappened.dispatch('yesterday', 'evening')
 // > Something happened yesterday evening
 ```
 
-That was really quick and dirty. An actual implementation would have the `add` method return a `slot` that can be used to remove the 'listener', as well as some other useful methods.
+That was a really barebones example. An actual implementation would have the `add` method return a `slot` that can be used to remove the 'listener', as well as some other useful methods.
 But I hope this illustrates the basic simplicity.
 
 
@@ -104,7 +110,7 @@ I've gone ahead and [published it to NPM](https://www.npmjs.com/package/state-si
 
 ## Explanation
 
-The code is no rocket science. I'll run you through some of the less obvious points.
+The code is no rocket science. I'll run you through the less obvious points.
 
 ### Vanilla
 
@@ -114,7 +120,7 @@ For code as simple as this, TypeScript would just be an extra abstraction layer 
 ### Prototype
 
 JavaScript is [prototypal](#code-2-9) by nature, but most people will use it in a classical way. That is: class declarations, and instantiation with `new`. Not classical in the historical sense, because that *is* prototypal.
-Let's just say the prototypal approach can give you a more fine grained control over properties and methods.
+Let's just say the prototypal approach can give you a more fine-grained control over properties and methods.
 
 ### Factories
 
