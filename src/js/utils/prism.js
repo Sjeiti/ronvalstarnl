@@ -32,8 +32,6 @@ export function prismToElement(elm){
 
   const index = pres.indexOf(pre)
 
-  console.log(elm.nodeName,index)
-
   let contents = textContent
       .replace(/\n/g, '\r\n').replace(/\r+/g, '\r')
       .replace(/\r/g, '\r\n').replace(/\n+/g, '\n')
