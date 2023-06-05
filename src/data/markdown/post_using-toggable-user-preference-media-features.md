@@ -13,9 +13,21 @@
 
 # Using toggable user preference media features
 
-While implementing darkmode I stumbled upon [user preference media features](https://www.w3.org/TR/mediaqueries-5/#mf-user-preferences), which is part of the W3C working draft Media Queries Level 5. Well, not exactly stumbled upon, more like searched for the correct way to implement darkmode.
+While implementing darkmode I stumbled upon [user preference media features](https://www.w3.org/TR/mediaqueries-5/#mf-user-preferences), which is part of the W3C working draft Media Queries Level 5. Well, not exactly stumbled upon, more like: looked it up while searching for a good way to implement darkmode.
 
-The media query draft is what is says it is: a draft. Bit since it is from december 2021, a lot is alredy implemented in browsers. It is just subject to change.
+It is a draft, subject to change. But it is from 2021 and a lot of featutes are already implemented in browsers [as you can see on caniuse](https://caniuse.com/?search=prefers-). 
+You can read about [the W3C standardisation process](https://www.w3.org/2004/02/Process-20040205/tr.html) or [the CSS working group](https://wiki.csswg.org/) if you like to know more about it. This [list of drafts](https://drafts.csswg.org/) is also interesting reading material.
+
+### Darkmode is a color scheme
+
+The media queries draft talks about [prefers-color-scheme (11.5)](https://www.w3.org/TR/mediaqueries-5/#prefers-color-scheme) which has the possible values `light` and `dark`.
+This is a setting that exists in the user agent (browser) and might even depend on setting in the operating system (ie [IOS](https://support.apple.com/guide/mac-help/use-a-light-or-dark-appearance-mchl52e1c2d2/mac) or [Windows](https://support.microsoft.com/en-us/office/use-color-and-contrast-for-accessibility-in-microsoft-365-bb11486d-fc7d-4cd9-b344-16e2bc2a2387#bmkm_windows11dark)).
+
+This preference might differ depending on device type. Your OS might switch to `dark` during nighttime. But maybe the user wants to set it individually per website.
+
+The point is that a media query like this is a fairly static value. It is also harder to work with than a plain `color-scheme-dark` onto the documentElement. Especially since you can simply suffix parent selectors in pre-processors (`.color-scheme-dark & {...}`). 
+
+We can 
 
 
 
