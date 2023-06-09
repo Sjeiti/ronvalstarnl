@@ -58,7 +58,7 @@ document.querySelector('.darkmode-toggle').addEventListener('click', ()=>{
 
 ## Other preferences
 
-Darkmode directly relates to `prefers-color-scheme`. But other `prefers-...` queries may impact theming as well. We also have `prefers-contrast`, `prefers-reduced-motion`, `prefers-reduced-transparency` andwdddddddddddddddd `prefers-data`. 
+Darkmode directly relates to `prefers-color-scheme`. But other `prefers-` queries may impact theming as well. We also have [`prefers-contrast`](https://www.w3.org/TR/mediaqueries-5/#prefers-contrast), [`prefers-reduced-motion`](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-motion), [`prefers-reduced-transparency`](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-transparency) and [`prefers-data`](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-data). 
 
 
 ```JavaScript
@@ -72,21 +72,18 @@ function findPrefers(key, value) {
 }
 ```
 
+This does assume a boolean state, so when checking `prefers-contrast` you will have to check multiple values.
+
 ```JavaScript
 findPrefers('color-scheme', 'dark')
 findPrefers('contrast', 'more')
+findPrefers('contrast', 'less')
 findPrefers('reduced-motion', 'reduce')
 findPrefers('reduced-transparency', 'reduce')
 findPrefers('reduced-data', 'reduce')
 ```
 
-```JavaScript
-const key = 'color-scheme'
-const value = 'dark'
-this._select(`[data-${key}]`).addEventListener('click', ()=>{
-  localStorage.setItem(key, document.documentElement.classList.toggle(`${key}-${value}`)?value:'light')
-})
-```
+## Now in cascading style sheets
 
 ```CSS
 :root {
