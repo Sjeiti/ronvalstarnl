@@ -32,11 +32,12 @@ So what are the current tools with which you can create an animated SVG?
 
 ### Adobe Animate
 
-[Adobe Animate](https://www.adobe.com/products/animate.html) looks like an exact clone of what once was called Flash <small>(they must have rebranded it because somebody gave it a bad name)</small>. But strangely it does not export to SVG.
+[Adobe Animate](https://www.adobe.com/products/animate.html) is what once was Flash. They must have rebranded it because somebody gave it a bad name. But strangely it does not export to SVG. The result is a canvas element with a lot of JavaScript. A major dissapointment especially considering a major obstacle in the haydays of Flash was accessibility and SEO. One would think this issue would be solved for HTML5 exports.
 
 There is a possibility to export to animated SVG using a plugin called [Flash2Svg](https://github.com/TomByrne/Flash2Svg)
 
 There are also traces of a plugin for Flash CC called [Snap.svg Animator](http://cjgammon.github.io/SnapSVG-Animator/) but it is discontinued (or turned into [something completely different](http://snapsvg.io/)).
+
 
 ### SVGator
 
