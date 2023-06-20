@@ -10,12 +10,6 @@
   categories: code, CSS, HTML, JavaScript, work, open source
   tags: signal
 -->
-<!--
-  date: 9999-99-99
-  modified: 9999-9999-99
-  date: 2023-06-04
-  modified: 2023-06-04
--->
 
 # Signals 
 
