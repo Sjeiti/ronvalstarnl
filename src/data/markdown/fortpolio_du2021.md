@@ -6,7 +6,7 @@
   metaTitle: Design United 2021
   metaDescription: Development of the 2020 design-united website that broadcasts the Dutch Design Week.
   categories: JavaScript, HTML/CSS, video
-  tags: React, JavaScript, HTML, CSS, SVG, Wordpress
+  tags: React, Redux, JavaScript, HTML, CSS, SVG, Wordpress
   clients: Design United, Shapers
   collaboration: Shapers
   prizes: 

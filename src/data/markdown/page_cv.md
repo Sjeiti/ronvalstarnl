@@ -42,9 +42,26 @@
 
 ## profile
 
+<!--
 I'm a dedicated front-end developer with more than <span data-from="1997-01-01">twenty</span> years of experience in developing digital media.<br/>
 My formal background is graphic- and interaction design and I strive toward consistency and cleanliness in both code *and* design.
 Sometimes I have solo projects but mostly I like to work in teams. 
+I can read and write several backend languages and I'm not afraid to learn something new.
+-->
+
+I'm a passionate front-end developer with more than twenty years of experience in developing digital media.
+
+<!--
+In a team my role is mostly lead- or senior front-end developer. Within larger organizations I also love working across teams in chapters or guilds.
+-->
+
+My formal background is graphic- and interaction design and I strive toward consistency and cleanliness in both code and design.
+I have a strong affinity for Test-Driven Development and accessibility.
+
+<!--
+I've developed applications in React, Vue and Angular. However, I don't default to a specific framework when starting projects; instead, I carefully consider the need for abstractions.
+-->
+
 I can read and write several backend languages and I'm not afraid to learn something new.
 
 </div>

@@ -2,7 +2,7 @@
   slug: randstad-micro-services
   type: fortpolio
   categories: JavaScript, HTML/CSS, UX, mobile
-  tags: scrum, design system, CSS, HTML, TypeScript, Nx, Angular, MKDocs, TypeDoc, Storybook, TDD, Cypress, accessibility, JSDoc
+  tags: scrum, design system, CSS, HTML, TypeScript, Nx, Angular, MKDocs, TypeDoc, Storybook, TDD, Cypress, accessibility, JSDoc, Docker
   clients: Randstad
   collaboration: 
   thumbnail: Randstad.png
