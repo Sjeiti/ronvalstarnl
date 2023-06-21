@@ -16,4 +16,4 @@
 
 # API conversion Elasticsearch widget
 
-<p>An education search widget used in the Antilles needed updating. The source API that filled the Elasticsearch backend had had a major overhaul. Build scripts, source code and documentation had to be updated.</p>
+An education search widget used in the Antilles needed updating. The source API that filled the Elasticsearch backend had had a major overhaul. Build scripts, source code and documentation had to be updated.
