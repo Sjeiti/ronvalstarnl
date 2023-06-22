@@ -15,14 +15,13 @@
   dateTo: 2023-03-11
 -->
 
-# Studyblend
+# Studyblend 
 
 In 2014 I developed the Studyblend application with Shapers, the pioneers of [learning experience design](https://lxd.org/).
 
 Students can watch and update their progress throughout a course by completing tasks. Additionally, there are tasks set per week that students have to complete or upload for review.
 Teachers can follow the progress of all students and make changes to the course.
 
-Because of the track-record of the application and good feedback on the ease of use we decided to rebuild it from the ground up with up-to-date technologies. This also allows for adding features that were difficult to implement in the old version. 
-bbw
+Because of the track-record of the application and good feedback on the ease of use we decided to rebuild it from the ground up with up-to-date technologies. This also allows for adding features that were difficult to implement in the old version.
 
 The new version has a NodeJS backend with MongoDB and a React front-end. This allows the back- and front-end to have shared code, particularly useful for model interfaces. The build implements a test coverage from back- to front-end, from unit- to end-to-end tests.
