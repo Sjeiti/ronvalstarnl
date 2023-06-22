@@ -4,6 +4,9 @@
   modified: 2023-05-29
   slug: a-freelance-developers-tool-box-ten-years-later
   type: post
+  header: barn-images-t5YUoHW6zRo-unsplash.jpg
+  headerColofon: photo by [Barn images](https://unsplash.com/@barnimages)
+  headerClassName: no-blur darken
   categories: code, work
   tags: frameworks, ide, libraries, software, tools
   metaKeyword: tool

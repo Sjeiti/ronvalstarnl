@@ -2,18 +2,21 @@
   id: 3158
   slug: api-conversion-elasticsearch-widget
   type: fortpolio
-  categories: 
+  excerpt: Implemented and styled the, previously developed, Education Widget for the Ministry of Education of the Netherlands Antilles. Source API changes required updates to the code that populated the Elasticsearch backend. 
+  categories: JavaScript, HTML/CSS, framework, UX, mobile
   tags: CSS, HTML, JavaScript, Grunt, Elasticsearch, Bootstrap, JSDoc
-  clients: Studiekeuze123
-  collaboration: 
+  clients: Ministry of Education, Culture, Youth and Sports, Division for Educational Innovations
+  collaboration: Studiekeuze123
   prizes: 
   images: 
-  inCv: false
+  inCv: true
   inPortfolio: false
-  dateFrom: 2016-05-25
-  dateTo: 2016-06-25
+  dateFrom: 2016-03-23
+  dateTo: 2016-07-25
+  oldDateFrom: 2016-05-25
+  oldDateTo: 2016-06-25
 -->
 
 # API conversion Elasticsearch widget
 
-<p>An education search widget used in the Antilles needed updating. The source API that filled the Elasticsearch backend had had a major overhaul. Build scripts, source code and documentation had to be updated.</p>
+An education search widget used in the Antilles needed updating. The source API that filled the Elasticsearch backend had had a major overhaul. Build scripts, source code and documentation were updated.

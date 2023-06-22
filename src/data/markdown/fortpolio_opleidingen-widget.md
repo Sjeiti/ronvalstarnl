@@ -2,7 +2,7 @@
   id: 2716
   slug: opleidingen-widget
   type: fortpolio
-  excerpt: <p>An Elasticsearch JavaScript widget comprised of CDN dependencies, with source-generated documentation and examples.</p>
+  excerpt: For Studiekeuze123 I created a widget that searches all available educations in the Netherlands. We pulled data from existing endpoints into Elasticsearch for speed. Source-generated documentation and examples were created so the widget could be easily implemented and styled by third parties.
   categories: JavaScript, HTML/CSS, framework, UX, mobile
   tags: CSS, HTML, JavaScript, Grunt, Elasticsearch, Bootstrap, JSDoc, Python
   clients: Studiekeuze123
@@ -11,10 +11,12 @@
   thumbnail: sk123ow.png
   image: sk123ow.png
   images: sk123ow.png, Opleidingen-Widget.png
-  inCv: true
+  inCv: true 
   inPortfolio: true
-  dateFrom: 2014-12-08
-  dateTo: 2014-12-31
+  dateFrom: 2014-08-05
+  dateTo: 2015-01-15
+  oldDateFrom: 2014-12-08
+  oldDateTo: 2014-12-31
 -->
 
 # Education widget

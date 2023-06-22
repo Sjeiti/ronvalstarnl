@@ -221,6 +221,9 @@
 		[data-color-scheme] svg {
 			transform: translate(20%,-20%) rotate(45deg) scale(80%);
 		}
+		@media print {
+			[data-color-scheme] { display: none; }
+		}
     main { position: relative; }
     .content {
       max-width: 768px;
