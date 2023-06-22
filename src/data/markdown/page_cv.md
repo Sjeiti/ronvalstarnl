@@ -20,10 +20,8 @@
 <small class="pull-right" data-download>
     download as 
     <a href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1569508867/rv/Curiculum-Vitae_Ron-Valstar_front-end-developer.pdf" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.pdf">pdf</a>,
-<!--<button class="anchor" data-download-word>Word</button>-->
     <a data-download-word href="Curiculum-Vitae_Ron-Valstar_front-end-developer.docx" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.docx">docx</a>
     or <a data-download-txt href="Curiculum-Vitae_Ron-Valstar_front-end-developer.md" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.txt">txt</a>
-<!--or <button class="anchor" data-download-pdf>pdf</button>-->
 </small>
 <ul class="list-unstyled">
 	<li>Ron Valstar <small>BA / MA</small></li>
@@ -40,34 +38,21 @@
 
 </div><div> 
 
+
 ## profile
 
-<!--
-I'm a dedicated front-end developer with more than <span data-from="1997-01-01">twenty</span> years of experience in developing digital media.<br/>
-My formal background is graphic- and interaction design and I strive toward consistency and cleanliness in both code *and* design.
-Sometimes I have solo projects but mostly I like to work in teams. 
-I can read and write several backend languages and I'm not afraid to learn something new.
--->
-
 I'm a passionate front-end developer with more than twenty years of experience in developing digital media.
-
-<!--
-In a team my role is mostly lead- or senior front-end developer. Within larger organizations I also love working across teams in chapters or guilds.
--->
 
 My formal background is graphic- and interaction design and I strive toward consistency and cleanliness in both code and design.
 I have a strong affinity for Test-Driven Development and accessibility.
 
-<!--
-I've developed applications in React, Vue and Angular. However, I don't default to a specific framework when starting projects; instead, I carefully consider the need for abstractions.
--->
-
 I can read and write several backend languages and I'm not afraid to learn something new.
 
 </div>
 </div>
 
-## skills 
+
+## skills
 
 <div 
     id="skillsWrapper"
@@ -78,59 +63,18 @@ I can read and write several backend languages and I'm not afraid to learn somet
 >
 </div>
 
-<!--
 
-<div class="print-columns"><div>
-
-### programming
-
-<ul class="list-unstyled">
-	<li data-skill="5">JavaScript <small>(TypeScript, React, Angular, Vue, ThreeJS)</small></li>
-	<li data-skill="5">build processes <small>(Node.js, Express, Webpack, Gitlab, Jenkins)</small></li>
-	<li data-skill="5">HTML <small>(semantic HTML5, XSLT)</small></li>
-	<li data-skill="5">CSS <small>(CSS3, SASS, LESS, BEM)</small></li>
-	<li data-skill="5">testing <small>(Cypress, Jest, Mocha, Chai, Cucumber)</small></li>
-	<li data-skill="4">PHP <small>(Kirby, Laravel, WordPress)</small></li>
-</ul> 
-
-</div><div>
-
-### other
-
-<ul class="list-unstyled">
-	<li data-skill="4">devops <small>(Netlify, Gitlab, CI/CD pipelines, Jenkins)</small></li>
-	<li data-skill="5">documentation <small>(JSDoc, Markdown)</small></li>
-	<li data-skill="5">prototyping</li>
-	<li data-skill="4">interaction design</li>
-	<li data-skill="4">user interface design</li>
-	<li data-skill="4">graphic design</li>
-	<li data-skill="3">illustration</li>
-	<li data-skill="3">information visualisation</li>
-	accessibility, usability, information architecture
-</ul> 
--->
-
-</div>
-</div>
- 
-<!-- <div class="page-break"></div> -->
-
-<!-- wtf? --> 
 
 <div class="print-columns"><div>
  
 ## education
 
+ - <time>2023</time> Practical accessibility course
  - <time>1999-2000</time> University of Portsmouth (HKU): European Media Master of Arts, Interactive Multi Media <small>(MA)</small>
  - <time>1996-1999</time> HKU: Interaction Design <small>(BA)</small>
- - <time>1993-1996</time> CIBAP: Reclame
+ - <time>1993-1996</time> CIBAP: Advertising
+ - <time>1992-1993</time> Basic course advertising, LOI
  - <time>1987-1992</time> HAVO
-
-## courses
-- <time>2023</time> Practical accessibility
-- <time>2021</time> Scythe handling
-- <time>2013</time> Basic welding techniques
-- <time>1992-1993</time> Basisopleiding reclame, LOI
 
 </div><div>
 
@@ -140,8 +84,16 @@ I can read and write several backend languages and I'm not afraid to learn somet
  - <time>2000-2007</time> co-founder of [Shapers](http://www.shapers.nl/)
  - <time>1998-2000</time> freelance webdesigner
 
+<!--
+## courses
+- <time>2023</time> Practical accessibility
+- <time>2021</time> Scythe handling
+- <time>2013</time> Basic welding techniques
+- <time>1992-1993</time> Basic course advertising, LOI
+-->
+
 </div></div>
+
 
 <div class="page-break"></div>
 
-<!--<div class="page-break"></div>-->
