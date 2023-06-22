@@ -11,7 +11,7 @@
   images: studyblend-1.png, studyblend-1.png, studyblend-2.png, studyblend-3.png, studyblend-4.png, studyblend-5.png, studyblend-6.png, studyblend-7.png, studyblend-8.png, studyblend-9.png
   inCv: true
   inPortfolio: true
-  dateFrom: 2022-05-11
+  dateFrom: 2021-03-01
   dateTo: 2023-03-11
 -->
 
