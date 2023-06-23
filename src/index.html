@@ -33,13 +33,27 @@
       --scroll-percentage: 0%;
       --scroll-part: 0;
     }
-    .color-scheme-dark {
-			--color-main-text: #000;
-			--color-link: #2e8cce;
-			--color-bg: black;
-			--color-text: #888;
-			--color-border: #222;
-			--color-bg-code: #333;
+
+    @media (prefers-color-scheme: light) {
+			:root {
+				--color-main-text: #FFF;
+				--color-link: #3baeff;
+				--color-bg: white;
+				--color-bg-code: #E7ECE9;
+				--color-text: black;
+				--color-border: #F4F4F4;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+			:root {
+				--color-main-text: #000;
+				--color-link: #2e8cce;
+				--color-bg: black;
+				--color-bg-code: #333;
+				--color-text: #888;
+				--color-border: #222;
+      }
     }
 
     @media (prefers-contrast: more) {
@@ -398,6 +412,32 @@
       window.addEventListener('error',e=>console.log(e.message,e.source))
     }
     
+    function insertRulesFromPrefersMediaRules(){
+      Array.from(document.styleSheets).forEach(sheet=>
+          getRules(sheet).forEach((mediaRule)=>{
+            if (mediaRule.constructor===CSSMediaRule) {
+              getRules(mediaRule).forEach((rule)=>{
+                const {style, constructor, selectorText} = rule
+                if (constructor===CSSStyleRule&&selectorText===':root') {
+                  const vars = Array.from(style).filter(name=>/^--/.test(name))
+                  if (vars.length) {
+                    const selector = (mediaRule.conditionText.match(/(?<=\()(prefers-[^)]*)/g)||[]).map(s=>'.'+s.replace(/\:\s/,'-').substring(8)).join('')
+                    const props = vars.map(name=>`${name}:${style.getPropertyValue(name).trim()};`).join('')
+                    selector&&props&&sheet.insertRule(`${selector}{${props}}`, sheet.cssRules.length)
+                  }
+                }
+              })
+            }
+          })
+      )
+    }
+
+    function getRules(sheetOrRule){
+      const rules = []
+      try { rules.push(...Array.from(sheetOrRule.cssRules)) } catch (err) {}
+      return rules
+    }
+    
     // https://www.w3.org/TR/mediaqueries-5/#mf-user-preferences
     function findPrefers(key, value) {
       ;(
@@ -407,6 +447,8 @@
       &&document.documentElement.classList.add(`${key}-${value}`)
     }
     
+    insertRulesFromPrefersMediaRules()
+    findPrefers('color-scheme', 'light')
     findPrefers('color-scheme', 'dark')
     findPrefers('contrast', 'more')
     findPrefers('reduced-motion', 'reduce')

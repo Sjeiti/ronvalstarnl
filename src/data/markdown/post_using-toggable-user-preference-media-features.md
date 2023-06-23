@@ -15,17 +15,17 @@
 
 While implementing darkmode I stumbled upon [user preference media features](https://www.w3.org/TR/mediaqueries-5/#mf-user-preferences), which is part of the W3C working draft Media Queries Level 5. Well, not exactly stumbled upon, more like: looked it up while searching for a good way to implement darkmode.
 
-It is a draft, subject to change. But it is from 2021 and a lot of featutes are already implemented in browsers, [as you can see on caniuse](https://caniuse.com/?search=prefers-). 
+It is a draft, subject to change. But it is from 2021 and a lot of featutes are already implemented in browsers, [as you can see on "Can I use"](https://caniuse.com/?search=prefers-). 
 You can read about [the W3C standardisation process](https://www.w3.org/2004/02/Process-20040205/tr.html) or [the CSS working group](https://wiki.csswg.org/) if you like to know more about it. This [list of drafts](https://drafts.csswg.org/) is also interesting reading material.
 
 ## Darkmode is a color-scheme
 
 The media queries draft talks about [prefers-color-scheme (11.5)](https://www.w3.org/TR/mediaqueries-5/#prefers-color-scheme) which has the possible values `light` and `dark`.
-This is a setting that exists in the user agent (browser) and might even depend on setting in the operating system (ie [IOS](https://support.apple.com/guide/mac-help/use-a-light-or-dark-appearance-mchl52e1c2d2/mac) or [Windows](https://support.microsoft.com/en-us/office/use-color-and-contrast-for-accessibility-in-microsoft-365-bb11486d-fc7d-4cd9-b344-16e2bc2a2387#bmkm_windows11dark)).
+This is a setting that exists in the user agent (browser) and might even depend on settings in the operating system (ie [IOS](https://support.apple.com/guide/mac-help/use-a-light-or-dark-appearance-mchl52e1c2d2/mac) or [Windows](https://support.microsoft.com/en-us/office/use-color-and-contrast-for-accessibility-in-microsoft-365-bb11486d-fc7d-4cd9-b344-16e2bc2a2387#bmkm_windows11dark)).
 
 This preference might differ depending on device type. Your OS might switch to `dark` during nighttime. But maybe the user wants to set it individually per website.
 
-So a media query like this is a fairly static value. It is also harder to work with than a plain `color-scheme-dark` onto the documentElement. Especially since you can simply suffix parent selectors in pre-processors (`.color-scheme-dark & {...}`).
+The media query `prefers-color-scheme` is a fairly static value. It is also harder to work with than a plain `color-scheme-dark` className onto the documentElement. Especially since you can simply suffix parent selectors in pre-processors (`.color-scheme-dark & {...}`).
 
 
 ## Use JavaScript for media-queries
@@ -60,6 +60,7 @@ document.querySelector('.darkmode-toggle').addEventListener('click', ()=>{
 
 Darkmode directly relates to `prefers-color-scheme`. But other `prefers-` queries may impact theming as well. We also have [`prefers-contrast`](https://www.w3.org/TR/mediaqueries-5/#prefers-contrast), [`prefers-reduced-motion`](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-motion), [`prefers-reduced-transparency`](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-transparency) and [`prefers-data`](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-data). 
 
+We can generalise the previous script into a generic method:
 
 ```JavaScript
 function findPrefers(key, value) {
@@ -85,6 +86,8 @@ findPrefers('reduced-data', 'reduce')
 
 ## Now in cascading style sheets
 
+The easiest way to handle these settings is by using CSS properties (or variables). The advantage is that there is a single place where everything is defined, and `var(--color-bg)` is just an implementation detail.
+
 ```CSS
 :root {
   --color-text: #333;
@@ -103,3 +106,88 @@ findPrefers('reduced-data', 'reduce')
   --color-bg: #000;
 }
 ```
+
+The downside to this method is that we've just replaced a media-query with a JavaScript solution. You might have heard the term 'progressive enhancement', this is the opposite.
+We can add back the media-queries to overwrite the CSS properties.
+
+```CSS
+		:root {
+	--color-text: #333;
+	--color-bg: #EEE;
+}
+@media (prefers-contrast: more) {
+	:root {
+		--color-text: #000;
+		--color-bg: #FFF;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+        --color-text: #EEE;
+        --color-bg: #333;
+	}
+}
+@media screen and (prefers-contrast: more) and (prefers-color-scheme: dark) {
+	:root {
+		--color-text: #FFF;
+		--color-bg: #000;
+	}
+}
+.contrast-more {
+	--color-text: #000;
+	--color-bg: #FFF;
+}
+.color-scheme-dark {
+	--color-text: #EEE;
+	--color-bg: #333;
+}
+.contrast-more.color-scheme-dark {
+	--color-text: #FFF;
+	--color-bg: #000;
+}
+
+```
+
+This works with- and without JavaScript. But now we have a double implementation. If we change the theme we'll have to do so in two places. Which is naughty because it is not DRY.
+
+Since these classNames only work with JavaScript enabled, we might as well remove the hardcoded declarations and generate the CSS classes from analysing `document.styleSheets`.
+
+```JavaScript
+/**
+ * Converts media-queries with `prefers-` into similar CSS classes.
+ * The classes can then be used as direct user preference (ie darkmode).
+ */
+function insertRulesFromPrefersMediaRules(){
+  Array.from(document.styleSheets).forEach(sheet=>
+    getRules(sheet).forEach((mediaRule)=>{
+      if (mediaRule.constructor===CSSMediaRule) {
+        getRules(mediaRule).forEach((rule)=>{
+          const {style, constructor, selectorText} = rule
+          if (constructor===CSSStyleRule&&selectorText===':root') {
+            const vars = Array.from(style).filter(name=>/^--/.test(name))
+            if (vars.length) {
+              const selector = (mediaRule.conditionText.match(/(?<=\()(prefers-[^)]*)/g)||[]).map(s=>'.'+s.replace(/\:\s/,'-').substring(8)).join('')
+              const props = vars.map(name=>`${name}:${style.getPropertyValue(name).trim()};`).join('')
+              selector&&props&&sheet.insertRule(`${selector}{${props}}`, sheet.cssRules.length)
+            }
+          }
+        })
+      }
+    })
+  )
+}
+
+/**
+ * Get the rules with a try..catch to prevent CORS issues.
+ * @param {CSSStyleSheet|CSSMediaRule} sheetOrRule
+ * @return {(CSSStyleSheet|CSSMediaRule)[]}
+ */
+function getRules(sheetOrRule){
+  const rules = []
+  try { rules.push(...Array.from(sheetOrRule.cssRules)) } catch (err) {}
+  return rules
+}
+
+```
+
+The above script traverses all styleSheets. Their rules are checked by `try..catch` because external sheets may throw errors due to CORS. When a mediaRule is encountered it is checked for `prefers-[key]: [value]` occurrences and converted to the class selector `.[key]-[value]` containing the corresponding CSS variables.
