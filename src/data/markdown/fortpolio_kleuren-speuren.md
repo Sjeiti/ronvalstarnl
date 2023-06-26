@@ -2,7 +2,9 @@
   id: 2253
   slug: kleuren-speuren
   type: fortpolio
-  excerpt: <p>Kleuren Speuren is an educational game designed for children aged 6 to 12. I was involved in the entire process from concept to development. My main job was doing all the illustrations and the programming.</p>
+  excerpt: Kleuren Speuren is an educational game designed for children aged 6 to 12. I was involved in the entire process from concept to development. My main job was doing all the illustrations and the programming.
+  excerptNl: Kleuren Speuren is een educatief spel voor kinderen van 6 tot 12 jaar. Ik was betrokken bij het hele proces van concept tot ontwikkeling.
+Mijn belangrijkste taak was het maken van alle illustraties en het programmeren van het spel.
   categories: game, illustration, graphic design, UX
   tags: graphic design, illustration, UX, game, Director, Lingo, concept
   clients: Sikkens Foundation

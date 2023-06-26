@@ -3,6 +3,8 @@
   slug: disconnect
   type: fortpolio
   excerpt: Technical experimentation and development of a site for an audiovisual performance. The site is a three-dimensional environment with custom GLSL shaders for video and audio with subtitles.
+  excerptNl: Technische experimentatie en ontwikkeling van een site voor een audiovisuele performance.
+De site is een driedimensionale omgeving met aangepaste GLSL-shaders voor video en audio met ondertitels.
   categories: JavaScript, 3D, video, UX, graphic design
   tags: 3D, JavaScript, procedural, WebGL, Webpack, GLSL
   clients: Stichting M31 Foundation

@@ -2,6 +2,11 @@
   id: 3350
   slug: randstad-planning-application
   type: fortpolio
+  excerptNl: Lead front-end developer verantwoordelijk voor responsieve implementatie van een bestaande plannings applicatie.
+Verbeterde snelheidsprestaties in bestaande lijsten en tabellen met grote hoeveelheden data.
+Strengere codelinting geïmplementeerd en component testen toegevoegd met Cypress.
+Prototypes gemaakt voor mogelijke toekomstige implementaties.
+  titleNl: Randstad plannings applicatie
   excerpt: Lead front-end developer responsible for responsive implementation of an existing planning application. Improved speed performance in existing lists and tables with large amounts of data. Implemented stricter code linting and added component testing with Cypress. Created prototypes for possible future implementations.
   categories: JavaScript, HTML/CSS, UX, mobile
   tags: scrum, CSS, HTML, JavaScript, JSDoc, performance, TDD, accessibility, scrum, UX, Cypress

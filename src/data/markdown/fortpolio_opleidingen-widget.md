@@ -3,6 +3,7 @@
   slug: opleidingen-widget
   type: fortpolio
   excerpt: For Studiekeuze123 I created a widget that searches all available educations in the Netherlands. We pulled data from existing endpoints into Elasticsearch for speed. Source-generated documentation and examples were created so the widget could be easily implemented and styled by third parties.
+  excerptNl: Voor Studiekeuze123 heb ik een widget gemaakt die alle beschikbare opleidingen in Nederland doorzoekt. We hebben gegevens van bestaande eindpunten naar Elasticsearch gehaald voor snelheid. Er zijn source-gegenereerde documentatie en voorbeelden gemaakt, zodat de widget eenvoudig door derden kan worden geïmplementeerd en gestyled.
   categories: JavaScript, HTML/CSS, framework, UX, mobile
   tags: CSS, HTML, JavaScript, Grunt, Elasticsearch, Bootstrap, JSDoc, Python
   clients: Studiekeuze123

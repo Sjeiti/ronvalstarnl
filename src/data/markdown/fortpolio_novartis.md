@@ -2,7 +2,8 @@
   id: 2097
   slug: novartis
   type: fortpolio
-  excerpt: <p>A virtual 3d panorama tour, consisting of multiple panoramas through which you navigate by space or by stories.</p>
+  excerpt: A virtual 3d panorama tour, consisting of multiple panoramas through which you navigate by space or by stories.
+  excerptNl: Een virtuele 3D-panoramatour, bestaande uit meerdere panorama's waar je doorheen navigeert via de ruimte zelf of door een verhaal te volgen.
   categories: JavaScript, 3D, HTML/CSS
   tags: CSS, JavaScript, XML, XSLT
   clients: Novartis International AG

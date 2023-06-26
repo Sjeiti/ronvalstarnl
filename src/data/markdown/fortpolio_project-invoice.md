@@ -1,7 +1,10 @@
 <!--
   slug: project-invoice
   type: fortpolio
-  excerpt: Design and development of a local-first invoicing application. All data is stored on your local machine and transferable by peer-to-peer connection. Styling and copy of invoices and quotations are completely customizable.
+  excerpt: Design and development of a [local-first](https://www.inkandswitch.com/local-first/) invoicing application. All data is stored on your local machine and transferable by peer-to-peer connection. Styling and copy of invoices and quotations are completely customizable.
+  excerptNl: Ontwerp en ontwikkeling van een [local-first](https://www.inkandswitch.com/local-first/) facturatie applicatie.
+Alle gegevens worden opgeslagen op de lokale computer en kunnen worden over gezet naar andere apparaten via een peer-to-peer-verbinding.
+Styling en tekst van facturen en offertes zijn volledig aanpasbaar.
   metaKeyword: invoicing
   metaTitle: Project Invoice
   metaDescription: This local-first invoicing application stores all your data on your local machine. Styling and copy are completely customizable.

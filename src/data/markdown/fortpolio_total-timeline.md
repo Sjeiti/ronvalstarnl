@@ -2,6 +2,7 @@
   id: 2628
   slug: total-timeline
   type: fortpolio
+  excerptNl: De [grootste tijdlijn](https://totaltimeline.org/) die ooit is gemaakt. Toont belangrijke gebeurtenissen in de geschiedenis van de tijd.
   categories: JavaScript, 3D, HTML/CSS, open source, illustration, graphic design, UX, mobile
   tags: 3D, REST, CSS, HTML, JavaScript, Perlin Noise, Grunt, illustration, UX, cool shit
   clients: 

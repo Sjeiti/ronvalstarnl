@@ -1,7 +1,6 @@
 <!--
-  id: 2433
   date: 2014-05-23
-  modified: 2023-03-07
+  modified: 2023-06-26
   slug: cv
   type: page
   metaKeyword: front-end developer
@@ -96,4 +95,3 @@ I can read and write several backend languages and I'm not afraid to learn somet
 
 
 <div class="page-break"></div>
-
