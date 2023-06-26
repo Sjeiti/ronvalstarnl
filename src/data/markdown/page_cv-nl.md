@@ -4,7 +4,7 @@
   slug: cv-nl
   type: page
   metaKeyword: front-end ontwikkelaar
-  metaTitle: Curriculum Vitae Ron Valstar
+  metaTitle: Curriculum Vitae Ron Valstar - nl
   metaDescription: Ik ben een front-end ontwikkelaar met meer dan achttien jaar ervaring in grafisch ontwerp, interactie ontwerp en programmeren.
 -->
 
