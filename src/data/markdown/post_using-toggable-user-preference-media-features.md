@@ -58,19 +58,25 @@ document.querySelector('.darkmode-toggle').addEventListener('click', ()=>{
 
 ## Other preferences
 
-Darkmode directly relates to `prefers-color-scheme`. But other `prefers-` queries may impact theming as well. We also have [`prefers-contrast`](https://www.w3.org/TR/mediaqueries-5/#prefers-contrast), [`prefers-reduced-motion`](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-motion), [`prefers-reduced-transparency`](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-transparency) and [`prefers-data`](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-data). 
+Darkmode directly relates to `prefers-color-scheme`. But other `prefers-` queries may impact theming as well. We also have [`prefers-contrast`](https://www.w3.org/TR/mediaqueries-5/#prefers-contrast), [`prefers-reduced-motion`](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-motion), [`prefers-reduced-transparency`](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-transparency) and [`prefers-data`](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-data). These are all media-queries that directly relate to accessibility, so very useful.
 
 We can refactor the previous script into a generic method:
 
 ```JavaScript
+/**
+ * Finds any `prefers-` media-query through localStorage and matchMedia and sets documentElement classNames accordingly
+ * @param {string} key
+ * @param {string|string[]} values
+ * @return {string}
+ */
 function findPrefers(key, values) {
-  const lsv = localStorage.getItem(key)
+  const storedValue = localStorage.getItem(key)
   return (Array.isArray(values)?values:[values])
-    .find(value=>{
-      const matches = window.matchMedia(`(prefers-${key}: ${value})`).matches
-      matches&&document.documentElement.classList.add(`${key}-${value}`)
-      return matches
-    })
+      .find(value=>{
+        const finalValue = storedValue||window.matchMedia(`(prefers-${key}: ${value})`).matches&&value
+        finalValue&&document.documentElement.classList.add(`${key}-${finalValue}`)
+        return value===finalValue
+      })
 }
 ```
 
@@ -195,7 +201,7 @@ function getRules(sheetOrRule){
 
 The above script traverses all styleSheets. Their rules are checked by `try..catch` because external sheets may throw errors due to CORS. When a mediaRule is encountered it is checked for `prefers-[key]: [value]` occurrences and converted to the class selector `.[key]-[value]` containing the corresponding CSS variables.
 
-## To sum up
+## Summing up
 
 To reduce CSS complexity use CSS properties to handle the `prefers-` media-queries.
-For overriding specific `prefers-` per site some JavaScript infers CSS classes from media-queries and adds applicable classNames to the documentElement to override said CSS properties. It's state can be handled through localStorage.
+For overriding specific `prefers-` per site JavaScript can be used to infer CSS classes from media-queries and add applicable classNames to the documentElement for override said CSS properties. It's state can be handled through localStorage.
