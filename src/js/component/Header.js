@@ -70,9 +70,15 @@ create('[data-header]', class extends BaseComponent{
    */
   _initColorScheme(){
     const key = 'color-scheme'
-    const value = 'dark'
+    const dark = 'dark'
+    const light = 'light'
+    const schemeDark = `${key}-${dark}`
+    const schemeLight = `${key}-${light}`
+    const {classList} = document.documentElement
     this._select(`[data-${key}]`).addEventListener('click', ()=>{
-      localStorage.setItem(key, document.documentElement.classList.toggle(`${key}-${value}`)?value:'light')
+      const isLight = classList.toggle(schemeDark)
+      classList.toggle(schemeLight, !isLight)
+      localStorage.setItem(key, isLight?dark:light)
     })
   }
 

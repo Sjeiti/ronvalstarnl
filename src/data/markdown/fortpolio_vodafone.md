@@ -3,6 +3,10 @@
   slug: vodafone
   type: fortpolio
   excerpt: Rebuilt shop flow into a single page application using Angular. Added several improvements to the build process. Updated/refactored a lot of legacy code. Improved code quality.
+  excerptNl: Nieuwe implementatie van de checkout flow in een SPA met behulp van Angular.
+Verschillende verbeteringen toegevoegd aan het build proces.
+Veel verouderde code bijgewerkt/ge-refactored.
+Verbeterde code kwaliteit.
   categories: JavaScript, HTML/CSS, framework
   tags: scrum, CSS, HTML, JavaScript, Angular, Grunt, NodeJS, TDD, Cucumber
   clients: Vodafone

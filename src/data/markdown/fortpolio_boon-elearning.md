@@ -1,7 +1,10 @@
 <!--
   slug: boonlearning
   type: fortpolio
-  excerpt: 
+  excerptNl: Om hun op maat gemaakte e-learningplatform om tezetten in een op abonnementen gebaseerd platform, was een aanpasbaar herontwerp nodig.
+We hebben een design system opgezet om te integreren met hun bestaande broncode.
+De bestaande broncode is in Haxe, wat obscuur is, maar lijkt op talen waarmee ik bekend ben.
+We schreven documentatie en creëerden de eerste twee aanpasbare thema's. 
   categories: HTML/CSS
   tags: scrum, design system, HTML, CSS, BEM, Docker, Haxe, framework
   clients: Boon software

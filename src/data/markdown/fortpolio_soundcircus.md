@@ -2,7 +2,8 @@
   id: 2146
   slug: soundcircus
   type: fortpolio
-  excerpt: <p>Flash website that won an FWASOTD, an ADCN Lamp and a Webby!</p>
+  excerpt: Flash website that won an FWASOTD, an ADCN Lamp and a Webby!
+  excerptNl: Flash-website die een FWASOTD, een ADCN-lamp en een Webby heeft gewonnen!
   categories: 3D, video
   tags: CSS, HTML, jQuery, PHP, ActionScript, Flash
   clients: Pool Worldwide

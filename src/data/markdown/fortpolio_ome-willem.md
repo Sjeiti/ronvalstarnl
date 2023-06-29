@@ -2,7 +2,8 @@
   id: 2243
   slug: ome-willem
   type: fortpolio
-  excerpt: <p>Interaction design, graphic design and development for the Ome Willem website.</p>
+  excerpt: Interaction design, graphic design and development for the Ome Willem website.
+  excerptNl: Interaction design, grafisch ontwerp en ontwikkeling voor de Ome Willem website.
   categories: JavaScript, HTML/CSS
   tags: CMS, HTML, XML, graphic design, ActionScript, Flash, illustration, UX, graphic design, concept
   clients: Ome Willem

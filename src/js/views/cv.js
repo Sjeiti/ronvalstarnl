@@ -9,47 +9,68 @@ import {jsPDF} from 'jspdf'
 import { Document, HeadingLevel, Packer, Paragraph, TextRun } from 'docx'
 import { saveAs } from 'file-saver'
 
-add(
-  'cv'
-  , async(/**View*/view/*, route, params*/) => {
+add('cv', getCallback())
+add('cv-nl', getCallback('nl'))
 
-      const response = await fetchJSONFiles('page_cv', 'fortpolio-list', 'tags')
-      const [page, projects, tags] = response
+/**
+ * Get the callback function for this lang
+ * @param {string} lang
+ * @return {function(FooterWrapper.View): Promise<Object>}
+ */
+function getCallback(lang){
+  return async(/**View*/view/*, route, params*/) => {
 
-      view.appendString(page.content)
-      view.addEventListener('click', onClickDownload)
+    const response = await fetchJSONFiles('page_cv'+(lang?'-'+lang:''), 'fortpolio-list', 'tags')
+    const [page, projects, tags] = response
 
-      buildSkillsTable(tags, view.querySelector('#skillsWrapper'))
+    view.appendString(page.content)
+    view.addEventListener('click', onClickDownload)
 
-      buildProjects(projects, view)
+    buildSkillsTable(tags, view.querySelector('#skillsWrapper'))
 
-      return page
-    }
-)
+    buildProjects(projects, view, lang)
+
+    return page
+  }
+}
 
 /**
  * Build a project list and append it to the view
  * @param {any[]} projects
  * @param {View} target
+ * @param {string} lang
  */
-function buildProjects(projects, target){
-  target.appendString(expand('h2#projects{projects}'), false)
+function buildProjects(projects, target, lang){
+  const isNL = lang==='nl'
+  const text = {
+    projects: isNL&&'projecten'||'projects'
+    , client: isNL&&'klant'||'client'
+  }
+  target.appendString(expand(`h2#projects{${text.projects}}`), false)
   const cvProjects = projects
       .filter(p => p.inCv)
       .sort((a, b) => new Date(a.dateTo)>new Date(b.dateTo)?-1:1)
 
-  let projectString = expand(`ul.unstyled.cv-projects>(${cvProjects.map((project, i) => `(
-          li${project.categories.map(c => `.cat-${slugify(c)}`).join('')}
-            >(header
-              >(h3${(project.inPortfolio?`>a[href="/project/${project.slug}"]{${project.title}}`:`{${project.title}}`)})
-              +(.date>time.date-from{${project.dateFrom.replace(/-\d\d$/, '')}}
-              +time.date-to{${project.dateTo.replace(/-\d\d$/, '')}})
-            )
-            +{replaceContent${i}}
-            ${(project.clients?.length?`+(dl>(dt{client}+dd{${project.clients.join(', ')}}))`:'')}
-            +(ul.tags>(${project.tags.map(tag => `li{${tag}}`).join('+')}))
-         )`).join('+')})`)
-  cvProjects.forEach((project, i) => projectString = projectString.replace('replaceContent' + i, project.excerpt && `<p>${project.excerpt}</p>` || project.content))
+  let projectString = expand(`ul.unstyled.cv-projects>(${cvProjects.map((project, i) => {
+    const title = isNL&&project.titleNl||project.title
+    return `(
+      li${project.categories.map(c => `.cat-${slugify(c)}`).join('')}
+        >(header
+          >(h3${(project.inPortfolio?`>a[href="/project/${project.slug}"]{${title}}`:`{${title}}`)})
+          +(.date>time.date-from{${project.dateFrom.replace(/-\d\d$/, '')}}
+          +time.date-to{${project.dateTo.replace(/-\d\d$/, '')}})
+        )
+        +{replaceContent${i}}
+        ${(project.clients?.length?`+(dl>(dt{${text.client}}+dd{${project.clients.join(', ')}}))`:'')}
+        +(ul.tags>(${project.tags.map(tag => `li{${tag}}`).join('+')}))
+     )`
+  }).join('+')})`)
+  cvProjects.forEach((project, i) => {
+    const wrapP = s => (/^\s*<p>/).test(s)||!s?s:`<p>${s}</p>`
+    const content = isNL && wrapP(project.excerptNl) || wrapP(project.excerpt) || project.content
+
+    projectString = projectString.replace('replaceContent' + i, content)
+  })
   target.appendString(projectString, false)
 }
 

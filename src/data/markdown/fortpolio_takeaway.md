@@ -1,6 +1,9 @@
 <!--
   slug: takeaway
   type: fortpolio
+  excerptNl: Front-end development van een mobiele web app.
+De app is een video-quiz waarmee je kortingsbonnen van Takeaway kunt winnen.
+De gebruikte tech-stack was een React/Nextjs-frontend op een Laravel REST API.
   categories: JavaScript, HTML/CSS, framework, mobile
   tags: scrum, React, Sass, Nextjs, Laravel
   clients: Superhero Cheesecake

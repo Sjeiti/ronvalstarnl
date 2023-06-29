@@ -1,6 +1,10 @@
 <!--
   slug: randstad-micro-services
   type: fortpolio
+  excerptNl: Front-end developer in een team om bestaande monolithische functionaliteiten om te bouwen naar georkestreerde microservices.
+Voor verschillende werkmaatschappijen van Randstad ontwikkelde ik white-label Angular componenten.
+Naast mijn verantwoordelijkheden in het team had ik ook een leidende rol bij het verplaatsen en afstemmen van alle front-end projecten naar een, op Nx gebaseerde, monorepository, waarin zowel Angular als vanilla en React werden ondergebracht.
+Dit omvatte het opzetten van gegenereerde Markdown-documentatie, even als verschillende Storybooks voor het design system.
   categories: JavaScript, HTML/CSS, UX, mobile
   tags: scrum, design system, CSS, HTML, TypeScript, Nx, Angular, MKDocs, TypeDoc, Storybook, TDD, Cypress, accessibility, JSDoc, Docker
   clients: Randstad

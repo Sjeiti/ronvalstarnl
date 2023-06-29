@@ -2,6 +2,8 @@
   id: 2058
   slug: budlight-sensation
   type: fortpolio
+  excerptNl: Implementatie van Sensation event in de bestaande Canadese Budlight website.
+Het evenement was opgedeeld in een aantal fasen die op specifieke tijden moesten worden live gezet.
   categories: JavaScript, HTML/CSS, framework, video, mobile
   tags: CSS, HTML, JavaScript, PHP, Laravel, REST, Backbone
   clients: Resn
@@ -18,4 +20,4 @@
 
 # Budlight Sensation
 
-<p>Implementation of Sensation event into the existing Canadian Budlight website. The event was spread into a number of phases which had to be deployed at specific dates.</p>
+Implementation of Sensation event into the existing Canadian Budlight website. The event was spread into a number of phases which had to be deployed at specific dates.

@@ -2,6 +2,9 @@
   id: 2066
   slug: yoleo-game
   type: fortpolio
+  excerptNl: Yoleo is een website die kinderen helpt bij het lezen door het leuk en uitdagend te maken.
+Ik ontwikkelde een 'eindspel' dat kinderen konden spelen na een bepaalde hoeveelheid gelezen te hebben.
+Voor de ontwikkeling van het spel was ook een level-editor vereist.
   categories: JavaScript, HTML/CSS, game
   tags: CSS, JavaScript, Less, UX, concept
   clients: Shapers
