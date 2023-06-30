@@ -25,7 +25,7 @@ export function prismToRoot(root){
  * @param {HTMLElement} elm
  */
 export function prismToElement(elm){
-  
+
   const pres = Array.from(document.querySelectorAll('pre'))
 
   const {parentNode:pre, parentNode: {parentNode}, textContent, dataset: {language}} = elm
@@ -111,7 +111,7 @@ function getJSFiddleButton(contents){
   wrapper.innerHTML = contents
 
   const resources = []
-  const [css, js] = ['style', 'script'].map(name=>Array.from(wrapper.querySelectorAll(name)).reduce((acc, elm)=>{
+  const [css, js] = [':scope > style', ':scope > script'].map(name=>Array.from(wrapper.querySelectorAll(name)).reduce((acc, elm)=>{
     wrapper.removeChild(elm)
     elm.hasAttribute('src')&&resources.push(elm.getAttribute('src'))
     return acc + elm.innerText
