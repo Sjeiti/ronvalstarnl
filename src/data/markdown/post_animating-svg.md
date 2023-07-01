@@ -62,10 +62,30 @@ It's also a pity that the resulting output is not optimised for web. My imported
 
 So SVGator isn't ideal, but I guess you could get used to these things.
 
+### Anigen
+
+NoJS
+
 ### SnapSVG
 
-### ... more
+Code only, no gui
 
+### Vivus JS
+
+Minimal for stroke
+
+### SVG Artista
+
+Minimal for stroke and fill animations
+https://svgartista.net/
+
+### SVG circus
+
+Very minimal
+
+### ... more?
+
+GSAP, Lottie (=AfterEffects+Bodymovin), Yewcraft, https://www.framer.com
 
 ### Do it by hand with SVG and CSS
 
