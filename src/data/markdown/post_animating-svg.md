@@ -103,6 +103,42 @@ XXXXXXXXXXXXXXXX
 		height: 256px;
 	}
 </style>
+
+<svg class="svg-example svg-trees" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="32" height="32" viewBox="0 0 32 32" xml:space="preserve">
+  <use xlink:href="#tree" style=" --scale: 0.2; animation-delay: 316ms; "></use>
+  <use xlink:href="#tree" style=" --scale: 0.3; animation-delay: 656ms; "></use>
+  <use xlink:href="#tree" style=" --scale: 0.4; animation-delay: 925ms; "></use>
+  <use xlink:href="#tree" style=" --scale: 0.5; animation-delay: 493ms; "></use>
+  <use xlink:href="#tree" style=" --scale: 0.6; animation-delay: 749ms; "></use>
+  <use xlink:href="#tree" style=" --scale: 0.7; animation-delay: 503ms; "></use>
+  <use xlink:href="#tree" style=" --scale: 0.8; animation-delay: 781ms; "></use>
+  <use xlink:href="#tree" style=" --scale: 0.9; animation-delay: 620ms; "></use>
+  <use xlink:href="#tree" style=" --scale: 1.0; animation-delay: 001ms; "></use>
+  <style>
+    .svg-trees {
+      --t: 3543.731ms;
+      --scale: 0.3;
+      --bg: #8c4747;
+      background-color: var(--bg);
+      background: var(--bg) linear-gradient(var(--bg), color-mix(in lch, #FFF 15%, var(--bg)));
+    }
+    @keyframes hor {
+      0% {    transform: translate(-32px,0) scale(var(--scale)); }
+      100% {  transform: translate(32px,0)  scale(var(--scale)); }
+    }
+    use {
+      transform: translate(1E9px,0);
+      animation: hor calc(var(--t)*(1/var(--scale))) linear infinite;
+      color: color-mix(in lch, #48311E calc(var(--scale)*100%), var(--bg));
+    }
+  </style>
+  <defs>
+    <symbol id="tree" viewBox="-10 -64 20 67">
+      <path style="fill: currentColor;" d="M-10,0L-9,-64L9,-64L10,0Q10,3 0,3Q-10,3 -10,0Hz" />
+    </symbol>
+  </defs>
+</svg>
+
 <svg class="svg-example" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="32" height="32" viewBox="0 0 32 32" xml:space="preserve">
   <style>
         @keyframes www {
