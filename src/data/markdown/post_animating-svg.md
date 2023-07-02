@@ -93,15 +93,14 @@ XXXXXXXXXXXXXXXX
 
 ---
 
-
 ```html
 <!--example-->
 <style>
-	.svg-example {
-		box-shadow: 0 0 0 1px red;
-		width: 256px;
-		height: 256px;
-	}
+  .svg-example {
+    box-shadow: 0 0 0 1px red;
+    width: 256px;
+    height: 256px;
+  }
 </style>
 
 <svg class="svg-example svg-trees" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="32" height="32" viewBox="0 0 32 32" xml:space="preserve">
@@ -116,25 +115,32 @@ XXXXXXXXXXXXXXXX
   <use xlink:href="#tree" style=" --scale: 1.0; animation-delay: 001ms; "></use>
   <style>
     .svg-trees {
-      --t: 3543.731ms;
+      --t: 1343.731ms;
       --scale: 0.3;
-      --bg: #8c4747;
+      --bg: #603a2b;
+      --tr: #676938;
       background-color: var(--bg);
-      background: var(--bg) linear-gradient(var(--bg), color-mix(in lch, #FFF 15%, var(--bg)));
+      background: var(--bg) linear-gradient(var(--bg), color-mix(in lch, #fff 15%, var(--bg)));
     }
+
     @keyframes hor {
-      0% {    transform: translate(-32px,0) scale(var(--scale)); }
-      100% {  transform: translate(32px,0)  scale(var(--scale)); }
+      0% {
+        transform: translate(-32px, 0) scale(var(--scale));
+      }
+      100% {
+        transform: translate(32px, 0) scale(var(--scale));
+      }
     }
+
     use {
-      transform: translate(1E9px,0);
-      animation: hor calc(var(--t)*(1/var(--scale))) linear infinite;
-      color: color-mix(in lch, #48311E calc(var(--scale)*100%), var(--bg));
+      transform: translate(1 E9px, 0);
+      animation: hor calc(var(--t) * (1 / var(--scale))) linear infinite;
+      color: color-mix(in lch, var(--tr) calc(var(--scale) * 100%), var(--bg));
     }
   </style>
   <defs>
     <symbol id="tree" viewBox="-10 -64 20 67">
-      <path style="fill: currentColor;" d="M-10,0L-9,-64L9,-64L10,0Q10,3 0,3Q-10,3 -10,0Hz" />
+      <path style="fill: currentColor;" d="M-10,0L-9,-64L9,-64L10,0Q10,3 0,3Q-10,3 -10,0Hz"/>
     </symbol>
   </defs>
 </svg>
@@ -142,33 +148,87 @@ XXXXXXXXXXXXXXXX
 <svg class="svg-example" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="32" height="32" viewBox="0 0 32 32" xml:space="preserve">
   <style>
         @keyframes www {
-            0% {    transform: translate(16px,25px) rotate(0deg); }
-            100% {  transform: translate(16px,25px) rotate(177deg); }
+          0% {
+            transform: translate(16px, 25px) rotate(0deg);
+          }
+          100% {
+            transform: translate(16px, 25px) rotate(177deg);
+          }
         }
+
         @keyframes wwr {
-            0% {    transform:  translate(-12px,0) scale(0.05); }
-            50% {   transform:  translate(-10px,0) scale(0.8); }
-            100% {  transform:  translate(-9px,0) scale(0.05); }
+          0% {
+            transform: translate(-12px, 0) scale(0.05);
+          }
+          50% {
+            transform: translate(-10px, 0) scale(0.8);
+          }
+          100% {
+            transform: translate(-9px, 0) scale(0.05);
+          }
         }
+
         #n {
-      --t: 3500ms;
-      --curve: cubic-bezier(.4,0,.4,1);
-            --curvr: cubic-bezier(.2,0,.7,1);
-    }
-    #n1 {        animation: www var(--t) var(--curve) calc(0*var(--t)/7 - var(--t)) infinite; }
-    #n1 circle { animation: wwr var(--t) var(--curvr) calc(0*var(--t)/7 - var(--t)) infinite; }
-    #n2 {        animation: www var(--t) var(--curve) calc(1*var(--t)/7 - var(--t)) infinite; }
-    #n2 circle { animation: wwr var(--t) var(--curvr) calc(1*var(--t)/7 - var(--t)) infinite; }
-    #n3 {        animation: www var(--t) var(--curve) calc(2*var(--t)/7 - var(--t)) infinite; }
-    #n3 circle { animation: wwr var(--t) var(--curvr) calc(2*var(--t)/7 - var(--t)) infinite; }
-    #n4 {        animation: www var(--t) var(--curve) calc(3*var(--t)/7 - var(--t)) infinite; }
-    #n4 circle { animation: wwr var(--t) var(--curvr) calc(3*var(--t)/7 - var(--t)) infinite; }
-    #n5 {        animation: www var(--t) var(--curve) calc(4*var(--t)/7 - var(--t)) infinite; }
-    #n5 circle { animation: wwr var(--t) var(--curvr) calc(4*var(--t)/7 - var(--t)) infinite; }
-    #n6 {        animation: www var(--t) var(--curve) calc(5*var(--t)/7 - var(--t)) infinite; }
-    #n6 circle { animation: wwr var(--t) var(--curvr) calc(5*var(--t)/7 - var(--t)) infinite; }
-    #n7 {        animation: www var(--t) var(--curve) calc(6*var(--t)/7 - var(--t)) infinite; }
-    #n7 circle { animation: wwr var(--t) var(--curvr) calc(6*var(--t)/7 - var(--t)) infinite; }
+          --t: 3500ms;
+          --curve: cubic-bezier(.4, 0, .4, 1);
+          --curvr: cubic-bezier(.2, 0, .7, 1);
+        }
+
+        #n1 {
+          animation: www var(--t) var(--curve) calc(0 * var(--t) / 7 - var(--t)) infinite;
+        }
+
+        #n1 circle {
+          animation: wwr var(--t) var(--curvr) calc(0 * var(--t) / 7 - var(--t)) infinite;
+        }
+
+        #n2 {
+          animation: www var(--t) var(--curve) calc(1 * var(--t) / 7 - var(--t)) infinite;
+        }
+
+        #n2 circle {
+          animation: wwr var(--t) var(--curvr) calc(1 * var(--t) / 7 - var(--t)) infinite;
+        }
+
+        #n3 {
+          animation: www var(--t) var(--curve) calc(2 * var(--t) / 7 - var(--t)) infinite;
+        }
+
+        #n3 circle {
+          animation: wwr var(--t) var(--curvr) calc(2 * var(--t) / 7 - var(--t)) infinite;
+        }
+
+        #n4 {
+          animation: www var(--t) var(--curve) calc(3 * var(--t) / 7 - var(--t)) infinite;
+        }
+
+        #n4 circle {
+          animation: wwr var(--t) var(--curvr) calc(3 * var(--t) / 7 - var(--t)) infinite;
+        }
+
+        #n5 {
+          animation: www var(--t) var(--curve) calc(4 * var(--t) / 7 - var(--t)) infinite;
+        }
+
+        #n5 circle {
+          animation: wwr var(--t) var(--curvr) calc(4 * var(--t) / 7 - var(--t)) infinite;
+        }
+
+        #n6 {
+          animation: www var(--t) var(--curve) calc(5 * var(--t) / 7 - var(--t)) infinite;
+        }
+
+        #n6 circle {
+          animation: wwr var(--t) var(--curvr) calc(5 * var(--t) / 7 - var(--t)) infinite;
+        }
+
+        #n7 {
+          animation: www var(--t) var(--curve) calc(6 * var(--t) / 7 - var(--t)) infinite;
+        }
+
+        #n7 circle {
+          animation: wwr var(--t) var(--curvr) calc(6 * var(--t) / 7 - var(--t)) infinite;
+        }
   </style>
   <g id="n">
     <g id="n1"><circle r="8"/></g>
@@ -179,7 +239,7 @@ XXXXXXXXXXXXXXXX
     <g id="n6"><circle r="8"/></g>
     <g id="n7"><circle r="8"/></g>
   </g>
-  <path d="M25,25.6l-7.3-11.6l-12.6,7l-1.3,4.6H25z" />
+  <path d="M25,25.6l-7.3-11.6l-12.6,7l-1.3,4.6H25z"/>
 </svg>
 
 <svg class="svg-example" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="32" height="32" viewBox="0 0 32 32" xml:space="preserve">
@@ -187,20 +247,53 @@ XXXXXXXXXXXXXXXX
     :root {
       --t: 500ms;
     }
+
     @keyframes vvv {
-      0% { visibility: visible; }
-      14.29% { visibility: visible; }
-      14.29% { visibility: hidden; }
-      100% { visibility: hidden; }
+      0% {
+        visibility: visible;
+      }
+      14.29% {
+        visibility: visible;
+      }
+      14.29% {
+        visibility: hidden;
+      }
+      100% {
+        visibility: hidden;
+      }
     }
-    #c1 { animation: vvv var(--t) linear calc(1*var(--t)/7 - var(--t)) infinite; }
-    #c2 { animation: vvv var(--t) linear calc(2*var(--t)/7 - var(--t)) infinite; }
-    #c3 { animation: vvv var(--t) linear calc(3*var(--t)/7 - var(--t)) infinite; }
-    #c4 { animation: vvv var(--t) linear calc(4*var(--t)/7 - var(--t)) infinite; }
-    #c5 { animation: vvv var(--t) linear calc(5*var(--t)/7 - var(--t)) infinite; }
-    #c6 { animation: vvv var(--t) linear calc(6*var(--t)/7 - var(--t)) infinite; }
-    #c7 { animation: vvv var(--t) linear calc(7*var(--t)/7 - var(--t)) infinite; }
-    .paused g { animation-play-state: paused!important; }
+
+    #c1 {
+      animation: vvv var(--t) linear calc(1 * var(--t) / 7 - var(--t)) infinite;
+    }
+
+    #c2 {
+      animation: vvv var(--t) linear calc(2 * var(--t) / 7 - var(--t)) infinite;
+    }
+
+    #c3 {
+      animation: vvv var(--t) linear calc(3 * var(--t) / 7 - var(--t)) infinite;
+    }
+
+    #c4 {
+      animation: vvv var(--t) linear calc(4 * var(--t) / 7 - var(--t)) infinite;
+    }
+
+    #c5 {
+      animation: vvv var(--t) linear calc(5 * var(--t) / 7 - var(--t)) infinite;
+    }
+
+    #c6 {
+      animation: vvv var(--t) linear calc(6 * var(--t) / 7 - var(--t)) infinite;
+    }
+
+    #c7 {
+      animation: vvv var(--t) linear calc(7 * var(--t) / 7 - var(--t)) infinite;
+    }
+
+    .paused g {
+      animation-play-state: paused !important;
+    }
   </style>
   <path d="M25,25.6l-7.3-11.6l-12.6,7l-1.3,4.6H25z"/>
   <g id="c1">
