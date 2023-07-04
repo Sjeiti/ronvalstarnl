@@ -66,9 +66,16 @@ So SVGator isn't ideal, but I guess you could get used to these things.
 
 [SnapSVG](http://snapsvg.io/) is not an editor but a code abstraction. Their words: "makes working with your SVG assets as easy as jQuery".
 
-### Lottie
+### Lottie creator
 
-Lottie is not something to use directly but a JSON animation format (developed at Airbnb).
+(dot)[Lottie](https://dotlottie.io/) is really a JSON file format, not something to use directly. [LottieFiles](https://lottiefiles.com) does show several implementations among which Lottie Creator. This is an editor that is currently in alpha. To use it you must join a waiting list and be patient.
+
+
+
+Your Position
+18441 18434 18431
+People on Waitlist
+18467
 
 
 ### Stale editors
