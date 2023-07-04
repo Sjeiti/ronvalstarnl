@@ -37,11 +37,13 @@ My formal background is graphic- and interaction design and I strive toward cons
 
 In the course of time I have worked with: Randstad, Vodafone, Novartis, Philips, ThiemeMeulenhoff, Resn, 2x4, BNN, Pool Worldwide, Tribal DDB, Kennisnet, Centraal Museum and Ome Willem!
 
+<!--
 ## ethics
 
-There is work that I've done in the past that I would no longer take on today.<!-- My morals have changed. -->
-I no longer do hardcore commercial work; I will not help sell products nobody needs. I will *not* work for (most) banks or insurance companies. I will not work on anything bitcoin related. <!-- Amazon, Apple, Google, Facebook, Nestle, Coca Cola, oil companies -->
-Everybody is responsible. You cannot be responsible for everything but you should at least try<!-- ; nothing is in vain when you're part of a chaotic system -->.
+There is work that I've done in the past that I would no longer take on today.
+I no longer do hardcore commercial work; I will not help sell products nobody needs. I will *not* work for (most) banks or insurance companies. I will not work on anything bitcoin related. 
+Everybody is responsible. You cannot be responsible for everything but you should at least try.
+--><!-- ; nothing is in vain when you're part of a chaotic system -->
 
 ## past
 

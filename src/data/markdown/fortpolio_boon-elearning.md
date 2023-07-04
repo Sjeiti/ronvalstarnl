@@ -21,4 +21,4 @@ We schreven documentatie en creëerden de eerste twee aanpasbare thema's.
 # Boon Learning
 
 To turn their bespoke e-learning platform into a subscription based one a customisable redesign was needed.
-[We](https://www.linkedin.com/in/tjin-cheng/) created a design system to integrate with their existing sources. These sources are in [Haxe](https://haxe.org/), which is obscure but similar to languages I'm familiar with. We wrote documentation and created the first two customisable themes. 
+We<!--[We](https://www.linkedin.com/in/tjin-cheng/)--> created a design system to integrate with their existing sources. These sources are in [Haxe](https://haxe.org/), which is obscure but similar to languages I'm familiar with. We wrote documentation and created the first two customisable themes. 
