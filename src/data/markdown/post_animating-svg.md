@@ -62,44 +62,51 @@ Strangely the resulting output is not optimised for web. My imported SVG had dig
 
 So SVGator isn't ideal, but I guess you could get used to these things.
 
-### SnapSVG
 
-[SnapSVG](http://snapsvg.io/) is not an editor but a code abstraction. Their words: "makes working with your SVG assets as easy as jQuery".
+### Lottie
 
-### Lottie creator
+(dot)[Lottie](https://dotlottie.io/) is an open-source JSON file format, not something to use directly.
+It started with the AfterEffects plugin [Bodymovin](https://exchange.adobe.com/apps/cc/12557/bodymovin) along with a JavaScript player for use in websites. This was in 2015 but the official dotLottie format was standardised in 2020.
 
-(dot)[Lottie](https://dotlottie.io/) is really a JSON file format, not something to use directly. [LottieFiles](https://lottiefiles.com) does show several implementations among which Lottie Creator. This is an editor that is currently in alpha. To use it you must join a waiting list and be patient.
+#### Lottiefiles
 
+[LottieFiles](https://lottiefiles.com) has [several integrations](https://lottiefiles.com/integrations) among which plugins for: AfterEffects, Animate and Figma.
+The people behind Lottiefiles are also developing a standalone editor called Lottie Creator.
 
+[Lottie Creator](https://lottiefiles.com/lottie-creator) is an editor that is currently in private beta. To use it you must join a waiting list and be patient. According to the wayback-machine the waiting list is there since April 2023. You can check your current position, by which you can calculate it will take about fifty years.
 
-Your Position
-18441 18434 18431
-People on Waitlist
-18467
+#### Lottielab
+
+If you do not want to wait that long you may want to try [Lottielab](https://lottielab.com/). It is a well-designed, intuitive editor for simple animations.
 
 
 ### Stale editors
 
 #### Animator (by Haiku)
 
-[Haiku Animator](https://www.haikuanimator.com/) is an open-source, Lottie based editor that looked promising in 2021. But development stopped at IOS.
+[Haiku Animator](https://www.haikuanimator.com/) is an open-source, Lottie based editor that looked promising in 2021. But development seems to have stopped at IOS.
+The [master on Github](https://github.com/HaikuTeam/animator) should work on Windows but fails.
 
 #### Anigen
 
 Anigen is an editor that outputs pure SVG (no JS). But it seems to be discontinued: no anigen.org and [a stale Github repo](https://github.com/aibosan/anigen).
 It easily runs locally but the gui fails.
 
+### SnapSVG
+
+[SnapSVG](http://snapsvg.io/) is not an editor but a code abstraction. Their words: "makes working with your SVG assets as easy as jQuery". Unfortunately it looks to be a dead project, old code, old issues and wonky examples.
+
+
 ### Small tools
 
-Then there are a variety of small tools that might help a very specific use case but should not be categorized as animation software. I'll just list them without too much detail: [Vivus JS](https://maxwellito.github.io/vivus/) for `stroke` animations, [SVG Artista](https://svgartista.net/), for `stroke` and `fill`  animations, [SVG circus](https://svgcircus.com/) for loading spinners.
+Then there are a variety of small tools that might help a very specific use case but should not be categorized as complete animation software. I'll just list them without too much detail: [Vivus JS](https://maxwellito.github.io/vivus/) for `stroke` animations, [SVG Artista](https://svgartista.net/), for `stroke` and `fill`  animations, [SVG circus](https://svgcircus.com/) for loading spinners.
 
-### ... more?
 
-GSAP, Lottie (=AfterEffects+Bodymovin), Yewcraft
+### Do it by hand with SVG (and CSS)
 
-### Do it by hand with SVG and CSS
+The alternative is to code it yourself. You'll be JavaScript independent plus browsers simply support it.
+It might look complicated, especially SVG paths, but it really is not difficult when somebody like [Nanda Syahrasyad explains it](https://www.nan.fyi/svg-paths).
 
-https://www.nan.fyi/svg-paths
 XXXXXXXXXXXXXXXX
 
 ---
@@ -210,6 +217,17 @@ XXXXXXXXXXXXXXXX
   </g>
   <path d="M25,25.6l-7.3-11.6l-12.6,7l-1.3,4.6H25z"/>
 </svg>
+```
+
+```html
+<!--example-->
+<style>
+  .svg-example {
+    box-shadow: 0 0 0 1px red;
+    width: 256px;
+    height: 256px;
+  }
+</style>
 
 <svg class="svg-example" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="32" height="32" viewBox="0 0 32 32" xml:space="preserve">
   <style>
