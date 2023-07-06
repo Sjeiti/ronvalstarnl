@@ -1,5 +1,5 @@
 <!--
-  slug: animating-svg
+  slug: modern-animation-for-web
   date: 9999-04-30
   modified: 9999-04-30
   type: post
@@ -8,7 +8,7 @@
   tag: animation
 -->
 
-# Modern animation with SVG
+# Modern animation for web
 
 <!--
 I've programmed the web long enough to know that the wheel is continuously being reinvented. This new wheel is not necessarily rounder, but it is what it currently is.
@@ -30,6 +30,8 @@ So Flash won, and then *lost* because it couldn't adapt to mobile. And although 
 
 A while back I needed an animated rolling cloud icon, to indicate an ongoing XMLHTTPRequest. Fifteen years ago a vector animation like that would have been trivial: with Flash you'd just motion tween some circles along a bezier curve, create a symbol from that animation to duplicate and offset in time, et voilà.
 Yet now, I could not figure out how to get the same result with SVG.
+
+And recently I had to animate an infographic for which a start was already made in Adobe Animate. The export size was hug so after a little HTML/CSS only test I decided to go that way.
 
 <!--
 
@@ -136,125 +138,12 @@ Here are three examples with the cloud animationmentioned earlier.
 
 #### Flash export
 
-When I found Adobe Animate could not export to SVG my initial solution was to create keyframes for the entire bezier animation. This meant a lot of balls that had to be turned on
-
-XXXXXXXXXXXXXXXX
-
----
+When I found Adobe Animate could not export to SVG my initial solution was to create keyframes for the entire bezier animation. This meant all keyframes were exported in one go, I just had to toggle their visibility.
 
 ```html
 <!--example-->
 <style>
   .svg-example {
-    box-shadow: 0 0 0 1px red;
-    width: 256px;
-    height: 256px;
-  }
-</style>
-
-<svg class="svg-example" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="32" height="32" viewBox="0 0 32 32" xml:space="preserve">
-  <style>
-        @keyframes www {
-          0% {
-            transform: translate(16px, 25px) rotate(0deg);
-          }
-          100% {
-            transform: translate(16px, 25px) rotate(177deg);
-          }
-        }
-
-        @keyframes wwr {
-          0% {
-            transform: translate(-12px, 0) scale(0.05);
-          }
-          50% {
-            transform: translate(-10px, 0) scale(0.8);
-          }
-          100% {
-            transform: translate(-9px, 0) scale(0.05);
-          }
-        }
-
-        #n {
-          --t: 3500ms;
-          --curve: cubic-bezier(.4, 0, .4, 1);
-          --curvr: cubic-bezier(.2, 0, .7, 1);
-        }
-
-        #n1 {
-          animation: www var(--t) var(--curve) calc(0 * var(--t) / 7 - var(--t)) infinite;
-        }
-
-        #n1 circle {
-          animation: wwr var(--t) var(--curvr) calc(0 * var(--t) / 7 - var(--t)) infinite;
-        }
-
-        #n2 {
-          animation: www var(--t) var(--curve) calc(1 * var(--t) / 7 - var(--t)) infinite;
-        }
-
-        #n2 circle {
-          animation: wwr var(--t) var(--curvr) calc(1 * var(--t) / 7 - var(--t)) infinite;
-        }
-
-        #n3 {
-          animation: www var(--t) var(--curve) calc(2 * var(--t) / 7 - var(--t)) infinite;
-        }
-
-        #n3 circle {
-          animation: wwr var(--t) var(--curvr) calc(2 * var(--t) / 7 - var(--t)) infinite;
-        }
-
-        #n4 {
-          animation: www var(--t) var(--curve) calc(3 * var(--t) / 7 - var(--t)) infinite;
-        }
-
-        #n4 circle {
-          animation: wwr var(--t) var(--curvr) calc(3 * var(--t) / 7 - var(--t)) infinite;
-        }
-
-        #n5 {
-          animation: www var(--t) var(--curve) calc(4 * var(--t) / 7 - var(--t)) infinite;
-        }
-
-        #n5 circle {
-          animation: wwr var(--t) var(--curvr) calc(4 * var(--t) / 7 - var(--t)) infinite;
-        }
-
-        #n6 {
-          animation: www var(--t) var(--curve) calc(5 * var(--t) / 7 - var(--t)) infinite;
-        }
-
-        #n6 circle {
-          animation: wwr var(--t) var(--curvr) calc(5 * var(--t) / 7 - var(--t)) infinite;
-        }
-
-        #n7 {
-          animation: www var(--t) var(--curve) calc(6 * var(--t) / 7 - var(--t)) infinite;
-        }
-
-        #n7 circle {
-          animation: wwr var(--t) var(--curvr) calc(6 * var(--t) / 7 - var(--t)) infinite;
-        }
-  </style>
-  <g id="n">
-    <g id="n1"><circle r="8"/></g>
-    <g id="n2"><circle r="8"/></g>
-    <g id="n3"><circle r="8"/></g>
-    <g id="n4"><circle r="8"/></g>
-    <g id="n5"><circle r="8"/></g>
-    <g id="n6"><circle r="8"/></g>
-    <g id="n7"><circle r="8"/></g>
-  </g>
-  <path d="M25,25.6l-7.3-11.6l-12.6,7l-1.3,4.6H25z"/>
-</svg>
-```
-
-```html
-<!--example-->
-<style>
-  .svg-example {
-    box-shadow: 0 0 0 1px red;
     width: 256px;
     height: 256px;
   }
@@ -265,104 +154,130 @@ XXXXXXXXXXXXXXXX
     :root {
       --t: 500ms;
     }
-
-    @keyframes vvv {
-      0% {
-        visibility: visible;
-      }
-      14.29% {
-        visibility: visible;
-      }
-      14.29% {
-        visibility: hidden;
-      }
-      100% {
-        visibility: hidden;
-      }
+    @keyframes toggelVisibility {
+      0% {     visibility: visible; }
+      14.29% { visibility: visible; }
+      14.29% { visibility: hidden; }
+      100% {   visibility: hidden; }
     }
-
-    #c1 {
-      animation: vvv var(--t) linear calc(1 * var(--t) / 7 - var(--t)) infinite;
-    }
-
-    #c2 {
-      animation: vvv var(--t) linear calc(2 * var(--t) / 7 - var(--t)) infinite;
-    }
-
-    #c3 {
-      animation: vvv var(--t) linear calc(3 * var(--t) / 7 - var(--t)) infinite;
-    }
-
-    #c4 {
-      animation: vvv var(--t) linear calc(4 * var(--t) / 7 - var(--t)) infinite;
-    }
-
-    #c5 {
-      animation: vvv var(--t) linear calc(5 * var(--t) / 7 - var(--t)) infinite;
-    }
-
-    #c6 {
-      animation: vvv var(--t) linear calc(6 * var(--t) / 7 - var(--t)) infinite;
-    }
-
-    #c7 {
-      animation: vvv var(--t) linear calc(7 * var(--t) / 7 - var(--t)) infinite;
-    }
-
-    .paused g {
-      animation-play-state: paused !important;
-    }
+    #c1 { animation: toggelVisibility var(--t) linear calc(1*var(--t)/7 - var(--t)) infinite; }
+    #c2 { animation: toggelVisibility var(--t) linear calc(2*var(--t)/7 - var(--t)) infinite; }
+    #c3 { animation: toggelVisibility var(--t) linear calc(3*var(--t)/7 - var(--t)) infinite; }
+    #c4 { animation: toggelVisibility var(--t) linear calc(4*var(--t)/7 - var(--t)) infinite; }
+    #c5 { animation: toggelVisibility var(--t) linear calc(5*var(--t)/7 - var(--t)) infinite; }
+    #c6 { animation: toggelVisibility var(--t) linear calc(6*var(--t)/7 - var(--t)) infinite; }
+    #c7 { animation: toggelVisibility var(--t) linear calc(7*var(--t)/7 - var(--t)) infinite; }
+    .paused g { animation-play-state: paused!important; }
   </style>
-  <path d="M25,25.6l-7.3-11.6l-12.6,7l-1.3,4.6H25z"/>
-  <g id="c1">
+	<path d="M25,25.6l-7.3-11.6l-12.6,7l-1.3,4.6H25z"/>
+	<g id="c1">
     <circle cx="3.8" cy="23.6" r="2.0"/>
-    <circle cx="6.0" cy="19.9" r="3.1"/>
-    <circle cx="11.6" cy="15.8" r="4.6"/>
-    <circle cx="22.1" cy="13.9" r="7.0"/>
-    <circle cx="25.0" cy="20.9" r="4.6"/></g>
-  <g id="c2">
+		<circle cx="6.0" cy="19.9" r="3.1"/>
+		<circle cx="11.6" cy="15.8" r="4.6"/>
+		<circle cx="22.1" cy="13.9" r="7.0"/>
+		<circle cx="25.0" cy="20.9" r="4.6"/></g>
+	<g id="c2">
     <circle cx="4.0" cy="22.1" r="2.2"/>
-    <circle cx="6.8" cy="19.2" r="3.5"/>
-    <circle cx="12.7" cy="15.3" r="5.0"/>
-    <circle cx="22.8" cy="14.3" r="6.8"/>
-    <circle cx="24.8" cy="21.3" r="4.4"/>
-    <circle cx="3.8" cy="24.9" r="0.7"/></g>
-  <g id="c3">
+		<circle cx="6.8" cy="19.2" r="3.5"/>
+		<circle cx="12.7" cy="15.3" r="5.0"/>
+		<circle cx="22.8" cy="14.3" r="6.8"/>
+		<circle cx="24.8" cy="21.3" r="4.4"/>
+		<circle cx="3.8" cy="24.9" r="0.7"/></g>
+	<g id="c3">
     <circle cx="4.0" cy="22.3" r="2.0"/>
-    <circle cx="7.2" cy="18.1" r="3.4"/>
-    <circle cx="13.4" cy="14.4" r="4.9"/>
-    <circle cx="23.5" cy="14.8" r="6.5"/>
-    <circle cx="24.9" cy="21.6" r="4.0"/>
-    <circle cx="4.0" cy="24.8" r="1.1"/></g>
-  <g id="c4">
+		<circle cx="7.2" cy="18.1" r="3.4"/>
+		<circle cx="13.4" cy="14.4" r="4.9"/>
+		<circle cx="23.5" cy="14.8" r="6.5"/>
+		<circle cx="24.9" cy="21.6" r="4.0"/>
+		<circle cx="4.0" cy="24.8" r="1.1"/></g>
+	<g id="c4">
     <circle cx="4.4" cy="21.3" r="2.2"/>
-    <circle cx="8.1" cy="17.4" r="3.6"/>
-    <circle cx="14.8" cy="13.7" r="5.3"/>
-    <circle cx="24.0" cy="15.7" r="6.3"/>
-    <circle cx="25.0" cy="22.0" r="3.7"/>
-    <circle cx="4.0" cy="24.4" r="1.3"/></g>
-  <g id="c5">
+		<circle cx="8.1" cy="17.4" r="3.6"/>
+		<circle cx="14.8" cy="13.7" r="5.3"/>
+		<circle cx="24.0" cy="15.7" r="6.3"/>
+		<circle cx="25.0" cy="22.0" r="3.7"/>
+		<circle cx="4.0" cy="24.4" r="1.3"/></g>
+	<g id="c5">
     <circle cx="5.3" cy="22.6" r="2.1"/>
-    <circle cx="8.8" cy="16.9" r="3.9"/>
-    <circle cx="16.4" cy="13.3" r="5.6"/>
-    <circle cx="24.6" cy="17.1" r="6.0"/>
-    <circle cx="25.0" cy="22.4" r="3.2"/>
-    <circle cx="4.0" cy="24.2" r="1.4"/></g>
-  <g id="c6">
+		<circle cx="8.8" cy="16.9" r="3.9"/>
+		<circle cx="16.4" cy="13.3" r="5.6"/>
+		<circle cx="24.6" cy="17.1" r="6.0"/>
+		<circle cx="25.0" cy="22.4" r="3.2"/>
+		<circle cx="4.0" cy="24.2" r="1.4"/></g>
+	<g id="c6">
     <circle cx="5.3" cy="20.5" r="2.7"/>
-    <circle cx="10.0" cy="16.1" r="4.3"/>
-    <circle cx="18.3" cy="13.1" r="5.9"/>
-    <circle cx="24.8" cy="18.4" r="5.6"/>
-    <circle cx="25.1" cy="22.9" r="2.7"/>
-    <circle cx="3.9" cy="24.1" r="1.6"/></g>
-  <g id="c7">
+		<circle cx="10.0" cy="16.1" r="4.3"/>
+		<circle cx="18.3" cy="13.1" r="5.9"/>
+		<circle cx="24.8" cy="18.4" r="5.6"/>
+		<circle cx="25.1" cy="22.9" r="2.7"/>
+		<circle cx="3.9" cy="24.1" r="1.6"/></g>
+	<g id="c7">
     <circle cx="5.6" cy="20.3" r="3.0"/>
-    <circle cx="11.1" cy="15.8" r="4.5"/>
-    <circle cx="20.9" cy="12.8" r="5.8"/>
-    <circle cx="24.8" cy="19.4" r="5.3"/>
-    <circle cx="25.0" cy="23.4" r="2.2"/>
-    <circle cx="3.9" cy="23.8" r="1.8"/></g>
+		<circle cx="11.1" cy="15.8" r="4.5"/>
+		<circle cx="20.9" cy="12.8" r="5.8"/>
+		<circle cx="24.8" cy="19.4" r="5.3"/>
+		<circle cx="25.0" cy="23.4" r="2.2"/>
+		<circle cx="3.9" cy="23.8" r="1.8"/></g>
 </svg>
+```
+
+#### Hand craft all the things!
+
+Because the 
+
+```html
+<!--example-->
+<style>
+  .svg-example {
+    box-shadow: 0 0 0 1px red;
+    width: 256px;
+    height: 256px;
+  }
+</style>
+
+<svg class="svg-example" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="32" height="32" viewBox="0 0 32 32" xml:space="preserve">
+  <style>
+        @keyframes rotate180 {
+            0% {    transform: translate(16px,25px) rotate(0deg); }
+            100% {  transform: translate(16px,25px) rotate(177deg); }
+        }
+        @keyframes scaleUpDown {
+            0% {    transform:  translate(-12px,0) scale(0.05); }
+            50% {   transform:  translate(-10px,0) scale(0.8); }
+            100% {  transform:  translate(-9px,0) scale(0.05); }
+        }
+        #n {
+      --t: 3500ms;
+      --curveRotation: cubic-bezier(.4,0,.4,1);
+      --curveScale: cubic-bezier(.2,0,.7,1);
+    }
+    #n1 {        animation: rotate180   var(--t) var(--curveRotation) calc(0*var(--t)/7 - var(--t)) infinite; }
+    #n1 circle { animation: scaleUpDown var(--t) var(--curveScale)    calc(0*var(--t)/7 - var(--t)) infinite; }
+    #n2 {        animation: rotate180   var(--t) var(--curveRotation) calc(1*var(--t)/7 - var(--t)) infinite; }
+    #n2 circle { animation: scaleUpDown var(--t) var(--curveScale)    calc(1*var(--t)/7 - var(--t)) infinite; }
+    #n3 {        animation: rotate180   var(--t) var(--curveRotation) calc(2*var(--t)/7 - var(--t)) infinite; }
+    #n3 circle { animation: scaleUpDown var(--t) var(--curveScale)    calc(2*var(--t)/7 - var(--t)) infinite; }
+    #n4 {        animation: rotate180   var(--t) var(--curveRotation) calc(3*var(--t)/7 - var(--t)) infinite; }
+    #n4 circle { animation: scaleUpDown var(--t) var(--curveScale)    calc(3*var(--t)/7 - var(--t)) infinite; }
+    #n5 {        animation: rotate180   var(--t) var(--curveRotation) calc(4*var(--t)/7 - var(--t)) infinite; }
+    #n5 circle { animation: scaleUpDown var(--t) var(--curveScale)    calc(4*var(--t)/7 - var(--t)) infinite; }
+    #n6 {        animation: rotate180   var(--t) var(--curveRotation) calc(5*var(--t)/7 - var(--t)) infinite; }
+    #n6 circle { animation: scaleUpDown var(--t) var(--curveScale)    calc(5*var(--t)/7 - var(--t)) infinite; }
+    #n7 {        animation: rotate180   var(--t) var(--curveRotation) calc(6*var(--t)/7 - var(--t)) infinite; }
+    #n7 circle { animation: scaleUpDown var(--t) var(--curveScale)    calc(6*var(--t)/7 - var(--t)) infinite; }
+  </style>
+	<g id="n">
+    <g id="n1"><circle r="8"/></g>
+		<g id="n2"><circle r="8"/></g>
+		<g id="n3"><circle r="8"/></g>
+		<g id="n4"><circle r="8"/></g>
+		<g id="n5"><circle r="8"/></g>
+		<g id="n6"><circle r="8"/></g>
+		<g id="n7"><circle r="8"/></g>
+  </g>
+  <path d="M25,25.6l-7.3-11.6l-12.6,7l-1.3,4.6H25z" />
+</svg>
+
 ```
 
 
