@@ -10,6 +10,7 @@
 
 # Modern animation with SVG
 
+<!--
 I've programmed the web long enough to know that the wheel is continuously being reinvented. This new wheel is not necessarily rounder, but it is what it currently is.
 
 
@@ -25,8 +26,13 @@ So Flash won, and then *lost* because it couldn't adapt to mobile. And although 
 
 ## Animation example
 
-A while back I needed an animated rolling cloud icon, to indicate an ongoing XMLHTTPRequest. Fifteen years ago a vector animation like that would have been trivial: just motion tween some circles along a bezier curve, create a symbol from that animation to duplicate and offset in time, et voilà.
+-->
+
+A while back I needed an animated rolling cloud icon, to indicate an ongoing XMLHTTPRequest. Fifteen years ago a vector animation like that would have been trivial: with Flash you'd just motion tween some circles along a bezier curve, create a symbol from that animation to duplicate and offset in time, et voilà.
 Yet now, I could not figure out how to get the same result with SVG.
+
+<!--
+
 In the end I just installed an older Flash version, exported the frames to import into Illustrator, exported to SVG from there, and then cleaned up and animated the raw SVG ASCII.
 
 There must be better ways than that.
@@ -34,16 +40,19 @@ There must be better ways than that.
 
 ## Searching
 
-So what are the current tools with which you can create an animated SVG?
+-->
+
+So what are the current tools with which you can create an animated images?
 
 ### Not Adobe Animate
 
 [Adobe Animate](https://www.adobe.com/products/animate.html) is what once was Flash. Somewhere end last century Macromedia brought vector graphics to the masses in the form of [Flash](https://en.m.wikipedia.org/wiki/Adobe_Flash). This was [before SVG](https://en.m.wikipedia.org/wiki/SVG) even existed. The Flash format was not only very small, the timeline keyframe editor was very easy to work with.
 They must have rebranded it because [somebody gave it a bad name](https://en.m.wikipedia.org/wiki/Thoughts_on_Flash). But strangely it does not export to SVG. The result is a canvas element with a lot of JavaScript. A major disappointment especially considering a major obstacle in the heydays of Flash was accessibility and SEO. One would think this issue would be solved for HTML5 exports.
 
+<!--
 There is a possibility to export to animated SVG using a plugin called [Flash2Svg](https://github.com/TomByrne/Flash2Svg), but it is for Flash, not Animate.
 There are also traces of a plugin for Flash CC called [Snap.svg Animator](http://cjgammon.github.io/SnapSVG-Animator/), but it is discontinued (or turned into [something completely different](http://snapsvg.io/)).
-
+-->
 
 ### SVGator
 
@@ -51,10 +60,14 @@ There are also traces of a plugin for Flash CC called [Snap.svg Animator](http:/
 
 You cannot draw things, so you have to start your SVG creation in something like Illustrator or Inkscape and import it.
 
+The user interface really lacks in UX. This makes animating itself rather unintuitive. It has some bugs among which non-working keyboard shortcuts.
+
+<!--
 The user interface really lacks in UX. For instance the button that collapse the animation row is the size of the tiny icon. And a lot of icon buttons lack the title attribute, so you have to guess at their functionality.
 This makes animating itself rather unintuitive. It's also a pity that animation is divided into properties: you cannot simply transform an element, you have to scale, rotate and translate separately.
 There is an annoying bug where the interface can flip into a state where it cannot drag-select items anymore (because of a JS error blocking execution).
 It has keyboard shortcuts, but they don't always work. But maybe that is because they assume Apple users.
+-->
 
 The resulting animations also don't run without JavaScript enabled. Each SVG export comes with a minimum of 30KB JavaScript (but there are examples that have as much as 80KB).
 
@@ -68,6 +81,8 @@ So SVGator isn't ideal, but I guess you could get used to these things.
 (dot)[Lottie](https://dotlottie.io/) is an open-source JSON file format, not something to use directly.
 It started with the AfterEffects plugin [Bodymovin](https://exchange.adobe.com/apps/cc/12557/bodymovin) along with a JavaScript player for use in websites. This was in 2015 but the official dotLottie format was standardised in 2020.
 
+Since Lottie is not officially recognized by the W3C you will need JavaScript to run it.
+
 #### Lottiefiles
 
 [LottieFiles](https://lottiefiles.com) has [several integrations](https://lottiefiles.com/integrations) among which plugins for: AfterEffects, Animate and Figma.
@@ -78,6 +93,11 @@ The people behind Lottiefiles are also developing a standalone editor called Lot
 #### Lottielab
 
 If you do not want to wait that long you may want to try [Lottielab](https://lottielab.com/). It is a well-designed, intuitive editor for simple animations.
+It doesn't seem to be able to reuse elements though.
+
+### GSAP
+
+Xxxxx xx xxx
 
 
 ### Stale editors
@@ -104,8 +124,19 @@ Then there are a variety of small tools that might help a very specific use case
 
 ### Do it by hand with SVG (and CSS)
 
-The alternative is to code it yourself. You'll be JavaScript independent plus browsers simply support it.
+The alternative is to code it yourself. You don't need JavaScript an browsers simply support it.
 It might look complicated, especially SVG paths, but it really is not difficult when somebody like [Nanda Syahrasyad explains it](https://www.nan.fyi/svg-paths).
+
+For the actual animation you can either use native SVG native [`animate`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate) or use CSS.
+
+The simplest solution might be to use CSS because chances are you already know everything you need to know.
+But SVG has capabilities that cannot be replicated with CSS: for instance `animateMotion`, to make an object follow a curve.
+
+Here are three examples with the cloud animationmentioned earlier.
+
+#### Flash export
+
+When I found Adobe Animate could not export to SVG my initial solution was to create keyframes for the entire bezier animation. This meant a lot of balls that had to be turned on
 
 XXXXXXXXXXXXXXXX
 
