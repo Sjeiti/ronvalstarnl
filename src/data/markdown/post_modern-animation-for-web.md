@@ -31,7 +31,7 @@ So Flash won, and then *lost* because it couldn't adapt to mobile. And although 
 A while back I needed an animated rolling cloud icon, to indicate an ongoing XMLHTTPRequest. Fifteen years ago a vector animation like that would have been trivial: with Flash you'd just motion tween some circles along a bezier curve, create a symbol from that animation to duplicate and offset in time, et voilà.
 Yet now, I could not figure out how to get the same result with SVG.
 
-And recently I had to animate an infographic for which a start was already made in Adobe Animate. The export size was hug so after a little HTML/CSS only test I decided to go that way.
+And recently I had to animate an infographic for which a start was already made in Adobe Animate. The export size was huge. So after a little HTML/CSS only test I decided to go that way. The Animate export was 2.5MB, the HTML/CSS animation was less than 20% of that and accessible instead of a canvas black box.
 
 <!--
 
@@ -140,16 +140,18 @@ Here are three examples with the cloud animationmentioned earlier.
 
 When I found Adobe Animate could not export to SVG my initial solution was to create keyframes for the entire bezier animation. This meant all keyframes were exported in one go, I just had to toggle their visibility.
 
+It looks somewhat choppy but who's going to notice at icon size.
+The final size is 2.97 KB.
+
 ```html
 <!--example-->
 <style>
-  .svg-example {
+  svg {
     width: 256px;
     height: 256px;
   }
 </style>
-
-<svg class="svg-example" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="32" height="32" viewBox="0 0 32 32" xml:space="preserve">
+<svg width="32" height="32" viewBox="0 0 32 32">
   <style>
     :root {
       --t: 500ms;
@@ -221,21 +223,20 @@ When I found Adobe Animate could not export to SVG my initial solution was to cr
 </svg>
 ```
 
-#### Hand craft all the things!
+#### Animate SVG with CSS
 
-Because the 
+Because the
+The final size is 2.61 KB.
 
 ```html
 <!--example-->
 <style>
-  .svg-example {
-    box-shadow: 0 0 0 1px red;
+  svg {
     width: 256px;
     height: 256px;
   }
 </style>
-
-<svg class="svg-example" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="32" height="32" viewBox="0 0 32 32" xml:space="preserve">
+<svg width="32" height="32" viewBox="0 0 32 32">
   <style>
         @keyframes rotate180 {
             0% {    transform: translate(16px,25px) rotate(0deg); }
@@ -281,6 +282,89 @@ Because the
 ```
 
 
+#### Animate SVG with SMIL
+
+Blaat
+The final size is 2.67 KB.
+ 
+```html
+<!--example-->
+<style>
+  svg {
+    width: 256px;
+    height: 256px;
+  }
+</style>
+<svg width="32" height="32" viewBox="0 0 32 32">
+  <path d="M5 25C6 20 25 7 25 25Z"></path>
+  <circle>
+    <animateMotion dur="3500ms" begin="0ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
+    <animate dur="3500ms" begin="0ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
+  </circle>
+  <circle>
+    <animateMotion dur="3500ms" begin="-500ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
+    <animate dur="3500ms" begin="-500ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
+  </circle>
+  <circle>
+    <animateMotion dur="3500ms" begin="-1000ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
+    <animate dur="3500ms" begin="-1000ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
+  </circle>
+  <circle>
+    <animateMotion dur="3500ms" begin="-1500ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
+    <animate dur="3500ms" begin="-1500ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
+  </circle>
+  <circle>
+    <animateMotion dur="3500ms" begin="-2000ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
+    <animate dur="3500ms" begin="-2000ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
+  </circle>
+  <circle>
+    <animateMotion dur="3500ms" begin="-2500ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
+    <animate dur="3500ms" begin="-2500ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
+  </circle>
+  <circle>
+    <animateMotion dur="3500ms" begin="-3000ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
+    <animate dur="3500ms" begin="-3000ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
+  </circle>
+</svg>
+```
+
+<style>
+  #smil {
+    width: 256px;
+    height: 256px;
+  }
+</style>
+<svg id="smil" width="32" height="32" viewBox="0 0 32 32">
+  <path d="M5 25C6 20 25 7 25 25Z"></path>
+  <circle>
+    <animateMotion dur="3500ms" begin="0ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
+    <animate dur="3500ms" begin="0ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
+  </circle>
+  <circle>
+    <animateMotion dur="3500ms" begin="-500ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
+    <animate dur="3500ms" begin="-500ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
+  </circle>
+  <circle>
+    <animateMotion dur="3500ms" begin="-1000ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
+    <animate dur="3500ms" begin="-1000ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
+  </circle>
+  <circle>
+    <animateMotion dur="3500ms" begin="-1500ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
+    <animate dur="3500ms" begin="-1500ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
+  </circle>
+  <circle>
+    <animateMotion dur="3500ms" begin="-2000ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
+    <animate dur="3500ms" begin="-2000ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
+  </circle>
+  <circle>
+    <animateMotion dur="3500ms" begin="-2500ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
+    <animate dur="3500ms" begin="-2500ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
+  </circle>
+  <circle>
+    <animateMotion dur="3500ms" begin="-3000ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
+    <animate dur="3500ms" begin="-3000ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
+  </circle>
+</svg>
 
 
 
