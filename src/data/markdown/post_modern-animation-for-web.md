@@ -28,7 +28,7 @@ So Flash won, and then *lost* because it couldn't adapt to mobile. And although 
 
 -->
 
-A while back I needed an animated rolling cloud icon, to indicate an ongoing XMLHTTPRequest. Fifteen years ago a vector animation like that would have been trivial: with Flash you'd just motion tween some circles along a bezier curve, create a symbol from that animation to duplicate and offset in time, et voilà.
+A while back I needed an animated rolling cloud icon, to indicate an ongoing XMLHTTPRequest. Fifteen years ago a vector animation like that would have been trivial: with Flash you'd just motion tween some circles along a bezier-curve, create a symbol from that animation to duplicate and offset in time, et voilà.
 Yet now, I could not figure out how to get the same result with SVG.
 
 More recently I had to animate an infographic for which a start was already made in Adobe Animate. The export size was huge. So after a little HTML/CSS only test I decided to go that way. The Animate export was 2.5MB, the HTML/CSS animation was less than 20% of that and accessible instead of a canvas black box.
@@ -286,7 +286,11 @@ The final size is 2.61 KB.
 
 #### Animate SVG with SMIL
 
-There is another way to animate SVG called [SMIL](https://www.w3.org/TR/SMIL3/). The specification stems from 1998 and covers a lot more than just SVG animations (for reference: SVG is from 1999). 
+There is another way to animate SVG called [SMIL](https://www.w3.org/TR/SMIL3/). The specification stems from 1998 and covers more than just SVG animations (for reference: SVG is from 1999).
+The possibilities of SMIL extend beyond what can be done with mere CSS. If you like to know more here is [an extensive article by Sarah Soueidan](https://css-tricks.com/guide-svg-animations-smil/), and here is [a Stackoverflow answer with good examples](https://stackoverflow.com/a/64558513/695734).
+For the clouds animation I made use of an awesome feature, namely `animateMotion[calcMode="spline"]` which lets you move elements along a bezier-curve.
+One downside of SMIL is that you cannot an animation (as in `defs`) and only overwrite a property. As you can see here, all animations are exactly the same except for the `begin` attribute. So that results in a lot of repetitive code. But to be honest: for both the SMIL and the CSS example I generated the repetitive parts with JavaScript and used the output.
+
 The final size is 2.67 KB.
  
 ```html
