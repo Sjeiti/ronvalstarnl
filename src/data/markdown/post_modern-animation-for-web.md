@@ -31,7 +31,7 @@ So Flash won, and then *lost* because it couldn't adapt to mobile. And although 
 A while back I needed an animated rolling cloud icon, to indicate an ongoing XMLHTTPRequest. Fifteen years ago a vector animation like that would have been trivial: with Flash you'd just motion tween some circles along a bezier curve, create a symbol from that animation to duplicate and offset in time, et voilà.
 Yet now, I could not figure out how to get the same result with SVG.
 
-And recently I had to animate an infographic for which a start was already made in Adobe Animate. The export size was huge. So after a little HTML/CSS only test I decided to go that way. The Animate export was 2.5MB, the HTML/CSS animation was less than 20% of that and accessible instead of a canvas black box.
+More recently I had to animate an infographic for which a start was already made in Adobe Animate. The export size was huge. So after a little HTML/CSS only test I decided to go that way. The Animate export was 2.5MB, the HTML/CSS animation was less than 20% of that and accessible instead of a canvas black box.
 
 <!--
 
@@ -140,7 +140,7 @@ Here are three examples with the cloud animationmentioned earlier.
 
 When I found Adobe Animate could not export to SVG my initial solution was to create keyframes for the entire bezier animation. This meant all keyframes were exported in one go, I just had to toggle their visibility.
 
-It looks somewhat choppy but who's going to notice at icon size.
+It looks somewhat choppy but fine for a small icon.
 The final size is 2.97 KB.
 
 ```html
@@ -225,7 +225,9 @@ The final size is 2.97 KB.
 
 #### Animate SVG with CSS
 
-Because the
+The previous solution requires a lot of steps and if you want to tweak the end result you have to start over.
+It might be easier to do this by hand with a CSS `@keyframes` animation. What is especially nice about this technique is that we can use CSS properties (or variables) inside the animation to overwrite specific properties per animation instance. In this example `--t` is used to calculate an offsetted delay.
+
 The final size is 2.61 KB.
 
 ```html
@@ -284,7 +286,7 @@ The final size is 2.61 KB.
 
 #### Animate SVG with SMIL
 
-Blaat
+There is another way to animate SVG called [SMIL](https://www.w3.org/TR/SMIL3/). The specification stems from 1998 and covers a lot more than just SVG animations (for reference: SVG is from 1999). 
 The final size is 2.67 KB.
  
 ```html
