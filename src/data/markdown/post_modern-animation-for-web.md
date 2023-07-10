@@ -10,40 +10,12 @@
 
 # Modern animation for web
 
-<!--
-I've programmed the web long enough to know that the wheel is continuously being reinvented. This new wheel is not necessarily rounder, but it is what it currently is.
-
-
-## Way back
-
-For instance 3D on the web is old. Our current hardware accelerated webGL is better than the software accelerated 3D we had with Flash. But we *had* hardware accelerated 3D before that, better and faster than what was possible with Flash. It's just that Flash won the plugin race because it was insanely good at animation.
-
-
-## Back to start
-
-So Flash won, and then *lost* because it couldn't adapt to mobile. And although we now have WebGL for 3D and the SVG format for vector graphics, it is a pity that we have to reinvent the wheel again for vector animation.
-
-
-## Animation example
-
--->
-
 A while back I needed an animated rolling cloud icon, to indicate an ongoing XMLHTTPRequest. Fifteen years ago a vector animation like that would have been trivial: with Flash you'd just motion tween some circles along a bezier-curve, create a symbol from that animation to duplicate and offset in time, et voilà.
 Yet now, I could not figure out how to get the same result with SVG.
 
-More recently I had to animate an infographic for which a start was already made in Adobe Animate. The export size was huge. So after a little HTML/CSS only test I decided to go that way. The Animate export was 2.5MB, the HTML/CSS animation was less than 20% of that and accessible instead of a canvas black box.
+More recently I had to animate an infographic and add some interaction. A start was already made in Adobe Animate, but the export size was a whopping 2.5MB. So I decided to handcode everything in HTML/CSS for less than 10% of that. Another added benefit is that plain HTML/CSS is accessible (as opposed to th canvas/JavaScript black box export from Adobe Animate).
 
-<!--
-
-In the end I just installed an older Flash version, exported the frames to import into Illustrator, exported to SVG from there, and then cleaned up and animated the raw SVG ASCII.
-
-There must be better ways than that.
-
-
-## Searching
-
--->
-
+Coding animations might give better quality results, but a good gui, like Animate has, makes it so much easier to create and tweak.
 So what are the current tools with which you can create an animated images?
 
 ### Not Adobe Animate
