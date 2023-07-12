@@ -71,7 +71,7 @@ It doesn't seem to be able to reuse elements though.
 
 ### GSAP
 
-Xxxxx xx xxx
+The GreenSock Animation Platform is another remnant of the Flash era. Ported in 2012 to JavaScript it allows for DOM animations, so not only SVG but also other elements and even `canvas`. Using the `Timeline` object you can create sequenced animations that can be paused, resumed and reversed.
 
 
 ### Stale editors
