@@ -1,4 +1,4 @@
-import Signal from 'signals'
+import {createSignal} from 'state-signals'
 import animate from './animate'
 
 /**
@@ -16,21 +16,21 @@ let eLastKeyDown
    * @name iddqd.signal.keypress
    * @type Signal
    */
-  , press = new Signal//signal(init)
+  , press = createSignal()
   /**
    * Signal for keyDown.<br/>
    * The callback for this signal is Function(keyCode,keys,event)
    * @name iddqd.signal.keydown
    * @type Signal
    */
-  , down = new Signal//signal(initDown)
+  , down = createSignal()
   /**
    * Signal for keyUp.<br/>
    * The callback for this signal is Function(keyCode,keys,event)
    * @name iddqd.signal.keyup
    * @type Signal
    */
-  , up = new Signal//signal(initUp)
+  , up = createSignal()
   //
   , key = Object.assign([], {
     press: press
