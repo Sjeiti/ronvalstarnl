@@ -1,6 +1,6 @@
-import Signal from 'signals'
+import {createSignal} from 'state-signals'
 
-let resize = new Signal
+let resize = createSignal()
     , win = window
     , doc = document
     , html = doc.documentElement
