@@ -385,6 +385,8 @@
   </footer>
   <script>
 
+    window.prerenderReady = false
+    
     const {body} = document
     const createElement = document.createElement.bind(document)
     const isMobile = window.matchMedia('(max-device-width: 600px)').matches
