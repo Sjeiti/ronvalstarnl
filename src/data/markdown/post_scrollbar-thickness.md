@@ -1,14 +1,14 @@
 <!--
   date: 2023-03-14
-  modified: 2023-03-14
+  modified: 2023-08-02
   slug: scrollbar-thickness
   type: post
-  excerpt: The scrollbar thickness is not a browser property, but it can easily be inferred by measurement
   header: photo-1580501170888-80668882ca0c.jpg
   headerColofon: image by [Taylor Flowe](https://unsplash.com/@taypaigey)
   headerClassName: no-blur
   category: code
   tag: DOM, CSS, JavaScript
+  description: A simple solution to determining the scrollbar thickness for the current browser or device.
 -->
 
 

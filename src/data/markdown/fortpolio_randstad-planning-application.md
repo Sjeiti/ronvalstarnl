@@ -1,5 +1,4 @@
 <!--
-  id: 3350
   slug: randstad-planning-application
   type: fortpolio
   excerptNl: Lead front-end developer verantwoordelijk voor responsieve implementatie van een bestaande plannings applicatie.

@@ -1,16 +1,9 @@
 <!--
-  id: 241
   date: 2005-03-02
   modified: 2005-03-02
   slug: galaxies
   type: post
-  excerpt: <p>Do you know those glass souvenir cubes with towers and churches lazered-etched inside them? This person here does the same with scientific subjects!!!</p>
-  categories: link
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
+  categories: link 
 -->
 
 # galaxies

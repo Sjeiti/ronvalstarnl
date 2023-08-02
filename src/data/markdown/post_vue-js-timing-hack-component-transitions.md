@@ -1,5 +1,4 @@
 <!--
-  id: 3319
   date: 2017-01-28
   modified: 2020-03-16
   slug: vue-js-timing-hack-component-transitions
@@ -7,7 +6,6 @@
   header: studio04.jpg
   categories: code, CSS, JavaScript
   tags: CSS, Vue, transition
-  metaKeyword: transition
 -->
 
 # A Vue.js timing hack in component transitions

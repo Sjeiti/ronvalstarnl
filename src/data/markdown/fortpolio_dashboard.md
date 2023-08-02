@@ -1,5 +1,4 @@
 <!--
-  id: 2805
   slug: dashboard
   type: fortpolio
   categories: JavaScript, framework

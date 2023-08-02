@@ -1,10 +1,8 @@
 <!--
-  id: 836
   date: 2011-04-09
   modified: 2020-07-29
   slug: it-could-be-dawn
   type: post
-  excerpt: It could be dawn
   categories: illustration
   tags: Sketchbook pro
 -->

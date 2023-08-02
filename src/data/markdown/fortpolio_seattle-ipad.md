@@ -1,5 +1,4 @@
 <!--
-  id: 2110
   slug: seattle-ipad
   type: fortpolio
   categories: JavaScript, 3D, HTML/CSS, mobile

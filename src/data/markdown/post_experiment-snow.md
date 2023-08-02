@@ -1,17 +1,10 @@
 <!--
-  id: 2578
   date: 2014-04-26
   modified: 2017-01-17
   slug: experiment-snow
   type: post
-  excerpt: <p>A simple implementation of procedural particle scattering: an infinite field of snow falling upward.</p>
-  categories: uncategorized
   tags: Perlin Noise, cool shit, experiment, particles
-  metaDescription: A simple implementation of procedural particle scattering: an infinite field of snow falling upward.
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
+  description: A simple implementation of procedural particle scattering: an infinite field of snow falling upward.
   related: experiment-bezier experiment-blob experiment-boids experiment-clouds experiment-ff experiment-fire experiment-flowfield experiment-glass experiment-grid experiment-heart experiment-marbles experiment-plasma experiment-radialdifference experiment-snow experiment-spiralmap experiment-starzoom experiment-touches experiment-vertical experiment-voronoi
 -->
 

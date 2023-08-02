@@ -1,5 +1,4 @@
 <!--
-  id: 2193
   slug: blauwe-planeet
   type: fortpolio
   excerpt: <p>This is an actually an older CD-Rom project I&#8217;d worked on before at Shapers for Thieme Meullenhoff. Within a week I created a Flash prototype that looked and worked better than the original Director version.</p>

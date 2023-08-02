@@ -1,5 +1,4 @@
 <!--
-  id: 2121
   slug: juridaii
   type: fortpolio
   categories: 3D, illustration, graphic design, UX

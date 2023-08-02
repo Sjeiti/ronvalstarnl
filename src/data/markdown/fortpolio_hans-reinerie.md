@@ -1,5 +1,4 @@
 <!--
-  id: 2073
   slug: hans-reinerie
   type: fortpolio
   categories: JavaScript, HTML/CSS

@@ -1,16 +1,9 @@
 <!--
-  id: 308
   date: 2007-11-02
   modified: 2020-06-01
   slug: as3-or-p55
   type: post
-  excerpt: <p>I have this attractor viewer written in Processing. I wanted to finish it up a bit: calculate Lyapunov exponent, save to movie, save online, etc. The problem is it&#8217;s written an older version of Processing. Then I thought: why not try as3 on for size. It&#8217;ll be faster for me to write since my Processing [&hellip;]</p>
   categories: code, Flash, Processing, ActionScript
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # as3 or p55

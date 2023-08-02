@@ -6,7 +6,6 @@
   header: photo-1454496522488-7a8e488e8606.webp
   headerColofon: photo by [Rohit Tandon](https://unsplash.com/@rohittandon)
   headerClassName: no-blur
-  excerpt: A crude fix for Cypress inability to test `device-width`
   categories: Javascript, HTML, CSS
   tags: CSS, speed, test, responsive, media queries
   related: useful-custom-cypress-commands updating-a-cypress-alias

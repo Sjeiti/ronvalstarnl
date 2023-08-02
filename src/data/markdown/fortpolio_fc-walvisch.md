@@ -1,5 +1,4 @@
 <!--
-  id: 2201
   slug: fc-walvisch
   type: fortpolio
   excerpt: <p>Re-design and creation of the site of one of the foremost Dutch sound studios.</p>

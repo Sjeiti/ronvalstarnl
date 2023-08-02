@@ -6,8 +6,6 @@
   header: lucas-benjamin-MyU3s1VasA4-unsplash.jpg
   headerColofon: photo by [Lucas Benjamin](https://unsplash.com/@aznbokchoy)
   headerClassName: no-blur
-  excerpt: a CSS color functions implementation
-  
   categories: Javascript
   tags: CSS
 -->

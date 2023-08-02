@@ -1,12 +1,8 @@
 <!--
-  id: 16
   date: 2007-01-07
   modified: 2020-06-18
   slug: attractor
   type: post
-  excerpt: This attractor Viewer was made with Processing. An attractor is a set of rules upon a number of variables.
-  categories: uncategorized
-  tags: 
 -->
 
 # attractor viewer

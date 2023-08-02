@@ -1,14 +1,9 @@
 <!--
-  id: 6
-  date: 2007-01-06
-  modified: 2020-06-01
+  date: 9999-99-99
+  modified: 9999-99-99
   slug: code
   type: page
-  excerpt: <p>Even though I consider myself a designer by nature I&#8217;ve always searched for ways to make it come to life. As for programming, I started off with JavaScript and Lingo. That was just about the time flash 3 came out (it didn&#8217;t have ActionScript back then). By the time I got good at JavaScript and [&hellip;]</p>
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
+  description: Even though I consider myself a designer by nature I&#8217;ve always searched for ways to make it come to life. As for programming, I started off with JavaScript and Lingo. That was just about the time flash 3 came out (it didn&#8217;t have ActionScript back then). By the time I got good at JavaScript and [&hellip;]
 -->
 
 # code

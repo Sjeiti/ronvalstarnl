@@ -1,20 +1,11 @@
 <!--
-  id: 879
-  description: For some time now I've been unit testing my JavaScript. But how to test those private functions?
   date: 2012-01-31
   modified: 2020-05-31
   slug: unit-testing-private-functions
   type: post
-  excerpt: <p>For some time now I&#8217;ve been unit testing my JavaScript with qUnit. Not only good practice, it also saves you an incredible amount of time when it comes to crossbrowser testing your scripts. The only problem I was testing private functions that are hidden within closures.</p>
   categories: code, JavaScript, jQuery
   tags: Qunit, Tinysort
-  metaKeyword: private functions
-  metaTitle: Unit testing private functions in JavaScript
-  metaDescription: For some time now I've been unit testing my JavaScript. But how to test those private functions?
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
+  description: For some time now I've been unit testing my JavaScript. But how to test those private functions?
 -->
 
 # Unit testing private functions in JavaScript

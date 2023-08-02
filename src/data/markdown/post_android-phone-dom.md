@@ -1,16 +1,9 @@
 <!--
-  id: 975
   date: 2012-06-30
   modified: 2020-05-31
   slug: android-phone-dom
   type: post
-  excerpt: <p>Cleaning up my phone the other day I found some cool stuff. Two years ago I coded some stuff while I was on vacation. This was also on it&#8230;</p>
   categories: code, HTML, JavaScript
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # Android phone DOM

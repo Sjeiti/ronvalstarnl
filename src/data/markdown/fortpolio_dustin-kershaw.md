@@ -1,5 +1,4 @@
 <!--
-  id: 2104
   slug: dustin-kershaw
   type: fortpolio
   categories: 

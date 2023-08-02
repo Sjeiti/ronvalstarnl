@@ -5341,6 +5341,11 @@ stackblur-canvas@^2.0.0:
   resolved "https://registry.yarnpkg.com/stackblur-canvas/-/stackblur-canvas-2.5.0.tgz#aa87bbed1560fdcd3138fff344fc6a1c413ebac4"
   integrity sha512-EeNzTVfj+1In7aSLPKDD03F/ly4RxEuF/EX0YcOG0cKoPXs+SLZxDawQbexQDBzwROs4VKLWTOaZQlZkGBFEIQ==
 
+state-signals@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/state-signals/-/state-signals-1.0.0.tgz#68ef4800193b54bdabeac3add8432b94f09f24d7"
+  integrity sha512-PzgMG8BS55OhgI/zXP0x0U2RVbEWLQXz6z1avrCAsFPh7DyBBDV/sDvv8DqraoyY2gHFse4qP3ivu28etoCk6g==
+
 statuses@2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-2.0.1.tgz#55cb000ccf1d48728bd23c685a063998cf1a1b63"

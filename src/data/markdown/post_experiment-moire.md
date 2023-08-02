@@ -3,11 +3,9 @@
   modified: 2022-08-06
   slug: experiment-moire
   type: post
-  excerpt: A single background with repeating gradients exhibit moire interference patterns and glitches.
   categories: code, JavaScript
   tags: JavaScript, cool shit, gradient
-  metaKeyword: moire
-  metaDescription: A single background with repeating gradients exhibit moire interference patterns and glitches.
+  description: A single background with repeating gradients exhibit moire interference patterns and glitches.
   related: search/experiment experiment-radialgradient experiment-blob experiment-boids experiment-clouds experiment-ff experiment-fire experiment-flowfield experiment-glass experiment-grid experiment-heart experiment-marbles experiment-plasma experiment-radialdifference experiment-snow experiment-spiralmap experiment-starzoom experiment-touches experiment-vertical experiment-voronoi
 -->
 

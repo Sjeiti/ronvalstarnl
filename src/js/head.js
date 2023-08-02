@@ -10,7 +10,7 @@ const siteName= 'Ron Valstar - front-end developer'
  */
 routeChange.add((slug, page)=>{
   const title = page.title
-  const {metaDescription, date, dateFrom, modified} = page
+  const {description, date, dateFrom, modified} = page
   const link = getCanonical(page)
 
   const image = page.header&&(MEDIA_URI_HEADER+page.header)
@@ -21,12 +21,12 @@ routeChange.add((slug, page)=>{
   document.title = title+(title?' - ':'')+siteName
   //
   setSelector('link[rel="canonical"]', 'href', link)
-  setSelector('meta[name="description"]', 'content', metaDescription)
+  setSelector('meta[name="description"]', 'content', description)
   // Opengraph
   setSelector('meta[property="og:locale"]', 'content', 'en_US')
   setSelector('meta[property="og:type"]', 'content', 'article')
   setSelector('meta[property="og:title"]', 'content', title)
-  setSelector('meta[property="og:description"]', 'content', metaDescription)
+  setSelector('meta[property="og:description"]', 'content', description)
   setSelector('meta[property="og:url"]', 'content', link)
   setSelector('meta[property="og:site_name"]', 'content', siteName)
   setSelector('meta[property="og:updated_time"]', 'content', modified)
@@ -41,7 +41,7 @@ routeChange.add((slug, page)=>{
   setSelector('meta[property="article:modified_time"]', 'content', modified)
   // Twitter
   setSelector('meta[property="twitter:card"]', 'content', 'summary')
-  setSelector('meta[property="twitter:description"]', 'content', metaDescription)
+  setSelector('meta[property="twitter:description"]', 'content', description)
   setSelector('meta[property="twitter:title"]', 'content', title)
   setSelector('meta[property="twitter:site"]', 'content', twitterUser)
   setSelector('meta[property="twitter:image"]', 'content', image)
@@ -52,8 +52,8 @@ routeChange.add((slug, page)=>{
   // robots
   const isNoIndex = /^search\//.test(slug)
     ||title==='404'
-    ||date?.includes('9999')  
-    ||dateFrom?.includes('9999')  
+    ||date?.includes('9999')
+    ||dateFrom?.includes('9999')
   if (isNoIndex){
     setSelector('meta[property="robots"]', 'content', 'noindex,follow')
   } else {

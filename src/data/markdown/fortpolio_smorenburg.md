@@ -1,5 +1,4 @@
 <!--
-  id: 2083
   slug: smorenburg
   type: fortpolio
   categories: JavaScript, HTML/CSS

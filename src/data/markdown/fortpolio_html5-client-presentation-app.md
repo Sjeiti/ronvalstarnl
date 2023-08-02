@@ -1,5 +1,4 @@
 <!--
-  id: 2304
   slug: html5-client-presentation-app
   type: fortpolio
   categories: mobile

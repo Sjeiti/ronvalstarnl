@@ -1,16 +1,10 @@
 <!--
-  id: 832
   date: 2011-04-09
   modified: 2020-05-31
   slug: sfbrowser-3-2-2
   type: post
-  excerpt: <p>I released a new version of SFBrowser containing some minor fixes plus a new CTRL-C feature which copies the full or relative path to your clipboard. Go check out the examples here. You can download or do a repository checkout at Googlecode, or install it as a WordPress plugin.</p>
   categories: code, JavaScript, jQuery, backend
   tags: filebrowser, JavaScript, jQuery
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # SFBrowser 3.2.2

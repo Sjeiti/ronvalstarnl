@@ -1,5 +1,4 @@
 <!--
-  id: 2612
   slug: feedme
   type: fortpolio
   categories: JavaScript, HTML/CSS, framework, mobile

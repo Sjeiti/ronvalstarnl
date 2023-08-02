@@ -1,5 +1,4 @@
 <!--
-  id: 999
   slug: illustration
   type: fortpolio
   categories: illustration

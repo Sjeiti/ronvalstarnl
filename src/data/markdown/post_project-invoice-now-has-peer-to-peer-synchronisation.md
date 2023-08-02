@@ -6,7 +6,6 @@
   header: sincerely-media-IKzmglo7JLk-unsplash.jpg
   headerColofon: photo by [Sincerely Media](https://unsplash.com/@sincerelymedia)
   headerClassName: no-blur darken
-  excerpt: 
   categories: Javascript
   tags: CSS, transitions
 -->

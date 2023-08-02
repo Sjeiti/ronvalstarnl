@@ -1,16 +1,8 @@
 <!--
-  id: 336
   date: 2009-02-28
   modified: 2020-07-29
   slug: perlin-clouds
   type: post
-  excerpt: old flv videos
-  categories: uncategorized
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # Perlin clouds

@@ -1,6 +1,6 @@
 <!--
   date: 2023-06-29
-  modified: 2023-06-29
+  modified: 2023-08-02
   slug: using-toggable-user-preference-media-features
   type: post
   header: christina-deravedisian-_ipepr0WJDA-unsplash.jpg
@@ -8,7 +8,7 @@
   headerClassName: no-blur
   categories: code, CSS, JavaScript, accessibility
   tags: Angular, accounting, invoicing, Vue
-  metaDescription: How to easily use prefers-media-queries and make them adjustable through user preferences.
+  description: How to easily use prefers-media-queries and make them adjustable through user preferences.
 -->
 
 # Using toggable user preference media features

@@ -1,5 +1,4 @@
 <!--
-  id: 2088
   slug: tatarataa
   type: fortpolio
   categories: 

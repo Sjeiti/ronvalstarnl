@@ -1,5 +1,4 @@
 <!--
-  id: 2223
   slug: kosmonaut
   type: fortpolio
   excerpt: <p>Design and creation of a website that depicted a wooden desktop over which a camera pans, zooms and rotates.</p>

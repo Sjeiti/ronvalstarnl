@@ -1,20 +1,11 @@
 <!--
-  id: 2477
-  description: A DRY responsive JavaScript solution that searches the document.styleSheets for CSSMediaRule. So breakpoints are only defined in CSS!
   date: 2014-05-26
   modified: 2014-08-14
   slug: dry-responsive-javascript
   type: post
-  excerpt: <p>My last post got me thinking when I was implementing responsive JavaScript events (well, signals really). I never liked it when similar things are defined or implemented multiple times. That is the reason why I tend to put classNames added through JavaScript inside a value object, or why I wrote something to parse Less variables [&hellip;]</p>
-  categories: uncategorized, code, JavaScript
+  categories: code, JavaScript
   tags: CSS, JavaScript
-  metaKeyword: responsive JavaScript
-  metaTitle: DRY responsive JavaScript
-  metaDescription: A DRY responsive JavaScript solution that searches the document.styleSheets for CSSMediaRule. So breakpoints are only defined in CSS!
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
+  description: A DRY responsive JavaScript solution that searches the document.styleSheets for CSSMediaRule. So breakpoints are only defined in CSS!
 -->
 
 # DRY responsive JavaScript

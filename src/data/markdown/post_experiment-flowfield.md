@@ -1,16 +1,9 @@
 <!--
-  id: 2568
   date: 2014-04-24
   modified: 2015-10-25
   slug: experiment-flowfield
   type: post
-  excerpt: <p>A flow field is a vector field used to move particles. In this case the field is provided by a 3D Simplex field (2D and time). The number of particles is dynamic; particles are added and removed to reach an optimal framerate.</p>
-  categories: uncategorized
-  tags: procedural, cool shit, experiment, particles
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
+  tags: procedural, cool shit, experiment, particles 
   related: experiment-bezier experiment-blob experiment-boids experiment-clouds experiment-ff experiment-fire experiment-flowfield experiment-glass experiment-grid experiment-heart experiment-marbles experiment-plasma experiment-radialdifference experiment-snow experiment-spiralmap experiment-starzoom experiment-touches experiment-vertical experiment-voronoi
 -->
 

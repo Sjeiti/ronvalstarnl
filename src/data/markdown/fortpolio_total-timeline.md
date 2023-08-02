@@ -1,5 +1,4 @@
 <!--
-  id: 2628
   slug: total-timeline
   type: fortpolio
   excerptNl: De [grootste tijdlijn](https://totaltimeline.org/) die ooit is gemaakt. Toont belangrijke gebeurtenissen in de geschiedenis van de tijd.

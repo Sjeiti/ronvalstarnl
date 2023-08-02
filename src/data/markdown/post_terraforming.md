@@ -1,5 +1,4 @@
 <!--
-  id: 291
   date: 2007-03-05
   modified: 2020-06-01
   slug: terraforming

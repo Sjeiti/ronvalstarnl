@@ -1,16 +1,10 @@
 <!--
-  id: 339
   date: 2008-06-30
   modified: 2008-06-30
   slug: processingjs
   type: post
-  excerpt: <p>For those of you who know Processing or jQuery&#8230; I know, that is two totally different things, but check out what John Resig (the creator of jQuery) just conjured up: Processing.js. I think I can safely say: WHAAAAAAAAAAA?!!!</p>
   categories: code, JavaScript, jQuery, Processing
   tags: John Resig
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # Processing.js

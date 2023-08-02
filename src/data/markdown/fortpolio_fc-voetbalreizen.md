@@ -1,5 +1,4 @@
 <!--
-  id: 2300
   slug: fc-voetbalreizen
   type: fortpolio
   categories: JavaScript, HTML/CSS, UX

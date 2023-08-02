@@ -1,13 +1,14 @@
 <!--
   slug: to-determine-touch-mouse-or-keyboard
   date: 2023-01-29
-  modified: 2023-01-29
+  modified: 2023-08-02
   type: post
   header: mousekey.jpg
   headerColofon: image by [DeepAI](https://deepai.org)
   headerClassName: no-blur
   category: code
   tag: ux input
+  description: A practical guide on how to determine the way your application is used in terms of touch-, mouse- or keyboard interaction.
 -->
 
 # To determine touch-, mouse- or keyboard input and use it

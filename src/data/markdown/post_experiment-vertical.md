@@ -1,16 +1,9 @@
 <!--
-  id: 2576
   date: 2014-04-24
   modified: 2016-02-24
   slug: experiment-vertical
   type: post
-  excerpt: <p>A quick doodle with random images from the Google search API and canvas. Once the image is loaded only one row of pixels is shown per frame and then animated from top to bottom. To make it more aesthetic the copied pixels row is sheared over x and copied a second time with a negative [&hellip;]</p>
-  categories: uncategorized
   tags: REST, cool shit, experiment
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
   related: experiment-bezier experiment-blob experiment-boids experiment-clouds experiment-ff experiment-fire experiment-flowfield experiment-glass experiment-grid experiment-heart experiment-marbles experiment-plasma experiment-radialdifference experiment-snow experiment-spiralmap experiment-starzoom experiment-touches experiment-vertical experiment-voronoi
 -->
 

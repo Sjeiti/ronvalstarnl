@@ -1,16 +1,8 @@
 <!--
-  id: 24
   date: 2007-01-07
   modified: 2007-01-07
   slug: ny2004
   type: post
-  excerpt: <p>The Shapers &#8216;happy 2004&#8217; e-card: particle rockets follow the moon, the moon follows your mouse. The trees were made with the &#8216;growth&#8217; tree generator.</p>
-  categories: uncategorized
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # 2004

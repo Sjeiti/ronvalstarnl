@@ -6,12 +6,10 @@
   header: sincerely-media-IKzmglo7JLk-unsplash.jpg
   headerColofon: photo by [Sincerely Media](https://unsplash.com/@sincerelymedia)
   headerClassName: no-blur darken
-  excerpt: 
   categories: Javascript
   tags: CSS, transitions
   related: front-end-logic-without-javascript
-  metaKeyword: transitions
-  metaDescription: Basic structure and example of a page transition in a single page application.
+  description: Basic structure and example of a page transition in a single page application.
 -->
 
 # The basics of CSS page transitions

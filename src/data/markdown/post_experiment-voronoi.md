@@ -1,16 +1,9 @@
 <!--
-  id: 2589
   date: 2014-08-26
   modified: 2015-10-25
   slug: experiment-voronoi
   type: post
-  excerpt: <p>Particle scattering with Voronoi division.</p>
-  categories: uncategorized
   tags: Perlin Noise, cool shit, experiment, prng
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
   related: experiment-bezier experiment-blob experiment-boids experiment-clouds experiment-ff experiment-fire experiment-flowfield experiment-glass experiment-grid experiment-heart experiment-marbles experiment-plasma experiment-radialdifference experiment-snow experiment-spiralmap experiment-starzoom experiment-touches experiment-vertical experiment-voronoi
 -->
 

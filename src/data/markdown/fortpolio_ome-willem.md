@@ -1,5 +1,4 @@
 <!--
-  id: 2243
   slug: ome-willem
   type: fortpolio
   excerpt: Interaction design, graphic design and development for the Ome Willem website.

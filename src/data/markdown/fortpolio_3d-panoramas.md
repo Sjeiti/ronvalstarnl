@@ -1,5 +1,4 @@
 <!--
-  id: 2174
   slug: 3d-panoramas
   type: fortpolio
   excerpt: User interface design and front-end Flash ActionScript 3 development for an application that links 3-dimensional panoramic views for architectural photography.

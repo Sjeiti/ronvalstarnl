@@ -12,7 +12,7 @@ const path = '../src/data/json/'
 const base = 'https://ronvalstar.nl'
 const posts = require(path+'posts-list.json')
 
-const today = new Date    
+const today = new Date
 const currentPast = posts.filter(({date})=>(new Date(date))<=today)
 
 const portfolio = require(path+'fortpolio-list.json')
@@ -31,37 +31,46 @@ const rss = `<?xml version="1.0" ?>
   <channel>
     <title>Ron Valstar</title>
     <link>${base}</link>
-    <!--link>${base}/blog</link-->
-    <description>Foo, bar and a lot of baz</description>
+    <description>Blog posts and articles about front-end development</description>
     <atom:link href="${base}/feed.rss" rel="self" type="application/rss+xml" />
-    <!--image>
-        <url>https://www.xul.fr/xul-icon.gif</url>
-        <link>https://www.xul.fr/en/index.php</link>
-    </image-->
-    ${currentPast.map(({title, slug, date})=>`<item>
+    ${currentPast.map(({title, slug, date})=>{
+      const post = require(`${path}post_${slug}.json`)
+      return `<item>
         <title>${title||'blank'}</title>
         <link>${base}/${slug}</link>
         <guid>${base}/${slug}</guid>
-        <description>${describe(require(`${path}post_${slug}.json`).description||'')}</description>
+        <description>${describe(post.description||'')}</description>
         <pubDate>${stringDate(date)}</pubDate>
-    </item>`).join('')}
-  <!--/channel>
-  <channel>
-    <title>Ron Valstar - projects</title>
-    <link>${base}/projects</link>
-    <description>Foo, bar and a lot of baz</description>
-    <image>
-        <url>https://www.xul.fr/xul-icon.gif</url>
-        <link>https://www.xul.fr/en/index.php</link>
-    </image-->
-    ${portfolio.filter(({inPortfolio})=>inPortfolio).map(({title, slug, dateFrom:date})=>`<item>
-        <title>${title||'blank'}</title>
-        <link>${base}/project/${slug}</link>
-        <guid>${base}/project/${slug}</guid>
-        <description>${describe(require(`${path}fortpolio_${slug}.json`).description||'')}</description>
-        <pubDate>${stringDate(date)}</pubDate>
-    </item>`).join('')}
+      </item>`
+    }).join('')}
   </channel>
 </rss>`
 
 save((target||'temp')+'/feed.rss', rss)
+
+/*
+
+  <channel>
+    <title>Ron Valstar - projects</title>
+    <link>${base}/projects</link>
+    <description>Portfolio projects by Ron Valstar</description>
+    ${portfolio.filter(({inPortfolio})=>inPortfolio).map(({title, slug, dateFrom:date})=>{
+      const item = require(`${path}fortpolio_${slug}.json`)
+      return `<item>
+        <title>${title||'blank'}</title>
+        <link>${base}/project/${slug}</link>
+        <guid>${base}/project/${slug}</guid>
+        <description>${describe(item.description||item.metaDescription||'')}</description>
+        <pubDate>${stringDate(date)}</pubDate>
+      </item>`
+    }).join('')}
+  </channel>
+
+<link>${base}/blog</link>
+
+<image>
+    <url>https://www.xul.fr/xul-icon.gif</url>
+    <link>https://www.xul.fr/en/index.php</link>
+</image>
+
+*/

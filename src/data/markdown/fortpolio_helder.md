@@ -1,5 +1,4 @@
 <!--
-  id: 2623
   slug: helder
   type: fortpolio
   categories: JavaScript, HTML/CSS, graphic design, mobile

@@ -1,18 +1,11 @@
 <!--
-  id: 2708
   date: 2015-01-05
   modified: 2020-05-31
   slug: tinysort-v2
   type: post
-  excerpt: <p>TinySort just had a major release to v2. The jQuery dependency is now removed. So it is not a jQuery plugin anymore but a &#8216;standalone&#8217; script without dependencies. It is also a fraction smaller and a bit faster. TinySort now also has AMD support and it&#8217;s on CDN.</p>
   categories: JavaScript, jQuery, work, open source
   tags: JavaScript
-  metaKeyword: Tinysort
-  metaDescription: TinySort had its jQuery dependency is removed. It is also a fraction smaller, a bit faster, has AMD support and it's on CDN.
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
+  description: TinySort had its jQuery dependency is removed. It is also a fraction smaller, a bit faster, has AMD support and it's on CDN.
 -->
 
 # Tinysort v2

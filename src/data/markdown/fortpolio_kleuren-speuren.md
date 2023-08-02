@@ -1,5 +1,4 @@
 <!--
-  id: 2253
   slug: kleuren-speuren
   type: fortpolio
   excerpt: Kleuren Speuren is an educational game designed for children aged 6 to 12. I was involved in the entire process from concept to development. My main job was doing all the illustrations and the programming.

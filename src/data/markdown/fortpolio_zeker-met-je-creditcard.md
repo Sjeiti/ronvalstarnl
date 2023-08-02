@@ -1,5 +1,4 @@
 <!--
-  id: 2791
   slug: zeker-met-je-creditcard
   type: fortpolio
   excerpt: Front- and backend development of zekermetjecreditcard.nl, a single page Angular website that uses Wordpress as a REST API.

@@ -1,10 +1,8 @@
 <!--
-  id: 223
   date: 2006-05-31
   modified: 2020-06-15
   slug: kleurenspeuren
   type: post
-  excerpt: The game Kleuren Speuren is now available for download. Kleuren Speuren is a playfull educational CD-rom about color.
   categories: Director, game
 -->
 

@@ -115,6 +115,8 @@ export function open(uri, popped){
             history.replaceState({}, title, urlNew+hash)
             location.hash = hash
           })
+          // All loaded. set prerenderReady (https://answers.netlify.com/t/support-guide-understanding-and-debugging-prerendering/150)
+          window.prerenderReady||(window.prerenderReady = true)
         })
         .catch(console.error)
     }

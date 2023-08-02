@@ -1,7 +1,7 @@
 <!--
-  description: Thoughts about signals
+  description: Thoughts about signals, some history, and an easy explanation on inner workings.
   date: 2023-06-04
-  modified: 2023-06-04
+  modified: 2023-08-02
   slug: signals
   type: post
   header: takahiro-sakamoto-wcWvku7gqHc-unsplash.jpg

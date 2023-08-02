@@ -1,5 +1,4 @@
 <!--
-  id: 2078
   slug: karijn-kakebeeke
   type: fortpolio
   categories: JavaScript, HTML/CSS, graphic design, UX

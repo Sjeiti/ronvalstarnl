@@ -1,5 +1,4 @@
 <!--
-  id: 2097
   slug: novartis
   type: fortpolio
   excerpt: A virtual 3d panorama tour, consisting of multiple panoramas through which you navigate by space or by stories.

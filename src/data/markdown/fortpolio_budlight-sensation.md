@@ -1,5 +1,4 @@
 <!--
-  id: 2058
   slug: budlight-sensation
   type: fortpolio
   excerptNl: Implementatie van Sensation event in de bestaande Canadese Budlight website.

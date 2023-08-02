@@ -1,16 +1,8 @@
 <!--
-  id: 1001
   date: 2012-06-28
   modified: 2014-05-05
   slug: test-rainbow
   type: post
-  excerpt: <p>Just a test&#8230;</p>
-  categories: uncategorized
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # Test Rainbow line numbering

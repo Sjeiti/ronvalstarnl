@@ -1,14 +1,11 @@
 <!--
-  id: 1775
   date: 2012-09-26
   modified: 2020-05-31
   slug: creating-tileable-noise-maps
   type: post
   categories: code
   tags: Perlin Noise, procedural, tile, pattern, dimension, cool shit
-  metaKeyword: tileable noise
-  metaTitle: Creating tileable noise maps
-  metaDescription: Creating proper tileable noise maps is a bit tricky to get your head around if you want to do it right. Here's how to do it step by step.
+  description: Creating proper tileable noise maps is a bit tricky to get your head around if you want to do it right. Here's how to do it step by step.
   sticky: true
 -->
 

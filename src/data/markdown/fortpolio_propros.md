@@ -1,5 +1,4 @@
 <!--
-  id: 2616
   slug: propros
   type: fortpolio
   categories: JavaScript, HTML/CSS, game

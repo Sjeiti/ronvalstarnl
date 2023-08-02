@@ -1,5 +1,4 @@
 <!--
-  id: 2741
   date: 2015-01-24
   modified: 2019-09-27
   slug: goodbye-sjeiti-com

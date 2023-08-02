@@ -1,16 +1,10 @@
 <!--
-  id: 326
   date: 2008-07-31
   modified: 2012-07-03
   slug: perlin-noise-and-frocessing
   type: post
-  excerpt: <p>Just got back from a very relaxed vacation and I&#8217;m trying to pick up the old pace (but it&#8217;s too hot and humid here). Back at the old console I got this incoming link: Perlin Clouds and Frocessing (with an F). So somebody with a lot of spare time is porting Processing to AS3 (god [&hellip;]</p>
   categories: code, Processing, ActionScript
   tags: Mario Klingemann, Perlin Clouds, Perlin Noise, Flash
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # Perlin Noise and Frocessing

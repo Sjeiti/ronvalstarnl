@@ -1,16 +1,10 @@
 <!--
-  id: 280
   date: 2007-02-15
   modified: 2020-06-01
   slug: beta-testing-rocks
   type: post
-  excerpt: <p>Well, the bullet is through the church (always fun to just translate a Dutch saying into English). The Filter Forge beta test ends. This product is really cool. And giving away free copies for good beta testing is even cooler. I thought well&#8230; fifteen.. maybe thirty lucky people tops. But these guys are insane. The&#8217;ve [&hellip;]</p>
   categories: image, photoshop
   tags: Filter Forge, test
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # beta testing rocks

@@ -1,11 +1,9 @@
 <!--
-  id: 324
   date: 2007-01-04
   modified: 2022-05-11
   slug: about
   type: page
-  metaKeyword: about
-  metaDescription: I love writing JavaScript. So naturally I know a lot about: DOM, HTML and CSS. Streamlining build processes is also one of my favorite pasttimes.
+  description: I love writing JavaScript. So naturally I know a lot about: DOM, HTML and CSS. Streamlining build processes is also one of my favorite pasttimes.
 -->
 
 # about

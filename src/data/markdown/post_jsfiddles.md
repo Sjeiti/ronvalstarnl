@@ -6,7 +6,6 @@
   header: vita-m-H9eMr6NdlPU-unsplash.jpg
   headerColofon: photo by [Vita M](https://unsplash.com/@esuvita)
   headerClassName: no-blur darken
-  excerpt: A collection of nice JSFiddles
   categories: Javascript
   tags: CSS
   related: fast-giant-lists project/disconnect front-end-logic-without-javascript mc-picker

@@ -1,20 +1,11 @@
 <!--
-  id: 2478
-  description: Pocket is really handy. It's a way to save articles and access them later. Here's a Wordpress Pocket plugin I wrote to show your collection in a widget.
   date: 2014-06-11
   modified: 2014-08-14
   slug: wordpress-pocket-widget
   type: post
-  excerpt: <p>Pocket is really handy. It is a way to save articles and access them cross-device. It has an API and is also on IFTTT. I use Pocket to save articles I see on Zite and interesting stuff I encounter during the day. In between work I&#8217;m currently rebuilding my two sites into one and thought [&hellip;]</p>
   categories: Wordpress, php
   tags: API, pocket
-  metaKeyword: pocket widget
-  metaTitle: Wordpress Pocket widget
-  metaDescription: Pocket is really handy. It's a way to save articles and access them later. Here's a Wordpress Pocket plugin I wrote to show your collection in a widget.
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
+  description: Pocket is really handy. It's a way to save articles and access them later. Here's a Wordpress Pocket plugin I wrote to show your collection in a widget.
 -->
 
 # WordPress Pocket widget

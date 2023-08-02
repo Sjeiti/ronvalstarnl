@@ -1,16 +1,10 @@
 <!--
-  id: 3328
   date: 2017-08-02
   modified: 2020-05-31
   slug: experiment-marbles
   type: post
-  excerpt: <p>Last week I saw an old image in my library of something I created back in 2006. It was a few marbles created using Flash and displacement mapping. Remember BitmapData and DisplacementMapFilter? No I didn&#8217;t either. But since I&#8217;m learning GLSL I thought this would be an excellent little experiment to recreate.</p>
   categories: code, game, JavaScript, work
   tags: 3D, WebGL, physics
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
   related: experiment-bezier experiment-blob experiment-boids experiment-clouds experiment-ff experiment-fire experiment-flowfield experiment-glass experiment-grid experiment-heart experiment-marbles experiment-plasma experiment-radialdifference experiment-snow experiment-spiralmap experiment-starzoom experiment-touches experiment-vertical experiment-voronoi
 -->
 

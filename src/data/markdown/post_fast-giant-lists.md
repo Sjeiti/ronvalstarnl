@@ -6,7 +6,6 @@
   header: allie-GA3_Rp-m9jc-unsplash.jpg
   headerColofon: photo by [Allie](https://unsplash.com/@acreativegangster)
   headerClassName: no-blur darken
-  excerpt: How to scroll giant lists. 
   categories: Javascript, HTML, CSS
   tags: CSS, speed, performance
 -->

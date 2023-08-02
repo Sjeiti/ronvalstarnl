@@ -1,16 +1,10 @@
 <!--
-  id: 213
   date: 2007-01-02
   modified: 2007-01-02
   slug: youtubeprocessinggroup
   type: post
-  excerpt: <p>I just read at Toxi&#8217;s Processing RSS feed that Eskimoblood started a Youtube Processing group. Good chance for me to upload my first Youtube movies. Nothing special, just some newly rendered attractor animations. Plus this might be a good kick in the ass for me to stop &#8216;wasting my time&#8217; making filters and get back [&hellip;]</p>
   categories: Processing, video
   tags: RSS
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # Youtube Processing group

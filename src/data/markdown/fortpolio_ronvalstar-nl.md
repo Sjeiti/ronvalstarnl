@@ -1,5 +1,4 @@
 <!--
-  id: 3460
   slug: ronvalstar-nl
   type: fortpolio
   categories: JavaScript, HTML/CSS, framework

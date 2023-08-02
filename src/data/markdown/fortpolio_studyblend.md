@@ -1,5 +1,4 @@
 <!--
-  id: 2838
   slug: studyblend
   type: fortpolio
   excerpt: Design and development of a single-page responsive web application that allows teachers and students to track their progress during a course. Used Angular as JavaScript framework and Laravel to create a REST service.

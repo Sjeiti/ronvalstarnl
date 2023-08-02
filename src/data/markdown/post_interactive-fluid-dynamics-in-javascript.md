@@ -1,20 +1,11 @@
 <!--
-  id: 934
-  description: I wanted to use Oliver Hunt's fluid solver as an interactive particle flowfield. But the fluid dynamics worked wrongly for on square images.
   date: 2012-05-25
   modified: 2020-05-31
   slug: interactive-fluid-dynamics-in-javascript
   type: post
-  excerpt: <p>Don&#8217;t know why, but after seeing Oliver Hunt&#8217;s fluid solver I wanted to use fluid dynamics on my site as an interactive particle flowfield.</p>
   categories: code, JavaScript, nature
   tags: fluid dynamics, port
-  metaKeyword: fluid dynamics
-  metaTitle: Interactive fluid dynamics in JavaScript
-  metaDescription: I wanted to use Oliver Hunt's fluid solver as an interactive particle flowfield. But the fluid dynamics worked wrongly for on square images.
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
+  description: I wanted to use Oliver Hunt's fluid solver as an interactive particle flowfield. But the fluid dynamics worked wrongly for on square images.
 -->
 
 # Interactive fluid dynamics in JavaScript

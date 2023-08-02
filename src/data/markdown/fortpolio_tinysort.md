@@ -1,5 +1,4 @@
 <!--
-  id: 2240
   slug: tinysort
   type: fortpolio
   excerpt: <p>A sorting script I wrote and maintain.</p>

@@ -1,5 +1,4 @@
 <!--
-  id: 2877
   slug: vodafone
   type: fortpolio
   excerpt: Rebuilt shop flow into a single page application using Angular. Added several improvements to the build process. Updated/refactored a lot of legacy code. Improved code quality.

@@ -1,16 +1,8 @@
 <!--
-  id: 317
   date: 2008-02-13
   modified: 2008-02-13
   slug: strange-attractors
   type: post
-  excerpt: <p>To view this content, you need to install Java from java.com Here you see a mathematical phenomenon known as strange attractors. The basic principle is to have a point in space and use it&#8217;s coordinates as input to a relatively simple formula to compute the new point. This means an attractor is deterministic: it’s state [&hellip;]</p>
-  categories: uncategorized
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # Strange attractors
