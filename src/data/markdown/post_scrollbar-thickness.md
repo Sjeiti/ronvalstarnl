@@ -1,6 +1,6 @@
 <!--
   date: 2023-03-14
-  modified: 2023-03-14
+  modified: 2023-08-02
   slug: scrollbar-thickness
   type: post
   header: photo-1580501170888-80668882ca0c.jpg
@@ -8,6 +8,7 @@
   headerClassName: no-blur
   category: code
   tag: DOM, CSS, JavaScript
+  description: A simple solution to determining the scrollbar thickness for the current browser or device.
 -->
 
 

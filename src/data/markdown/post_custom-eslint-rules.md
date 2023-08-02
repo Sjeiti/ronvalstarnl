@@ -1,6 +1,6 @@
 <!--
   date: 2023-03-17
-  modified: 2023-03-17
+  modified: 2023-08-02
   slug: custom-local-eslint-rules
   type: post
   categories: code
@@ -8,6 +8,7 @@
   header: ian-talmacs-AUlaz_3SLDg-unsplash.jpg
   headerColofon: image by [Ian Talmacs](https://unsplash.com/@iantalmacs)
   headerClassName: no-blur darken
+  description: Easy instructions on how to implement custom local ESLint rules. Custom rules are a great addition to your standardized configuration.
 --> 
 
 # How to easily implement custom local ESLint rules
