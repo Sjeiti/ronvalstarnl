@@ -1,16 +1,10 @@
 <!--
-  id: 313
   date: 2007-12-17
   modified: 2007-12-17
   slug: whooohooo
   type: post
-  excerpt: <p>My snowflake filter has gone high usage. HU nr5 means free Filter Forge lifetime upgrades. YES!!! Well, if I had actually done some paid work instead of playing around with Filter Forge I would have been able to buy it a long time ago. But it&#8217;s way nicer to earn it this way.</p>
   categories: image
   tags: Filter Forge
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # Whooohooo

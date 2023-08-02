@@ -1,16 +1,9 @@
 <!--
-  id: 756
   date: 2010-11-19
   modified: 2020-05-31
   slug: sfbrowser-for-wordpress
   type: post
-  excerpt: <p>Last project I did allowed me to expand my SFBrowser WordPress plugin a bit. Of course SFBrowser has been up at Googlecode for some time now but I had never bothered to publish the WordPress plugin I made for it.</p>
   categories: code, JavaScript, jQuery, Wordpress
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # SFBrowser for WordPress

@@ -1,5 +1,4 @@
 <!--
-  id: 2181
   slug: kees-kroot
   type: fortpolio
   categories: 3D

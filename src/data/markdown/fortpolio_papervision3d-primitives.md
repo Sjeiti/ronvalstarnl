@@ -1,5 +1,4 @@
 <!--
-  id: 2284
   slug: papervision3d-primitives
   type: fortpolio
   categories: game, open source, 3D

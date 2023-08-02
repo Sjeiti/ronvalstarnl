@@ -8,8 +8,7 @@
   headerClassName: no-blur darken
   categories: Javascript
   tags: testing, e2e, end-to-end
-  metaKeyword: Cypress
-  metaDescription: Some useful Cypress custom commands to make your tests cleaner
+  description: Some useful Cypress custom commands to make your tests cleaner
   sticky: true
 -->
 

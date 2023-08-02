@@ -1,10 +1,8 @@
 <!--
-  id: 821
   date: 2011-02-02
   modified: 2020-07-29
   slug: pig-in-woods
   type: post
-  excerpt: Pig in woods
   categories: image, illustration
   tags: forest, Sketchbook pro
 -->

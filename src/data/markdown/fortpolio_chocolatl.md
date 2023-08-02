@@ -1,5 +1,4 @@
 <!--
-  id: 2153
   slug: chocolatl
   type: fortpolio
   categories: JavaScript, HTML/CSS

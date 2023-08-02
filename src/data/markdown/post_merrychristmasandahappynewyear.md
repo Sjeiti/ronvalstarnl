@@ -1,16 +1,9 @@
 <!--
-  id: 231
   date: 2005-12-23
   modified: 2020-07-29
   slug: merrychristmasandahappynewyear
   type: post
-  excerpt: 2006 digital newyears wish
   categories: admin
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # merry christmas and a happy newyear

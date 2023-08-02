@@ -3,9 +3,7 @@
   modified: 2023-06-26
   slug: cv
   type: page
-  metaKeyword: front-end developer
-  metaTitle: Curriculum Vitae Ron Valstar
-  metaDescription: I am a front-end developer with more than eighteen years experience doing graphic design, interaction design and programming.
+  description: I am a front-end developer with more than eighteen years experience doing graphic design, interaction design and programming.
 -->
 
 

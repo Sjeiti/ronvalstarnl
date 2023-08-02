@@ -1,5 +1,4 @@
 <!--
-  id: 2298
   slug: philipsspotify-application
   type: fortpolio
   categories: JavaScript, HTML/CSS

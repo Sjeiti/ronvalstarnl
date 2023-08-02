@@ -1,5 +1,4 @@
 <!--
-  id: 2947
   date: 2015-11-03
   modified: 2019-09-27
   slug: memory-and-speed-performance-of-different-namespace-patterns
@@ -7,9 +6,7 @@
   header: ill_cova.jpg
   categories: code, JavaScript
   tags: performance, memory, speed
-  metaKeyword: namespace
-  metaTitle: Memory and performance of different namespace patterns
-  metaDescription: Recently I worked on a large codebase with a recurring namespace pattern that was very inefficient. I decided to test memory and speed of the alternatives.
+  description: Recently I worked on a large codebase with a recurring namespace pattern that was very inefficient. I decided to test memory and speed of the alternatives.
 -->
 
 # Memory and speed performance of different namespace patterns

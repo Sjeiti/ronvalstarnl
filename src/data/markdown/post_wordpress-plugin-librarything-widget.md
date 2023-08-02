@@ -1,12 +1,8 @@
 <!--
-  id: 284
   date: 2007-01-28
   modified: 2007-01-28
   slug: wordpress-plugin-librarything-widget
   type: post
-  excerpt: A Librarything plugin for Wordpress
-  categories: uncategorized
-  tags: 
 -->
 
 # Librarything widget

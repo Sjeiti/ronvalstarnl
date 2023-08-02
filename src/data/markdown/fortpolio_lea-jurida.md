@@ -1,5 +1,4 @@
 <!--
-  id: 2250
   slug: lea-jurida
   type: fortpolio
   excerpt: <p>Flash website for sound designer Lea Jurida.</p>

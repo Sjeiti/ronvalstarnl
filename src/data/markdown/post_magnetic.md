@@ -1,16 +1,8 @@
 <!--
-  id: 22
   date: 2007-01-07
   modified: 2020-06-01
   slug: magnetic
   type: post
-  excerpt: <p>I had already coded something like this with imaging-lingo (director) under the name of magnet. I just wanted to see the difference in speed between lingo and java.</p>
-  categories: uncategorized
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # magnetic particles

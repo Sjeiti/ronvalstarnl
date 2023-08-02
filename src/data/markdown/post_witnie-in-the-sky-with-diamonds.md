@@ -1,16 +1,10 @@
 <!--
-  id: 830
   date: 2011-02-02
   modified: 2011-02-02
   slug: witnie-in-the-sky-with-diamonds
   type: post
-  excerpt: Witnie in the sky with diamonds
   categories: illustration
   tags: Sketchbook pro
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # Witnie in the sky with diamonds

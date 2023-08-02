@@ -1,16 +1,10 @@
 <!--
-  id: 411
   date: 2010-01-27
   modified: 2020-05-31
   slug: cleanup
   type: post
-  excerpt: <p>I&#8217;m cleaning my root. In the not so near future I will remove the subdirs ffbatch, ffpv3d, stampomatic and test/attractors4 in favor of respectively ffbatch.ronvalstar.nl, ffpv3d.ronvalstar.nl, stampomatic.ronvalstar.nl and attractors.ronvalstar.nl.</p>
   categories: admin, code, work
   tags: test
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # cleanup

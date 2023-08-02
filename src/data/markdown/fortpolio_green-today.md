@@ -1,5 +1,4 @@
 <!--
-  id: 2158
   slug: green-today
   type: fortpolio
   categories: JavaScript, HTML/CSS, video, graphic design, UX

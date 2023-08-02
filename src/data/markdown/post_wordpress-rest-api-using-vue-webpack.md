@@ -1,5 +1,4 @@
 <!--
-  id: 3122
   date: 2016-12-24
   modified: 2020-03-16
   slug: wordpress-rest-api-using-vue-webpack
@@ -7,8 +6,7 @@
   type: post
   categories: code, JavaScript, backend
   tags: Wordpress, Vue, Webpack
-  metaKeyword: Webpack
-  metaDescription: Two years ago I rewrote my site to Angular. I was going to post how but I never got around to it. Lately I rewrote it to Vue. So here's that post.
+  description: Two years ago I rewrote my site to Angular. I was going to post how but I never got around to it. Lately I rewrote it to Vue. So here's that post.
 -->
 
 # WordPress with a REST API using Vue and Webpack

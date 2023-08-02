@@ -1,5 +1,4 @@
 <!--
-  id: 2614
   slug: coffeebreak
   type: fortpolio
   categories: JavaScript, HTML/CSS, framework, mobile

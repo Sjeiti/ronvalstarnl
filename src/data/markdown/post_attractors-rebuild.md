@@ -1,16 +1,10 @@
 <!--
-  id: 328
   date: 2008-12-13
   modified: 2020-05-31
   slug: attractors-rebuild
   type: post
-  excerpt: <p>In the beginning of this year I had some free time and thought I&#8217;d spend it on P55 (which had been a while).</p>
   categories: code, image, Java, Processing, video
   tags: math, cool shit
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # Attractors rebuild

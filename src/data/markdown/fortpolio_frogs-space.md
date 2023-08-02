@@ -1,5 +1,4 @@
 <!--
-  id: 2262
   slug: frogs-space
   type: fortpolio
   categories: game, illustration

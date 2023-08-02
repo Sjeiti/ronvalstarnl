@@ -1,5 +1,4 @@
 <!--
-  id: 2129
   slug: deepred
   type: fortpolio
   categories: JavaScript, HTML/CSS, graphic design

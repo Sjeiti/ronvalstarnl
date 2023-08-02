@@ -6,7 +6,6 @@
   header: jonny-caspari-KuudDjBHIlA-unsplash.jpg
   headerColofon: photo by [Jonny Caspari](https://unsplash.com/@jonnysplsh)
   headerClassName: no-blur darken
-  excerpt: Turning HTML into an image at runtime is easy but the implementation is a bit insane.
   categories: Javascript
   tags: HTML, DOM, SVG, image, screenshot
   sticky: true

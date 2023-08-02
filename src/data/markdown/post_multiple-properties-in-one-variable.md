@@ -1,16 +1,11 @@
 <!--
-  id: 1826
-  description: Multiple properties as variables can take up a lot of space. Here's a way to store them in a single variable using bitwise operations.
   date: 2013-01-22
   modified: 2021-03-02
   slug: multiple-properties-in-one-variable
   type: post
-  excerpt: Objects with multiple properties with each their own variable can get a bit messy. Here's a nice solution to store multiple properties in a single variable.
   categories: code, JavaScript
   tags: bitwise, and, or, pipe
-  metaKeyword: properties
-  metaTitle: Storing multiple properties in a single integer using bitwise AND
-  metaDescription: Multiple properties as variables can take up a lot of space. Here's a way to store them in a single variable using bitwise operations.
+  description: Multiple properties as variables can take up a lot of space. Here's a way to store them in a single variable using bitwise operations.
 -->
 
 # Storing multiple properties in one integer using bitwise AND

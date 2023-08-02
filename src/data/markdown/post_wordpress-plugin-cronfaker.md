@@ -1,16 +1,8 @@
 <!--
-  id: 288
   date: 2007-01-31
   modified: 2012-06-26
   slug: wordpress-plugin-cronfaker
   type: post
-  excerpt: <p>You might have noticed: this plugin has been discontinued. Cron jobs are a Unix way executing files at scheduled times. If you don&#8217;t have acces to them there are ways to fake it. I figured out a long time ago that letting certain hits trigger the executions works just as well. It&#8217;s less punctual than [&hellip;]</p>
-  categories: uncategorized
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # Cronfaker plugin

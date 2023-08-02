@@ -7,8 +7,7 @@
   headerColofon: photo by [Element5 Digital](https://unsplash.com/@element5digital)
   categories: code, CSS, HTML, JavaScript
   tags: React, CSS, Sass, Less
-  metaKeyword: React
-  metaDescription: A simple solution on how to use Sass variables in React styled-components.
+  description: A simple solution on how to use Sass variables in React styled-components.
 -->
 
 # React styled-components and SASS/LESS variables

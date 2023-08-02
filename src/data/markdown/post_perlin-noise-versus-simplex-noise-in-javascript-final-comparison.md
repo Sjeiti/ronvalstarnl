@@ -1,20 +1,11 @@
 <!--
-  id: 448
-  description: ...so after some hours of playing around I've got two nice noise implementations, one Perlin and one Simplex noise. Apart from the obvious speed increase the comparison is rather striking.
   date: 2010-05-12
   modified: 2020-05-31
   slug: perlin-noise-versus-simplex-noise-in-javascript-final-comparison
   type: post
-  excerpt: <p>&#8230;so after some hours of coding, debugging, testing, refactoring playing around I&#8217;ve got two nice noise implementations. Apart from the obvious speed increase the comparison is rather striking.</p>
   categories: code, HTML, JavaScript
   tags: math, cool shit, procedural
-  metaKeyword: Simplex noise
-  metaTitle: Perlin noise versus Simplex noise in JavaScript (final comparison)
-  metaDescription: ...so after some hours of playing around I've got two nice noise implementations, one Perlin and one Simplex noise. Apart from the obvious speed increase the comparison is rather striking.
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
+  description: ...so after some hours of playing around I've got two nice noise implementations, one Perlin and one Simplex noise. Apart from the obvious speed increase the comparison is rather striking.
 -->
 
 # Perlin noise versus Simplex noise in JavaScript (final comparison)

@@ -1,5 +1,4 @@
 <!--
-  id: 2164
   slug: allerhande
   type: fortpolio
   excerpt: I was front-end ActionScript developer in the Fabrique/Lukkien/freelancers SCRUM team that developed the Allerhande website.

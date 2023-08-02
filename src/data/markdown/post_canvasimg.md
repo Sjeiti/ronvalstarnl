@@ -1,16 +1,9 @@
 <!--
-  id: 687
   date: 2010-10-22
   modified: 2020-05-31
   slug: canvasimg
   type: post
-  excerpt: <p>I&#8217;ve just put up the first version of canvasImg. It&#8217;s a JavaScript object that you can use to create transitions between images. You can apply it to a canvas, an image and any other tag that has a background-image set inline. So check it out here and please: if you have any ideas, feedback, pointers, [&hellip;]</p>
   categories: code, JavaScript
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # canvasImg

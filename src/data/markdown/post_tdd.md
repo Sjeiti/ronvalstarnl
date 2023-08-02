@@ -3,7 +3,6 @@
   modified: 9999-99-99
   slug:tdd
   type: post
-  excerpt: How
   categories: code
   tags: 
   header: ian-talmacs-AUlaz_3SLDg-unsplash.jpg

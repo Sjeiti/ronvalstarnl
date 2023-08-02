@@ -1,5 +1,4 @@
 <!--
-  description: Ten years ago I made a list of software and tools I use as a freelancer. This is the same list in its current state.
   date: 2023-05-29
   modified: 2023-05-29
   slug: a-freelance-developers-tool-box-ten-years-later
@@ -9,9 +8,7 @@
   headerClassName: no-blur darken
   categories: code, work
   tags: frameworks, ide, libraries, software, tools
-  metaKeyword: tool
-  metaTitle: A feelance developer's tool box
-  metaDescription: Ten years ago I made a list of software and tools I use as a freelancer. This is the same list in its current state.
+  description: Ten years ago I made a list of software and tools I use as a freelancer. This is the same list in its current state.
 -->
 
 # A freelance developers toolbox, ten years later

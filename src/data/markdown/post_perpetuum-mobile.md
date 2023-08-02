@@ -1,16 +1,10 @@
 <!--
-  id: 657
   date: 2010-10-22
   modified: 2010-10-22
   slug: perpetuum-mobile
   type: post
-  excerpt: <p>I&#8217;m just about finishing up on the mobile version of ronvalstar.nl and thought I&#8217;d share some things. Especially since a lot of people don&#8217;t seem to have their shit act together.</p>
   categories: code, CSS, HTML, JavaScript, mobile, backend, XML
   tags: CSS, HTML, PC, Windows mobile
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # perpetuum mobile

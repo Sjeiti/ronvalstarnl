@@ -1,5 +1,4 @@
 <!--
-  id: 2066
   slug: yoleo-game
   type: fortpolio
   excerptNl: Yoleo is een website die kinderen helpt bij het lezen door het leuk en uitdagend te maken.

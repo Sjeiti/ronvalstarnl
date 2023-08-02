@@ -1,16 +1,8 @@
 <!--
-  id: 276
   date: 2007-01-23
   modified: 2007-01-23
   slug: wordpress-plugin-stats
   type: post
-  excerpt: <p>You might have noticed: this plugin has been discontinued. The plugin saves server side data: REMOTE_ADDR (ip), REMOTE_HOST, REQUEST_URI, SCRIPT_NAME, HTTP_USER_AGENT, HTTP_REFERER and of course datetime. It is then displayed in an admin stats page: daily raw data in a table four images depicting unique ip&#8217;s over a period of time hits per hour browser [&hellip;]</p>
-  categories: uncategorized
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # Stats plugin

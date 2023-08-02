@@ -1,5 +1,4 @@
 <!--
-  id: 2618
   slug: satriun
   type: fortpolio
   excerpt: <p>Fully responsive website with video and boring content.</p>

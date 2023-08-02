@@ -1,5 +1,4 @@
 <!--
-  id: 3093
   date: 2016-06-26
   modified: 2020-10-23
   slug: angular-two-versus-vue
@@ -7,8 +6,7 @@
   header: vangular.png
   categories: code, JavaScript, rant
   tags: JavaScript, frameworks, Angular, Vue
-  metaKeyword: Vue
-  metaDescription: My site right now is Wordpress with a REST API coupled to a Angular 1 front-end. So naturally I thought of migrating to Angular 2. Then I found Vue.
+  description: My site right now is Wordpress with a REST API coupled to a Angular 1 front-end. So naturally I thought of migrating to Angular 2. Then I found Vue.
 -->
 
 # Angular 2 or Vue

@@ -1,5 +1,4 @@
 <!--
-  id: 3366
   date: 2017-08-09
   modified: 2020-03-16
   slug: best-free-editor-on-android
@@ -7,8 +6,7 @@
   header: termux.png
   categories: code, CSS, HTML, JavaScript
   tags: CSS, HTML, JavaScript, cli, linux, bash, android
-  metaKeyword: android
-  metaDescription: Apps for programming on an Android are clumsy at best, and full of adds. But the best one is really just a Linux terminal: Termux!
+  description: Apps for programming on an Android are clumsy at best, and full of adds. But the best one is really just a Linux terminal: Termux!
   sticky: true
 -->
 

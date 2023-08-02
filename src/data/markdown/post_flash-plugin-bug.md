@@ -1,16 +1,10 @@
 <!--
-  id: 309
   date: 2007-11-09
   modified: 2007-11-09
   slug: flash-plugin-bug
   type: post
-  excerpt: <p>I don&#8217;t normally talk this type of geek talk but I just spent hours trying to debug the weirdest IE glitch. When I code Flash I mostly always code positions relative to the stage dimensions (stage.stageWidth and stage.stageHeight). This prevents the trouble you go through when your client decides to add another x amount of [&hellip;]</p>
   categories: code, Flash, ActionScript
   tags: IE, OS, XP
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # Flash plugin bug

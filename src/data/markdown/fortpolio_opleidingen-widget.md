@@ -1,5 +1,4 @@
 <!--
-  id: 2716
   slug: opleidingen-widget
   type: fortpolio
   excerpt: For Studiekeuze123 I created a widget that searches all available educations in the Netherlands. We pulled data from existing endpoints into Elasticsearch for speed. Source-generated documentation and examples were created so the widget could be easily implemented and styled by third parties.

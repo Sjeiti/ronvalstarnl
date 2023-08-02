@@ -3,13 +3,6 @@
   modified: 2008-06-02
   slug: e-books-on-your-psp
   type: post
-  excerpt: Rewritten PSP e-book and typepad.
-  categories: uncategorized
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # E-books on your PSP

@@ -1,5 +1,4 @@
 <!--
-  id: 3162
   slug: klm-widget
   type: fortpolio
   categories: Flash

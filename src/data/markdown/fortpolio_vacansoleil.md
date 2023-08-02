@@ -1,5 +1,4 @@
 <!--
-  id: 2212
   slug: vacansoleil
   type: fortpolio
   excerpt: <p>Front-end Flash ActionScript 3 development for a zoomable parallax vacation website.</p>

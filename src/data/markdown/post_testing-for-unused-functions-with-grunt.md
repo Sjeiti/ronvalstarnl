@@ -1,20 +1,11 @@
 <!--
-  id: 2389
-  description: Using Grunt to test 5000 lines of code for unused functions.
   date: 2013-08-08
   modified: 2020-05-31
   slug: testing-for-unused-functions-with-grunt
   type: post
-  excerpt: <p>I&#8217;m relatively new to Grunt. I had used it before in several projects but it was already set up and working fine, to I didn&#8217;t really look into it. Besides, the sheer amount of options/plugins available put me off a bit. That and time being money.</p>
   categories: code, JavaScript, jQuery
   tags: JavaScript, Grunt, NodeJS
-  metaDescription: Using Grunt to test 5000 lines of code for unused functions.
-  metaTitle: Testing for unused functions with Grunt
-  metaKeyword: unused functions
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
+  description: Using Grunt to test 5000 lines of code for unused functions.
 -->
 
 # Testing for unused functions with Grunt

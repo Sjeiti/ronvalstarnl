@@ -1,5 +1,4 @@
 <!--
-  id: 3158
   slug: api-conversion-elasticsearch-widget
   type: fortpolio
   excerpt: Implemented and styled the, previously developed, Education Widget for the Ministry of Education of the Netherlands Antilles. Source API changes required updates to the code that populated the Elasticsearch backend. 

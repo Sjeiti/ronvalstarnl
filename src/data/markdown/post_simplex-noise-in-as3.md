@@ -1,18 +1,11 @@
 <!--
-  id: 473
   date: 2010-05-13
   modified: 2016-12-14
   slug: simplex-noise-in-as3
   type: post
   categories: code, ActionScript
   tags: simplex noise, Stefan Gustavson, test
-  metaKeyword: Simplex noise
-  metaTitle: Simplex noise in as3
-  metaDescription: A port from Java Simplex noise to ActionScript 3.
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
+  description: A port from Java Simplex noise to ActionScript 3.
 -->
 
 # Simplex noise in as3

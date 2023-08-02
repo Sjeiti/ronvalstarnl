@@ -1,18 +1,11 @@
 <!--
-  id: 3058
   date: 2016-09-06
   modified: 2017-01-14
   slug: experiment-radialdifference
   type: post
-  excerpt: <p>Another pretty simple idea with a really cool result (above). These are radial gradients drawn on top of each other with a &#8216;difference&#8217; blend mode.</p>
   categories: code, JavaScript
   tags: JavaScript, cool shit, particles
-  metaKeyword: difference
-  metaDescription: Another pretty simple idea with a really cool result. These are radial gradients drawn on top of each other with a 'difference' blend mode.
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
+  description: Another pretty simple idea with a really cool result. These are radial gradients drawn on top of each other with a 'difference' blend mode.
   related: experiment-bezier experiment-blob experiment-boids experiment-clouds experiment-ff experiment-fire experiment-flowfield experiment-glass experiment-grid experiment-heart experiment-marbles experiment-plasma experiment-radialdifference experiment-snow experiment-spiralmap experiment-starzoom experiment-touches experiment-vertical experiment-voronoi
 -->
 

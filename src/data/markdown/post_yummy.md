@@ -1,16 +1,9 @@
 <!--
-  id: 228
   date: 2006-01-07
   modified: 2006-01-07
   slug: yummy
   type: post
-  excerpt: <p>I&#8217;m done putting all my links into Delicious. I also wrote a little php to poor all the links and tags back into my db with the Delicious api. Now to see if I can do some Processing to all this data.</p>
   categories: admin, backend
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # yummy

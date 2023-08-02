@@ -1,10 +1,8 @@
 <!--
-  id: 2555
   date: 2014-04-22
   modified: 2020-03-17
   slug: experiment-boids
   type: post
-  categories: uncategorized
   tags: Perlin Noise, cool shit, experiment, particles
   related: experiment-bezier experiment-blob experiment-boids experiment-clouds experiment-ff experiment-fire experiment-flowfield experiment-glass experiment-grid experiment-heart experiment-marbles experiment-plasma experiment-radialdifference experiment-snow experiment-spiralmap experiment-starzoom experiment-touches experiment-vertical experiment-voronoi
 -->

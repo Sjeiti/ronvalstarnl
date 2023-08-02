@@ -1,19 +1,15 @@
 <!--
-  id: 579
   date: 2010-06-02
-  modified: 2012-07-03
+  modified: 2023-08-02
   slug: emergence
   type: post
-  excerpt: <p>It just needs some color.</p>
+  description: Emergent behavior in particles
   categories: code, Flash, ActionScript
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # emergence
 
-<p>It just needs some color.<br />
-<img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/blackfun.jpg" /><br /><img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/blackfun1.jpg" /></p>
+It just needs some color.
+
+![Emergent behavior in particles 1](https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/blackfun.jpg)
+![Emergent behavior in particles 2](https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/blackfun1.jpg)

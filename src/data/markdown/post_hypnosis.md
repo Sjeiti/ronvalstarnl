@@ -1,16 +1,8 @@
 <!--
-  id: 19
   date: 2007-01-07
   modified: 2012-07-03
   slug: hypnosis
   type: post
-  excerpt: <p>Application of Fibonacci&#8217;s golden mean. An object is placed x times by means of the golden angle, which is about 137.5ï¿½. Nothing changes position, the camera and objects just rotate. Especially the object rotation (towards the center) causes the stranges forms. Use click to change the 3d models and press &#8216;v&#8217; and &#8216;b&#8217; to change [&hellip;]</p>
-  categories: uncategorized
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # hypnosis

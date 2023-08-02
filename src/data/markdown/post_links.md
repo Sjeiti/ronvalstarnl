@@ -1,16 +1,9 @@
 <!--
-  id: 248
   date: 2004-12-09
   modified: 2004-12-09
   slug: links
   type: post
-  excerpt: <p>I just found some great links at fishbucket. The mrs there put up a great list of links of which one category reads &#8216;abandoned&#8217; containing: abandoned buildings, abandoned places, danvers state insane asylum, dark passage, infiltration, kirkbride buildings, lost america, modern ruins, new england ruins, ontario ghost towns, sleepy city, tifft: ellis island.</p>
   categories: link
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # links

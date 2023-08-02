@@ -1,5 +1,4 @@
 <!--
-  id: 2116
   slug: pixelfabrics
   type: fortpolio
   excerpt: <p>A crossplatform Air application that turns image sequences into an HTML5 3D viewer that works crossdevice, crossplatform and crossbrowser.</p>

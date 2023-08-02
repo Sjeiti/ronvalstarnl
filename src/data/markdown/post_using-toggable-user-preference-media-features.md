@@ -8,7 +8,7 @@
   headerClassName: no-blur
   categories: code, CSS, JavaScript, accessibility
   tags: Angular, accounting, invoicing, Vue
-  metaDescription: How to easily use prefers-media-queries and make them adjustable through user preferences.
+  description: How to easily use prefers-media-queries and make them adjustable through user preferences.
 -->
 
 # Using toggable user preference media features

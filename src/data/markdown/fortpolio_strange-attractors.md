@@ -1,5 +1,4 @@
 <!--
-  id: 2275
   slug: strange-attractors
   type: fortpolio
   categories: 3D, video, open source

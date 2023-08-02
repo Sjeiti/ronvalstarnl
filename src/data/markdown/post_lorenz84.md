@@ -1,16 +1,9 @@
 <!--
-  id: 315
   date: 2008-02-10
   modified: 2012-07-03
   slug: lorenz84
   type: post
-  excerpt: <p>Just a small preview of what&#8217;s to come&#8230; (yeah, I&#8217;m rewriting old stuff)</p>
   categories: code, image, Java, Processing
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # Lorenz84

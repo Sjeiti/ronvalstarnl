@@ -1,5 +1,4 @@
 <!--
-  id: 3484
   slug: disconnect
   type: fortpolio
   excerpt: Technical experimentation and development of a site for an audiovisual performance. The site is a three-dimensional environment with custom GLSL shaders for video and audio with subtitles.

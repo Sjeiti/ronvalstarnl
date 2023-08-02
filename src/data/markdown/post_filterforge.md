@@ -1,16 +1,10 @@
 <!--
-  id: 222
   date: 2006-06-01
   modified: 2014-03-11
   slug: filterforge
   type: post
-  excerpt: <p>Filter Forge is an extremely cool Photoshop plugin (also works in Photopaint as well as standalone). Besides a set of cool filters you can also create your own in a very intuitive drag-and-drop way. Making your own is almost addictive. I&#8217;ve made these so far: threshold-blur, liquid chocolate and the seventies.</p>
   categories: image, photoshop
   tags: Filter Forge
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # Filter Forge

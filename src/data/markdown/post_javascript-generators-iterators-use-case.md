@@ -1,5 +1,4 @@
 <!--
-  id: 3418
   date: 2018-04-25
   modified: 2020-03-16
   slug: javascript-generators-iterators-use-case
@@ -7,8 +6,7 @@
   header: Structure_Paris_les_Halles.jpg
   categories: code, JavaScript, skills
   tags: generators, iterators, speed
-  metaKeyword: generators
-  metaDescription: I’ve always ignored JavaScript generators and iterators partly because I never really encountered a clear real life use case.
+  description: I’ve always ignored JavaScript generators and iterators partly because I never really encountered a clear real life use case.
 -->
 
 # A use case for JavaScript generators

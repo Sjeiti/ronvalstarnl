@@ -1,19 +1,11 @@
 <!--
-  id: 2475
-  description: How I use Google spreadsheets for my freelance administration: here are two example spreadsheets to duplicate and some details on the used JavaScript.
   date: 2014-05-10
   modified: 2020-03-16
   slug: using-google-spreadsheets-for-invoicing
   type: post
   categories: admin, code, JavaScript, work
   tags: Google, JavaScript, freelance
-  metaDescription: How I use Google spreadsheets for my freelance administration: here are two example spreadsheets to duplicate and some details on the used JavaScript.
-  metaTitle: Using Google spreadsheets for your freelance quotations and invoicing
-  metaKeyword: spreadsheet
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo:
+  description: How I use Google spreadsheets for my freelance administration: here are two example spreadsheets to duplicate and some details on the used JavaScript.
 -->
 
 # Using Google spreadsheets for your freelance invoicing

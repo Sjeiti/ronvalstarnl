@@ -1,20 +1,11 @@
 <!--
-  id: 849
-  description: Creating a dynamic bookmarklet with Three.js and WebGL to display Filter Forge filters in 3D.
   date: 2011-06-03
   modified: 2020-06-01
   slug: dynamic-bookmarklets-and-webgl
   type: post
-  excerpt: <p>Whenever I&#8217;m up to my neck in work I mostly get utterly bored. So to keep focussed I tend to create these little side projects. Last week I thought I&#8217;d create my first bookmarklet using WebGL rendering with Three.js</p>
   categories: code, HTML, JavaScript
   tags: 3D, bookmarklet, Filter Forge, Threejs
-  metaKeyword: bookmarklet
-  metaTitle: Dynamic bookmarklets (and WebGL)
-  metaDescription: Creating a dynamic bookmarklet with Three.js and WebGL to display Filter Forge filters in 3D.
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
+  description: Creating a dynamic bookmarklet with Three.js and WebGL to display Filter Forge filters in 3D.
 -->
 
 # Dynamic bookmarklets (and WebGL)

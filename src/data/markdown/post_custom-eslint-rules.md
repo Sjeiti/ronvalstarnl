@@ -3,7 +3,6 @@
   modified: 2023-03-17
   slug: custom-local-eslint-rules
   type: post
-  excerpt: How to easily implement custom local ESLint rules by installing a module locally
   categories: code
   tags: 
   header: ian-talmacs-AUlaz_3SLDg-unsplash.jpg

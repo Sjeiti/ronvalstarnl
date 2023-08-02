@@ -1,5 +1,4 @@
 <!--
-  id: 2146
   slug: soundcircus
   type: fortpolio
   excerpt: Flash website that won an FWASOTD, an ADCN Lamp and a Webby!

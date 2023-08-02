@@ -1,5 +1,4 @@
 <!--
-  id: 3044
   slug: strange-attractors-javascript
   type: fortpolio
   excerpt: <p>A pure JavaScript strange attractor renderer with a WebGL preview. Renders images and animated gifs from mathematical formulas with interpolated variables.</p>

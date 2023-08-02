@@ -1,20 +1,11 @@
 <!--
-  id: 1958
-  description: Here's a bookmarklet that strips everything on Google Maps but the map itself.
   date: 2013-04-07
   modified: 2014-05-06
   slug: bookmarklet-for-fullscreen-google-maps
   type: post
-  excerpt: <p>Here&#8217;s a bookmarklet that strips everything on Google Maps but the map itself. Put the  browser fullscreen and you&#8217;ve got the whole world to printscreen desktop images from. Siberia has some pretty awesome landscapes.</p>
   categories: code, JavaScript, open source
   tags: bookmarklet, JavaScript
-  metaKeyword: google maps
-  metaTitle: Google Maps bookmarklet
-  metaDescription: Here's a bookmarklet that strips everything on Google Maps but the map itself.
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
+  description: Here's a bookmarklet that strips everything on Google Maps but the map itself.
 -->
 
 # Bookmarklet for fullscreen Google Maps

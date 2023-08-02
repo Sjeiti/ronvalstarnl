@@ -1,5 +1,4 @@
 <!--
-  id: 2302
   slug: plus-christmas-campaign
   type: fortpolio
   categories: 

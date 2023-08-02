@@ -1,16 +1,9 @@
 <!--
-  id: 243
   date: 2005-02-20
   modified: 2005-02-20
   slug: art
   type: post
-  excerpt: <p>Algorithmic art is nothing new.</p>
   categories: link
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # art

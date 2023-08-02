@@ -1,16 +1,10 @@
 <!--
-  id: 1030
   date: 2012-07-03
   modified: 2020-05-31
   slug: tinysort-a-tiny-survey
   type: post
-  excerpt: <p>Help me decide whether to move Tinysort to Github&#8230; or not&#8230;</p>
   categories: code
   tags: jQuery, SVN, Tinysort, Git, Github
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # Tinysort: a tiny survey

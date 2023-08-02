@@ -1,19 +1,11 @@
 <!--
-  id: 2905
   date: 2015-10-25
   modified: 2017-01-14
   slug: experiment-blob
   type: post
-  excerpt: <p>This is an experiment with WebGL shaders. The JavaScript code is nothing much; just a scaffold to load GLSL scripts, run the shader program and some events to parse mouse- and keyboard input. The cool bit is the shader code itself.</p>
   categories: code, JavaScript
   tags: WebGL
-  metaKeyword: WebGL
-  metaTitle: Blob, a WebGL experiment.
-  metaDescription: This is an experiment with WebGL shaders. The JavaScript code is nothing much. The cool bit is the shader code itself.
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
+  description: This is an experiment with WebGL shaders. The JavaScript code is nothing much. The cool bit is the shader code itself.
   related: experiment-bezier experiment-blob experiment-boids experiment-clouds experiment-ff experiment-fire experiment-flowfield experiment-glass experiment-grid experiment-heart experiment-marbles experiment-plasma experiment-radialdifference experiment-snow experiment-spiralmap experiment-starzoom experiment-touches experiment-vertical experiment-voronoi
 -->
 

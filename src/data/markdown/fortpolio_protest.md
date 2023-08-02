@@ -1,5 +1,4 @@
 <!--
-  id: 2626
   slug: protest
   type: fortpolio
   categories: JavaScript, HTML/CSS

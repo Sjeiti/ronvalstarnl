@@ -1,16 +1,8 @@
 <!--
-  id: 18
   date: 2007-01-07
   modified: 2007-01-07
   slug: landscapes
   type: post
-  excerpt: <p>This endless landscape project was made to learn processing (and java). You can move about endlessly and zoom in and zoom out to a great extent. There are ships sailing around, little people, houses and little covered wagons in there.I&#8217;v made it in the processing alpha version and although I&#8217;m still planning to work on [&hellip;]</p>
-  categories: uncategorized
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # landscapes

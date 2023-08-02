@@ -1,16 +1,9 @@
 <!--
-  id: 236
   date: 2005-05-20
   modified: 2012-07-03
   slug: screensaver
   type: post
-  excerpt: <p>I found some free screensaver software for director and made one of the 3D kaleidoscope thing.</p>
   categories: Director
-  tags: 
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
 -->
 
 # screensaver

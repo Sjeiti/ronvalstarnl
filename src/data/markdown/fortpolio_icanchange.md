@@ -3,9 +3,7 @@
   type: fortpolio
   excerptNl: 'I can change' is een stichting die stadslandbouw promoot in het hart van Amsterdam. Ik heb hun website bijgewerkt naar de nieuwste versie van het Kirby-framework. Daarnaast heb ik verschillende op maat gemaakte Vue-componenten toegevoegd die voor het updaten en communiceren veel gemakkelijker maken.
 Dit werk werd als vrijwilligerswerk gedaan.
-  metaKeyword: garden
-  metaTitle: I can change website update
-  metaDescription: &hellip;
+  description: &hellip;
   categories: JavaScript, HTML/CSS
   tags: PHP, Kirby, JavaScript, HTML, CSS, Vue
   inCv: true

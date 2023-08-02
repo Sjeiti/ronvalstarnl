@@ -4,9 +4,7 @@
   excerpt: Development of the 2021 design-united website that broadcasts the Dutch Design Week live. The site is a React SPA onto a WordPress REST API and showcases about 40 projects from students of four Dutch universities. Created custom Gutenberg blocks to expose specific data through the REST API.
   excerptNl: Ontwikkeling van de 2021 design-united website die de Dutch Design Week live uitzendt.
 De site is een React SPA op een WordPress REST API en toont ongeveer 40 projecten van studenten van vier Nederlandse universiteiten.
-  metaKeyword: dutch design week
-  metaTitle: Design United 2021
-  metaDescription: Development of the 2020 design-united website that broadcasts the Dutch Design Week.
+  description: Development of the 2020 design-united website that broadcasts the Dutch Design Week.
   categories: JavaScript, HTML/CSS, video
   tags: React, Redux, JavaScript, HTML, CSS, SVG, WordPress
   clients: Design United, Shapers

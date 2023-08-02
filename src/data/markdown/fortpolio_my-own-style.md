@@ -1,5 +1,4 @@
 <!--
-  id: 2306
   slug: my-own-style
   type: fortpolio
   excerpt: Implemented Woocommerce webshop into Wordpress. Created a module that enabled customizeable products. 

@@ -1,7 +1,6 @@
 <!--
   slug: project-invoice-react
   type: fortpolio
-  metaTitle: Project Invoice React
   tags: JavaScript, React, UX, TDD, Cypress, Docker
   inCv: false
   inPortfolio: false
