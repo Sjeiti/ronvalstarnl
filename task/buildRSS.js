@@ -39,7 +39,7 @@ const rss = `<?xml version="1.0" ?>
         <title>${title||'blank'}</title>
         <link>${base}/${slug}</link>
         <guid>${base}/${slug}</guid>
-        <description>${describe(post.description||post.metaDescription||'')}</description>
+        <description>${describe(post.description||'')}</description>
         <pubDate>${stringDate(date)}</pubDate>
       </item>`
     }).join('')}

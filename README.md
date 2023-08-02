@@ -9,14 +9,12 @@
  - headerClassName: `''|no-blur|darken`
  - categories
  - tags
- - description: RSS description
- - metaDescription: `meta[name="description"]`, `meta[property="og:description"]` and `twitter:description`
+ - description: 160 characters description
  - ~~metaKeyword~~
  - ~~id~~
  - ~~excerpt~~
  - ~~metaTitle~~
-
-Max description 160 characters
+ - ~~metaDescription~~
 
 ### `type=blog` extra properties
 

@@ -20,16 +20,13 @@ import './signal/scroll'
 /**
  * A page can be a page, post or portfolio item
  * @typedef {Object} Page
- * @property {string} id
  * @property {string} date
  * @property {string} modified
  * @property {string} slug
  * @property {string} type
- * @property {string} excerpt
  * @property {string} categories
  * @property {string} tags
- * @property {string} metaKeyword - obsolete
- * @property {string} metaDescription - obsolete
+ * @property {string} description
  */
 
 /**
@@ -38,6 +35,7 @@ import './signal/scroll'
  * @property {string} header
  * @property {string} headerColofon
  * @property {string} headerClassName
+ * @property {string} sticky
  * @property {string} related
  */
 
@@ -54,6 +52,7 @@ import './signal/scroll'
  * @property {string} inPortfolio
  * @property {string} dateFrom
  * @property {string} dateTo
+ * @property {string} excerpt
  */
 
 /**
