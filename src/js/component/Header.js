@@ -169,7 +169,11 @@ create('[data-header]', class extends BaseComponent{
       //this._experiment = Object.values(experiments).sort(()=>Math.random()<0.5?1:-1).pop()
       this._experiment?.init(this._experimentWrapper)
     }
-    this._experimentUI.classList.toggle('experiment-ui-hide', !this._experiment)
+    // this._experimentUI.classList.toggle('experiment-ui-hide', !this._experiment)
+    const hasExperiment = !!this._experiment
+    this._experimentUI.classList.toggle('experiment-ui-hide', !hasExperiment)
+    hasExperiment?this._experimentLink.removeAttribute('inert'):this._experimentLink.setAttribute('inert', '')
+
     this._experimentLink.href = this._experiment?`/experiment-${this._experiment.name}`:'#'
     this._experimentLink.title = name||'experiment'
   }
