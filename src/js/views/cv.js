@@ -371,8 +371,9 @@ function buildSkillsTable(projects, target){
     return acc
   }, {})
 
-  const lowest = Math.min(...Object.values(result).map(a=>Math.min(...a)))
+  // const lowest = Math.min(...Object.values(result).map(a=>Math.min(...a)))
   const highest = Math.max(...Object.values(result).map(a=>Math.max(...a)))
+  const lowest = highest - 10
 
   const table = createElement('table')
   const thead = createElement('thead', null, table)
