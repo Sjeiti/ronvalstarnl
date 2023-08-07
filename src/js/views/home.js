@@ -9,8 +9,8 @@ import prizesSymbols from '!!raw-loader!../../static/svg/prizes-symbol-defs.svg'
 document.querySelector('#client-symbol-defs')||document.body.insertAdjacentHTML('afterbegin', clientSymbols)
 document.querySelector('#prize-symbol-defs')||document.body.insertAdjacentHTML('afterbegin', prizesSymbols)
 
-const populateSVGList = (ul, names)=>
-  ul.insertAdjacentHTML('beforeend', names.map(s=>`<li><svg><use xlink:href="#${s}"></use></svg></li>`).join(''))
+const populateSVGList = (ul, prefix, names)=>
+  ul.insertAdjacentHTML('beforeend', names.map(s=>`<li><svg aria-label="${s}"><use xlink:href="#${prefix+s}"></use></svg></li>`).join(''))
 
 add(
   ''
@@ -42,7 +42,7 @@ add(
             , 'tribalddb'
           ]
         const elmClients = view.querySelector('.clients')
-        populateSVGList(elmClients, clientNames.map(s=>`client-${s}`))
+        populateSVGList(elmClients, 'client-', clientNames)
         setTimeout(()=>{
             const {children: [{offsetWidth}], style} = elmClients
             elmClients.style.width = `${clientNames.length*offsetWidth}px`
@@ -64,7 +64,7 @@ add(
         view.expandAppend('section.won>(h2.section-title>small{prizes}+{won})+ul.unstyled.svg-list.prizes', false)
         const prizes = ['fwa', 'adcn', 'webby']
         const elmPrizes = view.querySelector('.prizes')
-        populateSVGList(elmPrizes, prizes.map(s=>`prize-${s}`))
+        populateSVGList(elmPrizes, 'prize-', prizes)
         //
         // blog
         const currentPast = stickiesFirst(posts.filter(todayOlderFilter))
