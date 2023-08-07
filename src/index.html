@@ -337,8 +337,8 @@
     <div class="background"></div>
     <div class="experiment-wrapper"></div>
     <div class="experiment-ui">
-      <a href="#" data-save title="Save"><svg data-icon="floppy-disk"></svg></a>
-      <a href="#" data-link title="What is that?"><svg data-icon="expand"></svg></a>
+      <a href="#" data-save title="Save"><svg data-icon="floppy-disk"><title>Save</title></svg></a>
+      <a href="#" data-link title="What is that?" inert><svg data-icon="expand"><title>Expand icon</title></svg></a>
     </div>
     <h1>
       <a href="/">
@@ -355,7 +355,7 @@
       <a href="/contact"><span>contact</span></a>
       <a href="/cv"><span>cv</span></a>
     </nav>
-    <button data-color-scheme><svg data-icon="brightness-contrast"><title>brightness-contrast</title></svg></button>
+    <button data-color-scheme aria-label="toggle darkmode"><svg data-icon="brightness-contrast"><title>brightness-contrast</title></svg></button>
   </header>
   <main>
     <div class="content">
@@ -368,11 +368,11 @@
   <footer>
     <a href="/feed.rss" class="rss">RSS</a>
     <nav class="social">
-      <a href="https://stackoverflow.com/users/695734/sjeiti"><svg data-icon="stack-overflow"><title>Stack Overflow</title></svg></a>
+      <a href="https://stackoverflow.com/users/695734/sjeiti" aria-label="Stack Overflow"><svg data-icon="stack-overflow"><title>Stack Overflow</title></svg></a>
       <!--<a href="https://nl.linkedin.com/in/ron-valstar-4b20a917"><svg data-icon="linkedin"><title>LinkedIn</title></svg></a>-->
       <!--<a href="https://twitter.com/sjeiti"><svg data-icon="twitter"><title>Twitter</title></svg></a>-->
-      <a href="https://github.com/Sjeiti"><svg data-icon="github"><title>Github</title></svg></a>
-      <a href="https://ello.co/sjeiti"><svg data-icon="ello"><title>Ello</title></svg></a>
+      <a href="https://github.com/Sjeiti" aria-label="Github"><svg data-icon="github"><title>Github</title></svg></a>
+      <a href="https://ello.co/sjeiti" aria-label="Ello"><svg data-icon="ello"><title>Ello</title></svg></a>
     </nav>
     <span>&copy; Ron Valstar</span>
     <div data-search="{
