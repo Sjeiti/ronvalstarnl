@@ -139,7 +139,7 @@ function onClickCategory(e){
 
 /**
  * Create Zen selector for a project thumb
- * @param {project} project
+ * @param {Fortpolio} project
  * @return {string}
  */
 export function getProjectThumbZen(project){
@@ -147,6 +147,6 @@ export function getProjectThumbZen(project){
   const liAttr = `[style="background-image:url(${MEDIA_URI_THUMB+project.thumbnail})"]`
   const hasVideo = !!project.thumbnailVideo // && !PROBABLY_MOBILE // don't show video thumbs on mobile ???
   const videoSrc = `[src=${MEDIA_URI_VIDEO+project.thumbnailVideo}]`
-  const video = hasVideo?`+video${videoSrc}[autoplay][loop][muted]>source${videoSrc}[type=video/${ext}]`:''
+  const video = hasVideo?`+video${videoSrc}[autoplay][loop][muted][aria-hidden=true]>source${videoSrc}[type=video/${ext}]`:''
   return `(li${project.categories.map(c=>`.cat-${slugify(c)}`).join('')}${liAttr}>a[href="/project/${project.slug}"]>(div{${project.title}}${video}))`
 }
