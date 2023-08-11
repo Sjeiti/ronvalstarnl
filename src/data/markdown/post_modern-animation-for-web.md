@@ -14,6 +14,7 @@ A while back I needed an animated rolling cloud icon, to indicate an ongoing XML
 Yet now, I could not figure out how to get the same result with SVG.
 
 More recently I had to animate an infographic and add some interaction. A start was already made in Adobe Animate, but the export size was a whopping 2.5MB. So I decided to handcode everything in HTML/CSS for less than 10% of that. Another added benefit is that plain HTML/CSS is accessible (as opposed to th canvas/JavaScript black box export from Adobe Animate).
+To keep the length of this article under control I will not go into detail about HTML/CSS animations but there is a lot of overlap. 
 
 Coding animations might give better quality results, but a good gui, like Animate has, makes it so much easier to create and tweak.
 So what are the current tools with which you can create an animated images?
@@ -104,7 +105,7 @@ It might look complicated, especially SVG paths, but it really is not difficult 
 For the actual animation you can either use native SVG native [`animate`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate) or use CSS.
 
 The simplest solution might be to use CSS because chances are you already know everything you need to know.
-But SVG has capabilities that cannot be replicated with CSS: for instance `animateMotion`, to make an object follow a curve.
+But SVG has capabilities that cannot be replicated with CSS: for instance `animateMotion`, to make an object follow a bezier curve.
 
 Here are three examples with the cloud animationmentioned earlier.
 
@@ -348,5 +349,5 @@ The final size is 2.67 KB.
 
 ## TLDR
 
-If you're well versed in SVG and CSS I'd really recommend just opening your favorite ASCII editor and type or copy/paste it all in. It is not that hard.
+If you're well versed in SVG and CSS I'd really recommend just opening your favorite ASCII editor and type or copy/paste it all in (aided by your an SVG editor). It is not that hard.
 For more complex animations with long timelines it could be useful to make it with SVGator. But it does require you to create the assets in another application, and you really should clean up the resulting animation.

@@ -38,7 +38,7 @@ create('[data-search]', class extends BaseComponent{
     this._append(`
       label${label?'':'.visually-hidden'}[for=${id}][aria-label=search]{${label||'search'}}
       +input#${id}[name=${id} type=search placeholder="${placeholder}"]
-      +button[aria-label=search]>svg[data-icon=search]
+      +button[aria-label=search]>svg[data-icon=search]>title{Search icon}
     `)
     this._input = this._select('input')
     this._input.addEventListener('keyup', this._onKeyUp.bind(this))
