@@ -1,7 +1,7 @@
 <!--
   slug: sympany
   type: fortpolio
-  excerptNl: Vrijwilligerswerk aan het ontwikkelen van een open-source WordPress-plug-in die spreadsheets leest en weergeeft waarmee kan worden ge-interacteerd.
+  excerptNl: Vrijwilligerswerk aan het ontwikkelen van een open-source WordPress-plug-in die spreadsheets leest en weergeeft als blocks. Met de spreadsheet kan worden ge-interacteerd met behoud van berekeningen.
   description: Development of an open source WordPress plugin that reads and displays spreadsheets that can be interacted with.
   categories: JavaScript, HTML/CSS
   tags: JavaScript, HTML, CSS, Wordpress, open source
@@ -14,4 +14,4 @@
 
 # Sympany spreadsheet plugin
 
-Volunteer work developing an open source WordPress plugin that reads and displays spreadsheets that can be interacted with.
+Volunteer work developing an open source WordPress plugin that reads and displays spreadsheets as blocks. The spreadsheets can be interacted with while keeping their calculating functionality.
