@@ -1,7 +1,7 @@
 <!--
   slug: du2020
   type: fortpolio
-  excerpt: Development of the 2020 design-united website that broadcasts the Dutch Design Week live. The site is a React SPA onto a Wordpress REST API and showcases about 40 projects from students of four Dutch universities.
+  excerpt: Development of the 2020 design-united website that broadcasts the Dutch Design Week live. The site is a React SPA onto a Wordpress REST API and showcases about 40 projects from students of four Dutch universities. Custom blocks are used to expose specific data through the REST API.
   description: Development of the 2020 design-united website that broadcasts the Dutch Design Week.
   categories: JavaScript, HTML/CSS, video
   tags: React, Redux, JavaScript, HTML, CSS, SVG, Wordpress
@@ -19,6 +19,6 @@
 
 # Design United 2020 
 
-Every year the Dutch Design Week is held in Eindhoven. And every year [four Dutch universities](https://design-united.nl) collaborate to showcase work under the flag of Design United. 
-The Design Unitedppers](https://shapers.nl) I built [this years exhibition site](https://2020.design-united.nl) where each day of the week would also have a liveshow streamed (due to Covid). The site itself is a React SPA onto a Wordpress REST API.
-
+Every year the Dutch Design Week is held in Eindhoven. And every year [four Dutch universities](https://design-united.nl) collaborate to showcase work under the flag of Design United.
+Together with [Shapers](https://shapers.nl) I built [this years exhibition site](https://2020.design-united.nl) where each day of the week would also have a liveshow streamed (due to Covid). The site itself is a React SPA onto a Wordpress REST API.
+I created custom Gutenberg blocks to expose specific data through the REST API.
