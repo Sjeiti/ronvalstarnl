@@ -40,7 +40,7 @@
 Ik ben een gepassioneerde front-end ontwikkelaar met meer dan twintig jaar ervaring in het ontwikkelen van digitale media.
 
 Mijn formele achtergrond is grafische vormgeving en interactie ontwerp, en streef naar consistentie en netheid in zowel code als ontwerp.
-Ik heb een sterke affiniteit met Test-Driven Development en web toegankelijkheid.
+Ik heb een sterke affiniteit met Test-Driven Development en web toegankelijkheid (WCAG).
 
 Ik kan verschillende backend-talen lezen en schrijven en ben niet bang om iets nieuws te leren.
 
