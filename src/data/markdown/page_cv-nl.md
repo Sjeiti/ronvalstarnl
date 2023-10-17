@@ -24,7 +24,7 @@
 	<li>van Bossestraat 82-3</li>
 	<li>1051 KB Amsterdam</li>
 	<li>06 33697212</li>
-	<li>geboren op 21-04-1974 in Apeldoorn</li>
+	<!--<li>geboren op 21-04-1974 in Apeldoorn</li>-->
 	<li><a href="mailto:ron@ronvalstar.nl">ron@ronvalstar.nl</a></li>
 	<li><a href="http://ronvalstar.nl">http://ronvalstar.nl</a></li>
 	<li><a href="https://github.com/Sjeiti">https://github.com/Sjeiti</a></li>
