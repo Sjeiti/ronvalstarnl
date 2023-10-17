@@ -5,7 +5,7 @@
   excerptNl: Nieuwe implementatie van een bestaande online leertool waarmee docentenen studenten hun voortgang tijdens een cursus kunnen volgen.
 De stack is ge-refactored van AngularJS/Laravel naar React/MongoDB. Veel van de oude handmatige configuratie is nu geautomatiseerd, en er zijn nieuwe functies toegevoegd. Ik ook een aantal flows gewijzigd ter verbetering van de gebruiksvriendelijkheid. De build implementeert een samengevoegde test-coverage van back- tot front-end, van unit- tot end-to-end-tests.
   categories: JavaScript, HTML/CSS, framework, mobile
-  tags: UX, JavaScript, React, REST, NodeJS, MongoDB, Imagekit, Sendgrid, Netlify, Jest, Cypress, Docker
+  tags: UX, Webpack, JavaScript, React, REST, NodeJS, MongoDB, Imagekit, Sendgrid, Netlify, Jest, Cypress, Docker, TSLint, CI/CD
   clients: Shapers
   thumbnail: studyblend-1.png
   thumbnailVideo: testStudyBlend.mp4

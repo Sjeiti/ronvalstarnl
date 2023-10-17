@@ -24,7 +24,7 @@
 	<li>van Bossestraat 82-3</li>
 	<li>1051 KB Amsterdam</li>
 	<li>06 33697212</li>
-	<li>geboren op 21-04-1974 in Apeldoorn</li>
+	<!--<li>geboren op 21-04-1974 in Apeldoorn</li>-->
 	<li><a href="mailto:ron@ronvalstar.nl">ron@ronvalstar.nl</a></li>
 	<li><a href="http://ronvalstar.nl">http://ronvalstar.nl</a></li>
 	<li><a href="https://github.com/Sjeiti">https://github.com/Sjeiti</a></li>
@@ -40,7 +40,7 @@
 Ik ben een gepassioneerde front-end ontwikkelaar met meer dan twintig jaar ervaring in het ontwikkelen van digitale media.
 
 Mijn formele achtergrond is grafische vormgeving en interactie ontwerp, en streef naar consistentie en netheid in zowel code als ontwerp.
-Ik heb een sterke affiniteit met Test-Driven Development en web toegankelijkheid.
+Ik heb een sterke affiniteit met Test-Driven Development en web toegankelijkheid (WCAG).
 
 Ik kan verschillende backend-talen lezen en schrijven en ben niet bang om iets nieuws te leren.
 

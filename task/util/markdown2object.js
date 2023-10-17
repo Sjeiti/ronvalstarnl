@@ -2,6 +2,7 @@ const {marked} = require('marked')
 
 const arrayKeys = ['tags', 'categories', 'collaboration', 'clients', 'prizes', 'images']
 const booleanKeys = ['inCv', 'inPortfolio', 'sticky']
+const markdownKeys = ['excerpt', 'excerptNl']
 
 /**
  * Convert markdown string data to an object literal with meta data
@@ -25,7 +26,7 @@ function markdown2object(contents){
     const [, key, value] = line?.match(/^\s\s(\w+):\s*([\s\S]*)\s*$/)
     if (arrayKeys.includes(key)) acc[key] = value.split(/,\s*/).filter(o=>o)
     else if (booleanKeys.includes(key)) acc[key] = value.trim()==='true'
-    else if (value.includes('\n')) acc[key] = marked(value)
+    else if (markdownKeys.includes(key)||value.includes('\n')) acc[key] = marked(value)
     else acc[key] = value
     return acc
   }, {})
