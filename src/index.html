@@ -369,10 +369,8 @@
     <a href="/feed.rss" class="rss">RSS</a>
     <nav class="social">
       <a href="https://stackoverflow.com/users/695734/sjeiti" aria-label="Stack Overflow"><svg data-icon="stack-overflow"><title>Stack Overflow</title></svg></a>
-      <!--<a href="https://nl.linkedin.com/in/ron-valstar-4b20a917"><svg data-icon="linkedin"><title>LinkedIn</title></svg></a>-->
-      <!--<a href="https://twitter.com/sjeiti"><svg data-icon="twitter"><title>Twitter</title></svg></a>-->
+      <a href="https://nl.linkedin.com/in/ron-valstar-4b20a917"><svg data-icon="linkedin"><title>LinkedIn</title></svg></a>
       <a href="https://github.com/Sjeiti" aria-label="Github"><svg data-icon="github"><title>Github</title></svg></a>
-      <a href="https://ello.co/sjeiti" aria-label="Ello"><svg data-icon="ello"><title>Ello</title></svg></a>
     </nav>
     <span>&copy; Ron Valstar</span>
     <div data-search="{
@@ -428,13 +426,6 @@
     }
     
     // https://www.w3.org/TR/mediaqueries-5/#mf-user-preferences
-    /*function findPrefers(key, value) {
-      ;(
-          localStorage.getItem(key)
-          ||window.matchMedia(`(prefers-${key}: ${value})`).matches&&value
-      )===value
-      &&document.documentElement.classList.add(`${key}-${value}`)
-    }*/
     function findPrefers(key, values) {
       const storedValue = localStorage.getItem(key)
       return (Array.isArray(values)?values:[values])
