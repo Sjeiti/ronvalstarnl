@@ -15,7 +15,7 @@
 
 <small class="pull-right" data-download>
     downloaden als 
-    <a href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1569508867/rv/Curiculum-Vitae_Ron-Valstar_front-end-developer.pdf" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.pdf">pdf</a>,
+    <a href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1569508867/rv/Curiculum-Vitae_Ron-Valstar_front-end-developer_nl.pdf" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.pdf">pdf</a>,
     <a data-download-word href="Curiculum-Vitae_Ron-Valstar_front-end-developer.docx" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.docx">docx</a>
     of <a data-download-txt href="Curiculum-Vitae_Ron-Valstar_front-end-developer.md" download="Curiculum-Vitae_Ron-Valstar_front-end-developer.txt">txt</a>
 </small>
