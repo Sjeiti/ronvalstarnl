@@ -275,6 +275,10 @@ create('[data-header]', class extends BaseComponent{
     const tempImg = document.createElement('img')
 
     tempImg.addEventListener('load', this._onLoadTempImg.bind(this, canvas, context), true)
+    tempImg.addEventListener('error', (error)=>{
+      console.log('image save error', error)
+      console.log('\tcontentString', contentString)
+    })
     tempImg.src = 'data:image/svg+xml,' + encodeURIComponent(SVGstring)
   }
 
