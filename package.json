@@ -44,6 +44,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
+    "@babel/eslint-parser": "^7.23.10",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/plugin-proposal-function-bind": "^7.12.13",
     "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
@@ -52,7 +53,6 @@
     "@babel/plugin-syntax-import-meta": "^7.10.4",
     "@babel/preset-env": "^7.12.13",
     "adm-zip-cli": "^1.0.0",
-    "babel-eslint": "^9.0.0",
     "babel-loader": "^8.2.2",
     "babel-preset-babili": "0.0.12",
     "babel-preset-minify": "^0.5.1",
