@@ -13,16 +13,16 @@
 A while back I needed an animated rolling cloud icon, to indicate an ongoing XMLHTTPRequest. Fifteen years ago a vector animation like that would have been trivial: with Flash you'd just motion tween some circles along a bezier-curve, create a symbol from that animation to duplicate and offset in time, et voilà.
 Yet now, I could not figure out how to get the same result with SVG.
 
-More recently I had to animate an infographic and add some interaction. A start was already made in Adobe Animate, but the export size was a whopping 2.5MB. So I decided to handcode everything in HTML/CSS for less than 10% of that. Another added benefit is that plain HTML/CSS is accessible (as opposed to th canvas/JavaScript black box export from Adobe Animate).
-To keep the length of this article under control I will not go into detail about HTML/CSS animations but there is a lot of overlap. 
+More recently I had to animate an infographic and add some interaction. A start was already made in Adobe Animate, but the export size was a whopping 2.5MB. So I decided to handcode everything in HTML/CSS for less than 10% of that. Plain HTML/CSS is also accessible as opposed to the canvas/JavaScript black box export from Adobe Animate.
+For brevity I will not go into detail about HTML/CSS animations but there is a lot of overlap. 
 
-Coding animations might give better quality results, but a good gui, like Animate has, makes it so much easier to create and tweak.
-So what are the current tools with which you can create an animated images?
+Coding animations might give better quality results, but a good gui, like Animate has, makes it so much easier to create and tweak movement.
+So what are the current tools with which to create animated images for web?
 
 ### Not Adobe Animate
 
-[Adobe Animate](https://www.adobe.com/products/animate.html) is what once was Flash. Somewhere end last century Macromedia brought vector graphics to the masses in the form of [Flash](https://en.m.wikipedia.org/wiki/Adobe_Flash). This was [before SVG](https://en.m.wikipedia.org/wiki/SVG) even existed. The Flash format was not only very small, the timeline keyframe editor was very easy to work with.
-They must have rebranded it because [somebody gave it a bad name](https://en.m.wikipedia.org/wiki/Thoughts_on_Flash). But strangely it does not export to SVG. The result is a canvas element with a lot of JavaScript. A major disappointment especially considering a major obstacle in the heydays of Flash was accessibility and SEO. One would think this issue would be solved for HTML5 exports.
+[Adobe Animate](https://www.adobe.com/products/animate.html) is what once was Flash. Somewhere end last century Macromedia brought vector graphics to the masses in the form of [Flash](https://en.m.wikipedia.org/wiki/Adobe_Flash) (originally FutureSplash Animator). This was [before SVG](https://en.m.wikipedia.org/wiki/SVG) even existed. The Flash format was not only very small, the timeline keyframe editor was very easy to work with.
+Adobe must have rebranded it because [somebody gave it a bad name](https://en.m.wikipedia.org/wiki/Thoughts_on_Flash). But strangely it does not export to SVG. The result is a canvas element with a lot of JavaScript. A major disappointment especially considering a major obstacle in the heydays of Flash was accessibility and SEO. One would think this issue would be solved for HTML5 exports.
 
 <!--
 There is a possibility to export to animated SVG using a plugin called [Flash2Svg](https://github.com/TomByrne/Flash2Svg), but it is for Flash, not Animate.
@@ -31,20 +31,13 @@ There are also traces of a plugin for Flash CC called [Snap.svg Animator](http:/
 
 ### SVGator
 
-[SVGator](https://app.svgator.com) is a good option, although it is not as easy to use as Adobe Animate (and only two dollars cheaper). It is an online web application. You can try it out, although the 14-day trial leaves to be desired because it doesn't unlock all the features.
+One option for creating web animations is [SVGator](https://app.svgator.com); not as easy to use as Adobe Animate, but it is two dollars cheaper and exports SVG. It is an online web application. You can try it out, although the 14-day trial leaves to be desired because it doesn't unlock all the features.
 
 You cannot draw things, so you have to start your SVG creation in something like Illustrator or Inkscape and import it.
 
 The user interface really lacks in UX. This makes animating itself rather unintuitive. It has some bugs among which non-working keyboard shortcuts.
 
-<!--
-The user interface really lacks in UX. For instance the button that collapse the animation row is the size of the tiny icon. And a lot of icon buttons lack the title attribute, so you have to guess at their functionality.
-This makes animating itself rather unintuitive. It's also a pity that animation is divided into properties: you cannot simply transform an element, you have to scale, rotate and translate separately.
-There is an annoying bug where the interface can flip into a state where it cannot drag-select items anymore (because of a JS error blocking execution).
-It has keyboard shortcuts, but they don't always work. But maybe that is because they assume Apple users.
--->
-
-The resulting animations also don't run without JavaScript enabled. Each SVG export comes with a minimum of 30KB JavaScript (but there are examples that have as much as 80KB).
+The resulting animations don't run without JavaScript. Each SVG export comes with a minimum of 30KB JavaScript (but there are examples that have as much as 80KB).
 
 Strangely the resulting output is not optimised for web. My imported SVG had digits with an accuracy of one floating point (ie 231.3). But SVGator turns all those into six, and in most cases with five trailing zeroes (ie 231.300000). Which is really accurate, but when I ran my simple animation through an optimiser I got more than 50% reduction in filesize.
 
@@ -57,6 +50,8 @@ So SVGator isn't ideal, but I guess you could get used to these things.
 It started with the AfterEffects plugin [Bodymovin](https://exchange.adobe.com/apps/cc/12557/bodymovin) along with a JavaScript player for use in websites. This was in 2015 but the official dotLottie format was standardised in 2020.
 
 Since Lottie is not officially recognized by the W3C you will need JavaScript to run it.
+
+My only issue with Lottie is lack of editors. There are a lot of free animations but they often have a very recognisable style: fat limbs small head.
 
 #### Lottiefiles
 
@@ -99,7 +94,7 @@ Then there are a variety of small tools that might help a very specific use case
 
 ### Do it by hand with SVG (and CSS)
 
-The alternative is to code it yourself. You don't need JavaScript an browsers simply support it.
+The alternative is to code it yourself. You don't need JavaScript and browsers simply support it.
 It might look complicated, especially SVG paths, but it really is not difficult when somebody like [Nanda Syahrasyad explains it](https://www.nan.fyi/svg-paths).
 
 For the actual animation you can either use native SVG native [`animate`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate) or use CSS.
@@ -107,13 +102,13 @@ For the actual animation you can either use native SVG native [`animate`](https:
 The simplest solution might be to use CSS because chances are you already know everything you need to know.
 But SVG has capabilities that cannot be replicated with CSS: for instance `animateMotion`, to make an object follow a bezier curve.
 
-Here are three examples with the cloud animationmentioned earlier.
+Here are three examples with the cloud animation mentioned earlier.
 
 #### Flash export
 
 When I found Adobe Animate could not export to SVG my initial solution was to create keyframes for the entire bezier animation. This meant all keyframes were exported in one go, I just had to toggle their visibility.
 
-It looks somewhat choppy but fine for a small icon.
+It looks somewhat choppy, but fine for a small icon.
 The final size is 2.97 KB.
 
 ```html
@@ -262,7 +257,7 @@ The final size is 2.61 KB.
 There is another way to animate SVG called [SMIL](https://www.w3.org/TR/SMIL3/). The specification stems from 1998 and covers more than just SVG animations (for reference: SVG is from 1999).
 The possibilities of SMIL extend beyond what can be done with mere CSS. If you like to know more here is [an extensive article by Sarah Soueidan](https://css-tricks.com/guide-svg-animations-smil/), and here is [a Stackoverflow answer with good examples](https://stackoverflow.com/a/64558513/695734).
 For the clouds animation I made use of an awesome feature, namely `animateMotion[calcMode="spline"]` which lets you move elements along a bezier-curve.
-One downside of SMIL is that you cannot an animation (as in `defs`) and only overwrite a property. As you can see here, all animations are exactly the same except for the `begin` attribute. So that results in a lot of repetitive code. But to be honest: for both the SMIL and the CSS example I generated the repetitive parts with JavaScript and used the output.
+One downside of SMIL is that you cannot reuse an animation (as in `defs`) and only overwrite a property. As you can see here, all animations are exactly the same except for the `begin` attribute. So that results in a lot of repetitive code. But to be honest: for both the SMIL and the CSS example I generated the repetitive parts with JavaScript and used the output.
 
 The final size is 2.67 KB.
  
@@ -349,5 +344,5 @@ The final size is 2.67 KB.
 
 ## TLDR
 
-If you're well versed in SVG and CSS I'd really recommend just opening your favorite ASCII editor and type or copy/paste it all in (aided by your an SVG editor). It is not that hard.
+If you're well versed in SVG and CSS I'd really recommend just opening your favorite ASCII editor and type or copy/paste it all in (with the help of a vector editor). It is not that hard.
 For more complex animations with long timelines it could be useful to make it with SVGator. But it does require you to create the assets in another application, and you really should clean up the resulting animation.
