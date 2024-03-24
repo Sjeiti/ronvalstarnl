@@ -61,14 +61,22 @@ function getBlogHeading(post){
  * @return {string}
  */
 function getRelatedLinks(post, posts, fortpolios){
+
   let returnvalue = ''
   const {slug, related} = post
+
+
   if (related){
     const relatedDocs = related.split(/\s/g)
           .map(slug=> {
             const slog = slug.replace(/^project\//, '')
-            return posts.find(p => p.slug===slug) || fortpolios.find(p => p.slug===slug || p.slug===slog)
+            const regex = new RegExp(slug.replace('*','.*'))
+            return [
+                ...posts.filter(p => p.slug===slug || regex.test(p.slug))
+              , fortpolios.find(p => p.slug===slug || p.slug===slog)
+            ]
           })
+          .reduce((acc, docs)=>(acc.push(...docs),acc), [])
           .filter(p=>p&&p.slug!==slug)
     relatedDocs.length>5&&relatedDocs.sort(()=>Math.random()<0.5?-1:1).splice(5, 1E9)
     const relatedLi = relatedDocs

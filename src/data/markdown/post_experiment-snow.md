@@ -5,7 +5,7 @@
   type: post
   tags: Perlin Noise, cool shit, experiment, particles
   description: A simple implementation of procedural particle scattering: an infinite field of snow falling upward.
-  related: experiment-bezier experiment-blob experiment-boids experiment-clouds experiment-ff experiment-fire experiment-flowfield experiment-glass experiment-grid experiment-heart experiment-marbles experiment-plasma experiment-radialdifference experiment-snow experiment-spiralmap experiment-starzoom experiment-touches experiment-vertical experiment-voronoi
+  related: experiment-*
 -->
 
 # Experiment: snow

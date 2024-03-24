@@ -6,7 +6,7 @@
   categories: code, JavaScript
   tags: JavaScript, cool shit, particles
   description: Another pretty simple idea with a really cool result. These are radial gradients drawn on top of each other with a 'difference' blend mode.
-  related: experiment-bezier experiment-blob experiment-boids experiment-clouds experiment-ff experiment-fire experiment-flowfield experiment-glass experiment-grid experiment-heart experiment-marbles experiment-plasma experiment-radialdifference experiment-snow experiment-spiralmap experiment-starzoom experiment-touches experiment-vertical experiment-voronoi
+  related: experiment-*
 -->
 
 # Experiment: difference with radial gradients in canvas
