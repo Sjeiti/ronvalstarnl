@@ -1,10 +1,10 @@
 <!--
   date: 2024-03-23
   modified: 2024-03-23
-  slug: no-random-in-css
+  slug: random-in-css
   type: post
-  header: manas-taneja-Mse8VazeO-c-unsplash.jpg
-  headerColofon: photo by [Manas Tajena](https://unsplash.com/@manastaneja)
+  header: justin-lauria-Ap0alm8xpxw-unsplash.jpg
+  headerColofon: photo by [Justin Lauria](https://unsplash.com/@justinlauria)
   headerClassName: no-blur darken
   categories: code
   tags: cool shit, prng
@@ -12,13 +12,13 @@
   related: experiment-ladybugs
 -->
 
-# No random in CSS
+# Random in CSS
 
 CSS has functions; you can calculate values. Apart from basic adding, subtracting, đividing and multiplying, you can also use `max`, `min` and even do trigonomic calculations with `sin` and `cos`.
 
 This can be very useful for use in conjunction with CSS properties. You can, for instance, apply a `transform: rotate(var(--degrees));`, and split those degrees in x- and y-offsets using `sin(calc(var(--degrees)/180*pi))`.
 
-I've made a small example with these cute little ladybugs, because I detest aphids and their filthy ability to reproduce asexually.
+I've made a small example with [these cute little ladybugs](/experiment-ladybugs), because I detest aphids and their filthy ability to reproduce asexually.
 The ladybug is a single element that is rotated by a `--degrees` property. The coloring is a background with layered radial gradients, where the highlight and shadow are moves by calculating the offset from that `--degrees` property. The box-shadow uses the same x- and y-offsets.
 
 ```CSS
@@ -187,8 +187,8 @@ div {
   .random {background:linear-gradient(90deg, var(--color) 0 var(--randpc),transparent var(--randpc) 100%);}
 </style>
 
-<label>index <span></span><input type="range" max="1000" class="seed" /></label>
-<label>multiplier <span></span><input type="range" max="10000000" class="multiplier" /></label>
+<label>index <span></span><input type="range" value="40" max="1000" class="seed" /></label>
+<label>multiplier <span></span><input type="range" value="9999973" max="10000000" class="multiplier" /></label>
 
 <script>
 const {body} = document
@@ -202,7 +202,7 @@ document.addEventListener('input', e=>{
       ||target===inputMult&&'--rndMult'
       ||''
   body.style.setProperty(prop, value)
-  target.parentNode.querySelector('span').innerText = value
+  target.parentNode&&(target.parentNode.querySelector('span').innerText = value)
 })
 document.dispatchEvent(new CustomEvent('input'))
 
@@ -331,5 +331,6 @@ I've used this technique for positioning the dots on the ladybugs, and for colou
 </script>
 ```
 
-So randomness in pure CSS is possible but it requires quite some boilerplate. The values also tend to regularity quite fast, but it is good enough to create simple variation.
-All we have to do now is wait for Chrome to implement the CSS `mod` function, and hope Firefox increases the number size.
+So randomness in pure CSS is possible, but it requires quite some boilerplate. The values also tend to regularity quite fast, but it is good enough to create simple variation.
+All we have to do now is wait for Chrome to implement the CSS `mod` function, and hope Firefox increases the number size, so we can implement LCG PRNG's.
+But to be honest, it's way easier to just use JavaScript.
