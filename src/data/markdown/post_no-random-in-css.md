@@ -1,12 +1,15 @@
 <!--
   date: 2024-03-23
   modified: 2024-03-23
-  slug: experiment-ladybugs
+  slug: no-random-in-css
   type: post
+  header: manas-taneja-Mse8VazeO-c-unsplash.jpg
+  headerColofon: photo by [Manas Tajena](https://unsplash.com/@manastaneja)
+  headerClassName: no-blur darken
   categories: code
   tags: cool shit, prng
   description: 
-  related: experiment-
+  related: experiment-ladybugs
 -->
 
 # No random in CSS
@@ -35,7 +38,7 @@ div {
   --percY: calc(sin(var(--rdns))*-1%);
 }
 ```
-
+ 
 ```html
 <!--example-->
 <style>
@@ -79,32 +82,29 @@ div {
         linear-gradient(-30deg, transparent 0% 49%, #000 49% 51%, transparent 51% 100%)
       ;
     }
-                &:after {
-                        content: '';
-                        display: block;
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 50% 50% 60% 60%;
-            background-color: var(--color);
-                        background-image:
-                                radial-gradient(ellipse at calc(50% - 20*var(--percX)) calc(50% - 20*var(--percY)), #FFFA 0%, transparent 30%),
-                                radial-gradient(circle at 80% 5%, #FFF 0 8%, transparent 8%),
-                                radial-gradient(circle at 20% 5%, #FFF 0 8%, transparent 8%),
-                                radial-gradient(circle at 50% -10%, #000 0% 35%, transparent 35%),
-                                radial-gradient(circle at 20% 50%, #000 0 10%, transparent 12%),
-                                radial-gradient(circle at 80% 50%, #000 0 10%, transparent 12%),
-                                radial-gradient(circle at 35% 80%, #000 0 7%, transparent 9%),
-                                radial-gradient(circle at 65% 80%, #000 0 7%, transparent 9%),
-                                linear-gradient(90deg, transparent 0% 48%, #0008 48% 52%, transparent 52% 100%)
-                  ;
-                        box-shadow:
-                                calc(0.4*var(--remX)) calc(0.4*var(--remY)) 0.5rem #FFF3 inset,
-                                calc(-0.4*var(--remX)) calc(-0.4*var(--remY)) 0.4rem #0008 inset,
-                                calc(0.4*var(--remX)) calc(0.4*var(--remY)) 0.1rem #0005
-                  ;
-      transition: background-color calc(2.7*var(--animT)) linear;
-                }
+    
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50% 50% 60% 60%;
+      background-color: var(--color);
+      background-image: radial-gradient(ellipse at calc(50% - 20 * var(--percX)) calc(50% - 20 * var(--percY)), #FFFA 0%, transparent 30%),
+          radial-gradient(circle at 80% 5%, #FFF 0 8%, transparent 8%),
+          radial-gradient(circle at 20% 5%, #FFF 0 8%, transparent 8%),
+          radial-gradient(circle at 50% -10%, #000 0% 35%, transparent 35%),
+          radial-gradient(circle at 20% 50%, #000 0 10%, transparent 12%),
+          radial-gradient(circle at 80% 50%, #000 0 10%, transparent 12%),
+          radial-gradient(circle at 35% 80%, #000 0 7%, transparent 9%),
+          radial-gradient(circle at 65% 80%, #000 0 7%, transparent 9%),
+          linear-gradient(90deg, transparent 0% 48%, #0008 48% 52%, transparent 52% 100%);
+      box-shadow: calc(0.4 * var(--remX)) calc(0.4 * var(--remY)) 0.5rem #FFF3 inset,
+          calc(-0.4 * var(--remX)) calc(-0.4 * var(--remY)) 0.4rem #0008 inset,
+          calc(0.4 * var(--remX)) calc(0.4 * var(--remY)) 0.1rem #0005;
+      transition: background-color calc(2.7 * var(--animT)) linear;
+    }
   }
 </style>
 
@@ -120,8 +120,6 @@ div {
     const ladybug = document.querySelector('.ladybug')
     const step = 60
     const num = w*h/3E3<<0
-
-    console.log('hatching', num, 'ladybugs') // todo: remove log
 
     input.addEventListener('input', e=>{
       const value = e.currentTarget.value
@@ -162,7 +160,9 @@ div {
     margin: 0;
     padding: 0;
   }
-  html {box-sizing: border-box;}                  *, *:before, *:after {box-sizing: inherit;}
+  
+  html {box-sizing: border-box;}
+  *, *:before, *:after {box-sizing: inherit;}
 
   :root {
     --range: 0;
@@ -171,7 +171,7 @@ div {
     --rndMult: 6247;
   }
 
-  input {width:100%;}
+  input {width:95%;}
 
   div {
     --px: calc(1px*var(--range));
@@ -192,8 +192,6 @@ div {
 
 <script>
 const {body} = document
-const w = document.documentElement.clientWidth // todo update onresize
-const h = document.documentElement.clientHeight
 
 const inputSeed = document.querySelector('.seed')
 const inputMult = document.querySelector('.multiplier')
@@ -203,12 +201,10 @@ document.addEventListener('input', e=>{
   const prop = target===inputSeed&&'--range'
       ||target===inputMult&&'--rndMult'
       ||''
-  // console.log('setProperty', prop, value) // todo: remove log
   body.style.setProperty(prop, value)
   target.parentNode.querySelector('span').innerText = value
 })
 document.dispatchEvent(new CustomEvent('input'))
-// Array.from(document.querySelectorAll('.random')).forEach((div,i)=>div.setProperty('--index', i))
 
 Array.from(new Array(80)).forEach((o,i)=>{
   const div = document.createElement('div')
@@ -239,7 +235,7 @@ I've used this technique for positioning the dots on the ladybugs, and for colou
     --rndMult: 9999973;
     --index: 111111;
   }
-  input{width:100%;}
+  input{width:95%;}
   .ladybug {
     --rdns: calc(var(--radians) + var(--lightRadians));
     --remX: calc(cos(var(--rdns))*1rem);
@@ -266,12 +262,10 @@ I've used this technique for positioning the dots on the ladybugs, and for colou
     --seed5: calc((6 + var(--index))*var(--rndMult));
     --rand5: calc(0.5 + 0.5*sin(var(--seed5)));
 
-/*
-    --color: hsl(${10+30*(Math.random()-0.5)<<0}, ${100-20*Math.random()}%, ${40+20*(Math.random()-0.5)<<0}%)`
-    --color: #e82;
-*/
-    --color: hsl(10 90% 50%);
-    --color: hsl(calc(10 + 30 * var(--rand4)) 90% calc(40% + 20% * var(--rand5)));
+    --seed6: calc((7 + var(--index))*var(--rndMult));
+    --rand6: calc(0.5 + 0.5*sin(var(--seed6)));
+    
+    --color: hsl(calc(20 * var(--rand4)) calc(100% - 40% * var(--rand5)) calc(35% + 15% * var(--rand6)));
 
     position: absolute;
     width: 1.4rem;
@@ -292,54 +286,50 @@ I've used this technique for positioning the dots on the ladybugs, and for colou
         linear-gradient(-30deg, transparent 0% 49%, #000 49% 51%, transparent 51% 100%)
       ;
     }
-                &:after {
-                        content: '';
-                        display: block;
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 50% 50% 60% 60%;
-            background-color: var(--color);
-                        background-image:
-                                radial-gradient(ellipse at calc(50% - 20*var(--percX)) calc(50% - 20*var(--percY)), #FFFA 0%, transparent 30%),
-                                radial-gradient(circle at 80% 5%, #FFF 0 8%, transparent 8%),
-                                radial-gradient(circle at 20% 5%, #FFF 0 8%, transparent 8%),
-                                radial-gradient(circle at 50% -10%, #000 0% 35%, transparent 35%),
-                                radial-gradient(circle at calc(50% + 35%*var(--rand0)) calc(30% + 30%*var(--rand2)), #000 0 10%, transparent 12%),
-                                radial-gradient(circle at calc(50% - 35%*var(--rand0)) calc(30% + 30%*var(--rand2)), #000 0 10%, transparent 12%),
-                                radial-gradient(circle at calc(50% + 30%*var(--rand1)) calc(60% + 30%*var(--rand3)), #000 0 7%, transparent 9%),
-                                radial-gradient(circle at calc(50% - 30%*var(--rand1)) calc(60% + 30%*var(--rand3)), #000 0 7%, transparent 9%),
-                                linear-gradient(90deg, transparent 0% 48%, #0008 48% 52%, transparent 52% 100%)
-                  ;
-                        box-shadow:
-                                calc(0.4*var(--remX)) calc(0.4*var(--remY)) 0.5rem #FFF3 inset,
-                                calc(-0.4*var(--remX)) calc(-0.4*var(--remY)) 0.4rem #0008 inset,
-                                calc(0.4*var(--remX)) calc(0.4*var(--remY)) 0.1rem #0005
-                  ;
-                }
+    
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50% 50% 60% 60%;
+      background-color: var(--color);
+      background-image: radial-gradient(ellipse at calc(50% - 20 * var(--percX)) calc(50% - 20 * var(--percY)), #FFFA 0%, transparent 30%),
+          radial-gradient(circle at 80% 5%, #FFF 0 8%, transparent 8%),
+          radial-gradient(circle at 20% 5%, #FFF 0 8%, transparent 8%),
+          radial-gradient(circle at 50% -10%, #000 0% 35%, transparent 35%),
+          radial-gradient(circle at calc(50% + 35% * var(--rand0)) calc(30% + 30% * var(--rand2)), #000 0 10%, transparent 12%),
+          radial-gradient(circle at calc(50% - 35% * var(--rand0)) calc(30% + 30% * var(--rand2)), #000 0 10%, transparent 12%),
+          radial-gradient(circle at calc(50% + 30% * var(--rand1)) calc(60% + 30% * var(--rand3)), #000 0 7%, transparent 9%),
+          radial-gradient(circle at calc(50% - 30% * var(--rand1)) calc(60% + 30% * var(--rand3)), #000 0 7%, transparent 9%),
+          linear-gradient(90deg, transparent 0% 48%, #0008 48% 52%, transparent 52% 100%);
+      box-shadow: calc(0.4 * var(--remX)) calc(0.4 * var(--remY)) 0.5rem #FFF3 inset,
+          calc(-0.4 * var(--remX)) calc(-0.4 * var(--remY)) 0.4rem #0008 inset,
+          calc(0.4 * var(--remX)) calc(0.4 * var(--remY)) 0.1rem #0005;
+    }
   }
 </style>
 
 <div>
-  <div class="ladybug" style="left: 50%;top:50%;scale:4;--radians:0.5;z-index: 1;"></div>
+  <div class="ladybug" style="left: 20%;top:50%;scale:4;--radians:0.5;--index: 1;"></div>
+  <div class="ladybug" style="left: 40%;top:50%;scale:4;--radians:0.5;--index: 31;"></div>
+  <div class="ladybug" style="left: 60%;top:50%;scale:4;--radians:0.5;--index: 55;"></div>
+  <div class="ladybug" style="left: 80%;top:50%;scale:4;--radians:0.5;--index: 77;"></div>
   <input type="range" max="1000"/>
 </div>
 
 <script>
-    const w = document.documentElement.clientWidth // todo update onresize
-    const h = document.documentElement.clientHeight
     const input = document.querySelector('input')
-    const ladybug = document.querySelector('.ladybug')
-    const step = 60
-    const num = w*h/3E3<<0
-
-    console.log('hatching', num, 'ladybugs') // todo: remove log
-
+    const ladybugs = document.querySelectorAll('.ladybug')
     input.addEventListener('input', e=>{
       const value = e.currentTarget.value
-      ladybug.style.setProperty('--index', value/50*Math.PI)
+      ladybugs.forEach((ladybug,i)=>{
+        ladybug.style.setProperty('--index', value/4*(i+1))
+      })
     })
 </script>
 ```
 
-So 
+So randomness in pure CSS is possible but it requires quite some boilerplate. The values also tend to regularity quite fast, but it is good enough to create simple variation.
+All we have to do now is wait for Chrome to implement the CSS `mod` function, and hope Firefox increases the number size.
