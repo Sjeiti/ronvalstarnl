@@ -6,7 +6,7 @@
   categories: code, JavaScript
   tags: JavaScript, cool shit, gradient
   description: A single background with repeating gradients exhibit moire interference patterns and glitches.
-  related: search/experiment experiment-radialgradient experiment-blob experiment-boids experiment-clouds experiment-ff experiment-fire experiment-flowfield experiment-glass experiment-grid experiment-heart experiment-marbles experiment-plasma experiment-radialdifference experiment-snow experiment-spiralmap experiment-starzoom experiment-touches experiment-vertical experiment-voronoi
+  related: experiment-*
 -->
 
 # Moire and glitches
