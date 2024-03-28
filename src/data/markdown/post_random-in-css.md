@@ -16,9 +16,9 @@
 
 CSS has functions; you can calculate values. Apart from basic adding, subtracting, đividing and multiplying, you can also use `max`, `min` and even do trigonomic calculations with `sin` and `cos`.
 
-This can be very useful for use in conjunction with CSS properties. You can, for instance, apply a `transform: rotate(var(--degrees));`, and split those degrees in x- and y-offsets using `sin(calc(var(--degrees)/180*pi))`.
+This can be very useful for use in conjunction with CSS properties. You can, for instance, apply a `transform: rotate(var(--degrees));`, and split those degrees in x- and y-offsets using `sin(calc(var(--degrees)/180*pi))`. 
 
-I've made a small example with [these cute little ladybugs](/experiment-ladybugs), because I detest aphids and their filthy ability to reproduce asexually.
+I've mde a small example with [these cute little ladybugs](/experiment-ladybugs), because I detest aphids and their filthy ability to reproduce asexually.
 The ladybug is a single element that is rotated by a `--degrees` property. The coloring is a background with layered radial gradients, where the highlight and shadow are moves by calculating the offset from that `--degrees` property. The box-shadow uses the same x- and y-offsets.
 
 ```CSS
@@ -265,7 +265,7 @@ I've used this technique for positioning the dots on the ladybugs, and for colou
     --seed6: calc((7 + var(--index))*var(--rndMult));
     --rand6: calc(0.5 + 0.5*sin(var(--seed6)));
     
-    --color: hsl(calc(20 * var(--rand4)) calc(100% - 40% * var(--rand5)) calc(35% + 15% * var(--rand6)));
+    --color: hsl(calc(20 * var(--rand4)) calc(100% - 20% * var(--rand5)) calc(35% + 15% * var(--rand6)));
 
     position: absolute;
     width: 1.4rem;
@@ -312,10 +312,10 @@ I've used this technique for positioning the dots on the ladybugs, and for colou
 </style>
 
 <div>
-  <div class="ladybug" style="left: 20%;top:50%;scale:4;--radians:0.5;--index: 1;"></div>
-  <div class="ladybug" style="left: 40%;top:50%;scale:4;--radians:0.5;--index: 31;"></div>
-  <div class="ladybug" style="left: 60%;top:50%;scale:4;--radians:0.5;--index: 55;"></div>
-  <div class="ladybug" style="left: 80%;top:50%;scale:4;--radians:0.5;--index: 77;"></div>
+  <div class="ladybug" style="left: 20%;top:50%;scale:2;--radians:0.5;--index: 1;"></div>
+  <div class="ladybug" style="left: 40%;top:50%;scale:2;--radians:0.5;--index: 31;"></div>
+  <div class="ladybug" style="left: 60%;top:50%;scale:2;--radians:0.5;--index: 55;"></div>
+  <div class="ladybug" style="left: 80%;top:50%;scale:2;--radians:0.5;--index: 77;"></div>
   <input type="range" max="1000"/>
 </div>
 
