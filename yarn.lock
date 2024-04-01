@@ -3001,8 +3001,8 @@ expand-template@^2.0.3:
   integrity sha512-XYfuKMvj4O35f/pOXLObndIRvyQ+/+6AhODh+OKWj9S9498pHHn/IMszH+gt0fBCRWMNfk1ZSp5x3AifmnI2vg==
 
 "experiments@github:Sjeiti/experiment":
-  version "1.1.31"
-  resolved "https://codeload.github.com/Sjeiti/experiment/tar.gz/ff1938d01f9ec9f9b96a5e6cfd5d7f25bdbb2eac"
+  version "1.1.40"
+  resolved "https://codeload.github.com/Sjeiti/experiment/tar.gz/b0281d7f580af26c84f4eb0938faa10472f8ecf0"
   dependencies:
     "@emmetio/expand-abbreviation" "^0.7.3"
     gsap "^3.6.0"
