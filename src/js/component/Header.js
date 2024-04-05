@@ -251,9 +251,16 @@ create('[data-header]', class extends BaseComponent{
     canvas.width = w
     canvas.height = h
 
-    const clone = elm.cloneNode(true)
+    const iframe = elm.querySelector('iframe')
+
+    const clone = (iframe?.contentDocument.body||elm).cloneNode(true)
     clone.querySelectorAll('form,input,a').forEach(elm=>elm.remove())
-    const contentString = clone.outerHTML.replace(/\n/g, '')
+
+    const xhtml = new XMLSerializer().serializeToString(clone)
+
+    const contentString = xhtml
+        .replace(/\n|\r/g, '')
+        .replace(/\s{2}/g, ' ')
 
     const SVGstring = `<svg
         xmlns="http://www.w3.org/2000/svg"

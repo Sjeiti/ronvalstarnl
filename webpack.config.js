@@ -40,6 +40,9 @@ module.exports = env => {
             }
         }]
       }, {
+        test: /\.(html)/
+        ,loader: 'html-loader'
+      },{
         test: /\.(mp3|mp4)$/
         , use: [{
             loader: 'file-loader'
