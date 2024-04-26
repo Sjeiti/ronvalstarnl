@@ -1,14 +1,15 @@
 <!--
   slug: modern-animation-for-web
-  date: 9999-04-30
-  modified: 9999-04-30
+  date: 2024-04-26
+  modified: 2024-04-26
   type: post
-  header: boxbox.jpg
+  header: julian-mora-v490AlsqbTs-unsplash.jpg
+  headerColofon: photo by [Julian Mora](https://unsplash.com/@julivajuli)
   category: SVG
   tag: animation
 -->
 
-# Modern animation for web
+# Modern animation for the web
 
 A while back I needed an animated rolling cloud icon, to indicate an ongoing XMLHTTPRequest. Fifteen years ago a vector animation like that would have been trivial: with Flash you'd just motion tween some circles along a bezier-curve, create a symbol from that animation to duplicate and offset in time, et voilà.
 Yet now, I could not figure out how to get the same result with SVG.
@@ -19,15 +20,12 @@ For brevity I will not go into detail about HTML/CSS animations but there is a l
 Coding animations might give better quality results, but a good gui, like Animate has, makes it so much easier to create and tweak movement.
 So what are the current tools with which to create animated images for web?
 
+
 ### Not Adobe Animate
 
 [Adobe Animate](https://www.adobe.com/products/animate.html) is what once was Flash. Somewhere end last century Macromedia brought vector graphics to the masses in the form of [Flash](https://en.m.wikipedia.org/wiki/Adobe_Flash) (originally FutureSplash Animator). This was [before SVG](https://en.m.wikipedia.org/wiki/SVG) even existed. The Flash format was not only very small, the timeline keyframe editor was very easy to work with.
-Adobe must have rebranded it because [somebody gave it a bad name](https://en.m.wikipedia.org/wiki/Thoughts_on_Flash). But strangely it does not export to SVG. The result is a canvas element with a lot of JavaScript. A major disappointment especially considering a major obstacle in the heydays of Flash was accessibility and SEO. One would think this issue would be solved for HTML5 exports.
+Adobe must have rebranded it because [somebody gave it a bad name](https://en.m.wikipedia.org/wiki/Thoughts_on_Flash). But strangely it does not export to SVG. The result is a canvas element with a lot of JavaScript. A real disappointment, especially considering a major obstacle in the heydays of Flash was accessibility and SEO. One would think this issue would be solved for HTML5 exports.
 
-<!--
-There is a possibility to export to animated SVG using a plugin called [Flash2Svg](https://github.com/TomByrne/Flash2Svg), but it is for Flash, not Animate.
-There are also traces of a plugin for Flash CC called [Snap.svg Animator](http://cjgammon.github.io/SnapSVG-Animator/), but it is discontinued (or turned into [something completely different](http://snapsvg.io/)).
--->
 
 ### SVGator
 
@@ -51,19 +49,27 @@ It started with the AfterEffects plugin [Bodymovin](https://exchange.adobe.com/a
 
 Since Lottie is not officially recognized by the W3C you will need JavaScript to run it.
 
-My only issue with Lottie is lack of editors. There are a lot of free animations but they often have a very recognisable style: fat limbs small head.
-
-#### Lottiefiles
+<!--My only issue with Lottie is lack of editors. There are a lot of free animations but they often have a very recognisable style: fat limbs small head.-->
 
 [LottieFiles](https://lottiefiles.com) has [several integrations](https://lottiefiles.com/integrations) among which plugins for: AfterEffects, Animate and Figma.
-The people behind Lottiefiles are also developing a standalone editor called Lottie Creator.
 
-[Lottie Creator](https://lottiefiles.com/lottie-creator) is an editor that is currently in private beta. To use it you must join a waiting list and be patient. According to the wayback-machine the waiting list is there since April 2023. You can check your current position, by which you can calculate it will take about fifty years.
+The people behind Lottiefiles are also developing a standalone editor called [Lottie Creator](https://lottiefiles.com/lottie-creator). It currently allows animating pre-made vector images, but lacks drawing primitives
 
-#### Lottielab
-
-If you do not want to wait that long you may want to try [Lottielab](https://lottielab.com/). It is a well-designed, intuitive editor for simple animations.
+You may also want to try [Lottielab](https://lottielab.com/). It is a well-designed, intuitive editor for simple animations.
 It doesn't seem to be able to reuse elements though.
+
+
+### Rive
+
+Rive is a stunning animation tool: the development environment is very impressive in terms of rigging, state machines and playback control. Rive is not open-source but a proprietary animation environment and runtime.
+
+Implementation into HTML is a bit complex, the binary file format is not helping here.
+The animations *are* vector based but converted to canvas. So a `resize` method has to be called when the animation changes size (in a responsive web page).
+
+Rive is resource intensive; a test with a mere eleven animations has great impact on the framerate, slowing it down to a mere 16 frames per second.
+
+Rive is awesome, but probably overkill for most animations.
+
 
 ### GSAP
 
@@ -82,14 +88,14 @@ The [master on Github](https://github.com/HaikuTeam/animator) should work on Win
 Anigen is an editor that outputs pure SVG (no JS). But it seems to be discontinued: no anigen.org and [a stale Github repo](https://github.com/aibosan/anigen).
 It easily runs locally but the gui fails.
 
-### SnapSVG
+#### SnapSVG
 
 [SnapSVG](http://snapsvg.io/) is not an editor but a code abstraction. Their words: "makes working with your SVG assets as easy as jQuery". Unfortunately it looks to be a dead project, old code, old issues and wonky examples.
 
 
 ### Small tools
 
-Then there are a variety of small tools that might help a very specific use case but should not be categorized as complete animation software. I'll just list them without too much detail: [Vivus JS](https://maxwellito.github.io/vivus/) for `stroke` animations, [SVG Artista](https://svgartista.net/), for `stroke` and `fill`  animations, [SVG circus](https://svgcircus.com/) for loading spinners.
+There are a variety of small tools that might help a very specific use case but should not be categorized as complete animation software. I'll just list them without too much detail: [Vivus JS](https://maxwellito.github.io/vivus/) for `stroke` animations, [SVG Artista](https://svgartista.net/), for `stroke` and `fill`  animations, [SVG circus](https://svgcircus.com/) for loading spinners.
 
 
 ### Do it by hand with SVG (and CSS)
@@ -100,7 +106,7 @@ It might look complicated, especially SVG paths, but it really is not difficult 
 For the actual animation you can either use native SVG native [`animate`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate) or use CSS.
 
 The simplest solution might be to use CSS because chances are you already know everything you need to know.
-But SVG has capabilities that cannot be replicated with CSS: for instance `animateMotion`, to make an object follow a bezier curve.
+But SVG has capabilities that cannot be replicated with CSS: for instance `animateMotion`, to make an object follow a Bézier curve.
 
 Here are three examples with the cloud animation mentioned earlier.
 
@@ -256,7 +262,7 @@ The final size is 2.61 KB.
 
 There is another way to animate SVG called [SMIL](https://www.w3.org/TR/SMIL3/). The specification stems from 1998 and covers more than just SVG animations (for reference: SVG is from 1999).
 The possibilities of SMIL extend beyond what can be done with mere CSS. If you like to know more here is [an extensive article by Sarah Soueidan](https://css-tricks.com/guide-svg-animations-smil/), and here is [a Stackoverflow answer with good examples](https://stackoverflow.com/a/64558513/695734).
-For the clouds animation I made use of an awesome feature, namely `animateMotion[calcMode="spline"]` which lets you move elements along a bezier-curve.
+For the clouds animation I made use of `animateMotion[calcMode="spline"]` which lets you move elements along a bezier-curve.
 One downside of SMIL is that you cannot reuse an animation (as in `defs`) and only overwrite a property. As you can see here, all animations are exactly the same except for the `begin` attribute. So that results in a lot of repetitive code. But to be honest: for both the SMIL and the CSS example I generated the repetitive parts with JavaScript and used the output.
 
 The final size is 2.67 KB.
@@ -302,47 +308,8 @@ The final size is 2.67 KB.
 </svg>
 ```
 
-<style>
-  #smil {
-    width: 256px;
-    height: 256px;
-  }
-</style>
-<svg id="smil" width="32" height="32" viewBox="0 0 32 32">
-  <path d="M5 25C6 20 25 7 25 25Z"></path>
-  <circle>
-    <animateMotion dur="3500ms" begin="0ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
-    <animate dur="3500ms" begin="0ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
-  </circle>
-  <circle>
-    <animateMotion dur="3500ms" begin="-500ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
-    <animate dur="3500ms" begin="-500ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
-  </circle>
-  <circle>
-    <animateMotion dur="3500ms" begin="-1000ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
-    <animate dur="3500ms" begin="-1000ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
-  </circle>
-  <circle>
-    <animateMotion dur="3500ms" begin="-1500ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
-    <animate dur="3500ms" begin="-1500ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
-  </circle>
-  <circle>
-    <animateMotion dur="3500ms" begin="-2000ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
-    <animate dur="3500ms" begin="-2000ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
-  </circle>
-  <circle>
-    <animateMotion dur="3500ms" begin="-2500ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
-    <animate dur="3500ms" begin="-2500ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
-  </circle>
-  <circle>
-    <animateMotion dur="3500ms" begin="-3000ms" repeatCount="indefinite" path="M5 25C4 20 25 7 25 25" calcMode="spline" keySplines=".4,.1,.4,.9" keyTimes="0;1"></animateMotion>
-    <animate dur="3500ms" begin="-3000ms" attributeName="r" values=".1;5;.1" repeatCount="indefinite" calcMode="spline" keySplines=".1,0,.6,1;.7,0,.4,1"></animate>
-  </circle>
-</svg>
-
-
-
 ## TLDR
 
-If you're well versed in SVG and CSS I'd really recommend just opening your favorite ASCII editor and type or copy/paste it all in (with the help of a vector editor). It is not that hard.
-For more complex animations with long timelines it could be useful to make it with SVGator. But it does require you to create the assets in another application, and you really should clean up the resulting animation.
+If you know some SVG and CSS I'd really recommend opening your favorite ASCII editor and type or copy/paste your animation. With the help of a vector editor, it is not that hard.
+For more complex animations with longer timelines you could use SVGator. But it does require you to create the assets in another application, and you really should clean up the resulting SVG animation.
+If you are free to use another file format and don't mind a JavaScript runtime dependency; I'd recommend you use Lottie. There are editors to choose from and the runtime is well optimised.

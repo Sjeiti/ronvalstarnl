@@ -190,16 +190,11 @@ export function nextTick(fn){
 /**
  * Tick delay helper method
  * @param {Function} fn
- * @param {number} num
+ * @param {number} [nr=2]
+ * @returns {Function}
  */
-export function nextFrame(fn, num=1){
-  const a = []
-  a[num-1] = fn
-  const down = ()=>{
-    const fnc = a.shift()
-    fnc?fnc():requestAnimationFrame(down)
-  }
-  requestAnimationFrame(down)
+export function nextFrame(fn, nr=2){
+  return nr<=0?fn():nextFrame(requestAnimationFrame.bind(null, fn), nr-1)
 }
 
 /**
