@@ -20,7 +20,7 @@
     "build:less": "node task/lessGlob",
     "build:icons": "node task/icons --source temp/icomoon/SVG/logo.svg --target ./dist/static/icon --sizes 16,32,180",
     "write": "chokidar \"src/data/markdown/*.md\" -c \"npm run build:json\"",
-    "write:future": "grep -rlw 9999 src/data/markdown/*",
+    "write:future": "grep -rlw F src/data/markdown/*",
     "write:futurew": "findstr 9999 src/data/markdown/* 2>nul",
     "webpack": "npx webpack --config webpack.config.js",
     "clean": "del-cli dist -f",
@@ -67,7 +67,7 @@
     "express": "^4.19.2",
     "file-loader": "^6.2.0",
     "glob": "^7.1.6",
-    "html-loader": "^1.3.2",
+    "html-loader": "^5.0.0",
     "html-minifier": "^4.0.0",
     "husky": "^8.0.3",
     "less": "^4.1.1",
@@ -105,7 +105,7 @@
     "not ie <= 10"
   ],
   "_engines": {
-    "node": "^16.17.0",
-    "npm": "^6.14.9"
+    "node": "^20.11.1",
+    "npm": "^10.2.4"
   }
 }

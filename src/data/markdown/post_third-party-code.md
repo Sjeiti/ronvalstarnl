@@ -1,7 +1,7 @@
 <!--
   slug: wrap-third-party-code
-  date: 9999-04-30
-  modified: 9999-04-30
+  date: 9999-99-99
+  modified: 9999-99-99
   type: post
   header: adi-goldstein-Hli3R6LKibo-unsplash.jpg
   headerColofon: photo by [Adi Goldstein](https://unsplash.com/@adigold1)

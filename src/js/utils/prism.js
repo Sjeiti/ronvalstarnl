@@ -1,6 +1,7 @@
 import Prism from 'prismjs'
 import {createElement} from './html'
 import {initialise} from '../component'
+import {nextFrame} from './index'
 
 Prism.languages.insertBefore('javascript', 'comment', {
   'cut': /\s*\(\.\.\.\)\s*/
@@ -72,13 +73,12 @@ export function prismToElement(elm){
     const matchHeight = contents.match(/<!--height:(\d+\.?\d*\w+)-->/g)
     const matchedHeight = matchHeight&&contents.match(/<!--height:(\d+\.?\d*\w+)-->/).pop()
 
-    requestAnimationFrame(()=>{
+    nextFrame(()=>{
       const {contentWindow: {document}} = iframe
-      document.writeln(contents)
-
+      document.body.innerHTML = contents // works better than document.writeln(contents)
       const height = matchedHeight||`${document.body.scrollHeight}px`
       requestAnimationFrame(()=>iframe.style.height = height)
-    })
+    }, 6)
 
   } else if (isEmbed){
     pre.insertAdjacentHTML('beforebegin', contents)

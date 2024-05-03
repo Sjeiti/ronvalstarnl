@@ -1,7 +1,7 @@
 import {parentQuerySelector, expand, createElement, clean} from './utils/html'
 import {signal} from './signal'
 import {initialise} from './component'
-import {nextFrame,nextTick} from './utils'
+import {nextFrame, nextTick} from './utils'
 import {applyDirectives} from './directives'
 
 export const routeChange = signal()
@@ -155,7 +155,7 @@ function viewModelFactory(element){
           _content.classList.add(className.CONTENT_ANIMATE_IN_START)
           _contentPast.classList.add(className.CONTENT_ANIMATE_OUT_START)
           this._contentPastTimer = setTimeout(this._removeAndCleanPastContent.bind(this), ms)
-        }, 2)
+        })
       } else {
         while (_content.firstChild) _contentPast.appendChild(_content.firstChild)
         element.appendChild(_contentPast)
