@@ -3,9 +3,8 @@
   modified: 9999-99-99
   slug: shadow-dom
   type: post
-  header: barn-images-t5YUoHW6zRo-unsplash.jpg
-  headerColofon: photo by [Barn images](https://unsplash.com/@barnimages)
-  headerClassName: no-blur darken
+  header: vino-li-55nuS2rUYmQ-unsplash.jpg
+  headerColofon: photo by [Vino Li](https://unsplash.com/@vinomamba24)
   categories: code, work
   tags: frameworks, ide, libraries, software, tools
   description: 
@@ -20,8 +19,8 @@ So I dusted off some old example code I had made back then, noticed there were s
 
 ## So why and what is shadow DOM?
 
-In ancient times when websites were just starting to get larger, people started noticing annoying differences in styling for the same elements. New additions would have the unexpected side-effect of affecting existing elements.
-This side-effect was dubbed style bleeds. Because of CSS inheritance and specificity it was a real problem, riddling many stylesheets with repeated selector hacks and `!important`.
+In ancient times when websites were just starting to get larger, people started noticing annoying differences in styling for the same elements. New additions would have the unexpected side effect of affecting existing elements.
+This side effect was dubbed style bleeds. Because of CSS inheritance and specificity it was a real problem, riddling many stylesheets with repeated selector hacks and `!important`.
 
 People came up with strict styling strategies to combat style bleeds; OOCSS, BEM, SMACSS, Atomic design, ITCSS to name a few. They come with the added benefit that they also help structuring components semantically (not Atomic design though, Atomic design is just stupid).
 
@@ -30,16 +29,18 @@ But what these frameworks were really anticipating was shadow DOM.
 
 Shadow DOM is a technique that allows encapsulation in DOM and CSSOM.
 
-This had always been part of browsers in the form of, say, input elements. But with shadow DOM it became available for us mere mortals.
+XXXXXXXXXXXXXXXXXXXThis had always been part of browsers in the form of, say, input elements. But with shadow DOM it became available for us mere mortals.
 
 
-## How does it work?
+## What does shadow DOM do?
 
-Contrary to what you might think: shadow DOM *does* inherit CSS from its parent nodes. What the parent cannot do is target elements in the shadow DOM directly. Conversely, the CSS inside the shadow DOM has no effect whatsoever on the rest of the document.
+Contrary to what you might think: shadow DOM *does* inherit CSS from its parent nodes. What the parent *cannot* do is target elements in the shadow DOM directly. Conversely, the CSS inside the shadow DOM has no effect whatsoever on the rest of the document.
 
-There are however several ways we can control shadow DOM from the outside: the host selector, slots, parts and CSS properties.
+There are however several ways we can control shadow DOM from the outside: the host selector, slots, parts and CSS properties. We also used to have selectors `::shadow` and `/deep/`, but these were deprecated in favor of JS manipulation.
 
 ### Custom elements
+
+At this point it might be a good time to mention [custom elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements). Which is something different, but generally goes hand in hand with shadow DOM. Yes, you can simply say `document.querySelector('#host').attachShadow({ mode: 'open' }).innerHTML = '<style>.inner{color:red;}</style><span class="inner">I am the terror that flaps in the night</span>'`. But there's no fun in that.
 
 ### host selector
 
@@ -49,19 +50,11 @@ There are however several ways we can control shadow DOM from the outside: the h
 
 ### CSS properties
 
-
-
-<ul>
-  <li>shadow DOM <em>does</em> inherit CSS</li>
-  <li>CSS inside shadow DOM does not affect outside.</li>
-  <li>CSS outside shadow DOM cannot directly target inside, except when using --cssProperties, slots and/or ::parts.</li>
-  <li><code>:host(selector)</code> can be used to react to outside</li>
-</ul>
-
-<p>Selectors <code>::shadow</code> and <code>/deep/</code> are deprecated in favor of JS manipulation.</p>
+### Example
 
 ```html
 <!--example-->
+
 <div class="wrapper">
   <div class="wrapper__left">
     <h2>outside</h2>
@@ -77,129 +70,136 @@ There are however several ways we can control shadow DOM from the outside: the h
   <my-shadow class="wrapper__right"><span slot="mySlot" class="slot">---&gt; <span class="slot-content">slot</span></span></my-shadow>
 </div>
 
-<!-- custom element template ---------------------------------------------------------->
-
 <template id="tmpl">
   <style>
-                :host {
+    :host {
       /*////////////////////*/
-                        all: initial;
-                        font-family: monospace;
-                        font-size: 0.75rem;
-                        line-height: 130%;
-                        /*////////////////////*/
-
-                        color: green;
+      all: initial;
+      font-family: monospace;
+      font-size: 0.75rem;
+      line-height: 130%;
+      /*////////////////////*/
+      
+      color: green;
       box-shadow: 0 0 0 0.125rem green inset;
-
-                        box-sizing: border-box;
-                        *, *:before, *:after { box-sizing: inherit; }
-
-                        * { white-space: pre; }
-                        p { margin: 0; }
-                        h2 {
-        text-decoration: inherit;
-      }
-                }
-
-                :host(.shadow) { transform: skewY(10deg); transform-origin: 0 0; }
-                :host(.wrapper__right.shadow) { padding: 2rem; }
-
-                .cssProperty {
-                        color: var(--color);
-                }
-
-                ::slotted(*) {
-                        background-color: lightgoldenrodyellow;
-                }
-    .slot, [slot], .slot-content {
-                        text-decoration: underline;
-                        box-shadow: 0 0 0 0.125rem yellow inset;
+      
+      box-sizing: border-box;
+      
+      *, *:before, *:after { box-sizing: inherit; }
+      
+      * { white-space: pre; }
+      
+      p { margin: 0; }
+      
+      h2 { text-decoration: inherit; }
     }
-
+    
+    :host(.shadow) {
+      transform: skewY(10deg);
+      transform-origin: 0 0;
+    }
+    
+    :host(.wrapper__right.shadow) { padding: 2rem; }
+    
+    .cssProperty { color: var(--color); }
+    
+    ::slotted(*) { background-color: lightgoldenrodyellow; }
+    
+    .slot, [slot], .slot-content {
+      text-decoration: underline;
+      box-shadow: 0 0 0 0.125rem yellow inset;
+    }
   </style>
   <h2>shadow root</h2>
-  <p>     nodeName</p>
-  <div title="attribute">     [attribute]</div>
-  <div class="className">     .className</div>
+  <p> nodeName</p>
+  <div title="attribute"> [attribute]</div>
+  <div class="className"> .className</div>
   <div class="cssProperty">---&gt; --cssProperty</div>
   <slot name="mySlot">--</slot>
   <div part="myPart">---&gt; ::part</div>
   <div class="js">---&gt; JavaScript</div>
 </template>
 
-
-<!-- global style ---------------------------------------------------------->
-
 <style>
-        :root {
-                --color: #F04;
-        }
-
-        html {
+  :root {
+    --color: #F04;
+  }
+  
+  html {
     font-size: 48px;
     font-size: 16px;
   }
-
-        html { box-sizing: border-box; }
-        *, *:before, *:after { box-sizing: inherit; }
-
-        body {
+  
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
     margin: 1rem;
-                font-size: 0.75rem;
-                line-height: 130%;
-                color: black;
-        }
-        .wrapper h2, my-shadow>h2 {
-                text-decoration: underline;
-                text-align: center;
-        }
-  p { margin: 0; }
-
-        .wrapper {
-                font-family: monospace;
+    font-size: 0.75rem;
+    line-height: 130%;
+    color: black;
+  }
+  
+  .wrapper h2, my-shadow > h2 {
+    text-decoration: underline;
+    text-align: center;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  .wrapper {
+    font-family: monospace;
     margin: 2rem 0;
-                display: flex;
-        }
-        .wrapper__left, .wrapper__right {
-                padding: 0.5rem;
-        }
-
+    display: flex;
+  }
+  
+  .wrapper__left, .wrapper__right {
+    padding: 0.5rem;
+  }
+  
+  
   /* blocked styling */
-
-
+  
   my-shadow >>> .className:after {
-                content: '?';
-        }
+    content: '?';
+  }
+  
   ::shadow div {
-                font-weight: bold;
-        }
-
-        my-shadow div,
+    font-weight: bold;
+  }
+  
+  my-shadow div,
   p,
-        [title=attribute],
-        .className {
-                color: purple;
-        }
-
-        /* passes styling */
-
-        ::part(myPart),
-        .slot {
-                color: #f04;
-        }
-        my-shadow {
-                font-style: italic;
-                /*font-family: inherit;*/
-                /*font-size: inherit;*/
-                /*line-height: inherit;*/
-        }
+  [title=attribute],
+  .className {
+    color: purple;
+  }
+  
+  
+  /* passes styling */
+  
+  ::part(myPart),
+  .slot {
+    color: #f04;
+  }
+  
+  my-shadow {
+    font-style: italic;
+    /*font-family: inherit;*/
+    /*font-size: inherit;*/
+    /*line-height: inherit;*/
+  }
 </style>
 
-
-<!-- JavaScript -->
-
 <script>
+  console.log('what?!') // todo: remove log
   const tmpl = document.getElementById('tmpl')
   window.customElements.define('my-shadow', class Foo extends HTMLElement {
     constructor() {
