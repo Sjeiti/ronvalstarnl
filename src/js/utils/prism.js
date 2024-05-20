@@ -75,7 +75,7 @@ export function prismToElement(elm){
 
     nextFrame(()=>{
       const {contentWindow: {document}} = iframe
-      document.body.innerHTML = contents // works better than document.writeln(contents)
+      document.writeln(contents) // document.body.innerHTML breaks JS execution
       const height = matchedHeight||`${document.body.scrollHeight}px`
       requestAnimationFrame(()=>iframe.style.height = height)
     }, 6)
