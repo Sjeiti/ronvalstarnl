@@ -3,6 +3,7 @@ import {setDefault} from '../router'
 import {fetchJSONFiles, getZenIcon, nextTick, scrollToTop, todayOlderFilter} from '../utils'
 import {prismToRoot} from '../utils/prism'
 import {componentOf} from '../component'
+import {signal} from '../signal'
 
 setDefault((view, route, params)=>fetchJSONFiles(`post_${route}`, 'posts-list', 'fortpolio-list')
     .then(([post, posts, fortpolios])=>{
@@ -18,6 +19,10 @@ setDefault((view, route, params)=>fetchJSONFiles(`post_${route}`, 'posts-list', 
       Array.from(view.querySelectorAll('iframe')).forEach(iframe=>{
         const {innerHTML, contentWindow: {document}} = iframe
         document.writeln(innerHTML)
+      })
+
+      view.querySelector('[data-request-fullscreen]').addEventListener('click',()=>{
+        signal?.requestFullScreen.dispatch()
       })
 
       nextTick(()=>{
@@ -48,9 +53,13 @@ function setHeaderImage(post){
  * @return {string}
  */
 function getBlogHeading(post){
-  const {date, title} = post
+  const {date, title, slug} = post
   const time = date.split('T').shift()
-  return `time.blog[datetime=${time}]{${time}}+h1{${title}}`
+  const isExperiment = /^experiment-/.test(slug)
+
+  const fullscreen = isExperiment?'+button.request-fullscreen[data-request-fullscreen]{fullscreen experiment}':''
+
+  return `time.blog[datetime=${time}]{${time}}${fullscreen}+h1{${title}}`
 }
 
 /**

@@ -6,6 +6,7 @@
   categories: code, JavaScript
   tags: JavaScript, cool shit, gradient
   description: A single background with radial gradients seeded with a prng and animated with Perlin noise.
+  thumbnail: experiments/ronvalstar-nl_experiment-glass_1.jpg
   related: experiment-*
 -->
 

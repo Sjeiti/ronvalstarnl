@@ -5,6 +5,7 @@
   type: post
   categories: code, JavaScript
   tags: cool shit
+  thumbnail: experiments/ocalhost_7047_experiment-pinkcheese.png
   description: Cheese holes
   related: experiment-*
 -->
