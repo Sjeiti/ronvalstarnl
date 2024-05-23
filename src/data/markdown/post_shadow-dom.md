@@ -12,7 +12,8 @@
 
 # Shadow DOM
 
-About six years ago I gave a little talk on shadow DOM in the front-end guild at Randstad (for whom I was working freelance at that time). Last week I was asked to give a similar talk at my current employers front-end guild. The reason being that we had recently switched some of our components to shadow DOM due to style bleeds.
+About six years ago I gave a little talk on [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM) in the front-end guild at Randstad (for whom I was working freelance at that time). Last week I was asked to give a similar talk at my current employers front-end guild. The reason being that we had recently switched some of our components to shadow DOM due to style bleeds.
+
 
 So I dusted off some old example code I had made back then, noticed there were some significant changes, read up on the current state, and thought it would make a nice post.
 
@@ -24,184 +25,21 @@ These side effects were dubbed style bleeds. CSS inheritance and specificity mad
 
 People came up with strict styling strategies to combat style bleeds; [OOCSS](http://oocss.org/), [BEM](https://getbem.com/), [SMACSS](https://smacss.com/), [Atomic design](https://atomicdesign.bradfrost.com/chapter-2/), [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) to name a few. They come with the added benefit that they also help structuring components semantically (not Atomic design though, Atomic design is just stupid).
 
-I mentioned components; they are the biggest advantage front-end frameworks brought us. In due time all major front-end frameworks would add some form of CSS scoping, rendering all those styling strategies more or less obsolete. With CSS scoping you no longer *need* BEM, but it does help ordering elements into a logical structure.
-But what these frameworks were really anticipating was shadow DOM.
+I mentioned components; they are a major advantage front-end frameworks brought us. In due time all major front-end frameworks would add some form of CSS scoping, rendering all those styling strategies more or less obsolete (although they do add logical structure).
 
-Shadow DOM is a technique that allows encapsulation in DOM and CSSOM.
+But what these frameworks were really anticipating was shadow DOM: a technique that allows encapsulation in DOM and CSSOM.
 
 
 ## What does shadow DOM really do?
 
 Contrary to what you might think: shadow DOM *does* inherit CSS from its parent nodes. What the parent *cannot* do is target elements in the shadow DOM directly. Conversely, the CSS inside the shadow DOM has no effect whatsoever on the rest of the document.
 
-There are however several ways we can control shadow DOM from the outside: the host selector, slots, parts and CSS properties.
-<small>We also used to have the selectors `::shadow` and `/deep/`, but these were deprecated in favor of JS manipulation.</small>
-
-### Custom elements
-
-At this point it might be a good time to mention [custom elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements). Which is something different, but it generally goes hand in hand with shadow DOM. Yes, you can simply say `document.querySelector('#host').attachShadow({ mode: 'open' }).innerHTML = '<span class="inner">I am the terror that flaps in the night</span>'`. But there's no fun in that.
-
-### host selector
-
-The `:host` pseudo-class selector is used 'within' shadow element and can be used to combine the outside- with the inside state. The host element itself is not really part of the shadow DOM; it can be styled by both document and shadow.
-For instance: when a class is set onto the host element, you can use it inside the shadow DOM styling like this `:host(.host-class-name) { .inner { color: lime; }`.
-
-The host element has some quirks though, living in the twilight like this. XXXX (box-shadow, specificity)
-
-```html
-<!--example-->
-<style>
-    .host {
-      margin-bottom: 1rem;
-      &:first-letter { font-size: 1.5rem; }
-    }
-    .pink { color: lime; }
-</style>
-  
-Host element without extra className:
-<div class="host"></div>
-Host element with extra className:
-<div class="host pink"></div>
-<script>
-         
-Array.from(document.querySelectorAll('.host')).forEach(host=>{
-    host.attachShadow({ mode: 'open' }).innerHTML = `
-        <style>
-            :host(.pink) .inner { color: #F04; }
-            .pink {
-                font-style: italic;
-            }
-            .inner {
-                font-family: monospace;
-            }
-        </style>
-        <span class="inner">I am the terror that flaps in the night</span>`
-})
-</script>
-```
-
-
-### slots
-
-Slots can be seen as bubbles through which outside elements and styling can be placed inside the shadow DOM. Slots are the interface through which content can be placed in the shadow DOM.
-A custom element can have multiple, named slots. The way to style it inside the shadow is by its name: `::slotted([slot=name]) { color: lime; }`.
-Since slots are implemented (not defined) outside the shadow they can also be styled from without: `slot[name=name] { color: lime; }`.
-
-```html
-<!--example-->
-<style>
-    .host {
-        margin-bottom: 1rem;
-        &:first-letter { font-size: 1.5rem; }
-    }
-    [slot=when], [name=when] { text-decoration: underline; }
-</style>
-
-Shadow with default slot contents:
-<div class="host"></div>
-Shadow with custom slot contents:
-<div class="host"><span slot="when">day</span></div>
-<script>
-         
-Array.from(document.querySelectorAll('.host')).forEach(host=>{
-    host.attachShadow({ mode: 'open' }).innerHTML = `
-        <style>
-            :host { font-family: monospace; }
-            [name=when] {
-                color: lime;
-            }
-            ::slotted([slot=when]) {
-                color: #F04;
-            }
-        </style>
-        <span class="inner">I am the terror that flaps in the <slot name="when">night</slot></span>`
-})
-</script>
-```
-
-### parts
-
-Parts are a way for the shadow element to designate specific areas as accessible for styling. Inside the shadow you say `<span part="label">Hello</span>` which makes it possible for the document stylesheet to have `::part(label) { color: lime; }`.
-
-```html
-<!--example-->
-<style>
-  .host+.host::part(when) {
-    color: #f04;
-  }
-</style>
-
-Shadow with default part:
-<div class="host"></div>
-Shadow with custom part styling:
-<div class="host">asdf</div>
-<script>
-         
-Array.from(document.querySelectorAll('.host')).forEach(host=>{
-    host.attachShadow({ mode: 'open' }).innerHTML = `
-        <style>
-            :host { 
-                font-family: monospace;
-                margin-bottom: 1rem;
-            }
-            [part=when] {
-                color: lime;
-            }
-        </style>
-        <span class="inner">I am the terror that flaps in the <span part="when">night</span></span>`
-})
-</script>
-```
-
-### CSS properties
-
-CSS properties are unaffected by shadow. All properties defined in `:root` are accessible in shadow DOM. This also makes it possible to specify specific properties on the host element, as a more restrictive 'parts' implementation.
-
-```html
-<!--example-->
-<style>
-  .host {
-    --color: #f04;
-  }
-  .host+.host {
-    --color: #f04;
-  }
-</style>
-
-Shadow with default part:
-<div class="host"></div>
-Shadow with custom part styling:
-<div class="host">asdf</div>
-<script>
-         
-Array.from(document.querySelectorAll('.host')).forEach(host=>{
-    host.attachShadow({ mode: 'open' }).innerHTML = `
-        <style>
-            :host { 
-                font-family: monospace;
-                margin-bottom: 1rem;
-            }
-            .inner {
-                color: var(--color);
-            }
-        </style>
-        <span class="inner">I am the terror that flaps in the <span part="when">night</span></span>`
-})
-</script>
-```
-
-### JavaScript
-
-There use to be a way to pierce through the shadow with CSS, but that was deprecated because you really shouldn't want to. JavaScript is the way to go if you really must have access. You might want to test an effect for instance. All you really need is access the `shadowRoot` property, and from there on out you can proceed inside the shadow as you would in your normal `documentElement` root.
-
-```JavaScript
-const myShadow = document.querySelector('my-shadow')
-const {shadowRoot} = myShadow
-const innerElement = shadowRoot.querySelector('.inner-element')
-innerElement.style.color = '#f04'
-```
+There are however several ways we can control shadow DOM from outside: the host selector, slots, parts and CSS properties.
+<small>We used to have the selectors `::shadow` and `/deep/`, but these were deprecated in favor of JS manipulation.</small>
 
 ### Example
+
+Below is a working example (click the top right icon):
 
 ```html
 <!--example-->
@@ -365,11 +203,171 @@ innerElement.style.color = '#f04'
 </script>
 ```
 
+### Custom elements
 
-<h2>Links</h2>
+At this point it might be a good time to mention [custom elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements). Which is something different, but it generally goes hand in hand with shadow DOM. Yes, you can simply say `document.querySelector('#host').attachShadow({ mode: 'open' }).innerHTML = '<span class="inner">I am the terror that flaps in the night</span>'`. But there's no fun in that.
 
-<ul>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM">MDN: Using shadow DOM</a></li>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements">MDN: Using custom elements</a></li>
-</ul>
+### host selector
+
+The `:host` pseudo-class selector is used 'within' shadow element and can be used to combine the outside- with the inside state. The host element itself is not really part of the shadow DOM; it can be styled by both document and shadow.
+For instance: when a class is set onto the host element, you can use it inside the shadow DOM styling like this `:host(.host-class-name) { .inner { color: lime; }`.
+
+The host element has some quirks though, living in the twilight like this. XXXX (box-shadow, specificity)
+
+```html
+<!--example-->
+<style>
+    .host {
+      margin-bottom: 1rem;
+      &:first-letter { font-size: 1.5rem; }
+    }
+    .pink { color: lime; }
+</style>
+  
+Host element without extra className:
+<div class="host"></div>
+Host element with extra className:
+<div class="host pink"></div>
+<script>
+         
+Array.from(document.querySelectorAll('.host')).forEach(host=>{
+    host.attachShadow({ mode: 'open' }).innerHTML = `
+        <style>
+            :host(.pink) .inner { color: #F04; }
+            .pink {
+                font-style: italic;
+            }
+            .inner {
+                font-family: monospace;
+            }
+        </style>
+        <span class="inner">I am the terror that flaps in the night</span>`
+})
+</script>
+```
+
+
+### slots
+
+Slots can be seen as bubbles through which outside elements and styling can be placed inside the shadow DOM. Slots are the interface through which content can be placed in the shadow DOM.
+A custom element can have multiple, named slots. The way to style it inside the shadow is by its name: `::slotted([slot=name]) { color: lime; }`.
+Since slots are implemented (not defined) outside the shadow they can also be styled from without: `slot[name=name] { color: lime; } }`.
+
+```html
+<!--example-->
+<style>
+    .host {
+        margin-bottom: 1rem;
+        &:first-letter { font-size: 1.5rem; }
+    }
+    [slot=when], [name=when] { text-decoration: underline; }
+</style>
+
+Shadow with default slot contents:
+<div class="host"></div>
+Shadow with custom slot contents:
+<div class="host"><span slot="when">day</span></div>
+<script>
+         
+Array.from(document.querySelectorAll('.host')).forEach(host=>{
+    host.attachShadow({ mode: 'open' }).innerHTML = `
+        <style>
+            :host { font-family: monospace; }
+            [name=when] {
+                color: lime;
+            }
+            ::slotted([slot=when]) {
+                color: #F04;
+            }
+        </style>
+        <span class="inner">I am the terror that flaps in the <slot name="when">night</slot></span>`
+})
+</script>
+```
+
+### parts
+
+Parts are a way for the shadow element to designate specific areas as accessible for styling. Inside the shadow you say `<span part="label">Hello</span>` which makes it possible for the document stylesheet to have `::part(label) { color: lime; }`.
+
+```html
+<!--example-->
+<style>
+  .host+.host::part(when) {
+    color: #f04;
+  }
+</style>
+
+Shadow with default part:
+<div class="host"></div>
+Shadow with custom part styling:
+<div class="host">asdf</div>
+<script>
+         
+Array.from(document.querySelectorAll('.host')).forEach(host=>{
+    host.attachShadow({ mode: 'open' }).innerHTML = `
+        <style>
+            :host { 
+                font-family: monospace;
+                margin-bottom: 1rem;
+            }
+            [part=when] {
+                color: lime;
+            }
+        </style>
+        <span class="inner">I am the terror that flaps in the <span part="when">night</span></span>`
+})
+</script>
+```
+
+### CSS properties
+
+CSS properties are unaffected by shadow. All properties defined in `:root` are accessible in shadow DOM. This also makes it possible to specify specific properties on the host element, as a more restrictive 'parts' implementation.
+
+```html
+<!--example-->
+<style>
+  .host {
+    --color: #f04;
+  }
+  .host+.host {
+--color: lime;
+  }
+</style>
+
+Shadow with CSS property:
+<div class="host"></div>
+Shadow with overriden CSS property:
+<div class="host">asdf</div>
+<script>
+         
+Array.from(document.querySelectorAll('.host')).forEach(host=>{
+    host.attachShadow({ mode: 'open' }).innerHTML = `
+        <style>
+            :host { 
+                font-family: monospace;
+                margin-bottom: 1rem;
+            }
+            .inner {
+                color: var(--color);
+            }
+        </style>
+        <span class="inner">I am the terror that flaps in the <span part="when">night</span></span>`
+})
+</script>
+```
+
+### JavaScript
+
+There use to be a way to pierce through the shadow with CSS, but that was deprecated because you really shouldn't want to. JavaScript is the way to go if you really must have access. You might want to test an effect for instance. All you really need is access the `shadowRoot` property, and from there on out you can proceed inside the shadow as you would in your normal `documentElement` root.
+
+```JavaScript
+const myShadow = document.querySelector('my-shadow')
+const {shadowRoot} = myShadow
+const innerElement = shadowRoot.querySelector('.inner-element')
+innerElement.style.color = '#f04'
+```
+
+## :w
+
+
 
