@@ -1,11 +1,7 @@
 import {add} from '../router'
-import {selectEach, expand} from '../utils/html'
-import {addRule, removeRule} from '../utils/style'
-import {fetchJSONFiles, nextTick, scrollToTop} from '../utils'
-import {componentOf} from '../component'
-import {MEDIA_URI_PROJECT, MEDIA_URI_THUMB, MEDIA_URI_VIDEO/*, PROBABLY_MOBILE*/} from '../config'
+import {fetchJSONFiles} from '../utils'
+import {MEDIA_URI_THUMB, MEDIA_URI_VIDEO/*, PROBABLY_MOBILE*/} from '../config'
 import {makeClassNames, slugify} from '../utils/string'
-import {open} from '../router'
 
 const classNames = makeClassNames({
     current: 'current'
@@ -16,34 +12,20 @@ const classNames = makeClassNames({
 
 add(
     'experiments'
-  //, 'experiments/:category'
-  , (view, route, params)=>{
-    const {project:projectSlug, category} = params
+  , (view/*, route, params*/)=>{
     let title = 'experiments'
     let parentSlug = 'experiments'
     return fetchJSONFiles('posts-list')
       .then(([posts])=>{
-        const portfolioProjects = posts
+        const experiments = posts
           .filter(p=>/^experiment-/.test(p.slug))
           .sort((a, b)=>new Date(a.dateFrom)<new Date(b.dateFrom)?1:-1)
-        buildPage(view, portfolioProjects)
+        view.expandAppend(`ul.unstyled${classNames.projects}>(${experiments.map(getProjectThumbZen).join('+')})`)
         return {title, parentSlug}
       }
     )
   }
 )
-
-/**
- * Build categories and project list
- * @param {View} view
- * @param {object[]} categories
- * @param {object[]} portfolioProjects
- * @return {HTMLElement[]}
- */
-function buildPage(view, portfolioProjects){
-  const querySelector = ::view.querySelector
-  view.expandAppend(`ul.unstyled${classNames.projects}>(${portfolioProjects.map(getProjectThumbZen).join('+')})`)
-}
 
 /**
  * Create Zen selector for a project thumb
