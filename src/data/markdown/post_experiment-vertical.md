@@ -4,6 +4,7 @@
   slug: experiment-vertical
   type: post
   tags: REST, cool shit, experiment
+  thumbnail: experiments/ocalhost_7047_experiment-vertical.jpg
   related: experiment-*
 -->
 

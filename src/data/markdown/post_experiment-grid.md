@@ -4,6 +4,7 @@
   slug: experiment-grid
   type: post
   tags: Perlin Noise, cool shit, experiment
+  thumbnail: experiments/ocalhost_7047_experiment-grid.jpg
   related: experiment-*
 -->
 

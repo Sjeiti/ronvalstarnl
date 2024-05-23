@@ -4,6 +4,7 @@
   slug: experiment-plasma
   type: post
   tags: cool shit, experiment, particles
+  thumbnail: experiments/ocalhost_7047_experiment-plasma_4.jpg
   related: experiment-*
 -->
 
