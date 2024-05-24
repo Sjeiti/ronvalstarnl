@@ -38,12 +38,8 @@ create('[data-header]', class extends BaseComponent{
     routeChange.add(this._onRouteChange.bind(this))
 
     //
-    console.log('_requestFullScreen', this._requestFullScreen)
     const {_requestFullScreen:requestFullScreen} = this
-    console.log('requestFullScreen', requestFullScreen)
     signal.requestFullScreen = this._requestFullScreen
-    //Object.assign(document.documentElement.signals||(document.documentElement.signals={}), {
-    //Object.assign(signal, {requestFullscreen})
     //
     fullscreen.add(::this._onFullscreenChange)
     //

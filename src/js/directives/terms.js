@@ -1,5 +1,4 @@
 export const terms = (elm/*, content*/)=>{
-  console.log('terms',elm) // todo: remove log
   elm.innerHTML = elm.textContent
     .split(/\s/g)
     .sort(()=>Math.random()<0.5?1:-1)

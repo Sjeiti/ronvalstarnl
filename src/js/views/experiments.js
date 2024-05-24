@@ -33,7 +33,6 @@ add(
  * @return {string}
  */
 export function getProjectThumbZen(project){
-  console.log('project',project)
   const ext = project.thumbnail?.split(/\./)?.pop()
   const liAttr = `[style="background-image:url(${MEDIA_URI_THUMB+project.thumbnail})"]`
   const hasVideo = !!project.thumbnailVideo // && !PROBABLY_MOBILE // don't show video thumbs on mobile ???
