@@ -30,7 +30,9 @@ setDefault((view, route, params)=>fetchJSONFiles(`post_${route}`, 'posts-list', 
         !(/^experiment-/.test(route))&&scrollToTop(document.querySelector('[data-header]'), 0)
       })
 
-      return Object.assign(post, {parentSlug:'blog'})
+      return Object.assign(post, {
+        parentSlug: /^experiment-/.test(post.slug)?'experiments':'blog'
+      })
     }, searchView.bind(null, view, route, params)))
 
 /**
