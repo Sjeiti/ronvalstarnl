@@ -18,7 +18,7 @@ add(
     return fetchJSONFiles('posts-list')
       .then(([posts])=>{
         const experiments = posts
-          .filter(p=>/^experiment-/.test(p.slug))
+          .filter(p=>/^experiment-/.test(p.slug)&&p.thumbnail)
           .sort((a, b)=>new Date(a.dateFrom)<new Date(b.dateFrom)?1:-1)
         view.expandAppend(`ul.unstyled${classNames.projects}>(${experiments.map(getProjectThumbZen).join('+')})`)
         return {title, parentSlug}
