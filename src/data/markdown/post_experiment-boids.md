@@ -4,6 +4,7 @@
   slug: experiment-boids
   type: post
   tags: Perlin Noise, cool shit, experiment, particles
+  thumbnail: experiments/ocalhost_7047_experiment-boids.jpg
   related: experiment-*
 -->
 

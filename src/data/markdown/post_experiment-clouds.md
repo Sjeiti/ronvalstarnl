@@ -5,6 +5,7 @@
   type: post
   categories: code, GLSL
   tags: procedural, cool shit, experiment
+  thumbnail: experiments/52ab38b1-4947-4c55-ae49-2ecab7f1c122.jpg
   related: experiment-*
 -->
 
