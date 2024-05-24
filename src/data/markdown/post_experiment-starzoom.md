@@ -4,6 +4,7 @@
   slug: experiment-starzoom
   type: post
   tags: cool shit, experiment, recursion
+  thumbnail: experiments/ocalhost_7047_experiment-starzoom.png
   related: experiment-*
 -->
 

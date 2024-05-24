@@ -4,6 +4,7 @@
   slug: experiment-touches
   type: post
   tags: cool shit, experiment, particles
+  thumbnail: experiments/ocalhost_7047_experiment-touches.jpg
   related: experiment-*
 -->
 

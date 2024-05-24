@@ -6,6 +6,7 @@
   categories: code, JavaScript
   tags: JavaScript, cool shit, particles
   description: Another pretty simple idea with a really cool result. These are radial gradients drawn on top of each other with a 'difference' blend mode.
+  thumbnail: experiments/ocalhost_7047_experiment-radialdifference.jpg
   related: experiment-*
 -->
 

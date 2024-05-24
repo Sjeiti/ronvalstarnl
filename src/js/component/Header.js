@@ -19,6 +19,7 @@ create('[data-header]', class extends BaseComponent{
   _background
   _colofon
   _stuck = signal()
+  _requestFullScreen = signal()
   _lastScrollTop = 0
   _lastHeaderTop = 0
   _className = {
@@ -37,6 +38,9 @@ create('[data-header]', class extends BaseComponent{
     routeChange.add(this._onRouteChange.bind(this))
 
     //
+    const {_requestFullScreen:requestFullScreen} = this
+    signal.requestFullScreen = this._requestFullScreen
+    //
     fullscreen.add(::this._onFullscreenChange)
     //
 
@@ -53,8 +57,10 @@ create('[data-header]', class extends BaseComponent{
   _initExperiments(){
     this._experimentWrapper = this._select('.experiment-wrapper')
     this._experimentUI = this._select('.experiment-ui')
+    //
     this._experimentLink = this._experimentUI.querySelector('[data-link]')
     this._experimentLink.addEventListener('click', ::this._onClickLink)
+    this._requestFullScreen.add(::this._onClickLink)
     //
     this._experimentSave = this._experimentUI.querySelector('[data-save]')
     this._experimentSave.addEventListener('click', ::this._onMouseDownSave,true)

@@ -5,6 +5,7 @@
   type: post
   categories: code, game, JavaScript, work
   tags: 3D, WebGL, physics
+  thumbnail: experiments/ocalhost_7047_experiment-marbles.jpg
   related: experiment-*
 -->
 

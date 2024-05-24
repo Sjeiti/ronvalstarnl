@@ -259,7 +259,7 @@
     .content__intro-body {
       text-align: center;
     }
-    .content[data-pathname^="project"]:not([data-pathname^="project-"]), .content.wide {
+    .content[data-pathname^="project"]:not([data-pathname^="project-"]), .content[data-pathname^="experiments"], .content.wide {
       max-width: none;
     }
     .content, aside {
@@ -350,9 +350,9 @@
     <nav>
       <a href="/" title="home"><i class="logo"></i></a>
       <a href="/about"><span>about</span></a>
+      <a href="/experiments"><span>experiments</span></a>
       <a href="/projects"><span>projects</span></a>
       <a href="/blog"><span>blog</span></a>
-      <a href="/contact"><span>contact</span></a>
     </nav>
     <button data-color-scheme aria-label="toggle darkmode"><svg data-icon="brightness-contrast"><title>brightness-contrast</title></svg></button>
   </header>
@@ -371,7 +371,7 @@
       <a href="https://nl.linkedin.com/in/ron-valstar-4b20a917"><svg data-icon="linkedin"><title>LinkedIn</title></svg></a>
       <a href="https://github.com/Sjeiti" aria-label="Github"><svg data-icon="github"><title>Github</title></svg></a>
     </nav>
-    <span>&copy; Ron Valstar</span>
+    <a href="/contact"><span>&copy; Ron Valstar</span></a>
     <div data-search="{
       label:''
       ,submit:''

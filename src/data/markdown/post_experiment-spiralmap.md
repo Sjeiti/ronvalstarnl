@@ -6,6 +6,7 @@
   categories: code, GLSL
   tags: WebGL, shader
   description: The first WebGL shader I published was 3D Perlin noise dripping from the ceiling. But one of the first WebGL shaders I made was a simple displacement map.
+  thumbnail: experiments/ff615409-e9be-48ea-8b96-5fbf041b1c3b.jpg
   related: experiment-*
 -->
 
