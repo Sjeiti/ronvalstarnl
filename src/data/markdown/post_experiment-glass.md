@@ -4,6 +4,7 @@
   slug: experiment-glass
   type: post
   tags: cool shit, experiment, recursion
+  thumbnail: experiments/ronvalstar-nl_experiment-glass_1.jpg
   related: experiment-*
 -->
 

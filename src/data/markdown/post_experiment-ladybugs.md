@@ -13,6 +13,7 @@
 # Experiment: Ladybugs
 
 I like making things with as little elements as possible (and a ton of CSS). These ladybugs are a single HTMLElement. They are also the main star in [a post about randomness in CSS](/random-in-css).
+<<<<<<< HEAD
 
 Since the bugs are single elements, all you need to see is some CSS.
 <small>(ps: I cheated a bit with pseudo elements)</small>
@@ -79,3 +80,5 @@ Since the bugs are single elements, all you need to see is some CSS.
   }
 ```
 
+=======
+>>>>>>> refs/remotes/origin/develop

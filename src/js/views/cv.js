@@ -112,7 +112,6 @@ function getWordSection(root){
         const matches = child.matches.bind(child)
         const text = textContent?.replace(/^\s+|\s+(?=\s)|\s+$/g, '')?.replace(/\s/g, ' ')||''
         const [, headerDigit] = nodeName.match(/^H(\d)$/)||[]
-        // console.log('child.nodeName', nodeName, matches('h2,h3')?textContent:' ', headerDigit) // todo: remove log
         const hasBlockChildren = child.querySelectorAll('div,p,h2,h3,h4').length>0
         return matches('h2,h3')&&new Paragraph({text: textContent, heading: HeadingLevel['HEADING_'+headerDigit], style: nodeName})
             ||matches('li,header')&&(hasBlockChildren&&getWordSection(child)||new Paragraph({text}))
@@ -205,8 +204,6 @@ function dowloadWordDocument(target){
   })
   target.removeAttribute('href')
   Packer.toBlob(doc).then(blob => saveAs(blob, documentTitle+'.docx'))
-
-  // console.log('poepjes', 23) // todo: remove log
 
   //////////////////
 
