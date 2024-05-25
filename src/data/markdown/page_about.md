@@ -10,6 +10,8 @@
 
 I love writing [JavaScript](/search/javascript). So naturally I also know a lot about [DOM](/search/dom), [HTML](/search/html) and [CSS](/search/css).
 
+My formal background is graphic- and interaction design and I strive toward consistency and cleanliness in both code *and* design.
+
 The recurring theme in my work is bringing structure in the chaos. This can be streamlining a [build](/search/build), ordering components into a [semantic](/search/semantic) context, or knowing when to apply which [HTMLElement](/search/HTMLElement). Code must structured from the bottom up with the help of linting, unit tests, component tests and end-to-end tests.
 I care greatly about code quality backed by tests and build processes but I also think the strictness should reflect the team's experience.
 
@@ -23,27 +25,11 @@ Among the JavaScript frameworks and libraries I've used are [React](/search/reac
 
 For backend I mostly resort to [NodeJS](/search/node) or [PHP](/search/php). The latter often with [Laravel](/search/laravel) or [Wordpress](/search/wordpress). But I've also used Java, Python and .NET. You might say *full-stack*, but I don't believe that is really a thing.
 
-## role
-
-Sometimes I work on solo- or open-source projects but mostly I like to work in teams. 
-In a team my role is mostly lead- or senior front-end developer. 
-In larger environments I also love working across teams in scrum chapters.
-
-My formal background is graphic- and interaction design and I strive toward consistency and cleanliness in both code *and* design.
-
 ## clients
 
 In the course of time I have worked with: Randstad, Vodafone, Novartis, Philips, ThiemeMeulenhoff, Resn, 2x4, BNN, Pool Worldwide, Tribal DDB, Kennisnet, Centraal Museum and Ome Willem!
 
 As of december 2023 I landed my first job at [the Volksbank](https://www.devolksbank.nl/) where I'm part of the team responsible for the design system.
-
-<!--
-## ethics
-
-There is work that I've done in the past that I would no longer take on today.
-I no longer do hardcore commercial work; I will not help sell products nobody needs. I will *not* work for (most) banks or insurance companies. I will not work on anything bitcoin related. 
-Everybody is responsible. You cannot be responsible for everything but you should at least try.
---><!-- ; nothing is in vain when you're part of a chaotic system -->
 
 ## past
 
