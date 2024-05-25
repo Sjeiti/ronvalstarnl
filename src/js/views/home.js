@@ -25,10 +25,9 @@ add(
           view.expandAppend(`section.built>(h2.section-title>small{projects}+{built})+ul.unstyled.projects>(${projectHighlight.map(getProjectThumbZen).join('+')})`,false)
           //
           // working
-          // view.expandAppend(`section.for>(h2.section-title>small{working}+{at})+ul.unstyled.svg-list.at>li>svg[aria-label=volksbank]>use[xlink:href="#client-philips"]`,false)
-          //
-          //<li><svg aria-label="philips"><use xlink:href="#client-philips"></use></svg></li>
-          //li>svg[aria-label=volksbank]>use[xlink:href="#client-philips"]
+          view.expandAppend(`section.at>(h2.section-title>small{working}+{at})+ul.unstyled.svg-list.at>(
+            ${['snsbank', 'asnbank', 'volksbank', 'regiobank', 'blgwonen'].map(name=>`(li.client-${name}>svg[aria-label=${name}]>use[xlink:href="#client-${name}"])`).join('+')}
+          )`,false)
           //
           // clients
           view.expandAppend('section.for>(h2.section-title>small{worked}+{for})+ul.unstyled.svg-list.clients',false)
