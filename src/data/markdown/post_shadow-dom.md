@@ -115,7 +115,7 @@ Below is a working example (click the top right icon):
   }
   
   html {
-    font-size: 5vw;
+    font-size: 4.75vw;
   }
   
   html {
@@ -212,8 +212,9 @@ At this point it might be a good time to mention [custom elements](https://devel
 
 ## host element, selector and function
 
-The `:host` pseudo-class selector is used from shadow DOM to style the host element. It can be used to combine the outside- with the inside state. The host element itself is not really part of the shadow DOM; it can be styled by both document and shadow.
-For instance: when a class is set onto the host element, you can use the host selector *function* inside the shadow DOM styling like this `:host(.host-class-name) .inner { color: #F04; }`:
+The `:host` pseudo-class selector is used from inside the shadow DOM to style the host element. It can be used to combine the outside- with the inside state. The host element itself is not really part of the shadow DOM; it can be styled by both document and shadow. So don't put any styling in there you don't want overridden.
+
+For example: when a class is set onto the host element, you can use the host selector *function* inside the shadow DOM styling like this `:host(.host-class-name) .inner { color: #F04; }`:
 
 ```html
 <!--example-->
@@ -247,7 +248,7 @@ Array.from(document.querySelectorAll('.host')).forEach(host=>{
 </script>
 ```
 
-Since shadow DOM *does* inherit CSS rules, a common rule inside the shadow DOM styling is [`all: initial;`](https://developer.mozilla.org/en-US/docs/Web/CSS/all), and only let specific properties inherit. Like so:
+Since shadow DOM *does* inherit CSS rules, a common rule inside the shadow DOM styling is [`all: initial;`](https://developer.mozilla.org/en-US/docs/Web/CSS/all), and only let specific properties inherit. Like a sieve:
 
 ```CSS
 :host {
@@ -258,14 +259,14 @@ Since shadow DOM *does* inherit CSS rules, a common rule inside the shadow DOM s
 }
 ```
 
-The host element has some quirks though, living in the twilight like this. XXXX XXXX XXXX XXXX (box-shadow, specificity)
+One thing to remember is that outside styling of the host element takes precedence over host styling from within the shadow DOM.
 
 
 ## slots
 
 Slots can be seen as bubbles through which outside elements and styling can be placed inside the shadow DOM. Slots are the interface through which content can be placed in the shadow DOM.
 A custom element can have multiple, named slots. The way to style it inside the shadow is by its name: `::slotted([slot=name]) { color: lime; }`.
-Since slots are implemented (not defined) outside the shadow they can also be styled from without: `slot[name=name] { color: lime; } }`.
+Since slots are implemented (not defined) outside the shadow they can also be styled from without: `[slot=name] { font-style: italic; }`.
 
 ```html
 <!--example-->
@@ -274,7 +275,9 @@ Since slots are implemented (not defined) outside the shadow they can also be st
         margin-bottom: 1rem;
         &:first-letter { font-size: 1.5rem; }
     }
-    [slot=when], [name=when] { text-decoration: underline; }
+    [slot=when] { font-style: italic; }
+    /* below doesn't work, above does */
+    [name=when] { text-decoration: underline; }
 </style>
 
 Shadow with default slot contents:
@@ -301,7 +304,7 @@ Array.from(document.querySelectorAll('.host')).forEach(host=>{
 
 ## parts
 
-Parts are a way for the shadow element to designate specific areas as accessible for styling. Inside the shadow you say `<span part="label">Hello</span>` which makes it possible for the document stylesheet to have `::part(label) { color: lime; }`.
+Parts are a way for the shadow element to designate specific areas to be accessible for styling from the outside. Inside the shadow you say `<span part="label">Hello</span>` which makes it possible for the document stylesheet to have `::part(label) { color: lime; }`.
 
 ```html
 <!--example-->
@@ -335,7 +338,7 @@ Array.from(document.querySelectorAll('.host')).forEach(host=>{
 
 ## CSS properties
 
-CSS properties are unaffected by shadow. All properties defined in `:root` are accessible in shadow DOM. This also makes it possible to specify specific properties on the host element, as a more restrictive 'parts' implementation.
+CSS properties are unaffected by shadow. All properties defined in `:root` are accessible in shadow DOM. This also makes it possible to specify properties on the host element, as a more restrictive 'parts' implementation.
 
 ```html
 <!--example-->
@@ -381,7 +384,9 @@ const innerElement = shadowRoot.querySelector('.inner-element')
 innerElement.style.color = '#f04'
 ```
 
-## :w
+## Thats it
+
+In todays day and age you'll probably never use all this because your framework takes care of shadow DOM for you. But at least now you now know its not really magic.
 
 
 
