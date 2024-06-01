@@ -12,10 +12,9 @@
 
 # Shadow DOM
 
-About six years ago I gave a little talk on [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM) in the front-end guild at Randstad (for whom I was working freelance at that time). Last week I was asked to give a similar talk at my current employers front-end guild. The reason being that we had recently switched some of our components to shadow DOM due to style bleeds.
+About six years ago I gave a little talk on [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM) in the front-end guild at Randstad (for whom I was working freelance at that time). Last week I was asked to give a similar talk at my current employers front-end guild because we had recently switched some of our components to shadow DOM due to style bleeds.
 
-
-So I dusted off some old example code I had made back then, noticed there were some significant changes, read up on the current state, and thought it would make a nice post.
+So I dusted off some old example code I had made way back, noticed there were some significant changes, read up on the current state, and thought it would make a nice post.
 
 
 ## So why and what is shadow DOM?
@@ -23,9 +22,9 @@ So I dusted off some old example code I had made back then, noticed there were s
 In ancient times when websites were just starting to get larger, people started noticing annoying differences: new additions would cause unexpected changes to existing elements.
 These side effects were dubbed style bleeds. CSS inheritance and specificity made this an annoying problem, riddling many stylesheets with [repeated selector hacks](https://www.w3.org/TR/selectors-3/#specificity) and [`!important`](https://developer.mozilla.org/en-US/docs/Web/CSS/important).
 
-People came up with strict styling strategies to combat style bleeds; [OOCSS](http://oocss.org/), [BEM](https://getbem.com/), [SMACSS](https://smacss.com/), [Atomic design](https://atomicdesign.bradfrost.com/chapter-2/), [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) to name a few. They come with the added benefit that they also help structuring components semantically (not Atomic design though, Atomic design is just stupid).
+People came up with (strict) styling strategies to combat style bleeds; [OOCSS](http://oocss.org/), [BEM](https://getbem.com/), [SMACSS](https://smacss.com/), [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) to name a few. They come with the added benefit that they also help structuring components semantically.
 
-I mentioned components; they are a major advantage front-end frameworks brought us. In due time all major front-end frameworks would add some form of CSS scoping, rendering all those styling strategies more or less obsolete (although they do add logical structure).
+Speaking of components; they are a major advantage front-end frameworks brought us. In due time all major front-end frameworks would add some form of CSS scoping, rendering all those styling strategies more or less obsolete (although they do add logical structure).
 
 But what these frameworks were really anticipating was shadow DOM: a technique that allows encapsulation in DOM and CSSOM.
 
@@ -34,12 +33,12 @@ But what these frameworks were really anticipating was shadow DOM: a technique t
 
 Contrary to what you might think: shadow DOM *does* inherit CSS from its parent nodes. What the parent *cannot* do is target elements in the shadow DOM directly. Conversely, the CSS inside the shadow DOM has no effect whatsoever on the rest of the document.
 
-There are however several ways we can control shadow DOM from outside: the host selector, slots, parts and CSS properties.
+There are however several ways we can control shadow DOM from outside: through the host selector, with slots, parts and CSS properties.
 <small>We used to have the selectors `::shadow` and `/deep/`, but these were deprecated in favor of JS manipulation.</small>
 
 ### Example
 
-Below is a working example (click the top right icon):
+Below is a working example that features these techniques (click the top right icon for editable source):
 
 ```html
 <!--example-->
@@ -208,7 +207,16 @@ Below is a working example (click the top right icon):
 
 ## Custom elements
 
-At this point it might be a good time to mention [custom elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements). Which is something different, but it generally goes hand in hand with shadow DOM. Yes, you can simply say `document.querySelector('#host').attachShadow({ mode: 'open' }).innerHTML = '<span class="inner">I am the terror that flaps in the night</span>'`. But there's no fun in that.
+At this point it might be a good time to mention [custom elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements). Which is something different, but it generally goes hand in hand with shadow DOM. Yes, you can simply say `document.querySelector('#host').attachShadow({ mode: 'open' }).innerHTML = '<span class="inner">I am the terror that flaps in the night</span>'`.
+
+```JavaScript
+document.querySelector('#host')
+    .attachShadow({ mode: 'open' })
+    .appendChild(document.createTextNode('I am the terror that flaps in the night'))
+```
+
+
+But there's no fun in that.
 
 ## host element, selector and function
 
@@ -386,7 +394,7 @@ innerElement.style.color = '#f04'
 
 ## Thats it
 
-In todays day and age you'll probably never use all this because your framework takes care of shadow DOM for you. But at least now you now know its not really magic.
+You'll probably never use all this because your framework takes care of shadow DOM for you. But at least now you now know its not really magic.
 
 
 
