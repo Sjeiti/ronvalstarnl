@@ -5,11 +5,13 @@ section:after {
 }
 
 :root {
+  --color-home-bg0: #B2C8C8;
   --color-home-bg1: #d9e4e4;
   --color-home-bg2: #e3eef2;
   --color-home-bg3: #edf6ff;
 }
 .color-scheme-dark {
+  --color-home-bg0: #080808;
   --color-home-bg1: #111;
   --color-home-bg2: #222;
   --color-home-bg3: #333;
@@ -45,6 +47,24 @@ section:after {
     h2 { margin-top: 10rem; }
     &.built {
       h2 { margin-top: 4rem; }
+    }
+    &.at {
+      background-color: var(--color-home-bg0);
+      ul {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        box-shadow: inset -32px -64px 128px var(--color-home-bg1);
+      }
+      li {
+        width: 12rem;
+        flex: 0 0 auto;
+        box-shadow: inset -32px -64px 128px var(--color-home-bg1);
+        &.client-volksbank {
+          width: 24rem;
+          svg { transform: scale(0.8); }
+        }
+      }
     }
     &.for {
       background-color: var(--color-home-bg1);
