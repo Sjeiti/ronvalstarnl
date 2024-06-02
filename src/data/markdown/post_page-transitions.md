@@ -10,6 +10,7 @@
   tags: CSS, transitions
   related: front-end-logic-without-javascript
   description: Basic structure and example of a page transition in a single page application.
+  sticky: true
 -->
 
 # The basics of CSS page transitions

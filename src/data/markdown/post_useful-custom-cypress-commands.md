@@ -9,7 +9,6 @@
   categories: Javascript
   tags: testing, e2e, end-to-end
   description: Some useful Cypress custom commands to make your tests cleaner
-  sticky: true
 -->
 
 # Useful custom Cypress commands
