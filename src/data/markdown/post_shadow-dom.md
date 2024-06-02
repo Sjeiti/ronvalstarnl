@@ -1,6 +1,6 @@
 <!--
-  date: 9999-99-99
-  modified: 9999-99-99
+  date: 2024-06-02
+  modified: 2024-06-02
   slug: shadow-dom
   type: post
   header: vino-li-55nuS2rUYmQ-unsplash.jpg
@@ -207,14 +207,13 @@ Below is a working example that features these techniques (click the top right i
 
 ## Custom elements
 
-At this point it might be a good time to mention [custom elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements). Which is something different, but it generally goes hand in hand with shadow DOM. Yes, you can simply say `document.querySelector('#host').attachShadow({ mode: 'open' }).innerHTML = '<span class="inner">I am the terror that flaps in the night</span>'`.
+At this point it might be a good time to mention [custom elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements). Which is something different, but it generally goes hand in hand with shadow DOM. Yes, you can simply say
 
 ```JavaScript
 document.querySelector('#host')
     .attachShadow({ mode: 'open' })
     .appendChild(document.createTextNode('I am the terror that flaps in the night'))
 ```
-
 
 But there's no fun in that.
 
