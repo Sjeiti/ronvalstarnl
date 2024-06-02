@@ -4,6 +4,7 @@
   slug: experiment-flowfield
   type: post
   tags: procedural, cool shit, experiment, particles 
+  thumbnail: experiments/Screenshot_20240526-225746.png-edit-20240526225823.jpg
   related: experiment-*
 -->
 
