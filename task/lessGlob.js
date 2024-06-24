@@ -1,7 +1,8 @@
-const {promisify} = require('util')
-const glob = promisify(require('glob'))
-const utils = require('./util/utils.js')
-const {save, read} = utils
+import {promisify} from 'util'
+import _glob from 'glob'
+import {save} from './util/utils.js'
+
+const glob = promisify(_glob)
 
 const globLess = './src/style/glob.less'
 

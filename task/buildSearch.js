@@ -1,9 +1,10 @@
-const {promisify} = require('util')
-const glob = promisify(require('glob'))
-const utils = require('./util/utils.js')
-const {read, save} = utils
+import {promisify} from 'util'
+import _glob from 'glob'
+import {save, read} from './util/utils.js'
+import common from './commonWords.json' assert { type: 'json' }
 
-const common = require('./commonWords')
+const glob = promisify(_glob)
+
 const basePath = './src/data/search/'
 
 glob('src/data/markdown/@(post|page|fortpolio)_*.md')

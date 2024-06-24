@@ -1,21 +1,21 @@
 // see http://www.rssboard.org/rss-profile
 
-const utils = require('./util/utils.js')
-const {save} = utils
-const {target} = require('commander')
+import {read, save} from './util/utils.js'
+import commander from 'commander'
+
+import posts from '../src/data/json/posts-list.json' assert { type: 'json' }
+
+const {target} = commander
         .usage('[options] <files ...>')
         .option('--target [target]', 'Target path')
         .parse(process.argv)
         .opts()
 
-const path = '../src/data/json/'
 const base = 'https://ronvalstar.nl'
-const posts = require(path+'posts-list.json')
 
 const today = new Date
 const currentPast = posts.filter(({date})=>(new Date(date))<=today)
 
-const portfolio = require(path+'fortpolio-list.json')
 const stripHTML = htmlString=>htmlString.replace(/<[^>]*>?/gm, '')
 const encodedStr = rawStr=>rawStr.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
    return '&#'+i.charCodeAt(0)+';';
@@ -26,27 +26,35 @@ const describe = string=>{
 }
 const stringDate = date=>new Date(date).toGMTString()
 
-const rss = `<?xml version="1.0" ?>
+(async ()=>{
+
+  const rss = `<?xml version="1.0" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ron Valstar</title>
     <link>${base}</link>
     <description>Blog posts and articles about front-end development</description>
     <atom:link href="${base}/feed.rss" rel="self" type="application/rss+xml" />
-    ${currentPast.map(({title, slug, date})=>{
-      const post = require(`${path}post_${slug}.json`)
-      return `<item>
+    ${currentPast.map(async ({title, slug, date})=>{
+
+    // const post = require(`../src/data/json/post_${slug}.json`)
+
+    const post = await read(`../src/data/json/post_${slug}.json`)
+
+    return `<item>
         <title>${title||'blank'}</title>
         <link>${base}/${slug}</link>
         <guid>${base}/${slug}</guid>
         <description>${describe(post.description||'')}</description>
         <pubDate>${stringDate(date)}</pubDate>
       </item>`
-    }).join('')}
+  }).join('')}
   </channel>
 </rss>`
 
-save((target||'temp')+'/feed.rss', rss)
+  await save((target||'temp')+'/feed.rss', rss)
+
+})()
 
 /*
 

@@ -1,4 +1,4 @@
-const {marked} = require('marked')
+import {marked} from 'marked'
 
 const arrayKeys = ['tags', 'categories', 'collaboration', 'clients', 'prizes', 'images']
 const booleanKeys = ['inCv', 'inPortfolio', 'sticky']
@@ -9,7 +9,7 @@ const markdownKeys = ['excerpt', 'excerptNl']
  * @param {string} contents
  * @returns {object}
  */
-function markdown2object(contents){
+export function markdown2object(contents){
   const lines = contents.trim().split(/\r\n|\r|\n/g)
   const hasComments = /^\s*<!--\s*$/.test(lines[0])
   const endComments = hasComments?firstMatchIndex(lines, /^\s*-->\s*$/):-1
@@ -54,5 +54,3 @@ function firstMatchIndex(a, r){
   }
   return matchedIndex
 }
-
-module.exports = {markdown2object}

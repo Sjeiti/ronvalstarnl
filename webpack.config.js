@@ -1,13 +1,16 @@
-const path = require('path')
-const webpack = require('webpack')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const {default:WatchExternalFilesPlugin} = require('webpack-watch-files-plugin')
+import fs from 'fs'
+import path from 'path'
+import webpack from 'webpack'
+import CopyWebpackPlugin from 'copy-webpack-plugin'
+import WatchExternalFilesPlugin from 'webpack-watch-files-plugin'
+
+const __dirname = import.meta.dirname
+
+const pack = JSON.parse(fs.readFileSync('./package.json'))
 const fileName = '[name]-[hash].[ext]'
-module.exports = env => {
+export default env => {
 
   const isProduction = !!env&&env.production
-  // const isDevelopment = !!env&&env.development
-  // const isStaging = !!env&&env.staging
   const mode = isProduction?'production':'development'
 
   return {
@@ -86,7 +89,7 @@ module.exports = env => {
           , { from: 'node_modules/experiments/src/static/img/', to: './static/img' }
       ]})
       , new webpack.DefinePlugin({
-        _VERSION: JSON.stringify(require('./package.json').version)
+        _VERSION: JSON.stringify(pack.version)
         , _ENV: JSON.stringify(env||{})
       })
       , new WatchExternalFilesPlugin ({

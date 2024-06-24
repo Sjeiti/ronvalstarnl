@@ -1,9 +1,10 @@
-const {marked} = require('marked')
-const {promisify} = require('util')
-const glob = promisify(require('glob'))
-const utils = require('./util/utils.js')
-const {markdown2object} = require('./util/markdown2object')
-const {save, read} = utils
+import {marked} from 'marked'
+import {promisify} from 'util'
+import _glob from 'glob'
+import {save, read} from './util/utils.js'
+import {markdown2object} from './util/markdown2object.js'
+
+const glob = promisify(_glob)
 
 const t = s=>(new Date(s)).getTime()||Number.MAX_VALUE
 
