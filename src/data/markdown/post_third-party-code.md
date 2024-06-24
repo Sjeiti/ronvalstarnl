@@ -13,7 +13,7 @@
 # Wrap third party code
 
 I don't like other peoples code.
-No I'm kidding; I learnt everything I know from other people so who am I to judge. But they say every joke is half the truth.
+No I'm kidding; I learnt everything I know from other peoples code, so who am I to judge. But they say every joke is half the truth.
 
 ## searching
 
@@ -37,14 +37,13 @@ Except maybe documentation; I don't know if you've ever open-sourced something; 
 ## Too difficult
 
 Some things *are* too big or too complex or too difficult to build yourself.
-The site you are reading this on has four of these:
+The site you are reading this on has three of these:
 
 - [@emmetio/expand-abbreviation](https://github.com/emmetio/emmet) used for templating
 - [GSAP](https://greensock.com/gsap/) for animation
 - [Prism](https://prismjs.com/) for code display
-- [Signals](https://github.com/millermedeiros/js-signals) as event system
 
-I've used others in other projects: calendars are one, [HammerJS](http://hammerjs.github.io/), [Marked](https://marked.js.org), [PeerJS](https://peerjs.com/).
+In other projects i've used: calendars, [HammerJS](http://hammerjs.github.io/), [Marked](https://marked.js.org), [PeerJS](https://peerjs.com/).
 
 ## A design pattern
 

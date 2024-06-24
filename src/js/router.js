@@ -1,8 +1,8 @@
-import {parentQuerySelector, expand, createElement, clean} from './utils/html'
-import {signal} from './signal'
-import {initialise} from './component'
-import {nextFrame, nextTick} from './utils'
-import {applyDirectives} from './directives'
+import {parentQuerySelector, expand, createElement, clean} from './utils/html.js'
+import {signal} from './signal/index.js'
+import {initialise} from './component/index.js'
+import {nextFrame, nextTick} from './utils/index.js'
+import {applyDirectives} from './directives/index.js'
 
 export const routeChange = signal()
 

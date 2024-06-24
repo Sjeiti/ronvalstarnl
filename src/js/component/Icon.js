@@ -1,10 +1,14 @@
 import {create} from './index'
 import {BaseComponent} from './BaseComponent'
 import {NS_SVG, NS_XLINK} from '../config'
-import root from '!!raw-loader!../../../temp/icomoon/symbol-defs.svg'
+//import root from '!!raw-loader!../../../temp/icomoon/symbol-defs.svg'
+import {raw} from '../utils/svg.js'
+
+const {symbolDefs} = raw
 
 // conditional because of prerender
-document.querySelector('svg[aria-hidden=true]:not([id])')||document.body.insertAdjacentHTML('afterbegin', root)
+document.querySelector('svg[aria-hidden=true]:not([id])')||document.body.insertAdjacentHTML('afterbegin', symbolDefs)
+//document.querySelector('svg[aria-hidden=true]:not([id])')||document.body.insertAdjacentHTML('afterbegin', root)
 
 /**
  * Search component
