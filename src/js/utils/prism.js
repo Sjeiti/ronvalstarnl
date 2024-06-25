@@ -1,7 +1,7 @@
 import Prism from 'prismjs'
-import {createElement} from './html'
-import {initialise} from '../component'
-import {nextFrame} from './index'
+import {createElement} from './html.js'
+import {initialise} from '../component/index.js'
+import {nextFrame} from './index.js'
 
 Prism.languages.insertBefore('javascript', 'comment', {
   'cut': /\s*\(\.\.\.\)\s*/

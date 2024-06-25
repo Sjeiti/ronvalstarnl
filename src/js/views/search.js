@@ -1,9 +1,9 @@
-import {add} from '../router'
-import {clean, expand} from '../utils/html'
-import {fetchJSONFiles, getZenIcon, nextTick} from '../utils'
-import {search, change} from '../component/Search'
-import {open} from '../router'
-import {initialise} from '../component'
+import {add} from '../router.js'
+import {clean, expand} from '../utils/html.js'
+import {fetchJSONFiles, getZenIcon, nextTick} from '../utils/index.js'
+import {search, change} from '../component/Search.js'
+import {open} from '../router.js'
+import {initialise} from '../component/index.js'
 
 search.add(query=>open(`/search/${encodeURIComponent(query)}`))
 

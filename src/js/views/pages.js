@@ -1,5 +1,5 @@
-import {add} from '../router'
-import {fetchJSONFiles} from '../utils'
+import {add} from '../router.js'
+import {fetchJSONFiles} from '../utils/index.js'
 
 add(
   'contact'

@@ -1,5 +1,5 @@
-import {from} from './from'
-import {terms} from './terms'
+import {from} from './from.js'
+import {terms} from './terms.js'
 
 const directives = {terms, from}
 

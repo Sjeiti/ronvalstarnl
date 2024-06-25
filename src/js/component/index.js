@@ -1,10 +1,14 @@
 const _componentClasses = {}
 const _instances = new Map()
-const _body = document.body
+//const _body = globalThis.document.body
 const _eventNames = 'mousedown,mouseup,click,dblclick,submit,focus,blur,keydown,keyup,keypress'.split(/,/g)
 const _eventHandlers = _eventNames.map(name=>'on'+name.substr(0, 1).toUpperCase()+name.substr(1))
 const _eventInstances = _eventNames.map(()=>[])
 const _eventInitialised = _eventNames.map(()=>false)
+
+function getBody(){
+  return globalThis.document.body
+}
 
 /**
  * Create a component by binding it to a specific selector
@@ -24,7 +28,7 @@ export function create(componentSelector, componentClass){
  * @param {HTMLElement} [rootElement]
  */
 export function initialise(rootElement){
-  _initialise(rootElement||_body)
+  _initialise(rootElement||getBody())
   _initEvents()
   rootElement&&_initScripts(rootElement)
   _dispatchOnInit()
@@ -88,7 +92,7 @@ function _initEvents(){
     const hasTargets = list.length
         , isInitialised = _eventInitialised[i]
     if (hasTargets&&!isInitialised){
-      _body.addEventListener(_eventNames[i], _onEvent.bind(this, list, _eventHandlers[i]))
+      getBody().addEventListener(_eventNames[i], _onEvent.bind(this, list, _eventHandlers[i]))
       _eventInitialised[i] = true
     }
   })
@@ -131,7 +135,7 @@ function _dispatchOnInit(){
 function _onEvent(list, handler, e){
   let target = e.target
   const parents = []
-  while (target&&target!==_body){
+  while (target&&target!==getBody()){
       parents.unshift(target)
       target = target.parentNode
   }

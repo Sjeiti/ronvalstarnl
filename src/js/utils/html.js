@@ -6,7 +6,7 @@
  * @param {object} attrs
  * @returns {HTMLDivElement}
  */
-import {emmetExpand} from './emmet'
+import {emmetExpand} from './emmet.js'
 
 // /**
 //  * Shortcut method for quickly appending elements
@@ -112,7 +112,7 @@ export function expand(s){
  * @returns {HTMLElement} Returns the newly created element
  */
 export function createElement(type, classes, parent, attributes, text, click){
-  const mElement = document.createElement(type||'div')
+  const mElement = globalThis.document?.createElement(type||'div')
   if (attributes) for (let attr in attributes) mElement.setAttribute(attr, attributes[attr])
   if (classes){
     const oClassList = mElement.classList

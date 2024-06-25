@@ -10,7 +10,7 @@ let doAnimateRoute = false
 let defaultRouteResolve
 const routes = {}
 
-window.addEventListener('popstate', onPopstate)
+globalThis.window?.addEventListener('popstate', onPopstate)
 
 const ms = getPageTransitionTime()
 
@@ -23,7 +23,7 @@ const className = {
   , CONTENT_ANIMATE_IN_START: 'content--animate-in-start'
 }
 
-const view = document.querySelector('main')
+const view = globalThis.document?.querySelector('main')
 const viewModel = viewModelFactory(view).init()
 document.body.addEventListener('click', onClick, true)
 
@@ -285,7 +285,7 @@ function viewModelFactory(element){
      * @type {HTMLElement}
      */
     , _content: {
-      value: element.querySelector('.content:not(.content--past)')||createElement('div', 'content', element)
+      value: element?.querySelector('.content:not(.content--past)')||createElement('div', 'content', element)
       , writable: false
     }
     /**
@@ -376,7 +376,7 @@ function getIsFullURI(uri){
  */
 function getPageTransitionTime(){
   let time = 500
-  Array.from(document.styleSheets).forEach(sheet=>{
+  Array.from(globalThis.document?.styleSheets||[]).forEach(sheet=>{
     try {
       Array.from(sheet.rules).forEach(rule => {
         if (rule.selectorText?.includes('animate-out-start')&&rule.cssText?.includes('transition')){

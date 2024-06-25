@@ -1,9 +1,9 @@
-import {routeChange} from './router'
-import {stringToElement, expand} from './utils/html'
-import {getCanonical} from './utils'
-import {MEDIA_URI_HEADER} from './config'
+import {routeChange} from './router.js'
+import {stringToElement, expand} from './utils/html.js'
+import {getCanonical} from './utils/index.js'
+import {MEDIA_URI_HEADER} from './config.js'
 
-const siteName= 'Ron Valstar - front-end developer'
+const siteName = 'Ron Valstar - front-end developer'
 
 /**
  * Head controller for meta properties

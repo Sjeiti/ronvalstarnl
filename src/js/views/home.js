@@ -2,8 +2,11 @@ import {add} from '../router.js'
 import {fetchJSONFiles, stickiesFirst, todayOlderFilter} from '../utils/index.js'
 import {getProjectThumbZen} from './projects.js'
 import {TweenMax, Linear} from 'gsap'
-import clientSymbols from '!!raw-loader!../../static/svg/client-symbol-defs.svg'
-import prizesSymbols from '!!raw-loader!../../static/svg/prizes-symbol-defs.svg'
+import {raw} from '../utils/svg.js'
+
+//import clientSymbols from '!!raw-loader!../../static/svg/client-symbol-defs.svg'
+//import prizesSymbols from '!!raw-loader!../../static/svg/prizes-symbol-defs.svg'
+const {clientSymbolDefs:clientSymbols, prizesSymbolDefs:prizesSymbols} = raw
 
 // conditional because of prerender
 document.querySelector('#client-symbol-defs')||document.body.insertAdjacentHTML('afterbegin', clientSymbols)

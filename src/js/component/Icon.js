@@ -1,6 +1,6 @@
-import {create} from './index'
-import {BaseComponent} from './BaseComponent'
-import {NS_SVG, NS_XLINK} from '../config'
+import {create} from './index.js'
+import {BaseComponent} from './BaseComponent.js'
+import {NS_SVG, NS_XLINK} from '../config.js'
 //import root from '!!raw-loader!../../../temp/icomoon/symbol-defs.svg'
 import {raw} from '../utils/svg.js'
 

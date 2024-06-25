@@ -1,8 +1,8 @@
-import {createElement, expand} from '../utils/html'
-import {add} from '../router'
-import {slugify} from '../utils/string'
-import {fetchJSONFiles} from '../utils'
-import {initialise} from '../component'
+import {createElement, expand} from '../utils/html.js'
+import {add} from '../router.js'
+import {slugify} from '../utils/string.js'
+import {fetchJSONFiles} from '../utils/index.js'
+import {initialise} from '../component/index.js'
 ////////////////////////////////////////
 import {jsPDF} from 'jspdf'
 // import * as docx from 'docx'

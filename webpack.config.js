@@ -92,9 +92,9 @@ export default env => {
         _VERSION: JSON.stringify(pack.version)
         , _ENV: JSON.stringify(env||{})
       })
-      , new WatchExternalFilesPlugin ({
-        files: ['src/js/**/*.less'] // see screen.less with glob import (which doesn't work with watcher)
-      })
+      //, new WatchExternalFilesPlugin ({
+      //  files: ['src/js/**/*.less'] // see screen.less with glob import (which doesn't work with watcher)
+      //})
 
     ]
   }

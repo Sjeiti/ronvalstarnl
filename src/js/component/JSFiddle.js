@@ -1,5 +1,5 @@
-import {create} from './index'
-import {BaseComponent} from './BaseComponent'
+import {create} from './index.js'
+import {BaseComponent} from './BaseComponent.js'
 
 /**
  * JSFiddle component

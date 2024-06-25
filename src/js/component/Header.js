@@ -1,13 +1,13 @@
 import * as experiments from 'experiments/src/experiment/index.js'
 
-import {create} from './index'
-import {BaseComponent} from './BaseComponent'
-import fullscreen from '../signal/fullscreen'
-import {scroll} from '../signal/scroll'
-import {signal} from '../signal'
-import {routeChange} from '../router'
-import {clean, markdownLinks, selectEach} from '../utils/html'
-import {MEDIA_URI_HEADER} from '../config'
+import {create} from './index.js'
+import {BaseComponent} from './BaseComponent.js'
+import fullscreen from '../signal/fullscreen.js'
+import {scroll} from '../signal/scroll.js'
+import {signal} from '../signal/index.js'
+import {routeChange} from '../router.js'
+import {clean, markdownLinks, selectEach} from '../utils/html.js'
+import {MEDIA_URI_HEADER} from '../config.js'
 
 create('[data-header]', class extends BaseComponent{
 

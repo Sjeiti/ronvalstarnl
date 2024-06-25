@@ -2,8 +2,8 @@
  * The callback for this signal is Function(scrollLeft,scrollTop)
  * @type Signal
  */
-import {signal} from './index'
-import {getScrollX, getScrollY} from '../utils'
+import {signal} from './index.js'
+import {getScrollX, getScrollY} from '../utils/index.js'
 
 export const scroll = signal()
 const {documentElement} = document
