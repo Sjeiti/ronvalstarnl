@@ -72,6 +72,7 @@ export function setDefault(fn){
  * @param {Array<string|routeCallback>} names
  */
 export function add(...names){//,callback
+  console.log('router add',names)
   const callback = names.pop()
   names.forEach(name=>routes[name]=callback)
 }
@@ -89,6 +90,7 @@ export function open(uri, popped){
   url = getURL(pathname)
   const name = getName(pathname)
   const currentName = viewModel.getViewName()
+  //const {history} = globalThis.location
   if (name!==currentName){
     let routeResolve = defaultRouteResolve
     let routeParams
@@ -104,6 +106,9 @@ export function open(uri, popped){
       viewModel.removeEventListeners()
       routeResolve(viewModel, name||'home', routeParams)
         .then(page=>{
+
+console.log('router open')//todo remove
+
           const title = page.title
           const urlNew = (name[0]==='/'?'':'/')+name
           popped||history.pushState({}, title, urlNew)
@@ -116,7 +121,7 @@ export function open(uri, popped){
             location.hash = hash
           })
           // All loaded. set prerenderReady (https://answers.netlify.com/t/support-guide-understanding-and-debugging-prerendering/150)
-          window.prerenderReady||(window.prerenderReady = true)
+          //window.prerenderReady||(window.prerenderReady = true) // todo remove
         })
         .catch(console.error)
     }
@@ -349,7 +354,7 @@ function getName(pathname){
  * @returns {string}
  */
 function getURL(pathname){
-  return  location.origin+pathname
+  return  globalThis.document.location.origin+pathname
 }
 
 /**

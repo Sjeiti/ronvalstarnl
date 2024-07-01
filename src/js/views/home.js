@@ -21,6 +21,9 @@ add(
   , (view, route)=>{
     return fetchJSONFiles(`page_${route}`, 'posts-list', 'fortpolio-list')
       .then(([page, posts, projects])=> {
+          
+          console.log('home render')//todo remove
+
           view.appendString(page.content)
           //
           // projects // todo duplicate code in `view/projects.js`
@@ -65,6 +68,9 @@ add(
           const stickies = `(.paper>div>ul.unstyled.link-list>(${sticked.map(getLi).join('+')}))`
           const others = `ul.unstyled.link-list>(${rest.map(getLi).join('+')})`
           view.expandAppend(`section.written>(h2.section-title>small{articles}+{written})+${stickies}+${others}`,false)
+
+          console.log('home render end')//todo remove
+
           return page
       })
     })

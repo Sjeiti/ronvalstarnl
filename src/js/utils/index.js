@@ -183,7 +183,7 @@ export function loadScript(src){
  * @returns {number}
  */
 export function nextTick(fn){
-  return requestAnimationFrame(fn)
+  return globalThis.requestAnimationFrame(fn)
 }
 
 /**
@@ -193,7 +193,7 @@ export function nextTick(fn){
  * @returns {Function}
  */
 export function nextFrame(fn, nr=2){
-  return nr<=0?fn():nextFrame(requestAnimationFrame.bind(null, fn), nr-1)
+  return nr<=0?fn():nextFrame(globalThis.requestAnimationFrame.bind(null, fn), nr-1)
 }
 
 /**
@@ -206,6 +206,8 @@ export function getCanonical(page){
   return 'https://ronvalstar.nl/'+(page.type==='fortpolio'?'project/':'')+page.slug
 }
 
+let fetchStart
+let fetchDone
 function initSpinner(){
   const {body} = document
   const spinnerStart = 'spinner--start'
@@ -214,8 +216,8 @@ function initSpinner(){
   const spinnerStartAdd = classList.add.bind(classList, spinnerStart)
   const spinnerStartRem = classList.remove.bind(classList, spinnerStart)
   classList.add('spinner')
-  const fetchStart = ()=>body.appendChild(spinner)&&nextFrame(spinnerStartAdd, 2)
-  const fetchDone = ()=>body.removeChild(spinner)&&spinnerStartRem()
+  fetchStart = ()=>body.appendChild(spinner)&&nextFrame(spinnerStartAdd, 2)
+  fetchDone = ()=>body.removeChild(spinner)&&spinnerStartRem()
   Object.assign(globalThis,{fetchStart,fetchDone})
 }
 
