@@ -72,7 +72,6 @@ export function setDefault(fn){
  * @param {Array<string|routeCallback>} names
  */
 export function add(...names){//,callback
-  console.log('router add',names)
   const callback = names.pop()
   names.forEach(name=>routes[name]=callback)
 }
@@ -106,9 +105,6 @@ export function open(uri, popped){
       viewModel.removeEventListeners()
       routeResolve(viewModel, name||'home', routeParams)
         .then(page=>{
-
-console.log('router open')//todo remove
-
           const title = page.title
           const urlNew = (name[0]==='/'?'':'/')+name
           popped||history.pushState({}, title, urlNew)
@@ -122,6 +118,10 @@ console.log('router open')//todo remove
           })
           // All loaded. set prerenderReady (https://answers.netlify.com/t/support-guide-understanding-and-debugging-prerendering/150)
           //window.prerenderReady||(window.prerenderReady = true) // todo remove
+console.log('router end'
+  ,viewModel._content.outerHTML.length
+  ,viewModel._content.outerHTML.includes('class="built"')
+)//todo remove
         })
         .catch(console.error)
     }
@@ -162,8 +162,10 @@ function viewModelFactory(element){
           this._contentPastTimer = setTimeout(this._removeAndCleanPastContent.bind(this), ms)
         })
       } else {
+console.log('cleaned',element.outerHTML.length)//todo remove
         while (_content.firstChild) _contentPast.appendChild(_content.firstChild)
         element.appendChild(_contentPast)
+console.log('cleaned',element.outerHTML.length)//todo remove
         this._removeAndCleanPastContent()
         doAnimateRoute = true
       }

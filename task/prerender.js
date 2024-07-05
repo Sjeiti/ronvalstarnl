@@ -5,7 +5,7 @@ import fs from 'fs'
 import {JSDOM} from 'jsdom'
 import {viewModelFactory} from './util/viewModelFactory.js'
 
-const {promises:{readFile},readFileSync} = fs // require('node:fs')
+const {promises:{readFile, writeFile},readFileSync} = fs // require('node:fs')
 //const {JSDOM} = require('jsdom')
 
 //import {open} from '../src/js/router.js'
@@ -82,13 +82,16 @@ const index = 'src/index.html'
   await import('../src/js/views/home.js')
 
   const {open} = router
-
-  open(window.location.href)
+  const {href} = window.location
+  open(href)
   
   //
 
-  console.log(window.location.href)
+  console.log('href',href)
   //console.log(document.body.textContent)
+  const {outerHTML} = document.documentElement
+  await writeFile('./dist/foo.html',outerHTML)
+  console.log('html',outerHTML.length,outerHTML.includes('class="content"'),outerHTML.includes('class="built"'))
 })()
 
 
