@@ -1,7 +1,6 @@
 //window.onerror = err=>alert(err)
 document.documentElement.classList.remove('no-js')
 
-import '../style/screen.less'
 import './views/index.js'
 import './head.js'
 import {initialise} from './component/index.js'

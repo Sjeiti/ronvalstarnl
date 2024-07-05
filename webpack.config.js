@@ -23,18 +23,6 @@ export default env => {
     , devtool: 'source-map'
     , module: {
       rules: [{
-          test: /\.less$/
-          , use: [
-              'style-loader'
-              , 'css-loader'
-              , {
-                loader: 'less-loader'
-                , options: {lessOptions:{
-                  paths: [path.resolve(__dirname, 'src')]
-                }}
-              }
-          ]
-      }, {
         test: /\.(log|frag|vert|txt|css)/
         , use: [{
             loader: 'raw-loader'
