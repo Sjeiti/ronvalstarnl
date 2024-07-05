@@ -90,6 +90,7 @@ export function open(uri, popped){
   const name = getName(pathname)
   const currentName = viewModel.getViewName()
   //const {history} = globalThis.location
+  let routePromise = Promise.resolve()
   if (name!==currentName){
     let routeResolve = defaultRouteResolve
     let routeParams
@@ -103,7 +104,7 @@ export function open(uri, popped){
     }
     if (url!==oldUrl){
       viewModel.removeEventListeners()
-      routeResolve(viewModel, name||'home', routeParams)
+      routePromise = routeResolve(viewModel, name||'home', routeParams)
         .then(page=>{
           const title = page.title
           const urlNew = (name[0]==='/'?'':'/')+name
@@ -116,16 +117,11 @@ export function open(uri, popped){
             history.replaceState({}, title, urlNew+hash)
             location.hash = hash
           })
-          // All loaded. set prerenderReady (https://answers.netlify.com/t/support-guide-understanding-and-debugging-prerendering/150)
-          //window.prerenderReady||(window.prerenderReady = true) // todo remove
-console.log('router end'
-  ,viewModel._content.outerHTML.length
-  ,viewModel._content.outerHTML.includes('class="built"')
-)//todo remove
         })
         .catch(console.error)
     }
   }
+  return routePromise
 }
 
 /**
@@ -162,10 +158,8 @@ function viewModelFactory(element){
           this._contentPastTimer = setTimeout(this._removeAndCleanPastContent.bind(this), ms)
         })
       } else {
-console.log('cleaned',element.outerHTML.length)//todo remove
         while (_content.firstChild) _contentPast.appendChild(_content.firstChild)
         element.appendChild(_contentPast)
-console.log('cleaned',element.outerHTML.length)//todo remove
         this._removeAndCleanPastContent()
         doAnimateRoute = true
       }
@@ -253,7 +247,6 @@ console.log('cleaned',element.outerHTML.length)//todo remove
       const {_content, _contentPast} = this
       _contentPast.setAttribute('data-pathname', _content.getAttribute('data-pathname'))
       _content.setAttribute('data-pathname', name)
-      document.body.setAttribute('data-pathname', name) // todo may not be good idea
       return this
     }
     /**

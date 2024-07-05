@@ -3,7 +3,7 @@
 
 import fs from 'fs'
 import {JSDOM} from 'jsdom'
-import {viewModelFactory} from './util/viewModelFactory.js'
+// import {viewModelFactory} from './util/viewModelFactory.js'
 
 const {promises:{readFile, writeFile},readFileSync} = fs // require('node:fs')
 //const {JSDOM} = require('jsdom')
@@ -38,7 +38,6 @@ const index = 'src/index.html'
 
   const fetchPkg = 'node_modules/whatwg-fetch/dist/fetch.umd.js'
   doc.window.eval(fs.readFileSync(fetchPkg, 'utf-8'))
-  
 
   const {window, window:{document}} = doc
 
@@ -52,19 +51,16 @@ const index = 'src/index.html'
     //return _fetch('src'+s)
     const body = readFileSync('src'+s)
     return Promise.resolve(new Response(body))
-    //return readFile('src'+s) 
+    //return readFile('src'+s)
   }
 
   globalThis.history = doc.window.history
 
-  const view = document.querySelector('main')
-  const viewModel = viewModelFactory(view)
-
-  console.log('doc', Object.keys(doc))
-  console.log('window', Object.keys(doc.window).sort().join(', '))
-  console.log('document', Object.keys(document))
-  console.log('location', Object.keys(document.location))
-  console.log('history', doc.window.history)
+  // console.log('doc', Object.keys(doc))
+  // console.log('window', Object.keys(doc.window).sort().join(', '))
+  // console.log('document', Object.keys(document))
+  // console.log('location', Object.keys(document.location))
+  // console.log('history', doc.window.history)
 
 //jsdom.reconfigure({
 //  url: 'https://www.test.com/whatever/url/you/want',
@@ -83,15 +79,23 @@ const index = 'src/index.html'
 
   const {open} = router
   const {href} = window.location
-  open(href)
-  
-  //
 
-  console.log('href',href)
+  console.log('open before',href) // todo: remove log
+  const openResult = await open(href)
+  console.log('open after', openResult) // todo: remove log
+
+  // console.log('globalThis.vmContent', globalThis.vmContent) // todo: remove log
+  // console.log('globalThis.vmContent', globalThis.vmContent===document.querySelector('.content')) // todo: remove log
+  // console.log('globalThis.vmContent.documentElement', globalThis.vmContent.documentElement) // todo: remove log
+
+  // console.log('href',href)
   //console.log(document.body.textContent)
   const {outerHTML} = document.documentElement
   await writeFile('./dist/foo.html',outerHTML)
-  console.log('html',outerHTML.length,outerHTML.includes('class="content"'),outerHTML.includes('class="built"'))
+  console.log('html',outerHTML.length
+      ,'\n  incl "content"',outerHTML.includes('class="content"')
+      ,'\n  incl "built"',outerHTML.includes('class="built"'))
+  throw new Error('foo')
 })()
 
 
