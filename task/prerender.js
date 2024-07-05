@@ -5,6 +5,25 @@ import fs from 'fs'
 import {JSDOM} from 'jsdom'
 // import {viewModelFactory} from './util/viewModelFactory.js'
 
+import posts from '../src/data/json/posts-list.json' assert { type: 'json' }
+import pages from '../src/data/json/pages-list.json' assert { type: 'json' }
+import portfolio from '../src/data/json/fortpolio-list.json' assert { type: 'json' }
+
+const baseUri = 'https://ronvalstar.nl'
+
+const today = new Date
+const currentPast = posts.filter(({date})=>(new Date(date))<=today)
+
+// currentPast
+// portfolio / project
+// pages
+// console.log('pages', currentPast.map(o=>o.slug).join(',')) // todo: remove log
+// console.log('currentPast', currentPast.map(o=>'project/'+o.slug).join(',')) // todo: remove log
+// console.log('portfolio', currentPast.map(o=>o.slug).join(',')) // todo: remove log
+
+const testPages = [baseUri, ...pages.slice(0,3).map(o=>baseUri+'/'+o.slug)]
+console.log('testPages', testPages) // todo: remove log
+
 const {promises:{readFile, writeFile},readFileSync} = fs // require('node:fs')
 //const {JSDOM} = require('jsdom')
 
@@ -32,29 +51,12 @@ const index = 'src/index.html'
 
   const html = (await readFile(index)).toString()
 
-  const doc = new JSDOM(html,{
-    url: 'https://ronvalstar.nl'
+
+  testPages.forEach(uri=>{
+    //todo
   })
 
-  const fetchPkg = 'node_modules/whatwg-fetch/dist/fetch.umd.js'
-  doc.window.eval(fs.readFileSync(fetchPkg, 'utf-8'))
-
-  const {window, window:{document}} = doc
-
-  globalThis.document = document
-
-  globalThis.requestAnimationFrame = fn=>globalThis.setTimeout(fn,30)
-  //console.log('raf',globalThis)
-
-  const _fetch = globalThis.fetch
-  globalThis.fetch = s=>{
-    //return _fetch('src'+s)
-    const body = readFileSync('src'+s)
-    return Promise.resolve(new Response(body))
-    //return readFile('src'+s)
-  }
-
-  globalThis.history = doc.window.history
+  const {window} = getJSDOM(html, baseUri)
 
   // console.log('doc', Object.keys(doc))
   // console.log('window', Object.keys(doc.window).sort().join(', '))
@@ -98,4 +100,29 @@ const index = 'src/index.html'
   throw new Error('foo')
 })()
 
+function getJSDOM(html, url){
 
+  const doc = new JSDOM(html,{url})
+
+  const fetchPkg = 'node_modules/whatwg-fetch/dist/fetch.umd.js'
+  doc.window.eval(fs.readFileSync(fetchPkg, 'utf-8'))
+
+  const {window, window:{document}} = doc
+
+  globalThis.document = document
+
+  globalThis.requestAnimationFrame = fn=>globalThis.setTimeout(fn,30)
+  //console.log('raf',globalThis)
+
+  const _fetch = globalThis.fetch
+  globalThis.fetch = s=>{
+    //return _fetch('src'+s)
+    const body = readFileSync('src'+s)
+    return Promise.resolve(new Response(body))
+    //return readFile('src'+s)
+  }
+
+  globalThis.history = doc.window.history
+
+  return doc
+}
