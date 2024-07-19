@@ -3,7 +3,7 @@
 import {read, save} from './util/utils.js'
 import commander from 'commander'
 
-import posts from '../src/data/json/posts-list.json' assert { type: 'json' }
+import posts from '../src/data/json/posts-list.json' with { type: 'json' }
 
 const {target} = commander
         .usage('[options] <files ...>')

@@ -23,7 +23,7 @@
     "build:less:compile": "lessc src/style/screen.less dist/screen.css",
     "build:icons": "node task/icons --source temp/icomoon/SVG/logo.svg --target ./dist/static/icon --sizes 16,32,180",
     "build:raw": "node task/raw2js.js --src temp/icomoon/symbol-defs.svg src/static/svg/client-symbol-defs.svg src/static/svg/prizes-symbol-defs.svg --target src/js/utils/svg.js",
-    "build:prerender": "node task/prerender_.js",
+    "build:prerender": "node task/prerender.js",
     "write": "chokidar \"src/data/markdown/*.md\" -c \"npm run build:json\"",
     "write:future": "grep -rlw src/data/markdown/* -e 9999-99-99",
     "write:futurew": "findstr 9999 src/data/markdown/* 2>nul",

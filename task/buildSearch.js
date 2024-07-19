@@ -1,7 +1,7 @@
 import {promisify} from 'util'
 import _glob from 'glob'
 import {save, read} from './util/utils.js'
-import common from './commonWords.json' assert { type: 'json' }
+import common from './commonWords.json' with {type:'json'}
 
 const glob = promisify(_glob)
 

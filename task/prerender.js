@@ -1,43 +1,15 @@
-//require = require("esm")(module/*, options*/)
-//module.exports = require("./main.js")
-
+import {Worker} from 'worker_threads'
 import fs from 'fs'
 import {JSDOM} from 'jsdom'
-// import {viewModelFactory} from './util/viewModelFactory.js'
+import {cpus} from 'os'
 
-//import posts from '../src/data/json/posts-list.json' assert { type: 'json' }
-//import pages from '../src/data/json/pages-list.json' assert { type: 'json' }
-//import portfolio from '../src/data/json/fortpolio-list.json' assert { type: 'json' }
+console.log('cpu',cpus())
 
 const baseUri = 'https://ronvalstar.nl'
 
-// currentPast
-// portfolio / project
-// pages
-// console.log('pages', currentPast.map(o=>o.slug).join(',')) // todo: remove log
-// console.log('currentPast', currentPast.map(o=>'project/'+o.slug).join(',')) // todo: remove log
-// console.log('portfolio', currentPast.map(o=>o.slug).join(',')) // todo: remove log
-
 const {promises:{readFile, writeFile,mkdir},readFileSync} = fs // require('node:fs')
-//const {JSDOM} = require('jsdom')
-
-//import {open} from '../src/js/router.js'
-//import '../src/js/views/home.js'
-
-//const {promises:{readFile}} = require('node:fs')
-//const {JSDOM} = require('jsdom')
-//viewModelFactory(element)
 
 console.log('prerender')
-
-/*
-const commander = require('commander')
-        .usage('[options] <files ...>')
-        .option('--entry [entry]', 'Entry url')
-        .option('--target [target]', 'Target path')
-        .parse(process.argv)
-        .opts()
-*/
 
 const index = 'src/index.html'
 
@@ -45,86 +17,83 @@ const index = 'src/index.html'
 
   const html = (await readFile(index)).toString()
 
-//import posts from '../src/data/json/posts-list.json' assert { type: 'json' }
-//import pages from '../src/data/json/pages-list.json' assert { type: 'json' }
-//import portfolio from '../src/data/json/fortpolio-list.json' assert { type: 'json' }
-//const today = new Date
-//const currentPast = posts.filter(({date})=>(new Date(date))<=today)
+  const toBase = o=>baseUri+'/'+o.slug
 
-  /*
-  getJSDOM('', 'http://0')
-  const router = await import('../src/js/router.js')
-  const {open} = router
-  console.log(233)
-  await import('../src/js/views/index.js')
-  */
+  const types = ['pages','posts','fortpolio']
+  const lists = await Promise.all(types.map(async type=>JSON.parse((await readFile(`src/data/json/${type}-list.json`)).toString())
+      //.map(toBase)
+      .map(o=>baseUri+'/'+(type==='fortpolio'?'project/':'')+o.slug)
+      //.slice(0,3)
+  ))
+  const pages = [
+      //baseUri,
+      ...lists.reduce((acc,o)=>(acc.push(...o),acc))
+  ]
+  console.log('pages', pages.join(',')) // todo: remove log
 
-  const pages = JSON.parse((await readFile('src/data/json/pages-list.json')).toString()) 
-  const testPages = 
-    [baseUri, ...pages.map(o=>baseUri+'/'+o.slug)]
-    //['https://ronvalstar.nl/blog']
-  console.log('testPages', testPages) // todo: remove log
-  await Promise.all(testPages.map(async uri=>{
+  //await Promise.all(pages.map(uri=>createWorker(uri,html)))
 
-    const {window} = getJSDOM(html, uri)
+  function getWorkerGenerator(uris){
+    return function(){
+      const uri = uris.pop()
+      console.log('uri', uri) // todo: remove log
+      return uri&&createWorker(uri,html)
+    }
+  }
 
-    // console.log('doc', Object.keys(doc))
-    // console.log('window', Object.keys(doc.window).sort().join(', '))
-    // console.log('document', Object.keys(document))
-    // console.log('location', Object.keys(document.location))
-    // console.log('history', doc.window.history)
+  //const g =  getWorkerGenerator(pages.slice(0))
+  //console.log('gen',g()) // todo: remove log
+  //console.log('gen',g()) // todo: remove log
+  await dynamicPromiseAll(getWorkerGenerator(pages.slice(0)), 10)
 
-    /*
-    const router = await import('../src/js/router.js')
-    const views = ['pages','blog','cv','posts','experiments','projects','home','search']
-    await Promise.all(views.map(name=>import(`../src/js/views/${name}.js`)))
-
-    const {open} = router
-    const {href} = window.location
-
-    console.log('open before',href) // todo: remove log
-    await open(href)
-    console.log('open after') // todo: remove log
-    */
-    
-    await import('../src/js/views/index.js')
-    const {open} = await import('../src/js/router.js')
-    
-    const {href} = window.location
-    await open(href)
-    await new Promise(r=>setTimeout(r,99))
-
-    const targetPath = './dist/rnd'+uri.replace(baseUri,'')
-    const target = targetPath+'/index.html'
-    await mkdir(targetPath,{recursive:true})
-    
-    const {outerHTML} = document.documentElement
-    
-    await writeFile(
-      target,
-      outerHTML
-        .replace('<script src="/js/index.js"></script>','')
-        //.replace(/script/g,'div')
-    )
-
-    const content = document.querySelector('.content')
-    const contentHTML = content.outerHTML
-
-    console.log(
-        'uri',uri
-        ,'\n  html',outerHTML.length
-        ,'\n  _content',green(contentHTML.split(/\n/).slice(0,5).join('\n').replace(/\s+/g,' '))
-        ,'\n  includes',outerHTML.includes(contentHTML)
-        ,'\n  html',document.documentElement.getAttribute('class')
-        ,'\n  title',document.querySelector('title').textContent
-        ,'\n  target',target
-        ,'\n'
-    )
-    //throw new Error('foo')
-  
-  }))
 })()
 
+function dynamicPromiseAll(generator, max){
+  return new Promise((resolve)=>{
+    let num = 0
+    for(let i=0;i<max;i++) addPromise()
+    function resolvePromise(){
+      num--
+      console.log('resolvePromise',num) // todo: remove log
+      addPromise()
+        &&num<=0
+        &&resolve()
+    }
+    function addPromise(){
+      const promise = generator()
+      console.log('addPromise',num,max,promise) // todo: remove log
+      if (promise) {
+        promise.then(resolvePromise)
+        num++
+      }
+      return promise
+    }
+  })
+}
+
+function createWorker(uri,html){
+  const worker = new Worker('./task/prerender-worker.js', {
+    workerData: {uri,html}
+  })
+
+  return new Promise((resolve, reject)=>{
+    worker.on('message', msg=>{
+      msg.done
+        ?resolve()
+        :console.log('message',msg)// todo rem
+    })
+    worker.on('error', reject)
+    worker.on('exit', code  => {
+      if (code!==0) {
+          reject(new  Error(`Worker stopped with exit code ${code}`))
+      }
+    })
+  })
+}
+
+/**
+ * Instantiate JSDOM and apply globals
+ */
 function getJSDOM(html, url){
 
   const doc = new JSDOM(html,{url})
@@ -134,8 +103,6 @@ function getJSDOM(html, url){
 
   const {window, window:{document}} = doc
 
-  //globalThis.document = document
-  
   window.scrollTo = ()=>{}
 
   window.HTMLCanvasElement.prototype.getContext = ()=>{}
@@ -150,14 +117,7 @@ function getJSDOM(html, url){
     return Promise.resolve(new Response(body))
     //return readFile('src'+s)
   }
-
-  //globalThis.history = doc.window.history
-
-  //Object.entries(window).forEach(([key,value])=>{
-  //  globalThis.hasOwnProperty(key)
-  //    ||(globalThis[key] = value)
-  //})
-  //globalThis.Element = window.Element
+  
   ;[
     'Element'
     ,'HTMLAnchorElement'
