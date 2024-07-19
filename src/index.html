@@ -389,12 +389,21 @@
     const isLocalhost = window.location.hostname==='localhost'
 
     if (isMobile&&isLocalhost) {
-      const script = document.createElement('script')
-      script.src = '//cdn.jsdelivr.net/npm/eruda'
-      body.appendChild(script)
+      const script = loadScript('//cdn.jsdelivr.net/npm/eruda')
       script.onload = function () {
         eruda.init()
+        loadScript('/js/index.js')
+        console.log('dhdhhdhdhd')
       }
+    } else {
+      loadScript('/js/index.js')
+    }
+
+    function loadScript(src){
+      const script = document.createElement('script')
+      script.src = src
+      body.appendChild(script)
+      return script
     }
 
     function insertRulesFromPrefersMediaRules(){
@@ -443,7 +452,5 @@
     findPrefers('reduced-data', 'reduce')
 
   </script>
-
-  <script src="/js/index.js"></script>
 </body>
 </html>

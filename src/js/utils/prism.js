@@ -68,7 +68,7 @@ export function prismToElement(elm){
     iframe.classList.add(type)
     exampleUI&&parentNode.insertBefore(exampleUI, pre)
     parentNode.insertBefore(iframe, pre)
-    parentNode.removeChild(pre)
+    pre.remove()
 
     const matchHeight = contents.match(/<!--height:(\d+\.?\d*\w+)-->/g)
     const matchedHeight = matchHeight&&contents.match(/<!--height:(\d+\.?\d*\w+)-->/).pop()
@@ -82,7 +82,7 @@ export function prismToElement(elm){
 
   } else if (isEmbed){
     pre.insertAdjacentHTML('beforebegin', contents)
-    parentNode.removeChild(pre)
+    pre.remove()
 
   } else {
     const lineNumbers = 'line-numbers'
@@ -112,7 +112,7 @@ function getJSFiddleButton(contents){
 
   const resources = []
   const [css, js] = [':scope > style', ':scope > script'].map(name=>Array.from(wrapper.querySelectorAll(name)).reduce((acc, elm)=>{
-    wrapper.removeChild(elm)
+    elm.remove()
     elm.hasAttribute('src')&&resources.push(elm.getAttribute('src'))
     return acc + elm.innerText
   }, ''))

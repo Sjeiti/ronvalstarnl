@@ -41,7 +41,7 @@ create('[data-header]', class extends BaseComponent{
     const {_requestFullScreen:requestFullScreen} = this
     signal.requestFullScreen = this._requestFullScreen
     //
-    fullscreen.add(::this._onFullscreenChange)
+    fullscreen.add(this._onFullscreenChange.bind(this))
     //
 
     this._initExperiments()
@@ -59,12 +59,12 @@ create('[data-header]', class extends BaseComponent{
     this._experimentUI = this._select('.experiment-ui')
     //
     this._experimentLink = this._experimentUI.querySelector('[data-link]')
-    this._experimentLink.addEventListener('click', ::this._onClickLink)
-    this._requestFullScreen.add(::this._onClickLink)
+    this._experimentLink.addEventListener('click', this._onClickLink.bind(this))
+    this._requestFullScreen.add(this._onClickLink.bind(this))
     //
     this._experimentSave = this._experimentUI.querySelector('[data-save]')
-    this._experimentSave.addEventListener('click', ::this._onMouseDownSave,true)
-    this._experimentSave.addEventListener('click', ::this._onMouseUpSave,true)
+    this._experimentSave.addEventListener('click', this._onMouseDownSave.bind(this),true)
+    this._experimentSave.addEventListener('click', this._onMouseUpSave.bind(this),true)
     //
     clean(this._experimentWrapper)
     this._stuck.add(is=>this._experiment?.pause(is))

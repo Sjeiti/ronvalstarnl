@@ -30,7 +30,7 @@ export function searchView(view, route, params, error){
         const slugPosts = [...fortpolio, ...posts, ...pages].reduce((acc, o)=>(acc[o.slug]=o, acc), {})
         const sortyQueryTitle = sortSlugByTitleAndQuery.bind(null, querySplit, slugPosts)
         //
-        const querySelector = ::view.querySelector
+        const querySelector = view.querySelector.bind(view)
         const existingSearch = querySelector('[data-search]')
         const exists = !!existingSearch
         //

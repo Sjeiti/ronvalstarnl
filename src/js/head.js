@@ -58,7 +58,7 @@ routeChange.add((slug, page)=>{
     setSelector('meta[property="robots"]', 'content', 'noindex,follow')
   } else {
     const robots = document.querySelector('meta[property="robots"]')
-    robots&&robots.parentNode.removeChild(robots)
+    robots?.remove()
   }
 })
 
@@ -75,7 +75,7 @@ function setSelector(selector, key, value){
     key&&elm.setAttribute(key, value)
   } else {
     const elm = document.head.querySelector(selector)
-    elm&&elm.parentNode.removeChild(elm)
+    elm?.remove()
   }
 }
 

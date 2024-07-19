@@ -10,7 +10,7 @@ let doAnimateRoute = false
 let defaultRouteResolve
 const routes = {}
 
-globalThis.window?.addEventListener('popstate', onPopstate)
+window?.addEventListener('popstate', onPopstate)
 
 const ms = getPageTransitionTime()
 
@@ -23,7 +23,7 @@ const className = {
   , CONTENT_ANIMATE_IN_START: 'content--animate-in-start'
 }
 
-const view = globalThis.document?.querySelector('main')
+const view = document?.querySelector('main')
 const viewModel = viewModelFactory(view).init()
 document.body.addEventListener('click', onClick, true)
 
@@ -82,6 +82,7 @@ export function add(...names){//,callback
  * @param {boolean} [popped=false]
  */
 export function open(uri, popped){
+  console.log('open',uri,popped)//todo rem
   const [hash=''] = uri.match(/#\w+/)||[]
   const pathname = getPathname(uri.replace(/\/$/, ''))
   const oldUrl = url
@@ -89,19 +90,30 @@ export function open(uri, popped){
   url = getURL(pathname)
   const name = getName(pathname)
   const currentName = viewModel.getViewName()
-  //const {history} = globalThis.location
+  const html = document.documentElement
+  const prerendered = 'prerendered'
+  const isPrerendered = html.classList.contains(prerendered)
+  html.classList.remove(prerendered)
+  //const {history} = location
   let routePromise = Promise.resolve()
-  if (name!==currentName){
+  console.log('name!==currentName', name, currentName)
+  console.log('isPrerendered', isPrerendered)
+  if (name!==currentName||name===currentName&&isPrerendered){
     let routeResolve = defaultRouteResolve
     let routeParams
+    console.log('---\nroutes:'+Object.keys(routes).join(','))//todo rem
+    console.log('pathname',pathname,name)//todo rem
     for (let route in routes){
       const params = getParams(route, pathname)
       if(params){
+        console.log('route',route)//todo rem
+        console.log('params',params)//todo rem
         routeParams = params
         routeResolve = routes[route]
         break
       }
     }
+    console.log('routeResolve',routeResolve)//todo rem
     if (url!==oldUrl){
       viewModel.removeEventListeners()
       routePromise = routeResolve(viewModel, name||'home', routeParams)
@@ -117,11 +129,29 @@ export function open(uri, popped){
             history.replaceState({}, title, urlNew+hash)
             location.hash = hash
           })
+
+          globalThis.prerendering&&viewModel._content.ownerDocument.documentElement.classList.add('prerendered')
+
+          ////////////////
+          const firstH2 = viewModel._content.querySelector('h2')?.textContent
+          viewModel._content.ownerDocument.documentElement.classList.add('passed-router')
+          console.log(
+            'firstH2',green(firstH2)//todo rem
+            //'viewModel._content',green(viewModel._content.outerHTML.split(/\n/).slice(0,5).join('\n').replace(/\s+/g,' '))//todo rem
+            //,'\n  ownerDocument',viewModel._content.ownerDocument//todo rem
+            //,'\n  parentNode',viewModel._content.parentNode//todo rem
+            ,'\n  html',viewModel._content.ownerDocument.documentElement.getAttribute('class')//todo rem
+          )
+          ////////////////
         })
         .catch(console.error)
     }
   }
   return routePromise
+}
+
+function green(s){
+  return `\x1b[32m${s}\x1b[0m`
 }
 
 /**
@@ -262,7 +292,7 @@ function viewModelFactory(element){
      */
     , _removeAndCleanPastContent(){
       const {element, _content, _contentPast} = this
-      _contentPast.parentNode&&element.removeChild(_contentPast)
+      _contentPast.remove()
       clean(_contentPast)
       _contentPast.classList.remove(className.CONTENT_ANIMATE_OUT)
       _contentPast.classList.remove(className.CONTENT_ANIMATE_OUT_START)
@@ -293,7 +323,7 @@ function viewModelFactory(element){
      * @type {HTMLElement}
      */
     , _contentPast: {
-      value: element.querySelector('.content--past')||createElement('div', 'content content--past')
+      value: element?.querySelector('.content--past')||createElement('div', 'content content--past')
       , writable: false
     }
     /**
@@ -349,7 +379,7 @@ function getName(pathname){
  * @returns {string}
  */
 function getURL(pathname){
-  return  globalThis.document.location.origin+pathname
+  return  document.location.origin+pathname
 }
 
 /**
@@ -376,7 +406,7 @@ function getIsFullURI(uri){
  */
 function getPageTransitionTime(){
   let time = 500
-  Array.from(globalThis.document?.styleSheets||[]).forEach(sheet=>{
+  Array.from(document?.styleSheets||[]).forEach(sheet=>{
     try {
       Array.from(sheet.rules).forEach(rule => {
         if (rule.selectorText?.includes('animate-out-start')&&rule.cssText?.includes('transition')){

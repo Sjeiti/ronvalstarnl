@@ -1,4 +1,5 @@
 //window.onerror = err=>alert(err)
+
 document.documentElement.classList.remove('no-js')
 
 import './views/index.js'

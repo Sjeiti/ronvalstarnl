@@ -1,13 +1,13 @@
 const _componentClasses = {}
 const _instances = new Map()
-//const _body = globalThis.document.body
+//const _body = document.body
 const _eventNames = 'mousedown,mouseup,click,dblclick,submit,focus,blur,keydown,keyup,keypress'.split(/,/g)
 const _eventHandlers = _eventNames.map(name=>'on'+name.substr(0, 1).toUpperCase()+name.substr(1))
 const _eventInstances = _eventNames.map(()=>[])
 const _eventInitialised = _eventNames.map(()=>false)
 
 function getBody(){
-  return globalThis.document.body
+  return document.body
 }
 
 /**
@@ -111,7 +111,7 @@ function _initScripts(rootElement){
         const script = document.createElement('script')
         script.innerText = `(function(){\n${m.innerText}\n})()`
         rootElement.insertBefore(script, m)
-        rootElement.removeChild(m)
+        m.remove()
       })
 }
 

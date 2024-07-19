@@ -60,7 +60,7 @@ export function parentQuerySelector(elm, query, inclusive=false){
  * @returns {HTMLElement}
  */
 export function clean(elm){
-  while (elm.firstChild) elm.removeChild(elm.firstChild)
+  while (elm.firstChild) elm.firstChild.remove()
   return elm
 }
 
@@ -112,7 +112,7 @@ export function expand(s){
  * @returns {HTMLElement} Returns the newly created element
  */
 export function createElement(type, classes, parent, attributes, text, click){
-  const mElement = globalThis.document?.createElement(type||'div')
+  const mElement = document?.createElement(type||'div')
   if (attributes) for (let attr in attributes) mElement.setAttribute(attr, attributes[attr])
   if (classes){
     const oClassList = mElement.classList

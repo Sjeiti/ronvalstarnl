@@ -56,7 +56,7 @@ export function scrollToTop(topTarget, t=1000){
   const rect = topTarget?.getBoundingClientRect()
   const top = rect?.bottom||0
   const height = rect?.height||0
-  const {body} = globalThis.document
+  const {body} = document
   // const bodyTop = body.getBoundingClientRect().top
   return scrollTo(body, t, null, height-top)
   // return scrollTo(body, t, null, top-16-bodyTop)
@@ -183,7 +183,7 @@ export function loadScript(src){
  * @returns {number}
  */
 export function nextTick(fn){
-  return globalThis.requestAnimationFrame(fn)
+  return requestAnimationFrame(fn)
 }
 
 /**
@@ -193,7 +193,7 @@ export function nextTick(fn){
  * @returns {Function}
  */
 export function nextFrame(fn, nr=2){
-  return nr<=0?fn():nextFrame(globalThis.requestAnimationFrame.bind(null, fn), nr-1)
+  return nr<=0?fn():nextFrame(requestAnimationFrame.bind(null, fn), nr-1)
 }
 
 /**
@@ -217,7 +217,7 @@ function initSpinner(){
   const spinnerStartRem = classList.remove.bind(classList, spinnerStart)
   classList.add('spinner')
   fetchStart = ()=>body.appendChild(spinner)&&nextFrame(spinnerStartAdd, 2)
-  fetchDone = ()=>body.removeChild(spinner)&&spinnerStartRem()
+  fetchDone = ()=>spinner.remove()&&spinnerStartRem()
   Object.assign(globalThis,{fetchStart,fetchDone})
 }
 

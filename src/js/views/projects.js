@@ -40,7 +40,7 @@ add(
           existingProjects = elmProj
         }
         // selected project
-        existingProject&&existingProject.parentNode.removeChild(existingProject )
+        existingProject?.remove()
         if(projectSlug){
           const currentProject = projects.filter(p=>p.slug===projectSlug).pop()
           // todo make project 404 page
