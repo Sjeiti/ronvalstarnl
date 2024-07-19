@@ -114,11 +114,12 @@ function getJSDOM(html, url){
     ,'history'
     ,'document'
     ,'window'
+    ,'navigator'
     ,'_VERSION'
     ,'_ENV'
   ,'matchMedia'
   ].forEach(key=>{
-    globalThis[key] = window[key]
+    globalThis[key] = window[key]||{}
   })
 
   //console.log('globalThis.Element',globalThis.Element)
