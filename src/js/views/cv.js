@@ -8,8 +8,13 @@ import {jsPDF} from 'jspdf'
 // import * as docx from 'docx'
 import { Document, HeadingLevel, Packer, Paragraph, TextRun } from 'docx'
 //import { saveAs } from 'file-saver'
-import pkg from 'file-saver';
-const { saveAs } = pkg;
+//import pkg from 'file-saver';
+//const { saveAs } = pkg;
+
+let saveAs
+if (navigator) {
+  import('file-saver').then(pkg=>saveAs=pkg.saveAs)
+}
 
 add('cv', getCallback())
 add('cv-nl', getCallback('nl'))
@@ -205,7 +210,7 @@ function dowloadWordDocument(target){
     , sections: [{children}]
   })
   target.removeAttribute('href')
-  Packer.toBlob(doc).then(blob => saveAs(blob, documentTitle+'.docx'))
+  Packer.toBlob(doc).then(blob => saveAs?.(blob, documentTitle+'.docx'))
 
   //////////////////
 
