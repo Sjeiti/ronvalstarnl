@@ -20,7 +20,11 @@ const index = 'src/index.html'
   const {open} = await import('../src/js/router.js')
 
   const {href} = window.location
-  await open(href)
+  try {
+    await open(href)
+  } catch(err) {
+    console.log('error',err)
+  }
   await new Promise(r=>setTimeout(r,99))
 
   const targetPath = './dist'+uri.replace(baseUri,'')
@@ -31,9 +35,6 @@ const index = 'src/index.html'
 
   await writeFile(target,outerHTML)
 
-  const content = document.querySelector('.content')
-  const contentHTML = content.outerHTML
-  const firstH2 = content.querySelector('h2')?.textContent
   const title = document.querySelector('title')?.textContent
 
   console.log(
