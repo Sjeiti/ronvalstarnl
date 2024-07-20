@@ -12,7 +12,7 @@ import { Document, HeadingLevel, Packer, Paragraph, TextRun } from 'docx'
 //const { saveAs } = pkg;
 
 let saveAs
-if (navigator) {
+if (typeof navigator !== 'undefined') {
   import('file-saver').then(pkg=>saveAs=pkg.saveAs)
 }
 
