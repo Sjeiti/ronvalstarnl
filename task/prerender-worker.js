@@ -13,8 +13,6 @@ const index = 'src/index.html'
   const { uri, html } =  workerData
    
   parentPort.postMessage('__uri '+uri);
-  //////
-  //////
 
   const {window} = getJSDOM(html, uri)
 
@@ -31,38 +29,17 @@ const index = 'src/index.html'
 
   const {outerHTML} = document.documentElement
 
-  await writeFile(
-    target,
-    outerHTML
-      //.replace('<script src="/js/index.js"></script>','')
-      //.replace(/script/g,'div')
-      //.replace('<html class="no-js" lang="en">','<html class="no-js prerendered" lang="en">')
-      //.replace(/<html class="(.*)" lang="en">/','<html class="$1 prerendered" lang="en">')
-  )
+  await writeFile(target,outerHTML)
 
   const content = document.querySelector('.content')
   const contentHTML = content.outerHTML
   const firstH2 = content.querySelector('h2')?.textContent
+  const title = document.querySelector('title')?.textContent
 
   console.log(
       '_\nuri',uri
-      ,'\n  html',outerHTML.length
-      ,'\n  firstH2',green(firstH2)
-      //,'\n  _content',green(contentHTML.split(/\n/).slice(0,5).join('\n').replace(/\s+/g,' '))
-      ,'\n  includes',outerHTML.includes(contentHTML)
-      ,'\n  html',document.documentElement.getAttribute('class')
-      ,'\n  title',document.querySelector('title').textContent
-      ,'\n  target',target
-      ,'\n'
+      ,'\n  title:',green(title)
   )
-  //throw new Error('foo')
-
-  //////
-  //////
-
-  // sharp(imagePath).metadata().then((res)=>{
-
-  // sending message back to main thread
   parentPort.postMessage({done:true});
 
 })()
@@ -83,8 +60,6 @@ function getJSDOM(html, url){
 
   globalThis.prerendering = true
 
-  //globalThis.document = document
-
   window.scrollTo = ()=>{}
 
   window.HTMLCanvasElement.prototype.getContext = ()=>{}
@@ -94,19 +69,10 @@ function getJSDOM(html, url){
 
   const _fetch = globalThis.fetch
   globalThis.fetch = s=>{
-    //return _fetch('src'+s)
     const body = readFileSync('dist'+s)
     return Promise.resolve(new Response(body))
-    //return readFile('src'+s)
   }
 
-  //globalThis.history = doc.window.history
-
-  //Object.entries(window).forEach(([key,value])=>{
-  //  globalThis.hasOwnProperty(key)
-  //    ||(globalThis[key] = value)
-  //})
-  //globalThis.Element = window.Element
   ;[
     'Element'
     ,'HTMLAnchorElement'
@@ -114,17 +80,17 @@ function getJSDOM(html, url){
     ,'history'
     ,'document'
     ,'window'
-    ,'navigator'
+    ,'matchMedia'
     ,'_VERSION'
     ,'_ENV'
-  ,'matchMedia'
+    //,'navigator'
   ].forEach(key=>{
-    globalThis[key] = window[key]||{}
+    try {
+      globalThis[key] = window[key]||(()=>({}))
+    } catch(err) {
+      console.info(`Failed setting \`globalThis[${key}]\`: ${err}`)
+    }
   })
-
-  //console.log('globalThis.Element',globalThis.Element)
-  //globalThis.Element = doc.Element
-  //console.log('doc.Element',doc.Element,window.Element)
 
   return doc
 }

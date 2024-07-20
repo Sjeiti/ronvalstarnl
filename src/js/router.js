@@ -82,7 +82,6 @@ export function add(...names){//,callback
  * @param {boolean} [popped=false]
  */
 export function open(uri, popped){
-  console.log('open',uri,popped)//todo rem
   const [hash=''] = uri.match(/#\w+/)||[]
   const pathname = getPathname(uri.replace(/\/$/, ''))
   const oldUrl = url
@@ -96,29 +95,23 @@ export function open(uri, popped){
   html.classList.remove(prerendered)
   //const {history} = location
   let routePromise = Promise.resolve()
-  console.log('name!==currentName', name, currentName)
-  console.log('isPrerendered', isPrerendered)
   if (name!==currentName||name===currentName&&isPrerendered){
     let routeResolve = defaultRouteResolve
     let routeParams
-    console.log('---\nroutes:'+Object.keys(routes).join(','))//todo rem
-    console.log('pathname',pathname,name)//todo rem
     for (let route in routes){
       const params = getParams(route, pathname)
       if(params){
-        console.log('route',route)//todo rem
-        console.log('params',params)//todo rem
         routeParams = params
         routeResolve = routes[route]
         break
       }
     }
-    console.log('routeResolve',routeResolve)//todo rem
     if (url!==oldUrl){
       viewModel.removeEventListeners()
       routePromise = routeResolve(viewModel, name||'home', routeParams)
         .then(page=>{
           const title = page.title
+          document.title = title
           const urlNew = (name[0]==='/'?'':'/')+name
           popped||history.pushState({}, title, urlNew)
           routeChange.dispatch(name, page, oldName)
@@ -132,26 +125,11 @@ export function open(uri, popped){
 
           globalThis.prerendering&&viewModel._content.ownerDocument.documentElement.classList.add('prerendered')
 
-          ////////////////
-          const firstH2 = viewModel._content.querySelector('h2')?.textContent
-          viewModel._content.ownerDocument.documentElement.classList.add('passed-router')
-          console.log(
-            'firstH2',green(firstH2)//todo rem
-            //'viewModel._content',green(viewModel._content.outerHTML.split(/\n/).slice(0,5).join('\n').replace(/\s+/g,' '))//todo rem
-            //,'\n  ownerDocument',viewModel._content.ownerDocument//todo rem
-            //,'\n  parentNode',viewModel._content.parentNode//todo rem
-            ,'\n  html',viewModel._content.ownerDocument.documentElement.getAttribute('class')//todo rem
-          )
-          ////////////////
         })
         .catch(console.error)
     }
   }
   return routePromise
-}
-
-function green(s){
-  return `\x1b[32m${s}\x1b[0m`
 }
 
 /**

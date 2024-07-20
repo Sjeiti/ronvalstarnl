@@ -17,33 +17,22 @@ const index = 'src/index.html'
 
   const html = (await readFile(index)).toString()
 
-  const toBase = o=>baseUri+'/'+o.slug
-
   const types = ['pages','posts','fortpolio']
   const lists = await Promise.all(types.map(async type=>JSON.parse((await readFile(`src/data/json/${type}-list.json`)).toString())
-      //.map(toBase)
       .map(o=>baseUri+'/'+(type==='fortpolio'?'project/':'')+o.slug)
       //.slice(0,3)
   ))
   const pages = [
-      //baseUri,
       ...lists.reduce((acc,o)=>(acc.push(...o),acc))
   ]
-  console.log('pages', pages.join(',')) // todo: remove log
-
-  //await Promise.all(pages.map(uri=>createWorker(uri,html)))
+  console.log('pages', pages.map(uri=>uri.replace(/^https:\/\/[^/]*/,'')).join(',')) // todo: remove log
 
   function getWorkerGenerator(uris){
     return function(){
       const uri = uris.pop()
-      console.log('uri', uri) // todo: remove log
       return uri&&createWorker(uri,html)
     }
   }
-
-  //const g =  getWorkerGenerator(pages.slice(0))
-  //console.log('gen',g()) // todo: remove log
-  //console.log('gen',g()) // todo: remove log
   await dynamicPromiseAll(getWorkerGenerator(pages.slice(0)), 10)
 
 })()
@@ -54,14 +43,12 @@ function dynamicPromiseAll(generator, max){
     for(let i=0;i<max;i++) addPromise()
     function resolvePromise(){
       num--
-      console.log('resolvePromise',num) // todo: remove log
       addPromise()
         &&num<=0
         &&resolve()
     }
     function addPromise(){
       const promise = generator()
-      console.log('addPromise',num,max,promise) // todo: remove log
       if (promise) {
         promise.then(resolvePromise)
         num++
@@ -112,10 +99,8 @@ function getJSDOM(html, url){
 
   const _fetch = globalThis.fetch
   globalThis.fetch = s=>{
-    //return _fetch('src'+s)
     const body = readFileSync('dist'+s)
     return Promise.resolve(new Response(body))
-    //return readFile('src'+s)
   }
   
   ;[
@@ -131,10 +116,6 @@ function getJSDOM(html, url){
   ].forEach(key=>{
     globalThis[key] = window[key]
   })
-
-  //console.log('globalThis.Element',globalThis.Element)
-  //globalThis.Element = doc.Element
-  //console.log('doc.Element',doc.Element,window.Element)
 
   return doc
 }
