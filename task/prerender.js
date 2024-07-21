@@ -3,6 +3,8 @@ import fs from 'fs'
 import {JSDOM} from 'jsdom'
 import {cpus} from 'os'
 
+import {exit} from 'node:process'
+
 import commander from 'commander'
 
 const {target} = commander
@@ -28,7 +30,7 @@ const index = 'src/index.html'
   const types = ['pages','posts','fortpolio']
   const lists = await Promise.all(types.map(async type=>JSON.parse((await readFile(`src/data/json/${type}-list.json`)).toString())
       .map(o=>baseUri+'/'+(type==='fortpolio'?'project/':'')+o.slug)
-      //.slice(0,3)
+      .slice(0,4)
   ))
   const pages = (target?[baseUri+'/'+target]:[
       ...lists.reduce((acc,o)=>(acc.push(...o),acc))
@@ -42,7 +44,8 @@ const index = 'src/index.html'
     }
   }
   await dynamicPromiseAll(getWorkerGenerator(pages.slice(0)), 10)
-
+  console.log('prerender done') // todo: remove log
+  exit(0)
 })()
 
 function dynamicPromiseAll(generator, max){
@@ -52,7 +55,7 @@ function dynamicPromiseAll(generator, max){
     function resolvePromise(){
       num--
       addPromise()
-        &&num<=0
+        ||num<=0
         &&resolve()
     }
     function addPromise(){
