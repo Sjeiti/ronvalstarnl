@@ -115,5 +115,5 @@ function getBottomNavigation(post, posts){
   const next = hasNext&&currentPast[listingIndex-1]
   const prevLink = prev&&`a.prev[href="/${prev.slug}"]{${prev.title}}`||''
   const nextLink = next&&`a.next[href="/${next.slug}"]{${next.title}}`||''
-  return `(nav.prevnext>(${prevLink}+${nextLink}))`
+  return `(nav.prevnext>(${prevLink}${prev&&next?'+':''}${nextLink}))`
 }

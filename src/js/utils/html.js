@@ -95,9 +95,14 @@ export function selectEach(root, selector, fn){
  * @return {String}
  */
 export function expand(s){
+  try {
   return emmetExpand(s
       .replace(/\r\n\s*|\r\s*|\n\s*/g, '')
   )
+  } catch(err){
+    console.log(`Cannot expand '${s}':`,err)
+    return s
+  }
 }
 
 /**

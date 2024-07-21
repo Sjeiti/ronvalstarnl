@@ -12,7 +12,7 @@ const index = 'src/index.html'
 
   const { uri, html } =  workerData
    
-  parentPort.postMessage('__uri '+uri);
+  //parentPort.postMessage('__uri '+uri);
 
   const {window} = getJSDOM(html, uri)
 
@@ -38,7 +38,7 @@ const index = 'src/index.html'
   const title = document.querySelector('title')?.textContent
 
   console.log(
-      '_\nuri',uri
+      'uri:',uri
       ,'\n  title:',green(title)
   )
   parentPort.postMessage({done:true});

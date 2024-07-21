@@ -101,7 +101,7 @@ function buildPage(view, categories, portfolioProjects){
 function buildCurrentProject(view, project, existingProjects){
   const {
     content
-    , images
+    , images=[]
     , dateFrom
     , dateTo
     , title

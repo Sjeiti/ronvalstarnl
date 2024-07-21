@@ -73,7 +73,7 @@ export function prismToElement(elm){
     const matchHeight = contents.match(/<!--height:(\d+\.?\d*\w+)-->/g)
     const matchedHeight = matchHeight&&contents.match(/<!--height:(\d+\.?\d*\w+)-->/).pop()
 
-    nextFrame(()=>{
+    globalThis.prerendering||nextFrame(()=>{
       const {contentWindow: {document}} = iframe
       document.writeln(contents) // document.body.innerHTML breaks JS execution
       const height = matchedHeight||`${document.body.scrollHeight}px`

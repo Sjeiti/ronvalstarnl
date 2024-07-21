@@ -3,13 +3,21 @@ import fs from 'fs'
 import {JSDOM} from 'jsdom'
 import {cpus} from 'os'
 
+import commander from 'commander'
+
+const {target} = commander
+        .usage('[options] <files ...>')
+        .option('--target [target]', 'Target uri')
+        .parse(process.argv)
+        .opts()
+
 console.log('cpu',cpus())
 
 const baseUri = 'https://ronvalstar.nl'
 
 const {promises:{readFile, writeFile,mkdir},readFileSync} = fs // require('node:fs')
 
-console.log('prerender')
+console.log('prerender',target||'')
 
 const index = 'src/index.html'
 
@@ -22,9 +30,9 @@ const index = 'src/index.html'
       .map(o=>baseUri+'/'+(type==='fortpolio'?'project/':'')+o.slug)
       //.slice(0,3)
   ))
-  const pages = [
+  const pages = (target?[baseUri+'/'+target]:[
       ...lists.reduce((acc,o)=>(acc.push(...o),acc))
-  ]
+  ])
   console.log('pages', pages.map(uri=>uri.replace(/^https:\/\/[^/]*/,'')).join(',')) // todo: remove log
 
   function getWorkerGenerator(uris){
@@ -50,7 +58,9 @@ function dynamicPromiseAll(generator, max){
     function addPromise(){
       const promise = generator()
       if (promise) {
-        promise.then(resolvePromise)
+        promise
+          .then(resolvePromise)
+          .catch(console.log.bind(console,'Catch err'))
         num++
       }
       return promise
