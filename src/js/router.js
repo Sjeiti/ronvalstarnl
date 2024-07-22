@@ -123,7 +123,7 @@ export function open(uri, popped){
             location.hash = hash
           })
 
-          globalThis.prerendering&&viewModel._content.ownerDocument.documentElement.classList.add('prerendered')
+          //globalThis.prerendering&&viewModel._content.ownerDocument.documentElement.classList.add('prerendered')
 
         })
         .catch(console.error)

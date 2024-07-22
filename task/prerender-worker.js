@@ -33,7 +33,10 @@ const index = 'src/index.html'
 
   const {outerHTML} = document.documentElement
 
-  await writeFile(target,outerHTML)
+  await writeFile(
+    target,
+    outerHTML.replace(/<html class="([^"]*)" lang="en">/,'<html class="$1 prerendered" lang="en">')
+  )
 
   const title = document.querySelector('title')?.textContent
 
