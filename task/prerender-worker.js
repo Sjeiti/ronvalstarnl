@@ -70,7 +70,12 @@ function getJSDOM(html, url){
 
   const _fetch = globalThis.fetch
   globalThis.fetch = s=>{
-    const body = readFileSync('dist'+s)
+    const body = {content:''}
+    try {
+      body = readFileSync('dist'+s)
+    } catch(err) {
+      console.log(`File not found: '${'dist'+s}', ${err}`)
+    }
     return Promise.resolve(new Response(body))
   }
 

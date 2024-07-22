@@ -30,7 +30,7 @@ const index = 'src/index.html'
   const types = ['pages','posts','fortpolio']
   const lists = await Promise.all(types.map(async type=>JSON.parse((await readFile(`src/data/json/${type}-list.json`)).toString())
       .map(o=>baseUri+'/'+(type==='fortpolio'?'project/':'')+o.slug)
-      .slice(0,4)
+      //.slice(0,4)
   ))
   const pages = (target?[baseUri+'/'+target]:[
       ...lists.reduce((acc,o)=>(acc.push(...o),acc))
