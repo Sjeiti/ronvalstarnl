@@ -9,8 +9,12 @@ import {raw} from '../utils/svg.js'
 const {clientSymbolDefs:clientSymbols, prizesSymbolDefs:prizesSymbols} = raw
 
 // conditional because of prerender
-document.querySelector('#client-symbol-defs')||document.body.insertAdjacentHTML('afterbegin', clientSymbols)
-document.querySelector('#prize-symbol-defs')||document.body.insertAdjacentHTML('afterbegin', prizesSymbols)
+if (!globalThis.prerendering){
+  document.querySelector('#client-symbol-defs')||document.body.insertAdjacentHTML('afterbegin', clientSymbols)
+  document.querySelector('#prize-symbol-defs')||document.body.insertAdjacentHTML('afterbegin', prizesSymbols)
+}else{
+  console.log('globalThis.prerendering')
+}
 
 const populateSVGList = (ul, prefix, names)=>
   ul.insertAdjacentHTML('beforeend', names.map(s=>`<li><svg aria-label="${s}"><use xlink:href="#${prefix+s}"></use></svg></li>`).join(''))

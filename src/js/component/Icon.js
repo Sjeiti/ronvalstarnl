@@ -7,8 +7,12 @@ import {raw} from '../utils/svg.js'
 const {symbolDefs} = raw
 
 // conditional because of prerender
-document.querySelector('svg[aria-hidden=true]:not([id])')||document.body.insertAdjacentHTML('afterbegin', symbolDefs)
 //document.querySelector('svg[aria-hidden=true]:not([id])')||document.body.insertAdjacentHTML('afterbegin', root)
+if (!globalThis.prerendering){
+  document.querySelector('svg[aria-hidden=true]:not([id])')||document.body.insertAdjacentHTML('afterbegin', symbolDefs)
+}else{
+  console.log('globalThis.prerendering1')
+}
 
 /**
  * Search component
