@@ -94,9 +94,6 @@
     "xmldom": "^0.6.0",
     "yorkie": "^2.0.0"
   },
-  "optionalDependencies": {
-    "chokidar-cli": "^2.1.0"
-  },
   "postcss": {
     "plugins": {
       "autoprefixer": {}
