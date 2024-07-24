@@ -1,8 +1,8 @@
-import {create, initialise} from './index'
-import {BaseComponent} from './BaseComponent'
-import {signal} from '../signal'
-import {clean} from '../utils/html'
-import {select} from '../utils/style'
+import {create, initialise} from './index.js'
+import {BaseComponent} from './BaseComponent.js'
+import {signal} from '../signal/index.js'
+import {clean} from '../utils/html.js'
+import {select} from '../utils/style.js'
 
 export const change = signal()
 export const search = signal()

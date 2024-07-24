@@ -14,7 +14,9 @@
 
 Sometimes testing is magic
 
-Test-driven-development starts at the bottom with strict linting rules. These should prevent any syntactical mishaps from being pushed. Same goes for unit tests, although these require a bit more conscious effort. On the other end of the spectrum we have end-to-end testing.
+Test-driven-development starts at the bottom with strict linting rules. These should prevent any syntactical mishaps from being pushed.
+Them come unit tests, these require a bit more conscious effort.
+On the other end of the spectrum we have end-to-end testing.
 
 With unit tests on one end, and end-to-end on the other, you can work your way to the middle, where you could write component tests. And maybe, if you work hard, you'll have an overal coverage of about eighty percent.
 

@@ -1,4 +1,4 @@
-import {numberToWords} from '../utils/string'
+import {numberToWords} from '../utils/string.js'
 
 export const from = (elm, content)=>{
   const from = new Date(content).getTime()

@@ -1,6 +1,6 @@
 <!--
   date: 2024-03-23
-  modified: 2024-03-23
+  modified: 2024-07-20
   slug: random-in-css
   type: post
   header: justin-lauria-Ap0alm8xpxw-unsplash.jpg
@@ -13,12 +13,12 @@
 -->
 
 # Random in CSS
-
+    
 CSS has functions; you can calculate values. Apart from basic adding, subtracting, đividing and multiplying, you can also use `max`, `min` and even do trigonomic calculations with `sin` and `cos`.
 
 This can be very useful for use in conjunction with CSS properties. You can, for instance, apply a `transform: rotate(var(--degrees));`, and split those degrees in x- and y-offsets using `sin(calc(var(--degrees)/180*pi))`. 
 
-I've mde a small example with [these cute little ladybugs](/experiment-ladybugs), because I detest aphids and their filthy ability to reproduce asexually.
+I've made a small example with [these cute little ladybugs](/experiment-ladybugs), because I detest aphids and their filthy ability to reproduce asexually.
 The ladybug is a single element that is rotated by a `--degrees` property. The coloring is a background with layered radial gradients, where the highlight and shadow are moves by calculating the offset from that `--degrees` property. The box-shadow uses the same x- and y-offsets.
 
 ```CSS

@@ -1,10 +1,12 @@
-const {promisify} = require('util')
-const glob = promisify(require('glob'))
-const utils = require('./util/utils.js')
-const {markdown2object} = require('./util/markdown2object')
-const {read, save} = utils
+import {promisify} from 'util'
+import commander from 'commander'
+import _glob from 'glob'
+import {markdown2object} from './util/markdown2object.js'
+import {read, save} from './util/utils.js'
 
-const {target} = require('commander')
+const glob = promisify(_glob)
+
+const {target} = commander
     .usage('[options] <files ...>')
     .option('--target [target]', 'Target path')
     .parse(process.argv)

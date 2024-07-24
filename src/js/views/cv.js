@@ -1,13 +1,20 @@
-import {createElement, expand} from '../utils/html'
-import {add} from '../router'
-import {slugify} from '../utils/string'
-import {fetchJSONFiles} from '../utils'
-import {initialise} from '../component'
+import {createElement, expand} from '../utils/html.js'
+import {add} from '../router.js'
+import {slugify} from '../utils/string.js'
+import {fetchJSONFiles} from '../utils/index.js'
+import {initialise} from '../component/index.js'
 ////////////////////////////////////////
 import {jsPDF} from 'jspdf'
 // import * as docx from 'docx'
 import { Document, HeadingLevel, Packer, Paragraph, TextRun } from 'docx'
-import { saveAs } from 'file-saver'
+//import { saveAs } from 'file-saver'
+//import pkg from 'file-saver';
+//const { saveAs } = pkg;
+
+let saveAs
+if (typeof navigator !== 'undefined') {
+  import('file-saver').then(pkg=>saveAs=pkg.saveAs)
+}
 
 add('cv', getCallback())
 add('cv-nl', getCallback('nl'))
@@ -203,7 +210,7 @@ function dowloadWordDocument(target){
     , sections: [{children}]
   })
   target.removeAttribute('href')
-  Packer.toBlob(doc).then(blob => saveAs(blob, documentTitle+'.docx'))
+  Packer.toBlob(doc).then(blob => saveAs?.(blob, documentTitle+'.docx'))
 
   //////////////////
 
@@ -289,7 +296,7 @@ function downloadTextDocument(target){
     const span = document.createElement('span')
     span.appendChild(document.createTextNode(` (${timeF.textContent} _ ${timeT.textContent})`))
     div.nextElementSibling?.appendChild(span)
-    div.parentNode.removeChild(div)
+    div.remove()
   })
   Array.from(html.querySelectorAll('h1,h2,h3')).forEach(elm=>{
     elm.textContent = `${elm.textContent}\n\n`
@@ -298,7 +305,7 @@ function downloadTextDocument(target){
     const span = document.createElement('span')
     span.appendChild(document.createTextNode('tags: '+ul.textContent.replace(/^[ \t]+|[ \t]+$/gm, '').replace(/^\n*|\n*$/g, '').replace(/\n/g, ', ')))
     ul.insertAdjacentElement('afterend', span)
-    ul.parentNode.removeChild(ul)
+    ul.remove()
   })
   Array.from(html.querySelectorAll('li')).forEach(li=>{
     const span = document.createElement('span')
@@ -335,7 +342,7 @@ function getHTMLToParse(){
   const main = document.querySelector('main').cloneNode(true)
   main.querySelector('[data-download]')?.remove()
   // const download = main.querySelector('[data-download]')
-  // download.parentNode.removeChild(download)
+  // download.remove()
   return main
 }
 

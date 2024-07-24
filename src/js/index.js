@@ -1,21 +1,21 @@
 //window.onerror = err=>alert(err)
+
 document.documentElement.classList.remove('no-js')
 
-import '../style/screen.less'
-import './views'
-import './head'
-import {initialise} from './component'
-import './component/Search'
-import './component/Header'
-import './component/Code'
-import './component/Icon'
-import './component/Skill'
-import './component/Now'
-import './component/JSFiddle'
+import './views/index.js'
+import './head.js'
+import {initialise} from './component/index.js'
+import './component/Search.js'
+import './component/Header.js'
+import './component/Code.js'
+import './component/Icon.js'
+import './component/Skill.js'
+import './component/Now.js'
+import './component/JSFiddle.js'
 
 initialise()
 
-import './signal/scroll'
+import './signal/scroll.js'
 
 /**
  * A page can be a page, post or portfolio item

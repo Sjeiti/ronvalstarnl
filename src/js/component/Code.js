@@ -1,9 +1,9 @@
 // <pre line-numbers><code data-language="glsl" data-src="http://...
 
-import {create} from './index'
-import {BaseComponent} from './BaseComponent'
-import {prismToElement} from '../utils/prism'
-import {nextTick} from '../utils'
+import {create} from './index.js'
+import {BaseComponent} from './BaseComponent.js'
+import {prismToElement} from '../utils/prism.js'
+import {nextTick} from '../utils/index.js'
 
 create('code[data-src]', class extends BaseComponent{
 

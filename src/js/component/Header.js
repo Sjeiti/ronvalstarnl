@@ -1,13 +1,13 @@
 import * as experiments from 'experiments/src/experiment/index.js'
 
-import {create} from './index'
-import {BaseComponent} from './BaseComponent'
-import fullscreen from '../signal/fullscreen'
-import {scroll} from '../signal/scroll'
-import {signal} from '../signal'
-import {routeChange} from '../router'
-import {clean, markdownLinks, selectEach} from '../utils/html'
-import {MEDIA_URI_HEADER} from '../config'
+import {create} from './index.js'
+import {BaseComponent} from './BaseComponent.js'
+import fullscreen from '../signal/fullscreen.js'
+import {scroll} from '../signal/scroll.js'
+import {signal} from '../signal/index.js'
+import {routeChange} from '../router.js'
+import {clean, markdownLinks, selectEach} from '../utils/html.js'
+import {MEDIA_URI_HEADER} from '../config.js'
 
 create('[data-header]', class extends BaseComponent{
 
@@ -41,7 +41,7 @@ create('[data-header]', class extends BaseComponent{
     const {_requestFullScreen:requestFullScreen} = this
     signal.requestFullScreen = this._requestFullScreen
     //
-    fullscreen.add(::this._onFullscreenChange)
+    fullscreen.add(this._onFullscreenChange.bind(this))
     //
 
     this._initExperiments()
@@ -59,12 +59,12 @@ create('[data-header]', class extends BaseComponent{
     this._experimentUI = this._select('.experiment-ui')
     //
     this._experimentLink = this._experimentUI.querySelector('[data-link]')
-    this._experimentLink.addEventListener('click', ::this._onClickLink)
-    this._requestFullScreen.add(::this._onClickLink)
+    this._experimentLink.addEventListener('click', this._onClickLink.bind(this))
+    this._requestFullScreen.add(this._onClickLink.bind(this))
     //
     this._experimentSave = this._experimentUI.querySelector('[data-save]')
-    this._experimentSave.addEventListener('click', ::this._onMouseDownSave,true)
-    this._experimentSave.addEventListener('click', ::this._onMouseUpSave,true)
+    this._experimentSave.addEventListener('click', this._onMouseDownSave.bind(this),true)
+    this._experimentSave.addEventListener('click', this._onMouseUpSave.bind(this),true)
     //
     clean(this._experimentWrapper)
     this._stuck.add(is=>this._experiment?.pause(is))
@@ -198,8 +198,9 @@ create('[data-header]', class extends BaseComponent{
    * @private
    */
   _onClickLink(){
-    document.body.matches('[data-pathname^="experiment-"]')
-      &&this._experimentWrapper.requestFullscreen()
+    //document.body.matches('[data-pathname^="experiment-"]')
+    //  &&this._experimentWrapper.requestFullscreen()
+    this._experimentWrapper.requestFullscreen()
   }
 
   /**

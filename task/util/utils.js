@@ -1,11 +1,18 @@
+import glob from 'glob'
+import fs from 'fs'
+import mkdirp from 'mkdirp'
+import child_process from 'child_process'
+import http from 'http'
+import util from 'util'
+
 /**
  * Promise glob
  * @param {string} globstring
  * @returns {Promise}
  */
-function glomise(globstring) {
+export function glomise(globstring) {
   return new Promise(function (resolve) {
-    require('glob')(globstring,function(err,result){
+    glob(globstring,function(err,result){
       resolve(result);
     });
   });
@@ -16,9 +23,9 @@ function glomise(globstring) {
  * @param {string} file
  * @returns {Promise}
  */
-function read(file){
+export function read(file){
   return new Promise((resolve,reject)=>
-    require('fs').readFile(file,(err,data)=>
+    fs.readFile(file,(err,data)=>
       err?reject(err):resolve(data.toString())
     )
   );
@@ -31,12 +38,11 @@ function read(file){
  * @param {boolean} [silent=false]
  * @returns {Promise}
  */
-function save(file,data,silent=false) {
+export function save(file,data,silent=false) {
   !silent&&console.log('saving',file,formatBytes(data.length));
   return mkdirp(getDirName(file))
       .then(()=>new Promise(function(resolve,reject){
-        require('fs')
-          .writeFile(file, data, err=>err&&reject(err)||resolve());
+        fs.writeFile(file, data, err=>err&&reject(err)||resolve());
       }),console.warn.bind(console));
 }
 
@@ -49,7 +55,7 @@ function save(file,data,silent=false) {
  * @param {boolean} [overwrite=false] Overwrite properties.
  * @returns {Object} Subject.
  */
-function extend(base,extension,overwrite){
+export function extend(base,extension,overwrite){
   for (var s in extension) {
     if (overwrite||base[s]===undefined) {
       base[s] = extension[s];
@@ -64,9 +70,8 @@ function extend(base,extension,overwrite){
  * @param {string} target
  * @returns {Promise}
  */
-function copy(source, target) {
+export function copy(source, target) {
   console.log('copying',source,'to',target);
-  var fs = require('fs');
   return mkdirp(getDirName(target))
       .then(()=>new Promise(function(resolve,reject){
         var cbCalled = false
@@ -85,16 +90,12 @@ function copy(source, target) {
       }),console.warn.bind(console));
 }
 
-function mkdirp(dir, opts) {
-  return require('mkdirp')(dir,opts)
-}
-
 /**
  * Get the directory path from a file path
  * @param {string} file
  * @returns {string}
  */
-function getDirName(file){
+export function getDirName(file){
   return file.replace(/[^\/\\]*\.\w{0,8}$/,'');
 }
 
@@ -104,10 +105,10 @@ function getDirName(file){
  * @param {object} opts
  * @returns {Promise}
  */
-function exec(cmd, opts) {
+export function exec(cmd, opts) {
   opts || (opts = {});
   return new Promise((resolve,reject)=>{
-    const child = require('child_process').exec(cmd,opts,(err,stdout,stderr)=>err?reject(err):resolve({
+    const child = child_process.exec(cmd,opts,(err,stdout,stderr)=>err?reject(err):resolve({
         stdout: stdout
         ,stderr: stderr
     }));
@@ -126,7 +127,7 @@ function exec(cmd, opts) {
  * @param {string} replacement
  * @returns {string}
  */
-function blockReplace(source,start,end,replacement){
+export function blockReplace(source,start,end,replacement){
   var sourceSplit = source.split(/\r\n|\n|\r/)
       ,hasStarted = false
       ,indexNew = 0
@@ -165,7 +166,7 @@ function blockReplace(source,start,end,replacement){
  * @param {number} decimals
  * @returns {string}
  */
-function formatBytes(bytes,decimals) {
+export function formatBytes(bytes,decimals) {
    if (bytes===0) return '0 Byte';
    var k = 1000
        ,dm = decimals + 1 || 3
@@ -174,9 +175,9 @@ function formatBytes(bytes,decimals) {
    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
 }
 
-function promiseRestJSON(host,port,endpoint){
+export function promiseRestJSON(host,port,endpoint){
   return new Promise((resolve,reject)=>{
-    require('http').get({host,port,path:endpoint,method:'GET'},res=>{
+    http.get({host,port,path:endpoint,method:'GET'},res=>{
       res.setEncoding('utf8');
       var body = '';
       res.on('data',d=>body+=d);
@@ -199,9 +200,9 @@ function promiseRestJSON(host,port,endpoint){
  * Run a cli task by exec
  * @param {string} task
  */
-async function run(task){
-  const {promisify} = require('util')
-  const {exec} = require('child_process')
+export async function run(task){
+  const {promisify} = util
+  const {exec} = child_process
   const pexec = promisify(exec)
   const {stdout,stderr} = await pexec(task)
   // stdout.on('data',console.log)
@@ -213,8 +214,8 @@ async function run(task){
  * Spawn a task and pipe output to current process
  * @param {string} task
  */
-function spawnTask(task){
-const {spawn} = require('child_process')
+export function spawnTask(task){
+  const {spawn} = child_process
   const args = typeof task==='string'?task.split(/\s+/g):task
   const proc = spawn(args.shift(),args)
   const {stdout,stderr} = proc
@@ -228,7 +229,7 @@ const {spawn} = require('child_process')
   return proc
 }
 
-module.exports = {
+/*module.exports = {
   glomise
   ,read
   ,save
@@ -247,4 +248,4 @@ module.exports = {
   ,log: console.log.bind(console)
   ,warn: console.warn.bind(console)
   ,error: console.error.bind(console)
-};
+};*/
