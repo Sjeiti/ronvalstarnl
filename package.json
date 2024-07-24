@@ -94,9 +94,8 @@
     "xmldom": "^0.6.0",
     "yorkie": "^2.0.0"
   },
-  "_optionalDependencies": {
-    "chokidar-cli": "^2.1.0",
-    "puppeteer": "^7.0.1"
+  "optionalDependencies": {
+    "fsevents": "ignore"
   },
   "postcss": {
     "plugins": {
