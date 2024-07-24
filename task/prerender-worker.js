@@ -8,13 +8,18 @@ const {promises:{readFile, writeFile,mkdir},readFileSync} = fs // require('node:
 const baseUri = 'https://ronvalstar.nl'
 const index = 'src/index.html'
 
+const noop = ()=>({})
+
 ;(async ()=>{
 
   const { uri, html } =  workerData
    
   //parentPort.postMessage('__uri '+uri);
+  
+  globalThis.prerendering = true
 
-  const {window} = getJSDOM(html, uri)
+  const dom = getJSDOM(html, uri)
+  const {window} = dom
 
   await import('../src/js/views/index.js')
   const {open} = await import('../src/js/router.js')
@@ -31,18 +36,17 @@ const index = 'src/index.html'
   const target = targetPath+'/index.html'
   await mkdir(targetPath,{recursive:true})
 
-  const {outerHTML} = document.documentElement
+  document.documentElement.classList.add('prerendered')
+  
+  const htmlResult = dom.serialize()
 
-  await writeFile(
-    target,
-    outerHTML.replace(/<html class="([^"]*)" lang="en">/,'<html class="$1 prerendered" lang="en">')
-  )
+  await writeFile(target,htmlResult)
 
   const title = document.querySelector('title')?.textContent
 
   console.log(
-      'uri:',uri
-      ,'\n  title:',green(title)
+      uri.replace(/^\w*:\/\/[^/]*/,'')
+      ,green(title)
   )
   parentPort.postMessage({done:true});
 
@@ -55,23 +59,17 @@ const index = 'src/index.html'
 
 function getJSDOM(html, url){
 
-  const doc = new JSDOM(html,{url})
+  const dom = new JSDOM(html,{url})
 
-  const fetchPkg = 'node_modules/whatwg-fetch/dist/fetch.umd.js'
-  doc.window.eval(fs.readFileSync(fetchPkg, 'utf-8'))
+  const {window, window:{document}} = dom
 
-  const {window, window:{document}} = doc
+  window.scrollTo = noop
 
-  globalThis.prerendering = true
-
-  window.scrollTo = ()=>{}
-
-  window.HTMLCanvasElement.prototype.getContext = ()=>{}
+  window.HTMLCanvasElement.prototype.getContext = noop
 
   globalThis.requestAnimationFrame = fn=>globalThis.setTimeout(fn,30)
   globalThis.cancelAnimationFrame = id=>globalThis.clearTimeout(id)
 
-  const _fetch = globalThis.fetch
   globalThis.fetch = s=>{
     let body = '{"content":""}'
     const file = './dist'+s
@@ -93,16 +91,15 @@ function getJSDOM(html, url){
     ,'matchMedia'
     ,'_VERSION'
     ,'_ENV'
-    //,'navigator'
   ].forEach(key=>{
     try {
-      globalThis[key] = window[key]||(()=>({}))
+      globalThis[key] = window[key]||noop
     } catch(err) {
       console.info(`Failed setting \`globalThis[${key}]\`: ${err}`)
     }
   })
 
-  return doc
+  return dom
 }
 
 function green(s){
