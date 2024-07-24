@@ -87,8 +87,8 @@ export function prismToElement(elm){
   } else {
     const lineNumbers = 'line-numbers'
     const pre = elm.parentElement
-    const maybeComment = pre.previousSibling.previousSibling
-    maybeComment.nodeType===8&&maybeComment.textContent==='line-numbers'&&pre.setAttribute(lineNumbers, '')
+    const maybeComment = pre?.previousSibling?.previousSibling
+    maybeComment?.nodeType===8&&maybeComment.textContent===lineNumbers&&pre.setAttribute(lineNumbers, '')
 
     elm.setAttribute('data-language', lang)
     lang&&(elm.dataset.language = lang)
