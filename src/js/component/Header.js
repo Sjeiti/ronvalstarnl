@@ -198,8 +198,9 @@ create('[data-header]', class extends BaseComponent{
    * @private
    */
   _onClickLink(){
-    document.body.matches('[data-pathname^="experiment-"]')
-      &&this._experimentWrapper.requestFullscreen()
+    //document.body.matches('[data-pathname^="experiment-"]')
+    //  &&this._experimentWrapper.requestFullscreen()
+    this._experimentWrapper.requestFullscreen()
   }
 
   /**
