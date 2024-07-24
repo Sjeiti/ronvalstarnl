@@ -1,7 +1,7 @@
-import {add} from '../router'
-import {fetchJSONFiles} from '../utils'
-import {MEDIA_URI_THUMB, MEDIA_URI_VIDEO/*, PROBABLY_MOBILE*/} from '../config'
-import {makeClassNames, slugify} from '../utils/string'
+import {add} from '../router.js'
+import {fetchJSONFiles} from '../utils/index.js'
+import {MEDIA_URI_THUMB, MEDIA_URI_VIDEO/*, PROBABLY_MOBILE*/} from '../config.js'
+import {makeClassNames, slugify} from '../utils/string.js'
 
 const classNames = makeClassNames({
     current: 'current'

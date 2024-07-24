@@ -1,8 +1,8 @@
-import {parentQuerySelector, expand, createElement, clean} from './utils/html'
-import {signal} from './signal'
-import {initialise} from './component'
-import {nextFrame, nextTick} from './utils'
-import {applyDirectives} from './directives'
+import {parentQuerySelector, expand, createElement, clean} from './utils/html.js'
+import {signal} from './signal/index.js'
+import {initialise} from './component/index.js'
+import {nextFrame, nextTick} from './utils/index.js'
+import {applyDirectives} from './directives/index.js'
 
 export const routeChange = signal()
 
@@ -10,7 +10,7 @@ let doAnimateRoute = false
 let defaultRouteResolve
 const routes = {}
 
-window.addEventListener('popstate', onPopstate)
+window?.addEventListener('popstate', onPopstate)
 
 const ms = getPageTransitionTime()
 
@@ -23,7 +23,7 @@ const className = {
   , CONTENT_ANIMATE_IN_START: 'content--animate-in-start'
 }
 
-const view = document.querySelector('main')
+const view = document?.querySelector('main')
 const viewModel = viewModelFactory(view).init()
 document.body.addEventListener('click', onClick, true)
 
@@ -89,7 +89,13 @@ export function open(uri, popped){
   url = getURL(pathname)
   const name = getName(pathname)
   const currentName = viewModel.getViewName()
-  if (name!==currentName){
+  const html = document.documentElement
+  const prerendered = 'prerendered'
+  const isPrerendered = html.classList.contains(prerendered)
+  html.classList.remove(prerendered)
+  //const {history} = location
+  let routePromise = Promise.resolve()
+  if (name!==currentName||name===currentName&&isPrerendered){
     let routeResolve = defaultRouteResolve
     let routeParams
     for (let route in routes){
@@ -102,9 +108,10 @@ export function open(uri, popped){
     }
     if (url!==oldUrl){
       viewModel.removeEventListeners()
-      routeResolve(viewModel, name||'home', routeParams)
+      routePromise = routeResolve(viewModel, name||'home', routeParams)
         .then(page=>{
           const title = page.title
+          document.title = title
           const urlNew = (name[0]==='/'?'':'/')+name
           popped||history.pushState({}, title, urlNew)
           routeChange.dispatch(name, page, oldName)
@@ -115,12 +122,14 @@ export function open(uri, popped){
             history.replaceState({}, title, urlNew+hash)
             location.hash = hash
           })
-          // All loaded. set prerenderReady (https://answers.netlify.com/t/support-guide-understanding-and-debugging-prerendering/150)
-          window.prerenderReady||(window.prerenderReady = true)
+
+          //globalThis.prerendering&&viewModel._content.ownerDocument.documentElement.classList.add('prerendered')
+
         })
         .catch(console.error)
     }
   }
+  return routePromise
 }
 
 /**
@@ -246,7 +255,6 @@ function viewModelFactory(element){
       const {_content, _contentPast} = this
       _contentPast.setAttribute('data-pathname', _content.getAttribute('data-pathname'))
       _content.setAttribute('data-pathname', name)
-      document.body.setAttribute('data-pathname', name) // todo may not be good idea
       return this
     }
     /**
@@ -262,7 +270,7 @@ function viewModelFactory(element){
      */
     , _removeAndCleanPastContent(){
       const {element, _content, _contentPast} = this
-      _contentPast.parentNode&&element.removeChild(_contentPast)
+      _contentPast.remove()
       clean(_contentPast)
       _contentPast.classList.remove(className.CONTENT_ANIMATE_OUT)
       _contentPast.classList.remove(className.CONTENT_ANIMATE_OUT_START)
@@ -285,7 +293,7 @@ function viewModelFactory(element){
      * @type {HTMLElement}
      */
     , _content: {
-      value: element.querySelector('.content:not(.content--past)')||createElement('div', 'content', element)
+      value: element?.querySelector('.content:not(.content--past)')||createElement('div', 'content', element)
       , writable: false
     }
     /**
@@ -293,7 +301,7 @@ function viewModelFactory(element){
      * @type {HTMLElement}
      */
     , _contentPast: {
-      value: element.querySelector('.content--past')||createElement('div', 'content content--past')
+      value: element?.querySelector('.content--past')||createElement('div', 'content content--past')
       , writable: false
     }
     /**
@@ -349,7 +357,7 @@ function getName(pathname){
  * @returns {string}
  */
 function getURL(pathname){
-  return  location.origin+pathname
+  return  document.location.origin+pathname
 }
 
 /**
@@ -376,7 +384,7 @@ function getIsFullURI(uri){
  */
 function getPageTransitionTime(){
   let time = 500
-  Array.from(document.styleSheets).forEach(sheet=>{
+  Array.from(document?.styleSheets||[]).forEach(sheet=>{
     try {
       Array.from(sheet.rules).forEach(rule => {
         if (rule.selectorText?.includes('animate-out-start')&&rule.cssText?.includes('transition')){

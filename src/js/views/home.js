@@ -1,13 +1,20 @@
-import {add} from '../router'
-import {fetchJSONFiles, stickiesFirst, todayOlderFilter} from '../utils'
-import {getProjectThumbZen} from './projects'
+import {add} from '../router.js'
+import {fetchJSONFiles, stickiesFirst, todayOlderFilter} from '../utils/index.js'
+import {getProjectThumbZen} from './projects.js'
 import {TweenMax, Linear} from 'gsap'
-import clientSymbols from '!!raw-loader!../../static/svg/client-symbol-defs.svg'
-import prizesSymbols from '!!raw-loader!../../static/svg/prizes-symbol-defs.svg'
+import {raw} from '../utils/svg.js'
+
+//import clientSymbols from '!!raw-loader!../../static/svg/client-symbol-defs.svg'
+//import prizesSymbols from '!!raw-loader!../../static/svg/prizes-symbol-defs.svg'
+const {clientSymbolDefs:clientSymbols, prizesSymbolDefs:prizesSymbols} = raw
 
 // conditional because of prerender
-document.querySelector('#client-symbol-defs')||document.body.insertAdjacentHTML('afterbegin', clientSymbols)
-document.querySelector('#prize-symbol-defs')||document.body.insertAdjacentHTML('afterbegin', prizesSymbols)
+if (!globalThis.prerendering){
+  document.querySelector('#client-symbol-defs')||document.body.insertAdjacentHTML('afterbegin', clientSymbols)
+  document.querySelector('#prize-symbol-defs')||document.body.insertAdjacentHTML('afterbegin', prizesSymbols)
+}else{
+  console.log('globalThis.prerendering')
+}
 
 const populateSVGList = (ul, prefix, names)=>
   ul.insertAdjacentHTML('beforeend', names.map(s=>`<li><svg aria-label="${s}"><use xlink:href="#${prefix+s}"></use></svg></li>`).join(''))
@@ -15,9 +22,10 @@ const populateSVGList = (ul, prefix, names)=>
 add(
   ''
   , 'home'
-  , (view, route)=>{
+  , (view/**View*/, route)=>{
     return fetchJSONFiles(`page_${route}`, 'posts-list', 'fortpolio-list')
       .then(([page, posts, projects])=> {
+
           view.appendString(page.content)
           //
           // projects // todo duplicate code in `view/projects.js`

@@ -1,10 +1,18 @@
-import {create} from './index'
-import {BaseComponent} from './BaseComponent'
-import {NS_SVG, NS_XLINK} from '../config'
-import root from '!!raw-loader!../../../temp/icomoon/symbol-defs.svg'
+import {create} from './index.js'
+import {BaseComponent} from './BaseComponent.js'
+import {NS_SVG, NS_XLINK} from '../config.js'
+//import root from '!!raw-loader!../../../temp/icomoon/symbol-defs.svg'
+import {raw} from '../utils/svg.js'
+
+const {symbolDefs} = raw
 
 // conditional because of prerender
-document.querySelector('svg[aria-hidden=true]:not([id])')||document.body.insertAdjacentHTML('afterbegin', root)
+//document.querySelector('svg[aria-hidden=true]:not([id])')||document.body.insertAdjacentHTML('afterbegin', root)
+if (!globalThis.prerendering){
+  document.querySelector('svg[aria-hidden=true]:not([id])')||document.body.insertAdjacentHTML('afterbegin', symbolDefs)
+}else{
+  console.log('globalThis.prerendering1')
+}
 
 /**
  * Search component

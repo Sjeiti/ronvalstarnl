@@ -1,11 +1,11 @@
-import {add} from '../router'
-import {selectEach, expand} from '../utils/html'
-import {addRule, removeRule} from '../utils/style'
-import {fetchJSONFiles, nextTick, scrollToTop} from '../utils'
-import {componentOf} from '../component'
-import {MEDIA_URI_PROJECT, MEDIA_URI_THUMB, MEDIA_URI_VIDEO/*, PROBABLY_MOBILE*/} from '../config'
-import {makeClassNames, slugify} from '../utils/string'
-import {open} from '../router'
+import {add} from '../router.js'
+import {selectEach, expand} from '../utils/html.js'
+import {addRule, removeRule} from '../utils/style.js'
+import {fetchJSONFiles, nextTick, scrollToTop} from '../utils/index.js'
+import {componentOf} from '../component/index.js'
+import {MEDIA_URI_PROJECT, MEDIA_URI_THUMB, MEDIA_URI_VIDEO/*, PROBABLY_MOBILE*/} from '../config.js'
+import {makeClassNames, slugify} from '../utils/string.js'
+import {open} from '../router.js'
 
 const classNames = makeClassNames({
     current: 'current'
@@ -27,7 +27,8 @@ add(
         const portfolioProjects = projects.filter(p=>p.inPortfolio).sort((a, b)=>new Date(a.dateFrom)<new Date(b.dateFrom)?1:-1)
         const categories = portfolioProjects.reduce((acc, p)=>(p.categories.forEach(c=>!acc.includes(c)&&acc.push(c)), acc), []).map(c=>({name:c, slug:slugify(c)}))
         //
-        const querySelector = ::view.querySelector
+        //const querySelector = ::view.querySelector
+        const querySelector = view.querySelector.bind(view)
         let existingCategories = querySelector(classNames.projectCategory)
         let existingProjects = querySelector(classNames.projects)
         const existingProject = querySelector(classNames.project)
@@ -39,7 +40,7 @@ add(
           existingProjects = elmProj
         }
         // selected project
-        existingProject&&existingProject.parentNode.removeChild(existingProject )
+        existingProject?.remove()
         if(projectSlug){
           const currentProject = projects.filter(p=>p.slug===projectSlug).pop()
           // todo make project 404 page
@@ -81,7 +82,8 @@ add(
  * @return {HTMLElement[]}
  */
 function buildPage(view, categories, portfolioProjects){
-  const querySelector = ::view.querySelector
+  //const querySelector = ::view.querySelector
+  const querySelector = view.querySelector.bind(view)
   view.expandAppend(`(ul${classNames.projectCategory}>(${categories.map(
       o=>`(li>a[href="/projects/${o.slug}"]{${o.name}})`
     ).join('+')}))+ul.unstyled${classNames.projects}>(${portfolioProjects.map(getProjectThumbZen).join('+')})`)
@@ -99,7 +101,7 @@ function buildPage(view, categories, portfolioProjects){
 function buildCurrentProject(view, project, existingProjects){
   const {
     content
-    , images
+    , images=[]
     , dateFrom
     , dateTo
     , title

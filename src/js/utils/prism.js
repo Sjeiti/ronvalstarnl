@@ -1,7 +1,7 @@
 import Prism from 'prismjs'
-import {createElement} from './html'
-import {initialise} from '../component'
-import {nextFrame} from './index'
+import {createElement} from './html.js'
+import {initialise} from '../component/index.js'
+import {nextFrame} from './index.js'
 
 Prism.languages.insertBefore('javascript', 'comment', {
   'cut': /\s*\(\.\.\.\)\s*/
@@ -68,12 +68,12 @@ export function prismToElement(elm){
     iframe.classList.add(type)
     exampleUI&&parentNode.insertBefore(exampleUI, pre)
     parentNode.insertBefore(iframe, pre)
-    parentNode.removeChild(pre)
+    pre.remove()
 
     const matchHeight = contents.match(/<!--height:(\d+\.?\d*\w+)-->/g)
     const matchedHeight = matchHeight&&contents.match(/<!--height:(\d+\.?\d*\w+)-->/).pop()
 
-    nextFrame(()=>{
+    globalThis.prerendering||nextFrame(()=>{
       const {contentWindow: {document}} = iframe
       document.writeln(contents) // document.body.innerHTML breaks JS execution
       const height = matchedHeight||`${document.body.scrollHeight}px`
@@ -82,13 +82,13 @@ export function prismToElement(elm){
 
   } else if (isEmbed){
     pre.insertAdjacentHTML('beforebegin', contents)
-    parentNode.removeChild(pre)
+    pre.remove()
 
   } else {
     const lineNumbers = 'line-numbers'
     const pre = elm.parentElement
-    const maybeComment = pre.previousSibling.previousSibling
-    maybeComment.nodeType===8&&maybeComment.textContent==='line-numbers'&&pre.setAttribute(lineNumbers, '')
+    const maybeComment = pre?.previousSibling?.previousSibling
+    maybeComment?.nodeType===8&&maybeComment.textContent===lineNumbers&&pre.setAttribute(lineNumbers, '')
 
     elm.setAttribute('data-language', lang)
     lang&&(elm.dataset.language = lang)
@@ -112,7 +112,7 @@ function getJSFiddleButton(contents){
 
   const resources = []
   const [css, js] = [':scope > style', ':scope > script'].map(name=>Array.from(wrapper.querySelectorAll(name)).reduce((acc, elm)=>{
-    wrapper.removeChild(elm)
+    elm.remove()
     elm.hasAttribute('src')&&resources.push(elm.getAttribute('src'))
     return acc + elm.innerText
   }, ''))

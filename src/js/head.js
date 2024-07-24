@@ -1,9 +1,9 @@
-import {routeChange} from './router'
-import {stringToElement, expand} from './utils/html'
-import {getCanonical} from './utils'
-import {MEDIA_URI_HEADER} from './config'
+import {routeChange} from './router.js'
+import {stringToElement, expand} from './utils/html.js'
+import {getCanonical} from './utils/index.js'
+import {MEDIA_URI_HEADER} from './config.js'
 
-const siteName= 'Ron Valstar - front-end developer'
+const siteName = 'Ron Valstar - front-end developer'
 
 /**
  * Head controller for meta properties
@@ -58,7 +58,7 @@ routeChange.add((slug, page)=>{
     setSelector('meta[property="robots"]', 'content', 'noindex,follow')
   } else {
     const robots = document.querySelector('meta[property="robots"]')
-    robots&&robots.parentNode.removeChild(robots)
+    robots?.remove()
   }
 })
 
@@ -75,7 +75,7 @@ function setSelector(selector, key, value){
     key&&elm.setAttribute(key, value)
   } else {
     const elm = document.head.querySelector(selector)
-    elm&&elm.parentNode.removeChild(elm)
+    elm?.remove()
   }
 }
 

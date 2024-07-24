@@ -1,4 +1,4 @@
-import {expand} from '../utils/html'
+import {expand} from '../utils/html.js'
 
 /**
  * A base component

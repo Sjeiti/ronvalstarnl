@@ -1,7 +1,7 @@
-import {create} from './index'
-import {BaseComponent} from './BaseComponent'
-import {NS_SVG} from '../config'
-import {createElement} from '../utils/html'
+import {create} from './index.js'
+import {BaseComponent} from './BaseComponent.js'
+import {NS_SVG} from '../config.js'
+import {createElement} from '../utils/html.js'
 
 /**
  * Search component

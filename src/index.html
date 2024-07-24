@@ -330,6 +330,7 @@
       line-height: 120%;
     }
   </style>
+  <link rel="stylesheet" href="/screen.css">
 </head>
 <body>
   <header data-header>
@@ -381,8 +382,6 @@
     }" role="search"></div>
   </footer>
   <script>
-
-    window.prerenderReady = false
     
     const {body} = document
     const createElement = document.createElement.bind(document)
@@ -390,12 +389,20 @@
     const isLocalhost = window.location.hostname==='localhost'
 
     if (isMobile&&isLocalhost) {
-      const script = document.createElement('script')
-      script.src = '//cdn.jsdelivr.net/npm/eruda'
-      body.appendChild(script)
+      const script = loadScript('//cdn.jsdelivr.net/npm/eruda')
       script.onload = function () {
         eruda.init()
+        loadScript('/js/index.js')
       }
+    } else {
+      loadScript('/js/index.js')
+    }
+
+    function loadScript(src){
+      const script = document.createElement('script')
+      script.src = src
+      body.appendChild(script)
+      return script
     }
 
     function insertRulesFromPrefersMediaRules(){
@@ -444,7 +451,5 @@
     findPrefers('reduced-data', 'reduce')
 
   </script>
-
-  <script src="/js/index.js"></script>
 </body>
 </html>

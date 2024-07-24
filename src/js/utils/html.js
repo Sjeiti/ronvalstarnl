@@ -6,7 +6,7 @@
  * @param {object} attrs
  * @returns {HTMLDivElement}
  */
-import {emmetExpand} from './emmet'
+import {emmetExpand} from './emmet.js'
 
 // /**
 //  * Shortcut method for quickly appending elements
@@ -60,7 +60,7 @@ export function parentQuerySelector(elm, query, inclusive=false){
  * @returns {HTMLElement}
  */
 export function clean(elm){
-  while (elm.firstChild) elm.removeChild(elm.firstChild)
+  while (elm.firstChild) elm.firstChild.remove()
   return elm
 }
 
@@ -95,9 +95,14 @@ export function selectEach(root, selector, fn){
  * @return {String}
  */
 export function expand(s){
+  try {
   return emmetExpand(s
       .replace(/\r\n\s*|\r\s*|\n\s*/g, '')
   )
+  } catch(err){
+    console.log(`Cannot expand '${s}':`,err)
+    return s
+  }
 }
 
 /**
@@ -112,7 +117,7 @@ export function expand(s){
  * @returns {HTMLElement} Returns the newly created element
  */
 export function createElement(type, classes, parent, attributes, text, click){
-  const mElement = document.createElement(type||'div')
+  const mElement = document?.createElement(type||'div')
   if (attributes) for (let attr in attributes) mElement.setAttribute(attr, attributes[attr])
   if (classes){
     const oClassList = mElement.classList

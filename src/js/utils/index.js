@@ -1,5 +1,5 @@
 import {TweenMax, Power1} from 'gsap'
-import {TODAY} from '../config'
+import {TODAY} from '../config.js'
 
 
 // get css rule
@@ -206,15 +206,20 @@ export function getCanonical(page){
   return 'https://ronvalstar.nl/'+(page.type==='fortpolio'?'project/':'')+page.slug
 }
 
-const {body} = document
-const spinnerStart = 'spinner--start'
-const spinner = document.createElement('div')
-const {classList} = spinner
-const spinnerStartAdd = classList.add.bind(classList, spinnerStart)
-const spinnerStartRem = classList.remove.bind(classList, spinnerStart)
-classList.add('spinner')
-const fetchStart = ()=>body.appendChild(spinner)&&nextFrame(spinnerStartAdd, 2)
-const fetchDone = ()=>body.removeChild(spinner)&&spinnerStartRem()
+let fetchStart
+let fetchDone
+function initSpinner(){
+  const {body} = document
+  const spinnerStart = 'spinner--start'
+  const spinner = document.createElement('div')
+  const {classList} = spinner
+  const spinnerStartAdd = classList.add.bind(classList, spinnerStart)
+  const spinnerStartRem = classList.remove.bind(classList, spinnerStart)
+  classList.add('spinner')
+  fetchStart = ()=>body.appendChild(spinner)&&nextFrame(spinnerStartAdd, 2)
+  fetchDone = ()=>spinner.remove()&&spinnerStartRem()
+  Object.assign(globalThis,{fetchStart,fetchDone})
+}
 
 /**
  * Fetch multiple json files and parse them
@@ -222,6 +227,7 @@ const fetchDone = ()=>body.removeChild(spinner)&&spinnerStartRem()
  * @return {Promise<object[]>}
  */
 export function fetchJSONFiles(...names){
+  fetchStart||initSpinner()
   fetchStart()
   return Promise.all(names.map(s=>fetch(`/data/json/${s}.json`).then(rs=>rs.json())))
       .then(thenPass(fetchDone))

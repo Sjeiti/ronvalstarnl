@@ -1,9 +1,9 @@
-import {searchView} from './search'
-import {setDefault} from '../router'
-import {fetchJSONFiles, getZenIcon, nextTick, scrollToTop, todayOlderFilter} from '../utils'
-import {prismToRoot} from '../utils/prism'
-import {componentOf} from '../component'
-import {signal} from '../signal'
+import {searchView} from './search.js'
+import {setDefault} from '../router.js'
+import {fetchJSONFiles, getZenIcon, nextTick, scrollToTop, todayOlderFilter} from '../utils/index.js'
+import {prismToRoot} from '../utils/prism.js'
+import {componentOf} from '../component/index.js'
+import {signal} from '../signal/index.js'
 
 setDefault((view, route, params)=>fetchJSONFiles(`post_${route}`, 'posts-list', 'fortpolio-list')
     .then(([post, posts, fortpolios])=>{
@@ -115,5 +115,5 @@ function getBottomNavigation(post, posts){
   const next = hasNext&&currentPast[listingIndex-1]
   const prevLink = prev&&`a.prev[href="/${prev.slug}"]{${prev.title}}`||''
   const nextLink = next&&`a.next[href="/${next.slug}"]{${next.title}}`||''
-  return `(nav.prevnext>(${prevLink}+${nextLink}))`
+  return `(nav.prevnext>(${prevLink}${prev&&next?'+':''}${nextLink}))`
 }

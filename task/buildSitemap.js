@@ -1,16 +1,17 @@
-const utils = require('./util/utils.js')
-const {save} = utils
-const {target} = require('commander')
+import {save} from './util/utils.js'
+import commander from 'commander'
+
+import posts from '../src/data/json/posts-list.json' with { type: 'json' }
+import pages from '../src/data/json/pages-list.json' with { type: 'json' }
+import portfolio from '../src/data/json/fortpolio-list.json' with { type: 'json' }
+
+const {target} = commander
         .usage('[options] <files ...>')
         .option('--target [target]', 'Target path')
         .parse(process.argv)
         .opts()
 
-const path = '../src/data/json/'
 const base = 'https://ronvalstar.nl'
-const posts = require(path+'posts-list.json')
-const pages = require(path+'pages-list.json')
-const portfolio = require(path+'fortpolio-list.json')
 const lastmod = new Date().toISOString()
 
 
