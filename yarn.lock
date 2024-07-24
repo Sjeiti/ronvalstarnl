@@ -6867,9 +6867,6 @@ __metadata:
     webpack-watch-files-plugin: "npm:^1.2.1"
     xmldom: "npm:^0.6.0"
     yorkie: "npm:^2.0.0"
-  dependenciesMeta:
-    chokidar-cli:
-      optional: true
   languageName: unknown
   linkType: soft
 
