@@ -13,7 +13,8 @@ const {target} = commander
         .parse(process.argv)
         .opts()
 
-console.log('cpu',cpus())
+const maxWorkers = Math.max(4, cpus().length-1)
+console.log('maxWorkers',maxWorkers)
 
 const baseUri = 'https://ronvalstar.nl'
 
@@ -43,7 +44,7 @@ const index = 'src/index.html'
       return uri&&createWorker(uri,html)
     }
   }
-  await dynamicPromiseAll(getWorkerGenerator(pages.slice(0)), 10)
+  await dynamicPromiseAll(getWorkerGenerator(pages.slice(0)), maxWorkers)
   console.log('prerender done') // todo: remove log
   exit(0)
 })()
