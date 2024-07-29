@@ -28,7 +28,12 @@ const describe = string=>{
 const stringDate = date=>new Date(date).toGMTString()
 
 ;(async ()=>{
-
+  const list = await (Promise.all(currentPast.map(async ({slug})=>{
+      const path = `src/data/json/post_${slug}.json`
+      const post = await read(path)
+      return JSON.parse(post)
+  })))
+ 
   const rss = `<?xml version="1.0" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -36,20 +41,15 @@ const stringDate = date=>new Date(date).toGMTString()
     <link>${base}</link>
     <description>Blog posts and articles about front-end development</description>
     <atom:link href="${base}/feed.rss" rel="self" type="application/rss+xml" />
-    ${currentPast.map(async ({title, slug, date})=>{
-
-    const path = `src/data/json/post_${slug}.json`
-
-    const post = await read(path)
-
-    return `<item>
+    ${list.map(({slug, title, date, description})=>
+      `<item>
         <title>${title||'blank'}</title>
         <link>${base}/${slug}</link>
         <guid>${base}/${slug}</guid>
-        <description>${describe(post.description||'')}</description>
+        <description>${describe(description||'')}</description>
         <pubDate>${stringDate(date)}</pubDate>
       </item>`
-  }).join('')}
+  ).join('')}
   </channel>
 </rss>`
 
