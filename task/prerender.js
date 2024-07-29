@@ -13,15 +13,18 @@ const {target} = commander
         .parse(process.argv)
         .opts()
 
-console.log('cpu',cpus())
+const maxWorkers = Math.max(4, cpus().length-1)
+console.log('maxWorkers',maxWorkers)
 
 const baseUri = 'https://ronvalstar.nl'
 
-const {promises:{readFile, writeFile,mkdir},readFileSync} = fs // require('node:fs')
+const {promises:{readFile,writeFile,mkdir},readFileSync} = fs // require('node:fs')
 
 console.log('prerender',target||'')
 
 const index = 'src/index.html'
+
+const noop = ()=>({})
 
 ;(async ()=>{
 
@@ -37,16 +40,19 @@ const index = 'src/index.html'
   ])
   console.log('pages', pages.map(uri=>uri.replace(/^https:\/\/[^/]*/,'')).join(',')) // todo: remove log
 
-  function getWorkerGenerator(uris){
-    return function(){
-      const uri = uris.pop()
-      return uri&&createWorker(uri,html)
-    }
-  }
-  await dynamicPromiseAll(getWorkerGenerator(pages.slice(0)), 10)
-  console.log('prerender done') // todo: remove log
+  const generator = getWorkerGenerator(pages,html)
+  await dynamicPromiseAll(generator, maxWorkers)
+  console.log('prerender done')
   exit(0)
 })()
+
+function getWorkerGenerator(uris,html){
+  const _uris = uris.slice(0)
+  return function(){
+    const uri = _uris.pop()
+    return uri&&createWorker(uri,html)
+  }
+}
 
 function dynamicPromiseAll(generator, max){
   return new Promise((resolve)=>{
@@ -77,62 +83,16 @@ function createWorker(uri,html){
   })
 
   return new Promise((resolve, reject)=>{
-    worker.on('message', msg=>{
+    worker.on('message', msg =>
       msg.done
         ?resolve()
-        :console.log('message',msg)// todo rem
-    })
+        :console.info('message',msg)
+    )
     worker.on('error', reject)
-    worker.on('exit', code  => {
-      if (code!==0) {
-          reject(new  Error(`Worker stopped with exit code ${code}`))
-      }
-    })
+    worker.on('exit', code  =>
+      code===0
+        ||console.info('Worker exit',code)
+    )
   })
 }
 
-/**
- * Instantiate JSDOM and apply globals
- */
-function getJSDOM(html, url){
-
-  const doc = new JSDOM(html,{url})
-
-  const fetchPkg = 'node_modules/whatwg-fetch/dist/fetch.umd.js'
-  doc.window.eval(fs.readFileSync(fetchPkg, 'utf-8'))
-
-  const {window, window:{document}} = doc
-
-  window.scrollTo = ()=>{}
-
-  window.HTMLCanvasElement.prototype.getContext = ()=>{}
-
-  globalThis.requestAnimationFrame = fn=>globalThis.setTimeout(fn,30)
-  globalThis.cancelAnimationFrame = id=>globalThis.clearTimeout(id)
-
-  const _fetch = globalThis.fetch
-  globalThis.fetch = s=>{
-    const body = readFileSync('dist'+s)
-    return Promise.resolve(new Response(body))
-  }
-  
-  ;[
-    'Element'
-    ,'HTMLAnchorElement'
-    ,'location'
-    ,'history'
-    ,'document'
-    ,'window'
-    ,'_VERSION'
-    ,'_ENV'
-  ,'matchMedia'
-  ].forEach(key=>{
-    globalThis[key] = window[key]
-  })
-
-  return doc
-}
-
-function green(s){
-  return `\x1b[32m${s}\x1b[0m`
-}

@@ -75,6 +75,8 @@ export default env => {
           }
           , { from: 'node_modules/experiments/src/static/glsl/', to: './static/glsl' }
           , { from: 'node_modules/experiments/src/static/img/', to: './static/img' }
+          , { from: 'node_modules/experiments/src/static/html/', to: './static/html' }
+          , { from: 'node_modules/experiments/src/math/', to: './math' }
       ]})
       , new webpack.DefinePlugin({
         _VERSION: JSON.stringify(pack.version)
