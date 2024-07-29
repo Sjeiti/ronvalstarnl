@@ -60,8 +60,7 @@ const noop = ()=>({})
 function getJSDOM(html, url){
 
   const dom = new JSDOM(html,{url})
-
-  const {window, window:{document}} = dom
+  const {window} = dom
 
   window.scrollTo = noop
 

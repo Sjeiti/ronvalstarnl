@@ -4,6 +4,7 @@ import {read, save} from './util/utils.js'
 import commander from 'commander'
 
 import posts from '../src/data/json/posts-list.json' with { type: 'json' }
+console.log('Builing RSS for',posts.length,'pages')
 
 const {target} = commander
         .usage('[options] <files ...>')
@@ -18,7 +19,7 @@ const currentPast = posts.filter(({date})=>(new Date(date))<=today)
 
 const stripHTML = htmlString=>htmlString.replace(/<[^>]*>?/gm, '')
 const encodedStr = rawStr=>rawStr.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
-   return '&#'+i.charCodeAt(0)+';';
+   return '&#'+i.charCodeAt(0)+';'
 })
 const describe = string=>{
   const newString = stripHTML(string).substr(0, 255)
@@ -26,7 +27,7 @@ const describe = string=>{
 }
 const stringDate = date=>new Date(date).toGMTString()
 
-(async ()=>{
+;(async ()=>{
 
   const rss = `<?xml version="1.0" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -37,9 +38,9 @@ const stringDate = date=>new Date(date).toGMTString()
     <atom:link href="${base}/feed.rss" rel="self" type="application/rss+xml" />
     ${currentPast.map(async ({title, slug, date})=>{
 
-    // const post = require(`../src/data/json/post_${slug}.json`)
+    const path = `src/data/json/post_${slug}.json`
 
-    const post = await read(`../src/data/json/post_${slug}.json`)
+    const post = await read(path)
 
     return `<item>
         <title>${title||'blank'}</title>
@@ -53,6 +54,7 @@ const stringDate = date=>new Date(date).toGMTString()
 </rss>`
 
   await save((target||'temp')+'/feed.rss', rss)
+  console.log('saved')
 
 })()
 
