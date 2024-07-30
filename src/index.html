@@ -387,15 +387,18 @@
     const createElement = document.createElement.bind(document)
     const isMobile = window.matchMedia('(max-device-width: 600px)').matches
     const isLocalhost = window.location.hostname==='localhost'
+    const isParamEruda = /eruda/.test(location.search)
 
-    if (isMobile&&isLocalhost) {
+    const start = loadScript.bind(null,'/js/index.js')
+
+    if (isMobile&&isLocalhost||isParamEruda) {
       const script = loadScript('//cdn.jsdelivr.net/npm/eruda')
       script.onload = function () {
         eruda.init()
-        loadScript('/js/index.js')
+        start()
       }
     } else {
-      loadScript('/js/index.js')
+      start()
     }
 
     function loadScript(src){
