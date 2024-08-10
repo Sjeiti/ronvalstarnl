@@ -62,6 +62,7 @@ export default env => {
     , plugins: [
       new CopyWebpackPlugin({patterns:[
           { from: 'src/index.html', to: './'}
+          , { from: 'src/BingSiteAuth.xml', to: './'}
           , { from: 'src/_redirects', to: './'}
           , { from: 'src/data/json', to: './data/json' }
           , { from: 'src/data/search', to: './data/search' }
