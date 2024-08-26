@@ -15,5 +15,5 @@
 A little CSS contraption with single element holes, drawn by box-shadows. The elements are rotated randomly so the positioning of the hihghlight and shadow is done through CSS sine and cosine functions.
 Clicking the holes inverts them.
 
-<pre><code data-language="javascript" data-src="/static/experiment/pinkcheese.js"></code></pre>
+<pre><code data-language="javascript" data-src="/static/html/pinkcheese.html"></code></pre>
 
