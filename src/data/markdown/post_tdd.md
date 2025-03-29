@@ -31,3 +31,11 @@ Recently however I was in the questionable position of complete control. I was a
 One big blind spot when testing any website is everything that happens outside that website. You have no control over physical environment for instance. Some flows require email verifictions, or payments.
 
 XXXXXXX
+
+
+<div style="padding:56.25% 0 0 0;position:relative;">
+<iframe src="https://player.vimeo.com/video/709791484?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="seedling" data-ready="true"></iframe></div>
+
+---
+
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/709791484?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="seedling"></iframe></div><script src="https://player.vimeo.com/api/player.js" defer></script>
