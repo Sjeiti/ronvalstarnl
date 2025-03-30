@@ -1,7 +1,8 @@
 import {from} from './from.js'
 import {terms} from './terms.js'
+import {vimeo} from './vimeo.js'
 
-const directives = {terms, from}
+const directives = {terms, from, vimeo}
 
 /**
  * Apply directives to a view
