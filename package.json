@@ -1,7 +1,7 @@
 {
   "name": "ronvalstarnl",
   "author": "Ron Valstar",
-  "version": "0.5.65",
+  "version": "0.5.66",
   "type": "module",
   "license": "MIT",
   "repository": "github:sjeiti/ronvalstarnl",
@@ -12,6 +12,7 @@
     "build": "run-s clean build:less build:tags \"webpack -- --env development --watch\"",
     "build:prod": "run-s clean build:less build:unzip build:raw build:json build:search build:tags build:icons \"webpack -- --env production\" build:sitemap build:rss build:prerender",
     "build:prodd": "run-s clean build:less build:unzip build:raw build:json build:tags \"webpack -- --env production\" build:sitemap build:rss build:prerender",
+    "build:proddd": "run-s clean build:less build:unzip build:raw build:json build:tags \"webpack -- --env production\" build:sitemap build:rss",
     "build:unzip": "unzip src/data/icomoon.zip temp/icomoon",
     "build:json": "node task/markdown2json",
     "build:search": "node task/buildSearch",
