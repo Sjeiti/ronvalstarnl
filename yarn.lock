@@ -2997,7 +2997,7 @@ execa@^0.8.0:
 
 "experiments@github:Sjeiti/experiment":
   version "1.1.52"
-  resolved "https://codeload.github.com/Sjeiti/experiment/tar.gz/4b9e407094bb8b7a72e71e36c71627b86aeb5873"
+  resolved "https://codeload.github.com/Sjeiti/experiment/tar.gz/c5c5917183fa252a5819109caa5e56a34255a338"
   dependencies:
     "@emmetio/expand-abbreviation" "^0.7.3"
     gsap "^3.6.0"
