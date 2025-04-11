@@ -3053,8 +3053,8 @@ execa@^0.8.0:
     strip-eof "^1.0.0"
 
 "experiments@github:Sjeiti/experiment":
-  version "1.1.55"
-  resolved "https://codeload.github.com/Sjeiti/experiment/tar.gz/e923babadceb3fca48a9ab33fccf9a7d5a179615"
+  version "1.1.57"
+  resolved "https://codeload.github.com/Sjeiti/experiment/tar.gz/0d1c90a5eee8540bc7caae328efce85d4ad4087d"
   dependencies:
     "@emmetio/expand-abbreviation" "^0.7.3"
     gsap "^3.6.0"
