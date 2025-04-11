@@ -64,6 +64,7 @@
     "babel-preset-babili": "0.0.12",
     "babel-preset-minify": "^0.5.1",
     "body-parser": "^1.19.0",
+    "chokidar-cli": "^3.0.0",
     "commander": "^7.2.0",
     "copy-webpack-plugin": "^7.0.0",
     "css-properties-values": "^1.0.0",
