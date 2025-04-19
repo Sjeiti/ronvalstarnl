@@ -8,63 +8,50 @@ import animate from './animate'
 * @summary Wrapper namespace for keyboard signals.
 */
 
-let eLastKeyDown
-  // ,bInit = false
-  /**
-   * Signal for keyPress.<br/>
-   * The callback for this signal is Function(keys,event)
-   * @name iddqd.signal.keypress
-   * @type Signal
-   */
-  , press = createSignal()
-  /**
-   * Signal for keyDown.<br/>
-   * The callback for this signal is Function(keyCode,keys,event)
-   * @name iddqd.signal.keydown
-   * @type Signal
-   */
-  , down = createSignal()
-  /**
-   * Signal for keyUp.<br/>
-   * The callback for this signal is Function(keyCode,keys,event)
-   * @name iddqd.signal.keyup
-   * @type Signal
-   */
-  , up = createSignal()
-  //
-  , key = Object.assign([], {
-    press: press
-    , down: down
-    , up: up
-  })
+let eLastKeyDown = undefined
 
-// function init(){
-//   if (!bInit) {
-//     bInit = true;
-    // up.add(fn).detach();
-    // press.add(fn).detach();
-    // down.add(fn).detach();
-  // }
-// }
-// function initDown(signal){
-//   init();
-  document.addEventListener('keydown', function(e){
-    const iKeyCode = e.keyCode
-    key[iKeyCode] = true
-    eLastKeyDown = e
-    down.dispatch(iKeyCode, key, e)
-    animate.add(keypress)
-  })
-// }
-// function initUp(signal){
-//   init();
-  document.addEventListener('keyup', function(e){
-    const iKeyCode = e.keyCode
-    key[iKeyCode] = false
-    animate.remove(keypress)
-    up.dispatch(iKeyCode, key, e)
-  })
-// }
+/**
+ * Signal for keyPress.<br/>
+ * The callback for this signal is Function(keys,event)
+ * @name iddqd.signal.keypress
+ * @type {Signal}
+ */
+const press = createSignal()
+
+/**
+ * Signal for keyDown.<br/>
+ * The callback for this signal is Function(keyCode,keys,event)
+ * @name iddqd.signal.keydown
+ * @type {Signal}
+ */
+const down = createSignal()
+
+/**
+ * Signal for keyUp.<br/>
+ * The callback for this signal is Function(keyCode,keys,event)
+ * @name iddqd.signal.keyup
+ * @type {Signal}
+ */
+const up = createSignal()
+
+const key = Object.assign([], {press, down, up})
+
+const animateSlots = []
+document.addEventListener('keydown', function(e){
+  const iKeyCode = e.keyCode
+  key[iKeyCode] = true
+  eLastKeyDown = e
+  down.dispatch(iKeyCode, key, e)
+  animateSlots.push(animate.add(keypress))
+})
+
+document.addEventListener('keyup', function(e){
+  const iKeyCode = e.keyCode
+  key[iKeyCode] = false
+  console.log('dat is toch niet te gelueeeeeeven!') // todo: remove log
+  animateSlots.pop().remove()
+  up.dispatch(iKeyCode, key, e)
+})
 
 /**
  * Keypress event handler
