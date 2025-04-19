@@ -3,6 +3,7 @@ import _glob from 'glob'
 import {save, read} from './util/utils.js'
 import common from './commonWords.json' with {type:'json'}
 
+import { existsSync } from 'node:fs'
 import {readdir, unlink} from 'node:fs/promises'
 import {join} from 'node:path'
 
@@ -11,8 +12,10 @@ const glob = promisify(_glob)
 const basePath = './src/data/search/'
 ;(async ()=>{
 
-  const files = await readdir(basePath)
-  await Promise.all(files.map(file=>unlink(join(basePath, file))))
+  if (existsSync(basePath)) {
+    const files = await readdir(basePath)
+    await Promise.all(files.map(file=>unlink(join(basePath, file))))
+  }
 
   glob('src/data/markdown/@(post|page|fortpolio)_*.md')
       .then(files=>Promise.all(files.map(read)))
