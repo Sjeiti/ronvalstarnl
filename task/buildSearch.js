@@ -3,18 +3,26 @@ import _glob from 'glob'
 import {save, read} from './util/utils.js'
 import common from './commonWords.json' with {type:'json'}
 
+import {readdir, unlink} from 'node:fs/promises'
+import {join} from 'node:path'
+
 const glob = promisify(_glob)
 
 const basePath = './src/data/search/'
+;(async ()=>{
 
-glob('src/data/markdown/@(post|page|fortpolio)_*.md')
-  .then(files=>Promise.all(files.map(read)))
-  .then(files=>files.map(markdown2object))
-  .then(files=>{
-    const validFiles = files.filter(file=>!(file.date||file.dateFrom)?.includes('9999'))
-    const index = createIndex(validFiles)
-    mapIndex(validFiles, index)
-  })
+  const files = await readdir(basePath)
+  await Promise.all(files.map(file=>unlink(join(basePath, file))))
+
+  glob('src/data/markdown/@(post|page|fortpolio)_*.md')
+      .then(files=>Promise.all(files.map(read)))
+      .then(files=>files.map(markdown2object))
+      .then(files=>{
+        const validFiles = files.filter(file=>!(file.date||file.dateFrom)?.includes('9999'))
+        const index = createIndex(validFiles)
+        mapIndex(validFiles, index)
+      })
+})()
 
 /**
  * Create the index file with all searchable words
@@ -27,18 +35,21 @@ function createIndex(files){
       const {title, content, excerpt, categories, tags, clients, collaboration, prizes} = file
       return [title, content, excerpt, ...(categories||[]), ...(tags||[]), ...(clients||[]), ...(collaboration||[]), ...(prizes||[])]
         .join(' ')
-        .replace(/<\/?[^>]+(>|$)/g, ' ')
-        .replace(/[^\w\s]/g, ' ')
+        .replace(/```.*```/gs, ' ') // no multiline markdown code blocks
+        .replace(/<pre><code[^>]*>.*\n.*<\/code><\/pre>/gs, ' ') // no multiline HTML code blocks
+        .replace(/<\/?[^>]+(>|$)/gs, ' ') // no HTML tags
+        .replace(/\([^)]+\)/g, ' ') // no markdown links
+        .replace(/[^\w\s]/g, ' ') // no special chars
         .toLowerCase()
         .split(/\s+/g)
     })
     .reduce((acc, a)=>(acc.push(...a), acc), [])
   const text = words
-    .filter(s=>s)
-    .filter((s, i, a)=>a.indexOf(s)===i)
-    .filter(s=>s.length>2&&s.length<13)
-    .filter(s=>!/^\d{3}$|^\d+\w+$|^_/.test(s))
-    .filter(s=>!common.includes(s))
+    .filter(s=>s) // not empty
+    .filter((s, i, a)=>a.indexOf(s)===i) // unique
+    .filter(s=>s.length>2&&s.length<13) // min/max length
+    .filter(s=>!/^\d{3}$|^\d+\w+$|^_/.test(s)) // no numbers, underscores, or 3-digit words
+    .filter(s=>!common.includes(s)) // no common words
     .sort((a, b)=>a.length>b.length?1:-1)
   save(basePath+'words.json', JSON.stringify(text))
   return text
@@ -51,7 +62,6 @@ function createIndex(files){
  */
 function mapIndex(files, index){
   index
-    //.slice(0,132)
     .forEach(word=>{
       const slugs = files
         .filter(file=>{
@@ -65,7 +75,6 @@ function mapIndex(files, index){
         })
         .map(file=>file.type+'_'+file.slug)
       save(basePath+`s_${word}.json`, JSON.stringify(slugs), true)
-      //console.log(word,slugs)
     })
   console.log('saved', index.length, 'word files.')
 }
