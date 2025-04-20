@@ -1,7 +1,7 @@
 <!--
   slug: refactoring-for-speed
   date: 2019-09-26
-  modified: 2019-09-27
+  modified: 2025-04-19
   type: post
   header: mathew-schwartz-sb7RUrRMaC4-unsplash.jpg
   headerColofon: photo by [Mathew Schwartz](https://unsplash.com/@cadop)
@@ -46,15 +46,7 @@ The details are in the code if you're interested.
 ## searching is hard
 
 So if a static site means ditching comments so be it. There are third party options if you really need them.
-But search is a bit too basal to ignore. There are third party services for search as well, even free ones. But since my site is relatively small with some 200 posts, 10 pages and 40 portfolio items. I thought of a solution that just might work; a static search.
-
-First I created a single JSON file with all the words that had a meaningfull search result. This is the bottleneck of this solution: more content means more words means larger filesize. For my 250 pages I extracted 2500 search terms resulting in a 24KB JSON file. Then I created a JSON file for each search term containing the endpoints for that term.
-All this is automated of course: I'm not building 2500 JSON files by hand. All the hard work is done through a build script resulting in static files.
-What I did have to do manually, once, is sift out the common words (ie: a, to, the, for... etcetera).
-
-So when somebody searches for "dino poo" the controller loads that 24KB word file and tries to match the two words. It might find the words 'dinosaur' and 'pool' and will load the two related JSON files with resulting endpoints. These endpoints are enough for the resulting anchor hrefs but not for text. Luckily I have JSON index files for my content types so I can map the real title to the endpoint.
-
-So that's all there is to creating a search without server side scripting. It's not perfect: you can't do combined searches (words between quotation marks). But it's good enough.
+But search is a bit too basal to ignore. There are third party services for search as well, even free ones. But since my site is relatively small with some 200 posts, 10 pages and 40 portfolio items. I thought of a solution that just might work; [a static search](/implementing-search-in-a-static-website).
 
 ## writing Markdown with metadata
 

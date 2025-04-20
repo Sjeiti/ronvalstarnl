@@ -1,6 +1,6 @@
 <!--
   date: 2024-08-09
-  modified: 2024-08-09
+  modified: 2025-04-18
   slug: prerendering-with-jsdom
   type: post
   header: homa-appliances-5hPe-Tr2wog-unsplash.jpg
@@ -14,9 +14,9 @@
 # Prerendering with JSDOM
 
 Ever since Googlebot could render JavaScript (about ten years ago) I stopped worrying about prerendering content in the SPA that is my site.
-I really cannot be bothered with SEO. But one thing that did always bug me was that RSS previews did not show any content, but the initial index prior.
+I really cannot be bothered with SEO. But one thing that did always bug me was that RSS previews did not show any content, they only showed the initial index. In a real life browser that initial index loads some scripts, the scripts do some XHR for content, and put the content on the screen. Ain't no RSS reader got time for that.
 
-There were some half hearted attempts to use [Netlify](https://docs.netlify.com/site-deploys/post-processing/prerendering/) and/or [Prerender.io](https://prerender.io/), but I never really got it working properly.
+I did make some half hearted attempts to use [Netlify](https://docs.netlify.com/site-deploys/post-processing/prerendering/) and/or [Prerender.io](https://prerender.io/), but I never really got it working properly.
 
 
 ## Doing it myself
@@ -43,16 +43,16 @@ Next to figure out is what code to run to render any page. Just running the regu
 
 So we do a dynamic import for all the views, and run the `open` method from [the router](https://github.com/Sjeiti/ronvalstarnl/blob/2c06f47b0e50f0653d29a0c03b64fb42e6b327ae/src/js/router.js#L84).
 
-Mind you this site is vanilla JavaScript with a simple router. But I guess you'd just have to `createRoot` for React, or `bootstrapApplication` in Angular, and conditionally hide certain functionality by setting `globalThis.prerendering` prior to initialisation.
+Mind you, this site is vanilla JavaScript with a simple router. But I guess you'd just have to `createRoot` for React, or `bootstrapApplication` in Angular, and conditionally hide certain functionality by setting `globalThis.prerendering` prior to initialisation. We can then use this `globalThis.prerendering` to conditionally block things from happening in the rest of the code (for SVG icons for instance).
 
 ### Errors everywhere
 
-At this point errors started being thrown around. Most of these stemmed from `window` properties not being accessible on `globalThis`. You see JSDOM is not a mock implementation of the entire [document object model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model), most web API's are left out for brevity. So after JSDOM instantiation some more preparation is required.
+At this point errors started being thrown around. Most of these stemmed from `window` properties not being accessible on `globalThis`. You see; JSDOM is not a mock implementation of the entire [document object model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model). Most web API's are left out for brevity. So after JSDOM instantiation some more preparation is required.
 
-For instance when you do `document.querySelector` you simply assume `document` to be a global.
+For instance; when you do `document.querySelector` you simply assume `document` to be a global.
 Simply merging `window` into `globalThis` might seem like a good plan but it fails so often that it is easier to set specific properties one by one.
 
-Then there is the missing `fetch`. But since we're still running on NodeJS, we'll have to write an adapter from [`fs.readFile`](https://nodejs.org/api/fs.html#fsreadfilepath-options-callback) to [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+Then there is the missing `fetch`. Since we're still running on NodeJS, we'll have to write an adapter from [`fs.readFile`](https://nodejs.org/api/fs.html#fsreadfilepath-options-callback) to [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
 So this:
 
 ```javascript
@@ -85,7 +85,7 @@ Now all I had to do is figure out the amount of workers to call and create a dyn
 
 ### n - 1
 
-So [Stackoverflow says](https://stackoverflow.com/a/66843127/695734) the answer is `n - 1`, so we'll go with that. Accounting for the fact that some return an empty array, we'll get something like:
+So [Stackoverflow says](https://stackoverflow.com/a/66843127/695734) the answer is `n - 1`, so we'll go with that. N being the number of cpu's./ Accounting for the fact that some return an empty array, we'll get something like:
 
 ```JavaScript
 import {cpus} from 'os'
@@ -98,7 +98,7 @@ const maxWorkers = Math.max(4, cpus().length-1)
 
 We cannot instantiate all workers at once, so we need to implement something like a dynamic `Promise.all`.
 
-I would have used a real JavaScript generator but ESM NodeJS seems to have issues with `function* { yield }`. We can achieve the same functionality with nested functions and a bit more code.
+I would have used a real JavaScript generator, but ESM NodeJS seems to have issues with `function* { yield }`. We can achieve the same functionality with nested functions and a bit more code.
 
 
 ```JavaScript
