@@ -44,7 +44,7 @@ search
 
 ## Too large to load
 
-That index file is also a bit of a bottleneck because it will contain all the unique words from our combined collection of Markdown files. To bring down the filesize, we will only want meaningful words, of three characters or larger.
+That index file is a bit of a bottleneck, because it will contain all the unique words from our combined collection of Markdown files. To bring down the filesize, we will only want meaningful words, of three characters or larger.
 This is all automated with a build script of course, but there is the tedious manual part of sifting through all the words to see which ones we want to exclude ([dummy text](https://www.lipsum.com/) examples for instance). Although it might help to exclude code snippets with stupid variable names.
 
 When I first implemented this for 250 pages, I extracted 2500 search terms resulting in a 24KB JSON file. Six years later, I'm up to 320 pages with 3500 search terms in a 37KB file. Maybe time for some pruning.
@@ -60,5 +60,6 @@ You can try it right here (and watch the network tab):
 ## Any downsides?
 
 The downside to this method is that it is quite straightforward: it simply searches for separate words. Word combinations are a lot harder: searching for "pink frog" we may find a page about "pink elephants and dead frogs". But we can match "frog" to "frogs", so that's nice.
+I guess it can be improved upon. Maybe by counting words in a file, or adding weight to words in titles or headings. But its current state works and is still simple.
 
 If you want to check out the sources, the build script is [located here](https://github.com/Sjeiti/ronvalstarnl/blob/master/task/buildSearch.js).
