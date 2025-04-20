@@ -31,7 +31,7 @@ export function searchView(view, route, params, error){
         const sortyQueryTitle = sortSlugByTitleAndQuery.bind(null, querySplit, slugPosts)
         //
         const querySelector = view.querySelector.bind(view)
-        const existingSearch = querySelector('[data-search]')
+        const existingSearch = querySelector('[data-search]+ul.unstyled.link-list')
         const exists = !!existingSearch
         //
         !exists&&view.expandAppend(`h1.page404{404}
