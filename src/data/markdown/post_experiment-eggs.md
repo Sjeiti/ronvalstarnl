@@ -1,6 +1,6 @@
 <!--
-  date: 9999-99-99
-  modified: 9999-99-99
+  date: 2025-03-29
+  modified: 2025-03-29
   slug: experiment-eggs
   type: post
   categories: code, JavaScript
