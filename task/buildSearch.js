@@ -36,6 +36,7 @@ function createIndex(files){
   const words = files
     .map(file=>{
       const {title, content, excerpt, categories, tags, clients, collaboration, prizes} = file
+      //
       return [title, content, excerpt, ...(categories||[]), ...(tags||[]), ...(clients||[]), ...(collaboration||[]), ...(prizes||[])]
         .join(' ')
         .replace(/```.*```/gs, ' ') // no multiline markdown code blocks
@@ -67,16 +68,20 @@ function mapIndex(files, index){
   index
     .forEach(word=>{
       const slugs = files
-        .filter(file=>{
+        .reduce((acc,file)=>{
           const {title, content, excerpt, categories, tags, clients, collaboration, prizes} = file
           const string = [title, content, excerpt, ...(categories||[]), ...(tags||[]), ...(clients||[]), ...(collaboration||[]), ...(prizes||[])]
             .join(' ')
             .replace(/<\/?[^>]+(>|$)/g, ' ')
             .replace(/[^\w\s]/g, ' ')
             .toLowerCase()
-          return string.includes(word)
-        })
-        .map(file=>file.type+'_'+file.slug)
+          //
+          const count = string.match(new RegExp(word,'g'))?.length||0
+          count>0 && acc.push({[file.type+'_'+file.slug]: count})
+          return acc
+        }, [])
+          .sort((a,b)=>Object.values(a).pop()>Object.values(b).pop()?-1:1)
+          .reduce((acc,o)=>Object.assign(acc, o), {})
       save(basePath+`s_${word}.json`, JSON.stringify(slugs), true)
     })
   console.log('saved', index.length, 'word files.')
