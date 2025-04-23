@@ -4,6 +4,7 @@ import {fetchJSONFiles, getZenIcon, nextTick, scrollToTop, todayOlderFilter} fro
 import {prismToRoot} from '../utils/prism.js'
 import {componentOf} from '../component/index.js'
 import {signal} from '../signal/index.js'
+import {searchWords} from './search.js'
 
 setDefault((view, route, params)=>fetchJSONFiles(`post_${route}`, 'posts-list', 'fortpolio-list')
     .then(([post, posts, fortpolios])=>{
@@ -71,11 +72,24 @@ function getBlogHeading(post){
  * @param {PageIndex[]} fortpolios
  * @return {string}
  */
-function getRelatedLinks(post, posts, fortpolios){
+async function getRelatedLinks(post, posts, fortpolios){
 
   let returnvalue = ''
   const {slug, related} = post
 
+  ///////////////////////////////
+  function getP(slug/*, posts, fortpolios*/){
+    console.log('getP',slug)
+    //console.log('posts',posts)
+    //console.log('fortpolios',fortpolios)
+    const slog = slug.replace(/^project\//, '')
+    const regex = new RegExp(slug.replace('*','.*'))
+    return [
+        ...posts.filter(p => p.slug===slug || regex.test(p.slug))
+      , ...fortpolios.filter(p => p.slug===slug || p.slug===slog)
+    ]
+  }
+  ///////////////////////////////
 
   if (related){
     const relatedDocs = related.split(/\s/g)
@@ -94,7 +108,61 @@ function getRelatedLinks(post, posts, fortpolios){
           .map(({slug, title, type})=>`li>a[href="/${type==='fortpolio'?'project/':''}${slug}"]>((${getZenIcon(type)})+{${title}})`)
           .join('+')
     returnvalue = `.related>(h4{Related:}+ul.unstyled.link-list.related__list>${relatedLi})`
+  } else {
+
+    ////////////////////////////////
+    // search
+    if (post.tags) {
+      const tags = post.tags.reduce((acc,s)=>{
+        acc.push(...s.split(/\s/))  
+        return acc
+      },[]).filter(n=>n)
+      //
+      //
+      console.log('tags',tags)
+      //
+      //
+      const slugs = await searchWords(tags)
+      // not current
+      const postSlug = post.type+'_'+post.slug
+      delete slugs[postSlug]
+      // highest values
+      const [highest] = Object.values(slugs)
+      const slugsTop = Object.entries(slugs)
+        .filter((key,value)=>value>(highest/2))
+        .map(([key])=>key)
+        .slice(0,5)
+      //
+      //
+      console.log(postSlug)  
+      console.log('highest',highest)
+      console.log('slugs',slugs)
+      console.log('slugsTop',slugsTop)
+      //
+      //
+      const pages = slugsTop
+        .map(slug=>getP(slug.replace(/^\w+_/,'')/*, posts, portfolios*/))
+        .reduce((acc,a)=>{
+          acc.push(...a)
+          return acc
+        },[])
+        .filter(n=>n)
+        .slice(0,5)
+      //
+      //
+      console.log('page',pages)
+      //
+      //
+      const hasRelated = pages.length>0
+      const relatedLi = pages//relatedDocs
+            .map(({slug, title, type})=>`li>a[href="/${type==='fortpolio'?'project/':''}${slug}"]>((${getZenIcon(type)})+{${title}})`)
+            .join('+')
+      returnvalue = hasRelated && `.related>(h4{Related:}+ul.unstyled.link-list.related__list>${relatedLi})` || ''
+      ////////////////////////////////
+    }
+
   }
+
   return returnvalue
 }
 

@@ -26,6 +26,7 @@ export function searchView(view, route, params, error){
       .then(([fortpolio, posts, pages])=>{
         const query = !is404?decodeURIComponent(params?.query)||'':location.pathname.replace(/[^a-zA-Z]+/g, ' ').trim() // todo 404 ... why are params not set?
         const querySplit = query.split(/\s+/g)
+        console.log('querySplit',querySplit)
         // todo portfolio items, posts and page slugs might collide in search results (fix by prefixing slug)
         const slugPosts = [...fortpolio, ...posts, ...pages].reduce((acc, o)=>(acc[o.slug]=o, acc), {})
         const sortyQueryTitle = sortSlugByTitleAndQuery.bind(null, querySplit, slugPosts)
@@ -60,7 +61,7 @@ export function searchView(view, route, params, error){
             Object.entries(slugs).forEach(([key, amount])=>{
               const has = acc.hasOwnProperty(key)
               if (has) acc[key] += amount
-              else    acc[key] = amount
+              else     acc[key] = amount
             })
             return Object.fromEntries(Object.entries(acc)
                 .sort(([,a],[,b]) => b - a))
@@ -91,6 +92,22 @@ export function searchView(view, route, params, error){
         })
   //
   return Promise.resolve({title})
+}
+
+export async function searchWords(words){
+  const baseUri = '/data/search/'
+  const allWords = await fetch(baseUri+'words.json').then(rs=>rs.json())
+  const w = allWords.filter(word=>words.reduce((acc, q)=>acc||word.includes(q.toLowerCase()), false))
+  return (await Promise.all(w.map(word=>fetch(`${baseUri}s_${word}.json`).then(r=>r.json()))))
+    .reduce((acc, slugs)=>{
+      Object.entries(slugs).forEach(([key, amount])=>{
+        const has = acc.hasOwnProperty(key)
+        if (has) acc[key] += amount
+        else     acc[key] = amount
+      })
+      return Object.fromEntries(Object.entries(acc)
+          .sort(([,a],[,b]) => b - a))
+    },{})
 }
 
 /**

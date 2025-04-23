@@ -7,7 +7,7 @@
   headerColofon: photo by [Dil](https://unsplash.com/@thevisualiza)
   headerClassName: no-blur darken
   category: JavaScript
-  tag: framework, SPA, speed, build, static
+  tags: SPA, static, build, search
 -->
 
 # Implementing search in a static site

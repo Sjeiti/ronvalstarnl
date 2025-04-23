@@ -1,7 +1,7 @@
 import {parentQuerySelector, expand, createElement, clean} from './utils/html.js'
 import {signal} from './signal/index.js'
 import {initialise} from './component/index.js'
-import {nextFrame, nextTick} from './utils/index.js'
+import {nextFrame, nextTick,isPromise} from './utils/index.js'
 import {applyDirectives} from './directives/index.js'
 
 export const routeChange = signal()
@@ -136,6 +136,8 @@ export function open(uri, popped){
  * @typedef {Object} View
  */
 
+let idCounter = 1
+
 /**
  * A factory method for the view that is parsed with each route change
  * @param {HTMLElement} element
@@ -243,7 +245,26 @@ function viewModelFactory(element){
      * @return {View}
      */
     , expandAppend(abbreviation, doClean=true){
-      abbreviation&&this.appendString(expand(abbreviation), doClean)
+      if (isPromise(abbreviation)){
+        //
+        //
+        const id = `temp${idCounter++}`
+        this.appendString(expand(`[id=${id}]`),false)
+        abbreviation.then(abbr=>{
+          if(abbr){
+            const tempParent = this._content.querySelector('#'+id)
+            tempParent.insertAdjacentHTML('afterend', expand(abbr))
+            tempParent.remove()
+            initialise(this._content)
+          }
+        })
+        //
+        //
+        //
+      } else {
+        abbreviation&&this.appendString(expand(abbreviation), doClean)
+      }
+
       return this
     }
     /**
