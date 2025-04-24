@@ -5,7 +5,7 @@
   type: post
   header: termux.png
   categories: code, CSS, HTML, JavaScript
-  tags: CSS, HTML, JavaScript, cli, linux, bash, android
+  tags: Vim, cli, linux, bash, android
   description: Apps for programming on an Android are clumsy at best, and full of adds. But the best one is really just a Linux terminal: Termux!
   sticky: true
 -->

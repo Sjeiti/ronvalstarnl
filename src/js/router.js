@@ -239,6 +239,25 @@ function viewModelFactory(element){
       return this
     }
     /**
+     * Append an HTML string to the view, as a Promise
+     * @param {Promise<string>} htmlstring
+     * @param {boolean} doClean
+     * @return {View}
+     */
+    , appendStringDeferred(abbreviationPromise, doClean=true){
+      const id =`temp${idCounter++}`
+      this.appendString(expand(`[id=${id}]`),false)
+      abbreviationPromise.then(abbr=>{
+        if(abbr){
+          const tempParent = this._content.querySelector('#'+id)
+          tempParent.insertAdjacentHTML('afterend', expand(abbr))
+          tempParent.remove()
+          initialise(this._content)
+        }
+      })
+      return this 
+    }
+    /**
      * Append an abbreviation string to the view
      * @param {string} abbreviation
      * @param {boolean} doClean
@@ -246,25 +265,10 @@ function viewModelFactory(element){
      */
     , expandAppend(abbreviation, doClean=true){
       if (isPromise(abbreviation)){
-        //
-        //
-        const id = `temp${idCounter++}`
-        this.appendString(expand(`[id=${id}]`),false)
-        abbreviation.then(abbr=>{
-          if(abbr){
-            const tempParent = this._content.querySelector('#'+id)
-            tempParent.insertAdjacentHTML('afterend', expand(abbr))
-            tempParent.remove()
-            initialise(this._content)
-          }
-        })
-        //
-        //
-        //
+        this.appendStringDeferred(abbreviation, doClean)
       } else {
         abbreviation&&this.appendString(expand(abbreviation), doClean)
       }
-
       return this
     }
     /**
