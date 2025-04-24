@@ -1,20 +1,20 @@
 <!--
   date: 2024-03-23
-  modified: 2024-07-20
+  modified: 2025-04-21
   slug: random-in-css
   type: post
   header: justin-lauria-Ap0alm8xpxw-unsplash.jpg
   headerColofon: photo by [Justin Lauria](https://unsplash.com/@justinlauria)
   headerClassName: no-blur darken
   categories: code
-  tags: cool shit, prng
+  tags: cool shit, prng, random
   description: 
   related: experiment-ladybugs
 -->
 
 # Random in CSS
     
-CSS has functions; you can calculate values. Apart from basic adding, subtracting, đividing and multiplying, you can also use `max`, `min` and even do trigonomic calculations with `sin` and `cos`.
+CSS has functions; you can calculate values. Apart from basic adding, subtracting, đividing and multiplying, you can also use `max`, `min` and even do trigonometric calculations with `sin` and `cos`.
 
 This can be very useful for use in conjunction with CSS properties. You can, for instance, apply a `transform: rotate(var(--degrees));`, and split those degrees in x- and y-offsets using `sin(calc(var(--degrees)/180*pi))`. 
 
@@ -128,17 +128,23 @@ div {
 </script>
 ```
 
-CSS functions can probably be used for more useful things. Unfortunately CSS does not come with randomisation. I've [written about about random generators before](/randomness-in-generative-code) and they are fairly easy to implement. All you need is a sufficiently large number and a [modulo function](https://en.m.wikipedia.org/wiki/Modulo). 
+CSS functions can probably be used for more useful things. Unfortunately, CSS does not come with randomisation. I've [written about random generators before](/randomness-in-generative-code) and they are fairly easy to implement. All you need is a sufficiently large number and a [modulo function](https://en.m.wikipedia.org/wiki/Modulo).
+
+
+## CSS functions
 
 But wait, [there is a CSS modulo function](https://developer.mozilla.org/en-US/docs/Web/CSS/mod), it's in the [CSS4 specs](https://drafts.csswg.org/css-values/#funcdef-mod). Safari and Firefox support it, but not Chrome.
-I've tested in both, but unfortunately calculations do not go high enough for simple PRNG's. These normally make use of divisors starting at 2^31-1  (a Mersenne prime). It works with smaller numbers though, if your seeds don't go too high. 
+I've tested in both, but unfortunately calculations do not go high enough for simple *psuedo random number generators*. In computers nothing is truly random, hence the 'psuedo'. These PRNG's normally make use of divisors starting at 2^31-1 (a Mersenne prime). It works with smaller numbers though, if your seeds don't go too high. 
 The reason large prime numbers are used as modulo is to get a result that does not repeat (immediately).
 Another difficulty is that normally the outcome for a PRNG is used as the seed (or input) in the next calculation, this is impossible in CSS.
 
-Usually the PRNG result is divided by it's modulo to create a range from 0 to 1. We might not have a modulo function in CSS' (in Chrome), but we do have another function that turns any number into one between -1 and 1: the `sin` function.
+Usually the PRNG result is divided by its modulo to create a range from 0 to 1. We might not have a modulo function in CSS' (in Chrome), but we do have another function that turns any number into one between -1 and 1: the `sin` function.
 This doesn't fly for long because the seemingly irregular results turn regular after a number of iterations. But it's better than nothing.
 
-The following works by giving each 'instance' an index number for seed. Since we will not be using the results as a seed we might as well discard the increment number. We only multiply the seed with a very large number.
+
+## A live example
+
+The following works by giving each 'instance' an index number for seed. Since we will not be using the results as a seed we might as well discard the increment number. We only multiply the seed with a huge number.
 
 ```CSS
 :root {
@@ -216,8 +222,8 @@ Array.from(new Array(80)).forEach((o,i)=>{
 </script>
 ```
 
-Some multiplier values produce quite nice results. But you'll notice the values turn regular after a couple of iterations.
-I've used this technique for positioning the dots on the ladybugs, and for colouring.
+Some multiplier values produce quite nice random results. But you'll notice the values turn regular after a couple of iterations.
+I've used this technique for positioning the dots on the ladybugs and for colouring.
 
 ```html
 <!--example-->
@@ -330,6 +336,9 @@ I've used this technique for positioning the dots on the ladybugs, and for colou
     })
 </script>
 ```
+
+
+## Conclusion
 
 So randomness in pure CSS is possible, but it requires quite some boilerplate. The values also tend to regularity quite fast, but it is good enough to create simple variation.
 All we have to do now is wait for Chrome to implement the CSS `mod` function, and hope Firefox increases the number size, so we can implement LCG PRNG's.

@@ -1,7 +1,7 @@
 import {parentQuerySelector, expand, createElement, clean} from './utils/html.js'
 import {signal} from './signal/index.js'
 import {initialise} from './component/index.js'
-import {nextFrame, nextTick} from './utils/index.js'
+import {nextFrame, nextTick,isPromise} from './utils/index.js'
 import {applyDirectives} from './directives/index.js'
 
 export const routeChange = signal()
@@ -136,6 +136,8 @@ export function open(uri, popped){
  * @typedef {Object} View
  */
 
+let idCounter = 1
+
 /**
  * A factory method for the view that is parsed with each route change
  * @param {HTMLElement} element
@@ -237,13 +239,36 @@ function viewModelFactory(element){
       return this
     }
     /**
+     * Append an HTML string to the view, as a Promise
+     * @param {Promise<string>} htmlstring
+     * @param {boolean} doClean
+     * @return {View}
+     */
+    , appendStringDeferred(abbreviationPromise, doClean=true){
+      const id =`temp${idCounter++}`
+      this.appendString(expand(`[id=${id}]`),false)
+      abbreviationPromise.then(abbr=>{
+        if(abbr){
+          const tempParent = this._content.querySelector('#'+id)
+          tempParent.insertAdjacentHTML('afterend', expand(abbr))
+          tempParent.remove()
+          initialise(this._content)
+        }
+      })
+      return this 
+    }
+    /**
      * Append an abbreviation string to the view
      * @param {string} abbreviation
      * @param {boolean} doClean
      * @return {View}
      */
     , expandAppend(abbreviation, doClean=true){
-      abbreviation&&this.appendString(expand(abbreviation), doClean)
+      if (isPromise(abbreviation)){
+        this.appendStringDeferred(abbreviation, doClean)
+      } else {
+        abbreviation&&this.appendString(expand(abbreviation), doClean)
+      }
       return this
     }
     /**

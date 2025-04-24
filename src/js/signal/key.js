@@ -48,8 +48,7 @@ document.addEventListener('keydown', function(e){
 document.addEventListener('keyup', function(e){
   const iKeyCode = e.keyCode
   key[iKeyCode] = false
-  console.log('dat is toch niet te gelueeeeeeven!') // todo: remove log
-  animateSlots.pop().remove()
+  animateSlots.pop()?.remove()
   up.dispatch(iKeyCode, key, e)
 })
 

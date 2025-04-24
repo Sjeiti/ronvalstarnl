@@ -26,6 +26,7 @@ export function searchView(view, route, params, error){
       .then(([fortpolio, posts, pages])=>{
         const query = !is404?decodeURIComponent(params?.query)||'':location.pathname.replace(/[^a-zA-Z]+/g, ' ').trim() // todo 404 ... why are params not set?
         const querySplit = query.split(/\s+/g)
+        console.log('querySplit',querySplit)
         // todo portfolio items, posts and page slugs might collide in search results (fix by prefixing slug)
         const slugPosts = [...fortpolio, ...posts, ...pages].reduce((acc, o)=>(acc[o.slug]=o, acc), {})
         const sortyQueryTitle = sortSlugByTitleAndQuery.bind(null, querySplit, slugPosts)
@@ -55,25 +56,33 @@ export function searchView(view, route, params, error){
           .then(rs=>rs.json())
           .then(words=>words.filter(word=>querySplit.reduce((acc, q)=>acc||word.includes(q.toLowerCase()), false)))
           .then(words=>Promise.all(words.map(word=>fetch(`${baseUri}s_${word}.json`).then(r=>r.json()))))
-          .then(allSlugs=>allSlugs.reduce((acc, slugs)=>(acc.push(...slugs), acc), []))
+          // merge and add slugs and sort by amount
+          .then(allSlugs=>allSlugs.reduce((acc, slugs)=>{
+            Object.entries(slugs).forEach(([key, amount])=>{
+              const has = acc.hasOwnProperty(key)
+              if (has) acc[key] += amount
+              else     acc[key] = amount
+            })
+            return Object.fromEntries(Object.entries(acc)
+                .sort(([,a],[,b]) => b - a))
+          },{}))
+          //
           .then(slugs=>{
-            const slugAmount = slugs.reduce((acc, s)=>(acc[s]++||(acc[s]=1), acc), {})
-            slugs = slugs
-                .sort((a, b)=>slugAmount[a]>slugAmount[b]?-1:1)
-                .filter((s, i, a)=>a.indexOf(s)===i&&slugPosts[s.split('_').pop()])
-            const {length} = slugs
+            const entries = Object.entries(slugs)
+            const maxAmount = Math.max(...entries.map(([,amount])=>amount))
+            const {length} = entries
             noResult.classList.toggle('hidden', !!length)
             noResult.textContent = noResult.textContent.replace(/'.*'/, `'${query}'`)
             clean(result).insertAdjacentHTML('beforeend', expand(
-              slugs
-                  .sort(sortyQueryTitle)
-                  .map(slug=>{
+                entries
+                  .map(([slug, amount])=>{
                     const uri = getSlugUri(slug)
                     const splitSlug = slug.split('_')
                     const key = splitSlug.pop()
                     const type = splitSlug.shift()
                     const icon = getZenIcon(type)
-                    return `li>a[href="${uri}"]>((${icon})+{${slugPosts[key]?.title}})`
+                    const amountRelativeValue = Math.ceil(amount/maxAmount*5)
+                    return `li.amnt${amountRelativeValue}>a[href="${uri}"]>((${icon})+{${slugPosts[key]?.title}})`
                   }).join('+')
             ))
             initialise(result)
@@ -83,6 +92,22 @@ export function searchView(view, route, params, error){
         })
   //
   return Promise.resolve({title})
+}
+
+export async function searchWords(words){
+  const baseUri = '/data/search/'
+  const allWords = await fetch(baseUri+'words.json').then(rs=>rs.json())
+  const w = allWords.filter(word=>words.reduce((acc, q)=>acc||word.includes(q.toLowerCase()), false))
+  return (await Promise.all(w.map(word=>fetch(`${baseUri}s_${word}.json`).then(r=>r.json()))))
+    .reduce((acc, slugs)=>{
+      Object.entries(slugs).forEach(([key, amount])=>{
+        const has = acc.hasOwnProperty(key)
+        if (has) acc[key] += amount
+        else     acc[key] = amount
+      })
+      return Object.fromEntries(Object.entries(acc)
+          .sort(([,a],[,b]) => b - a))
+    },{})
 }
 
 /**
