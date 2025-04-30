@@ -3,6 +3,7 @@ import {fetchJSONFiles} from '../utils/index.js'
 
 add(
   'contact'
+  , 'colofon'
   , 'about'
   , 'history'
   , (view, route)=>{

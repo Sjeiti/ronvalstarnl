@@ -1,4 +1,4 @@
-//window.onerror = err=>alert(err)
+/* This project is licensed under the GNU General Public License v3.0. */
 
 document.documentElement.classList.remove('no-js')
 
