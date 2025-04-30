@@ -35,3 +35,9 @@
  - inPortfolio: `true|false`
  - dateFrom: `/\d{4}-\d\d-\d\d/`
  - dateTo: `/\d{4}-\d\d-\d\d/`
+
+
+## License
+
+This project is licensed under the [GNU General Public License v3.0](LICENiSE.txt).
+

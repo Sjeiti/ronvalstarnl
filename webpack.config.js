@@ -64,6 +64,7 @@ export default env => {
           { from: 'src/index.html', to: './'}
           , { from: 'src/BingSiteAuth.xml', to: './'}
           , { from: 'src/_redirects', to: './'}
+          , { from: 'LICENSE.txt', to: './' }
           , { from: 'src/data/json', to: './data/json' }
           , { from: 'src/data/search', to: './data/search' }
           , { from: 'RV_algvw20*.*', to: './data', context: 'src/data/' }
