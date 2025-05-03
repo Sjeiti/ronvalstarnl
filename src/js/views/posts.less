@@ -85,10 +85,14 @@ main {
   ul.link-list a { z-index: 0; }
 }
 
+.content:has(.prevnext) {
+  padding-bottom: 4rem;
+}
 .prevnext {
   display: flex;
-  position: sticky;
-  bottom: 3rem;
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 2rem);
   justify-content: space-between;
   font-size: 1rem;
   line-height: 3rem;
