@@ -16,3 +16,4 @@ add('blog', view=>
         return {title:'blog'}
       })
 )
+

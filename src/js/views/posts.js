@@ -14,6 +14,7 @@ setDefault((view, route, params)=>fetchJSONFiles(`post_${route}`, 'posts-list', 
       view
           .expandAppend(getBlogHeading(post))
           .appendString(post.content, false)
+          .expandAppend('[data-comment]', false)
           .expandAppend(getRelatedLinks(post, posts, fortpolios), false)
           .expandAppend(getBottomNavigation(post, posts), false)
 
@@ -60,7 +61,7 @@ function getBlogHeading(post){
   const time = date.split('T').shift()
   const isExperiment = /^experiment-/.test(slug)
 
-  const fullscreen = isExperiment?'+button.request-fullscreen[data-request-fullscreen]{fullscreen experiment}':''
+  const fullscreen = isExperiment?'+button.btn.request-fullscreen[data-request-fullscreen]{fullscreen experiment}':''
 
   return `time.blog[datetime=${time}]{${time}}${fullscreen}+h1{${title}}`
 }

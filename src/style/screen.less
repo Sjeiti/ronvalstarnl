@@ -28,6 +28,38 @@ button, input {
   line-height: 100%;
 }
 
+textarea {
+  color: var(--color-text);
+  border: 0px;
+  background-color: var(--color-bg);
+  box-shadow: 
+    0 0 0 1px var(--color-input-border) inset,
+    0.5rem 0.25rem 1rem 1px var(--color-input-border) inset
+  ;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 0.25rem;
+  padding: 0.125rem 0.5rem;
+  border: 1px solid var(--color-main);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  background-color: transparent;
+  color: var(--color-link);
+  line-height: 100%;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+details {
+  font-size: inherit;
+  font-family: inherit;
+}
+summary {
+  color: var(--color-link);
+}
+
 main {
   >.content {
     &--past {
@@ -105,8 +137,8 @@ ul.unstyled, .list-unstyled {
 
 hr {
   border: 0;
-  height: 1px;
-  background-color: #eee;
+  height: 4px;
+  background-color: var(--color-border);
 }
 
 time {
