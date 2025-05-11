@@ -4,14 +4,6 @@ import {signal} from '../signal/index.js'
 import {clean} from '../utils/html.js'
 import {select} from '../utils/style.js'
 
-export const change = signal()
-export const search = signal()
-
-const RETURN = 13
-const UP = 38
-const DOWN = 40
-const ESC = 27
-
 /**
  * Comment component
  */
@@ -48,7 +40,7 @@ create('[data-comment]', class extends BaseComponent{
       this._anchor.href = `mailto:${toMail}?subject=${subject}&body=${body}`
       console.log('setHref',this._anchor.href)
     } else {
-      this._anchor.href = 'javascript:()=>{}'
+      this._anchor.href = 'javascript:function(){}'
     }
   }
 
