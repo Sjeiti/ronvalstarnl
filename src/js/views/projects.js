@@ -1,7 +1,7 @@
 import {add} from '../router.js'
 import {selectEach, expand} from '../utils/html.js'
 import {addRule, removeRule} from '../utils/style.js'
-import {fetchJSONFiles, nextTick, scrollToTop} from '../utils/index.js'
+import {fetchJSONFiles,nextFrame,nextTick,scrollToTop} from '../utils/index.js'
 import {componentOf} from '../component/index.js'
 import {MEDIA_URI_PROJECT, MEDIA_URI_THUMB, MEDIA_URI_VIDEO/*, PROBABLY_MOBILE*/} from '../config.js'
 import {makeClassNames, slugify} from '../utils/string.js'
@@ -49,7 +49,8 @@ add(
             buildCurrentProject(view, currentProject, existingProjects)
             title = currentProject.title
             parentSlug = 'projects'
-            scrollToTop(existingCategories)
+            nextFrame(()=>scrollToTop(existingCategories),14)
+
           }
         }
         //

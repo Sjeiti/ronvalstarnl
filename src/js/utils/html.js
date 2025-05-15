@@ -100,7 +100,7 @@ export function expand(s){
       .replace(/\r\n\s*|\r\s*|\n\s*/g, '')
   )
   } catch(err){
-    console.log(`Cannot expand '${s}':`,err)
+    console.info(`Cannot expand '${s}':`,err)
     return s
   }
 }

@@ -38,7 +38,6 @@ create('[data-comment]', class extends BaseComponent{
     const body = encodeURIComponent(this._textarea.value)
     if (body) {
       this._anchor.href = `mailto:${toMail}?subject=${subject}&body=${body}`
-      console.log('setHref',this._anchor.href)
     } else {
       this._anchor.href = 'javascript:function(){}'
     }

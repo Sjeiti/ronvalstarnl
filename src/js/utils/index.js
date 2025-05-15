@@ -1,4 +1,3 @@
-import {TweenMax, Power1} from 'gsap'
 import {TODAY} from '../config.js'
 
 // get css rule
@@ -28,8 +27,7 @@ export function getHash(elm){
  * @param {number} [offset=0]
  * @returns {object}
  */
-export function scrollTo(elm, t=1000, ease=Power1.easeInOut, offset=0){
-  //console.log('scrollTo',elm,t,ease,offset)
+export function scrollTo(elm, t=1000, ease/*=Power1.easeInOut*/, offset=0){
   const yStart = getScrollY()
   const elmTop = elm.getBoundingClientRect().top
   const yEnd = yStart + elmTop + offset
@@ -41,25 +39,8 @@ export function scrollTo(elm, t=1000, ease=Power1.easeInOut, offset=0){
     const yCurrent = yStart + part*(yEnd - yStart)
     window.scrollTo(0, yCurrent)
     part<1&&requestAnimationFrame(animate)  
-    //console.log('scrollTo.animate',part)
   }
   animate()
-  //
-  //
-  /*
-  const currentY = getScrollY()
-  const animObj = {y:currentY}
-  const elmTop = elm.getBoundingClientRect().top
-  const y = currentY + elmTop + offset
-  return TweenMax.to(
-      animObj
-      , t/1000
-      , {
-        y
-        , ease
-        , onUpdate: () => window.scrollTo(0, animObj.y)
-      }
-  )*/
 }
 
 /**
@@ -73,10 +54,7 @@ export function scrollToTop(topTarget, t=1000){
   const top = rect?.bottom||0
   const height = rect?.height||0
   const {body} = document
-  // const bodyTop = body.getBoundingClientRect().top
   return scrollTo(body, t, null, height-top)
-  // return scrollTo(body, t, null, top-16-bodyTop)
-  // return scrollTo(document.body, t)
 }
 
 /**

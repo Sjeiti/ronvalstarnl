@@ -1,6 +1,6 @@
 import {searchView} from './search.js'
 import {setDefault} from '../router.js'
-import {fetchJSONFiles, getZenIcon, nextTick, scrollToTop, todayOlderFilter} from '../utils/index.js'
+import {fetchJSONFiles, getZenIcon, nextTick, nextFrame, scrollToTop, todayOlderFilter} from '../utils/index.js'
 import {prismToRoot} from '../utils/prism.js'
 import {componentOf} from '../component/index.js'
 import {signal} from '../signal/index.js'
@@ -29,7 +29,9 @@ setDefault((view, route, params)=>fetchJSONFiles(`post_${route}`, 'posts-list', 
 
       nextTick(()=>{
         prismToRoot(view)
-        !(/^experiment-/.test(route))&&scrollToTop(document.querySelector('[data-header]'), 0)
+        nextFrame(()=>{
+          !(/^experiment-/.test(route))&&scrollToTop(document.querySelector('[data-header]'), 0)
+        },10)
       })
 
       return Object.assign(post, {
@@ -78,11 +80,7 @@ async function getRelatedLinks(post, posts, fortpolios){
   let returnvalue = ''
   const {slug, related} = post
 
-  ///////////////////////////////
-  function getP(slug/*, posts, fortpolios*/){
-    console.log('getP',slug)
-    //console.log('posts',posts)
-    //console.log('fortpolios',fortpolios)
+  function getSlugRelations(slug/*, posts, fortpolios*/){
     const slog = slug.replace(/^project\//, '')
     const regex = new RegExp(slug.replace('*','.*'))
     return [
@@ -90,9 +88,9 @@ async function getRelatedLinks(post, posts, fortpolios){
       , ...fortpolios.filter(p => p.slug===slug || p.slug===slog)
     ]
   }
-  ///////////////////////////////
 
   if (related){
+
     const relatedDocs = related.split(/\s/g)
           .map(slug=> {
             const slog = slug.replace(/^project\//, '')
@@ -109,19 +107,15 @@ async function getRelatedLinks(post, posts, fortpolios){
           .map(({slug, title, type})=>`li>a[href="/${type==='fortpolio'?'project/':''}${slug}"]>((${getZenIcon(type)})+{${title}})`)
           .join('+')
     returnvalue = `.related>(h4{Related:}+ul.unstyled.link-list.related__list>${relatedLi})`
+
   } else {
 
-    ////////////////////////////////
     // search
     if (post.tags) {
       const tags = post.tags.reduce((acc,s)=>{
         acc.push(...s.split(/\s/))  
         return acc
       },[]).filter(n=>n)
-      //
-      //
-      console.log('tags',tags)
-      //
       //
       const slugs = await searchWords(tags)
       // not current
@@ -134,15 +128,8 @@ async function getRelatedLinks(post, posts, fortpolios){
         .map(([key])=>key)
         .slice(0,5)
       //
-      //
-      console.log(postSlug)  
-      console.log('highest',highest)
-      console.log('slugs',slugs)
-      console.log('slugsTop',slugsTop)
-      //
-      //
       const pages = slugsTop
-        .map(slug=>getP(slug.replace(/^\w+_/,'')/*, posts, portfolios*/))
+        .map(slug=>getSlugRelations(slug.replace(/^\w+_/,'')/*, posts, portfolios*/))
         .reduce((acc,a)=>{
           acc.push(...a)
           return acc
@@ -150,16 +137,12 @@ async function getRelatedLinks(post, posts, fortpolios){
         .filter(n=>n)
         .slice(0,5)
       //
-      //
-      console.log('page',pages)
-      //
-      //
       const hasRelated = pages.length>0
       const relatedLi = pages//relatedDocs
             .map(({slug, title, type})=>`li>a[href="/${type==='fortpolio'?'project/':''}${slug}"]>((${getZenIcon(type)})+{${title}})`)
             .join('+')
       returnvalue = hasRelated && `.related>(h4{Related:}+ul.unstyled.link-list.related__list>${relatedLi})` || ''
-      ////////////////////////////////
+
     }
 
   }

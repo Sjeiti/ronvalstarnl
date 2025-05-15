@@ -13,7 +13,7 @@ if (!globalThis.prerendering){
   document.querySelector('#client-symbol-defs')||document.body.insertAdjacentHTML('afterbegin', clientSymbols)
   document.querySelector('#prize-symbol-defs')||document.body.insertAdjacentHTML('afterbegin', prizesSymbols)
 }else{
-  console.log('globalThis.prerendering')
+  console.info('globalThis.prerendering')
 }
 
 const populateSVGList = (ul, prefix, names)=>
