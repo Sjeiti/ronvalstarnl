@@ -162,11 +162,12 @@ function viewModelFactory(element){
         _contentPast.classList.add(className.CONTENT_ANIMATE_OUT)
         while (_content.firstChild) _contentPast.appendChild(_content.firstChild)
         element.appendChild(_contentPast)
+        ///
         nextFrame(() => {
           _content.classList.add(className.CONTENT_ANIMATE_IN_START)
           _contentPast.classList.add(className.CONTENT_ANIMATE_OUT_START)
           this._contentPastTimer = setTimeout(this._removeAndCleanPastContent.bind(this), ms)
-        })
+        }, 8)
       } else {
         while (_content.firstChild) _contentPast.appendChild(_content.firstChild)
         element.appendChild(_contentPast)
