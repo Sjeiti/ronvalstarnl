@@ -11,7 +11,7 @@ const {symbolDefs} = raw
 if (!globalThis.prerendering){
   document.querySelector('svg[aria-hidden=true]:not([id])')||document.body.insertAdjacentHTML('afterbegin', symbolDefs)
 }else{
-  console.log('globalThis.prerendering1')
+  console.info('globalThis.prerendering1')
 }
 
 /**

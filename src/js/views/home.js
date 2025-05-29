@@ -1,8 +1,8 @@
 import {add} from '../router.js'
 import {fetchJSONFiles, stickiesFirst, todayOlderFilter} from '../utils/index.js'
 import {getProjectThumbZen} from './projects.js'
-import {TweenMax, Linear} from 'gsap'
 import {raw} from '../utils/svg.js'
+import {nextTick} from '../utils/index.js'
 
 //import clientSymbols from '!!raw-loader!../../static/svg/client-symbol-defs.svg'
 //import prizesSymbols from '!!raw-loader!../../static/svg/prizes-symbol-defs.svg'
@@ -13,7 +13,7 @@ if (!globalThis.prerendering){
   document.querySelector('#client-symbol-defs')||document.body.insertAdjacentHTML('afterbegin', clientSymbols)
   document.querySelector('#prize-symbol-defs')||document.body.insertAdjacentHTML('afterbegin', prizesSymbols)
 }else{
-  console.log('globalThis.prerendering')
+  console.info('globalThis.prerendering')
 }
 
 const populateSVGList = (ul, prefix, names)=>
@@ -43,16 +43,21 @@ add(
           const elmClients = view.querySelector('.clients')
           populateSVGList(elmClients,'client-',clientNames)
           setTimeout(() => {
-              const {children: [{offsetWidth}],style} = elmClients
-              elmClients.style.width = `${clientNames.length * offsetWidth}px`
-              //
+            const {children: [{offsetWidth}],style,classList} = elmClients
+            elmClients.style.width = `${clientNames.length * offsetWidth}px`
+            // animate clients
+            const animating = 'animating'
+            function reset(){
+              classList.remove(animating)
               style.marginLeft = 0
-              TweenMax.to(style,6,{
-                  marginLeft: `${-offsetWidth}px`,
-                  onRepeat: () => elmClients.appendChild(elmClients.children[0]),
-                  repeat: -1,
-                  ease: Linear.easeNone
+              elmClients.appendChild(elmClients.children[0])
+              nextTick(()=>{
+                classList.add(animating)
+                style.marginLeft = `${-offsetWidth}px`
               })
+            }
+            reset()
+            elmClients.addEventListener('transitionend',nextTick.bind(null,reset))
           },140)
           //
           // won

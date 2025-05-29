@@ -26,7 +26,6 @@ export function searchView(view, route, params, error){
       .then(([fortpolio, posts, pages])=>{
         const query = !is404?decodeURIComponent(params?.query)||'':location.pathname.replace(/[^a-zA-Z]+/g, ' ').trim() // todo 404 ... why are params not set?
         const querySplit = query.split(/\s+/g)
-        console.log('querySplit',querySplit)
         // todo portfolio items, posts and page slugs might collide in search results (fix by prefixing slug)
         const slugPosts = [...fortpolio, ...posts, ...pages].reduce((acc, o)=>(acc[o.slug]=o, acc), {})
         const sortyQueryTitle = sortSlugByTitleAndQuery.bind(null, querySplit, slugPosts)

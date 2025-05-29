@@ -1,10 +1,7 @@
-import {TweenMax, Power1} from 'gsap'
 import {TODAY} from '../config.js'
-
 
 // get css rule
 // const rootCSS = [...document.styleSheets].map(sheet=>!sheet.href&&sheet.rules).filter(o=>o).map(rules=>[...rules].filter(rule=>rule.selectorText===':root').pop()).filter(o=>o).pop()
-
 
 /**
  * Returns the hash for a scoped module
@@ -30,20 +27,20 @@ export function getHash(elm){
  * @param {number} [offset=0]
  * @returns {object}
  */
-export function scrollTo(elm, t=1000, ease=Power1.easeInOut, offset=0){
-  const currentY = getScrollY()
-  const animObj = {y:currentY}
+export function scrollTo(elm, t=1000, ease/*=Power1.easeInOut*/, offset=0){
+  const yStart = getScrollY()
   const elmTop = elm.getBoundingClientRect().top
-  const y = currentY + elmTop + offset
-  return TweenMax.to(
-      animObj
-      , t/1000
-      , {
-        y
-        , ease
-        , onUpdate: () => window.scrollTo(0, animObj.y)
-      }
-  )
+  const yEnd = yStart + elmTop + offset
+  const tStart = Date.now()
+  function animate(){
+    const tNow = Date.now()
+    const elapsed = tNow - tStart
+    const part = Math.min(elapsed/t, 1)
+    const yCurrent = yStart + part*(yEnd - yStart)
+    window.scrollTo(0, yCurrent)
+    part<1&&requestAnimationFrame(animate)  
+  }
+  animate()
 }
 
 /**
@@ -57,10 +54,7 @@ export function scrollToTop(topTarget, t=1000){
   const top = rect?.bottom||0
   const height = rect?.height||0
   const {body} = document
-  // const bodyTop = body.getBoundingClientRect().top
   return scrollTo(body, t, null, height-top)
-  // return scrollTo(body, t, null, top-16-bodyTop)
-  // return scrollTo(document.body, t)
 }
 
 /**
