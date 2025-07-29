@@ -1,6 +1,6 @@
 <!--
   date: 2025-04-29
-  modified: 2025-04-29
+  modified: 2025-05-16
   slug: colofon
   type: page
 -->
@@ -21,8 +21,6 @@ This entire site is [home-grown vanilla JS](/refactoring-for-speed). There *are*
 
  - [@emmetio/expand-abbreviation](https://www.npmjs.com/package/@emmetio/expand-abbreviation)
    The templating system uses Emmet-notation (because I'm too lazy to write HTML)
- - [gsap](https://gsap.com/)
-   There is some controlled animation here and there, I could probably do without this package and use plain CSS though.
  - [prismjs](https://prismjs.com/)
    Source code examples nicely formatted, gotta love Prismjs.
  - [state-signals](https://sjeiti.github.io/state-signals/)
