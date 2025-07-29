@@ -10,7 +10,7 @@
 
 # MC Picker
 
-I had a React project that needed [a color picker](https://sjeiti.github.com/clr). Actually I already use `input[type=color]` but the native implementations really suck (both on Windows and OSX). So I set out to find a minimal implementation. After about fifteen minutes I gave up. Most were setup too complex and I am pedantic when it comes to front-end code.
+I had a React project that needed [a color picker](https://sjeiti.github.io/clr/). Actually I already use `input[type=color]` but the native implementations really suck (both on Windows and OSX). So I set out to find a minimal implementation. After about fifteen minutes I gave up. Most were setup too complex and I am pedantic when it comes to front-end code.
 
 ## One element
 
