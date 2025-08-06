@@ -1,7 +1,7 @@
 <!--
   slug: implementing-search-in-a-static-website
   date: 2025-04-19
-  modified: 2025-04-19
+  modified: 2025-08-06
   type: post
   header: dil-8OECtq8rrNg-unsplash.jpg
   headerColofon: photo by [Dil](https://unsplash.com/@thevisualiza)
@@ -19,10 +19,12 @@ When I [rewrote this site](/refactoring-for-speed) to ditch the WordPress REST A
 
 ## How search works
 
-Searching a website that is rendered server side, mostly involves a MySQL query onto specific fields in specific tables. You never know what somebody might search, so all you could so to speed things up is cache these queries.
+Searching a website that is rendered server side, mostly involves a SQL query onto specific fields in specific database tables. Search terms might occur in headings, body text, image alt text, etc. To speed things up a bit these queries are cached.
 
-With our current static implementation, the equivalent of a database is a large collection of Markdown files. These are converted to JSON by a build step, to be loaded on-the-fly when you navigate. This page, for instance, is loaded through [this JSON file](/data/json/post_experiment-eggs.json).
-But to search these would mean loading them all into memory with a shitload of requests. So much for client-side searching ... .. .
+This site has no database, it is static. Many static sites resolve to cloud services for search, to basically use a database without having to maintain it, But you don't really need a database.
+
+With our current static implementation, the equivalent of a database is a large collection of [Markdown](https://www.markdownguide.org/) files. These contain all the content of this site in a human readable way. The markdown is converted to [JSON](https://json.org/) by a build step, to be loaded on-the-fly when you navigate. This page, for instance, is loaded through [this JSON file](/data/json/post_experiment-eggs.json).
+But to search these files client-side would mean loading them all into memory with a shitload of requests. So much for client-side searching ... .. .
 
 
 ## Find first, search later
@@ -49,7 +51,7 @@ This is all automated with a build script of course, but there is the tedious ma
 
 When I first implemented this for 250 pages, I extracted 2500 search terms resulting in a 24KB JSON file. Six years later, I'm up to 320 pages with 3500 search terms in a 37KB file. Maybe time for some pruning.
 
-Luckily, files are cached, so that index file is only loaded once.
+Files are cached, so that index file is only loaded once.
 Now when we search for "pink frog", the index file is loaded and finds entries for both "pink" and "frog". Then it loads the two related JSON files and counts the endpoints. If one endpoint is present in both, it will end up higher in the final search result.
 
 You can try it right here (and watch the network tab):
@@ -59,7 +61,7 @@ You can try it right here (and watch the network tab):
 
 ## Any downsides?
 
-The downside to this method is that it is quite straightforward: it simply searches for separate words. Word combinations are a lot harder: searching for "pink frog" we may find a page about "pink elephants and dead frogs". But we can match "frog" to "frogs", so that's nice.
+The downside to this method is that it is quite straightforward: it simply searches for separate words. Word combinations are a lot harder: searching for "pink frog" we may also find a page about "pink elephants" or "dead frogs". Search operators like qoutes, wildcards and plus-signs are hard to implement. But we can match "frog" to "frogs", so that's nice.
 I guess it can be improved upon. Maybe by counting words in a file, or adding weight to words in titles or headings. But its current state works and is still simple.
 
 If you want to check out the sources, the build script is [located here](https://github.com/Sjeiti/ronvalstarnl/blob/master/task/buildSearch.js).

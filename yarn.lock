@@ -2984,8 +2984,8 @@ execa@^0.8.0:
     strip-eof "^1.0.0"
 
 "experiments@github:Sjeiti/experiment":
-  version "1.1.59"
-  resolved "https://codeload.github.com/Sjeiti/experiment/tar.gz/77ce894eb32071966c52e514491d585e7c3bd18e"
+  version "1.1.63"
+  resolved "https://codeload.github.com/Sjeiti/experiment/tar.gz/ca59e547bc1a53e81c377c5934143afeeba39483"
   dependencies:
     "@emmetio/expand-abbreviation" "^0.7.3"
     gsap "^3.6.0"
@@ -3377,9 +3377,9 @@ graceful-fs@^4.1.2, graceful-fs@^4.2.11, graceful-fs@^4.2.2, graceful-fs@^4.2.4:
   integrity sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==
 
 gsap@^3.6.0:
-  version "3.12.7"
-  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.12.7.tgz#1b690def901ac9b21d4909f39c2b52418154463d"
-  integrity sha512-V4GsyVamhmKefvcAKaoy0h6si0xX7ogwBoBSs2CTJwt7luW0oZzC0LhdkyuKV8PJAXr7Yaj8pMjCKD4GJ+eEMg==
+  version "3.13.0"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.13.0.tgz#597d4e019a2bb487785387d91296adebf92db9dd"
+  integrity sha512-QL7MJ2WMjm1PHWsoFrAQH/J8wUeqZvMtHO58qdekHpCfhvhSL4gSiz6vJf5EeMP0LOn3ZCprL2ki/gjED8ghVw==
 
 hard-rejection@^2.1.0:
   version "2.1.0"
