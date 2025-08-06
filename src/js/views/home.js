@@ -34,7 +34,7 @@ add(
           //
           // working
           view.expandAppend(`section.at>(h2.section-title>small{working}+{at})+ul.unstyled.svg-list.at>(
-            ${['snsbank', 'asnbank', 'volksbank', 'regiobank', 'blgwonen'].map(name=>`(li.client-${name}>svg[aria-label=${name}]>use[xlink:href="#client-${name}"])`).join('+')}
+            ${['asnbank'/*, 'snsbank', 'volksbank', 'regiobank', 'blgwonen'*/].map(name=>`(li.client-${name}>svg[aria-label=${name}]>use[xlink:href="#client-${name}"])`).join('+')}
           )`,false)
           //
           // clients
