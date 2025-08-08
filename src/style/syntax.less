@@ -195,7 +195,8 @@ pre {
       pointer-events: none;
       counter-increment: linenumber;
       &:before {
-        padding: 0 0 0 2px;
+        padding: 2rem 0 0 2px;
+        margin-top: -2rem;
         display: block;
         width: 20px;
         content: counter(linenumber);
@@ -212,7 +213,9 @@ pre {
         height: @preLineHeight - 1px;
         background-color: fade(#6897BB,15%);
       }
-      &:target { color: var(--color-main); }
+      &:target { 
+        color: var(--color-main);
+      }
     }
   }
 }

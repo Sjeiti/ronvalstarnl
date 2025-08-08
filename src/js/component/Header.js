@@ -44,6 +44,8 @@ create('[data-header]', class extends BaseComponent{
     fullscreen.add(this._onFullscreenChange.bind(this))
     //
 
+    window.addEventListener('hashchange', this._onHashChange.bind(this), false)
+
     this._initExperiments()
     this._background = this._$('.background')
     this._colofon = this._$('.colofon')
@@ -231,6 +233,22 @@ create('[data-header]', class extends BaseComponent{
   _onFullscreenChange(fullscreen){
     if (fullscreen) this._experimentWrapper.appendChild(this._experimentSave)
     else this._experimentSave.remove()
+  }
+
+  /**
+   * When `location.hash` does not point to existing id, set it onto the experiment iframe (if present)
+   */
+  _onHashChange(){
+    const value = location.hash.substr(1)
+    console.log('hash',value)
+    if (!document.getElementById(value)){
+      const iframe = this._select('iframe')
+      console.log('iframe',iframe)
+      if (iframe) {
+        iframe.contentWindow.location.hash = value
+        window.scrollTo(0,0)
+      }
+    }
   }
 
   /**
