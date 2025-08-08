@@ -27,6 +27,11 @@ This entire site is [home-grown vanilla JS](/refactoring-for-speed). There *are*
    Events are dispatched through signals.
 
 
+## hosting
+
+Sources are hosted on [Github](https://github.com/), build through [Netlify](https://www.netlify.com/), while the domain name is registered through [DDS](https://dds.nl/) (an [Unesco MoW](https://en.m.wikipedia.org/wiki/Memory_of_the_World_Programme)). The only cloud service used is [Cloudinary](https://cloudinary.com/) for CDN.
+
+
 ## license
 
 This website is licensed under the [GNU General Public License v3.0](LICENSE.txt).

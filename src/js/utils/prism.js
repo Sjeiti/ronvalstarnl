@@ -141,12 +141,15 @@ function getJSFiddleButton(contents){
  */
 function addLineNumbers(elm, index, code){
   const match = code.match(/\n(?!$)/g)
-  const linesNum = match ? match.length + 1 : 1
+  const split = code.split(/\n/g)
+  const linesNum = split.length
   const lineNumbersWrapper = document.createElement('ol')
   for (let i=0;i<linesNum;i++){
-    const line = document.createElement('li')
-    line.setAttribute('id', `code-${index}-${i+1}`)
-    lineNumbersWrapper.appendChild(line)
+    const line = split[i]
+    const key = line.match(/(?<=const\s|function\s)(\w+)/g)?.pop()
+    const li = document.createElement('li')
+    li.setAttribute('id', `code-${index}-${key||i+1}`)
+    lineNumbersWrapper.appendChild(li)
   }
   lineNumbersWrapper.setAttribute('aria-hidden', 'true')
   lineNumbersWrapper.className = 'line-numbers-rows'
