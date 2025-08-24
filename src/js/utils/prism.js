@@ -125,7 +125,7 @@ function getJSFiddleButton(contents){
     , target: 'check'
   })
   const button = createElement('button', null, ui, {type:'submit'}, 'jsfiddle')
-  button.innerHTML = '<svg data-icon="jsfiddle"><title>JSFiddle</title></svg>'
+  button.innerHTML = '<svg data-icon="jsfiddle" width="1.5rem" height="1.5rem"><title>JSFiddle</title></svg>'
   initialise(button)
 
   Object.entries({css, html, js, resources}).forEach(([name, value]) => createElement('input', null, ui, {type: 'hidden', name, value}))

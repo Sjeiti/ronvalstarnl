@@ -51,11 +51,13 @@ export class BaseComponent{
    * @private
    */
   _parseOptions(options){
+    console.log('options',options)
     if (BaseComponent._isJSONString(options)){
       options = JSON.parse(options)
     } else if (BaseComponent._isObjectString(options)){
       options = (new Function(`return ${options}`))()
     }
+    console.log('  options',options)
     return options
   }
 
@@ -66,7 +68,7 @@ export class BaseComponent{
    * @private
    */
   static _isJSONString(str){
-    if ( /^\s*$/.test(str) ) return false
+    if (!str||/^\s*$/.test(str)) return false
     str = str.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g, '@') // eslint-disable-line no-useless-escape
              .replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']') // eslint-disable-line no-useless-escape
              .replace(/(?:^|:|,)(?:\s*\[)+/g, '')

@@ -261,7 +261,7 @@ export function thenPass(fn){
  */
 export function getZenIcon(type){
   const typeToIcon = {page:'file-empty', post:'file-text', fortpolio:'file-picture'}
-  return `svg[data-icon=${typeToIcon[type]||'file-text'}]>title{${type}}`
+  return `svg[data-icon=${typeToIcon[type]||'file-text'}][width=1.5rem][height=1.5rem]>title{${type}}`
 }
 
 export function isPromise(candidate){

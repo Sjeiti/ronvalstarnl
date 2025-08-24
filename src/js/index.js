@@ -13,6 +13,7 @@ import './component/Icon.js'
 import './component/Skill.js'
 import './component/Now.js'
 import './component/JSFiddle.js'
+import './component/Theme.js'
 
 initialise()
 
