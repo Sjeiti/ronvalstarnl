@@ -1,8 +1,8 @@
 html {
   font-family: serif;
-  font-size: 2vw;
+  font-size: 24px;
   @media (max-width: 480px) {
-    font-size: 5vw;
+    font-size: 20px;
   }
   * {
     font-size: 1rem;
@@ -12,7 +12,9 @@ html {
   }
 }
 
-.colofon, video, img, svg, .project-category, [aria-hidden='true'] {
+button, select { padding: 0 0.5rem; }
+
+.colofon, video, img, .project-category {
   display: none;
 }
 
@@ -20,8 +22,12 @@ p, h1, h2, h3, h4, h5, h6, nav, time, footer {
   margin-bottom: 1.5rem;
 }
 
-main, header h1, nav, footer {
+main, header h1, header nav, footer {
   padding-left: 0.5rem;
+}
+
+.experiment-wrapper {
+  min-height: 160px;
 }
 
 .projects {
@@ -57,4 +63,23 @@ code {
   &:before {
     content: 'next: ';
   }
+}
+
+.svg-list {
+  margin: 0!important;
+  width: 100%!important;
+  li {
+    display: inline-block;
+  }
+}
+
+.link-list {
+  svg {
+    transform: translateY(0.25rem);
+  }
+}
+
+button svg {
+  width: 1rem;
+  height: 1rem;
 }
