@@ -8,7 +8,7 @@
   "description": "ste",
   "scripts": {
     "start": "run-p build serve write dev:less build:tags",
-    "dev:less": "chokidar \"src/**/*.less\" --command \"npm run build:less:compile\"",
+    "dev:less": "chokidar \"src/**/*.less\" --command \"npm run build:lessp\"",
     "build": "run-s clean build:less build:tags \"webpack -- --env development --watch\"",
     "build:prod": "run-s clean build:less build:unzip build:raw build:json build:search build:tags build:icons \"webpack -- --env production\" build:sitemap build:rss build:prerender",
     "build:prodd": "run-s clean build:less build:unzip build:raw build:json build:tags \"webpack -- --env production\" build:sitemap build:rss build:prerender",
