@@ -7,6 +7,7 @@ import {scroll} from '../signal/scroll.js'
 import {signal} from '../signal/index.js'
 import {routeChange} from '../router.js'
 import {clean, markdownLinks, selectEach} from '../utils/html.js'
+import {nextFrame} from '../utils/index.js'
 import {MEDIA_URI_HEADER} from '../config.js'
 
 create('[data-header]', class extends BaseComponent{
@@ -51,6 +52,8 @@ create('[data-header]', class extends BaseComponent{
     this._colofon = this._$('.colofon')
 
     this._initColorScheme()
+
+    this._initSubtitle()
   }
 
   /**
@@ -87,6 +90,66 @@ create('[data-header]', class extends BaseComponent{
       const isLight = classList.toggle(schemeDark)
       classList.toggle(schemeLight, !isLight)
       localStorage.setItem(key, isLight?dark:light)
+    })
+  }
+
+  /**
+   * Initialise dynamic subtitle change
+   */
+  _initSubtitle(){
+    const what = this._element.querySelector('.what')
+    const subTitle = what.textContent
+    const subTitles = [
+      subTitle,
+    //'front-end developer',
+      'experiments with CSS',
+      'defragment his drive',
+      'ferments everything',
+      'has a favorite dino',
+      'zen knife sharpener',
+      'waits for sourkraut',
+      'noob bird whatcher',
+      'has yeast for pets',
+      'is a retired ninja',
+      'writes js for fun',
+      'feeds the worms',
+      'makes cool shit',
+      'plays minecraft',
+      'loves capsaicin',
+      'bakes sourdough',
+      'pro bitshifter',
+      'pushes pixels',
+      'pepper grower',
+      'loves herons',
+      'flax heckler'
+    ]
+    const {length} = subTitles
+    routeChange.add((n,o)=>{
+      let oldline = what.textContent
+      const currentİndex = subTitles.indexOf(oldline)
+      const newİndex = (currentİndex + 1 + Math.floor((length-1)*Math.random()))%length
+      const newline = o.slug==='home'
+        ?subTitle
+        :subTitles[newİndex]
+        .padEnd(oldline.length,' ')
+      const undef = (s,selse)=>s===undefined?selse:s
+      const len = Math.max(oldline.length, newline.length)
+      oldline = oldline.padEnd(len,' ')
+      const indices =
+        Array.from(new Array(len))
+        .map((o,i)=>i)
+        .sort(()=>Math.random()>0.5?1:-1)
+      for (let i=0;i<len;i++) {
+        const index = indices[i]
+        oldline = 
+          (index&&oldline.substring(0,index)||'')
+          +undef(newline[index],' ')
+          +undef(oldline.substring(index+1),'')
+        const line = oldline.trim()
+        nextFrame(()=>{
+          what.textContent = line
+        }, 2*i+1)
+      }
     })
   }
 
