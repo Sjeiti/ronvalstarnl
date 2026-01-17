@@ -173,183 +173,183 @@
       position: absolute;
       left: 50%;
       bottom: 0;
-      z-index: 3;
-      display: flex;
-      transform: translateX(-50%);
-      white-space: nowrap;
-      line-height: 1rem;
-    }
-    @media (min-width: 768px) { header nav { line-height: 1.5rem;} }
-    header nav a {
-      position: relative;
-      display: block;
-      height: 1rem;
-      margin: 0 0.125rem;
-      background-color: var(--color-main);
-    }
-    @media (min-width: 768px) { header nav a { height: 1.5rem;} }
-    header nav a.current
-    ,header nav a.current-parent {
-      background-color: #000;
-      color: var(--color-text);
-    }
-    header nav a span {
-      font-size: 0.625rem;
-      padding: 0 0.5rem;
-      line-height: 1.25rem;
-    }
-    @media (min-width: 768px) { header nav a span {
-      font-size: 0.75rem;
-      padding: 0 0.625rem;
-      line-height: 1.5rem;
-    } }
-    header nav .logo {
-      position: absolute;
-      left: -1.5rem;
-      bottom: -0.125rem;
-      display: block;
-      font-size: 1px;
-      line-height: 1rem;
-      height: 1rem;
-      background-color: transparent;
-      opacity: 0;
-      transition: opacity 300ms linear;
-    }
-    header.stuck nav .logo { opacity: 1; }
-    @media (min-width: 768px) { header.stuck nav .logo {
-      font-size: 1.6px;
-      bottom: 5px;
-    } }
-    header a, footer a {
-      text-decoration: none;
-      color: inherit;
-    }
-		[data-color-scheme] {
-			padding: 0;
-			position: absolute;
-			right: 0;
-			top:0;
-			border: 0;
-			background-color: transparent;
-			color: inherit;
-      cursor: pointer;
-		}
-		[data-color-scheme]:hover {
-      color: var(--color-text);
-			transition: color linear 300ms;
-		}
-		[data-color-scheme] svg {
-			transform: translate(20%,-20%) rotate(45deg) scale(80%);
-		}
-		@media print {
-			[data-color-scheme] { display: none; }
-		}
-    main { position: relative; }
-    .content {
-      max-width: 768px;
-      min-height: 100%;
-      margin: 0 auto;
-    }
-    .content__intro {
-      font-size: 2rem;
-      font-family: 'Source Code Pro', monospace;
-      line-height: 130%;
-      text-align: center;
-    }
-    .content__intro a {
-      text-decoration: none;
-      color: inherit;
-    }
-    .content__intro-body {
-      text-align: center;
-    }
-    .content[data-pathname^="project"]:not([data-pathname^="project-"]), .content[data-pathname^="experiments"], .content.wide {
-      max-width: none;
-    }
-    .content, aside {
-      position: relative;
-      padding: 1rem 0 0;
-			background-color: var(--color-bg);
-    }
-    .content>*, aside>* {
-      margin-left: 1rem;
-      margin-right: 1rem;
-    }
-    .content {
-      min-height: calc(100vh - 14.25rem);
-    }
-    aside { display: none; }
+        z-index: 3;
+        display: flex;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        line-height: 1rem;
+      }
+      @media (min-width: 768px) { header nav { line-height: 1.5rem;} }
+      header nav a {
+        position: relative;
+        display: block;
+        height: 1rem;
+        margin: 0 0.125rem;
+        background-color: var(--color-main);
+      }
+      @media (min-width: 768px) { header nav a { height: 1.5rem;} }
+      header nav a.current
+      ,header nav a.current-parent {
+        background-color: #000;
+        color: var(--color-text);
+      }
+      header nav a span {
+        font-size: 0.625rem;
+        padding: 0 0.5rem;
+        line-height: 1.25rem;
+      }
+      @media (min-width: 768px) { header nav a span {
+        font-size: 0.75rem;
+        padding: 0 0.625rem;
+        line-height: 1.5rem;
+      } }
+      header nav .logo {
+        position: absolute;
+        left: -1.5rem;
+        bottom: -0.125rem;
+        display: block;
+        font-size: 1px;
+        line-height: 1rem;
+        height: 1rem;
+        background-color: transparent;
+        opacity: 0;
+        transition: opacity 300ms linear;
+      }
+      header.stuck nav .logo { opacity: 1; }
+      @media (min-width: 768px) { header.stuck nav .logo {
+        font-size: 1.6px;
+        bottom: 5px;
+      } }
+      header a, footer a {
+        text-decoration: none;
+        color: inherit;
+      }
+      [data-color-scheme] {
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top:0;
+        border: 0;
+        background-color: transparent;
+        color: inherit;
+        cursor: pointer;
+      }
+      [data-color-scheme]:hover {
+        color: var(--color-text);
+        transition: color linear 300ms;
+      }
+      [data-color-scheme] svg {
+        transform: translate(20%,-20%) rotate(45deg) scale(80%);
+      }
+      @media print {
+        [data-color-scheme] { display: none; }
+      }
+      main { position: relative; }
+      .content {
+        max-width: 768px;
+        min-height: 100%;
+        margin: 0 auto;
+      }
+      .content__intro {
+        font-size: 2rem;
+        font-family: 'Source Code Pro', monospace;
+        line-height: 130%;
+        text-align: center;
+      }
+      .content__intro a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .content__intro-body {
+        text-align: center;
+      }
+      .content[data-pathname^="project"]:not([data-pathname^="project-"]), .content[data-pathname^="experiments"], .content.wide {
+        max-width: none;
+      }
+      .content, aside {
+        position: relative;
+        padding: 1rem 0 0;
+        background-color: var(--color-bg);
+      }
+      .content>*, aside>* {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+      .content {
+        min-height: calc(100vh - 14.25rem);
+      }
+      aside { display: none; }
 
-    footer {
-      position: relative;
-      display: flex;
-      padding: 0 0.5rem;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      white-space: nowrap;
-      background-color: var(--color-main);
-      color: #fff;
-      text-align: center;
-      vertical-align: middle;
-      font-size: 0.625rem;
-      line-height: 2rem;
-    }
-    footer>* {
-      padding: 0.125rem;
-      flex: 0 0 auto;
-    }
-    footer>*:last-child {
-      flex: 0 1 10rem;
-    }
-    footer .rss {
-      flex: 0 0 0;
-      position: absolute;
-      left: 0;
-      bottom: -0.25rem;
-      transform-origin: top left;
-      transform: rotate(-90deg);
-      font-size: 0.5rem;
-      line-height: 100%;
-    }
-    footer .social {
-      display: flex;
-    }
-    footer .social a {
-      display: inline-block;
-      margin: 0 0.125rem;
-      width: 2rem;
-      height: 2rem;
-      font-size: 1.5rem;
-      line-height: 2rem;
-      background-color: var(--color-bg);
-      border-radius: 50%;
-    }
-    footer .social span {
-      display: none;
-    }
-    h1,h2,h3,h4,h5,h6 {
-      font-family: var(--font-name-heading);
-      font-weight: 200;
-      line-height: 120%;
-    }
-  </style>
-  <link rel="stylesheet" href="/screen.css">
-</head>
-<body>
-  <header data-header>
-    <div class="colofon"></div>
-    <div class="background"></div>
-    <div class="experiment-wrapper" aria-hidden="true"></div>
-    <div class="experiment-ui">
-      <a href="#" data-save title="Save"><svg data-icon="floppy-disk"><title>Save</title></svg></a>
-      <a href="#" data-link title="What is that?" inert><svg data-icon="expand"><title>Expand icon</title></svg></a>
-    </div>
-    <h1>
-      <a href="/">
-        <div class="logo"></div>
-        <div class="name">Ron Valstar</div>
-        <div class="what">front-end developer</div>
+      footer {
+        position: relative;
+        display: flex;
+        padding: 0 0.5rem;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        white-space: nowrap;
+        background-color: var(--color-main);
+        color: #fff;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 0.625rem;
+        line-height: 2rem;
+      }
+      footer>* {
+        padding: 0.125rem;
+        flex: 0 0 auto;
+      }
+      footer>*:last-child {
+        flex: 0 1 10rem;
+      }
+      footer .rss {
+        flex: 0 0 0;
+        position: absolute;
+        left: 0;
+        bottom: -0.25rem;
+        transform-origin: top left;
+        transform: rotate(-90deg);
+        font-size: 0.5rem;
+        line-height: 100%;
+      }
+      footer .social {
+        display: flex;
+      }
+      footer .social a {
+        display: inline-block;
+        margin: 0 0.125rem;
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        background-color: var(--color-bg);
+        border-radius: 50%;
+      }
+      footer .social span {
+        display: none;
+      }
+      h1,h2,h3,h4,h5,h6 {
+        font-family: var(--font-name-heading);
+        font-weight: 200;
+        line-height: 120%;
+      }
+    </style>
+    <link rel="stylesheet" href="/screen.css">
+  </head>
+  <body>
+    <header data-header>
+      <div class="colofon"></div>
+      <div class="background"></div>
+      <div class="experiment-wrapper" aria-hidden="true"></div>
+      <div class="experiment-ui">
+        <a href="#" data-save title="Save"><svg data-icon="floppy-disk"><title>Save</title></svg></a>
+        <a href="#" data-link title="What is that?" inert><svg data-icon="expand"><title>Expand icon</title></svg></a>
+      </div>
+      <h1>
+        <a href="/">
+          <div class="logo"></div>
+          <div class="name">Ron Valstar</div>
+          <div class="what">front-end developer</div>
       </a>
     </h1>
     <nav>
