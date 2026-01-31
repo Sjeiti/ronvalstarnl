@@ -30,15 +30,15 @@ add(
           //
           // projects // todo duplicate code in `view/projects.js`
           const projectHighlight = ['strange-attractors-javascript','kees-kroot','disconnect','project-invoice'].map(slug => projects.filter(p => p.slug===slug).pop())
-          view.expandAppend(`section.built>(h2.section-title>small{projects}+{built})+ul.unstyled.projects>(${projectHighlight.map(getProjectThumbZen).join('+')})`,false)
+          view.expandAppend(`section.built>(h2.section-title>small{projects}+{ built })+ul.unstyled.projects>(${projectHighlight.map(getProjectThumbZen).join('+')})`,false)
           //
           // working
-          view.expandAppend(`section.at>(h2.section-title>small{working}+{at})+ul.unstyled.svg-list.at>(
+          view.expandAppend(`section.at>(h2.section-title>small{working}+{ at })+ul.unstyled.svg-list.at>(
             ${['asnbank'/*, 'snsbank', 'volksbank', 'regiobank', 'blgwonen'*/].map(name=>`(li.client-${name}>svg[aria-label=${name}]>use[xlink:href="#client-${name}"])`).join('+')}
           )`,false)
           //
           // clients
-          view.expandAppend('section.for>(h2.section-title>small{worked}+{for})+ul.unstyled.svg-list.clients',false)
+          view.expandAppend('section.for>(h2.section-title>small{worked}+{ for })+ul.unstyled.svg-list.clients',false)
           const clientNames = ['sikkens','uva','tudelft','wageningen','randstad','philips','vodafone','2x4','novartis','resn','buildinamsterdam','72andsunny','tribalddb']
           const elmClients = view.querySelector('.clients')
           populateSVGList(elmClients,'client-',clientNames)
@@ -61,7 +61,7 @@ add(
           },140)
           //
           // won
-          view.expandAppend('section.won>(h2.section-title>small{prizes}+{won})+ul.unstyled.svg-list.prizes',false)
+          view.expandAppend('section.won>(h2.section-title>small{prizes}+{ won })+ul.unstyled.svg-list.prizes',false)
           const prizes = ['fwa','adcn','webby']
           const elmPrizes = view.querySelector('.prizes')
           populateSVGList(elmPrizes,'prize-',prizes)
@@ -74,7 +74,7 @@ add(
           const getLi = post => `(li>a[href="/${post.slug}"]>(time{${post.date.split('T').shift()}}+{${post.title}}))`
           const stickies = `(.paper>div>ul.unstyled.link-list>(${sticked.map(getLi).join('+')}))`
           const others = `ul.unstyled.link-list>(${rest.map(getLi).join('+')})`
-          view.expandAppend(`section.written>(h2.section-title>small{articles}+{written})+${stickies}+${others}`,false)
+          view.expandAppend(`section.written>(h2.section-title>small{articles}+{ written })+${stickies}+${others}`,false)
           return page
       })
     })

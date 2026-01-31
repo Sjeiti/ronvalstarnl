@@ -15,11 +15,6 @@ create('[data-theme]', class extends BaseComponent{
   constructor(...args){
     super(...args)
 
-    ///////
-    this._element.remove()
-    return // because darkmode switching breaks after re-adding HTMLStyleElement
-    ///////
-
     clean(this._element)
 
     this.initState()
@@ -61,9 +56,8 @@ create('[data-theme]', class extends BaseComponent{
     const styles = Array.from(this.styles)
     if (this.theme==='screen'){
       const {head} = document
-      // styles.forEach(style=>style.parentElement!==head&&head.insertBefore(style,this.link))
       styles.forEach(style=> style.parentElement!==head&&head.insertBefore(style,this.link))
-      // document.body.offsetHeight; // Force reflow
+      globalThis.insertRulesFromPrefersMediaRules()
     } else {
       styles.forEach(style=>style.remove())
     }
