@@ -152,3 +152,14 @@ export function markdownLinks(text){
 export function getElementIndex(elm){
   return Array.from(elm.parentNode.children).indexOf(elm)
 }
+
+/**
+ * To hide elements when styling is removed we inline `display: none;` and add `display: block/flex/etc!important` to
+ * the external stylesheet
+ * @param {string} selector
+ */
+export function inlineHide(selector){
+  [...document.querySelectorAll('ol.line-numbers-rows')].forEach(m=>{
+    m.setAttribute('style', 'display: none')
+  })
+}

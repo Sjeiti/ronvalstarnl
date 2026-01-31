@@ -4,6 +4,7 @@ import {create} from './index.js'
 import {BaseComponent} from './BaseComponent.js'
 import {prismToElement} from '../utils/prism.js'
 import {nextTick} from '../utils/index.js'
+import {inlineHide} from '../utils/html.js'
 
 create('code[data-src]', class extends BaseComponent{
 
@@ -26,7 +27,10 @@ create('code[data-src]', class extends BaseComponent{
         this._element.textContent = text
 
         // todo: can be done without nextTick/redraw
-        nextTick(()=>prismToElement(this._element))
+        nextTick(()=>{
+          prismToElement(this._element)
+          inlineHide('ol.line-numbers-rows')
+        })
       })
   }
 })
