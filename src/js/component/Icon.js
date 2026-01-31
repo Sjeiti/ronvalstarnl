@@ -26,6 +26,8 @@ create('[data-icon]', class extends BaseComponent{
     use.setAttributeNS(NS_XLINK, 'xlink:href', `#icon-${icon}`)
     _element.appendChild(use)
     _element.classList.add('icon', `icon-${icon}`)
+    _element.setAttribute('width', '1.5rem')
+    _element.setAttribute('height', '1.5rem')
   }
 
 })
