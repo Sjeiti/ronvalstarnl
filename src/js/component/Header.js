@@ -72,6 +72,7 @@ create('[data-header]', class extends BaseComponent{
     this._experimentSave.addEventListener('click', this._onMouseUpSave.bind(this),true)
     //
     clean(this._experimentWrapper)
+    this._experimentWrapper.setAttribute('style', 'height:12rem')
     this._stuck.add(is=>this._experiment?.pause(is))
   }
 
