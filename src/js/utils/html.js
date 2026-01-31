@@ -159,7 +159,7 @@ export function getElementIndex(elm){
  * @param {string} selector
  */
 export function inlineHide(selector){
-  [...document.querySelectorAll('ol.line-numbers-rows')].forEach(m=>{
+  [...document.querySelectorAll(selector)].forEach(m=>{
     m.setAttribute('style', 'display: none')
   })
 }

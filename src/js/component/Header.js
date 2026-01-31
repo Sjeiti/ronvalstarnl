@@ -6,7 +6,7 @@ import fullscreen from '../signal/fullscreen.js'
 import {scroll} from '../signal/scroll.js'
 import {signal} from '../signal/index.js'
 import {routeChange} from '../router.js'
-import {clean, markdownLinks, selectEach} from '../utils/html.js'
+import {clean,inlineHide,markdownLinks,selectEach} from '../utils/html.js'
 import {nextFrame} from '../utils/index.js'
 import {MEDIA_URI_HEADER} from '../config.js'
 
@@ -92,6 +92,7 @@ create('[data-header]', class extends BaseComponent{
       classList.toggle(schemeLight, !isLight)
       localStorage.setItem(key, isLight?dark:light)
     })
+    inlineHide('button[data-color-scheme]')
   }
 
   /**
