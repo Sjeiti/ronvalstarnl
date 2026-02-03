@@ -51,4 +51,4 @@ Here is a random list of terms I know stuff about:
 
 ## also...
 
-I have a wife and a son. I've been baking my own bread for about <span data-from="2015-04-04">nine</span> years. I'm part of a [gardening collective](https://www.icanchangetheworldwithmytwohands.nl). I like to put stuff [under a microscope](https://vimeo.com/showcase/9363359). I am a retired ninja.
+I have a wife and a son. I've been baking my own bread for about <span data-from="2015-04-04">nine</span> years. I'm part of a [gardening collective](https://www.icanchangetheworldwithmytwohands.nl). I like to put stuff [under a microscope](https://vimeo.com/showcase/9363359) or watch things through binoculars. I am a retired ninja.
