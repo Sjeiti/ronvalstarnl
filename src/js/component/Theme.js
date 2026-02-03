@@ -36,7 +36,7 @@ create('[data-theme]', class extends BaseComponent{
 
   initElements(){
     this._element.classList.add('theme')
-    this._append(`label>(svg[data-icon=star]+select>(${Object.entries(this.options.options).map(([value,textContent])=>
+    this._append(`label>(svg[data-icon=theme]+select>(${Object.entries(this.options.options).map(([value,textContent])=>
         `option[value=${value}]${value===this.theme?'[selected]':''}{${textContent}}`
     ).join('+')}))`)
     this.select = this.element.querySelector('select')

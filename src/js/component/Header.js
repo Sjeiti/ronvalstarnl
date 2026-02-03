@@ -105,7 +105,7 @@ create('[data-header]', class extends BaseComponent{
       subTitle,
     //'front-end developer',
       'experiments with CSS',
-      'defragment his drive',
+      'defragments his drive',
       'ferments everything',
       'has a favorite dino',
       'zen knife sharpener',
@@ -244,6 +244,9 @@ create('[data-header]', class extends BaseComponent{
     }
     // this._experimentUI.classList.toggle('experiment-ui-hide', !this._experiment)
     const hasExperiment = !!this._experiment
+
+    this._experimentWrapper.classList.toggle('experiment-wrapper--empty', !hasExperiment)
+
     this._experimentUI.classList.toggle('experiment-ui-hide', !hasExperiment)
     hasExperiment?this._experimentLink.removeAttribute('inert'):this._experimentLink.setAttribute('inert', '')
 

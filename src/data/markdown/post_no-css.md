@@ -1,22 +1,21 @@
 <!--
-  date: 2026-02-01
-  modified: 2026-02-01
+  date: 2026-02-03
+  modified: 2026-02-03
   slug: no-css
   type: post
   categories: code, HTML
   tags: cool shit
-  thumbnail: experiments/Screenshot_20250807-205419.jpg
-  description: HTML
+  description: A demonstration of viewing websites without CSS by removing all style elements via JavaScript, inspired by Firefox Reader View and 1995-era web aesthetics. Implementation of theme switching using localStorage to toggle between default and high-contrast modes for improved readability.
   related: 
 -->
 
 # Look ma; no CSS
 
-For those enlightened souls who use Firefox: there is a thing called [reader-view](https://support.mozilla.org/en-US/kb/firefox-reader-view-clutter-free-web-pages). It works on pages with a good semantic HTML structure. You might have accidentally clicked this icon in your address bar and noticed everything disappearing but the basic content. Almost as if we're thirty years in the past when CSS didn't exist yet. Except reader-view does look polished, has styling options, and a screen reader.
+For those enlightened souls who use Firefox: there is a thing called [reader-view](https://support.mozilla.org/en-US/kb/firefox-reader-view-clutter-free-web-pages). It works on pages with a good semantic HTML structure and helps you read without distractions. You might have accidentally clicked this icon in your address bar and noticed everything disappearing but the basic content. Almost as if we're thirty years in the past when CSS didn't exist yet. Except reader-view does look polished, has styling options, and a screen reader.
 
 ## Way back
 
-That got me thinking: once in a while you come upon these sites that lets you change the visual appearance (yeah like darkmode, but different). What would my site look like without styling, in 1995? ([CSS1](https://www.w3.org/TR/CSS1/) came out in 1996)
+That got me thinking: once in a while you come upon these sites that let you change the visual appearance (yeah like darkmode, but different). What would my site look like without styling, in 1995? ([CSS1](https://www.w3.org/TR/CSS1/) came out in 1996)
 
 <a href="javascript:Array.from(document.querySelectorAll('link,style')).forEach(elm=>elm.remove())"><code style="word-break:break-all;">Array.from(document.querySelectorAll('link,style')).forEach(elm=>elm.remove())</code></a>
 
@@ -39,3 +38,8 @@ The link above removes styling but is not persistent when you reload. For that w
 
 This requires two elements to be manipulated when changing style: set the `href` property of the `HTMLLinkElement` to swap the exteral stylesheet, and add or remove the inline `HTMLStyleElement`. I hope you have the latter because inlining above-the-fold CSS is a major rendering optimisation.
 
+For now I've added simple theming: the default, no theme and a contrast theme (which is really a minimal theme to make no-theme look good).
+
+Expect a bigger theme in the future.
+
+(theme switch in the footer)

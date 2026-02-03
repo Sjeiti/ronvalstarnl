@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Ron Valstar - front-end developer</title>
-    <!-- This website is licensed under the GNU General Public License v3.0. -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#F04">
-    <meta name="description" content="I am a front-end developer with more than eighteen years experience doing graphic design, interaction design and programming.">
-    <link rel="apple-touch-icon" href="/static/icon/icon-180x180.png" sizes="180x180" />
-    <link rel="icon" type="image/png" href="/static/icon/icon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/static/icon/icon-16x16.png" sizes="16x16" />
-    <style>
-    
-    :root {
+<head>
+  <meta charset="utf-8">
+  <title>Ron Valstar - front-end developer</title>
+  <!-- This website is licensed under the GNU General Public License v3.0. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F04">
+  <meta name="description" content="I am a front-end developer with more than eighteen years experience doing graphic design, interaction design and programming.">
+  <link rel="apple-touch-icon" href="/static/icon/icon-180x180.png" sizes="180x180"/>
+  <link rel="icon" type="image/png" href="/static/icon/icon-32x32.png" sizes="32x32"/>
+  <link rel="icon" type="image/png" href="/static/icon/icon-16x16.png" sizes="16x16"/>
+  <style>
+
+		:root {
 			color-scheme: normal;
-      
-      --color-main: #f04;
-      --color-main-text: #FFF;
-      --color-link: #3baeff;
-      --color-link-dark: #003cae;
-      --color-bg: white;
-      --color-bg-code: #E7ECE9;
-      --color-text: black;
-      --color-text-: #888;
-      --color-gray: #888;
-      --color-text-header: #547979;
-      --color-border: #F4F4F4;
-      --color-notice: #FD0;
 
-      --font-name-heading: 'Source Code Pro', monospace;
-      --font-name-body: 'Istok Web', sans-serif;
-      --font-name-code: 'Source Code Pro', monospace;
-      
-      --scroll-percentage: 0%;
-      --scroll-part: 0;
-    }
+			--color-main: #f04;
+			--color-main-text: #FFF;
+			--color-link: #3baeff;
+			--color-link-dark: #003cae;
+			--color-bg: white;
+			--color-bg-code: #E7ECE9;
+			--color-text: black;
+			--color-text-: #888;
+			--color-gray: #888;
+			--color-text-header: #547979;
+			--color-border: #F4F4F4;
+			--color-notice: #FD0;
 
-    @media (prefers-color-scheme: light) {
+			--font-name-heading: 'Source Code Pro', monospace;
+			--font-name-body: 'Istok Web', sans-serif;
+			--font-name-code: 'Source Code Pro', monospace;
+
+			--scroll-percentage: 0%;
+			--scroll-part: 0;
+		}
+
+		@media (prefers-color-scheme: light) {
 			:root {
 				--color-main-text: #FFF;
 				--color-link: #3baeff;
@@ -46,10 +46,10 @@
 				--color-text: black;
 				--color-border: #F4F4F4;
 				--color-input-border: #ddd;
-      }
-    }
+			}
+		}
 
-    @media (prefers-color-scheme: dark) {
+		@media (prefers-color-scheme: dark) {
 			:root {
 				--color-main-text: #000;
 				--color-link: #2e8cce;
@@ -59,415 +59,519 @@
 				--color-text: #888;
 				--color-border: #222;
 				--color-input-border: #222;
-      }
-    }
+			}
+		}
 
-    @media (prefers-contrast: more) {
+		@media (prefers-contrast: more) {
 			:root {
-        --color-link: #059;
+				--color-link: #059;
 				--color-text-: #595959;
-      }
-    }
-    
-    @media (min-width: 768px) {}
-    
-    html { box-sizing: border-box; }
-    *, *:before, *:after { box-sizing: inherit; }
+			}
+		}
 
-    html {
-      font-size: 16px;
-      line-height: 180%;
-    }
-    
-    html { box-sizing: border-box; }
-    *, *:before, *:after { box-sizing: inherit; }
+		@media (min-width: 768px) {
+		}
 
-    html, body { margin: 0; min-height: 100%; }
+		html {
+			box-sizing: border-box;
+		}
 
-    body {
-      margin: 0;
-      background-color: var(--color-bg);
+		*, *:before, *:after {
+			box-sizing: inherit;
+		}
+
+		html {
+			font-size: 16px;
+			line-height: 180%;
+		}
+
+		html {
+			box-sizing: border-box;
+		}
+
+		*, *:before, *:after {
+			box-sizing: inherit;
+		}
+
+		html, body {
+			margin: 0;
+			min-height: 100%;
+		}
+
+		body {
+			margin: 0;
+			background-color: var(--color-bg);
 			color: var(--color-text);
-      font-family: var(--font-name-body);
-      font-size: 1rem;
-      overflow-y: scroll;
-    }
-    @media (min-width: 768px) { body { font-size: 1.25rem; } }
+			font-family: var(--font-name-body);
+			font-size: 1rem;
+			overflow-y: scroll;
+		}
 
-    a { color: var(--color-link); }
+		@media (min-width: 768px) {
+			body {
+				font-size: 1.25rem;
+			}
+		}
 
-    body>header {
-      position: sticky;
-      top: -11rem;
-      z-index: 256;
-      height: 12rem;
-      display: block;
-      margin: 0;
-      padding: 1rem 0;
-      overflow: hidden;
-      color: var(--color-main-text);
-      text-transform: uppercase;
-      background-color: var(--color-main);
-      background-size: cover;
-    }
-    @media (min-width: 768px) { body>header { top: -10.5rem; } }
-    body>header>* {
-      position: relative;
-      z-index: 10;
-    }
-    .experiment-ui {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-    .logo {
-      font-size: 3px;
-      width: 6.7em;
-      height: 10.8em;
-    }
-    .logo:before, .logo:after {
-      content: '';
-      position: relative;
-      top: 1.4em;
-      left: 0.4em;
-      display: block;
-      width:5.6em;
-      height:2.8em;
-      background-color: var(--color-main-text);
-      border-radius: 0 2.8em 0 2.8em;
-      transform: rotate(40deg) skewx(-3deg) skewy(-3deg);
-    }
-    .logo:after {
-      top: 2.9em;
-      left: -0.6em;
-      width:8em;
-      height:3.2em;
-      transform:rotate(46deg) skewx(-9deg) skewy(-9deg);
-    }
-    header h1 {
-      position: relative;
-      left: 50%;
-      z-index: 2;
-      display: inline-block;
-      margin: 0 auto;
-      transform: translateX(-50%);
-      font-size: inherit;
-      text-align: center;
-    }
-    header h1 .logo {
-      margin: 0 auto;
-      font-size: 5px;
-    }
-    header h1 .name {
-      font-size: 3rem;
-      line-height: 3rem;
-    }
-    header h1 .what {
-      font-size: 1.25rem;
-      letter-spacing: 0.27rem;
-      font-weight: 600;
-    }
-    header nav {
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-        z-index: 3;
-        display: flex;
-        transform: translateX(-50%);
-        white-space: nowrap;
-        line-height: 1rem;
-      }
-      @media (min-width: 768px) { header nav { line-height: 1.5rem;} }
-      header nav a {
-        position: relative;
-        display: block;
-        height: 1rem;
-        margin: 0 0.125rem;
-        background-color: var(--color-main);
-      }
-      @media (min-width: 768px) { header nav a { height: 1.5rem;} }
-      header nav a.current
-      ,header nav a.current-parent {
-        background-color: #000;
-        color: var(--color-text);
-      }
-      header nav a span {
-        font-size: 0.625rem;
-        padding: 0 0.5rem;
-        line-height: 1.25rem;
-      }
-      @media (min-width: 768px) { header nav a span {
-        font-size: 0.75rem;
-        padding: 0 0.625rem;
-        line-height: 1.5rem;
-      } }
-      header nav .logo {
-        position: absolute;
-        left: -1.5rem;
-        bottom: -0.125rem;
-        display: block;
-        font-size: 1px;
-        line-height: 1rem;
-        height: 1rem;
-        background-color: transparent;
-        opacity: 0;
-        transition: opacity 300ms linear;
-      }
-      header.stuck nav .logo { opacity: 1; }
-      @media (min-width: 768px) { header.stuck nav .logo {
-        font-size: 1.6px;
-        bottom: 5px;
-      } }
-      header a, footer a {
-        text-decoration: none;
-        color: inherit;
-      }
-      [data-color-scheme] {
-        display: initial!important;
-        padding: 0;
-        position: absolute;
-        right: 0;
-        top:0;
-        border: 0;
-        background-color: transparent;
-        color: inherit;
-        cursor: pointer;
-      }
-      [data-color-scheme]:hover {
-        color: var(--color-text);
-        transition: color linear 300ms;
-      }
-      [data-color-scheme] svg {
-        transform: translate(20%,-20%) rotate(45deg) scale(80%);
-      }
-      @media print {
-        [data-color-scheme] { display: none; }
-      }
-      main { position: relative; }
-      .content {
-        max-width: 768px;
-        min-height: 100%;
-        margin: 0 auto;
-      }
-      .content__intro {
-        font-size: 2rem;
-        font-family: 'Source Code Pro', monospace;
-        line-height: 130%;
-        text-align: center;
-      }
-      .content__intro a {
-        text-decoration: none;
-        color: inherit;
-      }
-      .content__intro-body {
-        text-align: center;
-      }
-      .content[data-pathname^="project"]:not([data-pathname^="project-"]), .content[data-pathname^="experiments"], .content.wide {
-        max-width: none;
-      }
-      .content, aside {
-        position: relative;
-        padding: 1rem 0 0;
-        background-color: var(--color-bg);
-      }
-      .content>*, aside>* {
-        margin-left: 1rem;
-        margin-right: 1rem;
-      }
-      .content {
-        min-height: calc(100vh - 14.25rem);
-      }
-      aside { display: none; }
+		a {
+			color: var(--color-link);
+		}
 
-      footer {
-        position: relative;
-        display: flex;
-        padding: 0 0.5rem;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        white-space: nowrap;
-        background-color: var(--color-main);
-        color: #fff;
-        text-align: center;
-        vertical-align: middle;
-        font-size: 0.625rem;
-        line-height: 2rem;
-      }
-      footer>* {
-        padding: 0.125rem;
-        flex: 0 0 auto;
-      }
-      footer>*:last-child {
-        flex: 0 1 10rem;
-      }
-      footer .rss {
-        flex: 0 0 0;
-        position: absolute;
-        left: 0;
-        bottom: -0.25rem;
-        transform-origin: top left;
-        transform: rotate(-90deg);
-        font-size: 0.5rem;
-        line-height: 100%;
-      }
-      footer .social {
-        display: flex;
-      }
-      footer .social a {
-        display: inline-block;
-        margin: 0 0.125rem;
-        width: 2rem;
-        height: 2rem;
-        font-size: 1.5rem;
-        line-height: 2rem;
-        background-color: var(--color-bg);
-        border-radius: 50%;
-      }
-      footer .social span {
-        display: none;
-      }
-      h1,h2,h3,h4,h5,h6 {
-        font-family: var(--font-name-heading);
-        font-weight: 200;
-        line-height: 120%;
-      }
-    </style>
-    <link rel="stylesheet" href="/screen.css">
-  </head>
-  <body>
-    <header data-header>
-      <div class="colofon"></div>
-      <div class="background"></div>
-      <div class="experiment-wrapper" aria-hidden="true"></div>
-      <div class="experiment-ui">
-        <a href="#" data-save title="Save"><svg data-icon="floppy-disk"><title>Save</title></svg></a>
-        <a href="#" data-link title="What is that?" inert><svg data-icon="expand"><title>Expand icon</title></svg></a>
-      </div>
-      <h1>
-        <a href="/">
-          <div class="logo"></div>
-          <div class="name">Ron Valstar</div>
-          <div class="what">front-end developer</div>
-      </a>
-    </h1>
-    <nav>
-      <a href="/" title="home"><i class="logo"></i></a>
-      <a href="/about"><span>about</span></a>
-      <a href="/experiments"><span>experiments</span></a>
-      <a href="/projects"><span>projects</span></a>
-      <a href="/blog"><span>blog</span></a>
-    </nav>
-    <button data-color-scheme aria-label="toggle darkmode"><svg data-icon="brightness-contrast"><title>brightness-contrast</title></svg></button>
-  </header>
-  <main>
-    <div class="content">
-      <p class="content__intro">My name is Ron Valstar and <a href="/search?s=cool%20shit" class="cool-shit">I develop</a> applications for digital media.</p>
-      <p class="content__intro-body">I am an Amsterdam based <del>freelance</del> front-end developer with a background in graphic design and interaction design.<br>
-      <a href="mailto:hello@ronvalstar.nl">Drop me a line</a>.</p>
-    </div>
-  </main>
-  <aside></aside>
-  <footer>
-    <a href="/feed.rss" class="rss">RSS</a>
-    <nav class="social">
-      <a href="https://stackoverflow.com/users/695734/sjeiti" aria-label="Stack Overflow"><svg data-icon="stack-overflow"><title>Stack Overflow</title></svg></a>
-      <a href="https://nl.linkedin.com/in/ron-valstar-4b20a917"><svg data-icon="linkedin"><title>LinkedIn</title></svg></a>
-      <a href="https://github.com/Sjeiti" aria-label="Github"><svg data-icon="github"><title>Github</title></svg></a>
-    </nav>
-    
-    <div data-theme="{
+		body > header {
+			position: sticky;
+			top: -11rem;
+			z-index: 256;
+			height: 12rem;
+			display: block;
+			margin: 0;
+			padding: 1rem 0;
+			overflow: hidden;
+			color: var(--color-main-text);
+			text-transform: uppercase;
+			background-color: var(--color-main);
+			background-size: cover;
+		}
+
+		@media (min-width: 768px) {
+			body > header {
+				top: -10.5rem;
+			}
+		}
+
+		body > header > * {
+			position: relative;
+			z-index: 10;
+		}
+
+		.experiment-ui {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+
+		.logo {
+			font-size: 3px;
+			width: 6.7em;
+			height: 10.8em;
+		}
+
+		.logo:before, .logo:after {
+			content: '';
+			position: relative;
+			top: 1.4em;
+			left: 0.4em;
+			display: block;
+			width: 5.6em;
+			height: 2.8em;
+			background-color: var(--color-main-text);
+			border-radius: 0 2.8em 0 2.8em;
+			transform: rotate(40deg) skewx(-3deg) skewy(-3deg);
+		}
+
+		.logo:after {
+			top: 2.9em;
+			left: -0.6em;
+			width: 8em;
+			height: 3.2em;
+			transform: rotate(46deg) skewx(-9deg) skewy(-9deg);
+		}
+
+		header h1 {
+			position: relative;
+			left: 50%;
+			z-index: 2;
+			display: inline-block;
+			margin: 0 auto;
+			transform: translateX(-50%);
+			font-size: inherit;
+			text-align: center;
+
+			.logo {
+				margin: 0 auto;
+				font-size: 5px;
+			}
+
+			.name {
+				font-size: 3rem;
+				line-height: 3rem;
+			}
+
+			+ .what {
+				display: block;
+				font-size: 1.25rem;
+				letter-spacing: 0.27rem;
+				font-weight: 600;
+				text-align: center;
+			}
+		}
+
+		header nav {
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			z-index: 3;
+			display: flex;
+			transform: translateX(-50%);
+			white-space: nowrap;
+			line-height: 1rem;
+		}
+
+		@media (min-width: 768px) {
+			header nav {
+				line-height: 1.5rem;
+			}
+		}
+
+		header nav a {
+			position: relative;
+			display: block;
+			height: 1rem;
+			margin: 0 0.125rem;
+			background-color: var(--color-main);
+		}
+
+		@media (min-width: 768px) {
+			header nav a {
+				height: 1.5rem;
+			}
+		}
+
+		header nav a.current, header nav a.current-parent {
+			background-color: #000;
+			color: var(--color-text);
+		}
+
+		header nav a span {
+			font-size: 0.625rem;
+			padding: 0 0.5rem;
+			line-height: 1.25rem;
+		}
+
+		@media (min-width: 768px) {
+			header nav a span {
+				font-size: 0.75rem;
+				padding: 0 0.625rem;
+				line-height: 1.5rem;
+			}
+		}
+
+		header nav .logo {
+			position: absolute;
+			left: -1.5rem;
+			bottom: -0.125rem;
+			display: block;
+			font-size: 1px;
+			line-height: 1rem;
+			height: 1rem;
+			background-color: transparent;
+			opacity: 0;
+			transition: opacity 300ms linear;
+		}
+
+		header.stuck nav .logo {
+			opacity: 1;
+		}
+
+		@media (min-width: 768px) {
+			header.stuck nav .logo {
+				font-size: 1.6px;
+				bottom: 5px;
+			}
+		}
+
+		header a, footer a {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		[data-color-scheme] {
+			display: initial !important;
+			padding: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			border: 0;
+			background-color: transparent;
+			color: inherit;
+			cursor: pointer;
+		}
+
+		[data-color-scheme]:hover {
+			color: var(--color-text);
+			transition: color linear 300ms;
+		}
+
+		[data-color-scheme] svg {
+			transform: translate(20%, -20%) rotate(45deg) scale(80%);
+		}
+
+		@media print {
+			[data-color-scheme] {
+				display: none;
+			}
+		}
+
+		main {
+			position: relative;
+		}
+
+		.content {
+			max-width: 768px;
+			min-height: 100%;
+			margin: 0 auto;
+		}
+
+		.content__intro {
+			font-size: 2rem;
+			font-family: 'Source Code Pro', monospace;
+			line-height: 130%;
+			text-align: center;
+		}
+
+		.content__intro a {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		.content__intro-body {
+			text-align: center;
+		}
+
+		.content[data-pathname^="project"]:not([data-pathname^="project-"]), .content[data-pathname^="experiments"], .content.wide {
+			max-width: none;
+		}
+
+		.content, aside {
+			position: relative;
+			padding: 1rem 0 0;
+			background-color: var(--color-bg);
+		}
+
+		.content > *, aside > * {
+			margin-left: 1rem;
+			margin-right: 1rem;
+		}
+
+		.content {
+			min-height: calc(100vh - 14.25rem);
+		}
+
+		aside {
+			display: none;
+		}
+
+		footer {
+			position: relative;
+			display: flex;
+			padding: 0 0.5rem;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			white-space: nowrap;
+			background-color: var(--color-main);
+			color: #fff;
+			text-align: center;
+			vertical-align: middle;
+			font-size: 0.625rem;
+			line-height: 2rem;
+		}
+
+		footer > * {
+			padding: 0.125rem;
+			flex: 0 0 auto;
+		}
+
+		footer > *:last-child {
+			flex: 0 1 10rem;
+		}
+
+		footer .rss {
+			flex: 0 0 0;
+			position: absolute;
+			left: 0;
+			bottom: -0.25rem;
+			transform-origin: top left;
+			transform: rotate(-90deg);
+			font-size: 0.5rem;
+			line-height: 100%;
+		}
+
+		footer .social {
+			display: flex;
+		}
+
+		footer .social a {
+			display: inline-block;
+			margin: 0 0.125rem;
+			width: 2rem;
+			height: 2rem;
+			font-size: 1.5rem;
+			line-height: 2rem;
+			background-color: var(--color-bg);
+			border-radius: 50%;
+		}
+
+		footer .social span {
+			display: none;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			font-family: var(--font-name-heading);
+			font-weight: 200;
+			line-height: 120%;
+		}
+  </style>
+  <link rel="stylesheet" href="/screen.css">
+</head>
+<body>
+<header data-header>
+  <div class="colofon"></div>
+  <div class="background"></div>
+  <div class="experiment-wrapper" aria-hidden="true"></div>
+  <div class="experiment-ui">
+    <a href="#" data-save title="Save">
+      <svg data-icon="floppy-disk"><title>Save</title></svg>
+    </a>
+    <a href="#" data-link title="What is that?" inert>
+      <svg data-icon="expand"><title>Expand icon</title></svg>
+    </a>
+  </div>
+  <h1>
+    <a href="/">
+      <div class="logo"></div>
+      <div class="name">Ron Valstar</div>
+    </a>
+  </h1>
+  <a href="/" class="what">front-end developer</a>
+  <nav>
+    <a href="/" title="home"><i class="logo"></i></a>
+    <a href="/about"><span>about</span></a>
+    <a href="/experiments"><span>experiments</span></a>
+    <a href="/projects"><span>projects</span></a>
+    <a href="/blog"><span>blog</span></a>
+  </nav>
+  <button data-color-scheme aria-label="toggle darkmode">
+    <svg data-icon="brightness-contrast"><title>brightness-contrast</title></svg>
+  </button>
+</header>
+<main>
+  <div class="content">
+    <p class="content__intro">My name is Ron Valstar and
+      <a href="/search?s=cool%20shit" class="cool-shit">I develop</a> applications for digital media.</p>
+    <p class="content__intro-body">I am an Amsterdam based
+      <del>freelance</del>
+      front-end developer with a background in graphic design and interaction design.<br>
+      <a href="mailto:hello@ronvalstar.nl">Drop me a line</a>.
+    </p>
+  </div>
+</main>
+<aside></aside>
+<footer>
+  <a href="/feed.rss" class="rss">RSS</a>
+  <nav class="social">
+    <a href="https://stackoverflow.com/users/695734/sjeiti" aria-label="Stack Overflow">
+      <svg data-icon="stack-overflow"><title>Stack Overflow</title></svg>
+    </a>
+    <a href="https://nl.linkedin.com/in/ron-valstar-4b20a917">
+      <svg data-icon="linkedin"><title>LinkedIn</title></svg>
+    </a>
+    <a href="https://github.com/Sjeiti" aria-label="Github">
+      <svg data-icon="github"><title>Github</title></svg>
+    </a>
+  </nav>
+  
+  <div data-theme="{
       options:{
         screen:'default'
         ,none:'no style'
         ,contrast:'contrast'
-        ,ocean:'ocean'
       }
       }"></div>
-    
-    <a href="/colofon"><span>&copy; Ron Valstar</span></a>
-    <div data-search="{
+  
+  <a href="/colofon"><span>&copy; Ron Valstar</span></a>
+  <div data-search="{
       label:''
       ,submit:''
       ,placeholder:'search'
       ,autoSuggest:true
       ,autoSuggestTop:true
     }" role="search"></div>
-  </footer>
-  <script>
-    
-    const {body} = document
-    const createElement = document.createElement.bind(document)
-    const isMobile = window.matchMedia('(max-device-width: 600px)').matches
-    const isLocalhost = window.location.hostname==='localhost'
-    const isParamEruda = /eruda/.test(location.search)
+</footer>
+<script>
 
-    const start = loadScript.bind(null,'/js/index.js')
+  const {body} = document
+  const createElement = document.createElement.bind(document)
+  const isMobile = window.matchMedia('(max-device-width: 600px)').matches
+  const isLocalhost = window.location.hostname==='localhost'
+  const isParamEruda = /eruda/.test(location.search)
 
-    if (isMobile&&isLocalhost||isParamEruda) {
-      const script = loadScript('//cdn.jsdelivr.net/npm/eruda')
-      script.onload = function () {
-        eruda.init()
-        start()
-      }
-    } else {
+  const start = loadScript.bind(null,'/js/index.js')
+
+  if (isMobile && isLocalhost || isParamEruda) {
+    const script = loadScript('//cdn.jsdelivr.net/npm/eruda')
+    script.onload = function () {
+      eruda.init()
       start()
     }
+  } else {
+    start()
+  }
 
-    function loadScript(src){
-      const script = document.createElement('script')
-      script.src = src
-      body.appendChild(script)
-      return script
-    }
+  function loadScript(src) {
+    const script = document.createElement('script')
+    script.src = src
+    body.appendChild(script)
+    return script
+  }
 
-    function insertRulesFromPrefersMediaRules(){
-      Array.from(document.styleSheets).forEach(sheet=>
-          getRules(sheet).forEach((mediaRule)=>{
-            if (mediaRule.constructor===CSSMediaRule) {
-              getRules(mediaRule).forEach((rule)=>{
-                const {style, constructor, selectorText} = rule
-                if (constructor===CSSStyleRule&&selectorText===':root') {
-                  const vars = Array.from(style).filter(name=>/^--/.test(name))
-                  if (vars.length) {
-                    const selector = (mediaRule.conditionText.match(/(?<=\()(prefers-[^)]*)/g)||[]).map(s=>'.'+s.replace(/\:\s/,'-').substring(8)).join('')
-                    const props = vars.map(name=>`${name}:${style.getPropertyValue(name).trim()};`).join('')
-                    selector&&props&&sheet.insertRule(`${selector}{${props}}`, sheet.cssRules.length)
-                  }
-                }
-              })
+  function insertRulesFromPrefersMediaRules() {
+    Array.from(document.styleSheets).forEach(sheet => getRules(sheet).forEach((mediaRule) => {
+      if (mediaRule.constructor===CSSMediaRule) {
+        getRules(mediaRule).forEach((rule) => {
+          const {style,constructor,selectorText} = rule
+          if (constructor===CSSStyleRule && selectorText===':root') {
+            const vars = Array.from(style).filter(name => /^--/.test(name))
+            if (vars.length) {
+              const selector = (mediaRule.conditionText.match(/(?<=\()(prefers-[^)]*)/g) || []).map(s => '.' + s.replace(/\:\s/,'-').substring(8)).join('')
+              const props = vars.map(name => `${name}:${style.getPropertyValue(name).trim()};`).join('')
+              selector && props && sheet.insertRule(`${selector}{${props}}`,sheet.cssRules.length)
             }
-          })
-      )
-    }
+          }
+        })
+      }
+    }))
+  }
 
-    function getRules(sheetOrRule){
-      const rules = []
-      try { rules.push(...Array.from(sheetOrRule.cssRules)) } catch (err) {}
-      return rules
+  function getRules(sheetOrRule) {
+    const rules = []
+    try {
+      rules.push(...Array.from(sheetOrRule.cssRules))
+    } catch (err) {
     }
-    
-    // https://www.w3.org/TR/mediaqueries-5/#mf-user-preferences
-    function findPrefers(key, values) {
-      const storedValue = localStorage.getItem(key)
-      return (Array.isArray(values)?values:[values])
-          .find(value=>{
-            const finalValue = storedValue||window.matchMedia(`(prefers-${key}: ${value})`).matches&&value
-            finalValue&&document.documentElement.classList.add(`${key}-${finalValue}`)
-            return value===finalValue
-          })
-    }
-    
-    insertRulesFromPrefersMediaRules()
-    findPrefers('color-scheme', 'light')
-    findPrefers('color-scheme', 'dark')
-    findPrefers('contrast', 'more')
-    findPrefers('reduced-motion', 'reduce')
-    findPrefers('reduced-transparency', 'reduce')
-    findPrefers('reduced-data', 'reduce')
+    return rules
+  }
 
-  </script>
+  // https://www.w3.org/TR/mediaqueries-5/#mf-user-preferences
+  function findPrefers(key,values) {
+    const storedValue = localStorage.getItem(key)
+    return (Array.isArray(values)?values:[values])
+        .find(value => {
+          const finalValue = storedValue || window.matchMedia(`(prefers-${key}: ${value})`).matches && value
+          finalValue && document.documentElement.classList.add(`${key}-${finalValue}`)
+          return value===finalValue
+        })
+  }
+
+  insertRulesFromPrefersMediaRules()
+  findPrefers('color-scheme','light')
+  findPrefers('color-scheme','dark')
+  findPrefers('contrast','more')
+  findPrefers('reduced-motion','reduce')
+  findPrefers('reduced-transparency','reduce')
+  findPrefers('reduced-data','reduce')
+
+</script>
 </body>
 </html>
