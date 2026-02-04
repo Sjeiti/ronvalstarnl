@@ -2983,9 +2983,9 @@ execa@^0.8.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-"experiments@github:Sjeiti/experiment":
+"experiments@git+https://github.com/Sjeiti/experiment.git":
   version "1.1.64"
-  resolved "git+ssh://git@github.com/Sjeiti/experiment.git#25dd5924a25785a08f89d97e37e91b6496f24584"
+  resolved "git+https://github.com/Sjeiti/experiment.git#25dd5924a25785a08f89d97e37e91b6496f24584"
   dependencies:
     "@emmetio/expand-abbreviation" "^0.7.3"
     gsap "^3.6.0"
