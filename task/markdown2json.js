@@ -13,7 +13,11 @@ marked.use({ renderer: { html: s => s } })
 ;(async()=>{
   const files = await glob('src/data/markdown/+(post|fortpolio|page)_*.md')
   const contents = await Promise.all(files.map(read))
-  const objects = contents.map(markdown2object)
+
+  const objects = contents
+      // set the max width of content images: https://res.cloudinary.com/dn1rmdjs5/image/upload/w_736/v1770152149/sketch1769372996325_fgrxgu.png
+      .map(s=>s.replace(/(https:\/\/res\.cloudinary\.com\/dn1rmdjs5\/image)(\/upload)(\/\w+\/[^/)]*)/g,'$1/upload/w_736$3'))
+      .map(markdown2object)
       .sort((p1, p2)=>t(p1.date)>t(p2.date)?1:-1)
   saveObjectsToJSON(objects)
   saveObjectsToLists(objects)

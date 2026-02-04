@@ -6,7 +6,7 @@ import fullscreen from '../signal/fullscreen.js'
 import {scroll} from '../signal/scroll.js'
 import {signal} from '../signal/index.js'
 import {routeChange} from '../router.js'
-import {clean, markdownLinks, selectEach} from '../utils/html.js'
+import {clean,inlineHide,markdownLinks,selectEach} from '../utils/html.js'
 import {nextFrame} from '../utils/index.js'
 import {MEDIA_URI_HEADER} from '../config.js'
 
@@ -72,6 +72,7 @@ create('[data-header]', class extends BaseComponent{
     this._experimentSave.addEventListener('click', this._onMouseUpSave.bind(this),true)
     //
     clean(this._experimentWrapper)
+    this._experimentWrapper.setAttribute('style', 'height:12rem')
     this._stuck.add(is=>this._experiment?.pause(is))
   }
 
@@ -91,6 +92,7 @@ create('[data-header]', class extends BaseComponent{
       classList.toggle(schemeLight, !isLight)
       localStorage.setItem(key, isLight?dark:light)
     })
+    inlineHide('button[data-color-scheme]')
   }
 
   /**
@@ -103,7 +105,7 @@ create('[data-header]', class extends BaseComponent{
       subTitle,
     //'front-end developer',
       'experiments with CSS',
-      'defragment his drive',
+      'defragments his drive',
       'ferments everything',
       'has a favorite dino',
       'zen knife sharpener',
@@ -112,6 +114,7 @@ create('[data-header]', class extends BaseComponent{
       'has yeast for pets',
       'is a retired ninja',
       'writes js for fun',
+      'loves cormorants',
       'feeds the worms',
       'makes cool shit',
       'plays minecraft',
@@ -120,7 +123,6 @@ create('[data-header]', class extends BaseComponent{
       'pro bitshifter',
       'pushes pixels',
       'pepper grower',
-      'loves herons',
       'flax heckler'
     ]
     const {length} = subTitles
@@ -242,6 +244,9 @@ create('[data-header]', class extends BaseComponent{
     }
     // this._experimentUI.classList.toggle('experiment-ui-hide', !this._experiment)
     const hasExperiment = !!this._experiment
+
+    this._experimentWrapper.classList.toggle('experiment-wrapper--empty', !hasExperiment)
+
     this._experimentUI.classList.toggle('experiment-ui-hide', !hasExperiment)
     hasExperiment?this._experimentLink.removeAttribute('inert'):this._experimentLink.setAttribute('inert', '')
 

@@ -18,6 +18,6 @@ After a trip to [İlperveld](https://maps.app.goo.gl/Ge7rTHQx3UKgMJH27) and [Wes
 
 Luckily İ had an old camera, so all İ needed was a zoom lens. These first photos are nothing special, like I said: I'm a birding noob. İt is just a really funny pose of a grey heron, from the perspective of an unsuspecting fish.
 
-![A grey heron looking down](https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/IMG_7407-edit-20260115074101)
+![A grey heron looking down](https://res.cloudinary.com/dn1rmdjs5/image/upload/w_736/v1566568756/rv/IMG_7407-edit-20260115074101)
 
 
