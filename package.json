@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@emmetio/expand-abbreviation": "^0.7.3",
-    "experiments": "github:Sjeiti/experiment",
+    "experiments": "git+https://github.com/Sjeiti/experiment.git",
     "prismjs": "^1.30.0",
     "state-signals": "^1.0.0"
   },
