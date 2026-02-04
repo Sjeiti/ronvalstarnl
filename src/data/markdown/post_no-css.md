@@ -1,6 +1,6 @@
 <!--
-  date: 2026-02-03
-  modified: 2026-02-03
+  date: 2026-02-04
+  modified: 2026-02-04
   slug: no-css
   type: post
   categories: code, HTML
