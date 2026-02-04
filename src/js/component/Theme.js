@@ -28,8 +28,7 @@ create('[data-theme]', class extends BaseComponent{
     this.options = Object.assign({
       id: 'theme'+Date.now()
     }, this._parseOptions(this._element.getAttribute('data-theme')))
-    this.theme = localStorage.theme||'default'
-
+    this.theme = localStorage.theme||'screen'
     this.link = document.querySelector('head>link[rel=stylesheet]')
     this.styles = document.querySelectorAll('head>style')
   }
