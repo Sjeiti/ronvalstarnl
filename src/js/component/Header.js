@@ -114,6 +114,7 @@ create('[data-header]', class extends BaseComponent{
       'has yeast for pets',
       'is a retired ninja',
       'writes js for fun',
+      'loves cormorants',
       'feeds the worms',
       'makes cool shit',
       'plays minecraft',
@@ -122,7 +123,6 @@ create('[data-header]', class extends BaseComponent{
       'pro bitshifter',
       'pushes pixels',
       'pepper grower',
-      'loves herons',
       'flax heckler'
     ]
     const {length} = subTitles
