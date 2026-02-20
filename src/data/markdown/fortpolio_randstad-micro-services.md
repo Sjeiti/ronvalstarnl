@@ -5,8 +5,8 @@
 Ik had een leidende rol bij het verplaatsen en afstemmen van alle front-end projecten naar een Nx-gebaseerd monorepo. Dit werd gedaan om het delen van code gemakkelijker te maken (voorheen publiceerden we naar private NPM).
 Dit omvatte het toevoegen van Markdown-documentatiegeneratie aan de pipelines, evenals verschillende Storybooks voor het design system.
 Dit omvatte het opzetten van gegenereerde Markdown-documentatie, even als verschillende Storybooks voor het design system.
-  categories: JavaScript, HTML/CSS, UX, mobile
-  tags: scrum, design system, CSS, HTML, TypeScript, Nx, Angular, NgRx, RxJs, JSDoc, MKDocs, TypeDoc, Storybook, TDD, Jest, Cypress, accessibility, Docker, ESLint
+  categories: JavaScript, HTML/CSS, UX, mobile, web components
+  tags: scrum, design system, CSS, HTML, TypeScript, Nx, Angular, NgRx, RxJs, JSDoc, MKDocs, TypeDoc, Storybook, TDD, Jest, Cypress, accessibility, DevOps, Docker, ESLint
   clients: Randstad
   collaboration: 
   thumbnail: Randstad.png
