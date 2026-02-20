@@ -51,7 +51,7 @@ I can read and write several backend languages and I'm not afraid to learn somet
 
 <div 
     id="skillsWrapper"
-    data-skills="html|css|javascript|react:4.75|angular:4.45|vue|tdd|cypress:5|jsdoc|design-system|ux:3.75|accessibility|storybook|scrum"
+    data-skills="html:5|css|javascript|react:4.75|angular:4.45|vue|web-components|tdd|cypress:5|playwright|jsdoc|design-system|ux:3.75|accessibility|storybook|devops|scrum"
     data-associations='{
   "css": ["CSS3", "SASS", "LESS", "BEM"]  
 }' 
@@ -75,7 +75,8 @@ I can read and write several backend languages and I'm not afraid to learn somet
 
 ## work experience
 
- - <time>2007-<span data-now>2019</span></time> freelance front-end developer <small>([porfolio](https://ronvalstar.nl/projects))</small>
+ - <time>2023-<span data-now>2026</span></time> front-end engineer <small>(design-system)</small>
+ - <time>2007-2023</time> freelance front-end developer <small>([porfolio](https://ronvalstar.nl/projects))</small>
  - <time>2000-2007</time> co-founder of [Shapers](http://www.shapers.nl/)
  - <time>1998-2000</time> freelance webdesigner
 
