@@ -38,15 +38,22 @@ function getCallback(lang){
 function buildProjects(projects, target, lang){
   const isNL = lang==='nl'
   const text = {
-    projects: isNL&&'projecten'||'projects'
+    permanent: isNL&&'vast dienstverband'||'permanent positions'
+    , projects: isNL&&'freelance projecten'||'freelance projects'
     , client: isNL&&'klant'||'client'
   }
-  target.appendString(expand(`h2#projects{${text.projects}}`), false)
-  const cvProjects = projects
-      .filter(p => p.inCv)
-      .sort((a, b) => new Date(a.dateTo)>new Date(b.dateTo)?-1:1)
+  
+  const wrapP = s => (/^\s*<p>/).test(s)||!s?s:`<p>${s}</p>`
 
-  let projectString = expand(`ul.unstyled.cv-projects>(${cvProjects.map((project, i) => {
+  //>>>
+
+  target.appendString(expand(`h2#projects{${text.permanent}}`), false)
+  const cvPermanent = projects
+      .filter(p => p.portfolioType==='permanent')
+      .sort((a, b) => new Date(a.dateTo)>new Date(b.dateTo)?-1:1)
+  console.log('perm',cvPermanent)
+
+  target.appendString(expand(`ul.unstyled.cv-projects>(${cvPermanent.map((project, i) => {
     const title = isNL&&project.titleNl||project.title
     return `(
       li${project.categories.map(c => `.cat-${slugify(c)}`).join('')}
@@ -55,18 +62,42 @@ function buildProjects(projects, target, lang){
           +(.date>time.date-from{${project.dateFrom.replace(/-\d\d$/, '')}}
           +time.date-to{${project.dateTo.replace(/-\d\d$/, '')}})
         )
-        +{replaceContent${i}}
+        +{${isNL 
+            && wrapP(project.excerptNl) 
+            || wrapP(project.excerpt) 
+            || project.content
+        }}
+        +(ul.tags>(${project.tags.map(tag => `li{${tag}}`).join('+')}))
+     )`
+  }).join('+')})`), false)
+
+  //>>>
+
+
+  target.appendString(expand(`h2#projects{${text.projects}}`), false)
+  const cvProjects = projects
+      .filter(p => p.inCv)
+      .filter(p => p.portfolioType!=='permanent')
+      .sort((a, b) => new Date(a.dateTo)>new Date(b.dateTo)?-1:1)
+
+  target.appendString(expand(`ul.unstyled.cv-projects>(${cvProjects.map((project, i) => {
+    const title = isNL&&project.titleNl||project.title
+    return `(
+      li${project.categories.map(c => `.cat-${slugify(c)}`).join('')}
+        >(header
+          >(h3${(project.inPortfolio?`>a[href="/project/${project.slug}"]{${title}}`:`{${title}}`)})
+          +(.date>time.date-from{${project.dateFrom.replace(/-\d\d$/, '')}}
+          +time.date-to{${project.dateTo.replace(/-\d\d$/, '')}})
+        )
+        +{${isNL 
+            && wrapP(project.excerptNl) 
+            || wrapP(project.excerpt) 
+            || project.content
+        }}
         ${(project.clients?.length?`+(dl>(dt{${text.client}}+dd{${project.clients.join(', ')}}))`:'')}
         +(ul.tags>(${project.tags.map(tag => `li{${tag}}`).join('+')}))
      )`
-  }).join('+')})`)
-  cvProjects.forEach((project, i) => {
-    const wrapP = s => (/^\s*<p>/).test(s)||!s?s:`<p>${s}</p>`
-    const content = isNL && wrapP(project.excerptNl) || wrapP(project.excerpt) || project.content
-
-    projectString = projectString.replace('replaceContent' + i, content)
-  })
-  target.appendString(projectString, false)
+  }).join('+')})`), false)
 }
 
 const documentTitle = 'Curiculum-Vitae_Ron-Valstar_front-end-developer'

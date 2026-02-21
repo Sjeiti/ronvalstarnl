@@ -105,7 +105,9 @@ body[data-pathname^=cv] {
   >li {
     position: relative;
     padding: 3rem 1rem;
-    box-shadow: 0 -1px 0 var(--color-border);
+    &:not(:last-child) {
+      box-shadow: 0 1px 0 var(--color-border);
+    }
   }
   header {
     position: relative;
@@ -144,6 +146,11 @@ body[data-pathname^=cv] {
     li {
       display: inline-block;
     }
+  }
+  dt:after { content: ': '; }
+  dt, dd {
+    display: inline;
+    margin: 0;
   }
 }
 

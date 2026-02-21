@@ -134,7 +134,7 @@ create('[data-header]', class extends BaseComponent{
       let oldline = what.textContent
       const currentİndex = subTitles.indexOf(oldline)
 
-      const newİndex = o.slug==='home'
+      const newİndex = ['home','cv','cv-nl'].includes(o.slug)
         ?0
         :(currentİndex + 1 + Math.floor((length-1)*Math.random()))%length
       const [subTitle, href] = subTitles[newİndex]
