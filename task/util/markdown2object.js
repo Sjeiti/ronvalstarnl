@@ -1,5 +1,6 @@
 import {marked} from 'marked'
-import {parse} from 'yaml'
+import matter from 'gray-matter'
+// import {parse} from 'yaml'
 
 const arrayKeys = ['tags', 'categories', 'collaboration', 'clients', 'prizes', 'images']
 const booleanKeys = ['inCv', 'inPortfolio', 'sticky']
@@ -11,12 +12,39 @@ const markdownKeys = ['excerpt', 'excerptNl']
  * @returns {object}
  */
 export function markdown2object(contents){
+
+  const { data, content} = matter(contents)
+  const hasFrontmattersData = Object.entries(data).length>0
+
+  const lines = content.trim().split(/\r\n|\r|\n/g)
+
+  const meta = hasFrontmattersData
+      ? data
+      : getCommentData(contents)
+
+  // format meta
+  if (meta.cv?.body) meta.cv.body = marked(meta.cv.body)
+  if (meta.cvNl?.body) meta.cvNl.body = marked(meta.cvNl.body)
+
+  const contentLines = lines//.slice(endComments+1)
+  const titleIndex = firstMatchIndex(contentLines, /^\s*#\s(.*)$/)
+  const title = (titleIndex!==-1&&contentLines[titleIndex].match(/#(.*)/).pop()||'').trim()
+  const parsedContent = marked(contentLines.slice(titleIndex+1).join('\n').trim(), {breaks: true/*, gfm: true*/})
+
+  return Object.assign(meta, {title, content: parsedContent})
+}
+
+/**
+ * Read markdown contents HTML comment data
+ * @param {string} contents
+ * @returns {object}
+ */
+function getCommentData(contents){
+
   const lines = contents.trim().split(/\r\n|\r|\n/g)
+
   const hasComments = /^\s*<!--\s*$/.test(lines[0])
   const endComments = hasComments?firstMatchIndex(lines, /^\s*-->\s*$/):-1
-
-console.log('yaml',(lines.slice(1, endComments).join('\r')))
-console.log('yaml',parse(lines.slice(1, endComments).join('\r')))
 
   const metaLines = hasComments&&lines.slice(1, endComments)
       .reduce((acc, line)=>{
@@ -35,12 +63,8 @@ console.log('yaml',parse(lines.slice(1, endComments).join('\r')))
     else acc[key] = value
     return acc
   }, {})
-  const contentLines = lines.slice(endComments+1)
-  const titleIndex = firstMatchIndex(contentLines, /^\s*#\s(.*)$/)
-  const title = (titleIndex!==-1&&contentLines[titleIndex].match(/#(.*)/).pop()||'').trim()
-  const content = marked(contentLines.slice(titleIndex+1).join('\n').trim(), {breaks: true/*, gfm: true*/})
 
-  return Object.assign(meta, {title, content})
+  return meta
 }
 
 /**

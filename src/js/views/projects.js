@@ -4,7 +4,7 @@ import {addRule, removeRule} from '../utils/style.js'
 import {fetchJSONFiles,nextFrame,nextTick,scrollToTop} from '../utils/index.js'
 import {componentOf} from '../component/index.js'
 import {MEDIA_URI_PROJECT, MEDIA_URI_THUMB, MEDIA_URI_VIDEO/*, PROBABLY_MOBILE*/} from '../config.js'
-import {makeClassNames, slugify} from '../utils/string.js'
+import {dateStringToYearMonth,makeClassNames,slugify} from '../utils/string.js'
 import {open} from '../router.js'
 
 const classNames = makeClassNames({
@@ -116,8 +116,8 @@ function buildCurrentProject(view, project, existingProjects){
   existingProjects.insertAdjacentHTML('beforebegin', expand(`
     div${classNames.project}>
       (
-        .text>(.date>time.date-from{${dateFrom.replace(/-\d\d$/, '')}}
-          +time.date-to{${dateTo.replace(/-\d\d$/, '')}})
+        .text>(.date>time.date-from{${dateStringToYearMonth(dateFrom)}}
+          +time.date-to{${dateStringToYearMonth(dateTo)}})
           +h2{${title}}
           +{${content}}
       )
@@ -146,7 +146,7 @@ function onClickCategory(e){
  * @return {string}
  */
 export function getProjectThumbZen(project){
-  const ext = project.thumbnail.split(/\./).pop()
+  const ext = project.thumbnail?.split(/\./).pop()
   const liAttr = `[style="background-image:url(${MEDIA_URI_THUMB+project.thumbnail})"]`
   const hasVideo = !!project.thumbnailVideo // && !PROBABLY_MOBILE // don't show video thumbs on mobile ???
   const videoSrc = `[src=${MEDIA_URI_VIDEO+project.thumbnailVideo}]`

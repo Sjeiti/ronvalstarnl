@@ -71,6 +71,7 @@
     "express": "^4.19.2",
     "file-loader": "^6.2.0",
     "glob": "^7.1.6",
+    "gray-matter": "^4.0.3",
     "html-loader": "^5.0.0",
     "html-minifier": "^4.0.0",
     "husky": "^8.0.3",
@@ -92,7 +93,6 @@
     "webpack-cli": "^4.5.0",
     "webpack-watch-files-plugin": "^1.2.1",
     "xmldom": "^0.6.0",
-    "yaml": "^2.8.2",
     "yorkie": "^2.0.0"
   },
   "optionalDependencies": {

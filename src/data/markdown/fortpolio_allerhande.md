@@ -1,26 +1,31 @@
-<!--
-  slug: allerhande
-  type: fortpolio
-  cvTitle: ActionScript developer (Allerhande)
-  cv: - Developed interactive magazine in Flash AS3.
-- Made regular updates in a TDD fashion.
-  cvTitleNl:
-  cvNl:
-  excerpt: I was front-end ActionScript developer in the Fabrique/Lukkien/freelancers SCRUM team that developed the Allerhande website.
-  excerptNl: Ik was front-end ActionScript developer in het Fabrique/Lukkien/freelancers SCRUM team dat de website van Allerhande ontwikkelde.
-  categories: JavaScript, HTML/CSS, framework
-  tags: HTML, scrum, JavaScript, ActionScript, Flash, scrum, PureMVC
-  clients: Lukkien, Albert Heijn
-  collaboration: Fabrique
-  prizes: 
-  thumbnail: allerhande01.jpg
-  image: allerhande01.jpg
-  images: allerhande21.jpg, allerhande31.jpg, allerhande41.jpg, allerhande51.jpg, allerhande61.jpg, allerhande71.jpg, allerhande01.jpg, allerhande11.jpg
-  inCv: true
-  inPortfolio: true
-  dateFrom: 2010-01-01
-  dateTo: 2010-05-01
--->
+---
+slug: allerhande
+type: fortpolio
+cv:
+  position: ActionScript developer
+  project: Allerhande
+  body: |
+    - Developed interactive magazine in Flash AS3.
+    - Made regular updates in a TDD fashion.
+cvNl:
+  body: |
+    - Interactief maandblad ontwikkeld in Flash AS3.
+    - Regelmatige updates middels TDD.
+excerpt: I was front-end ActionScript developer in the Fabrique/Lukkien/freelancers SCRUM team that developed the Allerhande website.
+excerptNl: Ik was front-end ActionScript developer in het Fabrique/Lukkien/freelancers SCRUM team dat de website van Allerhande ontwikkelde.
+categories: [JavaScript, HTML/CSS, framework]
+tags: [HTML, scrum, JavaScript, ActionScript, Flash, scrum, PureMVC]
+clients: [Lukkien, Albert Heijn]
+collaboration: Fabrique
+prizes: public award Customer Medium of the year 2010
+thumbnail: allerhande01.jpg
+image: allerhande01.jpg
+images: [allerhande21.jpg, allerhande31.jpg, allerhande41.jpg, allerhande51.jpg, allerhande61.jpg, allerhande71.jpg, allerhande01.jpg, allerhande11.jpg]
+inCv: true
+inPortfolio: true
+dateFrom: 2010-01-01
+dateTo: 2010-05-01
+---
 
 # Allerhande
 
