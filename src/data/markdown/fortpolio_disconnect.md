@@ -14,7 +14,7 @@ De site is een driedimensionale omgeving met aangepaste GLSL-shaders voor video 
   thumbnailVideo: disconnect.mp4
   image: 04_video.jpg
   images: 01_welcome.png, 02_wake-up.jpg, 03_boot-sequence.jpg, 04_video.jpg, 05_medisch-rapport.jpg, 06_glitches.jpg
-  inCv: true
+  inCv: false
   inPortfolio: true
   dateFrom: 2018-09-28
   dateTo: 2019-06-01

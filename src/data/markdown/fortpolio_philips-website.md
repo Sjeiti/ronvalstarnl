@@ -1,6 +1,13 @@
 <!--
   slug: philips-website
   type: fortpolio
+  cvTitle: Front-end dev <small>(design system)</small>
+  cv: - Transformed demo into production-ready reusable components.
+- Established coding guidelines for future components.
+- Implemented complex- and example components.
+- Set up JSDoc-based documentation generation.
+  cvTitleNl:
+  cvNl:
   excerpt: Transformed demo into workable code. Helped setting up coding guidelines for future views and components. Implemented the more complex components and simpler example components. Setup a build that generated the documentation through JSDoc.
   excerptNl: Demo omgezet in werkbare code.
 Hielp bij het opzetten van code richtlijnen voor toekomstige views en componenten.

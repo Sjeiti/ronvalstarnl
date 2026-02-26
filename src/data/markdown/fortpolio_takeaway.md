@@ -10,7 +10,7 @@ De gebruikte tech-stack was een React/Nextjs-frontend op een Laravel REST API.
   collaboration: 
   prizes: 
   images: 
-  inCv: true
+  inCv: false
   inPortfolio: false
   dateFrom: 2020-07-03
   dateTo: 2020-07-24

@@ -6,7 +6,7 @@ Dit werk werd als vrijwilligerswerk gedaan.
   description: &hellip;
   categories: JavaScript, HTML/CSS
   tags: PHP, Kirby, JavaScript, HTML, CSS, Vue
-  inCv: true
+  inCv: false
   inPortfolio: false
   dateFrom: 2021-11-01
   dateTo: 2022-11-01

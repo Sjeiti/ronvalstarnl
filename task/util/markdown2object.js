@@ -1,4 +1,5 @@
 import {marked} from 'marked'
+import {parse} from 'yaml'
 
 const arrayKeys = ['tags', 'categories', 'collaboration', 'clients', 'prizes', 'images']
 const booleanKeys = ['inCv', 'inPortfolio', 'sticky']
@@ -13,6 +14,10 @@ export function markdown2object(contents){
   const lines = contents.trim().split(/\r\n|\r|\n/g)
   const hasComments = /^\s*<!--\s*$/.test(lines[0])
   const endComments = hasComments?firstMatchIndex(lines, /^\s*-->\s*$/):-1
+
+console.log('yaml',(lines.slice(1, endComments).join('\r')))
+console.log('yaml',parse(lines.slice(1, endComments).join('\r')))
+
   const metaLines = hasComments&&lines.slice(1, endComments)
       .reduce((acc, line)=>{
         const isKeyVal = /\s\s\w+:\s*/.test(line)

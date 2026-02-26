@@ -1,6 +1,14 @@
 <!--
   slug: randstad-micro-services
   type: fortpolio
+  cvTitle: Front-end developer <small>(microservices)</small>
+  cv: - Rebuilt monolithic systems into orchestrated microservices.
+- Developed white-label Angular components for multiple operating companies.
+- Implemented code generation via Swagger/OpenAPI to enable front-end development ahead of backend completion.
+- Led migration of front-end projects to an Nx-based monorepo for improved code sharing.
+- Integrated Markdown documentation and multiple Storybooks for the design system.
+  cvTitleNl:
+  cvNl:
   excerptNl: Front-end ontwikkelaar in een team om bestaande monolithische functionaliteiten om te bouwen naar georkestreerde microservices. Mijn werk bestond voornamelijk uit het ontwikkelen van white-label Angular-componenten voor verschillende Randstad-bedrijven. Ik heb de code-generatie opgezet via Swagger (later OpenAPI), zodat front-ends gemakkelijk konden worden geschreven voordat de backend gereed was.
 Ik had een leidende rol bij het verplaatsen en afstemmen van alle front-end projecten naar een Nx-gebaseerd monorepo. Dit werd gedaan om het delen van code gemakkelijker te maken (voorheen publiceerden we naar private NPM).
 Dit omvatte het toevoegen van Markdown-documentatiegeneratie aan de pipelines, evenals verschillende Storybooks voor het design system.

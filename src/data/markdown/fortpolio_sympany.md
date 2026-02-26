@@ -6,7 +6,7 @@
   categories: JavaScript, HTML/CSS
   tags: JavaScript, HTML, CSS, Wordpress, open source
   clients: Sympany
-  inCv: true
+  inCv: false
   inPortfolio: false
   dateFrom: 2021-11-01
   dateTo: 2022-04-01

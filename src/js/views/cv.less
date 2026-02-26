@@ -97,7 +97,15 @@ body[data-pathname^=cv] {
       font-size: 0.75rem;
     }
   }
+}
 
+
+#education, #work-experience {
+  +ul {
+    padding-left: 1rem;
+    ::marker { color: var(--color-main); }
+    li { list-style-type: disc; }
+  }
 }
 
 .cv-projects {
@@ -108,6 +116,14 @@ body[data-pathname^=cv] {
     &:not(:last-child) {
       box-shadow: 0 1px 0 var(--color-border);
     }
+
+    ul {
+      padding-left: 1rem;
+      ::marker { color: var(--color-main); }
+      li {
+        list-style-type: disc;
+      }
+    }
   }
   header {
     position: relative;
@@ -116,19 +132,25 @@ body[data-pathname^=cv] {
       display: block;
       width: 100%;
       height: 0.0625rem;
+      margin-bottom: 2rem;
       background-color: var(--color-border);
       box-shadow:
           -30rem 0 0 0 var(--color-border), 30rem 0 0 0 var(--color-border)
           ,-70rem 0 0 0 var(--color-border), 70rem 0 0 0 var(--color-border)
       ;
     }
+    h4 {
+      position: absolute;
+      left: 0;
+      bottom: -1.125rem;
+    }
   }
-  h3 {
+  h3, h4, h5 {
     margin: 0;
     font-weight: 400;
-    &:after { content: initial; }
+    &:after { content: initial; } 
+    &, &>a { color: var(--color-main); }
   }
-  h3, h3>a { color: var(--color-main); }
   .date {
     position: absolute;
     right: 0;

@@ -1,6 +1,13 @@
 <!--
   slug: studyblendII
   type: fortpolio
+  cvTitle: Full-stack developer </small>(Studyblend)</small>
+  cv:- Rebuilt an online learning tool from AngularJS/Laravel to React/MongoDB.
+- Automated configuration processes and introduced new features.
+- Improved usability through optimized user flows.
+- Implemented unified test coverage across front-end and back-end.
+  cvTitleNl:
+  cvNl: 
   excerpt: Rebuild of an online learning tool that allows teachers and students to track their progress during a course. The stack was moved from AngularJS/Laravel to React/MongoDB. A lot of the old manual configuration is now automated and new features are added. I also changed various flows to improve usability. The build implements a merged test coverage from back- to front-end, from unit- to end-to-end tests.
   excerptNl: Nieuwe implementatie van een bestaande online leertool waarmee docentenen studenten hun voortgang tijdens een cursus kunnen volgen.
 De stack is ge-refactored van AngularJS/Laravel naar React/MongoDB. Veel van de oude handmatige configuratie is nu geautomatiseerd, en er zijn nieuwe functies toegevoegd. Ik ook een aantal flows gewijzigd ter verbetering van de gebruiksvriendelijkheid. De build implementeert een samengevoegde test-coverage van back- tot front-end, van unit- tot end-to-end-tests.

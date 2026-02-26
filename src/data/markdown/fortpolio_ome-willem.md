@@ -1,6 +1,10 @@
 <!--
   slug: ome-willem
   type: fortpolio
+  cvTitle: Interaction & graphic designer.
+  cv: - Handled interaction design, graphic design, and development.
+  cvTitleNl:
+  cvNl:
   excerpt: Interaction design, graphic design and development for the Ome Willem website.
   excerptNl: Interaction design, grafisch ontwerp en ontwikkeling voor de Ome Willem website.
   categories: JavaScript, HTML/CSS

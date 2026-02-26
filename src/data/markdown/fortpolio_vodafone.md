@@ -1,6 +1,12 @@
 <!--
   slug: vodafone
   type: fortpolio
+  cvTitle: Front-end developer
+  cv: - Rebuilt shop flow as a single-page application using Angular.
+- Enhanced build processes and refactored legacy code.
+- Improved overall code quality.
+  cvTitleNl:
+  cvNl:
   excerpt: Rebuilt shop flow into a single page application using Angular. Added several improvements to the build process. Updated/refactored a lot of legacy code. Improved code quality.
   excerptNl: Nieuwe implementatie van de checkout flow in een SPA met behulp van Angular material.
 Verschillende verbeteringen toegevoegd aan het build proces.

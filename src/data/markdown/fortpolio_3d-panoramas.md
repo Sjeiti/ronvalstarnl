@@ -11,7 +11,7 @@
   thumbnail: pano3.jpg
   image: pano3.jpg
   images: pano0.jpg, pano1.jpg, pano2.jpg, pano3.jpg, pano4.jpg
-  inCv: true
+  inCv: false
   inPortfolio: true
   dateFrom: 2009-03-01
   dateTo: 2009-06-01

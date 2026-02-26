@@ -11,7 +11,7 @@
   thumbnail: soundcircus5.jpg
   image: soundcircus5.jpg
   images: soundcircus1.jpg, soundcircus2.jpg, soundcircus3.jpg, soundcircus4.jpg, soundcircus5.jpg
-  inCv: true
+  inCv: false
   inPortfolio: true
   dateFrom: 2011-03-01
   dateTo: 2011-05-01

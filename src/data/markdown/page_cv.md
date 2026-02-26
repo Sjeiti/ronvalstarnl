@@ -36,12 +36,7 @@
 
 ## profile
 
-I'm a passionate front-end developer with more than twenty years of experience in developing digital media.
-
-My formal background is graphic- and interaction design and I strive toward consistency and cleanliness in both code and design.
-I have a strong affinity for Test-Driven Development and accessibility (WCAG).
-
-I can read and write several backend languages and I'm not afraid to learn something new.
+Passionate front-end developer with over twenty years of experience in digital media development. Background in graphic and interaction design, with a focus on consistency and cleanliness in code and design. Strong advocate for Test-Driven Development and accessibility (WCAG). Proficient in multiple backend languages. Always learning.
 
 </div>
 </div>

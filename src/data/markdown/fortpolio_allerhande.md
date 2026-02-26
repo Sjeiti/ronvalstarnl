@@ -1,11 +1,16 @@
 <!--
   slug: allerhande
   type: fortpolio
+  cvTitle: ActionScript developer (Allerhande)
+  cv: - Developed interactive magazine in Flash AS3.
+- Made regular updates in a TDD fashion.
+  cvTitleNl:
+  cvNl:
   excerpt: I was front-end ActionScript developer in the Fabrique/Lukkien/freelancers SCRUM team that developed the Allerhande website.
   excerptNl: Ik was front-end ActionScript developer in het Fabrique/Lukkien/freelancers SCRUM team dat de website van Allerhande ontwikkelde.
   categories: JavaScript, HTML/CSS, framework
   tags: HTML, scrum, JavaScript, ActionScript, Flash, scrum, PureMVC
-  clients: Lukkien
+  clients: Lukkien, Albert Heijn
   collaboration: Fabrique
   prizes: 
   thumbnail: allerhande01.jpg

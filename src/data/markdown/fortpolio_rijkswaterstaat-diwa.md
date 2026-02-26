@@ -3,6 +3,11 @@
   type: fortpolio
   categories: HTML/CSS
   tags: CSS, HTML, accessibility
+  cvTitle: Interactive infographic developer
+  cv:- Researched animation types.
+- Built an accessible interactive infographic using only HTML and CSS.
+  cvTitleNl:
+  cvNl:
   clients: Rijkswaterstaat
   collaboration: [Jurjen Kraan](https://www.alicewell.nl/)
   thumbnail:

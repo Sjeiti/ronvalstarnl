@@ -1,6 +1,12 @@
 <!--
   slug: du2021
   type: fortpolio
+  cvTitle: Front-end dev <small>(Dutch Design Week)</small>
+  cv: - Developed a React SPA connected to a WordPress REST API to broadcast Dutch Design Week.
+- Showcased ~40 student projects from four Dutch universities.
+- Created custom Gutenberg blocks to expose specific data via REST API.
+  cvTitleNl:
+  cvNl:
   excerpt: Development of the 2021 design-united website that broadcasts the Dutch Design Week live. The site is a React SPA onto a WordPress REST API and showcases about 40 projects from students of four Dutch universities. I created custom Gutenberg blocks to expose specific data through the WordPress REST API.
   excerptNl: Ontwikkeling van de 2021 design-united website die de Dutch Design Week live uitzendt.
 De site is een React SPA op een WordPress REST API en toont ongeveer 40 projecten van studenten van vier Nederlandse universiteiten.

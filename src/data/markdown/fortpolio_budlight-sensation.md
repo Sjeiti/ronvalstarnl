@@ -11,7 +11,7 @@ Het evenement was opgedeeld in een aantal fasen die op specifieke tijden moesten
   thumbnail: budlight_1.jpg
   image: budlight_1.jpg
   images: budlight_1.jpg, budlight_2.jpg, budlight_3.jpg, budlight_4.jpg, budlight_5.jpg, budlight_6.jpg
-  inCv: true
+  inCv: false
   inPortfolio: true
   dateFrom: 2013-03-01
   dateTo: 2013-05-01

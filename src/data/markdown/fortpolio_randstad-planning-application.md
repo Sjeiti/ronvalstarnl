@@ -1,6 +1,13 @@
 <!--
   slug: randstad-planning-application
   type: fortpolio
+  cvTitle: Lead front-end dev <small>(planning application)</small>
+  cv: - Led responsive implementation of a planning application.
+- Optimized performance for data-heavy lists and tables.
+- Introduced stricter code linting and component testing with Cypress.
+- Prototyped future application implementations.
+  cvTitleNl:
+  cvNl:
   excerptNl: Lead front-end developer verantwoordelijk voor responsieve implementatie van een bestaande plannings applicatie.
 Verbeterde snelheidsprestaties in bestaande lijsten en tabellen met grote hoeveelheden data.
 Strengere codelinting geïmplementeerd en component testen toegevoegd met Cypress.

@@ -2,10 +2,25 @@
   slug: asn
   type: fortpolio
   portfolioType: permanent
-  excerptNl: Ontwikkeling en onderhoud van het design system, inclusief configuraties voor build- en testtooling. Ondersteunde implementatieteams bij hun feature requests. Ontwikkelde gedeelde pipelines voor de GitLab-migratie. Organiseerde front-end guild meetups. Implementeerde design-token automatisering na de Figma-migratie. Deed onderzoek naar en adviseerde over webanimatie.
+  cvTitle: Front-end engineer<br>design system
+  cv: - Developed and maintained the design system, including build and test tooling configurations.
+- Maintained documentation platforms
+- Supported implementation teams with their feature requests.
+- Developed shared pipelines for GitLab migration.
+- Organized front-end guild meetups.
+- Automated design-token implementation post-Figma migration.
+- Researched and advised on web animation.
+  cvTitleNl: Front-end engineer <small>(design system)</small>
+  cvNl: - Het designsysteem ontwikkeld en onderhouden.
+- Onderhoud van documentatie platforms.
+- Implementatieteams ondersteund bij de ontwikkeling van features.
+- Gedeelde pipelines ontwikkeld voor GitLab-migraties.
+- Front-end guild meetups georganiseerd.
+- De implementatie van design-tokens geautomatiseerd na...
+- Onderzoek gedaan naar en geadviseerd over webanimatie.
   categories: JavaScript, HTML/CSS, UX, mobile, web components, design system
   tags: kanban, web components, design system, CSS, HTML, JavaScript, TypeScript, Nx, Angular, RxJs, JSDoc, Storybook, React, TDD, Jest, Vitest, Playwright, accessibility, DevOps, Docker, ESLint
-  clients: ASN
+  clients: ASN Bank
   inCv: true
   inPortfolio: false
   dateFrom: 2023-12-01
@@ -14,5 +29,4 @@
 
 # ASN Bank
 
-Development and maintenance of the design system, including configurations for build and test tooling. Helped implementing teams with their feature requests. Developed shared pipelines for the Gitlab migration. Organised front-end guild meetups. Implemented design-token automation after Figma migration. Researched and advised on web animation.
 

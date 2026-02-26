@@ -12,7 +12,7 @@ Voor de ontwikkeling van het spel was ook een level-editor vereist.
   thumbnail: yoleo_3.jpg
   image: yoleo_3.jpg
   images: yoleo_0004_Yoleo-1.jpg, yoleo_0003_Yoleo-2.jpg, yoleo_0002_Yoleo-3.jpg, yoleo_0001_Yoleo-4.jpg, yoleo_0000_Yoleo-5.jpg
-  inCv: true
+  inCv: false
   inPortfolio: true
   dateFrom: 2013-01-01
   dateTo: 2013-02-01

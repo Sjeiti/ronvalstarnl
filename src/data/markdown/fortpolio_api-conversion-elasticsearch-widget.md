@@ -1,6 +1,11 @@
 <!--
   slug: api-conversion-elasticsearch-widget
   type: fortpolio
+  cvTitle: Front-end developer <small>(Elasticsearch Widget)</small>
+  cv: - Implemented and styled an education widget.
+- Updated code to accommodate API changes affecting Elasticsearch backend.
+  cvTitleNl:
+  cvNl:
   excerpt: Implemented and styled the, previously developed, Education Widget for the Ministry of Education of the Netherlands Antilles. Source API changes required updates to the code that populated the Elasticsearch backend. 
   excerptNl: Implementatie en vormgeving van de eerder ontwikkelde Education Widget voor het Ministerie van Onderwijs van de Nederlandse Antillen. Wijzigingen aan de oorspronkelijke REST-API worden doorgevoerd in de code die de Elasticsearch backend vult. 
   titleNl: API aanpassingen voor Elasticsearch widget

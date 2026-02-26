@@ -1,6 +1,12 @@
 <!--
   slug: project-invoice
   type: fortpolio
+  cvTitle: Front-end dev (invoicing application)
+  cv: - Designed and developed a local-first invoicing application.
+- Implemented peer-to-peer data transfer.
+- Enabled full customization of invoice styling and copy.
+  cvTitleNl:
+  cvNl:
   excerpt: Design and development of a [local-first](https://www.inkandswitch.com/local-first/) invoicing application. All data is stored on your local machine and transferable by peer-to-peer connection. Styling and copy of invoices and quotations are completely customizable.
   excerptNl: Ontwerp en ontwikkeling van een [local-first](https://www.inkandswitch.com/local-first/) facturatie applicatie.
 Alle gegevens worden opgeslagen op de lokale computer en kunnen worden over gezet naar andere apparaten via een peer-to-peer-verbinding.
@@ -12,6 +18,7 @@ Styling en tekst van facturen en offertes zijn volledig aanpasbaar.
   image: project-invoice_7.png
   images: project-invoice_1.png, project-invoice_2.png, project-invoice_3.png, project-invoice_4.png, project-invoice_5.png, project-invoice_6.png, project-invoice_7.png, project-invoice_9.png
   inCv: true
+  clients: Ron Valstar
   inPortfolio: true
   dateFrom: 2015-11-12
   dateTo: 2021-01-23

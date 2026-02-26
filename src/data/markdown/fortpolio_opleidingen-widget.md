@@ -11,7 +11,7 @@
   thumbnail: sk123ow.png
   image: sk123ow.png
   images: sk123ow.png, Opleidingen-Widget.png
-  inCv: true 
+  inCv: false
   inPortfolio: true
   dateFrom: 2014-08-05
   dateTo: 2015-01-15
