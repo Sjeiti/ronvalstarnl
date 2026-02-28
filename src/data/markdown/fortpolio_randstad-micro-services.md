@@ -10,14 +10,21 @@ cv:
     - Implemented code generation via Swagger/OpenAPI to enable front-end development ahead of backend completion.
     - Led migration of front-end projects to an Nx-based monorepo for improved code sharing.
     - Integrated Markdown documentation and multiple Storybooks for the design system.
-excerptNl: |
-  Front-end ontwikkelaar in een team om bestaande monolithische functionaliteiten om te bouwen naar georkestreerde microservices. Mijn werk bestond voornamelijk uit het ontwikkelen van white-label Angular-componenten voor verschillende Randstad-bedrijven. Ik heb de code-generatie opgezet via Swagger (later OpenAPI), zodat front-ends gemakkelijk konden worden geschreven voordat de backend gereed was.
-  Ik had een leidende rol bij het verplaatsen en afstemmen van alle front-end projecten naar een Nx-gebaseerd monorepo. Dit werd gedaan om het delen van code gemakkelijker te maken (voorheen publiceerden we naar private NPM).
-  Dit omvatte het toevoegen van Markdown-documentatiegeneratie aan de pipelines, evenals verschillende Storybooks voor het design system.
-  Dit omvatte het opzetten van gegenereerde Markdown-documentatie, even als verschillende Storybooks voor het design system.
+cvNl:
+    body: |
+        - Monolithische systemen omgebouwd naar georkestreerde microservices.
+        - White-label Angular-componenten ontwikkeld voor meerdere werkmaatschappijen.
+        - Codegeneratie via Swagger/OpenAPI geïmplementeerd om front-end ontwikkeling mogelijk te maken vóór de voltooiing van de backend.
+        - Migratie van front-end projecten geleid naar een op Nx gebaseerde monorepo voor verbeterde code-sharing.
+        - Markdown-documentatie en meerdere Storybooks geïntegreerd voor het design system.
+#excerptNl: |
+#  Front-end ontwikkelaar in een team om bestaande monolithische functionaliteiten om te bouwen naar georkestreerde microservices. Mijn werk bestond voornamelijk uit het ontwikkelen van white-label Angular-componenten voor verschillende Randstad-bedrijven. Ik heb de code-generatie opgezet via Swagger (later OpenAPI), zodat front-ends gemakkelijk konden worden geschreven voordat de backend gereed was.
+#  Ik had een leidende rol bij het verplaatsen en afstemmen van alle front-end projecten naar een Nx-gebaseerd monorepo. Dit werd gedaan om het delen van code gemakkelijker te maken (voorheen publiceerden we naar private NPM).
+#  Dit omvatte het toevoegen van Markdown-documentatiegeneratie aan de pipelines, evenals verschillende Storybooks voor het design system.
+#  Dit omvatte het opzetten van gegenereerde Markdown-documentatie, even als verschillende Storybooks voor het design system.
 categories: [JavaScript, HTML/CSS, UX, mobile]
 tags: [scrum, design system, CSS, HTML, TypeScript, Nx, Angular, NgRx, RxJs, JSDoc, MKDocs, TypeDoc, Storybook, TDD, Jest, Cypress, accessibility, DevOps, Docker, ESLint, web components]
-clients: Randstad
+clients: [Randstad]
 thumbnail: Randstad.png
 inCv: true 
 inPortfolio: false

@@ -16,11 +16,11 @@ cvNl:
     - Complexe componenten en voorbeeldcomponenten geïmplementeerd.
     - Documentatiegeneratie op basis van JSDoc opgezet.
 excerpt: Transformed demo into workable code. Helped setting up coding guidelines for future views and components. Implemented the more complex components and simpler example components. Setup a build that generated the documentation through JSDoc.
-excerptNl: |
-  Demo omgezet in werkbare code.
-  Hielp bij het opzetten van code richtlijnen voor toekomstige views en componenten.
-  De complexere componenten en eenvoudigere voorbeeld componenten geïmplementeerd.
-  Ik heb een build opgezet die de documentatie genereerde via JSDoc.
+#excerptNl: |
+#  Demo omgezet in werkbare code.
+#  Hielp bij het opzetten van code richtlijnen voor toekomstige views en componenten.
+#  De complexere componenten en eenvoudigere voorbeeld componenten geïmplementeerd.
+#  Ik heb een build opgezet die de documentatie genereerde via JSDoc.
 categories: [JavaScript, video, mobile]
 tags: [scrum, design system, HTML, JavaScript, Less, JSDoc]
 clients: [De Voorhoede]

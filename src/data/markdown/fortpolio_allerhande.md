@@ -12,12 +12,12 @@ cvNl:
     - Interactief maandblad ontwikkeld in Flash AS3.
     - Regelmatige updates middels TDD.
 excerpt: I was front-end ActionScript developer in the Fabrique/Lukkien/freelancers SCRUM team that developed the Allerhande website.
-excerptNl: Ik was front-end ActionScript developer in het Fabrique/Lukkien/freelancers SCRUM team dat de website van Allerhande ontwikkelde.
+#excerptNl: Ik was front-end ActionScript developer in het Fabrique/Lukkien/freelancers SCRUM team dat de website van Allerhande ontwikkelde.
 categories: [JavaScript, HTML/CSS, framework]
 tags: [HTML, scrum, JavaScript, ActionScript, Flash, scrum, PureMVC]
 clients: [Lukkien, Albert Heijn]
-collaboration: Fabrique
-prizes: public award Customer Medium of the year 2010
+collaboration: [Fabrique]
+prizes: [public award Customer Medium of the year 2010]
 thumbnail: allerhande01.jpg
 image: allerhande01.jpg
 images: [allerhande21.jpg, allerhande31.jpg, allerhande41.jpg, allerhande51.jpg, allerhande61.jpg, allerhande71.jpg, allerhande01.jpg, allerhande11.jpg]

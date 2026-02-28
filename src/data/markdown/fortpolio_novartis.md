@@ -12,12 +12,11 @@ cvNl:
     - Een virtuele 3D-panoramatour gebouwd met HTML5/CSS3.
     - Samengewerkt met het New Yorkse bureau 2x4 om navigeerbare ruimtes en verhaallijnen te creëren.
 excerpt: A virtual 3d panorama tour in HTML5/CSS3, consisting of multiple panoramas through which you navigate by space or by stories.
-excerptNl: Een virtuele 3D-panoramatour in HTML5/CSS3, bestaande uit meerdere panorama's waar je doorheen navigeert via de ruimte zelf of door een verhaal te volgen.
+#excerptNl: Een virtuele 3D-panoramatour in HTML5/CSS3, bestaande uit meerdere panorama's waar je doorheen navigeert via de ruimte zelf of door een verhaal te volgen.
 categories: [JavaScript, 3D, HTML/CSS]
 tags: [HTML, CSS, JavaScript, XML, XSLT]
 clients: [Novartis International AG]
 collaboration: [Iwan Baan, 2x4]
-prizes: 
 thumbnail: novartis1.jpg
 image: novartis1.jpg
 images: [novartis1.jpg, novartis2.jpg, novartis3.jpg, novartis4.jpg, novartis5.jpg]

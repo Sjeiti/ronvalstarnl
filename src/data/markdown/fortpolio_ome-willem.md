@@ -10,7 +10,7 @@ cvNl:
   body: |
     Interaction design, grafisch ontwerp en ontwikkeling voor de Ome Willem website.
 excerpt: Interaction design, graphic design and development for the Ome Willem website.
-excerptNl: Interaction design, grafisch ontwerp en ontwikkeling voor de Ome Willem website.
+#excerptNl: Interaction design, grafisch ontwerp en ontwikkeling voor de Ome Willem website.
 categories: [JavaScript, HTML/CSS]
 tags: [CMS, HTML, XML, graphic design, ActionScript, Flash, illustration, UX, concept]
 clients: [Ome Willem]

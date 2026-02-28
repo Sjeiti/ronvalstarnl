@@ -9,16 +9,19 @@ cv:
         - Showcased ~40 student projects from four Dutch universities.
         - Created custom Gutenberg blocks to expose specific data via REST API.
 cvNl:
+    body: |
+        - Ontwikkelde een React SPA verbonden met een WordPress REST API om de Dutch Design Week uit te zenden.
+        - Toonde ~40 studentenprojecten van vier Nederlandse universiteiten.
+        - Creëerde aangepaste Gutenberg-blokken om specifieke gegevens via de REST API te ontsluiten.
 excerpt: Development of the 2021 design-united website that broadcasts the Dutch Design Week live. The site is a React SPA onto a WordPress REST API and showcases about 40 projects from students of four Dutch universities. I created custom Gutenberg blocks to expose specific data through the WordPress REST API.
-excerptNl: |
-  Ontwikkeling van de 2021 design-united website die de Dutch Design Week live uitzendt.
-  De site is een React SPA op een WordPress REST API en toont ongeveer 40 projecten van studenten van vier Nederlandse universiteiten.
+#excerptNl: |
+#  Ontwikkeling van de 2021 design-united website die de Dutch Design Week live uitzendt.
+#  De site is een React SPA op een WordPress REST API en toont ongeveer 40 projecten van studenten van vier Nederlandse universiteiten.
 description: Development of the 2020 design-united website that broadcasts the Dutch Design Week.
 categories: [JavaScript, HTML/CSS, video]
 tags: [React, Redux, JavaScript, HTML, CSS, SVG, WordPress]
 clients: [Design United, Shapers]
-collaboration: Shapers
-prizes: 
+collaboration: [Shapers]
 thumbnail: DU2021_1_home.jpg
 image: DU2021_5_footer.jpg
 images: [DU2021_1_home.jpg, DU2021_2_to-day-1.jpg, DU2021_3_day-blocks.jpg, DU2021_4_article.jpg, DU2021_5_footer.jpg]

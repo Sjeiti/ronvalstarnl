@@ -14,14 +14,14 @@ cvNl:
     - Build-processen verbeterd en legacy-code gerefactord.
     - De algehele codekwaliteit verbeterd.
 excerpt: Rebuilt shop flow into a single page application using Angular. Added several improvements to the build process. Updated/refactored a lot of legacy code. Improved code quality.
-excerptNl: |
-  Nieuwe implementatie van de checkout flow in een SPA met behulp van Angular material.
-  Verschillende verbeteringen toegevoegd aan het build proces.
-  Veel verouderde code bijgewerkt/ge-refactored.
-  Verbeterde code kwaliteit.
+#excerptNl: |
+#  Nieuwe implementatie van de checkout flow in een SPA met behulp van Angular material.
+#  Verschillende verbeteringen toegevoegd aan het build proces.
+#  Veel verouderde code bijgewerkt/ge-refactored.
+#  Verbeterde code kwaliteit.
 categories: [JavaScript, HTML/CSS, framework]
 tags: [Jira, scrum, CSS, HTML, JavaScript, Angular, Grunt, NodeJS, TDD, Cucumber]
-clients: Vodafone
+clients: [Vodafone]
 thumbnail: vf_PDP.png
 image: vf_PDP.png
 images: [vf_160712-DEVICE_Page_03a.png, vf_160712-DEVICE_Page_03b.png, vf_PDP.png, vfIDE.png]
