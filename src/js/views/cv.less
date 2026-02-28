@@ -99,8 +99,12 @@ body[data-pathname^=cv] {
   }
 }
 
+////////////////////////////////////
 
-#education, #work-experience {
+#education, 
+#opleiding,
+#work-experience,
+#werkervaring {
   +ul {
     padding-left: 1rem;
     ::marker { color: var(--color-main); }
@@ -113,26 +117,29 @@ body[data-pathname^=cv] {
   >li {
     position: relative;
     padding: 3rem 1rem;
+    /*
     &:not(:last-child) {
       box-shadow: 0 1px 0 var(--color-border);
     }
+    */
 
     ul {
       padding-left: 1rem;
       ::marker { color: var(--color-main); }
-      li {
-        list-style-type: disc;
-      }
+      li { list-style-type: disc; }
     }
   }
   header {
     position: relative;
+    margin-bottom: 2rem;
     &:after {
       content: '';
       display: block;
+      position: relative;
+      top: -0.125rem;  
       width: 100%;
       height: 0.0625rem;
-      margin-bottom: 2rem;
+      height: 0.5rem;
       background-color: var(--color-border);
       box-shadow:
           -30rem 0 0 0 var(--color-border), 30rem 0 0 0 var(--color-border)
@@ -151,7 +158,7 @@ body[data-pathname^=cv] {
       &:last-of-type {
         position: absolute;
         left: 0;
-        bottom: -1.25rem;
+        bottom: -1.375rem;
       }
     }
     strong {
@@ -166,6 +173,7 @@ body[data-pathname^=cv] {
     position: absolute;
     right: 0;
     bottom: -0.8125rem;
+    bottom: -0.525rem;
     z-index: 2;
     line-height: 100%;
     @media @mediaM { bottom: -1.125rem; }
