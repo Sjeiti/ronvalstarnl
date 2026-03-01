@@ -2,6 +2,7 @@
 
 const object = { type: 'object' }
 const string = { type: 'string' }
+const strumb = { type: ['string','number'] }
 const date = { type: 'string', format: 'date' }
 const array = { type: 'array' }
 const bool = { type: 'boolean' }
@@ -14,7 +15,7 @@ export default {
   ...object,
   properties: {
     // generic
-    slug: string,
+    slug: strumb,
     type: {
       enum: ['page', 'post', 'portfolio', 'fortpolio']
     },
@@ -24,7 +25,11 @@ export default {
     header: string,
     // header image attribution
     headerColofon: string,
-    headerClassName: { enum: ['no-blur', 'darken']},
+    headerClassName: {
+      type: 'array',
+      items: { enum: ['no-blur', 'darken']}
+    },
+    // { enum: ['no-blur', 'darken']},
     //
     categories: stringArray,
     tags: stringArray,
@@ -76,11 +81,15 @@ export default {
       required: ['body']
     }
   },
-  required: ['slug', 'type'],
+  required: [/*'slug',*/ 'type'],
   additionalProperties: false,
   //
   // conditionals
   allOf: [
+    {
+      if: { properties: { inPortfolio: { const: true } } },
+      then: { required: ['slug'] }
+    },
     {
       if: { properties: { type: { const: 'page' } } },
       then: { required: ['date', 'modified'] }
@@ -89,10 +98,10 @@ export default {
       if: { properties: { type: { const: 'post' } } },
       then: { required: ['date', 'modified'] }
     },
-    {
+    /*{
       if: { properties: { type: { const: 'fortpolio' } } },
       then: { required: ['clients'] }
-    },
+    },*/
     {
       if: {
         properties: { inPortfolio: { const: true } },
