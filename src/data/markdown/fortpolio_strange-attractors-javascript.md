@@ -7,7 +7,6 @@
   clients: 
   collaboration: 
   prizes: 
-  thumbnail_old: Lorenz-84-31.gif
   thumbnail: Lorenz-84-31-b.jpg
   thumbnailVideo: Lorenz-84-31-a.mp4
   headerClassName: no-blur

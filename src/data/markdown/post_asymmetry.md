@@ -5,7 +5,6 @@
   type: post
   categories: microscopy
   tags: microscopy
-  heade: Screenshot_20250425-084815_Edited.jpg
   header: Screenshot_20251025-225317_Edited.jpg
   headerClassName: no-blur darken
 --> 

@@ -14,7 +14,7 @@ We schreven documentatie en creëerden de eerste twee aanpasbare thema's.
   inCv: false
   inPortfolio: false
   dateFrom: 2019-11-01
-  dateTo: 2020-3-01
+  dateTo: 2020-03-01
   collaboration: https://www.linkedin.com/in/tjin-cheng/
 -->
 

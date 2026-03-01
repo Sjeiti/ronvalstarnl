@@ -1,13 +1,13 @@
 <!--
   slug: using-string-literals-sparingly
   date: 2020-02-11
-  modified: 2020-02-11
+  modified: 2026-03-01
   type: post
   header: jason-leung-EXYQt40B3KA-unsplash.jpg
   headerColofon: photo by [Jason Leung](https://unsplash.com/@ninjason)
   headerClass: 
-  category: JavaScript
-  tag: code quality, string
+  categories: JavaScript
+  tags: code quality, string
 -->
 
 # Using string literals sparingly

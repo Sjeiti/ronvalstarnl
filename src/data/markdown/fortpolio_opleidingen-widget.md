@@ -15,8 +15,6 @@
   inPortfolio: true
   dateFrom: 2014-08-05
   dateTo: 2015-01-15
-  oldDateFrom: 2014-12-08
-  oldDateTo: 2014-12-31
 -->
 
 # Education widget

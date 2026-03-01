@@ -1,10 +1,10 @@
-<!--
-  date: 2006-01-01
-  modified: 2006-01-01
-  slug: delicious
-  type: post
-  categories: admin, backend
--->
+---
+date: 2006-01-01
+modified: 2006-01-01
+slug: delicious
+type: post
+categories: [admin, backend]
+---
 
 # Delicious
 

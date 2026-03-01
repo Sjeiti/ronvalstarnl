@@ -3,7 +3,7 @@
   modified: 2003-12-24
   slug: scans
   type: post
-  categories: image: 
+  categories: image 
   dateTo: 
 -->
 
