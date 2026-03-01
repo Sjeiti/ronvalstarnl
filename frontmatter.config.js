@@ -94,7 +94,10 @@ export default {
       then: { required: ['clients'] }
     },
     {
-      if: { properties: { inPortfolio: { const: true } } },
+      if: {
+        properties: { inPortfolio: { const: true } },
+        required: ['inPortfolio']
+      },
       then: {
         allOf: [
           // { required: ['image'] },
@@ -108,7 +111,10 @@ export default {
       }
     },
     {
-      if: { properties: { inCv: { const: true } } },
+      if: {
+        properties: { inCv: { const: true } },
+        required: ['inCv']
+      },
       then: { required: ['cv', 'cvNl'] }
     }
   ]

@@ -1,13 +1,12 @@
-<!--
-  date: 2026-02-04
-  modified: 2026-02-04
-  slug: no-css
-  type: post
-  categories: code, HTML
-  tags: cool shit
-  description: A demonstration of viewing websites without CSS by removing all style elements via JavaScript, inspired by Firefox Reader View and 1995-era web aesthetics. Implementation of theme switching using localStorage to toggle between default and high-contrast modes for improved readability.
-  related: 
--->
+---
+date: 2026-02-04
+modified: 2026-02-04
+slug: no-css
+type: post
+categories: [code, HTML]
+tags: [cool shit]
+description: A demonstration of viewing websites without CSS by removing all style elements via JavaScript, inspired by Firefox Reader View and 1995-era web aesthetics. Implementation of theme switching using localStorage to toggle between default and high-contrast modes for improved readability.
+---
 
 # Look ma; no CSS
 
