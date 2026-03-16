@@ -1,0 +1,11 @@
+{
+  "watch": ["task"],
+  "ignore": [
+    "dist/data/",
+    "node_modules/",
+    "public/",
+    "tmp/"
+  ],
+  "ext": "js,json"
+}
+

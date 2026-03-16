@@ -82,8 +82,7 @@ export function add(...names){//,callback
  * @param {boolean} [popped=false]
  */
 export function open(uri, popped){
-  const [hash=''] = uri.match(/#\w+/)||[]
-  const pathname = getPathname(uri.replace(/\/$/, ''))
+  const {pathname,search,hash} = new URL(uri,location.origin)
   const oldUrl = url
   const oldName = getName(getPathname(oldUrl))
   url = getURL(pathname)
@@ -118,9 +117,10 @@ export function open(uri, popped){
           initialise(view)
           applyDirectives(view)
           viewModel.setViewName(name)
-          hash&&nextTick(()=>{
-            history.replaceState({}, title, urlNew+hash)
-            location.hash = hash
+          ;(hash||search)&&nextTick(()=>{
+            history.replaceState({}, title, urlNew+search+hash)
+            if (hash) location.hash = hash
+            search&&window.history.replaceState({}, '', search)
           })
 
           //globalThis.prerendering&&viewModel._content.ownerDocument.documentElement.classList.add('prerendered')

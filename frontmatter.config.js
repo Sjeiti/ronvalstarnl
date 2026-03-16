@@ -29,7 +29,6 @@ export default {
       type: 'array',
       items: { enum: ['no-blur', 'darken']}
     },
-    // { enum: ['no-blur', 'darken']},
     //
     categories: stringArray,
     tags: stringArray,
@@ -102,6 +101,50 @@ export default {
       if: { properties: { type: { const: 'fortpolio' } } },
       then: { required: ['clients'] }
     },*/
+    {
+      if: { properties: { type: { const: 'fortpolio' } } },
+      then: {
+        properties: {
+          categories: { 
+            items: { enum: [
+              'HTML/CSS'
+              ,'JavaScript'
+              ,'video'
+              ,'framework'
+              ,'mobile'
+              ,'3D'
+              ,'UX'
+              ,'graphic design'
+              ,'open source'
+              ,'game'
+              ,'illustration'
+              ,'Flash'
+            ]}
+          }
+        }
+      }
+    },
+    {
+      if: { properties: { type: { const: 'post' } } },
+      then: {
+        properties: {
+          categories: { 
+            items: { enum: [
+              'code'
+              ,'technique'
+              ,'project'
+              ,'experiment'
+              ,'illustration'
+              ,'rant'
+              ,'birds'
+              ,'microscopy'
+              ,'tools'
+              ,'work'
+            ]}
+          }
+        }
+      }
+    },
     {
       if: {
         properties: { inPortfolio: { const: true } },
