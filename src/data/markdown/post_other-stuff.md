@@ -1,13 +1,13 @@
-<!--
-  date: 2026-01-15
-  modified: 2026-01-15
-  slug: birds
-  type: post
-  categories: birds
-  tags: birds
-  header: IMG_7407-edit-20260115074101.jpg
-  headerClassName: no-blur darken
---> 
+---
+date: 2026-01-15
+modified: 2026-01-15
+slug: birds
+type: post
+categories: [birds]
+tags: [birds]
+header: IMG_7407-edit-20260115074101.jpg
+headerClassName: [no-blur,darken]
+---
 
 # Birds
 

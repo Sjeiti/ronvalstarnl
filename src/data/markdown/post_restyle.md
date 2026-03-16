@@ -1,10 +1,10 @@
-<!--
-  date: 2006-02-08
-  modified: 2006-02-08
-  slug: restyle
-  type: post
-  categories: admin
--->
+---
+date: 2006-02-08
+modified: 2006-02-08
+slug: restyle
+type: post
+categories: []
+---
 
 # restyle
 

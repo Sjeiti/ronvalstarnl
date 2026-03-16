@@ -1,11 +1,11 @@
-<!--
-  date: 2007-03-05
-  modified: 2020-06-01
-  slug: terraforming
-  type: post
-  categories: code, Flash, image, ActionScript
-  tags: Filter Forge
--->
+---
+date: 2007-03-05
+modified: 2020-06-01
+slug: terraforming
+type: post
+categories: [code]
+tags: [Filter Forge]
+---
 
 # terraforming
 

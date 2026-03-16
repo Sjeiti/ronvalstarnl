@@ -1,11 +1,11 @@
-<!--
-  date: 2006-06-01
-  modified: 2014-03-11
-  slug: filterforge
-  type: post
-  categories: image, photoshop
-  tags: Filter Forge
--->
+---
+date: 2006-06-01
+modified: 2014-03-11
+slug: filterforge
+type: post
+categories: [illustration,tools]
+tags: [Filter Forge]
+---
 
 # Filter Forge
 

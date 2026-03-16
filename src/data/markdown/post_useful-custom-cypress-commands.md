@@ -1,15 +1,16 @@
-<!--
-  date: 2020-05-20
-  modified: 2020-05-20
-  slug: useful-custom-cypress-commands
-  type: post
-  header: julian-scholl-hlHq4Qezjr8-unsplash.jpg
-  headerColofon: photo by [Julian Schöll](https://unsplash.com/@js90)
-  headerClassName: no-blur darken
-  categories: Javascript
-  tags: testing, e2e, end-to-end
-  description: Some useful Cypress custom commands to make your tests cleaner
--->
+---
+date: 2020-05-20
+modified: 2020-05-20
+slug: useful-custom-cypress-commands
+type: post
+header: julian-scholl-hlHq4Qezjr8-unsplash.jpg
+headerColofon: |
+  photo by [Julian Schöll](https://unsplash.com/@js90)
+headerClassName: [no-blur,darken]
+categories: [code,technique,work]
+tags: [testing,e2e,end-to-end,JavaScript]
+description: Some useful Cypress custom commands to make your tests cleaner
+---
 
 # Useful custom Cypress commands
 

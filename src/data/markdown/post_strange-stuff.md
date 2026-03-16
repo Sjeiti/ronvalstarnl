@@ -1,11 +1,11 @@
-<!--
-  date: 2008-02-10
-  modified: 2008-02-10
-  slug: strange-stuff
-  type: post
-  categories: code, Java, Processing, video
-  tags: test
--->
+---
+date: 2008-02-10
+modified: 2008-02-10
+slug: strange-stuff
+type: post
+categories: [code]
+tags: [test]
+---
 
 # Strange stuff
 

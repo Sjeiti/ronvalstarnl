@@ -1,14 +1,15 @@
-<!--
-  slug: randomness-in-generative-code
-  date: 2022-07-22
-  modified: 2022-07-22
-  type: post
-  header: manas-taneja-Mse8VazeO-c-unsplash.jpg
-  headerColofon: photo by [Manas Tajena](https://unsplash.com/@manastaneja)
-  headerClassName: no-blur darken
-  category: code
-  tag: code random
--->
+---
+slug: randomness-in-generative-code
+date: 2022-07-22
+modified: 2022-07-22
+type: post
+header: manas-taneja-Mse8VazeO-c-unsplash.jpg
+headerColofon: |
+  photo by [Manas Tajena](https://unsplash.com/@manastaneja)
+headerClassName: [no-blur,darken]
+categories: [code,technique]
+tags: [code random]
+---
 
 # Randomness in generative code
 

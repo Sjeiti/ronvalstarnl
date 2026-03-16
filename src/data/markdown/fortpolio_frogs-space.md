@@ -1,19 +1,16 @@
-<!--
-  slug: frogs-space
-  type: fortpolio
-  categories: game, illustration
-  tags: ActionScript, Flash, UX, game, cool shit, concept
-  clients: 
-  collaboration: 
-  prizes: 
-  thumbnail: schapenII_4.jpg
-  image: schapenII_4.jpg
-  images: schapenII_1.jpg, schapenII_2.jpg, schapenII_3.jpg, schapenII_4.jpg, schapenII_5.jpg
-  inCv: false
-  inPortfolio: true
-  dateFrom: 2005-06-01
-  dateTo: 2005-07-01
--->
+---
+slug: frogs-space
+type: fortpolio
+categories: [game,illustration]
+tags: [ActionScript,Flash,UX,game,cool shit,concept]
+thumbnail: schapenII_4.jpg
+image: schapenII_4.jpg
+images: [schapenII_1.jpg,schapenII_2.jpg,schapenII_3.jpg,schapenII_4.jpg,schapenII_5.jpg]
+inCv: false
+inPortfolio: true
+dateFrom: 2005-06-01
+dateTo: 2005-07-01
+---
 
 # Frogs from space
 

@@ -1,19 +1,16 @@
-<!--
-  slug: tatarataa
-  type: fortpolio
-  categories: 
-  tags: CSS, JavaScript, Wordpress, UX, concept
-  clients: Tatarataa!
-  collaboration: 
-  prizes: 
-  thumbnail: tatarataaII3.jpg
-  image: tatarataaII3.jpg
-  images: tatarataaII1.jpg, tatarataaII2.jpg, tatarataaII3.jpg
-  inCv: false
-  inPortfolio: false
-  dateFrom: 2012-06-01
-  dateTo: 2012-02-01
--->
+---
+slug: tatarataa
+type: fortpolio
+tags: [CSS,JavaScript,Wordpress,UX,concept]
+clients: [Tatarataa!]
+thumbnail: tatarataaII3.jpg
+image: tatarataaII3.jpg
+images: [tatarataaII1.jpg,tatarataaII2.jpg,tatarataaII3.jpg]
+inCv: false
+inPortfolio: false
+dateFrom: 2012-06-01
+dateTo: 2012-02-01
+---
 
 # Tatarataa!
 

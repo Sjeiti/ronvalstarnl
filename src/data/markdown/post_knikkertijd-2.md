@@ -1,10 +1,10 @@
-<!--
-  date: 2006-04-11
-  modified: 2020-06-01
-  slug: knikkertijd-2
-  type: post
-  categories: Flash, game, ActionScript
--->
+---
+date: 2006-04-11
+modified: 2020-06-01
+slug: knikkertijd-2
+type: post
+categories: []
+---
 
 # knikkertijd
 

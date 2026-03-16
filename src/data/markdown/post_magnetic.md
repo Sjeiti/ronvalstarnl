@@ -1,9 +1,9 @@
-<!--
-  date: 2007-01-07
-  modified: 2020-06-01
-  slug: magnetic
-  type: post
--->
+---
+date: 2007-01-07
+modified: 2020-06-01
+slug: magnetic
+type: post
+---
 
 # magnetic particles
 

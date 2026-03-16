@@ -1,9 +1,9 @@
-<!--
-  date: 2008-06-08
-  modified: 2020-05-31
-  slug: tinysort
-  type: post
--->
+---
+date: 2008-06-08
+modified: 2020-05-31
+slug: tinysort
+type: post
+---
 
 # TinySort
 

@@ -1,12 +1,12 @@
-<!--
-  slug: logo
-  date: 2012-07-06
-  modified: 2012-07-24
-  type: post
-  categories: CSS, graphic design
-  tags: 
-  description: I really just wanted to update my Wordpress core. But I got a little overexcited and redesigned my site: a logo made of one HTML element and pure CSS.
--->
+---
+slug: logo
+date: 2012-07-06
+modified: 2012-07-24
+type: post
+categories: [code,illustration]
+description: |
+  I really just wanted to update my Wordpress core. But I got a little overexcited and redesigned my site: a logo made of one HTML element and pure CSS.
+---
 
 # Logo
 

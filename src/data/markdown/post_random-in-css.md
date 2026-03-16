@@ -1,16 +1,16 @@
-<!--
-  date: 2024-03-23
-  modified: 2025-04-21
-  slug: random-in-css
-  type: post
-  header: justin-lauria-Ap0alm8xpxw-unsplash.jpg
-  headerColofon: photo by [Justin Lauria](https://unsplash.com/@justinlauria)
-  headerClassName: no-blur darken
-  categories: code
-  tags: cool shit, prng, random
-  description: 
-  related: experiment-ladybugs
--->
+---
+date: 2024-03-23
+modified: 2025-04-21
+slug: random-in-css
+type: post
+header: justin-lauria-Ap0alm8xpxw-unsplash.jpg
+headerColofon: |
+  photo by [Justin Lauria](https://unsplash.com/@justinlauria)
+headerClassName: [no-blur,darken]
+categories: [code,technique]
+tags: [cool shit,prng,random]
+related: [experiment-ladybugs]
+---
 
 # Random in CSS
     

@@ -1,22 +1,20 @@
-<!--
-  slug: boonlearning
-  type: fortpolio
-  excerptNl: Om hun op maat gemaakte e-learningplatform om tezetten in een op abonnementen gebaseerd platform, was een aanpasbaar herontwerp nodig.
-We hebben een design system opgezet om te integreren met hun bestaande broncode.
-De bestaande broncode is in Haxe, wat obscuur is, maar lijkt op talen waarmee ik bekend ben.
-We schreven documentatie en creëerden de eerste twee aanpasbare thema's. 
-  categories: HTML/CSS
-  tags: scrum, design system, HTML, CSS, BEM, Docker, Haxe, framework
-  clients: Boon software
-  thumbnail:
-  image: 
-  images: 
-  inCv: false
-  inPortfolio: false
-  dateFrom: 2019-11-01
-  dateTo: 2020-03-01
-  collaboration: https://www.linkedin.com/in/tjin-cheng/
--->
+---
+slug: boonlearning
+type: fortpolio
+#excerptNl: |
+#  <p>Om hun op maat gemaakte e-learningplatform om tezetten in een op abonnementen gebaseerd platform, was een aanpasbaar herontwerp nodig.
+#  We hebben een design system opgezet om te integreren met hun bestaande broncode.
+#  De bestaande broncode is in Haxe, wat obscuur is, maar lijkt op talen waarmee ik bekend ben.
+#  We schreven documentatie en creëerden de eerste twee aanpasbare thema&#39;s. </p>
+categories: [HTML/CSS]
+tags: [scrum,design system,HTML,CSS,BEM,Docker,Haxe,framework]
+clients: [Boon software]
+inCv: false
+inPortfolio: false
+dateFrom: 2019-11-01
+dateTo: 2020-03-01
+collaboration: [https://www.linkedin.com/in/tjin-cheng/]
+---
 
 # Boon Learning
 

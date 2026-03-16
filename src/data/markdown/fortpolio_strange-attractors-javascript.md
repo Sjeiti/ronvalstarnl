@@ -1,22 +1,19 @@
-<!--
-  slug: strange-attractors-javascript
-  type: fortpolio
-  excerpt: <p>A pure JavaScript strange attractor renderer with a WebGL preview. Renders images and animated gifs from mathematical formulas with interpolated variables.</p>
-  categories: JavaScript, 3D, video, open source
-  tags: JavaScript, UX, procedural, cool shit, WebGL, concept
-  clients: 
-  collaboration: 
-  prizes: 
-  thumbnail: Lorenz-84-31-b.jpg
-  thumbnailVideo: Lorenz-84-31-a.mp4
-  headerClassName: no-blur
-  image: attractors01.jpg
-  images: attractors00.png, attractors01.jpg, attractors02.jpg, Lorenz-84-52.gif, Lorenz-84-31.gif, Lorenz-84-57.png
-  inCv: false
-  inPortfolio: true
-  dateFrom: 2016-03-04
-  dateTo: 2016-07-14
--->
+---
+slug: strange-attractors-javascript
+type: fortpolio
+excerpt: <p>A pure JavaScript strange attractor renderer with a WebGL preview. Renders images and animated gifs from mathematical formulas with interpolated variables.</p>
+categories: [code,project]
+tags: [JavaScript,UX,procedural,cool shit,WebGL,concept]
+thumbnail: Lorenz-84-31-b.jpg
+thumbnailVideo: Lorenz-84-31-a.mp4
+headerClassName: [no-blur]
+image: attractors01.jpg
+images: [attractors00.png,attractors01.jpg,attractors02.jpg,Lorenz-84-52.gif,Lorenz-84-31.gif,Lorenz-84-57.png]
+inCv: false
+inPortfolio: true
+dateFrom: 2016-03-04
+dateTo: 2016-07-14
+---
 
 # Strange attractors in JavaScript
 

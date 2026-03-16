@@ -1,14 +1,14 @@
-<!--
-  date: 2024-06-02
-  modified: 2024-06-02
-  slug: shadow-dom
-  type: post
-  header: vino-li-55nuS2rUYmQ-unsplash.jpg
-  headerColofon: photo by [Vino Li](https://unsplash.com/@vinomamba24)
-  categories: code, work
-  tags: frameworks, ide, libraries, software, tools
-  description: 
--->
+---
+date: 2024-06-02
+modified: 2024-06-02
+slug: shadow-dom
+type: post
+header: vino-li-55nuS2rUYmQ-unsplash.jpg
+headerColofon: |
+  photo by [Vino Li](https://unsplash.com/@vinomamba24)
+categories: [code,technique,work]
+tags: [frameworks,ide,libraries,software,tools]
+---
 
 # Shadow DOM
 

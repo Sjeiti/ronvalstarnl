@@ -1,10 +1,10 @@
-<!--
-  date: 2004-12-09
-  modified: 2004-12-09
-  slug: links
-  type: post
-  categories: link
--->
+---
+date: 2004-12-09
+modified: 2004-12-09
+slug: links
+type: post
+categories: []
+---
 
 # links
 

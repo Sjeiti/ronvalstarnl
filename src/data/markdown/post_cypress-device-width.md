@@ -1,15 +1,16 @@
-<!--
-  date: 2021-01-27
-  modified: 2021-01-27
-  slug: cypress-device-width
-  type: post
-  header: photo-1454496522488-7a8e488e8606.webp
-  headerColofon: photo by [Rohit Tandon](https://unsplash.com/@rohittandon)
-  headerClassName: no-blur
-  categories: Javascript, HTML, CSS
-  tags: CSS, speed, test, responsive, media queries
-  related: useful-custom-cypress-commands updating-a-cypress-alias
--->
+---
+date: 2021-01-27
+modified: 2021-01-27
+slug: cypress-device-width
+type: post
+header: photo-1454496522488-7a8e488e8606.webp
+headerColofon: |
+  photo by [Rohit Tandon](https://unsplash.com/@rohittandon)
+headerClassName: [no-blur]
+categories: [code,technique,work]
+tags: [CSS,speed,test,responsive,media queries]
+related: [useful-custom-cypress-commands updating-a-cypress-alias]
+---
 
 # Cypress and `device-width`
 

@@ -1,11 +1,11 @@
-<!--
-  date: 2007-10-04
-  modified: 2020-06-01
-  slug: perlin-noise-in-as3
-  type: post
-  categories: Flash, ActionScript
-  tags: APE, Mario Klingemann
--->
+---
+date: 2007-10-04
+modified: 2020-06-01
+slug: perlin-noise-in-as3
+type: post
+categories: [code]
+tags: [APE,Mario Klingemann]
+---
 
 # Perlin noise in as3
 

@@ -1,14 +1,15 @@
-<!--
-  slug: wrap-third-party-code
-  date: 9999-99-99
-  modified: 9999-99-99
-  type: post
-  header: adi-goldstein-Hli3R6LKibo-unsplash.jpg
-  headerColofon: photo by [Adi Goldstein](https://unsplash.com/@adigold1)
-  headerClassName: no-blur darken
-  category: code
-  tag: code
--->
+---
+slug: wrap-third-party-code
+date: 9999-99-99
+modified: 9999-99-99
+type: post
+header: adi-goldstein-Hli3R6LKibo-unsplash.jpg
+headerColofon: |
+  photo by [Adi Goldstein](https://unsplash.com/@adigold1)
+headerClassName: [no-blur,darken]
+categories: [code]
+tags: [code]
+---
 
 # Wrap third party code
 

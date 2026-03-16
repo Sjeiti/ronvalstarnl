@@ -1,12 +1,13 @@
-<!--
-  slug: something-new
-  date: 2023-12-14
-  modified: 2023-12-14
-  type: post
-  header: ilnur-kalimullin-D3fLgDc9uOQ-unsplash.jpg
-  headerColofon: photo by [Ilnur Kalimullin](https://unsplash.com/@kalimullin)
-  headerClassName: no-blur darken
--->
+---
+slug: something-new
+date: 2023-12-14
+modified: 2023-12-14
+type: post
+header: ilnur-kalimullin-D3fLgDc9uOQ-unsplash.jpg
+headerColofon: |
+  photo by [Ilnur Kalimullin](https://unsplash.com/@kalimullin)
+headerClassName: [no-blur,darken]
+---
 
 # Something new
 

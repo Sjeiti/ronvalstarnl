@@ -1,10 +1,10 @@
-<!--
-  date: 2005-03-03
-  modified: 2005-03-03
-  slug: johncoltrane
-  type: post
-  categories: link
--->
+---
+date: 2005-03-03
+modified: 2005-03-03
+slug: johncoltrane
+type: post
+categories: []
+---
 
 # John Coltrane
 

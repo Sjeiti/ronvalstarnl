@@ -1,12 +1,12 @@
-<!--
-  date: 2015-01-05
-  modified: 2020-05-31
-  slug: tinysort-v2
-  type: post
-  categories: JavaScript, jQuery, work, open source
-  tags: JavaScript
-  description: TinySort had its jQuery dependency is removed. It is also a fraction smaller, a bit faster, has AMD support and it's on CDN.
--->
+---
+date: 2015-01-05
+modified: 2020-05-31
+slug: tinysort-v2
+type: post
+categories: [work]
+tags: [JavaScript]
+description: TinySort had its jQuery dependency is removed. It is also a fraction smaller, a bit faster, has AMD support and it's on CDN.
+---
 
 # Tinysort v2
 

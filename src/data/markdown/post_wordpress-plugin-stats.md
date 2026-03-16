@@ -1,9 +1,9 @@
-<!--
-  date: 2007-01-23
-  modified: 2007-01-23
-  slug: wordpress-plugin-stats
-  type: post
--->
+---
+date: 2007-01-23
+modified: 2007-01-23
+slug: wordpress-plugin-stats
+type: post
+---
 
 # Stats plugin
 

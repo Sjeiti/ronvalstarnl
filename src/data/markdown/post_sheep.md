@@ -1,10 +1,10 @@
-<!--
-  date: 2005-06-23
-  modified: 2020-06-01
-  slug: sheep
-  type: post
-  categories: Flash, game, ActionScript
--->
+---
+date: 2005-06-23
+modified: 2020-06-01
+slug: sheep
+type: post
+categories: []
+---
 
 # sheep
 

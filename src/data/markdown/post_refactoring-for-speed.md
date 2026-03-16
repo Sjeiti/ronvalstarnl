@@ -1,14 +1,15 @@
-<!--
-  slug: refactoring-for-speed
-  date: 2019-09-26
-  modified: 2025-04-19
-  type: post
-  header: mathew-schwartz-sb7RUrRMaC4-unsplash.jpg
-  headerColofon: photo by [Mathew Schwartz](https://unsplash.com/@cadop)
-  headerClassName: no-blur darken
-  category: JavaScript
-  tag: framework, SPA, speed, build, static
--->
+---
+slug: refactoring-for-speed
+date: 2019-09-26
+modified: 2025-04-19
+type: post
+header: mathew-schwartz-sb7RUrRMaC4-unsplash.jpg
+headerColofon: |
+  photo by [Mathew Schwartz](https://unsplash.com/@cadop)
+headerClassName: [no-blur,darken]
+categories: [code,work]
+tags: [framework, SPA, speed, build, static]
+---
 
 # Refactoring for speed
 

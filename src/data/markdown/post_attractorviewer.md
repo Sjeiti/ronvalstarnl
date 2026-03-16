@@ -1,11 +1,11 @@
-<!--
-  date: 2005-03-12
-  modified: 2020-06-01
-  slug: attractorviewer
-  type: post
-  categories: code, Java, Processing
-  tags: cool shit
--->
+---
+date: 2005-03-12
+modified: 2020-06-01
+slug: attractorviewer
+type: post
+categories: [code]
+tags: [cool shit]
+---
 
 # attractorViewer
 

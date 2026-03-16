@@ -1,14 +1,14 @@
-<!--
-  date: 2024-03-22
-  modified: 2024-03-22
-  slug: experiment-ladybugs
-  type: post
-  categories: code, JavaScript
-  tags: cool shit
-  thumbnail: experiments/Screenshot_20240524-072454.png-edit-20240524072543.jpg
-  description: Single element ladybugs
-  related: random-in-css, experiment-*
--->
+---
+date: 2024-03-22
+modified: 2024-03-22
+slug: experiment-ladybugs
+type: post
+categories: [code,experiment,illustration]
+tags: [cool shit]
+thumbnail: experiments/Screenshot_20240524-072454.png-edit-20240524072543.jpg
+description: Single element ladybugs
+related: [random-in-css,experiment-*]
+---
 
 # Experiment: Ladybugs
 

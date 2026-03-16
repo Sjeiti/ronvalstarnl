@@ -1,10 +1,10 @@
-<!--
-  date: 2004-03-03
-  modified: 2004-03-03
-  slug: relkanoid
-  type: post
-  categories: Director, game
--->
+---
+date: 2004-03-03
+modified: 2004-03-03
+slug: relkanoid
+type: post
+categories: []
+---
 
 # relkanoid
 

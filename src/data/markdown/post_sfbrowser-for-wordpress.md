@@ -1,10 +1,10 @@
-<!--
-  date: 2010-11-19
-  modified: 2020-05-31
-  slug: sfbrowser-for-wordpress
-  type: post
-  categories: code, JavaScript, jQuery, Wordpress
--->
+---
+date: 2010-11-19
+modified: 2020-05-31
+slug: sfbrowser-for-wordpress
+type: post
+categories: [code,project]
+---
 
 # SFBrowser for WordPress
 

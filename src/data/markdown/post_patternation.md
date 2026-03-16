@@ -1,9 +1,10 @@
-<!--
-  date: 2007-01-07
-  modified: 2020-06-01
-  slug: patternation
-  type: post
--->
+---
+date: 2007-01-07
+modified: 2020-06-01
+slug: patternation
+type: post
+categories: [project]
+---
 
 # patternation
 

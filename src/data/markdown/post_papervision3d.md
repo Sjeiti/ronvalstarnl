@@ -1,11 +1,11 @@
-<!--
-  date: 2007-02-24
-  modified: 2020-06-01
-  slug: papervision3d
-  type: post
-  categories: code, Flash, ActionScript
-  tags: test
--->
+---
+date: 2007-02-24
+modified: 2020-06-01
+slug: papervision3d
+type: post
+categories: [code]
+tags: [test]
+---
 
 # Papervision3D
 

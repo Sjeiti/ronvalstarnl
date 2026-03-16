@@ -1,12 +1,13 @@
-<!--
-  date: 2014-04-24
-  modified: 2015-10-25
-  slug: experiment-touches
-  type: post
-  tags: cool shit, experiment, particles
-  thumbnail: experiments/ocalhost_7047_experiment-touches.jpg
-  related: experiment-*
--->
+---
+date: 2014-04-24
+modified: 2015-10-25
+slug: experiment-touches
+type: post
+tags: [cool shit,experiment,particles]
+thumbnail: experiments/ocalhost_7047_experiment-touches.jpg
+related: [experiment-*]
+categories: [code,experiment]
+---
 
 # Experiment: touches
 

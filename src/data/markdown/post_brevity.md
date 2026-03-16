@@ -1,11 +1,11 @@
-<!--
-  date: 2006-06-28
-  modified: 2006-06-28
-  slug: brevity
-  type: post
-  categories: Processing, ActionScript
-  tags: Processing
--->
+---
+date: 2006-06-28
+modified: 2006-06-28
+slug: brevity
+type: post
+categories: []
+tags: [Processing]
+---
 
 # Brevity?!
 

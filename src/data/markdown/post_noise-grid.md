@@ -1,9 +1,9 @@
-<!--
-  date: 2007-01-07
-  modified: 2007-01-07
-  slug: noise-grid
-  type: post
--->
+---
+date: 2007-01-07
+modified: 2007-01-07
+slug: noise-grid
+type: post
+---
 
 # noise grid
 

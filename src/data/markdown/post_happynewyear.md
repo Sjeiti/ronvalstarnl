@@ -1,10 +1,10 @@
-<!--
-  date: 2004-12-23
-  modified: 2020-06-01
-  slug: happynewyear
-  type: post
-  categories: rant
--->
+---
+date: 2004-12-23
+modified: 2020-06-01
+slug: happynewyear
+type: post
+categories: [rant]
+---
 
 # happy newyear
 

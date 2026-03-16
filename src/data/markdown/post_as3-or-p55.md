@@ -1,10 +1,10 @@
-<!--
-  date: 2007-11-02
-  modified: 2020-06-01
-  slug: as3-or-p55
-  type: post
-  categories: code, Flash, Processing, ActionScript
--->
+---
+date: 2007-11-02
+modified: 2020-06-01
+slug: as3-or-p55
+type: post
+categories: [code]
+---
 
 # as3 or p55
 

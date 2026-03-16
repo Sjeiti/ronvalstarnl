@@ -1,11 +1,11 @@
-<!--
-  date: 2009-02-19
-  modified: 2020-05-31
-  slug: learning-a-new-language
-  type: post
-  categories: code, JavaScript, jQuery
-  tags: Dutch
--->
+---
+date: 2009-02-19
+modified: 2020-05-31
+slug: learning-a-new-language
+type: post
+categories: [code,project]
+tags: [Dutch]
+---
 
 # learning a new language
 

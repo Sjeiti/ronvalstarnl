@@ -1,11 +1,11 @@
-<!--
-  date: 2010-10-22
-  modified: 2010-10-22
-  slug: perpetuum-mobile
-  type: post
-  categories: code, CSS, HTML, JavaScript, mobile, backend, XML
-  tags: CSS, HTML, PC, Windows mobile
--->
+---
+date: 2010-10-22
+modified: 2010-10-22
+slug: perpetuum-mobile
+type: post
+categories: [code]
+tags: [CSS,HTML,PC,Windows mobile]
+---
 
 # perpetuum mobile
 

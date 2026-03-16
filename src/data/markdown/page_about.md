@@ -1,10 +1,11 @@
-<!--
-  date: 2007-01-04
-  modified: 2024-05-24
-  slug: about
-  type: page
-  description: I love writing JavaScript. So naturally I know a lot about: DOM, HTML and CSS. Streamlining build processes is also one of my favorite pasttimes.
--->
+---
+date: 2007-01-04
+modified: 2024-05-24
+slug: about
+type: page
+description: |
+  I love writing JavaScript. So naturally I know a lot about: DOM, HTML and CSS. Streamlining build processes is also one of my favorite pasttimes.
+---
 
 # about
 

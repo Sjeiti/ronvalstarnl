@@ -1,11 +1,11 @@
-<!--
-  date: 2007-12-17
-  modified: 2007-12-17
-  slug: whooohooo
-  type: post
-  categories: image
-  tags: Filter Forge
--->
+---
+date: 2007-12-17
+modified: 2007-12-17
+slug: whooohooo
+type: post
+categories: [illustration]
+tags: [Filter Forge]
+---
 
 # Whooohooo
 

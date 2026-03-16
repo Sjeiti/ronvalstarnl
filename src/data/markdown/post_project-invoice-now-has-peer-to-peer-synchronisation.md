@@ -1,14 +1,15 @@
-<!--
-  date: 9999-99-99
-  modified: 9999-99-99
-  slug: project-invoice-now-has-peer-to-peer-synchronisation
-  type: post
-  header: sincerely-media-IKzmglo7JLk-unsplash.jpg
-  headerColofon: photo by [Sincerely Media](https://unsplash.com/@sincerelymedia)
-  headerClassName: no-blur darken
-  categories: Javascript
-  tags: CSS, transitions
--->
+---
+date: 9999-99-99
+modified: 9999-99-99
+slug: project-invoice-now-has-peer-to-peer-synchronisation
+type: post
+header: sincerely-media-IKzmglo7JLk-unsplash.jpg
+headerColofon: |
+  photo by [Sincerely Media](https://unsplash.com/@sincerelymedia)
+headerClassName: [no-blur,darken]
+categories: [code]
+tags: [CSS,transitions]
+---
 
 # Project Invoice with peer-to-peer synchronisation through WebRTC
 

@@ -1,19 +1,16 @@
-<!--
-  slug: ronvalstar-nl
-  type: fortpolio
-  categories: JavaScript, HTML/CSS, framework
-  tags: JavaScript, Vue
-  clients: 
-  collaboration: 
-  prizes: 
-  thumbnail: ronvalstar.nl_.jpg
-  image: ronvalstar.nl_.jpg
-  images: ronvalstar.nl_.jpg
-  inCv: false
-  inPortfolio: false
-  dateFrom: 2016-12-24
-  dateTo: 2019-01-01
--->
+---
+slug: ronvalstar-nl
+type: fortpolio
+categories: [JavaScript,HTML/CSS,framework]
+tags: [JavaScript,Vue]
+thumbnail: ronvalstar.nl_.jpg
+image: ronvalstar.nl_.jpg
+images: [ronvalstar.nl_.jpg]
+inCv: false
+inPortfolio: false
+dateFrom: 2016-12-24
+dateTo: 2019-01-01
+---
 
 # ronvalstar.nl
 

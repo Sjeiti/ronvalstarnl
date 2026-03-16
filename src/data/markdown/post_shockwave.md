@@ -1,10 +1,10 @@
-<!--
-  date: 2004-06-23
-  modified: 2004-06-23
-  slug: shockwave
-  type: post
-  categories: Director, Processing
--->
+---
+date: 2004-06-23
+modified: 2004-06-23
+slug: shockwave
+type: post
+categories: []
+---
 
 # shockwave
 

@@ -1,20 +1,17 @@
-<!--
-  slug: tinysort
-  type: fortpolio
-  excerpt: <p>A sorting script I wrote and maintain.</p>
-  categories: JavaScript, open source
-  tags: JavaScript, jQuery, JSDoc, TDD, JUnit
-  clients: 
-  collaboration: 
-  prizes: 
-  thumbnail: tinysort.jpg
-  image: tinysort.jpg
-  images: tinysort.jpg
-  inCv: false
-  inPortfolio: true
-  dateFrom: 2008-05-01
-  dateTo: 2014-04-01
--->
+---
+slug: tinysort
+type: fortpolio
+excerpt: <p>A sorting script I wrote and maintain.</p>
+categories: [code,project]
+tags: [JavaScript,jQuery,JSDoc,TDD,JUnit]
+thumbnail: tinysort.jpg
+image: tinysort.jpg
+images: [tinysort.jpg]
+inCv: false
+inPortfolio: true
+dateFrom: 2008-05-01
+dateTo: 2014-04-01
+---
 
 # TinySort
 

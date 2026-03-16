@@ -1,10 +1,10 @@
-<!--
-  date: 2010-02-13
-  modified: 2020-07-29
-  slug: icon-for-new-jquery-plugin
-  type: post
-  categories: work, illustration
--->
+---
+date: 2010-02-13
+modified: 2020-07-29
+slug: icon-for-new-jquery-plugin
+type: post
+categories: [project,illustration,work]
+---
 
 # icon for new jQuery plugin
 

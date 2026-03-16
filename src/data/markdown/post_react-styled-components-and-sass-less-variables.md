@@ -1,14 +1,15 @@
-<!--
-  date: 2020-05-17
-  modified: 2020-05-18
-  slug: react-styled-components-and-sass-less-variables
-  type: post
-  header: element5-digital-Xf7o2W7qgP0-unsplash.jpg
-  headerColofon: photo by [Element5 Digital](https://unsplash.com/@element5digital)
-  categories: code, CSS, HTML, JavaScript
-  tags: React, CSS, Sass, Less
-  description: A simple solution on how to use Sass variables in React styled-components.
--->
+---
+date: 2020-05-17
+modified: 2020-05-18
+slug: react-styled-components-and-sass-less-variables
+type: post
+header: element5-digital-Xf7o2W7qgP0-unsplash.jpg
+headerColofon: |
+  photo by [Element5 Digital](https://unsplash.com/@element5digital)
+categories: [code,technique,work]
+tags: [React,CSS,Sass,Less]
+description: A simple solution on how to use Sass variables in React styled-components.
+---
 
 # React styled-components and SASS/LESS variables
 

@@ -1,12 +1,12 @@
-<!--
-  date: 2012-01-31
-  modified: 2020-05-31
-  slug: unit-testing-private-functions
-  type: post
-  categories: code, JavaScript, jQuery
-  tags: Qunit, Tinysort
-  description: For some time now I've been unit testing my JavaScript. But how to test those private functions?
--->
+---
+date: 2012-01-31
+modified: 2020-05-31
+slug: unit-testing-private-functions
+type: post
+categories: [code,technique]
+tags: [Qunit,Tinysort]
+description: For some time now I've been unit testing my JavaScript. But how to test those private functions?
+---
 
 # Unit testing private functions in JavaScript
 

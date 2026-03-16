@@ -1,12 +1,12 @@
-<!--
-  date: 2020-03-16
-  modified: 2020-03-18
-  slug: mc-picker
-  type: post
-  header: colorbox.jpg
-  categories: Javascript
-  tags: color, CSS, 3D
--->
+---
+date: 2020-03-16
+modified: 2020-03-18
+slug: mc-picker
+type: post
+header: colorbox.jpg
+categories: [code,project,work]
+tags: [color,CSS,3D]
+---
 
 # MC Picker
 
@@ -78,7 +78,7 @@ So the gradient looks something like this:
 }
 ```
 
-And with Javascript we can easily adjust any CSSRule especially if we add them ourselves:
+And with JavaScript we can easily adjust any CSSRule especially if we add them ourselves:
 
 ```javascript
 document.body.appendChild(document.createElement('style'))

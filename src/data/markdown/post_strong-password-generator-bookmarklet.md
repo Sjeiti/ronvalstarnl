@@ -1,12 +1,12 @@
-<!--
-  date: 2014-11-11
-  modified: 2014-11-18
-  slug: strong-password-generator-bookmarklet
-  type: post
-  categories: code, open source
-  tags: bookmarklet, JavaScript, math
-  description: A password generator bookmarklet safely to be used from any browser on any device. The bookmarklet is generated with seeds making it unique for every user.
--->
+---
+date: 2014-11-11
+modified: 2014-11-18
+slug: strong-password-generator-bookmarklet
+type: post
+categories: [code,project]
+tags: [bookmarklet,JavaScript,math]
+description: A password generator bookmarklet safely to be used from any browser on any device. The bookmarklet is generated with seeds making it unique for every user.
+---
 
 # Strong password generator bookmarklet generator
 

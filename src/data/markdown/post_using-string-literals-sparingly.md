@@ -1,14 +1,14 @@
-<!--
-  slug: using-string-literals-sparingly
-  date: 2020-02-11
-  modified: 2026-03-01
-  type: post
-  header: jason-leung-EXYQt40B3KA-unsplash.jpg
-  headerColofon: photo by [Jason Leung](https://unsplash.com/@ninjason)
-  headerClass: 
-  categories: JavaScript
-  tags: code quality, string
--->
+---
+slug: using-string-literals-sparingly
+date: 2020-02-11
+modified: 2026-03-01
+type: post
+header: jason-leung-EXYQt40B3KA-unsplash.jpg
+headerColofon: |
+  photo by [Jason Leung](https://unsplash.com/@ninjason)
+categories: [code,technique]
+tags: [code quality,string,JavaScript]
+---
 
 # Using string literals sparingly
 
@@ -17,7 +17,7 @@ Using the same strings literals more than once is mostly a bad idea because typo
 Programming languages are (mostly) in English so programmers naturally tend to code in that language. If your native language is not English you are more likely to introduce a wrongly spelled variable name. But that is fine because todays IDEs can check your code even before you compile. Plus variables and method names are autocompleted to make sure you'll consistently make the same mistake.
 But a state or event represented by a string is a liability because it will not throw an error.
 
-Here are the main string issues for Javascript  where you are better off not using string literals.
+Here are the main string issues for JavaScript  where you are better off not using string literals.
 
 
 ## CSS classNames

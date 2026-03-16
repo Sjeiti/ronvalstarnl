@@ -1,11 +1,11 @@
-<!--
-  date: 2008-12-13
-  modified: 2008-12-13
-  slug: sfbrowsergooglecode
-  type: post
-  categories: jQuery, backend
-  tags: Google Code, SVN
--->
+---
+date: 2008-12-13
+modified: 2008-12-13
+slug: sfbrowsergooglecode
+type: post
+categories: [project]
+tags: [Google Code,SVN]
+---
 
 # sfbrowser.googlecode
 

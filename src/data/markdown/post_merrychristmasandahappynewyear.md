@@ -1,10 +1,10 @@
-<!--
-  date: 2005-12-23
-  modified: 2020-07-29
-  slug: merrychristmasandahappynewyear
-  type: post
-  categories: admin
--->
+---
+date: 2005-12-23
+modified: 2020-07-29
+slug: merrychristmasandahappynewyear
+type: post
+categories: []
+---
 
 # merry christmas and a happy newyear
 

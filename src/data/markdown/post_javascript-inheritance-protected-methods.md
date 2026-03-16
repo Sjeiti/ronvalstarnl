@@ -1,12 +1,12 @@
-<!--
-  date: 2015-02-19
-  modified: 2016-12-07
-  slug: javascript-inheritance-protected-methods
-  type: post
-  categories: code, JavaScript
-  tags: JavaScript
-  description: A JavaScript design pattern for prototypal inheritance with protected variables and methods.
--->
+---
+date: 2015-02-19
+modified: 2016-12-07
+slug: javascript-inheritance-protected-methods
+type: post
+categories: [code]
+tags: [JavaScript]
+description: A JavaScript design pattern for prototypal inheritance with protected variables and methods.
+---
 
 # JavaScript inheritance and protected methods
 

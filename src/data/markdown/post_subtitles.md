@@ -1,10 +1,10 @@
-<!--
-  date: 2007-09-17
-  modified: 2007-09-17
-  slug: subtitles
-  type: post
-  categories: Flash, work, ActionScript
--->
+---
+date: 2007-09-17
+modified: 2007-09-17
+slug: subtitles
+type: post
+categories: [work]
+---
 
 # subtitles
 

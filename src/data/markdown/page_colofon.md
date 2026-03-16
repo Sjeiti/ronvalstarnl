@@ -1,9 +1,9 @@
-<!--
-  date: 2025-04-29
-  modified: 2025-05-16
-  slug: colofon
-  type: page
--->
+---
+date: 2025-04-29
+modified: 2025-05-16
+slug: colofon
+type: page
+---
 
 # colofon
 

@@ -3,7 +3,7 @@ date: 2007-02-17
 modified: 2012-07-03
 slug: dhtml-list-fold
 type: post
-categories: [code, CSS, JavaScript]
+categories: [code]
 tags: [CMS]
 ---
 

@@ -1,9 +1,10 @@
-<!--
-  date: 2007-01-07
-  modified: 2007-01-07
-  slug: grass
-  type: post
--->
+---
+date: 2007-01-07
+modified: 2007-01-07
+slug: grass
+type: post
+categories: [experiment]
+---
 
 # grass
 

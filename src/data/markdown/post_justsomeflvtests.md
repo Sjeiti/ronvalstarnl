@@ -1,10 +1,10 @@
-<!--
-  date: 2006-06-23
-  modified: 2006-06-23
-  slug: justsomeflvtests
-  type: post
-  categories: Flash, video, ActionScript
--->
+---
+date: 2006-06-23
+modified: 2006-06-23
+slug: justsomeflvtests
+type: post
+categories: []
+---
 
 # just some flv tests
 

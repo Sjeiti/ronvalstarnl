@@ -1,19 +1,17 @@
-<!--
-  slug: deepred
-  type: fortpolio
-  categories: JavaScript, HTML/CSS, graphic design
-  tags: CSS, HTML, JavaScript, UX, concept
-  clients: Deepred
-  collaboration: 
-  prizes: 
-  thumbnail: deepred3.jpg
-  image: deepred3.jpg
-  images: deepred1.jpg, deepred2.jpg, deepred3.jpg
-  inCv: false
-  inPortfolio: false
-  dateFrom: 2010-06-01
-  dateTo: 2010-07-01
--->
+---
+slug: deepred
+type: fortpolio
+categories: [JavaScript,HTML/CSS,graphic design]
+tags: [CSS,HTML,JavaScript,UX,concept]
+clients: [Deepred]
+thumbnail: deepred3.jpg
+image: deepred3.jpg
+images: [deepred1.jpg,deepred2.jpg,deepred3.jpg]
+inCv: false
+inPortfolio: false
+dateFrom: 2010-06-01
+dateTo: 2010-07-01
+---
 
 # Deepred
 

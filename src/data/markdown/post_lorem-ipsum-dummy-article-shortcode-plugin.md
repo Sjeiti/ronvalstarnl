@@ -1,12 +1,12 @@
-<!--
-  date: 2015-01-28
-  modified: 2015-01-28
-  slug: lorem-ipsum-dummy-article-shortcode-plugin
-  type: post
-  categories: Wordpress, work, open source
-  tags: PHP, plugin, Wordpress
-  description: A lorem ipsum plugin for Wordpress to create full articles randomly (including a random seed).
--->
+---
+date: 2015-01-28
+modified: 2015-01-28
+slug: lorem-ipsum-dummy-article-shortcode-plugin
+type: post
+categories: [project,work]
+tags: [PHP,plugin,Wordpress]
+description: A lorem ipsum plugin for Wordpress to create full articles randomly (including a random seed).
+---
 
 # Lorem ipsum dummy article shortcode plugin
 

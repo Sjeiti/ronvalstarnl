@@ -1,11 +1,11 @@
-<!--
-  date: 2007-01-23
-  modified: 2007-01-23
-  slug: plugins
-  type: post
-  categories: backend, Wordpress
-  tags: Google
--->
+---
+date: 2007-01-23
+modified: 2007-01-23
+slug: plugins
+type: post
+categories: []
+tags: [Google]
+---
 
 # plugins
 

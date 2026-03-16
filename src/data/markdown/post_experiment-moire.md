@@ -1,14 +1,14 @@
-<!--
-  date: 2022-08-06
-  modified: 2022-08-06
-  slug: experiment-moire
-  type: post
-  categories: code, JavaScript
-  tags: JavaScript, cool shit, gradient
-  description: A single background with repeating gradients exhibit moire interference patterns and glitches.
-  thumbnail: experiments/ocalhost_7047_experiment-moire__22clr_22_22_ff0044_22_22bclr_22_22_000000_22_22type_22_22bulge_22_22part_22_220.437_22_22total_22_220.884_22.png
-  related: experiment-*
--->
+---
+date: 2022-08-06
+modified: 2022-08-06
+slug: experiment-moire
+type: post
+categories: [code,experiment]
+tags: [JavaScript,cool shit,gradient]
+description: A single background with repeating gradients exhibit moire interference patterns and glitches.
+thumbnail: experiments/ocalhost_7047_experiment-moire__22clr_22_22_ff0044_22_22bclr_22_22_000000_22_22type_22_22bulge_22_22part_22_220.437_22_22total_22_220.884_22.png
+related: [experiment-*]
+---
 
 # Moire and glitches
 

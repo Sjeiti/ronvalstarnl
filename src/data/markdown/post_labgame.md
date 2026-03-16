@@ -1,10 +1,10 @@
-<!--
-  date: 2004-07-16
-  modified: 2004-07-16
-  slug: labgame
-  type: post
-  categories: Flash, game, ActionScript
--->
+---
+date: 2004-07-16
+modified: 2004-07-16
+slug: labgame
+type: post
+categories: []
+---
 
 # labgame
 

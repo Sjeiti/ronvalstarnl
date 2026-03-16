@@ -1,10 +1,10 @@
-<!--
-  date: 2007-03-29
-  modified: 2012-07-03
-  slug: illustration
-  type: post
-  categories: image
--->
+---
+date: 2007-03-29
+modified: 2012-07-03
+slug: illustration
+type: post
+categories: []
+---
 
 # illustration
 

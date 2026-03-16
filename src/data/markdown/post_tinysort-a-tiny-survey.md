@@ -1,11 +1,11 @@
-<!--
-  date: 2012-07-03
-  modified: 2020-05-31
-  slug: tinysort-a-tiny-survey
-  type: post
-  categories: code
-  tags: jQuery, SVN, Tinysort, Git, Github
--->
+---
+date: 2012-07-03
+modified: 2020-05-31
+slug: tinysort-a-tiny-survey
+type: post
+categories: [code]
+tags: [jQuery,SVN,Tinysort,Git,Github]
+---
 
 # Tinysort: a tiny survey
 

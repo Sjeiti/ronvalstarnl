@@ -1,12 +1,12 @@
-<!--
-  date: 2014-05-26
-  modified: 2014-08-14
-  slug: dry-responsive-javascript
-  type: post
-  categories: code, JavaScript
-  tags: CSS, JavaScript
-  description: A DRY responsive JavaScript solution that searches the document.styleSheets for CSSMediaRule. So breakpoints are only defined in CSS!
--->
+---
+date: 2014-05-26
+modified: 2014-08-14
+slug: dry-responsive-javascript
+type: post
+categories: [code]
+tags: [CSS,JavaScript]
+description: A DRY responsive JavaScript solution that searches the document.styleSheets for CSSMediaRule. So breakpoints are only defined in CSS!
+---
 
 # DRY responsive JavaScript
 

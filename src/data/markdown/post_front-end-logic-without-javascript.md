@@ -1,15 +1,15 @@
-<!--
-  slug: front-end-logic-without-javascript
-  date: 2020-02-23
-  modified: 2021-04-11
-  type: post
-  header: vanveenjf-Ou36eroE7k0-unsplash.jpg
-  category: JavaScript
-  tag: code quality, string
-  related: the-basics-of-css-page-transitions
--->
+---
+slug: front-end-logic-without-javascript
+date: 2020-02-23
+modified: 2021-04-11
+type: post
+header: vanveenjf-Ou36eroE7k0-unsplash.jpg
+categories: [code,technique]
+tags: [code quality, string]
+related: [the-basics-of-css-page-transitions]
+---
 
-# Front-end logic without Javascript
+# Front-end logic without JavaScript
 
 It is surprising how few front-end developers are aware of this little trick (but maybe I meet the wrong ones).
 There is an easy way to manage the state of a user interface using *only* HTML and CSS.
@@ -218,7 +218,7 @@ To created a tabbed interface we use a `radio` instead of a `checkbox`. If you c
 
 This is really just an expander. But just for examples sake: here is a nested one. And a bit of UX advice on hamburgers: try not to use them especially if you only have three menu items.
 
-Here we have is also a small issue that is hard to resolve without resorting to Javascript. The submenus in this example use `input[type=radio]` and unlike `type=checkbox` radios cannot be disabled when clicking the selected one. Resolving this issue requires adding an extra unrelated input which will be checked by Javascript when a checked radio is clicked.
+Here we have is also a small issue that is hard to resolve without resorting to JavaScript. The submenus in this example use `input[type=radio]` and unlike `type=checkbox` radios cannot be disabled when clicking the selected one. Resolving this issue requires adding an extra unrelated input which will be checked by JavaScript when a checked radio is clicked.
 
 ```html
 <!--example-->

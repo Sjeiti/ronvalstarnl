@@ -1,10 +1,10 @@
-<!--
-  date: 2009-09-18
-  modified: 2009-09-18
-  slug: gridfeed
-  type: post
-  categories: admin, JavaScript, jQuery, XML
--->
+---
+date: 2009-09-18
+modified: 2009-09-18
+slug: gridfeed
+type: post
+categories: [project]
+---
 
 # jQuery.feedQuilt
 

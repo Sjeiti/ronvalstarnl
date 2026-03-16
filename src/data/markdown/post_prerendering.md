@@ -1,15 +1,16 @@
-<!--
-  date: 2024-08-09
-  modified: 2025-04-18
-  slug: prerendering-with-jsdom
-  type: post
-  header: homa-appliances-5hPe-Tr2wog-unsplash.jpg
-  headerColofon: photo by [Homa appliances](https://unsplash.com/@homaappliances/collections)
-  headerClassName: darken
-  categories: code, work
-  tags: seo, rss
-  description: You don't need cloud services for prerendering. Using JSDOM you can easily setup a build script that renders HTML for every page.
--->
+---
+date: 2024-08-09
+modified: 2025-04-18
+slug: prerendering-with-jsdom
+type: post
+header: homa-appliances-5hPe-Tr2wog-unsplash.jpg
+headerColofon: |
+  photo by [Homa appliances](https://unsplash.com/@homaappliances/collections)
+headerClassName: [darken]
+categories: [code,technique,tools,work]
+tags: [seo,rss]
+description: You don't need cloud services for prerendering. Using JSDOM you can easily setup a build script that renders HTML for every page.
+---
 
 # Prerendering with JSDOM
 

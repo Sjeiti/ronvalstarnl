@@ -1,10 +1,10 @@
-<!--
-  date: 2005-12-27
-  modified: 2012-07-03
-  slug: sparklines
-  type: post
-  categories: admin, backend
--->
+---
+date: 2005-12-27
+modified: 2012-07-03
+slug: sparklines
+type: post
+categories: []
+---
 
 # sparklines
 

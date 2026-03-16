@@ -1,10 +1,10 @@
-<!--
-  date: 2006-11-12
-  modified: 2006-11-12
-  slug: juridacom
-  type: post
-  categories: Flash, XML, ActionScript
--->
+---
+date: 2006-11-12
+modified: 2006-11-12
+slug: juridacom
+type: post
+categories: []
+---
 
 # Jurida.com
 

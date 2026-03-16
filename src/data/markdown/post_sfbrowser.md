@@ -1,10 +1,10 @@
-<!--
-  date: 2008-06-29
-  modified: 2008-06-29
-  slug: sfbrowser
-  type: post
-  categories: code, JavaScript, jQuery, backend
--->
+---
+date: 2008-06-29
+modified: 2008-06-29
+slug: sfbrowser
+type: post
+categories: [code]
+---
 
 # SFBrowser
 

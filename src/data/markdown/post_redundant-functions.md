@@ -1,13 +1,12 @@
-<!--
-  date: 9999-99-99
-  modified: 9999-99-99
-  slug:redundant-functions
-  type: post
-  categories: code
-  tags:
-  header: plastic-wall.jpg
-  headerClassName: no-blur darken
--->
+---
+date: 9999-99-99
+modified: 9999-99-99
+slug: redundant-functions
+type: post
+categories: [code]
+header: plastic-wall.jpg
+headerClassName: [no-blur,darken]
+---
 
 # Redundant functions
 

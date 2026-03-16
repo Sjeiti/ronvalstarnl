@@ -1,9 +1,10 @@
-<!--
-  date: 2007-01-07
-  modified: 2012-07-03
-  slug: hypnosis
-  type: post
--->
+---
+date: 2007-01-07
+modified: 2012-07-03
+slug: hypnosis
+type: post
+categories: [experiment]
+---
 
 # hypnosis
 

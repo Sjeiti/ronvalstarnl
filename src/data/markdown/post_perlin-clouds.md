@@ -1,9 +1,10 @@
-<!--
-  date: 2009-02-28
-  modified: 2020-07-29
-  slug: perlin-clouds
-  type: post
--->
+---
+date: 2009-02-28
+modified: 2020-07-29
+slug: perlin-clouds
+type: post
+categories: [code,illustration]
+---
 
 # Perlin clouds
 

@@ -1,11 +1,11 @@
-<!--
-  date: 2003-12-01
-  modified: 2014-08-15
-  slug: frontpage
-  type: post
-  categories: Director
-  tags: illustration
--->
+---
+date: 2003-12-01
+modified: 2014-08-15
+slug: frontpage
+type: post
+categories: []
+tags: [illustration]
+---
 
 # frontpage
 

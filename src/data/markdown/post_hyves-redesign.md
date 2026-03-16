@@ -1,10 +1,10 @@
-<!--
-  date: 2008-06-19
-  modified: 2014-03-11
-  slug: hyves-redesign
-  type: post
-  categories: link
--->
+---
+date: 2008-06-19
+modified: 2014-03-11
+slug: hyves-redesign
+type: post
+categories: []
+---
 
 # Hyves redesign
 

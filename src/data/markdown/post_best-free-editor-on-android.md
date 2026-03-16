@@ -1,14 +1,15 @@
-<!--
-  date: 2017-08-09
-  modified: 2020-03-16
-  slug: best-free-editor-on-android
-  type: post
-  header: termux.png
-  categories: code, CSS, HTML, JavaScript
-  tags: Vim, cli, linux, bash, android
-  description: Apps for programming on an Android are clumsy at best, and full of adds. But the best one is really just a Linux terminal: Termux!
-  sticky: true
--->
+---
+date: 2017-08-09
+modified: 2020-03-16
+slug: best-free-editor-on-android
+type: post
+header: termux.png
+categories: [code,tools,work]
+tags: [Vim,cli,linux,bash,android]
+description: |
+  Apps for programming on an Android are clumsy at best, and full of adds. But the best one is really just a Linux terminal: Termux!
+sticky: true
+---
 
 # The best programming editor on Android is free
 

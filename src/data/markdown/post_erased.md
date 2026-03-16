@@ -1,10 +1,10 @@
-<!--
-  date: 2005-02-25
-  modified: 2005-02-25
-  slug: erased
-  type: post
-  categories: admin
--->
+---
+date: 2005-02-25
+modified: 2005-02-25
+slug: erased
+type: post
+categories: []
+---
 
 # erased
 

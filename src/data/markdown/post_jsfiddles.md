@@ -1,15 +1,16 @@
-<!--
-  date: 2022-06-01
-  modified: 2022-06-01
-  slug: jsfiddles
-  type: post
-  header: vita-m-H9eMr6NdlPU-unsplash.jpg
-  headerColofon: photo by [Vita M](https://unsplash.com/@esuvita)
-  headerClassName: no-blur darken
-  categories: Javascript
-  tags: CSS
-  related: fast-giant-lists project/disconnect front-end-logic-without-javascript mc-picker
--->
+---
+date: 2022-06-01
+modified: 2022-06-01
+slug: jsfiddles
+type: post
+header: vita-m-H9eMr6NdlPU-unsplash.jpg
+headerColofon: |
+  photo by [Vita M](https://unsplash.com/@esuvita)
+headerClassName: [no-blur,darken]
+categories: [code,experiment,work]
+tags: [CSS]
+related: [fast-giant-lists project/disconnect front-end-logic-without-javascript mc-picker]
+---
 
 # JSFiddles
 

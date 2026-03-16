@@ -19,7 +19,7 @@ excerpt: Design and development of a [local-first](https://www.inkandswitch.com/
 #  Alle gegevens worden opgeslagen op de lokale computer en kunnen worden over gezet naar andere apparaten via een peer-to-peer-verbinding.
 #  Styling en tekst van facturen en offertes zijn volledig aanpasbaar.
 description: This local-first invoicing application stores all your data on your local machine. Styling and copy are completely customizable.
-categories: [JavaScript, HTML/CSS, framework, open source, UX, graphic design, mobile]
+categories: [code,project,work]
 tags: [JavaScript, Vue, UX, TDD, Cypress, Redux, Docker]
 thumbnail: PIMockup.jpg
 image: project-invoice_7.png

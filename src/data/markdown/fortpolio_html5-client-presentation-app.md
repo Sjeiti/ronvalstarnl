@@ -1,17 +1,14 @@
-<!--
-  slug: html5-client-presentation-app
-  type: fortpolio
-  categories: mobile
-  tags: CSS, HTML, JavaScript, Less, Grunt
-  clients: 72andSunny
-  collaboration: 
-  prizes: 
-  images: 
-  inCv: false
-  inPortfolio: false
-  dateFrom: 2013-11-01
-  dateTo: 2013-12-01
--->
+---
+slug: html5-client-presentation-app
+type: fortpolio
+categories: [mobile]
+tags: [CSS,HTML,JavaScript,Less,Grunt]
+clients: [72andSunny]
+inCv: false
+inPortfolio: false
+dateFrom: 2013-11-01
+dateTo: 2013-12-01
+---
 
 # HTML5 client presentation app
 

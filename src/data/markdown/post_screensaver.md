@@ -1,10 +1,10 @@
-<!--
-  date: 2005-05-20
-  modified: 2012-07-03
-  slug: screensaver
-  type: post
-  categories: Director
--->
+---
+date: 2005-05-20
+modified: 2012-07-03
+slug: screensaver
+type: post
+categories: []
+---
 
 # screensaver
 

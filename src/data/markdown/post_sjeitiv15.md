@@ -1,10 +1,10 @@
-<!--
-  date: 2005-10-27
-  modified: 2005-10-27
-  slug: sjeitiv15
-  type: post
-  categories: admin
--->
+---
+date: 2005-10-27
+modified: 2005-10-27
+slug: sjeitiv15
+type: post
+categories: []
+---
 
 # Sjeiti v15
 

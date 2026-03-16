@@ -1,9 +1,9 @@
-<!--
-  date: 2007-01-06
-  modified: 2014-05-01
-  slug: images
-  type: page
--->
+---
+date: 2007-01-06
+modified: 2014-05-01
+slug: images
+type: page
+---
 
 # drawings
 

@@ -1,11 +1,11 @@
-<!--
-  date: 2014-05-06
-  modified: 2014-05-19
-  slug: change-css-styles-at-the-root
-  type: post
-  categories: CSS, JavaScript
-  tags: CSS, JavaScript, gist
--->
+---
+date: 2014-05-06
+modified: 2014-05-19
+slug: change-css-styles-at-the-root
+type: post
+categories: []
+tags: [CSS,JavaScript,gist]
+---
 
 # Change CSS styles at the root.
 

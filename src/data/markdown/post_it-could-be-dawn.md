@@ -1,11 +1,11 @@
-<!--
-  date: 2011-04-09
-  modified: 2020-07-29
-  slug: it-could-be-dawn
-  type: post
-  categories: illustration
-  tags: Sketchbook pro
--->
+---
+date: 2011-04-09
+modified: 2020-07-29
+slug: it-could-be-dawn
+type: post
+categories: [illustration]
+tags: [Sketchbook pro]
+---
 
 # It could be dawn
 

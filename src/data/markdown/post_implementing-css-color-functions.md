@@ -1,14 +1,15 @@
-<!--
-  date: 2021-07-16
-  modified: 2021-07-16
-  slug: implementing-css-color-functions
-  type: post
-  header: lucas-benjamin-MyU3s1VasA4-unsplash.jpg
-  headerColofon: photo by [Lucas Benjamin](https://unsplash.com/@aznbokchoy)
-  headerClassName: no-blur
-  categories: Javascript
-  tags: CSS
--->
+---
+date: 2021-07-16
+modified: 2021-07-16
+slug: implementing-css-color-functions
+type: post
+header: lucas-benjamin-MyU3s1VasA4-unsplash.jpg
+headerColofon: |
+  photo by [Lucas Benjamin](https://unsplash.com/@aznbokchoy)
+headerClassName: [no-blur]
+categories: [code,technique,work]
+tags: [CSS]
+---
 
 # Implementing CSS color functions
  

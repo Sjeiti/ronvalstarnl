@@ -1,11 +1,11 @@
-<!--
-  date: 2007-01-02
-  modified: 2007-01-02
-  slug: youtubeprocessinggroup
-  type: post
-  categories: Processing, video
-  tags: RSS
--->
+---
+date: 2007-01-02
+modified: 2007-01-02
+slug: youtubeprocessinggroup
+type: post
+categories: [code]
+tags: [Processing,RSS,video]
+---
 
 # Youtube Processing group
 

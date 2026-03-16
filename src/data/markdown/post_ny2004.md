@@ -1,9 +1,9 @@
-<!--
-  date: 2007-01-07
-  modified: 2007-01-07
-  slug: ny2004
-  type: post
--->
+---
+date: 2007-01-07
+modified: 2007-01-07
+slug: ny2004
+type: post
+---
 
 # 2004
 

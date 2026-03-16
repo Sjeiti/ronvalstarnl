@@ -1,11 +1,11 @@
-<!--
-  date: 2007-03-05
-  modified: 2014-03-11
-  slug: filter-forge-released
-  type: post
-  categories: link
-  tags: Filter Forge
--->
+---
+date: 2007-03-05
+modified: 2014-03-11
+slug: filter-forge-released
+type: post
+categories: [illustration]
+tags: [Filter Forge]
+---
 
 # Filter Forge released
 

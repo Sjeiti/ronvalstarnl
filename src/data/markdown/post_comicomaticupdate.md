@@ -1,10 +1,10 @@
-<!--
-  date: 2006-07-09
-  modified: 2014-03-11
-  slug: comicomaticupdate
-  type: post
-  categories: code, Flash, ActionScript
--->
+---
+date: 2006-07-09
+modified: 2014-03-11
+slug: comicomaticupdate
+type: post
+categories: [code,project]
+---
 
 # comic.o.matic update
 

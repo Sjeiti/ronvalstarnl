@@ -1,11 +1,11 @@
-<!--
-  date: 2008-12-31
-  modified: 2008-12-31
-  slug: sfbrowser-3-beta
-  type: post
-  categories: code, JavaScript, jQuery, backend
-  tags: PHP, test
--->
+---
+date: 2008-12-31
+modified: 2008-12-31
+slug: sfbrowser-3-beta
+type: post
+categories: [code,project]
+tags: [PHP,test]
+---
 
 # SFBrowser 3 beta
 

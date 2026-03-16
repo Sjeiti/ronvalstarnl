@@ -1,11 +1,10 @@
-<!--
-  date: 2014-05-23
-  modified: 2023-06-26
-  slug: cv-nl
-  type: page
-  description: Ik ben een front-end ontwikkelaar met meer dan achttien jaar ervaring in grafisch ontwerp, interactie ontwerp en programmeren.
--->
-
+---
+date: 2014-05-23
+modified: 2023-06-26
+slug: cv-nl
+type: page
+description: Ik ben een front-end ontwikkelaar met meer dan achttien jaar ervaring in grafisch ontwerp, interactie ontwerp en programmeren.
+---
 
 # Curriculum Vitae
 <div class="print-columns">

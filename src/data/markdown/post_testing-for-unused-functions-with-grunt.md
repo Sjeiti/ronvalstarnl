@@ -1,12 +1,12 @@
-<!--
-  date: 2013-08-08
-  modified: 2020-05-31
-  slug: testing-for-unused-functions-with-grunt
-  type: post
-  categories: code, JavaScript, jQuery
-  tags: JavaScript, Grunt, NodeJS
-  description: Using Grunt to test 5000 lines of code for unused functions.
--->
+---
+date: 2013-08-08
+modified: 2020-05-31
+slug: testing-for-unused-functions-with-grunt
+type: post
+categories: [code]
+tags: [JavaScript,Grunt,NodeJS]
+description: Using Grunt to test 5000 lines of code for unused functions.
+---
 
 # Testing for unused functions with Grunt
 

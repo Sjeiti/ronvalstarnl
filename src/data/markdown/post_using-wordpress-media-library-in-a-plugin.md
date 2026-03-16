@@ -1,12 +1,12 @@
-<!--
-  date: 2012-05-01
-  modified: 2020-03-16
-  slug: using-wordpress-media-library-in-a-plugin
-  type: post
-  categories: code, JavaScript, backend, Wordpress
-  tags: hack, plugin, Wordpress
-  description: How to use the Wordpress media library in a plugin or custom post type... the right way.
--->
+---
+date: 2012-05-01
+modified: 2020-03-16
+slug: using-wordpress-media-library-in-a-plugin
+type: post
+categories: [code,work]
+tags: [hack,plugin,JavaScript,backend,Wordpress]
+description: How to use the Wordpress media library in a plugin or custom post type... the right way.
+---
 
 # Using WordPress media library in a plugin
 

@@ -1,15 +1,16 @@
-<!--
-  date: 2020-04-03
-  modified: 2020-04-05
-  slug: render-html-to-an-image
-  type: post
-  header: jonny-caspari-KuudDjBHIlA-unsplash.jpg
-  headerColofon: photo by [Jonny Caspari](https://unsplash.com/@jonnysplsh)
-  headerClassName: no-blur darken
-  categories: Javascript
-  tags: HTML, DOM, SVG, image, screenshot
-  sticky: true
--->
+---
+date: 2020-04-03
+modified: 2020-04-05
+slug: render-html-to-an-image
+type: post
+header: jonny-caspari-KuudDjBHIlA-unsplash.jpg
+headerColofon: |
+  photo by [Jonny Caspari](https://unsplash.com/@jonnysplsh)
+headerClassName: [no-blur,darken]
+categories: [code,technique]
+tags: [HTML,DOM,SVG,image,screenshot]
+sticky: true
+---
 
 # Rendering HTML to an image
 

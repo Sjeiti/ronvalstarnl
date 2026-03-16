@@ -1,12 +1,13 @@
-<!--
-  date: 2014-04-24
-  modified: 2016-02-24
-  slug: experiment-vertical
-  type: post
-  tags: REST, cool shit, experiment
-  thumbnail: experiments/ocalhost_7047_experiment-vertical.jpg
-  related: experiment-*
--->
+---
+date: 2014-04-24
+modified: 2016-02-24
+slug: experiment-vertical
+type: post
+tags: [REST,cool shit,experiment]
+thumbnail: experiments/ocalhost_7047_experiment-vertical.jpg
+related: [experiment-*]
+categories: [code,experiment]
+---
 
 # Experiment: vertical
 

@@ -1,11 +1,10 @@
-<!--
-  date: 2014-05-23
-  modified: 2023-06-26
-  slug: cv
-  type: page
-  description: I am a front-end developer with more than eighteen years experience doing graphic design, interaction design and programming.
--->
-
+---
+date: 2014-05-23
+modified: 2023-06-26
+slug: cv
+type: page
+description: I am a front-end developer with more than eighteen years experience doing graphic design, interaction design and programming.
+---
 
 # Curriculum Vitae
 

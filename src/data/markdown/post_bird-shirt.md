@@ -1,13 +1,11 @@
-<!--
-  date: xxxx-xx-xx
-  modified: 2026-02-06
-  slug: bird-shirt
-  type: post
-  categories: code, HTML
-  tags: cool shit
-  description: 
-  related:
--->
+---
+date: xxxx-xx-xx
+modified: 2026-02-06
+slug: bird-shirt
+type: post
+categories: [code]
+tags: [cool shit]
+---
 
 # Bjirds
 

@@ -1,10 +1,10 @@
-<!--
-  date: 2005-09-20
-  modified: 2020-06-01
-  slug: recursion
-  type: post
-  categories: Processing
--->
+---
+date: 2005-09-20
+modified: 2020-06-01
+slug: recursion
+type: post
+categories: []
+---
 
 # recursion
 

@@ -22,7 +22,7 @@ cvNl:
     - Front-end guild meetups georganiseerd.
     - De implementatie van design-tokens geautomatiseerd na...
     - Onderzoek gedaan naar en geadviseerd over webanimatie.
-categories: [JavaScript, HTML/CSS, UX, mobile, web components, design system]
+categories: [JavaScript, HTML/CSS, UX, mobile]
 tags: [kanban, web components, design system, CSS, HTML, JavaScript, TypeScript, Nx, Angular, RxJs, JSDoc, Storybook, React, TDD, Jest, Vitest, Playwright, accessibility, DevOps, Docker, ESLint]
 clients: [ASN Bank]
 inCv: true

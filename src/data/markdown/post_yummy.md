@@ -1,10 +1,10 @@
-<!--
-  date: 2006-01-07
-  modified: 2006-01-07
-  slug: yummy
-  type: post
-  categories: admin, backend
--->
+---
+date: 2006-01-07
+modified: 2006-01-07
+slug: yummy
+type: post
+tags: [admin,backend]
+---
 
 # yummy
 

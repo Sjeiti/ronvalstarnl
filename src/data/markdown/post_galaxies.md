@@ -1,10 +1,10 @@
-<!--
-  date: 2005-03-02
-  modified: 2005-03-02
-  slug: galaxies
-  type: post
-  categories: link 
--->
+---
+date: 2005-03-02
+modified: 2005-03-02
+slug: galaxies
+type: post
+categories: []
+---
 
 # galaxies
 

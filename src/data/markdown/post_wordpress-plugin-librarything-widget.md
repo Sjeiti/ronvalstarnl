@@ -1,9 +1,9 @@
-<!--
-  date: 2007-01-28
-  modified: 2007-01-28
-  slug: wordpress-plugin-librarything-widget
-  type: post
--->
+---
+date: 2007-01-28
+modified: 2007-01-28
+slug: wordpress-plugin-librarything-widget
+type: post
+---
 
 # Librarything widget
 

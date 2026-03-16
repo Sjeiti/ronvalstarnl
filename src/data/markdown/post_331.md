@@ -1,10 +1,10 @@
-<!--
-  date: 2008-11-22
-  modified: 2008-11-22
-  slug: 331
-  type: post
-  categories: jQuery
--->
+---
+date: 2008-11-22
+modified: 2008-11-22
+slug: 331
+type: post
+categories: []
+---
 
 # jQuery plugin update
 

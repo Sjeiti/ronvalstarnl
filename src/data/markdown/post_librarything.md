@@ -1,11 +1,11 @@
-<!--
-  date: 2006-06-18
-  modified: 2006-06-18
-  slug: librarything
-  type: post
-  categories: book
-  tags: API
--->
+---
+date: 2006-06-18
+modified: 2006-06-18
+slug: librarything
+type: post
+categories: []
+tags: [API]
+---
 
 # librarything
 

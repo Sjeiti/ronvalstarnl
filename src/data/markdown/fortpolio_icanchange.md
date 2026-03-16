@@ -1,15 +1,16 @@
-<!--
-  slug: icc
-  type: fortpolio
-  excerptNl: 'I can change' is een stichting die stadslandbouw promoot in het hart van Amsterdam. Ik heb hun website bijgewerkt naar de nieuwste versie van het Kirby-framework. Daarnaast heb ik verschillende op maat gemaakte Vue-componenten toegevoegd die voor het updaten en communiceren veel gemakkelijker maken.
-Dit werk werd als vrijwilligerswerk gedaan.
-  categories: JavaScript, HTML/CSS
-  tags: PHP, Kirby, JavaScript, HTML, CSS, Vue
-  inCv: false
-  inPortfolio: false
-  dateFrom: 2021-11-01
-  dateTo: 2022-11-01
--->
+---
+slug: icc
+type: fortpolio
+#excerptNl: |
+#  <p>&#39;I can change&#39; is een stichting die stadslandbouw promoot in het hart van Amsterdam. Ik heb hun website bijgewerkt naar de nieuwste versie van het Kirby-framework. Daarnaast heb ik verschillende op maat gemaakte Vue-componenten toegevoegd die voor het updaten en communiceren veel gemakkelijker maken.
+#  Dit werk werd als vrijwilligerswerk gedaan.</p>
+categories: [JavaScript,HTML/CSS]
+tags: [PHP,Kirby,JavaScript,HTML,CSS,Vue]
+inCv: false
+inPortfolio: false
+dateFrom: 2021-11-01
+dateTo: 2022-11-01
+---
 
 # CMS update for 'I can change'
 

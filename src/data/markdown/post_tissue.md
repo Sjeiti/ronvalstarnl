@@ -1,9 +1,9 @@
-<!--
-  date: 2007-01-07
-  modified: 2007-01-07
-  slug: tissue
-  type: post
--->
+---
+date: 2007-01-07
+modified: 2007-01-07
+slug: tissue
+type: post
+---
 
 # living tissue
 

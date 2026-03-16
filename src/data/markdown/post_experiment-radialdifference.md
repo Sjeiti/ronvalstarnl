@@ -1,14 +1,14 @@
-<!--
-  date: 2016-09-06
-  modified: 2017-01-14
-  slug: experiment-radialdifference
-  type: post
-  categories: code, JavaScript
-  tags: JavaScript, cool shit, particles
-  description: Another pretty simple idea with a really cool result. These are radial gradients drawn on top of each other with a 'difference' blend mode.
-  thumbnail: experiments/ocalhost_7047_experiment-radialdifference.jpg
-  related: experiment-*
--->
+---
+date: 2016-09-06
+modified: 2017-01-14
+slug: experiment-radialdifference
+type: post
+categories: [code,experiment]
+tags: [JavaScript,cool shit,particles]
+description: Another pretty simple idea with a really cool result. These are radial gradients drawn on top of each other with a 'difference' blend mode.
+thumbnail: experiments/ocalhost_7047_experiment-radialdifference.jpg
+related: [experiment-*]
+---
 
 # Experiment: difference with radial gradients in canvas
 

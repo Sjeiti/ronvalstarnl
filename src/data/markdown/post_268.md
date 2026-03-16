@@ -1,10 +1,10 @@
-<!--
-  date: 2003-10-16
-  modified: 2014-08-15
-  slug: 268
-  type: post
-  categories: admin
--->
+---
+date: 2003-10-16
+modified: 2014-08-15
+slug: 268
+type: post
+categories: []
+---
 
 # …
 

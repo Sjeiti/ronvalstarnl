@@ -1,20 +1,18 @@
-<!--
-  slug: kosmonaut
-  type: fortpolio
-  excerpt: <p>Design and creation of a website that depicted a wooden desktop over which a camera pans, zooms and rotates.</p>
-  categories: JavaScript, HTML/CSS, video, illustration
-  tags: Filter Forge, HTML, CSS, JavaScript, graphic design, ActionScript, Flash, video, UX, concept
-  clients: Kosmonaut
-  collaboration: 
-  prizes: 
-  thumbnail: kosmonaut1.jpg
-  image: kosmonaut1.jpg
-  images: kosmonaut.jpg, kosmonaut0.jpg, kosmonaut1.jpg, kosmonaut2.jpg, kosmonaut3.jpg, kosmonaut4.jpg
-  inCv: false
-  inPortfolio: true
-  dateFrom: 2007-11-01
-  dateTo: 2008-01-01
--->
+---
+slug: kosmonaut
+type: fortpolio
+excerpt: <p>Design and creation of a website that depicted a wooden desktop over which a camera pans, zooms and rotates.</p>
+categories: [JavaScript,HTML/CSS,video,illustration]
+tags: [Filter Forge,HTML,CSS,JavaScript,graphic design,ActionScript,Flash,video,UX,concept]
+clients: [Kosmonaut]
+thumbnail: kosmonaut1.jpg
+image: kosmonaut1.jpg
+images: [kosmonaut.jpg,kosmonaut0.jpg,kosmonaut1.jpg,kosmonaut2.jpg,kosmonaut3.jpg,kosmonaut4.jpg]
+inCv: false
+inPortfolio: true
+dateFrom: 2007-11-01
+dateTo: 2008-01-01
+---
 
 # Kosmonaut
 

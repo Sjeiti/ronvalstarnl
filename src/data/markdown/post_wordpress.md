@@ -1,11 +1,10 @@
-<!--
-  date: 2007-01-19
-  modified: 2007-01-19
-  slug: wordpress
-  type: post
-  categories: admin, backend
-  tags: CMS
--->
+---
+date: 2007-01-19
+modified: 2007-01-19
+slug: wordpress
+type: post
+tags: [admin,backend,CMS]
+---
 
 # WordPress
 

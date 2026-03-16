@@ -1,12 +1,11 @@
-<!--
-  slug: less-variables-to-javascript
-  date: 2012-06-18
-  modified: 2012-08-24
-  type: post
-  categories: CSS, Director, JavaScript
-  tags: 
-  description: Here's an easy solution for parsing LESS variables to JavaScript (technique should work with any CSS preprocessor though).
--->
+---
+slug: less-variables-to-javascript
+date: 2012-06-18
+modified: 2012-08-24
+type: post
+categories: []
+description: Here's an easy solution for parsing LESS variables to JavaScript (technique should work with any CSS preprocessor though).
+---
 
 # LESS variables to JavaScript
 

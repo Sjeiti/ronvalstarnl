@@ -1,10 +1,10 @@
-<!--
-  date: 2010-07-22
-  modified: 2012-07-03
-  slug: meten-is-weten
-  type: post
-  categories: illustration
--->
+---
+date: 2010-07-22
+modified: 2012-07-03
+slug: meten-is-weten
+type: post
+categories: [illustration]
+---
 
 # meten is weten
 
