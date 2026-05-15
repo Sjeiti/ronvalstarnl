@@ -1,6 +1,9 @@
 .content[data-pathname^="experiments"], .content[data-pathname^="project/"], .content[data-pathname^="projects/"], .content[data-pathname="projects"] {
   padding: 0;
   overflow: hidden; // for dark-gray background color not hiding footer
+  [data-filter] {
+    transform: translateY(1rem);
+  }
 }
 ul.projects {
   margin: 0;
@@ -91,7 +94,8 @@ ul.projects {
     height: auto;
   }
 }
-ul.project-category {
+
+/*ul.project-category {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -126,7 +130,8 @@ ul.project-category {
       background-color: black;
     }
   }
-}
+}*/
+
 .project{
   margin: 0;
   padding: 0;

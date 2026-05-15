@@ -4,7 +4,8 @@ import {signal} from '../signal/index.js'
 import {clean} from '../utils/html.js'
 import {select} from '../utils/style.js'
 import {slugify} from '../utils/string.js'
-import {routeChange} from '../router.js'
+import {open,routeChange} from '../router.js'
+import {nextFrame} from '../utils/index.js'
 
 /**
  * Filter component
@@ -17,22 +18,23 @@ create('[data-filter]', class extends BaseComponent{
     const {list,pathnamePrefix} = this._parseOptions(this._element.getAttribute('data-filter'))
 
     const ul = this._append(`
-      ul>(${list.map(s=>{
-        const pathname = pathnamePrefix+slugify(s)
-        return `li>a[href="${pathname}"]{${s}}`
+      ul>(${list.map(filterItem=>{
+        const {name, slug} = filterItem
+        const pathname = pathnamePrefix+slugify(slug)
+        return `li>a[href="${pathname}"]{${name}}`
       }).join('+')})
     `)
-    ul.addEventListener('mousedown',this._onListDown.bind(this,pathnamePrefix))
+    ul.addEventListener('click',this._onListClick.bind(this,pathnamePrefix.replace(/\/$/,'')), true)
 
     routeChange.add(this._onRouteChange.bind(this))
   }
 
-  _onListDown(pathNamePrefix,e){
+  _onListClick(pathNamePrefix,e){
     const {target} = e
     const href = target.getAttribute('href')
     if(location.pathname===href){
-      target.setAttribute('href',pathNamePrefix)
-      requestAnimationFrame(()=>target.setAttribute('href',href))
+      open(pathNamePrefix)
+      e.preventDefault()
     }
   }
 

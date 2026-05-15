@@ -9,7 +9,6 @@ import {open} from '../router.js'
 
 const classNames = makeClassNames({
     current: 'current'
-  , projectCategory: 'project-category'
   , projects: 'projects'
   , project: 'project'
 })
@@ -29,7 +28,7 @@ add(
         //
         //const querySelector = ::view.querySelector
         const querySelector = view.querySelector.bind(view)
-        let existingCategories = querySelector(classNames.projectCategory)
+        let existingCategories = querySelector('[data-filter]')
         let existingProjects = querySelector(classNames.projects)
         const existingProject = querySelector(classNames.project)
         //
@@ -85,12 +84,20 @@ add(
 function buildPage(view, categories, portfolioProjects){
   //const querySelector = ::view.querySelector
   const querySelector = view.querySelector.bind(view)
-  view.expandAppend(`(ul${classNames.projectCategory}>(${categories.map(
-      o=>`(li>a[href="/projects/${o.slug}"]{${o.name}})`
-    ).join('+')}))+ul.unstyled${classNames.projects}>(${portfolioProjects.map(getProjectThumbZen).join('+')})`)
-  const categoriesElm = querySelector(classNames.projectCategory)
-  categoriesElm.addEventListener('click', onClickCategory)
-  return [categoriesElm, querySelector(classNames.projects)]
+
+  view.expandAppend(`${_initFilterZen(view,categories)}+${_initProjectListZen(portfolioProjects)}`)
+
+  return [querySelector('[data-filter]'), querySelector(classNames.projects)]
+}
+
+function _initFilterZen(view,categories){
+  const data = JSON.stringify({list:categories,pathnamePrefix:'/projects/'})
+      .replace(/"/g,'&quot;')
+  return `div[data-filter="${data}"]`
+}
+
+function _initProjectListZen(portfolioProjects){
+  return `ul.unstyled${classNames.projects}>(${portfolioProjects.map(getProjectThumbZen).join('+')})`
 }
 
 /**
@@ -126,18 +133,6 @@ function buildCurrentProject(view, project, existingProjects){
   selectEach(view.querySelector(classNames.project), 'img', img=>{
     img.addEventListener('load', ()=>img.naturalHeight>img.naturalWidth&&img.parentNode.classList.add('portrait'))
   })
-}
-
-/**
- * Clicking selected category should revert to projects
- * @param {Event} e
- */
-function onClickCategory(e){
-  const {target} = e
-  if (location.href===target.href){
-    open('/projects')
-    e.preventDefault()
-  }
 }
 
 /**

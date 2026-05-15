@@ -9,16 +9,16 @@ const params = new URLSearchParams(search)
 const cms = hostname==='localhost'&&params.has('cms')
 
 const allowedCategories = [
-  "code",
-  "technique",
-  "project",
-  "experiment",
-  "illustration",
-  "rant",
-  "birds",
-  "microscopy",
-  "tools",
-  "work"
+  'code',
+  'technique',
+  'project',
+  'experiment',
+  'illustration',
+  'rant',
+  'birds',
+  'microscopy',
+  'tools',
+  'work'
 ]
 
 add(
@@ -37,7 +37,7 @@ add(
         let existingFilter = querySelector('[data-filter]')
         let existingList = querySelector('.link-list')
 
-        if(!existingFilter||!existingList){       
+        if(!existingFilter||!existingList){
           _initFilter(view,posts)
           const list = _initList(view,posts)
           _initEvents.call(this, list)
@@ -50,12 +50,15 @@ add(
 )
 
 function _initFilter(view,posts){
-  const cats = posts.reduce((acc,post)=>{
-    post.categories?.forEach(cat=>{
-      acc.includes(cat)||acc.push(cat)
-    })
-    return acc
-  },[])
+  const cats = posts
+      .reduce((acc,post)=>{
+        post.categories?.forEach(cat=>{
+          acc.includes(cat)||acc.push(cat)
+        })
+        return acc
+      },[])
+      .map(cat=>({name: cat, slug: slugify(cat)}))
+  console.log('cats', cats) // todo: remove log
   _initFilterCSS(cats)
   const data = JSON.stringify({list:cats,pathnamePrefix:'/blog/'})
      .replace(/"/g,'&quot;')
@@ -70,7 +73,7 @@ function _initFilterCSS(categories){
     style.textContent = `.content[data-pathname^=blog] ul.link-list {
       ${
         categories
-          .map(cat=>cat.toLowerCase())
+          .map(cat=>cat.name.toLowerCase())
           .map(cat=>`
 &.category-${cat} {
   li {

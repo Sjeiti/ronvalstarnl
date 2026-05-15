@@ -14,7 +14,7 @@ const dontOpen = process.argv.join(' ').includes(' -s')||false
 
 express()
   .use(serveStatic(`./${root}/`))
-  .use(express.urlencoded())
+  .use(express.urlencoded({extended: true}))
   .use(express.json())
   .use('/api', api)
 
@@ -23,6 +23,8 @@ express()
   })
   .listen(port)
 
-(!dontOpen||!process.env.nodemon)
+console.info('running', 'http://localhost:'+port)
+
+;(!dontOpen||!process.env.nodemon)
   &&openBrowser('http://localhost:'+port)
 

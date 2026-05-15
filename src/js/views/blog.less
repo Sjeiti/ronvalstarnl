@@ -1,5 +1,7 @@
-.content[data-pathname=blog] {
-  @media @mediaM { transform: translateX(8.75rem); }
+.content[data-pathname^=blog] {
+  ul.link-list {
+    transform: translateX(8.75rem);
+  }
 }
 .content[data-pathname^=search] .link-list {
   @media @mediaM { transform: translateX(11.5rem); }
