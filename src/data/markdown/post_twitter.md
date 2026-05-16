@@ -1,11 +1,11 @@
-<!--
-  date: 2010-03-06
-  modified: 2014-03-11
-  slug: twitter
-  type: post
-  categories: rant
-  tags: Twitter
--->
+---
+date: 2010-03-06
+modified: 2014-03-11
+slug: twitter
+type: post
+categories: [rant]
+tags: [Twitter]
+---
 
 # Twitter
 

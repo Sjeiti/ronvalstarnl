@@ -1,11 +1,11 @@
-<!--
-  date: 2008-06-02
-  modified: 2008-06-02
-  slug: psp-e-books-ii
-  type: post
-  categories: book, code, JavaScript, backend, tech
-  tags: PHP, PSP
--->
+---
+date: 2008-06-02
+modified: 2008-06-02
+slug: psp-e-books-ii
+type: post
+categories: []
+tags: [PHP,PSP]
+---
 
 # PSP e-books
 

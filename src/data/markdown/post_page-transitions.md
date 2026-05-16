@@ -1,17 +1,18 @@
-<!--
-  date: 2020-07-29
-  modified: 2021-04-12
-  slug: the-basics-of-css-page-transitions
-  type: post
-  header: sincerely-media-IKzmglo7JLk-unsplash.jpg
-  headerColofon: photo by [Sincerely Media](https://unsplash.com/@sincerelymedia)
-  headerClassName: no-blur darken
-  categories: Javascript
-  tags: CSS, transitions
-  related: front-end-logic-without-javascript
-  description: Basic structure and example of a page transition in a single page application.
-  sticky: true
--->
+---
+date: 2020-07-29
+modified: 2021-04-12
+slug: the-basics-of-css-page-transitions
+type: post
+header: sincerely-media-IKzmglo7JLk-unsplash.jpg
+headerColofon: |
+  photo by [Sincerely Media](https://unsplash.com/@sincerelymedia)
+headerClassName: [no-blur,darken]
+categories: [code,technique]
+tags: [CSS,transitions]
+related: [front-end-logic-without-javascript]
+description: Basic structure and example of a page transition in a single page application.
+sticky: true
+---
 
 # The basics of CSS page transitions
 

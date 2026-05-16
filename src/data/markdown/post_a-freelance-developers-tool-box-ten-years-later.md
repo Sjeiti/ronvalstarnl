@@ -1,15 +1,16 @@
-<!--
-  date: 2023-05-29
-  modified: 2023-05-29
-  slug: a-freelance-developers-tool-box-ten-years-later
-  type: post
-  header: barn-images-t5YUoHW6zRo-unsplash.jpg
-  headerColofon: photo by [Barn images](https://unsplash.com/@barnimages)
-  headerClassName: no-blur darken
-  categories: code, work
-  tags: frameworks, ide, libraries, software, tools
-  description: Ten years ago I made a list of software and tools I use as a freelancer. This is the same list in its current state.
--->
+---
+date: 2023-05-29
+modified: 2023-05-29
+slug: a-freelance-developers-tool-box-ten-years-later
+type: post
+header: barn-images-t5YUoHW6zRo-unsplash.jpg
+headerColofon: |
+  photo by [Barn images](https://unsplash.com/@barnimages)
+headerClassName: [no-blur,darken]
+categories: [code,technique,tools,work]
+tags: [frameworks,ide,libraries,software,tools]
+description: Ten years ago I made a list of software and tools I use as a freelancer. This is the same list in its current state.
+---
 
 # A freelance developers toolbox, ten years later
 

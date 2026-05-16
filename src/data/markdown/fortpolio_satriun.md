@@ -1,20 +1,19 @@
-<!--
-  slug: satriun
-  type: fortpolio
-  excerpt: <p>Fully responsive website with video and boring content.</p>
-  categories: JavaScript, HTML/CSS, video, mobile
-  tags: JavaScript, Wordpress, Less, video
-  clients: Satriun
-  collaboration: Shapers
-  prizes: 
-  thumbnail: Satriun-Corporate-Performance-Management.jpg
-  image: Satriun-Corporate-Performance-Management.jpg
-  images: Satriun-Corporate-Performance-Management.jpg, Satriun-Our-vision.jpg
-  inCv: false
-  inPortfolio: false
-  dateFrom: 2014-10-01
-  dateTo: 2014-10-20
--->
+---
+slug: satriun
+type: fortpolio
+excerpt: <p>Fully responsive website with video and boring content.</p>
+categories: [JavaScript,HTML/CSS,video,mobile]
+tags: [JavaScript,Wordpress,Less,video]
+clients: [Satriun]
+collaboration: [Shapers]
+thumbnail: Satriun-Corporate-Performance-Management.jpg
+image: Satriun-Corporate-Performance-Management.jpg
+images: [Satriun-Corporate-Performance-Management.jpg,Satriun-Our-vision.jpg]
+inCv: false
+inPortfolio: false
+dateFrom: 2014-10-01
+dateTo: 2014-10-20
+---
 
 # Satriun
 

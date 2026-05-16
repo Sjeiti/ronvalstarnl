@@ -1,12 +1,12 @@
-<!--
-  date: 2012-08-24
-  modified: 2012-08-24
-  slug: migrating-a-subversion-repository-from-google-code-to-github
-  type: post
-  categories: code, JavaScript, jQuery, Python
-  tags: Google Code, SVN, Git, Github, migrating
-  description: Recently I did a full history and issue migration from Google Code to Github. I expected the worst but it was actually quite easy.
--->
+---
+date: 2012-08-24
+modified: 2012-08-24
+slug: migrating-a-subversion-repository-from-google-code-to-github
+type: post
+categories: [code,project]
+tags: [Google Code,SVN,Git,Github,migrating]
+description: Recently I did a full history and issue migration from Google Code to Github. I expected the worst but it was actually quite easy.
+---
 
 # Migrating a subversion repository from Google Code to Github
 

@@ -1,12 +1,13 @@
-<!--
-  date: 2014-04-22
-  modified: 2020-03-17
-  slug: experiment-boids
-  type: post
-  tags: Perlin Noise, cool shit, experiment, particles
-  thumbnail: experiments/ocalhost_7047_experiment-boids.jpg
-  related: experiment-*
--->
+---
+date: 2014-04-22
+modified: 2020-03-17
+slug: experiment-boids
+type: post
+tags: [Perlin Noise,cool shit,experiment,particles]
+thumbnail: experiments/ocalhost_7047_experiment-boids.jpg
+related: [experiment-*]
+categories: [code,experiment]
+---
 
 # Experiment: boids
 A bunch of fish forming schools by following simple rules. Everything you see is coded.

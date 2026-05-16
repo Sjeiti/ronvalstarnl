@@ -1,12 +1,13 @@
-<!--
-  date: 2014-04-24
-  modified: 2015-10-25
-  slug: experiment-flowfield
-  type: post
-  tags: procedural, cool shit, experiment, particles 
-  thumbnail: experiments/Screenshot_20240526-225746.png-edit-20240526225823.jpg
-  related: experiment-*
--->
+---
+date: 2014-04-24
+modified: 2015-10-25
+slug: experiment-flowfield
+type: post
+tags: [procedural,cool shit,experiment,particles ]
+thumbnail: experiments/Screenshot_20240526-225746.png-edit-20240526225823.jpg
+related: [experiment-*]
+categories: [code,experiment]
+---
 
 # Experiment: flow field
 

@@ -1,16 +1,14 @@
-<!--
-  date: 2013-05-29
-  modified: 2023-05-29
-  slug: a-freelance-developers-tool-box
-  type: post
-  categories: code, work
-  tags: frameworks, ide, libraries, software, tools
-  description: It's not the tools that make you a good developer, but good tools certainly help. Here's a list of software and tools I use as a freelancer.
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
--->
+---
+date: 2013-05-29
+modified: 2023-05-29
+slug: a-freelance-developers-tool-box
+type: post
+categories: [code,work]
+tags: [frameworks,ide,libraries,software,tools]
+description: It's not the tools that make you a good developer, but good tools certainly help. Here's a list of software and tools I use as a freelancer.
+inCv: false
+inPortfolio: false
+---
 
 # A freelance developer&#8217;s tool box
 

@@ -1,10 +1,10 @@
-<!--
-  date: 2010-10-22
-  modified: 2020-05-31
-  slug: canvasimg
-  type: post
-  categories: code, JavaScript
--->
+---
+date: 2010-10-22
+modified: 2020-05-31
+slug: canvasimg
+type: post
+categories: [code,project]
+---
 
 # canvasImg
 

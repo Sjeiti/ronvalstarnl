@@ -1,11 +1,11 @@
-<!--
-  date: 2006-07-19
-  modified: 2006-07-19
-  slug: pspbrowsing
-  type: post
-  categories: CSS, JavaScript
-  tags: PSP
--->
+---
+date: 2006-07-19
+modified: 2006-07-19
+slug: pspbrowsing
+type: post
+categories: []
+tags: [PSP]
+---
 
 # PSP browsing
 

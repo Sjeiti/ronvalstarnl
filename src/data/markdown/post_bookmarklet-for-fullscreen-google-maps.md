@@ -1,12 +1,12 @@
-<!--
-  date: 2013-04-07
-  modified: 2014-05-06
-  slug: bookmarklet-for-fullscreen-google-maps
-  type: post
-  categories: code, JavaScript, open source
-  tags: bookmarklet, JavaScript
-  description: Here's a bookmarklet that strips everything on Google Maps but the map itself.
--->
+---
+date: 2013-04-07
+modified: 2014-05-06
+slug: bookmarklet-for-fullscreen-google-maps
+type: post
+categories: [code]
+tags: [bookmarklet,JavaScript]
+description: Here's a bookmarklet that strips everything on Google Maps but the map itself.
+---
 
 # Bookmarklet for fullscreen Google Maps
 

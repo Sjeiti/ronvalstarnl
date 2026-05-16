@@ -1,10 +1,10 @@
-<!--
-  date: 2007-01-31
-  modified: 2007-01-31
-  slug: faking-cron-jobs-for-sparklines
-  type: post
-  categories: backend, Wordpress
--->
+---
+date: 2007-01-31
+modified: 2007-01-31
+slug: faking-cron-jobs-for-sparklines
+type: post
+categories: [project]
+---
 
 # faking cron jobs for sparklines
 

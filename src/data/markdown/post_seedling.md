@@ -1,13 +1,12 @@
-<!--
-  date: 2025-03-30
-  modified: 2025-03-30
-  slug:seedling
-  type: post
-  categories: microscopy
-  tags: 
-  header:seedling_dfyxzh.jpg
-  headerClassName: no-blur darken
---> 
+---
+date: 2025-03-30
+modified: 2025-03-30
+slug: seedling
+type: post
+categories: [microscopy]
+header: seedling_dfyxzh.jpg
+headerClassName: [no-blur,darken]
+---
 
 # A seedling
  

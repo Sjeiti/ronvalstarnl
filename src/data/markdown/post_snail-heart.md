@@ -1,13 +1,13 @@
-<!--
-  date: 2025-05-03
-  modified: 2025-05-03
-  slug: snail-heart
-  type: post
-  categories: microscopy
-  tags: microscopy
-  header: Screenshot_20250425-084815_Edited.jpg
-  headerClassName: no-blur darken
---> 
+---
+date: 2025-05-03
+modified: 2025-05-03
+slug: snail-heart
+type: post
+categories: [microscopy]
+tags: [microscopy]
+header: Screenshot_20250425-084815_Edited.jpg
+headerClassName: [no-blur,darken]
+---
 
 # A snail heart
 

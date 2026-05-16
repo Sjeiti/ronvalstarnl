@@ -1,11 +1,11 @@
-<!--
-  date: 2007-10-01
-  modified: 2007-10-01
-  slug: brokenfixed
-  type: post
-  categories: admin
-  tags: test
--->
+---
+date: 2007-10-01
+modified: 2007-10-01
+slug: brokenfixed
+type: post
+categories: []
+tags: [test]
+---
 
 # broken/fixed
 

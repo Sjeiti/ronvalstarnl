@@ -1,11 +1,11 @@
-<!--
-  date: 2011-04-09
-  modified: 2020-05-31
-  slug: sfbrowser-3-2-2
-  type: post
-  categories: code, JavaScript, jQuery, backend
-  tags: filebrowser, JavaScript, jQuery
--->
+---
+date: 2011-04-09
+modified: 2020-05-31
+slug: sfbrowser-3-2-2
+type: post
+categories: [code,project]
+tags: [filebrowser,JavaScript,jQuery]
+---
 
 # SFBrowser 3.2.2
 

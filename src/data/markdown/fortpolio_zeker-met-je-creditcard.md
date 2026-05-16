@@ -1,21 +1,21 @@
-<!--
-  slug: zeker-met-je-creditcard
-  type: fortpolio
-  excerpt: Front- and backend development of zekermetjecreditcard.nl, a single page Angular website that uses Wordpress as a REST API.
-  excerptNl: Front- en backend ontwikkeling van zekermetjecreditcard.nl, een single page Angular website die gebruik maakt van Wordpress als REST API.
-  categories: JavaScript, 3D, HTML/CSS, framework, mobile
-  tags: 3D/WebGL, HTML, JavaScript, Wordpress, Angular
-  clients: Build In Amsterdam
-  collaboration: 
-  prizes: 
-  thumbnail: Screenshot_2015-06-03-19-31-03-e1433359905965.png
-  image: Screenshot_2015-06-03-19-31-03-e1433359905965.png
-  images: 1.jpg, 2.jpg, 3.jpg, 4.jpg, 5.jpg, Screenshot_2015-06-03-20-00-12-e1433359959134.png, Screenshot_2015-06-03-19-31-03-e1433359905965.png
-  inCv: true
-  inPortfolio: true
-  dateFrom: 2015-04-03
-  dateTo: 2015-06-01
---> 
+---
+slug: zeker-met-je-creditcard
+type: fortpolio
+excerpt: <p>Front- and backend development of zekermetjecreditcard.nl, a single page Angular website that uses Wordpress as a REST API.</p>
+
+#excerptNl: <p>Front- en backend ontwikkeling van zekermetjecreditcard.nl, een single page Angular website die gebruik maakt van Wordpress als REST API.</p>
+
+categories: [JavaScript,3D,HTML/CSS,framework,mobile]
+tags: [3D/WebGL,HTML,JavaScript,Wordpress,Angular]
+clients: [Build In Amsterdam]
+thumbnail: Screenshot_2015-06-03-19-31-03-e1433359905965.png
+image: Screenshot_2015-06-03-19-31-03-e1433359905965.png
+images: [1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,Screenshot_2015-06-03-20-00-12-e1433359959134.png,Screenshot_2015-06-03-19-31-03-e1433359905965.png]
+inCv: false
+inPortfolio: true
+dateFrom: 2015-04-03
+dateTo: 2015-06-01
+---
 
 # Zeker met je creditcard
 

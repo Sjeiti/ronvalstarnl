@@ -1,15 +1,15 @@
-<!--
-  date: 2023-05-11
-  modified: 2023-08-02
-  slug: dont-put-your-emailaddress-in-source-files
-  type: post
-  categories: code
-  tags: spam
-  header: possessed-photography-oIMXkEuiXpc-unsplash.jpg
-  headerColofon: image by [Possessed Photography](https://unsplash.com/@possessedphotography)
-  headerClassName: no-blur darken
-  description: Don't put your email address in source files
---> 
+---
+date: 2023-05-11
+modified: 2023-08-02
+slug: dont-put-your-emailaddress-in-source-files
+type: post
+categories: [code,rant]
+tags: [spam]
+header: possessed-photography-oIMXkEuiXpc-unsplash.jpg
+headerColofon: image by [Possessed Photography](https://unsplash.com/@possessedphotography)
+headerClassName: [no-blur,darken]
+description: Don't put your email address in source files
+---
 
 # Don't put your email address in source files
 

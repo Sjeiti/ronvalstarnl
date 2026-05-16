@@ -1,14 +1,12 @@
-<!--
-  date: 2007-01-06
-  modified: 2014-05-01
-  slug: history
-  type: page
-  description: I restyle this site a lot because eeeh&#8230; oh I don&#8217;t know. After a while I just get bored with the layout. Or sometimes I want to put to use the things I learned, like php or css (I love doing css, it&#8217;s nothing like programming or designing&#8230;and maybe it&#8217;s just plain stupid work but [&hellip;]
-  inCv: 
-  inPortfolio: 
-  dateFrom: 
-  dateTo: 
--->
+---
+date: 2007-01-06
+modified: 2014-05-01
+slug: history
+type: page
+description: I restyle this site a lot because eeeh&#8230; oh I don&#8217;t know. After a while I just get bored with the layout. Or sometimes I want to put to use the things I learned, like php or css (I love doing css, it&#8217;s nothing like programming or designing&#8230;and maybe it&#8217;s just plain stupid work but [&hellip;]
+inCv: false
+inPortfolio: false
+---
 
 # history
 

@@ -1,12 +1,13 @@
-<!--
-  date: 2014-04-24
-  modified: 2015-10-25
-  slug: experiment-grid
-  type: post
-  tags: Perlin Noise, cool shit, experiment
-  thumbnail: experiments/ocalhost_7047_experiment-grid.jpg
-  related: experiment-*
--->
+---
+date: 2014-04-24
+modified: 2015-10-25
+slug: experiment-grid
+type: post
+tags: [Perlin Noise,cool shit,experiment]
+thumbnail: experiments/ocalhost_7047_experiment-grid.jpg
+related: [experiment-*]
+categories: [code,experiment]
+---
 
 # Experiment: grid
 

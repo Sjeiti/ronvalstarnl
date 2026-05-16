@@ -1,12 +1,12 @@
-<!--
-  date: 2025-07-29
-  modified: 2025-07-29
-  slug:mc-picker-update
-  type: post
-  header: colorbox.jpg
-  categories: Javascript, code
-  tags: color, CSS
---> 
+---
+date: 2025-07-29
+modified: 2025-07-29
+slug: mc-picker-update
+type: post
+header: colorbox.jpg
+categories: [code,technique,project]
+tags: [color,CSS]
+---
 
 # Added alpha to MCPicker
 

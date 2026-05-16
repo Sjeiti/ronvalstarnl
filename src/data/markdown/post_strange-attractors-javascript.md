@@ -1,15 +1,15 @@
-<!--
-  date: 2016-04-13
-  modified: 2019-09-27
-  slug: strange-attractors-javascript
-  header: L84.jpg
-  headerClassName: no-blur
-  type: post
-  categories: code, JavaScript, video, open source
-  tags: math, strange attractors, chaos
-  description: Strange attractors prove how easily chaos can emerge within a simple system. This attractor viewer is a JavaScript rewrite to front-end JavaScript.
-  related: project/strange-attractors-javascript
--->
+---
+date: 2016-04-13
+modified: 2019-09-27
+slug: strange-attractors-javascript
+header: L84.jpg
+headerClassName: [no-blur]
+type: post
+categories: [code]
+tags: [math,strange attractors,chaos]
+description: Strange attractors prove how easily chaos can emerge within a simple system. This attractor viewer is a JavaScript rewrite to front-end JavaScript.
+related: [project/strange-attractors-javascript]
+---
 
 # Strange attractors in JavaScript
 

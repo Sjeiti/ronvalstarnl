@@ -11,8 +11,8 @@ const dir = './src/data/json/'
 glob(dir+'post_*.json', {})
 .then(files=>Promise.all(files.map(read)))
 .then(files=>files.map(file=>{
-  const {date, slug, title:{rendered:title}} = JSON.parse(file)
-  return {date, slug, title}
+  const {date, slug, title:{rendered:title}, categories} = JSON.parse(file)
+  return {date, slug, title, categories}
 }))
 .then(files=>files.sort((a, b)=>new Date(a.date)<new Date(b.date)?1:-1))
 .then(files=>save(dir+'posts-list.json', JSON.stringify(files)))

@@ -1,12 +1,12 @@
-<!--
-  date: 2015-10-22
-  modified: 2016-12-14
-  slug: how-to-structure-javascript-code-within-a-closure-in-a-logical-way
-  type: post
-  categories: code, JavaScript
-  tags: JavaScript
-  description: Having a good coding structure increases maintainability. This is true for the structure of files as well as the structure within a file.
--->
+---
+date: 2015-10-22
+modified: 2016-12-14
+slug: how-to-structure-javascript-code-within-a-closure-in-a-logical-way
+type: post
+categories: [code,technique]
+tags: [JavaScript]
+description: Having a good coding structure increases maintainability. This is true for the structure of files as well as the structure within a file.
+---
 
 # How to structure JavaScript code within a closure in a logical way
 

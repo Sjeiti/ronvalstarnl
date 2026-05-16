@@ -1,12 +1,13 @@
-<!--
-  date: 2014-05-10
-  modified: 2020-03-16
-  slug: using-google-spreadsheets-for-invoicing
-  type: post
-  categories: admin, code, JavaScript, work
-  tags: Google, JavaScript, freelance
-  description: How I use Google spreadsheets for my freelance administration: here are two example spreadsheets to duplicate and some details on the used JavaScript.
--->
+---
+date: 2014-05-10
+modified: 2020-03-16
+slug: using-google-spreadsheets-for-invoicing
+type: post
+categories: [code,technique,work]
+tags: [Google,JavaScript,freelance,admin,JavaScript]
+description: |
+  How I use Google spreadsheets for my freelance administration: here are two example spreadsheets to duplicate and some details on the used JavaScript.
+---
 
 # Using Google spreadsheets for your freelance invoicing
 

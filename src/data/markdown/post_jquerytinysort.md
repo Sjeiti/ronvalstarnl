@@ -1,11 +1,10 @@
-<!--
-  date: 2008-06-08
-  modified: 2020-05-31
-  slug: jquerytinysort
-  type: post
-  categories: code, JavaScript, jQuery
-  tags: 
--->
+---
+date: 2008-06-08
+modified: 2020-05-31
+slug: jquerytinysort
+type: post
+categories: [code]
+---
 
 # jQuery.tinysort
 

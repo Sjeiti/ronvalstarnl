@@ -1,12 +1,13 @@
-<!--
-  date: 2012-04-25
-  modified: 2014-08-15
-  slug: javascript-performance-testing
-  type: post
-  categories: code, JavaScript, link
-  tags: crossbrowser, performance, test
-  description: A JavaScript speed test normally looks something like this: count how many times we can do the same calculation in a fixed amount of time.
--->
+---
+date: 2012-04-25
+modified: 2014-08-15
+slug: javascript-performance-testing
+type: post
+categories: [code]
+tags: [crossbrowser,performance,test]
+description: |
+  A JavaScript speed test normally looks something like this: count how many times we can do the same calculation in a fixed amount of time.
+---
 
 # JavaScript performance testing
 

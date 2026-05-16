@@ -57,7 +57,6 @@ read('src/data/json/media_map.json')
       fetch(baseApiUri+p+paging)
         .then(rs=>rs.json())
         .then(s=>{
-          // console.log('s',s) // todo: remove log
           s.forEach(item=>{
             const {id,type,slug} = item
             if (type==='post'&&item.featured_media) {

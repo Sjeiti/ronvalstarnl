@@ -1,11 +1,11 @@
-<!--
-  date: 2010-06-02
-  modified: 2023-08-02
-  slug: emergence
-  type: post
-  description: Emergent behavior in particles
-  categories: code, Flash, ActionScript
--->
+---
+date: 2010-06-02
+modified: 2023-08-02
+slug: emergence
+type: post
+description: Emergent behavior in particles
+categories: [code,illustration]
+---
 
 # emergence
 

@@ -1,10 +1,10 @@
-<!--
-  date: 2012-06-30
-  modified: 2020-05-31
-  slug: android-phone-dom
-  type: post
-  categories: code, HTML, JavaScript
--->
+---
+date: 2012-06-30
+modified: 2020-05-31
+slug: android-phone-dom
+type: post
+categories: [code]
+---
 
 # Android phone DOM
 

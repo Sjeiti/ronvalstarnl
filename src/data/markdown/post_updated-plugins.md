@@ -1,10 +1,10 @@
-<!--
-  date: 2007-02-12
-  modified: 2007-02-12
-  slug: updated-plugins
-  type: post
-  categories: code, JavaScript, backend, Wordpress
--->
+---
+date: 2007-02-12
+modified: 2007-02-12
+slug: updated-plugins
+type: post
+categories: [code]
+---
 
 # updated plugins
 

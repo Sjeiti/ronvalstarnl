@@ -1,10 +1,10 @@
-<!--
-  date: 2010-05-04
-  modified: 2012-07-03
-  slug: freelance-space-for-hire
-  type: post
-  categories: work
--->
+---
+date: 2010-05-04
+modified: 2012-07-03
+slug: freelance-space-for-hire
+type: post
+categories: [rant,work]
+---
 
 # freelance space for hire
 

@@ -1,11 +1,11 @@
-<!--
-  date: 2003-09-30
-  modified: 2014-08-15
-  slug: redesign
-  type: post
-  categories: admin
-  tags: graphic design
--->
+---
+date: 2003-09-30
+modified: 2014-08-15
+slug: redesign
+type: post
+categories: []
+tags: [graphic design]
+---
 
 # redesign
 

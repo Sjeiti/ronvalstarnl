@@ -1,20 +1,17 @@
-<!--
-  slug: perlin-noise-port-java-actionscript-3
-  type: fortpolio
-  categories: open source
-  tags: ActionScript, Flash, procedural
-  clients: 
-  collaboration: 
-  prizes: 
-  thumbnail: 8145-v1.jpg
-  thumbnailVideo: cloud.mp4
-  image: 8145-v1.jpg
-  images: 8145-v1.jpg, noise.jpg
-  inCv: false
-  inPortfolio: true
-  dateFrom: 2007-10-01
-  dateTo: 2007-10-01
--->
+---
+slug: perlin-noise-port-java-actionscript-3
+type: fortpolio
+categories: [open source]
+tags: [ActionScript,Flash,procedural]
+thumbnail: 8145-v1.jpg
+thumbnailVideo: cloud.mp4
+image: 8145-v1.jpg
+images: [8145-v1.jpg,noise.jpg]
+inCv: false
+inPortfolio: true
+dateFrom: 2007-10-01
+dateTo: 2007-10-01
+---
 
 # Perlin noise port from Java to ActionScript 3
 

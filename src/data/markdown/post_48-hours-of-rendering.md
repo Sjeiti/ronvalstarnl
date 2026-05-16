@@ -1,10 +1,10 @@
-<!--
-  date: 2008-02-16
-  modified: 2008-02-16
-  slug: 48-hours-of-rendering
-  type: post
-  categories: code, Java, Processing, video
--->
+---
+date: 2008-02-16
+modified: 2008-02-16
+slug: 48-hours-of-rendering
+type: post
+categories: [code]
+---
 
 # 48 hours of rendering
 

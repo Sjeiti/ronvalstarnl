@@ -1,6 +1,9 @@
 .content[data-pathname^="experiments"], .content[data-pathname^="project/"], .content[data-pathname^="projects/"], .content[data-pathname="projects"] {
   padding: 0;
   overflow: hidden; // for dark-gray background color not hiding footer
+  [data-filter] {
+    transform: translateY(1rem);
+  }
 }
 ul.projects {
   margin: 0;
@@ -91,42 +94,7 @@ ul.projects {
     height: auto;
   }
 }
-ul.project-category {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0;
-  padding: 1rem;
-  list-style: none;
-  text-align: center;
-  background-color: #f04;
-  color: var(--color-bg);
-  font-size: 0.75rem;
-  line-height: 0.75rem;
-  @media @mediaM {
-    font-size: 1rem;
-    line-height: 1rem;
-  }
-  li {
-    display: block;
-    a.current {
-      .color-scheme-dark & { color: white; }
-    }
-  }
-  a {
-    display: block;
-    margin: 0 1px 1px 0;
-    padding: 3px 6px;
-    @media @mediaM { padding: 6px 12px; }
-    box-shadow: 0 0 0 1px var(--color-bg);
-    text-decoration: none;
-    color: inherit;
-    &.current{
-      background-color: black;
-    }
-  }
-}
+
 .project{
   margin: 0;
   padding: 0;

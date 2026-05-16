@@ -1,10 +1,10 @@
-<!--
-  date: 2006-05-29
-  modified: 2006-05-29
-  slug: irrepressible
-  type: post
-  categories: link
--->
+---
+date: 2006-05-29
+modified: 2006-05-29
+slug: irrepressible
+type: post
+categories: []
+---
 
 # irrepressible
 

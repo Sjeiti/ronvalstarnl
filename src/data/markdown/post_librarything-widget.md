@@ -1,11 +1,11 @@
-<!--
-  date: 2007-01-28
-  modified: 2007-01-28
-  slug: librarything-widget
-  type: post
-  categories: JavaScript, backend, Wordpress
-  tags: widget
--->
+---
+date: 2007-01-28
+modified: 2007-01-28
+slug: librarything-widget
+type: post
+categories: []
+tags: [widget]
+---
 
 # Librarything widget
 

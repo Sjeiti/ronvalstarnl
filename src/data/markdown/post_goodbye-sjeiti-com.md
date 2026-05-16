@@ -1,10 +1,10 @@
-<!--
-  date: 2015-01-24
-  modified: 2019-09-27
-  slug: goodbye-sjeiti-com
-  type: post
-  categories: admin
--->
+---
+date: 2015-01-24
+modified: 2019-09-27
+slug: goodbye-sjeiti-com
+type: post
+categories: [rant]
+---
 
 # Goodbye sjeiti.com
 

@@ -1,10 +1,10 @@
-<!--
-  date: 2005-03-19
-  modified: 2005-03-19
-  slug: movies
-  type: post
-  categories: Processing, video
--->
+---
+date: 2005-03-19
+modified: 2005-03-19
+slug: movies
+type: post
+categories: []
+---
 
 # movies
 

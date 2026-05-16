@@ -70,3 +70,9 @@ export function numberToWords(num) {
 
   return str
 }
+
+
+const dateReg = /(?<=^\d\d\d\d-\d\d).*/
+export function dateStringToYearMonth(date) {
+  return date.replace(dateReg, '')
+}

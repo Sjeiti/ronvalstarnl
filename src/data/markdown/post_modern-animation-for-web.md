@@ -1,13 +1,14 @@
-<!--
-  slug: modern-animation-for-web
-  date: 2024-04-26
-  modified: 2024-04-26
-  type: post
-  header: julian-mora-v490AlsqbTs-unsplash.jpg
-  headerColofon: photo by [Julian Mora](https://unsplash.com/@julivajuli)
-  category: SVG
-  tag: animation
--->
+---
+slug: modern-animation-for-web
+date: 2024-04-26
+modified: 2024-04-26
+type: post
+header: julian-mora-v490AlsqbTs-unsplash.jpg
+headerColofon: |
+  photo by [Julian Mora](https://unsplash.com/@julivajuli)
+categories: [code,technique,tools]
+tags: [animation]
+---
 
 # Modern animation for the web
 

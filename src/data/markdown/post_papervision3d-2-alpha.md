@@ -1,11 +1,11 @@
-<!--
-  date: 2007-12-14
-  modified: 2012-09-30
-  slug: papervision3d-2-alpha
-  type: post
-  categories: Flash, ActionScript
-  tags: Filter Forge 
--->
+---
+date: 2007-12-14
+modified: 2012-09-30
+slug: papervision3d-2-alpha
+type: post
+categories: [code,tools]
+tags: [Filter Forge ]
+---
 
 # PaperVision3D 2 alpha
 

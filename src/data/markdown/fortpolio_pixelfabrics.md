@@ -1,20 +1,18 @@
-<!--
-  slug: pixelfabrics
-  type: fortpolio
-  excerpt: <p>A crossplatform Air application that turns image sequences into an HTML5 3D viewer that works crossdevice, crossplatform and crossbrowser.</p>
-  categories: 
-  tags: HTML, JavaScript, ActionScript, Air, Flash, UX, concept
-  clients: StillsnMotion
-  collaboration: 
-  prizes: 
-  thumbnail: pixelfabrics3.jpg
-  image: pixelfabrics3.jpg
-  images: pixelfabrics1.jpg, pixelfabrics2.jpg, pixelfabrics3.jpg
-  inCv: false
-  inPortfolio: true
-  dateFrom: 2011-02-01
-  dateTo: 2011-05-01
--->
+---
+slug: pixelfabrics
+type: fortpolio
+excerpt: <p>A crossplatform Air application that turns image sequences into an HTML5 3D viewer that works crossdevice, crossplatform and crossbrowser.</p>
+categories: [HTML/CSS,JavaScript,UX,3D]
+tags: [HTML,JavaScript,ActionScript,Air,Flash,UX,concept]
+clients: [StillsnMotion]
+thumbnail: pixelfabrics3.jpg
+image: pixelfabrics3.jpg
+images: [pixelfabrics1.jpg,pixelfabrics2.jpg,pixelfabrics3.jpg]
+inCv: false
+inPortfolio: true
+dateFrom: 2011-02-01
+dateTo: 2011-05-01
+---
 
 # Pixelfabrics
 

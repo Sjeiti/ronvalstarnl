@@ -1,11 +1,12 @@
-<!--
-  date: 2014-04-24
-  modified: 2014-10-24
-  slug: experiment-ff
-  type: post
-  tags: cool shit
-  related: experiment-*
--->
+---
+date: 2014-04-24
+modified: 2014-10-24
+slug: experiment-ff
+type: post
+tags: [cool shit]
+related: [experiment-*]
+categories: [code,experiment]
+---
 
 # Experiment: ff
 

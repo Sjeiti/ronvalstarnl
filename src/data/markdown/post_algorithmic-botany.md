@@ -1,10 +1,10 @@
-<!--
-  date: 2007-09-19
-  modified: 2007-09-19
-  slug: algorithmic-botany
-  type: post
-  categories: book, code, nature, work
--->
+---
+date: 2007-09-19
+modified: 2007-09-19
+slug: algorithmic-botany
+type: post
+categories: [code,work]
+---
 
 # Algorithmic botany
 

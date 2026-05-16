@@ -1,11 +1,12 @@
-<!--
-  date: 2014-01-22
-  modified: 2015-10-25
-  slug: experiment-heart
-  type: post
-  tags: cool shit, experiment, particles
-  related: experiment-*
--->
+---
+date: 2014-01-22
+modified: 2015-10-25
+slug: experiment-heart
+type: post
+tags: [cool shit,experiment,particles]
+related: [experiment-*]
+categories: [code,experiment]
+---
 
 # Experiment: heart
 

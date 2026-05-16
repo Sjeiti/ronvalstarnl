@@ -1,10 +1,10 @@
-<!--
-  date: 2004-10-02
-  modified: 2004-10-02
-  slug: randomlink
-  type: post
-  categories: admin
--->
+---
+date: 2004-10-02
+modified: 2004-10-02
+slug: randomlink
+type: post
+categories: []
+---
 
 # randomlink
 

@@ -1,10 +1,10 @@
-<!--
-  date: 2008-10-06
-  modified: 2014-03-11
-  slug: workplace-for-hire
-  type: post
-  categories: work
--->
+---
+date: 2008-10-06
+modified: 2014-03-11
+slug: workplace-for-hire
+type: post
+tags: [work]
+---
 
 # workplace for hire
 

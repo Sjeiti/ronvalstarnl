@@ -1,21 +1,36 @@
-<!--
-  slug: studyblendII
-  type: fortpolio
-  excerpt: Rebuild of an online learning tool that allows teachers and students to track their progress during a course. The stack was moved from AngularJS/Laravel to React/MongoDB. A lot of the old manual configuration is now automated and new features are added. I also changed various flows to improve usability. The build implements a merged test coverage from back- to front-end, from unit- to end-to-end tests.
-  excerptNl: Nieuwe implementatie van een bestaande online leertool waarmee docentenen studenten hun voortgang tijdens een cursus kunnen volgen.
-De stack is ge-refactored van AngularJS/Laravel naar React/MongoDB. Veel van de oude handmatige configuratie is nu geautomatiseerd, en er zijn nieuwe functies toegevoegd. Ik ook een aantal flows gewijzigd ter verbetering van de gebruiksvriendelijkheid. De build implementeert een samengevoegde test-coverage van back- tot front-end, van unit- tot end-to-end-tests.
-  categories: JavaScript, HTML/CSS, framework, mobile
-  tags: UX, Webpack, JavaScript, React, REST, NodeJS, MongoDB, Imagekit, Sendgrid, Netlify, Jest, Cypress, Docker, TSLint, CI/CD
-  clients: Shapers
-  thumbnail: studyblend-1.png
-  thumbnailVideo: testStudyBlend.mp4
-  image: studyblend-1.png
-  images: studyblend-1.png, studyblend-1.png, studyblend-2.png, studyblend-3.png, studyblend-4.png, studyblend-5.png, studyblend-6.png, studyblend-7.png, studyblend-8.png, studyblend-9.png
-  inCv: true
-  inPortfolio: true
-  dateFrom: 2021-03-01
-  dateTo: 2023-03-11
--->
+---
+slug: studyblendII
+type: fortpolio
+cv:
+  position: Full-stack developer
+  project: Studyblend
+  body: |
+    - Rebuilt an online learning tool from AngularJS/Laravel to React/MongoDB.
+    - Automated configuration processes and introduced new features.
+    - Improved usability through optimized user flows.
+    - Implemented unified test coverage across front-end and back-end.
+cvNl:
+  body: |
+    - Een online leertool herbouwd van AngularJS/Laravel naar React/MongoDB.
+    - Configuratieprocessen geautomatiseerd en nieuwe functies geïntroduceerd.
+    - Gebruiksvriendelijkheid verbeterd door geoptimaliseerde gebruikersstromen.
+    - Universele testdekking geïmplementeerd voor zowel de front-end als de back-end.
+excerpt: Rebuild of an online learning tool that allows teachers and students to track their progress during a course. The stack was moved from AngularJS/Laravel to React/MongoDB. A lot of the old manual configuration is now automated and new features are added. I also changed various flows to improve usability. The build implements a merged test coverage from back- to front-end, from unit- to end-to-end tests.
+#excerptNl: |
+#  Nieuwe implementatie van een bestaande online leertool waarmee docentenen studenten hun voortgang tijdens een cursus kunnen volgen.
+#  De stack is ge-refactored van AngularJS/Laravel naar React/MongoDB. Veel van de oude handmatige configuratie is nu geautomatiseerd, en er zijn nieuwe functies toegevoegd. Ik ook een aantal flows gewijzigd ter verbetering van de gebruiksvriendelijkheid. De build implementeert een samengevoegde test-coverage van back- tot front-end, van unit- tot end-to-end-tests.
+categories: [JavaScript, HTML/CSS, framework, mobile]
+tags: [UX, Webpack, JavaScript, React, REST, NodeJS, MongoDB, Imagekit, Sendgrid, Netlify, Jest, Cypress, Docker, TSLint, CI/CD]
+clients: [Shapers]
+thumbnail: studyblend-1.png
+thumbnailVideo: testStudyBlend.mp4
+image: studyblend-1.png
+images: [studyblend-1.png, studyblend-1.png, studyblend-2.png, studyblend-3.png, studyblend-4.png, studyblend-5.png, studyblend-6.png, studyblend-7.png, studyblend-8.png, studyblend-9.png]
+inCv: true
+inPortfolio: true
+dateFrom: 2021-03-01
+dateTo: 2023-03-11
+---
 
 # Studyblend 
 

@@ -1,21 +1,30 @@
-<!--
-  slug: novartis
-  type: fortpolio
-  excerpt: A virtual 3d panorama tour in HTML5/CSS3, consisting of multiple panoramas through which you navigate by space or by stories.
-  excerptNl: Een virtuele 3D-panoramatour in HTML5/CSS3, bestaande uit meerdere panorama's waar je doorheen navigeert via de ruimte zelf of door een verhaal te volgen.
-  categories: JavaScript, 3D, HTML/CSS
-  tags: HTML, CSS, JavaScript, XML, XSLT
-  clients: Novartis International AG
-  collaboration: Iwan Baan, 2x4
-  prizes: 
-  thumbnail: novartis1.jpg
-  image: novartis1.jpg
-  images: novartis1.jpg, novartis2.jpg, novartis3.jpg, novartis4.jpg, novartis5.jpg
-  inCv: true
-  inPortfolio: true
-  dateFrom: 2011-05-01
-  dateTo: 2011-07-01
--->
+---
+slug: novartis
+type: fortpolio
+cv:
+  position: Front-end developer
+  project: 3D panorama tour
+  body: |
+    - Built an HTML5/CSS3 virtual 3D panorama tour.
+    - Collaborated with New York agency 2x4 creating navigable spaces and story paths.
+cvNl:
+  body: |
+    - Een virtuele 3D-panoramatour gebouwd met HTML5/CSS3.
+    - Samengewerkt met het New Yorkse bureau 2x4 om navigeerbare ruimtes en verhaallijnen te creëren.
+excerpt: A virtual 3d panorama tour in HTML5/CSS3, consisting of multiple panoramas through which you navigate by space or by stories.
+#excerptNl: Een virtuele 3D-panoramatour in HTML5/CSS3, bestaande uit meerdere panorama's waar je doorheen navigeert via de ruimte zelf of door een verhaal te volgen.
+categories: [JavaScript, 3D, HTML/CSS]
+tags: [HTML, CSS, JavaScript, XML, XSLT]
+clients: [Novartis International AG]
+collaboration: [Iwan Baan, 2x4]
+thumbnail: novartis1.jpg
+image: novartis1.jpg
+images: [novartis1.jpg, novartis2.jpg, novartis3.jpg, novartis4.jpg, novartis5.jpg]
+inCv: true
+inPortfolio: true
+dateFrom: 2011-05-01
+dateTo: 2011-07-01
+---
 
 # Novartis
 

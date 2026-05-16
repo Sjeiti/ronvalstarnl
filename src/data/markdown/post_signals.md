@@ -1,15 +1,16 @@
-<!--
-  description: Thoughts about signals, some history, and an easy explanation on inner workings.
-  date: 2023-06-04
-  modified: 2023-08-02
-  slug: signals
-  type: post
-  header: takahiro-sakamoto-wcWvku7gqHc-unsplash.jpg
-  headerColofon: photo by [Takahiro Sakamoto](https://unsplash.com/@takahiro)
-  headerClassName: no-blur darken
-  categories: code, CSS, HTML, JavaScript, work, open source
-  tags: signal
--->
+---
+description: Thoughts about signals, some history, and an easy explanation on inner workings.
+date: 2023-06-04
+modified: 2023-08-02
+slug: signals
+type: post
+header: takahiro-sakamoto-wcWvku7gqHc-unsplash.jpg
+headerColofon: |
+  photo by [Takahiro Sakamoto](https://unsplash.com/@takahiro)
+headerClassName: [no-blur,darken]
+categories: [code,technique,work]
+tags: [signal]
+---
 
 # Signals 
 

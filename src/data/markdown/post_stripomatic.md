@@ -1,11 +1,11 @@
-<!--
-  date: 2006-06-11
-  modified: 2014-03-11
-  slug: stripomatic
-  type: post
-  categories: Flash, ActionScript
-  tags: test
--->
+---
+date: 2006-06-11
+modified: 2014-03-11
+slug: stripomatic
+type: post
+categories: []
+tags: [test]
+---
 
 # strip.o.matic
 

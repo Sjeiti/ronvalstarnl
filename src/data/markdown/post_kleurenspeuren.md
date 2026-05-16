@@ -1,10 +1,10 @@
-<!--
-  date: 2006-05-31
-  modified: 2020-06-15
-  slug: kleurenspeuren
-  type: post
-  categories: Director, game
--->
+---
+date: 2006-05-31
+modified: 2020-06-15
+slug: kleurenspeuren
+type: post
+categories: [project,illustration]
+---
 
 # kleuren speuren
 

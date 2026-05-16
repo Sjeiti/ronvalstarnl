@@ -1,10 +1,10 @@
-<!--
-  date: 2004-10-01
-  modified: 2004-10-01
-  slug: rss-2
-  type: post
-  categories: admin
--->
+---
+date: 2004-10-01
+modified: 2004-10-01
+slug: rss-2
+type: post
+categories: []
+---
 
 # rss
 

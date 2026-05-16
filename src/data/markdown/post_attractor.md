@@ -1,9 +1,10 @@
-<!--
-  date: 2007-01-07
-  modified: 2020-06-18
-  slug: attractor
-  type: post
--->
+---
+date: 2007-01-07
+modified: 2020-06-18
+slug: attractor
+type: post
+categories: [project,experiment]
+---
 
 # attractor viewer
 

@@ -1,11 +1,11 @@
-<!--
-  date: 2010-09-13
-  modified: 2016-12-14
-  slug: coding-on-an-android
-  type: post
-  categories: code, JavaScript, mobile
-  tags: HTC, JavaScript
--->
+---
+date: 2010-09-13
+modified: 2016-12-14
+slug: coding-on-an-android
+type: post
+categories: [code]
+tags: [HTC,JavaScript]
+---
 
 # coding on an android
 

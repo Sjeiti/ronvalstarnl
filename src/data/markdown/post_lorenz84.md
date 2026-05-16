@@ -1,10 +1,10 @@
-<!--
-  date: 2008-02-10
-  modified: 2012-07-03
-  slug: lorenz84
-  type: post
-  categories: code, image, Java, Processing
--->
+---
+date: 2008-02-10
+modified: 2012-07-03
+slug: lorenz84
+type: post
+categories: [code]
+---
 
 # Lorenz84
 

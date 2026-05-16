@@ -14,6 +14,7 @@ import './component/Skill.js'
 import './component/Now.js'
 import './component/JSFiddle.js'
 import './component/Theme.js'
+import './component/Filter.js'
 
 initialise()
 

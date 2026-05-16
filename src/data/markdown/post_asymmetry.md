@@ -1,14 +1,13 @@
-<!--
-  date: 2025-10-25
-  modified: 2025-10-25
-  slug: asymmetry
-  type: post
-  categories: microscopy
-  tags: microscopy
-  heade: Screenshot_20250425-084815_Edited.jpg
-  header: Screenshot_20251025-225317_Edited.jpg
-  headerClassName: no-blur darken
---> 
+---
+date: 2025-10-25
+modified: 2025-10-25
+slug: asymmetry
+type: post
+categories: [microscopy]
+tags: [microscopy]
+header: Screenshot_20251025-225317_Edited.jpg
+headerClassName: [no-blur,darken]
+---
 
 # Asymmetry
 

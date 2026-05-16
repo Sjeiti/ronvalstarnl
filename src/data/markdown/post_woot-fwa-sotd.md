@@ -1,11 +1,11 @@
-<!--
-  date: 2009-07-13
-  modified: 2012-07-25
-  slug: woot-fwa-sotd
-  type: post
-  categories: code, CSS, Flash, backend, ActionScript
-  tags: 
--->
+---
+date: 2009-07-13
+modified: 2012-07-25
+slug: woot-fwa-sotd
+type: post
+categories: [work]
+tags: [code,CSS,Flash,backend,ActionScript]
+---
 
 # WOOT FWA SOTD!!!
 

@@ -1,10 +1,10 @@
-<!--
-  date: 2005-01-28
-  modified: 2005-01-28
-  slug: littlegame
-  type: post
-  categories: Flash, game, ActionScript
--->
+---
+date: 2005-01-28
+modified: 2005-01-28
+slug: littlegame
+type: post
+categories: []
+---
 
 # little game
 

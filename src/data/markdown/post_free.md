@@ -1,11 +1,11 @@
-<!--
-  date: 2007-07-26
-  modified: 2007-07-26
-  slug: free
-  type: post
-  categories: work
-  tags: Sjeiti
--->
+---
+date: 2007-07-26
+modified: 2007-07-26
+slug: free
+type: post
+categories: [work]
+tags: [Sjeiti]
+---
 
 # free
 

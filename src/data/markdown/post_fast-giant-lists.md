@@ -1,14 +1,15 @@
-<!-- 
-  date: 2021-03-07
-  modified: 2021-03-07
-  slug: fast-giant-lists
-  type: post
-  header: allie-GA3_Rp-m9jc-unsplash.jpg
-  headerColofon: photo by [Allie](https://unsplash.com/@acreativegangster)
-  headerClassName: no-blur darken
-  categories: Javascript, HTML, CSS
-  tags: CSS, speed, performance
--->
+---
+date: 2021-03-07
+modified: 2021-03-07
+slug: fast-giant-lists
+type: post
+header: allie-GA3_Rp-m9jc-unsplash.jpg
+headerColofon: |
+  photo by [Allie](https://unsplash.com/@acreativegangster)
+headerClassName: [no-blur,darken]
+categories: [code,technique,work]
+tags: [CSS,speed,performance]
+---
 
 # fast giant lists
 

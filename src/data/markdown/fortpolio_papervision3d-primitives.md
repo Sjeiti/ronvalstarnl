@@ -1,19 +1,16 @@
-<!--
-  slug: papervision3d-primitives
-  type: fortpolio
-  categories: game, open source, 3D
-  tags: 3D, ActionScript, Flash, open source, concept
-  clients: 
-  collaboration: 
-  prizes: 
-  thumbnail: primitives.jpg
-  image: primitives.jpg
-  images: primitives.jpg
-  inCv: false
-  inPortfolio: true
-  dateFrom: 2007-02-01
-  dateTo: 2007-02-01
--->
+---
+slug: papervision3d-primitives
+type: fortpolio
+categories: [game,open source,3D]
+tags: [3D,ActionScript,Flash,open source,concept]
+thumbnail: primitives.jpg
+image: primitives.jpg
+images: [primitives.jpg]
+inCv: false
+inPortfolio: true
+dateFrom: 2007-02-01
+dateTo: 2007-02-01
+---
 
 # Papervision3D primitives
 

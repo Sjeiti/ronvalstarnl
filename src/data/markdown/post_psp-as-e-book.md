@@ -1,11 +1,11 @@
-<!--
-  date: 2007-11-25
-  modified: 2007-11-25
-  slug: psp-as-e-book
-  type: post
-  categories: book, JavaScript, backend, tech
-  tags: DOM, PSP
--->
+---
+date: 2007-11-25
+modified: 2007-11-25
+slug: psp-as-e-book
+type: post
+categories: []
+tags: [DOM,PSP]
+---
 
 # PSP as e-book
 

@@ -1,22 +1,28 @@
-<!--
-  slug: ome-willem
-  type: fortpolio
-  excerpt: Interaction design, graphic design and development for the Ome Willem website.
-  excerptNl: Interaction design, grafisch ontwerp en ontwikkeling voor de Ome Willem website.
-  categories: JavaScript, HTML/CSS
-  tags: CMS, HTML, XML, graphic design, ActionScript, Flash, illustration, UX, graphic design, concept
-  clients: Ome Willem
-  collaboration: 
-  prizes: 
-  thumbnail: omewillem1.jpg
-  thumbnailVideo: omeWillem.mp4
-  image: omewillem1.jpg
-  images: omewillem3.jpg, omewillem.jpg, omewillem0.jpg, omewillem1.jpg, omewillem2.jpg
-  inCv: true
-  inPortfolio: true
-  dateFrom: 2005-05-01
-  dateTo: 2005-07-01
--->
+---
+slug: ome-willem
+type: fortpolio
+cv:
+  position: Interaction & graphic designer
+  project: Ome Willem website
+  body: |
+    - Handled interaction design, graphic design, and development.
+cvNl:
+  body: |
+    Interaction design, grafisch ontwerp en ontwikkeling voor de Ome Willem website.
+excerpt: Interaction design, graphic design and development for the Ome Willem website.
+#excerptNl: Interaction design, grafisch ontwerp en ontwikkeling voor de Ome Willem website.
+categories: [JavaScript, HTML/CSS]
+tags: [CMS, HTML, XML, graphic design, ActionScript, Flash, illustration, UX, concept]
+clients: [Ome Willem]
+thumbnail: omewillem1.jpg
+thumbnailVideo: omeWillem.mp4
+image: omewillem1.jpg
+images: [omewillem3.jpg, omewillem.jpg, omewillem0.jpg, omewillem1.jpg, omewillem2.jpg]
+inCv: true
+inPortfolio: true
+dateFrom: 2005-05-01
+dateTo: 2005-07-01
+---
 
 # Ome Willem
 

@@ -1,14 +1,14 @@
-<!--
-  date: 2022-07-08
-  modified: 2022-07-10
-  slug: experiment-radialgradient
-  type: post
-  categories: code, JavaScript
-  tags: JavaScript, cool shit, gradient
-  description: A single background with radial gradients seeded with a prng and animated with Perlin noise.
-  thumbnail: experiments/ocalhost_7047_experiment-radialgradient_440688393.jpg
-  related: experiment-*
--->
+---
+date: 2022-07-08
+modified: 2022-07-10
+slug: experiment-radialgradient
+type: post
+categories: [code,experiment]
+tags: [JavaScript,cool shit,gradient]
+description: A single background with radial gradients seeded with a prng and animated with Perlin noise.
+thumbnail: experiments/ocalhost_7047_experiment-radialgradient_440688393.jpg
+related: [experiment-*]
+---
 
 # Experiment: CSS background with radial gradients
 

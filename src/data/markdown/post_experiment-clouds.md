@@ -1,13 +1,13 @@
-<!--
-  date: 2017-01-08
-  modified: 2017-01-24
-  slug: experiment-clouds
-  type: post
-  categories: code, GLSL
-  tags: procedural, cool shit, experiment
-  thumbnail: experiments/52ab38b1-4947-4c55-ae49-2ecab7f1c122.jpg
-  related: experiment-*
--->
+---
+date: 2017-01-08
+modified: 2017-01-24
+slug: experiment-clouds
+type: post
+categories: [code,experiment]
+tags: [procedural,cool shit,experiment]
+thumbnail: experiments/52ab38b1-4947-4c55-ae49-2ecab7f1c122.jpg
+related: [experiment-*]
+---
 
 # Experiment: clouds
 

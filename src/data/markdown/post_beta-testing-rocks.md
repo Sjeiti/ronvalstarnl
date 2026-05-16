@@ -1,11 +1,11 @@
-<!--
-  date: 2007-02-15
-  modified: 2020-06-01
-  slug: beta-testing-rocks
-  type: post
-  categories: image, photoshop
-  tags: Filter Forge, test
--->
+---
+date: 2007-02-15
+modified: 2020-06-01
+slug: beta-testing-rocks
+type: post
+categories: [illustration,tools]
+tags: [Filter Forge,test]
+---
 
 # beta testing rocks
 

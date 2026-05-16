@@ -1,14 +1,14 @@
-<!--
-  date: 2025-08-07
-  modified: 2025-08-07
-  slug: experiment-circles
-  type: post
-  categories: code, JavaScript
-  tags: cool shit
-  thumbnail: experiments/Screenshot_20250807-205419.jpg
-  description: Recursive CSS
-  related: experiment-*
--->
+---
+date: 2025-08-07
+modified: 2025-08-07
+slug: experiment-circles
+type: post
+categories: [code,experiment]
+tags: [cool shit]
+thumbnail: experiments/Screenshot_20250807-205419.jpg
+description: Recursive CSS
+related: [experiment-*]
+---
 
 # Experiment: circles
 

@@ -97,7 +97,19 @@ body[data-pathname^=cv] {
       font-size: 0.75rem;
     }
   }
+}
 
+////////////////////////////////////
+
+#education, 
+#opleiding,
+#work-experience,
+#werkervaring {
+  +ul {
+    padding-left: 1rem;
+    ::marker { color: var(--color-main); }
+    li { list-style-type: disc; }
+  }
 }
 
 .cv-projects {
@@ -105,37 +117,69 @@ body[data-pathname^=cv] {
   >li {
     position: relative;
     padding: 3rem 1rem;
-    box-shadow: 0 -1px 0 var(--color-border);
+    /*
+    &:not(:last-child) {
+      box-shadow: 0 1px 0 var(--color-border);
+    }
+    */
+
+    ul {
+      padding-left: 1rem;
+      ::marker { color: var(--color-main); }
+      li { list-style-type: disc; }
+    }
   }
   header {
     position: relative;
+    margin-bottom: 2rem;
     &:after {
       content: '';
       display: block;
+      position: relative;
+      top: -0.125rem;  
       width: 100%;
       height: 0.0625rem;
+      height: 0.5rem;
       background-color: var(--color-border);
       box-shadow:
           -30rem 0 0 0 var(--color-border), 30rem 0 0 0 var(--color-border)
           ,-70rem 0 0 0 var(--color-border), 70rem 0 0 0 var(--color-border)
       ;
     }
+    h3, h4, h5 {
+      margin: 0;
+      font-weight: 400;
+      &:after { content: initial; }
+      &, &>a { color: var(--color-main); }
+    }
+    p {
+      margin: 0;
+      font-family: var(--font-name-heading);
+      &:last-of-type {
+        position: absolute;
+        left: 0;
+        bottom: -1.375rem;
+      }
+    }
+    strong {
+      color: var(--color-main);
+      font-weight: normal;
+    }
   }
-  h3 {
-    margin: 0;
-    font-weight: 400;
-    &:after { content: initial; }
+  header + ul {
+    line-height: 1.5rem;
   }
-  h3, h3>a { color: var(--color-main); }
   .date {
     position: absolute;
     right: 0;
     bottom: -0.8125rem;
+    bottom: -0.525rem;
     z-index: 2;
     line-height: 100%;
     @media @mediaM { bottom: -1.125rem; }
   }
   .tags {
+    margin-top: 1rem;
     padding: 0;
     list-style: none;
     font-size: 0.875rem;
@@ -145,6 +189,11 @@ body[data-pathname^=cv] {
       display: inline-block;
     }
   }
+  //dt:after { content: ': '; }
+  //dt, dd {
+  //  display: inline;
+  //  margin: 0;
+  //}
 }
 
 [data-skill] {

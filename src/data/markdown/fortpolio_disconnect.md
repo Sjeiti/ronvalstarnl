@@ -1,24 +1,25 @@
-<!--
-  slug: disconnect
-  type: fortpolio
-  excerpt: Technical experimentation and development of a site for an audiovisual performance. The site is a three-dimensional environment with custom GLSL shaders for video and audio with subtitles.
-  excerptNl: Technische experimentatie en ontwikkeling van een site voor een audiovisuele performance.
-De site is een driedimensionale omgeving met aangepaste GLSL-shaders voor video en audio met ondertitels.
-  categories: JavaScript, 3D, video, UX, graphic design
-  tags: 3D, JavaScript, procedural, WebGL, Webpack, GLSL
-  clients: Stichting M31 Foundation
-  collaboration: Robin Coops, Suzanne Hoenderboom, Wilbert van Veldhuizen, Eric Magnée, Sytze Schalk
-  prizes: 
-  headerClassName: no-blur
-  thumbnail: 04_video.jpg
-  thumbnailVideo: disconnect.mp4
-  image: 04_video.jpg
-  images: 01_welcome.png, 02_wake-up.jpg, 03_boot-sequence.jpg, 04_video.jpg, 05_medisch-rapport.jpg, 06_glitches.jpg
-  inCv: true
-  inPortfolio: true
-  dateFrom: 2018-09-28
-  dateTo: 2019-06-01
--->
+---
+slug: disconnect
+type: fortpolio
+excerpt: <p>Technical experimentation and development of a site for an audiovisual performance. The site is a three-dimensional environment with custom GLSL shaders for video and audio with subtitles.</p>
+
+#excerptNl: |
+#  <p>Technische experimentatie en ontwikkeling van een site voor een audiovisuele performance.
+#  De site is een driedimensionale omgeving met aangepaste GLSL-shaders voor video en audio met ondertitels.</p>
+categories: [JavaScript,3D,video,UX,graphic design]
+tags: [3D,JavaScript,procedural,WebGL,Webpack,GLSL]
+clients: [Stichting M31 Foundation]
+collaboration: [Robin Coops,Suzanne Hoenderboom,Wilbert van Veldhuizen,Eric Magnée,Sytze Schalk]
+headerClassName: [no-blur]
+thumbnail: 04_video.jpg
+thumbnailVideo: disconnect.mp4
+image: 04_video.jpg
+images: [01_welcome.png,02_wake-up.jpg,03_boot-sequence.jpg,04_video.jpg,05_medisch-rapport.jpg,06_glitches.jpg]
+inCv: false
+inPortfolio: true
+dateFrom: 2018-09-28
+dateTo: 2019-06-01
+---
 
 # Disconnect
 

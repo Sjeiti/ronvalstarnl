@@ -1,14 +1,14 @@
-<!--
-  date: 2018-03-03
-  modified: 2019-09-27
-  slug: project-invoice
-  type: post
-  header: pi.jpg
-  headerClassName: no-blur
-  categories: code, CSS, HTML, JavaScript, work, open source
-  tags: Angular, accounting, invoicing, Vue
-  description: An invoice application that keeps your data private by simply not storing it in the cloud.
--->
+---
+date: 2018-03-03
+modified: 2019-09-27
+slug: project-invoice
+type: post
+header: pi.jpg
+headerClassName: [no-blur]
+categories: [code,work]
+tags: [Angular,accounting,invoicing,Vue]
+description: An invoice application that keeps your data private by simply not storing it in the cloud.
+---
 
 # Project invoice
 

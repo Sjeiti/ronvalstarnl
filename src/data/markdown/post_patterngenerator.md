@@ -1,10 +1,10 @@
-<!--
-  date: 2004-01-05
-  modified: 2020-06-01
-  slug: patterngenerator
-  type: post
-  categories: Director
--->
+---
+date: 2004-01-05
+modified: 2020-06-01
+slug: patterngenerator
+type: post
+categories: []
+---
 
 # pattern generator
 

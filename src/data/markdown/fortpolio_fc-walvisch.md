@@ -1,20 +1,18 @@
-<!--
-  slug: fc-walvisch
-  type: fortpolio
-  excerpt: <p>Re-design and creation of the site of one of the foremost Dutch sound studios.</p>
-  categories: JavaScript, HTML/CSS, illustration, graphic design, UX
-  tags: HTML, CSS, Wordpress, XML, graphic design, ActionScript, illustration, video, UX, concept, Flash
-  clients: FC Walvisch
-  collaboration: 
-  prizes: 
-  thumbnail: fcwalvisch.jpg
-  image: fcwalvisch.jpg
-  images: fcwalvisch.jpg
-  inCv: false
-  inPortfolio: false
-  dateFrom: 2008-05-01
-  dateTo: 2008-07-01
--->
+---
+slug: fc-walvisch
+type: fortpolio
+excerpt: <p>Re-design and creation of the site of one of the foremost Dutch sound studios.</p>
+categories: [JavaScript,HTML/CSS,illustration,graphic design,UX]
+tags: [HTML,CSS,Wordpress,XML,graphic design,ActionScript,illustration,video,UX,concept,Flash]
+clients: [FC Walvisch]
+thumbnail: fcwalvisch.jpg
+image: fcwalvisch.jpg
+images: [fcwalvisch.jpg]
+inCv: false
+inPortfolio: false
+dateFrom: 2008-05-01
+dateTo: 2008-07-01
+---
 
 # FC Walvisch
 

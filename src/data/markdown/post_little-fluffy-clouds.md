@@ -1,10 +1,10 @@
-<!--
-  date: 2007-12-23
-  modified: 2020-06-01
-  slug: little-fluffy-clouds
-  type: post
-  categories: Flash, ActionScript
--->
+---
+date: 2007-12-23
+modified: 2020-06-01
+slug: little-fluffy-clouds
+type: post
+categories: [experiment]
+---
 
 # little fluffy clouds
 

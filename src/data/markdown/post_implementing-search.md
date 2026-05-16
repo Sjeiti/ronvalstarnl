@@ -1,14 +1,15 @@
-<!--
-  slug: implementing-search-in-a-static-website
-  date: 2025-04-19
-  modified: 2025-08-06
-  type: post
-  header: dil-8OECtq8rrNg-unsplash.jpg
-  headerColofon: photo by [Dil](https://unsplash.com/@thevisualiza)
-  headerClassName: no-blur darken
-  category: JavaScript
-  tags: SPA, static, build, search
--->
+---
+slug: implementing-search-in-a-static-website
+date: 2025-04-19
+modified: 2025-08-06
+type: post
+header: dil-8OECtq8rrNg-unsplash.jpg
+headerColofon: |
+  photo by [Dil](https://unsplash.com/@thevisualiza)
+headerClassName: [no-blur,darken]
+categories: [code,technique,work]
+tags: [SPA,static,build,search]
+---
 
 # Implementing search in a static site
 

@@ -1,20 +1,18 @@
-<!--
-  slug: blauwe-planeet
-  type: fortpolio
-  excerpt: <p>This is an actually an older CD-Rom project I&#8217;d worked on before at Shapers for Thieme Meullenhoff. Within a week I created a Flash prototype that looked and worked better than the original Director version.</p>
-  categories: game, illustration, graphic design
-  tags: XML, graphic design, ActionScript, Flash, illustration, UX, game, concept
-  clients: Shapers
-  collaboration: 
-  prizes: 
-  thumbnail: blauweplaneet3.jpg
-  image: blauweplaneet3.jpg
-  images: blauweplaneet1.jpg, blauweplaneet2.jpg, blauweplaneet3.jpg, blauweplaneet4.jpg, blauweplaneet.jpg, blauweplaneet0.jpg
-  inCv: false
-  inPortfolio: true
-  dateFrom: 2009-01-01
-  dateTo: 2009-02-01
--->
+---
+slug: blauwe-planeet
+type: fortpolio
+excerpt: <p>This is an actually an older CD-Rom project I&#8217;d worked on before at Shapers for Thieme Meullenhoff. Within a week I created a Flash prototype that looked and worked better than the original Director version.</p>
+categories: [game,illustration,graphic design]
+tags: [XML,graphic design,ActionScript,Flash,illustration,UX,game,concept]
+clients: [Shapers]
+thumbnail: blauweplaneet3.jpg
+image: blauweplaneet3.jpg
+images: [blauweplaneet1.jpg,blauweplaneet2.jpg,blauweplaneet3.jpg,blauweplaneet4.jpg,blauweplaneet.jpg,blauweplaneet0.jpg]
+inCv: false
+inPortfolio: true
+dateFrom: 2009-01-01
+dateTo: 2009-02-01
+---
 
 # Blauwe planeet
 

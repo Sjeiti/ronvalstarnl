@@ -1,11 +1,11 @@
-<!--
-  date: 2007-04-15
-  modified: 2020-06-01
-  slug: amfphp-and-as3
-  type: post
-  categories: code, backend, work, ActionScript
-  tags: amfphp
--->
+---
+date: 2007-04-15
+modified: 2020-06-01
+slug: amfphp-and-as3
+type: post
+categories: [code,work]
+tags: [amfphp]
+---
 
 # amfphp and as3
 

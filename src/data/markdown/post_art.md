@@ -1,10 +1,10 @@
-<!--
-  date: 2005-02-20
-  modified: 2005-02-20
-  slug: art
-  type: post
-  categories: link
--->
+---
+date: 2005-02-20
+modified: 2005-02-20
+slug: art
+type: post
+categories: []
+---
 
 # art
 

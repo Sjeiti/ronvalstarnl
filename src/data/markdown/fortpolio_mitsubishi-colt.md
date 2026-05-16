@@ -1,20 +1,19 @@
-<!--
-  slug: mitsubishi-colt
-  type: fortpolio
-  excerpt: <p>Lead developer for the new Colt site. A Flash site with lots of video interwoven with content. And a scrollable panoramic video with 3D sound.</p>
-  categories: framework
-  tags: 3D, ActionScript, video, Flash
-  clients: Lukkien
-  collaboration: Olaf Gremie
-  prizes: 
-  thumbnail: newcolt4.jpg
-  image: newcolt4.jpg
-  images: newcolt4.jpg, newcolt.jpg, newcolt0.jpg, newcolt1.jpg, newcolt2.jpg, newcolt3.jpg
-  inCv: false
-  inPortfolio: true
-  dateFrom: 2008-08-01
-  dateTo: 2008-10-01
--->
+---
+slug: mitsubishi-colt
+type: fortpolio
+excerpt: <p>Lead developer for the new Colt site. A Flash site with lots of video interwoven with content. And a scrollable panoramic video with 3D sound.</p>
+categories: [framework]
+tags: [3D,ActionScript,video,Flash]
+clients: [Lukkien]
+collaboration: [Olaf Gremie]
+thumbnail: newcolt4.jpg
+image: newcolt4.jpg
+images: [newcolt4.jpg,newcolt.jpg,newcolt0.jpg,newcolt1.jpg,newcolt2.jpg,newcolt3.jpg]
+inCv: false
+inPortfolio: true
+dateFrom: 2008-08-01
+dateTo: 2008-10-01
+---
 
 # Mitsubishi Colt
 

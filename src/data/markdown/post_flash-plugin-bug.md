@@ -1,11 +1,11 @@
-<!--
-  date: 2007-11-09
-  modified: 2007-11-09
-  slug: flash-plugin-bug
-  type: post
-  categories: code, Flash, ActionScript
-  tags: IE, OS, XP
--->
+---
+date: 2007-11-09
+modified: 2007-11-09
+slug: flash-plugin-bug
+type: post
+categories: [code]
+tags: [IE,OS,XP]
+---
 
 # Flash plugin bug
 

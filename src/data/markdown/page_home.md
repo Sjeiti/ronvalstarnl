@@ -1,9 +1,9 @@
-<!--
-  date: 2014-04-01
-  modified: 2023-08-02
-  slug: home
-  type: page
--->
+---
+date: 2014-04-01
+modified: 2023-08-02
+slug: home
+type: page
+---
 
 # home
  

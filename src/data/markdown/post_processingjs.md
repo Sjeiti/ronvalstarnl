@@ -1,11 +1,11 @@
-<!--
-  date: 2008-06-30
-  modified: 2008-06-30
-  slug: processingjs
-  type: post
-  categories: code, JavaScript, jQuery, Processing
-  tags: John Resig
--->
+---
+date: 2008-06-30
+modified: 2008-06-30
+slug: processingjs
+type: post
+categories: [code]
+tags: [John Resig]
+---
 
 # Processing.js
 

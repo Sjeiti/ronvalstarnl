@@ -1,19 +1,17 @@
-<!--
-  slug: philipsspotify-application
-  type: fortpolio
-  categories: JavaScript, HTML/CSS
-  tags: HTML, JavaScript, Less, Grunt
-  clients: Chunk
-  collaboration: 
-  prizes: 
-  thumbnail: PhilipsSpotify.png.jpg
-  image: PhilipsSpotify.png.jpg
-  images: PhilipsSpotify.png.jpg
-  inCv: false
-  inPortfolio: false
-  dateFrom: 2013-09-01
-  dateTo: 2013-10-01
--->
+---
+slug: philipsspotify-application
+type: fortpolio
+categories: [JavaScript,HTML/CSS]
+tags: [HTML,JavaScript,Less,Grunt]
+clients: [Chunk]
+thumbnail: PhilipsSpotify.png.jpg
+image: PhilipsSpotify.png.jpg
+images: [PhilipsSpotify.png.jpg]
+inCv: false
+inPortfolio: false
+dateFrom: 2013-09-01
+dateTo: 2013-10-01
+---
 
 # Philips/Spotify application
 

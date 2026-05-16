@@ -1,14 +1,14 @@
-<!--
-  date: 2015-10-25
-  modified: 2017-01-14
-  slug: experiment-blob
-  type: post
-  categories: code, JavaScript
-  tags: WebGL
-  description: This is an experiment with WebGL shaders. The JavaScript code is nothing much. The cool bit is the shader code itself.
-  thumbnail: experiments/6220e259-e97d-41dc-9940-97db7857b667.jpg
-  related: experiment-*
--->
+---
+date: 2015-10-25
+modified: 2017-01-14
+slug: experiment-blob
+type: post
+categories: [code,experiment]
+tags: [WebGL]
+description: This is an experiment with WebGL shaders. The JavaScript code is nothing much. The cool bit is the shader code itself.
+thumbnail: experiments/6220e259-e97d-41dc-9940-97db7857b667.jpg
+related: [experiment-*]
+---
 
 # Experiment: WebGL blob
 

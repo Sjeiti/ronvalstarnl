@@ -1,22 +1,32 @@
-<!--
-  slug: kleuren-speuren
-  type: fortpolio
-  excerpt: Kleuren Speuren is an educational game designed for children aged 6 to 12. I was involved in the entire process from concept to development. My main job was doing all the illustrations and the programming.
-  excerptNl: Kleuren Speuren is een educatief spel voor kinderen van 6 tot 12 jaar. Ik was betrokken bij het hele proces van concept tot ontwikkeling.
-Mijn belangrijkste taak was het maken van alle illustraties en het programmeren van het spel.
-  categories: game, illustration, graphic design, UX
-  tags: graphic design, illustration, UX, game, Director, Lingo, concept
-  clients: Sikkens Foundation
-  collaboration: Shapers, Lea Jurida, Centraal Museum
-  prizes: 
-  thumbnail: kleurenspeuren2.jpg
-  image: kleurenspeuren2.jpg
-  images: kleurenspeuren5.jpg, kleurenspeuren.jpg, kleurenspeuren0.jpg, kleurenspeuren1.jpg, kleurenspeuren2.jpg, kleurenspeuren3.jpg, kleurenspeuren4.jpg
-  inCv: true
-  inPortfolio: true
-  dateFrom: 2002-01-01
-  dateTo: 2003-01-01
--->
+---
+slug: kleuren-speuren
+type: fortpolio
+cv: 
+  position: Game developer & illustrator
+  project: Kleuren speuren
+  body: |  
+    - Led development of an educational game for children aged 6–12.
+    - Created all illustrations and handled programming.
+cvNl:
+  body: |
+    - Leidde de ontwikkeling van een educatief spel voor kinderen van 6 tot 12 jaar.
+    - Maakte alle illustraties en verzorgde de programmering.
+excerpt: Kleuren Speuren is an educational game designed for children aged 6 to 12. I was involved in the entire process from concept to development. My main job was doing all the illustrations and the programming.
+#excerptNl: |
+#  Kleuren Speuren is een educatief spel voor kinderen van 6 tot 12 jaar. Ik was betrokken bij het hele proces van concept tot ontwikkeling.
+#  Mijn belangrijkste taak was het maken van alle illustraties en het programmeren van het spel.
+categories: [game, illustration, graphic design, UX]
+tags: [graphic design, illustration, UX, game, Director, Lingo, concept]
+clients: [Sikkens Foundation]
+collaboration: [Shapers, Lea Jurida, Centraal Museum]
+thumbnail: kleurenspeuren2.jpg
+image: kleurenspeuren2.jpg
+images: [kleurenspeuren5.jpg, kleurenspeuren.jpg, kleurenspeuren0.jpg, kleurenspeuren1.jpg, kleurenspeuren2.jpg, kleurenspeuren3.jpg, kleurenspeuren4.jpg]
+inCv: true
+inPortfolio: true
+dateFrom: 2002-01-01
+dateTo: 2003-01-01
+---
 
 # Kleuren speuren
 

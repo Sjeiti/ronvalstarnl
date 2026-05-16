@@ -1,14 +1,15 @@
-<!--
-  date: 2017-01-24
-  modified: 2017-01-24
-  slug: experiment-fire
-  type: post
-  categories: code, GLSL
-  tags: cool shit, noise, WebGL, GLSL, fire, shader
-  description: Here's a hot shader: fire with sparks. The fire is Simplex noise, nothing special. But the sparks might need some explanation.
-  thumbnail: experiments/ocalhost_7047_experiment-fire.jpg
-  related: experiment-*
--->
+---
+date: 2017-01-24
+modified: 2017-01-24
+slug: experiment-fire
+type: post
+categories: [code]
+tags: [cool shit,noise,WebGL,GLSL,fire,shader]
+description: |
+  Here's a hot shader: fire with sparks. The fire is Simplex noise, nothing special. But the sparks might need some explanation.
+thumbnail: experiments/ocalhost_7047_experiment-fire.jpg
+related: [experiment-*]
+---
 
 # Experiment: procedural fire with sparks in GLSL
 

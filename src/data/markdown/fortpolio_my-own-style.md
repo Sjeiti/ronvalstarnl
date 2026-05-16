@@ -1,20 +1,20 @@
-<!--
-  slug: my-own-style
-  type: fortpolio
-  excerpt: Implemented Woocommerce webshop into Wordpress. Created a module that enabled customizeable products. 
-  categories: JavaScript, HTML/CSS, mobile
-  tags: HTML, jQuery, Wordpress, Less, Woocommerce, Grunt, UX
-  clients: Zoutpeper
-  collaboration: Ibrahim Farah
-  prizes: 
-  thumbnail: MYOS_home.png
-  image: MYOS_home.png
-  images: MYOS_Karly_mobile.png, MYOS_home.png, MYOS_Karly.png
-  inCv: false
-  inPortfolio: true
-  dateFrom: 2014-02-01
-  dateTo: 2014-04-01
--->
+---
+slug: my-own-style
+type: fortpolio
+excerpt: <p>Implemented Woocommerce webshop into Wordpress. Created a module that enabled customizeable products. </p>
+
+categories: [JavaScript,HTML/CSS,mobile]
+tags: [HTML,jQuery,Wordpress,Less,Woocommerce,Grunt,UX]
+clients: [Zoutpeper]
+collaboration: [Ibrahim Farah]
+thumbnail: MYOS_home.png
+image: MYOS_home.png
+images: [MYOS_Karly_mobile.png,MYOS_home.png,MYOS_Karly.png]
+inCv: false
+inPortfolio: true
+dateFrom: 2014-02-01
+dateTo: 2014-04-01
+---
 
 # My Own Style
 

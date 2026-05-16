@@ -1,11 +1,11 @@
-<!--
-  date: 2012-01-30
-  modified: 2012-01-30
-  slug: 873
-  type: post
-  categories: work, illustration
-  tags: Sketchbook pro, Tibor
--->
+---
+date: 2012-01-30
+modified: 2012-01-30
+slug: 873
+type: post
+categories: [work,illustration]
+tags: [Sketchbook pro,Tibor]
+---
 
 # Tibor
 

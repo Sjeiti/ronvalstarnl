@@ -1,15 +1,23 @@
-.content[data-pathname=blog] {
-  @media @mediaM { transform: translateX(8.75rem); }
-}
-.content[data-pathname^=search] .link-list {
-  @media @mediaM { transform: translateX(11.5rem); }
+@media @mediaM {
+  .content[data-pathname^=blog], .content[data-pathname^=search] {
+    .link-list {
+      transform: translateX(8.75rem);
+    }
+  }
 }
 
 ul.link-list {
   margin-top: 0;
   li {
+    position: relative;
     display: block;
     margin-bottom: 1rem;
+    overflow: hidden;
+    transition:
+      transform 200ms linear,
+      max-height 200ms linear 200ms,
+      margin-bottom 200ms linear 200ms
+    ;
     &.sticky a {
 
       --color-sticky: color-mix(in hwb, var(--color-link), black 80%);
@@ -23,6 +31,12 @@ ul.link-list {
       background-color: var(--color-sticky-bg);
       box-shadow: -1.0625rem 0 0 var(--color-sticky-bg), 0.5rem 0 0 var(--color-sticky-bg);
       &:before { background-color: var(--color-sticky-bg); }
+    }
+    select {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 2rem;
     }
   }
 

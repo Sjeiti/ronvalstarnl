@@ -1,12 +1,12 @@
-<!--
-  date: 2014-06-22
-  modified: 2015-10-25
-  slug: experiment-glass
-  type: post
-  tags: cool shit, experiment, recursion
-  thumbnail: experiments/ronvalstar-nl_experiment-glass_1.jpg
-  related: experiment-*
--->
+---
+date: 2014-06-22
+modified: 2015-10-25
+slug: experiment-glass
+type: post
+tags: [cool shit,experiment,recursion]
+thumbnail: experiments/ronvalstar-nl_experiment-glass_1.jpg
+related: [experiment-*]
+---
 
 # Experiment: glass
 

@@ -1,14 +1,14 @@
-<!--
-  date: 9999-99-99
-  modified: 9999-99-99
-  slug:tdd
-  type: post
-  categories: code
-  tags: 
-  header: ian-talmacs-AUlaz_3SLDg-unsplash.jpg
-  headerColofon: image by [Ian Talmacs](https://unsplash.com/@iantalmacs)
-  headerClassName: no-blur darken
---> 
+---
+date: 9999-99-99
+modified: 9999-99-99
+slug: tdd
+type: post
+categories: [code]
+header: ian-talmacs-AUlaz_3SLDg-unsplash.jpg
+headerColofon: |
+  image by [Ian Talmacs](https://unsplash.com/@iantalmacs)
+headerClassName: [no-blur,darken]
+---
 
 # Unit testing emails
 

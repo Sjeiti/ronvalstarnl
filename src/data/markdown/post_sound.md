@@ -1,10 +1,10 @@
-<!--
-  date: 2004-03-17
-  modified: 2004-03-17
-  slug: sound
-  type: post
-  categories: admin, sound
--->
+---
+date: 2004-03-17
+modified: 2004-03-17
+slug: sound
+type: post
+categories: []
+---
 
 # sound
 

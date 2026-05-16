@@ -1,20 +1,18 @@
-<!--
-  slug: lea-jurida
-  type: fortpolio
-  excerpt: <p>Flash website for sound designer Lea Jurida.</p>
-  categories: illustration, graphic design, UX
-  tags: HTML, XML, graphic design, ActionScript, Flash, illustration, video, UX, concept
-  clients: Lea Jurida
-  collaboration: 
-  prizes: 
-  thumbnail: jurida.jpg
-  image: jurida.jpg
-  images: jurida.jpg
-  inCv: false
-  inPortfolio: false
-  dateFrom: 2010-09-11
-  dateTo: 2010-10-11
--->
+---
+slug: lea-jurida
+type: fortpolio
+excerpt: <p>Flash website for sound designer Lea Jurida.</p>
+categories: [illustration,graphic design,UX]
+tags: [HTML,XML,graphic design,ActionScript,Flash,illustration,video,UX,concept]
+clients: [Lea Jurida]
+thumbnail: jurida.jpg
+image: jurida.jpg
+images: [jurida.jpg]
+inCv: false
+inPortfolio: false
+dateFrom: 2010-09-11
+dateTo: 2010-10-11
+---
 
 # Lea Jurida
 

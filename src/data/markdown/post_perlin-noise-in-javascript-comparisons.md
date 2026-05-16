@@ -1,12 +1,12 @@
-<!--
-  date: 2010-05-10
-  modified: 2015-12-24
-  slug: perlin-noise-in-javascript-comparisons
-  type: post
-  categories: code, HTML, JavaScript
-  tags: John Resig, Mario Klingemann, Stefan Gustavson, test
-  description: After a bit of playing I decided to make a good Perlin noise generator in JavaScript. First I did a quick port from my ActionScript class to JavaScript.
--->
+---
+date: 2010-05-10
+modified: 2015-12-24
+slug: perlin-noise-in-javascript-comparisons
+type: post
+categories: [code,technique]
+tags: [John Resig,Mario Klingemann,Stefan Gustavson,test]
+description: After a bit of playing I decided to make a good Perlin noise generator in JavaScript. First I did a quick port from my ActionScript class to JavaScript.
+---
 
 # Perlin noise in JavaScript comparisons
 

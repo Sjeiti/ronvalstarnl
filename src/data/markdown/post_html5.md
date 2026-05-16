@@ -1,11 +1,11 @@
-<!--
-  date: 2009-07-07
-  modified: 2012-07-28
-  slug: html5
-  type: post
-  categories: code, HTML
-  tags: HTML, PSP
--->
+---
+date: 2009-07-07
+modified: 2012-07-28
+slug: html5
+type: post
+categories: [code,rant]
+tags: [HTML,PSP]
+---
 
 # HTML5
 

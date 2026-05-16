@@ -1,11 +1,11 @@
-<!--
-  date: 2008-12-13
-  modified: 2020-05-31
-  slug: attractors-rebuild
-  type: post
-  categories: code, image, Java, Processing, video
-  tags: math, cool shit
--->
+---
+date: 2008-12-13
+modified: 2020-05-31
+slug: attractors-rebuild
+type: post
+categories: [code,project]
+tags: [math,cool shit]
+---
 
 # Attractors rebuild
 

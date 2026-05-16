@@ -1,19 +1,17 @@
-<!--
-  slug: rekentuin
-  type: fortpolio
-  categories: game
-  tags: HTML, ActionScript, concept, Flash
-  clients: UVA
-  collaboration: 
-  prizes: 
-  thumbnail: rekentuin.jpg
-  image: rekentuin.jpg
-  images: rekentuin.jpg
-  inCv: false
-  inPortfolio: false
-  dateFrom: 2009-02-01
-  dateTo: 2009-03-01
--->
+---
+slug: rekentuin
+type: fortpolio
+categories: [game]
+tags: [HTML,ActionScript,concept,Flash]
+clients: [UVA]
+thumbnail: rekentuin.jpg
+image: rekentuin.jpg
+images: [rekentuin.jpg]
+inCv: false
+inPortfolio: false
+dateFrom: 2009-02-01
+dateTo: 2009-03-01
+---
 
 # Rekentuin
 

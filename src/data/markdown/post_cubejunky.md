@@ -1,10 +1,10 @@
-<!--
-  date: 2007-05-21
-  modified: 2020-06-01
-  slug: cubejunky
-  type: post
-  categories: Flash, ActionScript
--->
+---
+date: 2007-05-21
+modified: 2020-06-01
+slug: cubejunky
+type: post
+categories: [project]
+---
 
 # cubejunky
 

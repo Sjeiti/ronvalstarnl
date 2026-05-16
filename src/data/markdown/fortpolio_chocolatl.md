@@ -1,19 +1,17 @@
-<!--
-  slug: chocolatl
-  type: fortpolio
-  categories: JavaScript, HTML/CSS
-  tags: CSS, HTML, Wordpress, UX, concept
-  clients: 
-  collaboration: Ibrahim Farah
-  prizes: 
-  thumbnail: chocolatl1.jpg
-  image: chocolatl1.jpg
-  images: chocolatl2.jpg, chocolatl3.jpg, chocolatl1.jpg
-  inCv: true
-  inPortfolio: true
-  dateFrom: 2013-03-01
-  dateTo: 2013-05-01
--->
+---
+slug: chocolatl
+type: fortpolio
+categories: [JavaScript,HTML/CSS]
+tags: [CSS,HTML,Wordpress,UX,concept]
+collaboration: [Ibrahim Farah]
+thumbnail: chocolatl1.jpg
+image: chocolatl1.jpg
+images: [chocolatl2.jpg,chocolatl3.jpg,chocolatl1.jpg]
+inCv: false
+inPortfolio: true
+dateFrom: 2013-03-01
+dateTo: 2013-05-01
+---
 
 # Chocol&#225;tl
 

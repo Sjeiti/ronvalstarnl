@@ -1,9 +1,10 @@
-<!--
-  date: 2007-01-31
-  modified: 2012-06-26
-  slug: wordpress-plugin-cronfaker
-  type: post
--->
+---
+date: 2007-01-31
+modified: 2012-06-26
+slug: wordpress-plugin-cronfaker
+type: post
+categories: [project]
+---
 
 # Cronfaker plugin
 

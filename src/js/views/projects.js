@@ -4,12 +4,11 @@ import {addRule, removeRule} from '../utils/style.js'
 import {fetchJSONFiles,nextFrame,nextTick,scrollToTop} from '../utils/index.js'
 import {componentOf} from '../component/index.js'
 import {MEDIA_URI_PROJECT, MEDIA_URI_THUMB, MEDIA_URI_VIDEO/*, PROBABLY_MOBILE*/} from '../config.js'
-import {makeClassNames, slugify} from '../utils/string.js'
+import {dateStringToYearMonth,makeClassNames,slugify} from '../utils/string.js'
 import {open} from '../router.js'
 
 const classNames = makeClassNames({
     current: 'current'
-  , projectCategory: 'project-category'
   , projects: 'projects'
   , project: 'project'
 })
@@ -29,7 +28,7 @@ add(
         //
         //const querySelector = ::view.querySelector
         const querySelector = view.querySelector.bind(view)
-        let existingCategories = querySelector(classNames.projectCategory)
+        let existingCategories = querySelector('[data-filter]')
         let existingProjects = querySelector(classNames.projects)
         const existingProject = querySelector(classNames.project)
         //
@@ -85,12 +84,20 @@ add(
 function buildPage(view, categories, portfolioProjects){
   //const querySelector = ::view.querySelector
   const querySelector = view.querySelector.bind(view)
-  view.expandAppend(`(ul${classNames.projectCategory}>(${categories.map(
-      o=>`(li>a[href="/projects/${o.slug}"]{${o.name}})`
-    ).join('+')}))+ul.unstyled${classNames.projects}>(${portfolioProjects.map(getProjectThumbZen).join('+')})`)
-  const categoriesElm = querySelector(classNames.projectCategory)
-  categoriesElm.addEventListener('click', onClickCategory)
-  return [categoriesElm, querySelector(classNames.projects)]
+
+  view.expandAppend(`${_initFilterZen(view,categories)}+${_initProjectListZen(portfolioProjects)}`)
+
+  return [querySelector('[data-filter]'), querySelector(classNames.projects)]
+}
+
+function _initFilterZen(view,categories){
+  const data = JSON.stringify({list:categories,pathnamePrefix:'/projects/'})
+      .replace(/"/g,'&quot;')
+  return `div[data-filter="${data}"]`
+}
+
+function _initProjectListZen(portfolioProjects){
+  return `ul.unstyled${classNames.projects}>(${portfolioProjects.map(getProjectThumbZen).join('+')})`
 }
 
 /**
@@ -106,7 +113,8 @@ function buildCurrentProject(view, project, existingProjects){
     , dateFrom
     , dateTo
     , title
-    , headerColofon, headerClassName
+    , headerColofon
+    , headerClassName
   } = project
   const image = project?.thumbnail
   if (image){
@@ -116,8 +124,8 @@ function buildCurrentProject(view, project, existingProjects){
   existingProjects.insertAdjacentHTML('beforebegin', expand(`
     div${classNames.project}>
       (
-        .text>(.date>time.date-from{${dateFrom.replace(/-\d\d$/, '')}}
-          +time.date-to{${dateTo.replace(/-\d\d$/, '')}})
+        .text>(.date>time.date-from{${dateStringToYearMonth(dateFrom)}}
+          +time.date-to{${dateStringToYearMonth(dateTo)}})
           +h2{${title}}
           +{${content}}
       )
@@ -129,24 +137,12 @@ function buildCurrentProject(view, project, existingProjects){
 }
 
 /**
- * Clicking selected category should revert to projects
- * @param {Event} e
- */
-function onClickCategory(e){
-  const {target} = e
-  if (location.href===target.href){
-    open('/projects')
-    e.preventDefault()
-  }
-}
-
-/**
  * Create Zen selector for a project thumb
  * @param {Fortpolio} project
  * @return {string}
  */
 export function getProjectThumbZen(project){
-  const ext = project.thumbnail.split(/\./).pop()
+  const ext = project.thumbnail?.split(/\./).pop()
   const liAttr = `[style="background-image:url(${MEDIA_URI_THUMB+project.thumbnail})"]`
   const hasVideo = !!project.thumbnailVideo // && !PROBABLY_MOBILE // don't show video thumbs on mobile ???
   const videoSrc = `[src=${MEDIA_URI_VIDEO+project.thumbnailVideo}]`

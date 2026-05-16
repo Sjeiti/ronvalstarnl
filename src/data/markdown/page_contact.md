@@ -1,10 +1,10 @@
-<!--
-  date: 2014-04-01
-  modified: 2023-08-02
-  slug: contact
-  type: page
-  description: Contact information for Ron Valstar
--->
+---
+date: 2014-04-01
+modified: 2023-08-02
+slug: contact
+type: page
+description: Contact information for Ron Valstar
+---
 
 # contact
 

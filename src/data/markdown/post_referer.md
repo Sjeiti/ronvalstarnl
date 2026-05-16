@@ -1,10 +1,10 @@
-<!--
-  date: 2005-02-12
-  modified: 2005-02-12
-  slug: referer
-  type: post
-  categories: backend
--->
+---
+date: 2005-02-12
+modified: 2005-02-12
+slug: referer
+type: post
+categories: []
+---
 
 # referer
 

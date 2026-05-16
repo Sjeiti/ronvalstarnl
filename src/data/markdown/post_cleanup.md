@@ -1,11 +1,11 @@
-<!--
-  date: 2010-01-27
-  modified: 2020-05-31
-  slug: cleanup
-  type: post
-  categories: admin, code, work
-  tags: test
--->
+---
+date: 2010-01-27
+modified: 2020-05-31
+slug: cleanup
+type: post
+categories: [code,work]
+tags: [test]
+---
 
 # cleanup
 

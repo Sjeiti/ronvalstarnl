@@ -1,10 +1,10 @@
-<!--
-  date: 2008-02-13
-  modified: 2025-04-13
-  slug: strange-attractors
-  type: post
-  tags: strange attractors, java, processing
--->
+---
+date: 2008-02-13
+modified: 2025-04-13
+slug: strange-attractors
+type: post
+tags: [strange attractors,java,processing]
+---
 
 # Strange attractors (in Processing/Java)
 

@@ -1,19 +1,17 @@
-<!--
-  slug: fc-voetbalreizen
-  type: fortpolio
-  categories: JavaScript, HTML/CSS, UX
-  tags: CSS, HTML, JavaScript, Wordpress, UX, concept
-  clients: FC Voetbalreizen
-  collaboration: 
-  prizes: 
-  thumbnail: voetbalreizen.jpg
-  image: voetbalreizen.jpg
-  images: voetbalreizen.jpg
-  inCv: false
-  inPortfolio: false
-  dateFrom: 2013-01-01
-  dateTo: 2013-09-01
--->
+---
+slug: fc-voetbalreizen
+type: fortpolio
+categories: [JavaScript,HTML/CSS,UX]
+tags: [CSS,HTML,JavaScript,Wordpress,UX,concept]
+clients: [FC Voetbalreizen]
+thumbnail: voetbalreizen.jpg
+image: voetbalreizen.jpg
+images: [voetbalreizen.jpg]
+inCv: false
+inPortfolio: false
+dateFrom: 2013-01-01
+dateTo: 2013-09-01
+---
 
 # FC Voetbalreizen
 

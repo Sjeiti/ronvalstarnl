@@ -1,10 +1,10 @@
-<!--
-  date: 2005-04-29
-  modified: 2005-04-29
-  slug: strangepeople
-  type: post
-  categories: link
--->
+---
+date: 2005-04-29
+modified: 2005-04-29
+slug: strangepeople
+type: post
+categories: []
+---
 
 # strange people
 

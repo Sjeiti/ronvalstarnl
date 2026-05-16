@@ -1,14 +1,14 @@
-<!--
-  date: 2025-03-29
-  modified: 2025-03-29
-  slug: experiment-eggs
-  type: post
-  categories: code, JavaScript
-  tags: cool shit
-  thumbnail: experiments/eggs_screenshot_2025-04-11_212339_cpmdsn.jpg
-  description: Single element eggs
-  related: experiment-*
--->
+---
+date: 2025-03-29
+modified: 2025-03-29
+slug: experiment-eggs
+type: post
+categories: [code,experiment]
+tags: [cool shit]
+thumbnail: experiments/eggs_screenshot_2025-04-11_212339_cpmdsn.jpg
+description: Single element eggs
+related: [experiment-*]
+---
 
 # Experiment: eggs
 

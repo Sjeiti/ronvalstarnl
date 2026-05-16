@@ -1,9 +1,9 @@
-<!--
-  date: 2012-06-28
-  modified: 2014-05-05
-  slug: test-rainbow
-  type: post
--->
+---
+date: 2012-06-28
+modified: 2014-05-05
+slug: test-rainbow
+type: post
+---
 
 # Test Rainbow line numbering
 

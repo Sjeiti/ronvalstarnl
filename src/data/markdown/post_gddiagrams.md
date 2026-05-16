@@ -1,10 +1,10 @@
-<!--
-  date: 2005-11-24
-  modified: 2012-07-03
-  slug: gddiagrams
-  type: post
-  categories: admin, backend
--->
+---
+date: 2005-11-24
+modified: 2012-07-03
+slug: gddiagrams
+type: post
+categories: []
+---
 
 # gd diagrams
 

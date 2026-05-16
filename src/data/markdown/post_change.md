@@ -1,10 +1,10 @@
-<!--
-  date: 2004-10-20
-  modified: 2004-10-20
-  slug: change
-  type: post
-  categories: admin
--->
+---
+date: 2004-10-20
+modified: 2004-10-20
+slug: change
+type: post
+categories: []
+---
 
 # change
 

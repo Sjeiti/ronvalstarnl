@@ -1,12 +1,12 @@
-<!--
-  date: 2014-06-11
-  modified: 2014-08-14
-  slug: wordpress-pocket-widget
-  type: post
-  categories: Wordpress, php
-  tags: API, pocket
-  description: Pocket is really handy. It's a way to save articles and access them later. Here's a Wordpress Pocket plugin I wrote to show your collection in a widget.
--->
+---
+date: 2014-06-11
+modified: 2014-08-14
+slug: wordpress-pocket-widget
+type: post
+categories: [tools]
+tags: [API,pocket,Wordpress,php]
+description: Pocket is really handy. It's a way to save articles and access them later. Here's a Wordpress Pocket plugin I wrote to show your collection in a widget.
+---
 
 # WordPress Pocket widget
 

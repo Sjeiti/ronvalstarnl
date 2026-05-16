@@ -1,11 +1,11 @@
-<!--
-  date: 2009-01-29
-  modified: 2014-03-11
-  slug: ronvalstarnl
-  type: post
-  categories: admin, code, rant
-  tags: HTML, IE
--->
+---
+date: 2009-01-29
+modified: 2014-03-11
+slug: ronvalstarnl
+type: post
+categories: [code,rant]
+tags: [HTML,IE]
+---
 
 # localhost.ronvalstar
 

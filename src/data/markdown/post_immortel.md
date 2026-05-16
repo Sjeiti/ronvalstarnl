@@ -1,10 +1,10 @@
-<!--
-  date: 2004-07-03
-  modified: 2004-07-03
-  slug: immortel
-  type: post
-  categories: link
--->
+---
+date: 2004-07-03
+modified: 2004-07-03
+slug: immortel
+type: post
+categories: []
+---
 
 # immortel
 

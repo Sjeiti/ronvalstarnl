@@ -1,12 +1,12 @@
-<!--
-  date: 2012-02-14
-  modified: 2012-07-25
-  slug: js1k
-  type: post
-  categories: code, JavaScript
-  tags: competition, hack, Js1k
-  description: The last two days I found myself having a crack at the JS1k competition. Actually did about half of it on an iPad at night.
--->
+---
+date: 2012-02-14
+modified: 2012-07-25
+slug: js1k
+type: post
+categories: [code]
+tags: [competition,hack,Js1k]
+description: The last two days I found myself having a crack at the JS1k competition. Actually did about half of it on an iPad at night.
+---
 
 # JS1k
 

@@ -1,10 +1,10 @@
-<!--
-  date: 2004-10-07
-  modified: 2004-10-07
-  slug: sketches
-  type: post
-  categories: admin
--->
+---
+date: 2004-10-07
+modified: 2004-10-07
+slug: sketches
+type: post
+categories: []
+---
 
 # sketches
 

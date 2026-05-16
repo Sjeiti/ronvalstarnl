@@ -1,11 +1,11 @@
-<!--
-  date: 2014-08-26
-  modified: 2015-10-25
-  slug: experiment-voronoi
-  type: post
-  tags: Perlin Noise, cool shit, experiment, prng
-  related: experiment-*
--->
+---
+date: 2014-08-26
+modified: 2015-10-25
+slug: experiment-voronoi
+type: post
+tags: [Perlin Noise,cool shit,experiment,prng]
+related: [experiment-*]
+---
 
 # Experiment: Voronoi
 

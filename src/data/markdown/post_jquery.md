@@ -1,10 +1,10 @@
-<!--
-  date: 2007-04-26
-  modified: 2007-04-26
-  slug: jquery
-  type: post
-  categories: code, JavaScript, jQuery
--->
+---
+date: 2007-04-26
+modified: 2007-04-26
+slug: jquery
+type: post
+categories: [code]
+---
 
 # jquery
 
