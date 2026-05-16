@@ -38,7 +38,6 @@ const noop = ()=>({})
   const pages = (target?[baseUri+'/'+target]:[
       ...lists.reduce((acc,o)=>(acc.push(...o),acc))
   ])
-  console.log('pages', pages.map(uri=>uri.replace(/^https:\/\/[^/]*/,'')).join(',')) // todo: remove log
 
   const generator = getWorkerGenerator(pages,html)
   await dynamicPromiseAll(generator, maxWorkers)

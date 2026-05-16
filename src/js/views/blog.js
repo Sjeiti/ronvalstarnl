@@ -125,7 +125,7 @@ function _onRouteChange(list, pathName){
   )
   if (pathName!=='blog'){
     const classCategory = slugify(pathName).replace(/^blog/,'category')
-    list.classList.add(classCategory)
+    classCategory&&list.classList.add(classCategory)
   }
 }
 
@@ -136,15 +136,8 @@ function getSelect(id,cat){
 }
 
 function onSelectChange(e){
-  console.log('onSelectChange',e)
   const {target} = e
-  console.log('\t',target.nodeName)
-  //console.log('\t',target.outerHTML)
-  console.log('\t',target.value)
-  console.log('\t',target.name)
-  console.log('\t',target.options)
-  console.log('\t',Array.from(target.options).filter(o=>o.selected).map(o=>o.value||o.text).join(','))
-  
+
   const data = {
     id:target.id
     ,options: Array.from(target.options).filter(o=>o.selected).map(o=>o.value||o.text)
@@ -158,7 +151,7 @@ function onSelectChange(e){
   })
   .then(response => response.json())
   .then(result => {
-    console.log('Success:', result);
+    console.info('Success:', result);
   })
   .catch(error => {
     console.error('Error:', error);

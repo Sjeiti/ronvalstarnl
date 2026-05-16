@@ -166,12 +166,12 @@ create('[data-header]', class extends BaseComponent{
    * Set or remove the header image
    * @param {string} src
    * @param {string} colofon
-   * @param {string} classNames
+   * @param {string[]} classNames
    */
   setImage(src, colofon, classNames){
     if (src){
       this._background.style.backgroundImage = `url("${MEDIA_URI_HEADER+src}")`
-      classNames&&this._background.classList.add(...classNames.split(' '))
+      classNames?.length&&this._background.classList.add(classNames)
       colofon&&(this._colofon.innerHTML = markdownLinks(colofon))
     } else {
       this._background.style.removeProperty('background-image')
@@ -315,10 +315,8 @@ create('[data-header]', class extends BaseComponent{
    */
   _onHashChange(){
     const value = location.hash.substr(1)
-    console.log('hash',value)
     if (!document.getElementById(value)){
       const iframe = this._select('iframe')
-      console.log('iframe',iframe)
       if (iframe) {
         iframe.contentWindow.location.hash = value
         window.scrollTo(0,0)

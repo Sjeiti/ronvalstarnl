@@ -113,7 +113,8 @@ function buildCurrentProject(view, project, existingProjects){
     , dateFrom
     , dateTo
     , title
-    , headerColofon, headerClassName
+    , headerColofon
+    , headerClassName
   } = project
   const image = project?.thumbnail
   if (image){

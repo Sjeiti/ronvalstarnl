@@ -219,7 +219,6 @@ function onButtonClick(){
   const element = qs('section')
   const {outerHTML, offsetWidth, offsetHeight} = element
   const html = outerHTML.replace(/\n/g,'')
-console.log('html',html) // todo: remove log
   //
   const svgString = getSVGString(offsetWidth,offsetHeight,style,html)
   //

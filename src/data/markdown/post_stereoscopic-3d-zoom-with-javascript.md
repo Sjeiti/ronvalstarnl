@@ -138,7 +138,6 @@ var stereoZoomer = (function () {
 
   // imgLoad
   o.loadImg = function (photo) {
-    console.log('loadImg',photo) // todo: remove log
     mImg.src = photo
   }
 
