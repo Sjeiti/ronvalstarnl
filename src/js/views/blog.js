@@ -58,7 +58,6 @@ function _initFilter(view,posts){
         return acc
       },[])
       .map(cat=>({name: cat, slug: slugify(cat)}))
-  console.log('cats', cats) // todo: remove log
   _initFilterCSS(cats)
   const data = JSON.stringify({list:cats,pathnamePrefix:'/blog/'})
      .replace(/"/g,'&quot;')

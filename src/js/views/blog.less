@@ -1,10 +1,9 @@
-.content[data-pathname^=blog] {
-  ul.link-list {
-    transform: translateX(8.75rem);
+@media @mediaM {
+  .content[data-pathname^=blog], .content[data-pathname^=search] {
+    .link-list {
+      transform: translateX(8.75rem);
+    }
   }
-}
-.content[data-pathname^=search] .link-list {
-  @media @mediaM { transform: translateX(11.5rem); }
 }
 
 ul.link-list {
@@ -13,7 +12,7 @@ ul.link-list {
     position: relative;
     display: block;
     margin-bottom: 1rem;
-    verflow: hidden;
+    overflow: hidden;
     transition:
       transform 200ms linear,
       max-height 200ms linear 200ms,
