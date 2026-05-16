@@ -13,7 +13,7 @@ headerClassName: [no-blur,darken]
 It was a shock to learn that the amount of developers in our team is going to be cut in half, from four to two. We knew a reorganisation was afoot but we thought it wouldn't affect us because we're already understaffed.
 So sorry, this is not about JavaScript functions, it's a bit of a rant.
 
-This is [the first non-freelance job](/something-new) for me. Apart from being a right fit ethically ([according to this](https://www.eerlijkegeldwijzer.nl/bankwijzer/hoe-scoort-jouw-bank/)), the type of work also really suits meit really also suits me. Our team creates the design-system. That means a lot of UX, a lot of accessibility, which is right up my alley if I am to believe my educational background. It also means a lot of lines to implementing teams. Which is why we organise the front-end guild within the bank.
+This is [the first non-freelance job](/something-new) for me. Apart from being a right fit ethically ([according to this](https://www.eerlijkegeldwijzer.nl/bankwijzer/hoe-scoort-jouw-bank/)), the type of work also really suits me. Our team creates the design-system. That means a lot of UX, a lot of accessibility, which is right up my alley if I am to believe my educational background. It also means a lot of lines to implementing teams. Which is why we organise the front-end guild within the bank.
 We were also dubbed a core-team since we distribute configurations for linting, testing and even provide the different pipelines for teams to use, and we've setup the CDN.
 
 So the work is diverse, we are very free in how we set our targets. Which is why we do Kanban, not Scrum.
@@ -30,6 +30,8 @@ It is a bank that has a mission 'committed to a sustainable and just future for 
 
 ![fake plants](https://res.cloudinary.com/dn1rmdjs5/image/upload/w_736/v1566568756/rv/plastic-wall.jpg)
 
-Maybe I was a bit naïve assuming ASN a 'good' bank. Maybe it still is 'good' considering the alternatives (at least they try to be), and the bottom line is it's simply a bank that does not invest in wars or oil. If I want to work with people that do not go on winter sports or fly half the world to go on vacation, I should start looking elsewhere.
+Outsourcing the workforce to overseas contractors is seen by some as a form of neocolonialism. Apart from 'exploiting' the overseas workforce I fear this way of working can only work for so long. Currently there are still experienced developers locally to guide and manage the external workforce. But in one generation all you have left is project managers. The western developing world stopped producing long ago; a lot of the things we need comes from outside the country. What I'm living in now is called a knowledge-economy. This outsourcing of IT undermines that. Soon all we are good for is telling others what to do.
+
+Maybe I was a bit naïve assuming ASN a 'good' bank. Maybe it still is 'good' considering the alternatives (at least they try to be), and the bottom line is it's simply a bank that does not invest in wars or oil. If I want to work with people that do not go on winter sports or fly half the world to go on holiday, I should start looking elsewhere.
 
 
