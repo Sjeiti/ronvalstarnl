@@ -3,7 +3,7 @@ date: 2025-10-25
 modified: 2025-10-25
 slug: asymmetry
 type: post
-categories: [microscopy]
+categories: [nature, microscopy]
 tags: [microscopy]
 header: Screenshot_20251025-225317_Edited.jpg
 headerClassName: [no-blur,darken]

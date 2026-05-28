@@ -2,7 +2,7 @@
 date: 2010-09-17
 modified: 2020-06-01
 slug: stereoscopic-3d-zoom-with-javascript
-categories: [code,experiment,microscopy]
+categories: [code,experiment,nature,microscopy]
 tags: [stereoscopic]
 description: Too bad you can't zoom in with stereoscopic 3D. But with a little JavaScript you can...
 type: post
