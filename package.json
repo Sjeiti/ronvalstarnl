@@ -50,7 +50,7 @@
     "state-signals": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.13",
+    "@babel/core": "^7.29.6",
     "@babel/eslint-parser": "^7.23.10",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/plugin-proposal-function-bind": "^7.12.13",
