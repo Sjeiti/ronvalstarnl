@@ -3,7 +3,7 @@ date: 2026-06-15
 modified: 2026-06-15
 slug: passer-domesticus
 type: post
-categories: [nature]
+categories: [nature,illustration]
 header: mus.png
 headerClassName: [no-blur,darken]
 ---
