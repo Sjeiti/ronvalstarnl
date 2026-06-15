@@ -15,8 +15,7 @@ const allowedCategories = [
   'experiment',
   'illustration',
   'rant',
-  'birds',
-  'microscopy',
+  'nature',
   'tools',
   'work'
 ]
@@ -53,11 +52,14 @@ function _initFilter(view,posts){
   const cats = posts
       .reduce((acc,post)=>{
         post.categories?.forEach(cat=>{
-          acc.includes(cat)||acc.push(cat)
+          if (!acc.includes(cat) && allowedCategories.includes(cat)) {
+            acc.push(cat)
+          }
         })
         return acc
       },[])
       .map(cat=>({name: cat, slug: slugify(cat)}))
+  console.log('cats', cats) // todo: remove log
   _initFilterCSS(cats)
   const data = JSON.stringify({list:cats,pathnamePrefix:'/blog/'})
      .replace(/"/g,'&quot;')
@@ -73,6 +75,7 @@ function _initFilterCSS(categories){
       ${
         categories
           .map(cat=>cat.name.toLowerCase())
+          .filter(cat=>allowedCategories.includes(cat))
           .map(cat=>`
 &.category-${cat} {
   li {

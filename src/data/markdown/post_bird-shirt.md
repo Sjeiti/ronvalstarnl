@@ -3,7 +3,7 @@ date: 2026-05-16
 modified: 2026-05-16
 slug: bird-shirt
 type: post
-categories: [birds, illustration]
+categories: [nature, birds, illustration]
 tags: [cool shit]
 ---
 
