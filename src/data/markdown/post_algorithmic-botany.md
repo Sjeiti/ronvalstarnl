@@ -3,7 +3,7 @@ date: 2007-09-19
 modified: 2007-09-19
 slug: algorithmic-botany
 type: post
-categories: [code,work]
+categories: [code,work,nature]
 ---
 
 # Algorithmic botany

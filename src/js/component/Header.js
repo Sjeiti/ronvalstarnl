@@ -111,23 +111,29 @@ create('[data-header]', class extends BaseComponent{
       ['has a favorite dino',''],
       ['zen knife sharpener',''],
       ['waits for sourkraut',''],
-      ['noob bird whatcher','/birds'],
+      ['looks for sparrows','/passer-domesticus'],
       ['watches grass grow','/seedling'],
+      ['noob bird whatcher','/birds'],
       ['has yeast for pets',''],
       ['is a retired ninja',''],
       ['writes js for fun','/search/JavaScript'],
+      ['lost his marbles','/experiment-marbles'],
+      ['watches microbes','/asymmetry'],
       ['loves cormorants','/bird-shirt'],
+      ['makes some noise','/creating-tileable-noise-maps'],
       ['feeds the worms',''],
       ['makes cool shit','/search/cool%20shit'],
       ['plays minecraft',''],
+      ['plays with fire','/experiment-fire'],
       ['loves capsaicin',''],
-      ['makes some noise','/creating-tileable-noise-maps'],
       ['bakes sourdough',''],
+      ['circles around','/experiment-radialgradient#398370915'],
       ['pro bitshifter',''],
       ['pushes pixels','/pig-in-woods'],
       ['picks a color','/mc-picker'],
       ['pepper grower',''],
-      ['flax heckler','']
+      ['flax heckler',''],
+      ['uses vim','best-free-editor-on-android']
     ]
     const {length} = subTitles
     routeChange.add((n,o)=>{
