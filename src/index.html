@@ -207,6 +207,12 @@
 			}
 		}
 
+		@media (min-width: 768px) {
+			header nav {
+				line-height: 1.5rem;
+			}
+		}
+
 		header nav {
 			position: absolute;
 			left: 50%;
@@ -216,20 +222,68 @@
 			transform: translateX(-50%);
 			white-space: nowrap;
 			line-height: 1rem;
-		}
-
-		@media (min-width: 768px) {
-			header nav {
-				line-height: 1.5rem;
+   
+			a {
+				position: relative;
+				margin: 0 0.125rem;
+				padding: 0px 0.625rem;
+				text-transform: uppercase;
+				text-decoration: none;
+				color: white;
+        
+        &:first-child { padding: 0; }
 			}
-		}
+      svg {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				fill: #F04;
+				overflow: visible;
+      }
+			g {
+				fill: #000;
+				transition: linear clip-path 200ms;
+				clip-path: polygon(0% 0%, 0% 100%, -10% 100%, 0% 0%);
+			}
+			a.menu-item--right g {
+				clip-path: polygon(110% 0%, 100% 100%, 100% 100%, 100% 0%);
+			}
+			a.current g, a:hover g {
+				clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 110% 0%);
+			}
+			a.current.menu-item--right g, a:hover.menu-item--right g {
+				clip-path: polygon(0% 0%, -10% 100%, 100% 100%, 100% 0%);
+			}
+			rect {
+				width: 100%;
+				height: 100%;
+				/*rx: 2px;*/
+				transform-origin: 50% 50%;
+				clip-path: rect(0 60% 100% 0);
+				&+rect { clip-path: rect(0 100% 100% 40%); }
+			}
+			span {
+				position: relative;
+				z-index: 1;
+				pointer-events: none;
+			}
 
-		header nav a {
-			position: relative;
-			display: block;
-			height: 1rem;
-			margin: 0 0.125rem;
-			background-color: var(--color-main);
+      --degStep: 15deg;
+
+			a:nth-child(2) svg rect {      transform: skew(calc(-2 * var(--degStep))); }
+			a:nth-child(2) svg rect+rect { transform: skew(calc(-1 * var(--degStep))); }
+
+			a:nth-child(3) svg rect {      transform: skew(calc(-1 * var(--degStep))); }
+			a:nth-child(3) svg rect+rect { transform: skew(calc(0.25 * var(--degStep))); }
+
+			a:nth-child(4) svg rect {      transform: skew(calc(0.25 * var(--degStep))); }
+			a:nth-child(4) svg rect+rect { transform: skew(calc(1 * var(--degStep))); }
+
+			a:nth-child(5) svg rect {      transform: skew(calc(1 * var(--degStep))); }
+			a:nth-child(5) svg rect+rect { transform: skew(calc(2 * var(--degStep))); }
+
 		}
 
 		@media (min-width: 768px) {
@@ -239,8 +293,7 @@
 		}
 
 		header nav a.current, header nav a.current-parent {
-			background-color: #000;
-			color: var(--color-text);
+      fill: #000;
 		}
 
 		header nav a span {
@@ -447,10 +500,10 @@
   <a href="/" class="what">front-end developer</a>
   <nav>
     <a href="/" title="home"><i class="logo"></i></a>
-    <a href="/about"><span>about</span></a>
-    <a href="/experiments"><span>experiments</span></a>
-    <a href="/projects"><span>projects</span></a>
-    <a href="/blog"><span>blog</span></a>
+    <a href="/about"><svg><rect /><rect /></svg><svg><g><rect /><rect /></g></svg><span>about</span></a>
+    <a href="/experiments"><svg><rect /><rect /></svg><svg><g><rect /><rect /></g></svg><span>experiments</span></a>
+    <a href="/projects"><svg><rect /><rect /></svg><svg><g><rect /><rect /></g></svg><span>projects</span></a>
+    <a href="/blog"><svg><rect /><rect /></svg><svg><g><rect /><rect /></g></svg><span>blog</span></a>
   </nav>
   <button data-color-scheme aria-label="toggle darkmode">
     <svg data-icon="brightness-contrast"><title>brightness-contrast</title></svg>

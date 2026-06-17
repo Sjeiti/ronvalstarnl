@@ -54,6 +54,8 @@ create('[data-header]', class extends BaseComponent{
     this._initColorScheme()
 
     this._initSubtitle()
+
+    this._initNav()
   }
 
   /**
@@ -166,6 +168,22 @@ create('[data-header]', class extends BaseComponent{
         }, 2*i+1)
       }
     })
+  }
+
+  /**
+   * Add listeners to `nav g>rect` so hovers can move backwards
+   * @private
+   */
+  _initNav() {
+    const rects = Array.from(document.querySelectorAll('nav g>rect'))
+    rects.forEach(rect=>{
+      rect.addEventListener('mouseenter',({target})=>{
+        const isLeftSide = target.matches('rect:first-child')
+        const anchor = target.closest('a')
+        anchor.classList.toggle('menu-item--right', !isLeftSide)
+      })
+    })
+
   }
 
   /**
