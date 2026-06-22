@@ -225,26 +225,28 @@ create('[data-header]', class extends BaseComponent{
     const {_element} = this
     const {current,menuItemRight,menuItemNoAnim} = this._className;
 
-    const cur = _element.querySelector('.'+current)
-    const curIndex = indexOfElement(cur)
+    const curElm = _element.querySelector('.'+current)
+    const curIndex = indexOfElement(curElm)
 
-    const nww = _element.querySelector(`a[href="/${select}"]`)
-    const nwwIndex = indexOfElement(nww)
+    const newElm = _element.querySelector(`a[href="/${select}"]`)
+    const newIndex = indexOfElement(newElm)
 
-    const toLeft = curIndex>nwwIndex
+    if (curElm!==newElm) {
+      const toLeft = curIndex>newIndex
 
-    // old tab navigation dependent on current state
-    const {classList} = cur||{}
-    classList?.add(menuItemNoAnim)
-    classList&&nextFrame(()=>classList.toggle(menuItemRight,!toLeft),1)
-    classList&&nextFrame(()=>{
-      classList.remove(menuItemNoAnim)
-      classList.remove(current)
-    },2)
+      // old tab navigation dependent on current state
+      const {classList} = curElm||{}
+      classList?.add(menuItemNoAnim)
+      classList&&nextFrame(()=>classList.toggle(menuItemRight,!toLeft),1)
+      classList&&nextFrame(()=>{
+        classList.remove(menuItemNoAnim)
+        classList.remove(current)
+      },2)
 
-    // new tab animation
-    nww?.classList.add(current)
-    nww?.classList.toggle(menuItemRight,toLeft)
+      // new tab animation
+      newElm?.classList.add(current)
+      newElm?.classList.toggle(menuItemRight,toLeft)
+    }
 
     this._setExperiment(name, oldName)
     this.setImage()
