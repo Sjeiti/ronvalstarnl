@@ -220,41 +220,31 @@ create('[data-header]', class extends BaseComponent{
   _onRouteChange(name, page, oldName){
     const select = page.parentSlug||name
 
-    // const elmCurrent = this._$('.'+this._className.current)
-    // const elmNext = this._$(`a[href="/${select}"]`)
-    // const isIndexSmaller = getElementIndex(elmNext)<getElementIndex(elmCurrent)
-    // elmCurrent.classList.remove(this._className.current, this._className.currentSmaller)
-    // elmNext.classList.add(this._className.current)
-    // isIndexSmaller&&elmNext.classList.add(this._className.currentSmaller)
-
-    const io = c=>[...c?.parentNode.childElements||[]].indexOf(c)
+    const indexOfElement = child=>[...child?.parentNode.children||[]].indexOf(child)
 
     const {_element} = this
     const {current,menuItemRight,menuItemNoAnim} = this._className;
 
     const cur = _element.querySelector('.'+current)
-    const curIndex = io(cur)
+    const curIndex = indexOfElement(cur)
 
     const nww = _element.querySelector(`a[href="/${select}"]`)
-    const nwwIndex = io(nww)
+    const nwwIndex = indexOfElement(nww)
 
-    const toLeft = curIndex<nwwIndex
+    const toLeft = curIndex>nwwIndex
 
-    cur?.classList.add(menuItemNoAnim)//
-    nextFrame(()=>cur?.classList.remove(menuItemNoAnim),2)
+    // old tab navigation dependent on current state
+    const {classList} = cur||{}
+    classList?.add(menuItemNoAnim)
+    classList&&nextFrame(()=>classList.toggle(menuItemRight,!toLeft),1)
+    classList&&nextFrame(()=>{
+      classList.remove(menuItemNoAnim)
+      classList.remove(current)
+    },2)
 
-    //cur?.classList.remove(current)//
+    // new tab animation
     nww?.classList.add(current)
-    nextFrame(()=>cur?.classList.remove(current),3)
-    //nextFrame(()=>nww?.classList.add(current),3)
-
-    //cur?.classList.toggle(menuItemRight,toLeft)
-    nww?.classList.toggle(menuItemRight,!toLeft)
-    nextFrame(()=>cur?.classList.toggle(menuItemRight,toLeft),1)
-    //nextFrame(()=>nww?.classList.toggle(menuItemRight,!toLeft),1)
-    
-    //this._seldo('.'+current, elm=>elm.classList.remove(current))
-    //this._seldo(`a[href="/${select}"]`, elm=>elm.classList.add(current))
+    nww?.classList.toggle(menuItemRight,toLeft)
 
     this._setExperiment(name, oldName)
     this.setImage()
@@ -309,8 +299,6 @@ create('[data-header]', class extends BaseComponent{
    * @private
    */
   _onClickLink(){
-    //document.body.matches('[data-pathname^="experiment-"]')
-    //  &&this._experimentWrapper.requestFullscreen()
     this._experimentWrapper.requestFullscreen()
   }
 

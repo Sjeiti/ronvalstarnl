@@ -15,15 +15,16 @@ body>header {
   }
 
   @media (hover: hover) {
-    nav {
-      a:hover {
-        color: white;
+    nav a:hover:not(.current) {
+      &:has(~a.current) {
+        &:before, &:after {
+          box-shadow: -0.5rem 0 0 black inset;
+        }
       }
-      a:hover g {          
-        clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 110% 0%);
-      }
-      a:hover.menu-item--right g {
-        clip-path: polygon(0% 0%, -10% 100%, 100% 100%, 100% 0%);
+      &:not(:has(~a.current)) {
+        &:before, &:after {
+          box-shadow: 0.5rem 0 0 black inset;
+        }
       }
     }
   }
