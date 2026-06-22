@@ -27,6 +27,8 @@ create('[data-header]', class extends BaseComponent{
     stuck: 'stuck'
     , current: 'current'
     , currentSmaller: 'current--smaller'
+    , menuItemRight: 'menu-item--right'
+    , menuItemNoAnim: 'menu-item--no-anim'
   }
 
   constructor(...args){
@@ -54,8 +56,6 @@ create('[data-header]', class extends BaseComponent{
     this._initColorScheme()
 
     this._initSubtitle()
-
-    this._initNav()
   }
 
   /**
@@ -171,22 +171,6 @@ create('[data-header]', class extends BaseComponent{
   }
 
   /**
-   * Add listeners to `nav g>rect` so hovers can move backwards
-   * @private
-   */
-  _initNav() {
-    const rects = Array.from(document.querySelectorAll('nav g>rect'))
-    rects.forEach(rect=>{
-      rect.addEventListener('mouseenter',({target})=>{
-        const isLeftSide = target.matches('rect:first-child')
-        const anchor = target.closest('a')
-        anchor.classList.toggle('menu-item--right', !isLeftSide)
-      })
-    })
-
-  }
-
-  /**
    * Set or remove the header image
    * @param {string} src
    * @param {string} colofon
@@ -243,8 +227,34 @@ create('[data-header]', class extends BaseComponent{
     // elmNext.classList.add(this._className.current)
     // isIndexSmaller&&elmNext.classList.add(this._className.currentSmaller)
 
-    this._seldo('.'+this._className.current, elm=>elm.classList.remove(this._className.current))
-    this._seldo(`a[href="/${select}"]`, elm=>elm.classList.add(this._className.current))
+    const io = c=>[...c?.parentNode.childElements||[]].indexOf(c)
+
+    const {_element} = this
+    const {current,menuItemRight,menuItemNoAnim} = this._className;
+
+    const cur = _element.querySelector('.'+current)
+    const curIndex = io(cur)
+
+    const nww = _element.querySelector(`a[href="/${select}"]`)
+    const nwwIndex = io(nww)
+
+    const toLeft = curIndex<nwwIndex
+
+    cur?.classList.add(menuItemNoAnim)//
+    nextFrame(()=>cur?.classList.remove(menuItemNoAnim),2)
+
+    //cur?.classList.remove(current)//
+    nww?.classList.add(current)
+    nextFrame(()=>cur?.classList.remove(current),3)
+    //nextFrame(()=>nww?.classList.add(current),3)
+
+    //cur?.classList.toggle(menuItemRight,toLeft)
+    nww?.classList.toggle(menuItemRight,!toLeft)
+    nextFrame(()=>cur?.classList.toggle(menuItemRight,toLeft),1)
+    //nextFrame(()=>nww?.classList.toggle(menuItemRight,!toLeft),1)
+    
+    //this._seldo('.'+current, elm=>elm.classList.remove(current))
+    //this._seldo(`a[href="/${select}"]`, elm=>elm.classList.add(current))
 
     this._setExperiment(name, oldName)
     this.setImage()

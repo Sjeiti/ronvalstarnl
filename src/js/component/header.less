@@ -13,13 +13,27 @@ body>header {
     background-color: var(--color-main);
     transition: height 300ms ease;
   }
+
+  @media (hover: hover) {
+    nav {
+      a:hover {
+        color: white;
+      }
+      a:hover g {          
+        clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 110% 0%);
+      }
+      a:hover.menu-item--right g {
+        clip-path: polygon(0% 0%, -10% 100%, 100% 100%, 100% 0%);
+      }
+    }
+  }
+
   &.stuck {
     box-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.1);
     &:after {
       height: 1rem;
       @media @mediaM { height: 1.5rem; }
     }
-
   }
   .colofon {
     position: absolute;
