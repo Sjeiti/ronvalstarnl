@@ -23,8 +23,9 @@ setDefault((view, route, params)=>fetchJSONFiles(`post_${route}`, 'posts-list', 
         document.writeln(innerHTML)
       })
 
-      view.querySelector('[data-request-fullscreen]')?.addEventListener('click',()=>{
-        signal?.requestFullScreen.dispatch()
+      view.addEventListener('click',(e)=>{
+        e.target.matches('[data-request-fullscreen]')
+          &&signal?.requestFullScreen.dispatch()
       })
 
       nextTick(()=>{
@@ -90,8 +91,7 @@ async function getRelatedLinks(post, posts, fortpolios){
   }
 
   if (related){
-
-    const relatedDocs = related.split(/\s/g)
+    const relatedDocs = related
           .map(slug=> {
             const slog = slug.replace(/^project\//, '')
             const regex = new RegExp(slug.replace('*','.*'))
@@ -102,7 +102,7 @@ async function getRelatedLinks(post, posts, fortpolios){
           })
           .reduce((acc, docs)=>(acc.push(...docs),acc), [])
           .filter(p=>p&&p.slug!==slug)
-    relatedDocs.length>5&&relatedDocs.sort(()=>Math.random()<0.5?-1:1).splice(5, 1E9)
+    relatedDocs?.length>5&&relatedDocs.sort(()=>Math.random()<0.5?-1:1).splice(5, 1E9)
     const relatedLi = relatedDocs
           .map(({slug, title, type})=>`li>a[href="/${type==='fortpolio'?'project/':''}${slug}"]>((${getZenIcon(type)})+{${title}})`)
           .join('+')

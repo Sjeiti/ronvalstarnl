@@ -27,6 +27,8 @@ create('[data-header]', class extends BaseComponent{
     stuck: 'stuck'
     , current: 'current'
     , currentSmaller: 'current--smaller'
+    , menuItemRight: 'menu-item--right'
+    , menuItemNoAnim: 'menu-item--no-anim'
   }
 
   constructor(...args){
@@ -218,15 +220,33 @@ create('[data-header]', class extends BaseComponent{
   _onRouteChange(name, page, oldName){
     const select = page.parentSlug||name
 
-    // const elmCurrent = this._$('.'+this._className.current)
-    // const elmNext = this._$(`a[href="/${select}"]`)
-    // const isIndexSmaller = getElementIndex(elmNext)<getElementIndex(elmCurrent)
-    // elmCurrent.classList.remove(this._className.current, this._className.currentSmaller)
-    // elmNext.classList.add(this._className.current)
-    // isIndexSmaller&&elmNext.classList.add(this._className.currentSmaller)
+    const indexOfElement = child=>[...child?.parentNode.children||[]].indexOf(child)
 
-    this._seldo('.'+this._className.current, elm=>elm.classList.remove(this._className.current))
-    this._seldo(`a[href="/${select}"]`, elm=>elm.classList.add(this._className.current))
+    const {_element} = this
+    const {current,menuItemRight,menuItemNoAnim} = this._className;
+
+    const curElm = _element.querySelector('.'+current)
+    const curIndex = indexOfElement(curElm)
+
+    const newElm = _element.querySelector(`a[href="/${select}"]`)
+    const newIndex = indexOfElement(newElm)
+
+    if (curElm!==newElm) {
+      const toLeft = curIndex>newIndex
+
+      // old tab navigation dependent on current state
+      const {classList} = curElm||{}
+      classList?.add(menuItemNoAnim)
+      classList&&nextFrame(()=>classList.toggle(menuItemRight,!toLeft),1)
+      classList&&nextFrame(()=>{
+        classList.remove(menuItemNoAnim)
+        classList.remove(current)
+      },2)
+
+      // new tab animation
+      newElm?.classList.add(current)
+      newElm?.classList.toggle(menuItemRight,toLeft)
+    }
 
     this._setExperiment(name, oldName)
     this.setImage()
@@ -281,8 +301,6 @@ create('[data-header]', class extends BaseComponent{
    * @private
    */
   _onClickLink(){
-    //document.body.matches('[data-pathname^="experiment-"]')
-    //  &&this._experimentWrapper.requestFullscreen()
     this._experimentWrapper.requestFullscreen()
   }
 

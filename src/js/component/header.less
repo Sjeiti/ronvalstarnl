@@ -13,22 +13,27 @@ body>header {
     background-color: var(--color-main);
     transition: height 300ms ease;
   }
+
+  @media (hover: hover) {
+    nav a:hover:not(.current) {
+      &:has(~a.current) {
+        &:before, &:after {
+          box-shadow: -0.5rem 0 0 black inset;
+        }
+      }
+      &:not(:has(~a.current)) {
+        &:before, &:after {
+          box-shadow: 0.5rem 0 0 black inset;
+        }
+      }
+    }
+  }
+
   &.stuck {
     box-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.1);
     &:after {
       height: 1rem;
       @media @mediaM { height: 1.5rem; }
-    }
-
-  }
-  nav a {
-    transition: box-shadow 200ms linear;
-    box-shadow: 0 0 0 -1px #000 inset;
-    &:hover, &.current, &-parent.current {
-      background-color: var(--color-main);
-      color: #FFF;
-      box-shadow: -100px 0 0 #000 inset;
-      &:hover:not(.current) { color: var(--color-main); }
     }
   }
   .colofon {

@@ -37,6 +37,22 @@
  - dateTo: `/\d{4}-\d\d-\d\d/`
 
 
+## Code blocks
+
+### Example rendering
+
+```html
+<!--example-->
+<span>hello</span>
+```
+
+### Direct source
+
+```
+<pre><code data-language="javascript" data-src="/static/experiment/blob.js"></code></pre>
+```
+
+
 ## License
 
 This project is licensed under the [GNU General Public License v3.0](LICENiSE.txt).
