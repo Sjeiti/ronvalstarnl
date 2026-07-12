@@ -23,8 +23,9 @@ setDefault((view, route, params)=>fetchJSONFiles(`post_${route}`, 'posts-list', 
         document.writeln(innerHTML)
       })
 
-      view.querySelector('[data-request-fullscreen]')?.addEventListener('click',()=>{
-        signal?.requestFullScreen.dispatch()
+      view.addEventListener('click',(e)=>{
+        e.target.matches('[data-request-fullscreen]')
+          &&signal?.requestFullScreen.dispatch()
       })
 
       nextTick(()=>{
