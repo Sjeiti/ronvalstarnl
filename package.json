@@ -92,7 +92,7 @@
     "raw-loader": "^4.0.2",
     "rimraf": "^3.0.2",
     "serve-static": "^1.14.1",
-    "sharp": "^0.33.4",
+    "sharp": "^0.35.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.104.1",
     "webpack-cli": "^4.5.0",
