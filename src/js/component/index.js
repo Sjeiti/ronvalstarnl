@@ -105,11 +105,12 @@ function _initEvents(){
  * @private
  */
 function _initScripts(rootElement){
-  Array.from(rootElement.querySelectorAll('script'))
+  Array.from(rootElement.querySelectorAll('script:not([data-replaced])'))
       .filter(m=>m.parentNode===rootElement)
       .forEach(m=>{
         const script = document.createElement('script')
-        script.innerText = `(function(){\n${m.innerText}\n})()`
+        script.dataset.replaced = true
+        script.textContent = `(function(){\n${m.textContent}\n})()`
         rootElement.insertBefore(script, m)
         m.remove()
       })
