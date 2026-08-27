@@ -33,7 +33,9 @@ We intend to help them by optimising their current habitats (food, housing, shel
 
 So naturally we are very dependent on up-to-date sightings. We need to know where they breed. Dutch birders tend to log their sightings in [observation.org](https://observation.org/) (same db as waarneming.nl). They have pages that [list all sightings](https://waarneming.nl/species/122/observations/?date_after=2025-08-21&date_before=2026-08-21&country_division=2&search=Amsterdam) of a specific species, period and place.
 
-Sure İ could open that page every day to find if sparrows have been seen, but aint nobody got time for that. Unfortunately observation.org does not have alerts or anything. Neither do the pages have RSS (my RSS reader can alert me if a specific feed updates).
+Sure İ could open that page every day to find if sparrows have been seen, but aint nobody got time for that. They *do* have email alerts that can send up to hourly intervals. But for me email is the wrong medium. I get too much email already. I don't want to have to sift through birding alerts to find the more important emails (but what could be more important than birding?).
+The better medium here (imho) is RSS. With RSS you have finer grained control over filtering. And good RSS readers can send push notifications on specific feeds.
+Unfortunately the observation.org pages do not have RSS.
 
 
 ## A (once) small NodeJS script
