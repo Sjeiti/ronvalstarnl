@@ -3,6 +3,7 @@ import path from 'path'
 import webpack from 'webpack'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import WatchExternalFilesPlugin from 'webpack-watch-files-plugin'
+import TerserPlugin from 'minimizer-webpack-plugin'
 
 const __dirname = import.meta.dirname
 
@@ -19,6 +20,16 @@ export default env => {
     , output: {
       filename: 'js/index.js'
       , path: path.resolve(__dirname, 'dist')
+    }
+    , optimization: {
+      minimizer: [
+        new TerserPlugin({
+          // Webpack's default minimizer matches every emitted *.js asset, including
+          // the experiment/static files CopyWebpackPlugin copies verbatim below.
+          // Scope it to the actual bundle so copied static JS is left untouched.
+          include: /^js\//
+        })
+      ]
     }
     , devtool: 'source-map'
     , module: {
