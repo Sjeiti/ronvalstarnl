@@ -1,22 +1,25 @@
 /**
- * @fileoverview A CLI script to create an RSS feed from Passer Domesticus observations.
- * @see https://observation.org/api/docs
+ * @version 1.2.0
+ * @file: A CLI script to create an RSS feed from either species, or a location.
+ * @see: https://observation.org/api/docs
  *
- * @description
+ * @description:
  * Calls GET on waarneming.nl (observation.org) REST API:
  *
  * Observations for a specific species
- * web page: https://waarneming.nl/api/v1/species/122/observations/?country_division=2&limit=100&search=Amsterdam
- * API call: https://waarneming.nl/species/122/observations/?country_division=2&amp;search=Amsterdam
+ *   web page: https://waarneming.nl/api/v1/species/122/observations/?country_division=2&limit=100&search=Amsterdam
+ *   API call: https://waarneming.nl/species/122/observations/?country_division=2&amp;search=Amsterdam
+ *   CLI:      node writeFeed.js --species 122 --province 2 --search Amsterdam --rss feed.xml
  *
  * Observations around a point:
- * web page: https://waarneming.nl/fieldwork/observations/explore/?end_date=2026-08-25&exclude_own=true&point=POINT(5.011396408081055%2052.38090678895783)&distance=1#search=&species_group=1&rarity=0
- * API call: https://waarneming.nl/api/v1/observations/around-point/?coordinates=52.38090678895783,5.011396408081055&radius=1000m&species_group=1&days=7
- * API call: https://waarneming.nl/api/v1/observations/around-point/?coordinates=52.38090678895783,5.011396408081055&radius=1000m&species_group=1&end_date=2026-08-26&days=7
+ *   web page: https://waarneming.nl/fieldwork/observations/explore/?end_date=2026-08-25&exclude_own=true&point=POINT(5.011396408081055%2052.38090678895783)&distance=1#search=&species_group=1&rarity=0
+ *   API call: https://waarneming.nl/api/v1/observations/around-point/?coordinates=52.38090678895783,5.011396408081055&radius=1000m&species_group=1&end_date=2026-08-26&days=7
+ *   CLI:      node writeFeed.js --coordinates 52.38090678895783,5.011396408081055 --radius 500 --rss around.xml
  *
  * Observations for a named location:
- * web page: https://waarneming.nl/fieldwork/observations/explore/?end_date=2026-08-26&exclude_own=true&location=108900#search=&species_group=1&rarity=0
- * API call: https://waarneming.nl/api/v1/locations/108900/observations/?species_group=1&date_after=2026-08-19&date_before=2026-08-26
+ *   web page: https://waarneming.nl/fieldwork/observations/explore/?end_date=2026-08-26&exclude_own=true&location=108900#search=&species_group=1&rarity=0
+ *   API call: https://waarneming.nl/api/v1/locations/108900/observations/?species_group=1&date_after=2026-08-19&date_before=2026-08-26
+ *   CLI:      node writeFeed.js --location 108900 --rss location.xml
  *
  *
  * ## Flags
@@ -24,25 +27,22 @@
  * | Flag          | Type    | Default      | Description                |
  * |---------------|---------|--------------|----------------------------|
  * | rss           | string  | /feed.xml    | target rss.xml file        |
+ * | title         | string  |              | rss title                  |
+ * | description   | string  |              | rss description            |
+ * |               |         |              |                            |
  * | search        | string  |              | location based search      |
  * | province      | int     |              | province id                |
  * |               |         |              |                            |
  * | species       | int     |              | species id                 |
+ * | species_group | int     |              | species group id           |
  * |               |         |              |                            |
  * | coordinates   | string  |              | comma separated lat,long   |
- * | distance      | int     | 500          | meters from coordinates    |
+ * | radius        | int     | 500          | meters from coordinates    |
  * |               |         |              |                            |
  * | location      | int     |              | location id                |
  *
+ * Check observation.org for specific ids.
  *
- * @example
- * // Basic usage:
- *
- *   node writeFeed.js --species 122 --province 2 --search Amsterdam --rss feed.xml
- *
- *   node writeFeed.js --coordinates 52.38090678895783,5.011396408081055 --distance 500 --rss around.xml
- *
- *   node writeFeed.js --location 108900 --rss location.xml
  */
 
 const https = require('https')
@@ -53,12 +53,13 @@ const args = getProcessArguments()
 const BASE = 'https://waarneming.nl/api/v1/'
 
 const SPECIES = args.species // 122 = Passer domesticus
+const SPECIES_GROUP = args.species_group // 1 = birds
 
 const COUNTRY_DIVISION = args.province // 2 = province Noord-Holland
 const SEARCH = args.search && encodeURIComponent(args.search) // Amsterdam
 
-const COORDINATES = args.coordinates // 52.38090678895783,5.011396408081055
-const DISTANCE = args.distance && (args.distance+'m') // 500
+const COORDINATES = args.coordinates && encodeURIComponent(args.coordinates) // 52.38090678895783,5.011396408081055
+const DISTANCE = args.radius || args.distance // 500
 
 const LOCATION = args.location // 108900
 
@@ -71,11 +72,12 @@ const OUTFILE = __dirname + '/output.json'
 const RSSFILE = args.rss || (__dirname + '/feed.xml')
 
 const params = Object.entries({
+  species_group: SPECIES_GROUP,
   country_division: COUNTRY_DIVISION,
   limit: LIMIT,
   search: SEARCH,
   coordinates: COORDINATES,
-  distance: DISTANCE,
+  radius: DISTANCE,
   date_after: DATE_AFTER,
   date_before: DATE_BEFORE
 })
@@ -83,13 +85,12 @@ const params = Object.entries({
     .reduce((acc,[k,v])=>(acc[k]=v,acc),{})
 
 const XML_LINK = getUri(params)
+console.info('uri',XML_LINK)
 
 const SPECIES_NAME = 'huismus'
 const SPECIES_NAME_PLURAL = 'huismussen'
 
 const LANG = {
-      xmlTitle: `${SPECIES_NAME} waarnemingen ${SEARCH}`,
-      xmlDescription: `Recente ${SPECIES_NAME}-waarnemingen in Amsterdam`,
       user: 'Waarnemer',
       location: 'Locatie',
       number: 'Aantal',
@@ -97,7 +98,7 @@ const LANG = {
       coords: 'Coördinaten'
     }
 
-    // async IIFE
+// async IIFE
 ;(async () => {
   try {
     const data = await getData()
@@ -188,8 +189,8 @@ function getProcessArguments(){
 function toRSS(observations) {
   const items = observations.map(o => {
     const {number} = o
-    //const title = `${number} ${number===1?SPECIES_NAME:SPECIES_NAME_PLURAL} — ${o.location_detail.name}`
-	const title = `${o.species_detail.name} — ${o.location_detail.name}`
+	const [photo] = o.photos||[]
+	const title = `${o.species_detail.name+(photo?' 📷️':'')} — ${o.location_detail.name}`
     const link = o.permalink
     const date = new Date(o.date + 'T' + (o.time || '00:00')).toUTCString()
     const [lon, lat] = o.point.coordinates
@@ -201,18 +202,27 @@ ${LANG.coords} ${lat}, ${lon}`
     return `    <item>
       <title>${escapeXML(title)}</title>
       <link>${link}</link>
-      <description>${escapeXML(description)}</description>
+      <description>
+		${escapeXML(description)}
+	    ${photo?'<![CDATA[<img src="'+photo+'"/>]]>':''}
+	  </description>
       <pubDate>${date}</pubDate>
       <guid>${link}</guid>
     </item>`
   }).join('\n')
 
+  const [item] = items
+  const rssTitle = args.title
+    ||(SPECIES
+      ?item.species_detail?.name
+	  :item.location_detail?.name)
+
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>${LANG.xmlTitle}</title>
+    <title>${rssTitle}</title>
     <link>${XML_LINK}</link>
-    <description>${LANG.xmlDescription}</description>
+    <description>${args.description}</description>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
 ${items}
   </channel>
