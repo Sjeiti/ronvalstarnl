@@ -11,8 +11,6 @@ const {src, target} = commander
         .parse(process.argv)
         .opts()
 
-console.log('cm',src, target)
-
 ;(async ()=>{
   const fileNames = src // .split(/\s/)
   const filesRead = await Promise.all(fileNames.map(f=>readFile(f)))

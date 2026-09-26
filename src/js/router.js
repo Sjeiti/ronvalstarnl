@@ -122,9 +122,6 @@ export function open(uri, popped){
             if (hash) location.hash = hash
             search&&window.history.replaceState({}, '', search)
           })
-
-          //globalThis.prerendering&&viewModel._content.ownerDocument.documentElement.classList.add('prerendered')
-
         })
         .catch(console.error)
     }

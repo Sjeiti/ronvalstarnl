@@ -20,8 +20,6 @@ const baseUri = 'https://ronvalstar.nl'
 
 const {promises:{readFile,writeFile,mkdir},readFileSync} = fs // require('node:fs')
 
-console.log('prerender',target||'')
-
 const index = 'src/index.html'
 
 const noop = ()=>({})
@@ -33,7 +31,6 @@ const noop = ()=>({})
   const types = ['pages','posts','fortpolio']
   const lists = await Promise.all(types.map(async type=>JSON.parse((await readFile(`src/data/json/${type}-list.json`)).toString())
       .map(o=>baseUri+'/'+(type==='fortpolio'?'project/':'')+o.slug)
-      //.slice(0,4)
   ))
   const pages = (target?[baseUri+'/'+target]:[
       ...lists.reduce((acc,o)=>(acc.push(...o),acc))

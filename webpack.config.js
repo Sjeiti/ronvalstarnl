@@ -31,6 +31,9 @@ export default env => {
         })
       ]
     }
+    , performance : {
+      hints : false
+    }
     , devtool: 'source-map'
     , module: {
       rules: [{
