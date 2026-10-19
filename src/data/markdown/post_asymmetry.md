@@ -1,6 +1,6 @@
 ---
 date: 2025-10-25
-modified: 2025-10-25
+modified: 2026-10-19
 slug: asymmetry
 type: post
 categories: [nature, microscopy]
@@ -15,7 +15,7 @@ Internals aside, most life you see is quite symmetrical. Mammals, insects, fish 
 
 Single cell organisms however, are often very asymmetrical. Subtle in the Paramecium, very obvious in one of my favourites: [Euplotes](https://en.wikipedia.org/wiki/Euplotes). The smaller the organism (or less complex), the more advantageous asymmetry becomes.
 
-I'm not enrirely sure if the two here are Euplotes, but they are very asymmetrical.
+I'm not entirely sure if the two here are Euplotes, but they are very asymmetrical.
 
 <div data-vimeo="681056915">asymmetrical single cell organisms</div>
 

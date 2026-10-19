@@ -1,7 +1,7 @@
 ---
 slug: to-determine-touch-mouse-or-keyboard
 date: 2023-01-29
-modified: 2023-09-12
+modified: 2026-10-19
 type: post
 header: mousekey.jpg
 headerColofon: |
@@ -41,7 +41,7 @@ The difficulty is that browsers have no standard to determine input environment.
 What's more, the state of a component is often programmed to be determined by the width of the viewport, not by feature detection and the width of the component. For a short while we had the media query `device-width`, but it got deprecated.
 
 We do have the [CSS pointer media query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer) but this is a static mechanism.
-There are solutions thay rely on it, using `matchMedia('(pointer:fine)')`. The trouble is that this doesn't tell you anything real; `matchMedia` tells you what the *user-agent* is *capable* of. Is does not have to apply to the current device. A laptop with a touch screen will have `pointer:coarse` even when using a mouse.
+There are solutions that rely on it, using `matchMedia('(pointer:fine)')`. The trouble is that this doesn't tell you anything real; `matchMedia` tells you what the *user-agent* is *capable* of. Is does not have to apply to the current device. A laptop with a touch screen will have `pointer:coarse` even when using a mouse.
 
 
 ## A JavaScript solution 

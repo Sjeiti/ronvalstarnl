@@ -1,6 +1,6 @@
 ---
 date: 2007-01-31
-modified: 2012-06-26
+modified: 2026-10-19
 slug: wordpress-plugin-cronfaker
 type: post
 categories: [project]
@@ -10,7 +10,7 @@ categories: [project]
 
 <p class="notice">You might have noticed: this plugin has been discontinued.</p>
 <p>Cron jobs are a Unix way executing files at scheduled times. If you don&#8217;t have acces to them there are ways to fake it. I figured out a long time ago that letting certain hits trigger the executions works just as well. It&#8217;s less punctual than a real cron job but I don&#8217;t care.<br />
-The thing to keep in mind is that some jobs, like heavy duty image creation or sql queries, can take up a noticable amount of time (and I&#8217;m not all that when it comes to fast queries). Now I don&#8217;t want to scare of people with a long download time just because I want to execute some fake cron job. And here&#8217;s the good news: humans are not the only ones to visit web sites. The web is teeming with automated programs that roam the web for information. These bots, spiders, crawlers and whateverthingies are not as easily scared away as humans are, so why not let them trigger the cron jobs.</p>
+The thing to keep in mind is that some jobs, like heavy duty image creation or sql queries, can take up a noticeable amount of time (and I&#8217;m not all that when it comes to fast queries). Now I don&#8217;t want to scare of people with a long download time just because I want to execute some fake cron job. And here&#8217;s the good news: humans are not the only ones to visit web sites. The web is teeming with automated programs that roam the web for information. These bots, spiders, crawlers and whateverthingies are not as easily scared away as humans are, so why not let them trigger the cron jobs.</p>
 <p class="noend">This plugin I wrote is quite simple.<br />
 You can easily invoke it from your own plugins like so:</p>
 <pre class="code">register_cronfaker(name:string, interval:integer, function:string);</pre>

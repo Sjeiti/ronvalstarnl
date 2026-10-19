@@ -1,6 +1,6 @@
 ---
 date: 2007-01-06
-modified: 2014-05-01
+modified: 2026-10-19
 slug: images
 type: page
 ---
@@ -8,8 +8,8 @@ type: page
 # drawings
 
 <p>I used to sketch with pencils. But it&#8217;s very hard to get good contrast with those, unless you use 6B of course. But smudge a 6B line with your hand and you get a nasty stain (or maybe it&#8217;s my sweaty hands).<br />
-Then I discovered that a good black balpoint works perfectly for contrasts, and fades, and it dries. You just can&#8217;t make any mistakes.<br />
-The sketches here are all done with a pocketsized sketchbook and an ordinary black ballpoint.</p>
+Then I discovered that a good black ballpoint works perfectly for contrasts, and fades, and it dries. You just can&#8217;t make any mistakes.<br />
+The sketches here are all done with a pocket sized sketchbook and an ordinary black ballpoint.</p>
 <hr />
 <ul class="nolist images">
 <li><a href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/sketches/scvogul.jpg" rel="skt" title="bird at railway station"><img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/sketches/th/scvogul.jpg" alt="vogul" /></a></li>

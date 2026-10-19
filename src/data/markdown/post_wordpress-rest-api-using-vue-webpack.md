@@ -1,6 +1,6 @@
 ---
 date: 2016-12-24
-modified: 2020-03-16
+modified: 2026-10-19
 slug: wordpress-rest-api-using-vue-webpack
 header: studio02.jpg
 type: post
@@ -33,7 +33,7 @@ Previously the src directory would house my entire WordPress installation and I�
 With Es6 we’re back to compiling (or [transpiling](https://en.wikipedia.org/wiki/Source-to-source_compiler)). We cannot serve the source directly. Mostly due to resolvement of dependencies, not to the browser not being able to handle Es6\. Webpack serves the processed files using Express. But Express does not serve PHP and SQL, and we do want that hot reload.  
 Luckily Webpack has an easy solution for development: you can proxy specific paths. The effect is somewhat similar to Apaches mod-rewrite: we can serve stuff from anywhere while giving the impression it’s on our own host. And this is just fine for development: since all we really need is access to the REST API and to the static uploads. For local development we have no use for SEO, so correct headers and meta tags do not really matter.
 
-The easiest location for our WordPress installation is the dist directory. This does feel a bit blasfemous but the PHP sources do not need any compilation, so why not. The Webpack build task will target dist with the transpiled but it does not clean dist in advance.  
+The easiest location for our WordPress installation is the dist directory. This does feel a bit blasphemous but the PHP sources do not need any compilation, so why not. The Webpack build task will target dist with the transpiled but it does not clean dist in advance.  
 So we have Apache running a virtual host in dist, and we proxy paths from that virtual host in our Webpack proxy.
 
 ```javascript

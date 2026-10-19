@@ -1,6 +1,6 @@
 ---
 date: 2012-05-01
-modified: 2020-03-16
+modified: 2026-10-19
 slug: using-wordpress-media-library-in-a-plugin
 type: post
 categories: [code,work]
@@ -89,6 +89,6 @@ And there is the entire mediaSendToEditor function on line 81.<br />
 })(jQuery);</code></pre>
 <p>First the original send_to_editor function is stored. Then each a.thickbox is assigned an onclick to replace the send_to_editor. This function creates and returns an anonymous function in order to parse the &#8216;type&#8217; parameter through it&#8217;s scope (not mandatory but a nice alternative to the insertion of the $GET vars).<br />
 Then we hack into tb_remove to restore the original send_to_editor function (since we also want this to happen when you simply close the upload iframe).<br />
-You&#8217;ll also notice that the original global &#8216;send-to-editor&#8217; function is stored and restored on callback so as to maintain it&#8217;s original texteditor functionality. And that&#8217;s it.</p>
+You&#8217;ll also notice that the original global &#8216;send-to-editor&#8217; function is stored and restored on callback so as to maintain it&#8217;s original text editor functionality. And that&#8217;s it.</p>
 <p>So there you have it&#8230;</p>
 <p>(once again: <a href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/foobarbaz.zip" download="foobarbaz.zip">foobarbaz.zip</a>)</p>
