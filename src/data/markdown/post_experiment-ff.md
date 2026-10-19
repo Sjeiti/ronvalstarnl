@@ -1,6 +1,6 @@
 ---
 date: 2014-04-24
-modified: 2014-10-24
+modified: 2026-10-19
 slug: experiment-ff
 type: post
 tags: [cool shit]
@@ -10,4 +10,4 @@ categories: [code,experiment]
 
 # Experiment: ff
 
-<p>Some of my Filter Forge filters in an animated CSS backgound.</p>
+<p>Some of my Filter Forge filters in an animated CSS background.</p>

@@ -1,6 +1,6 @@
 ---
 date: 2012-04-25
-modified: 2014-08-15
+modified: 2026-10-19
 slug: javascript-performance-testing
 type: post
 categories: [code]
@@ -19,7 +19,7 @@ Or like this:<br />
 <em>count how many times we can do the same calculation in a fixed amount of time</em></p>
 <p>Simple enough. But for a solid test result you have to test in multiple browsers, operating systems and machines. Luckily for us, in this day and age of cloud computing, there is something out there that does just that. But more importantly, whatever you were planning to test, chances are that somebody else already beat you to it.<br />
 Enter <a href="http://jsperf.com">jsperf</a>, a great online benchmarking application build with <a href="http://benchmarkjs.com/">benchmarkjs</a>. You can create your own tests, or run existing ones. You can even revise existing tests.</p>
-<p>For instance: I know a lot of developers who don&#8217;t like switches because it makes their code unreadable <!--(Crockford, Clean code)-->. Some don&#8217;t even us ternary statements. Tests like these should make them reconcider:<br />
+<p>For instance: I know a lot of developers who don&#8217;t like switches because it makes their code unreadable <!--(Crockford, Clean code)-->. Some don&#8217;t even us ternary statements. Tests like these should make them reconsider:<br />
 <a href="http://jsperf.com/ifswitch/4">if vs switch</a><br />
 <a href="http://jsperf.com/if-else-vs-arrays-vs-switch-vs-ternary/6">if switch indexed ternary</a></p>
 <p>Here is a list of JavaScript tests that you might find useful or surprising.</p>
@@ -34,7 +34,7 @@ Enter <a href="http://jsperf.com">jsperf</a>, a great online benchmarking applic
 <li><a href="http://jsperf.com/isarray-shim/2">isArray</a></li>
 <li><a href="http://jsperf.com/math-pow-vs-bitwise/2">pow vs bitwise</a></li>
 <li><a href="http://jsperf.com/math-pow-vs-multiplication">pow vs multiplication</a></li>
-<li><a href="http://jsperf.com/prefix-or-postfix-increment/3">icrement prefix postfix or add/store</a></li>
+<li><a href="http://jsperf.com/prefix-or-postfix-increment/3">increment prefix postfix or add/store</a></li>
 <li><a href="http://jsperf.com/array-splice-vs-array-length-0/2">empty an array</a></li>
 <li><a href="http://jsperf.com/min-max-compare">min max</a></li>
 </ul>

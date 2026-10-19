@@ -13,7 +13,7 @@ tags: [CSS,transitions]
 
 # Project Invoice with peer-to-peer synchronisation through WebRTC
 
-Project invoice as always been a useful sideproject for me. It is a good outlet to learn and try new techniques. Plus I do projects and send invoices myself but I've never really liked invoicing cloud solutions.
+Project invoice as always been a useful side project for me. It is a good outlet to learn and try new techniques. Plus I do projects and send invoices myself but I've never really liked invoicing cloud solutions.
 
 So Project Invoice is a web application that does not send data. All is stored locally on the device or machine you work on. And you only load the app once, after that it is loaded from cache.
 Which is all reasonably secure but not handy when you switch devices. Which is why I added cloud synchronisation but that brings us back to square one. Only now it's your explicit choice.

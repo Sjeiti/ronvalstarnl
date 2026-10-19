@@ -79,7 +79,7 @@ You'd think CSS transforms would be handy because you can easily create perspect
 }
 </style></div>
 
-This works fine, even with differen sizes of text. It is not even that big of an issue to calculate when using custom CSS properties.
+This works fine, even with different sizes of text. It is not even that big of an issue to calculate when using custom CSS properties.
 
 ```CSS
 --degStep: 15deg;

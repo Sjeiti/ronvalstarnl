@@ -1,7 +1,7 @@
 ---
 slug: using-string-literals-sparingly
 date: 2020-02-11
-modified: 2026-03-01
+modified: 2026-10-19
 type: post
 header: jason-leung-EXYQt40B3KA-unsplash.jpg
 headerColofon: |
@@ -22,7 +22,7 @@ Here are the main string issues for JavaScript  where you are better off not usi
 
 ## CSS classNames
 
-DOM elements have state or style representation in the form of classNames. More often than not people handle these by their string literal instead of a const. So if somebody uses past tense for a tab state like `label.selected` and someone else comes along and inadvertedly types `classList.add('select')` we have a bug without an error.
+DOM elements have state or style representation in the form of classNames. More often than not people handle these by their string literal instead of a const. So if somebody uses past tense for a tab state like `label.selected` and someone else comes along and inadvertently types `classList.add('select')` we have a bug without an error.
 
 There is an easy fix which is to *always* use variables for *classNames* and *selectors*. So somewhere should be a declaration like:
 

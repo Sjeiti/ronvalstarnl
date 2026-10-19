@@ -1,6 +1,6 @@
 ---
 date: 2025-03-29
-modified: 2025-03-29
+modified: 2026-10-19
 slug: experiment-eggs
 type: post
 categories: [code,experiment]
@@ -36,7 +36,7 @@ So why not place them spiralling outwards with a **golden angle**, which is 137.
 
 This ratio might seem like far fetched theoretical mathematics. But it is everywhere around you. It is abundant in nature. But it is even hidden in the most basic number sequence [named after Fibonacci](https://en.m.wikipedia.org/wiki/Fibonacci_sequence).
 
-All the Fibonaci sequence does is add numbers, starting with 0 and 1. Then add the outcome with the last number, etc:
+All the Fibonacci sequence does is add numbers, starting with 0 and 1. Then add the outcome with the last number, etc:
 
 ```
 0+1=1

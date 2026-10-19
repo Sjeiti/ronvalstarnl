@@ -1,6 +1,6 @@
 ---
 date: 2017-08-02
-modified: 2020-05-31
+modified: 2026-10-19
 slug: experiment-marbles
 type: post
 categories: [code,experiment,work]
@@ -41,7 +41,7 @@ I do want to point out that in most implementations you will see that the [WebGL
 ## JavaScript arrays to GLSL uniforms
 
 The crux of the experiment was really getting a list of JavaScript data (marble positions) into the GLSL shader. There are sixteen methods you can use depending on the data.  
-That might sound overwelming but it’s simply like this:
+That might sound overwhelming but it’s simply like this:
 
 ```glsl
 gl.uniform[1234][fi][v]()
@@ -127,4 +127,4 @@ Yeah this looks convoluted, but it’s for shows. I’m sure you can manage some
 
 ## Swirls and rotation
 
-Like I said; this is not 3D. But I did want stuff to roll around somewhat realisticly. And marbles have these colorful swirls. So in the end what I’ve settled for is rotation depending on horizontal direction.
+Like I said; this is not 3D. But I did want stuff to roll around somewhat realistic. And marbles have these colorful swirls. So in the end what I’ve settled for is rotation depending on horizontal direction.
