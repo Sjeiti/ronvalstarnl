@@ -1,0 +1,28 @@
+yarn run v1.22.22
+$ run-s clean build:less build:unzip build:raw build:json build:search build:tags build:icons "webpack -- --env production" build:sitemap build:rss build:prerender
+$ del-cli dist -f
+$ run-s build:less:glob build:less:compile
+$ node task/lessGlob
+saving ./src/style/glob.less 570 Bytes
+$ node task/lessBuild --source src/style --target dist --names screen ocean contrast
+saving dist/contrast.css 1.325 KB
+saving dist/ocean.css 120 Bytes
+saving dist/screen.css 33.361 KB
+$ unzip src/data/icomoon.zip temp/icomoon
+$ node task/raw2js.js --src temp/icomoon/symbol-defs.svg src/static/svg/client-symbol-defs.svg src/static/svg/prizes-symbol-defs.svg --target src/js/utils/svg.js
+raw2js
+  - symbolDefs
+  - clientSymbolDefs
+  - prizesSymbolDefs
+file written
+$ node task/markdown2json
+saving src/data/json/pages-list.json 368 Bytes
+saving src/data/json/posts-list.json 29.079 KB
+saving src/data/json/fortpolio-list.json 51.345 KB
+$ node task/buildSearch
+saving ./src/data/search/words.json 42.826 KB
+saved 4048 word files.
+$ node task/buildTags --target dist/data/json
+saving dist/data/json/tags.json 2 Bytes
+$ node task/icons --source temp/icomoon/SVG/logo.svg --target ./dist/static/icon --sizes 16,32,180 || true
+$ npx webpack --config webpack.config.js --env production
