@@ -13,15 +13,10 @@ const {source, target, names} = new Command()
     .parse(process.argv)
     .opts()
 
-console.log('source', source)
-console.log('target', target)
-console.log('names', names)
-
 names.map(async name=>{
   const path = source +'/'+ name +'.less'
   const targetFile = target +'/'+ name +'.css'
   const srcCode = await read(path)
-  //console.log('code', srcCode)
 
   const output  = await less.render(srcCode, {
     paths: [source],
@@ -31,8 +26,6 @@ names.map(async name=>{
   })
 
   save(targetFile, output.css)
-  //console.log('output', output)
-  console.log('output', targetFile)
 })
 
 /*
