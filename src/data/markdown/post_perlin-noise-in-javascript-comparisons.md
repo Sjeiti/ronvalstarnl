@@ -1,6 +1,6 @@
 ---
 date: 2010-05-10
-modified: 2015-12-24
+modified: 2026-10-19
 slug: perlin-noise-in-javascript-comparisons
 type: post
 categories: [code,technique]
@@ -79,7 +79,7 @@ description: After a bit of playing I decided to make a good Perlin noise genera
 <p><img src="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/jsnoise-lonelypinkelephantsX.jpg" alt="Perlin lonelypinkelephants 6 octaves" class="left" /></p>
 <p>But the curious one is lonelypinkelephants: 10 milliseconds! It&#8217;s even worse that that: running for six octaves it is only three milliseconds slower (see image to the left). And only 50 lines of code! What the fuck dude?! Well, actually it&#8217;s a very smart cheat. Where others calculate and store random numbers and then interpolate between these before drawing, the lonelypinkelephants version simply makes a dummy canvas, draws the random numbers and resizes the result onto the final canvas. Letting the interpolation occur somewhere in the native drawImage method. Come to think of it, this may be exactly the reason why Flash&#8217;s native Perlin noise function is so much faster than the <a href="/?p=305">as3 class</a>.
 </p>
-<p>Unfortunately the lonelypinkelephants version is quite useless for a number of reasons. The first being that the drawImage method is implemented differtly in different browsers. I test all my stuff in Chrome, but I ran the test through Safari just now and the lonelypinkelephants noise looks really different! Secondly, I really want to be able to use x and y offset which is kind of tricky to implement in it&#8217;s current form. Lastly we do want that extra dimension (which was exactly the reason I did that Java to as3 port some years ago).</p>
+<p>Unfortunately the lonelypinkelephants version is quite useless for a number of reasons. The first being that the drawImage method is implemented differently in different browsers. I test all my stuff in Chrome, but I ran the test through Safari just now and the lonelypinkelephants noise looks really different! Secondly, I really want to be able to use x and y offset which is kind of tricky to implement in it&#8217;s current form. Lastly we do want that extra dimension (which was exactly the reason I did that Java to as3 port some years ago).</p>
 <p>I think I&#8217;ll fork the bankseanSimplex version with some octaves and falloff to see if its much faster and prettier than my own quick port. I&#8217;ll keep you posted.</p>
 <p>To run the tests yourself <a href="https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/jsnoise-perlincomparison.rar">download code here</a> (and sorry for the mess).</p>
 <p>&#8212; small update &#8212;</p>

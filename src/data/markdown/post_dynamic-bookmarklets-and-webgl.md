@@ -1,6 +1,6 @@
 ---
 date: 2011-06-03
-modified: 2020-06-01
+modified: 2026-10-19
 slug: dynamic-bookmarklets-and-webgl
 type: post
 categories: [code,technique]
@@ -20,7 +20,7 @@ For those of you who don’t know: bookmarklets are bookmarks, but instead of a 
 That’s not much, but this shouldn’t pose a problem with a little smart programming.
 
 It would be tiresome having to: change some code, reload the page, drag the hyperlink to the bookmarks bar (remove the old bookmarklet), go to a filter page, click the bookmarklet.  
-So I first created a test.php file that loads the html whatever page I needed the JavaScript to work on, and fires that JavaScript inmediately.
+So I first created a test.php file that loads the html whatever page I needed the JavaScript to work on, and fires that JavaScript immediately.
 
 –[download sources](https://res.cloudinary.com/dn1rmdjs5/image/upload/v1566568756/rv/bookmarklet.rar)–
 

@@ -28,7 +28,7 @@ There may be valid reasons; old codebases can make it next to impossible to crea
 
 Recently however I was in the questionable position of complete control. I was able to create a setup and teardown for the tests to create and remove test-users (regardless wether tests were passing or failing).
 
-One big blind spot when testing any website is everything that happens outside that website. You have no control over physical environment for instance. Some flows require email verifictions, or payments.
+One big blind spot when testing any website is everything that happens outside that website. You have no control over physical environment for instance. Some flows require email verification, or payments.
 
 XXXXXXX
 

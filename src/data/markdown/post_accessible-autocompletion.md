@@ -26,7 +26,7 @@ And yes, I could push this onto the pile called NPM, or I could just walk you th
 
 ## Oops
 
-But before we dive into it, I have to confess: the autocomplete on the search on this site was not accesaible. And I have no excuse because I wasn't using any RxJS.
+But before we dive into it, I have to confess: the autocomplete on the search on this site was not accessible. And I have no excuse because I wasn't using any RxJS.
 
 
 

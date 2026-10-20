@@ -1,6 +1,6 @@
 ---
 date: 2007-01-04
-modified: 2024-05-24
+modified: 2026-10-19
 slug: about
 type: page
 description: |
@@ -31,6 +31,8 @@ For backend I mostly resort to [NodeJS](/search/node) or [PHP](/search/php). The
 In the course of time I have worked with: Randstad, Vodafone, Novartis, Philips, ThiemeMeulenhoff, Resn, 2x4, BNN, Pool Worldwide, Tribal DDB, Kennisnet, Centraal Museum and Ome Willem!
 
 As of december 2023 I landed my first job at [the Volksbank](https://www.devolksbank.nl/) where I'm part of the team responsible for the design system.
+
+<small>I do still have my CV up in [Dutch](/cv-nl) and [English](/cv).</small>
 
 ## past
 

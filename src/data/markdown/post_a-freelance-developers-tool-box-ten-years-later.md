@@ -1,6 +1,6 @@
 ---
 date: 2023-05-29
-modified: 2023-05-29
+modified: 2026-10-19
 slug: a-freelance-developers-tool-box-ten-years-later
 type: post
 header: barn-images-t5YUoHW6zRo-unsplash.jpg
@@ -78,7 +78,7 @@ price: ranging from €59 for one month to €599 for lifetime key.
 
 ## [Manictime](/a-freelance-developers-tool-box#manictime)
 
-I love this piece of software. The price is still the same, although they now *also* offer cloud-based subscriptions. But the reason I started using this is that this was one of the few that was **not** clould based.
+I love this piece of software. The price is still the same, although they now *also* offer cloud-based subscriptions. But the reason I started using this is that this was one of the few that was **not** cloud based.
 
 url: [http://www.manictime.com/](http://www.manictime.com/ "Manictime website")  
 price: $67
@@ -148,7 +148,7 @@ I could add a lot more web tools, but I'll suffice by adding [tiny-helpers.dev](
 
 ## So what has changed these ten years?
 
-Ten years ago Adobe switched their payment model to a subscription based one. A lot of software now follow this tactic. It is a way to create contininuous revenue from loyal customers. For a cloud based service this is a logical model for continuous costs. But for other software it feels like a scam. It is *the* reason I still use CS4.
+Ten years ago Adobe switched their payment model to a subscription based one. A lot of software now follow this tactic. It is a way to create continuous revenue from loyal customers. For a cloud based service this is a logical model for continuous costs. But for other software it feels like a scam. It is *the* reason I still use CS4.
 It is cheap for non-loyal customers though, since they can now use software for one month when needed.
 IntellIJ is no better than Adobe in this regard, maybe even worse since Adobe kept prices relatively low.
 It does leave a very bitter capitalist taste.

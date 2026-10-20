@@ -1,6 +1,6 @@
 ---
 date: 2013-05-29
-modified: 2023-05-29
+modified: 2026-10-19
 slug: a-freelance-developers-tool-box
 type: post
 categories: [code,work]
@@ -41,7 +41,7 @@ price: freeware
 
 ## PHPStorm
 
-I loved PHPStorm ever since I first touched it. It has everything I knew from FDT only better: debugging, refactoring, VCS integration, auto completion, auto fomatting and a ton of things you can customize. And even though there are numerous settings everything is still quite easy to find.
+I loved PHPStorm ever since I first touched it. It has everything I knew from FDT only better: debugging, refactoring, VCS integration, auto completion, auto formatting and a ton of things you can customize. And even though there are numerous settings everything is still quite easy to find.
 
 url: [http://www.jetbrains.com/phpstorm/](http://www.jetbrains.com/phpstorm/)  
 price: €89 (or €44 for [WebStorm](http://www.jetbrains.com/webstorm/ "same IDE, less features"))
