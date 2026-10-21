@@ -17,7 +17,8 @@ const {target} = commander
   const files = await Promise.all(list.map(read))
   const objects = files.map(markdown2object)
       .filter(({dateTo})=>{
-        return parseInt(dateTo.toString().substring(0, 4), 10)>=2007
+        return dateTo.getFullYear()>=2007
+        //return parseInt(dateTo.toString().substring(0, 4), 10)>=2007
       })
 
   const filtered = objects.map(({dateFrom, dateTo, tags})=>({dateFrom, dateTo, tags}))

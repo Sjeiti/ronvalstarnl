@@ -145,15 +145,13 @@ function buildSkillsTable(projects, target){
     const [yearFrom, yearTo] = [dateFrom, dateTo].map(s=>parseInt(s.split(/-/)[0], 10))
 
     tags?.forEach(tag=>{
-
       const tagged = acc[tag]||(acc[tag] = [])
       for(let i=yearFrom;i<=yearTo;i++) tagged.includes(i)||tagged.push(i)
-
     })
+
     return acc
   }, {})
 
-  // const lowest = Math.min(...Object.values(result).map(a=>Math.min(...a)))
   const highest = Math.max(...Object.values(result).map(a=>Math.max(...a)))
   const lowest = highest - 10
 
