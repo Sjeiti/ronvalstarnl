@@ -1,5 +1,5 @@
 import fs from 'fs'
-import {JSDOM} from 'jsdom'
+import {JSDOM, VirtualConsole} from 'jsdom'
 //const { parentPort, workerData } =  require('worker_threads')
 import {parentPort, workerData} from 'worker_threads'
 
@@ -37,7 +37,7 @@ const noop = ()=>({})
   await mkdir(targetPath,{recursive:true})
 
   document.documentElement.classList.add('prerendered')
-  
+
   const htmlResult = dom.serialize()
 
   await writeFile(target,htmlResult)
@@ -58,8 +58,16 @@ const noop = ()=>({})
 //////////////////////////////////////////////
 
 function getJSDOM(html, url){
+  const virtualConsole = new VirtualConsole()
+  virtualConsole.on('error', (err) => {
+    if (/Could not parse CSS stylesheet/.test(err && err.message)) {
+      console.error(err.message.split('\n')[0])
+    } else {
+      console.error(err)
+    }
+  })
 
-  const dom = new JSDOM(html,{url})
+  const dom = new JSDOM(html,{url, virtualConsole})
   const {window} = dom
 
   window.scrollTo = noop
