@@ -43,19 +43,6 @@ function buildProjects(projects, target, lang){
     , client: isNL&&'klant'||'client'
   }
   
-
-  //<<<
-
-  target.appendString(expand(`h2#projects{${text.permanent}}`), false)
-  const cvPermanent = projects
-      .filter(p => p.portfolioType==='permanent')
-      .sort((a, b) => new Date(a.dateTo)>new Date(b.dateTo)?-1:1)
-
-  target.appendString(expand(`ul.unstyled.cv-projects>(${cvPermanent.map((project, i) => renderProject(project,isNL)).join('+')})`), false)
-
-  //>>>
-
-
   target.appendString(expand(`h2#projects{${text.projects}}`), false)
   const cvProjects = projects
       .filter(p => p.inCv)
